@@ -1,4 +1,4 @@
-<html>
+﻿<html>
 <head>
 	<title>Pokemon Emerald</title>
 
@@ -9,41 +9,68 @@
 	<link rel="stylesheet" type="text/css" href="css.css" />
 </head>
 <body>
-	<style type="text/css">
-	canvas{
-		border: 1px solid white;
-		}</style>
-	<img id="fullSheet" src="image/fullSheetAnimation.png" />
-	<img id="player" src="image/player.png" />
-	<img id="text" src="image/text.png" />
-	<img id="npc" src="image/npc.png" />
-	
-	<canvas id="game" style="width:100%;height:100%"></canvas>
-	<!--<canvas id="game" width="320" height="240"></canvas>-->
-	<!-- the map -->
-	<script src="Map/store.js"></script>
-	<script src="Map/pokaHeal.js"></script>
-	<script src="Map/pokaHeal_02.js"></script>
-	<script src="Map/fullMap.js"></script>
-	<script src="Map/mine_01.js"></script>
-	<script src="Map/gym_01.js"></script>
-	<!-- static -->
-	<script src="Model/Tile.js"></script>
-	<script src="Model/Window.js"></script>
-	<script src="NpcData.js"></script>
-	<script src="Model/Collision.js"></script>
-	
-	<!-- the game engien -->
-	<script src="Model/npc.js"></script>
-	<script src="Model/map.js"></script>
-	<script src="Model/Rooms.js"></script>
-	<script src="Model/World.js"></script>
-	<script src="Model/camera.js"></script>
-	<script src="Model/Player.js"></script>
-	<script src="Model/Text.js"></script>
-	<script src="Model/NpcContainer.js"></script>
-	<script src="Control/game.js"></script>
-	<!--<script src="main.js"></script>-->
+    <style type="text/css">
 
+        canvas {
+            border: 1px solid white;
+        }
+    </style>
+    <img id="fullSheet" src="image/fullSheetAnimation.png" />
+    <img id="player" src="image/player.png" />
+    <img id="text" src="image/text.png" />
+    <img id="npc" src="image/npc.png" />
+
+    <canvas id="game" style="height:100%;width:100%"></canvas>
+
+
+    <!--<input type="button" style="bottom:40px;left:10px;width:80px;height:40px;" value="◀" onmousedown="move('37')" onmouseup="stop('37')" />
+    <input type="button" style="bottom:80px;left:90px;width:80px;height:40px;" value="▲" onmousedown="move('38')" onmouseup="stop('38')" />
+    <input type="button" style="bottom:40px;left:170px;width:80px;height:40px;" value="▶" onmousedown="move('39')" onmouseup="stop('39')" />
+    <input type="button" style="bottom:0px;left:90px;width:80px;height:40px;" value="▼"  onmousedown="move('40')" onmouseup="stop('40')" />-->
+
+    <!--<canvas id="game" width="320" height="240"></canvas>-->
+    <!-- the map -->
+    <script src="Map/store.js"></script>
+    <script src="Map/pokaHeal.js"></script>
+    <script src="Map/pokaHeal_02.js"></script>
+    <script src="Map/fullMap.js"></script>
+    <script src="Map/mine_01.js"></script>
+    <script src="Map/gym_01.js"></script>
+    <!-- static -->
+    <script src="Model/Tile.js"></script>
+    <script src="Model/Window.js"></script>
+    <script src="NpcData.js"></script>
+    <script src="Model/Collision.js"></script>
+
+    <!-- the game engien -->
+    <script src="Model/npc.js"></script>
+    <script src="Model/map.js"></script>
+    <script src="Model/Rooms.js"></script>
+    <script src="Model/World.js"></script>
+    <script src="Model/camera.js"></script>
+    <script src="Model/Player.js"></script>
+    <script src="Model/Text.js"></script>
+    <script src="Model/NpcContainer.js"></script>
+    <script src="Control/game.js"></script>
+    <!--<script src="main.js"></script>-->
+
+    <script type="text/javascript">
+
+        //window.onload = function () {
+        //    logForXamarin('39');
+        //};
+
+        function logForXamarin(str) {
+
+            switch (str) {
+                case '39':
+                    move(str);
+                    break;
+                case '40':
+                    stop('39');
+                    break;
+            }
+        }
+    </script>
 </body>
 </html>

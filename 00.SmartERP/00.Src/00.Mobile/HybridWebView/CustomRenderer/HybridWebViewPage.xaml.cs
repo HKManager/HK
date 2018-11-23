@@ -18,5 +18,15 @@ namespace CustomRenderer
             hybridWebView.ShowResult(str);
             //hybridWebView.Eval($"logForXamarin({str})");
         }
-	}
+
+        private void Button_Pressed(object sender, System.EventArgs e)
+        {
+            hybridWebView.ShowResult("39");
+        }
+
+        private void Button_Released(object sender, System.EventArgs e)
+        {
+            hybridWebView.ShowResult("40");
+        }
+    }
 }

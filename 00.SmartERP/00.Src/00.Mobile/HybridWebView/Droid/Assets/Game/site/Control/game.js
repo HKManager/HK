@@ -69,6 +69,52 @@ function gameStopGame () {
 }
 
 
+function move(code) {
+    switch (code) {
+        case '37':
+            player.move.left = true;
+            break;
+        case '39':
+            player.move.right = true;
+            break;
+        case '38':
+            player.move.up = true;
+            break;
+        case '40':
+            player.move.down = true;
+            break;
+        case '90':
+            if (text.doZ()) {
+
+            } else if (player.doZ()) {
+
+            }
+
+            break;
+        case '88':
+            player.doX();
+            break;
+    }
+}
+
+function stop(code) {
+    switch (code) {
+        case '37':  
+            player.move.left = false;
+            break;
+        case '39':
+            player.move.right = false;
+            break;
+        case '38':  
+            player.move.up = false;
+            break;
+        case '40':
+            player.move.down = false;
+            break;
+    }
+}
+
+
 window.addEventListener('keydown', function(e) {
     switch (e.keyCode) {
         case 37:  

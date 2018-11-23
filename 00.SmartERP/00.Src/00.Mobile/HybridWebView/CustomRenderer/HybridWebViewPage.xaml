@@ -5,6 +5,61 @@
 			 x:Class="CustomRenderer.HybridWebViewPage"
 			 Padding="0,0,0,0">
 	<ContentPage.Content>
-		<local:HybridWebView x:Name="hybridWebView" Uri="index.html" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
-	</ContentPage.Content>
+        <!--<AbsoluteLayout x:Name="ViewLayout">
+            <local:HybridWebView x:Name="hybridWebView" Uri="index.html" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" AbsoluteLayout.LayoutBounds="1,1,1,1" AbsoluteLayout.LayoutFlags="All"/>
+
+            <AbsoluteLayout x:Name="ViewControls" AbsoluteLayout.LayoutBounds="1,1,1,.50" AbsoluteLayout.LayoutFlags="All" BackgroundColor="#66000000" Margin="10,10,10,10">
+                <StackLayout Orientation="Vertical" Margin="20,20,20,20" BackgroundColor="Transparent" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="1,1,1,1">
+                    <Grid Margin="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Label Text="Salted Caramel Mocha Frappuccino" TextColor="White" HorizontalOptions="CenterAndExpand" VerticalTextAlignment="Center" Grid.Column="0" Grid.ColumnSpan="3" Grid.RowSpan="2" />
+                        <Button Text="Extra Shot" BackgroundColor="#77000000" BorderRadius="4" BorderColor="White" BorderWidth="2" TextColor="White" Grid.Row="0" Grid.Column="3" />
+                        <Button Text="Whipped Cream" BackgroundColor="#77000000" BorderRadius="4" BorderColor="White" BorderWidth="2" TextColor="White" Grid.Row="1" Grid.Column="3" />
+                    </Grid>
+                    <Grid Margin="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Button Text="Tall (12oz)" BackgroundColor="#77000000" BorderRadius="4" BorderColor="White" BorderWidth="2" TextColor="White" HorizontalOptions="FillAndExpand" Grid.Column="0" />
+                        <Button Text="Grande (16oz)" BackgroundColor="#77000000" BorderRadius="4" BorderColor="White" BorderWidth="2" TextColor="White" HorizontalOptions="FillAndExpand" Grid.Column="1" />
+                        <Button Text="Venti (20oz)" BackgroundColor="#77000000" BorderRadius="4" BorderColor="White" BorderWidth="2" TextColor="White" HorizontalOptions="FillAndExpand" Grid.Column="2" />
+                    </Grid>
+                </StackLayout>
+            </AbsoluteLayout>
+
+
+        </AbsoluteLayout>-->
+
+        <Grid>
+            <Grid.RowDefinitions>
+
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+
+            </Grid.RowDefinitions>
+
+            <local:HybridWebView x:Name="hybridWebView" Uri="index.html" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Grid.Row="0">
+                
+            </local:HybridWebView>
+
+            <Grid Margin="1" Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Button Text="Tall (12oz)" BackgroundColor="#77000000" BorderRadius="4" BorderColor="White" BorderWidth="2" TextColor="White" HorizontalOptions="FillAndExpand" Grid.Column="0" />
+                <Button Text="Grande (16oz)" BackgroundColor="#77000000" BorderRadius="4" BorderColor="White" BorderWidth="2" TextColor="White" HorizontalOptions="FillAndExpand" Grid.Column="1" />
+                <Button Text="Venti (20oz)" BackgroundColor="#77000000" BorderRadius="4" BorderColor="White" BorderWidth="2" TextColor="White" HorizontalOptions="FillAndExpand" Grid.Column="2" />
+            </Grid>
+
+        </Grid>
+
+
+
+    </ContentPage.Content>
 </ContentPage>
