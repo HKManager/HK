@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\HK.SmartERP.LIB\HK.SmartERP.LIB.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="SQLite.Net">
+      <HintPath>LIB\SQLite.Net.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

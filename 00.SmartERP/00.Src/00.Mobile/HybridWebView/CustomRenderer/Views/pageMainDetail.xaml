@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CustomRenderer.Views.pageMainDetail"
+             
+             xmlns:local="clr-namespace:CustomRenderer;assembly=CustomRenderer"
+             
+             Title="Detail">
+
+    <!--<StackLayout x:Name="iOSLayout" Orientation="Vertical"  IsVisible="false">
+        <Button x:Name="nameButtonStart" Text="Start" Clicked="OnStart"></Button>
+        <Label HorizontalOptions="CenterAndExpand"  x:Name="textLabeliOS" Text="Text Will Appear here" ></Label>
+        <Button IsEnabled="false" x:Name="nameButtonStop" Text="Stop" Clicked="OnStop"></Button>
+    </StackLayout>-->
+    <StackLayout x:Name="androidLayout">
+        <local:VoiceButton  x:Name="voiceButton" Text="Record Voice" IsVisible="true" />
+        <Label HorizontalOptions="CenterAndExpand"  x:Name="textLabelDroid" Text="Text Will Appear here" ></Label>
+    </StackLayout>
+    <!--<local:HybridWebView x:Name="hybridWebView" Uri="info/accountManager.html" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />-->
+
+    <!--<Label Text="This is a detail page. To get the 'triple' line icon on each platform add a icon to each platform and update the 'Master' page with an Icon that references it."/>-->
+</ContentPage>
