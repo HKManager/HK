@@ -14,7 +14,7 @@ namespace CustomRenderer
 
             연결자_Sqlite.DB연결자 = conn;
 
-            MainPage = new Views.pageMain ();
+            MainPage = new HybridWebViewPage ();
         }
 
 		protected override void OnStart ()
