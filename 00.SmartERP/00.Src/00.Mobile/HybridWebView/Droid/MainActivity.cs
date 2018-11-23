@@ -2,11 +2,12 @@
 using Android.Content;
 using Android.Content.PM;
 using Android.OS;
+using Android.Views;
 using System;
 
 namespace CustomRenderer.Droid
 {
-    [Activity(Label = "CustomRenderer.Droid", Icon = "@drawable/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+    [Activity(Label = "CustomRenderer.Droid", Icon = "@drawable/icon", Theme = "@style/MainTheme", MainLauncher = true, ScreenOrientation = ScreenOrientation.Landscape)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
         public event EventHandler<ActivityResultEventArgs> ActivityResult = delegate { };
@@ -25,6 +26,22 @@ namespace CustomRenderer.Droid
 
             LoadApplication(new App());
         }
+
+        public void SetDevicePortaitOrientation()
+        {
+            this.RequestedOrientation = ScreenOrientation.Portrait;
+        }
+
+        public void SetDeviceLandscapeOrientation()
+        {
+            this.RequestedOrientation = ScreenOrientation.Landscape;
+        }
+
+        public void SetAutoDetectOrientation()
+        {
+            this.RequestedOrientation = ScreenOrientation.Sensor;
+        }
+
 
         protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
         {

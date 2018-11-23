@@ -53,6 +53,8 @@ namespace CustomRenderer.Droid
             }
         }
 
+
+
         private void onShowData(string data)
         {
             string script = $"javascript:logForXamarin('{data}')";

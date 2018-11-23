@@ -13,6 +13,15 @@ namespace CustomRenderer
             hybridWebView.RegisterAction(data => ShowData(data));
         }
 
+
+        protected override void OnSizeAllocated(double width, double height)
+        {
+            base.OnSizeAllocated(width, height); //must be called
+            if (this.Width != width || this.Height != height)
+            {
+                //reconfigure layout
+            }
+        }
         private void ShowData(string str)
         {
             hybridWebView.ShowResult(str);
