@@ -2,14 +2,55 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
 			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 			 xmlns:local="clr-namespace:CustomRenderer;assembly=CustomRenderer"
+             
+             xmlns:CustomControls="clr-namespace:CustomRenderer.CustomControls"
+             xmlns:ValueConverters="clr-namespace:CustomRenderer.ValueConverters"
+             
 			 x:Class="CustomRenderer.HybridWebViewPage"
 			 Padding="0,0,0,0">
 	<ContentPage.Content>
         <AbsoluteLayout x:Name="ViewLayout">
             <local:HybridWebView x:Name="hybridWebView" Uri="index.html" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" AbsoluteLayout.LayoutBounds="1,1,1,1" AbsoluteLayout.LayoutFlags="All"/>
 
-            <AbsoluteLayout x:Name="ViewControls" AbsoluteLayout.LayoutBounds="1,1,1,.50" AbsoluteLayout.LayoutFlags="All" BackgroundColor="#66000000" Margin="10,10,10,10" VerticalOptions="End">
-                <StackLayout Orientation="Vertical" Margin="20,20,20,20" BackgroundColor="Transparent" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="1,1,1,1">
+            <AbsoluteLayout x:Name="ViewControls" AbsoluteLayout.LayoutBounds="1,1,1,1" AbsoluteLayout.LayoutFlags="All" BackgroundColor="Transparent" Margin="10,0,10,20" VerticalOptions="End">
+
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <CustomControls:JoystickControl x:Name="JoystickControl" Grid.Row="1" BackgroundColor="Transparent"
+                                        
+                                        HeightRequest="100" WidthRequest="150"/>
+
+                    <!--<Grid BindingContext="{x:Reference Name=JoystickControl}" Grid.Row="2">
+                        <Grid.Resources>
+                            <ResourceDictionary>
+                                <ValueConverters:DummyValueConverter x:Key="dummyConverter"/>
+                                <Style TargetType="Label">
+                                    <Setter Property="HorizontalOptions" Value="Center"/>
+                                    <Setter Property="VerticalOptions" Value="Center"/>
+                                </Style>
+                            </ResourceDictionary>
+                        </Grid.Resources>
+
+                        <Label Text="Xposition" Grid.Row="0" Grid.Column="0"/>
+                        <Label Text="{Binding Xposition}" Grid.Row="0" Grid.Column="1"/>
+
+                        <Label Text="Yposition" Grid.Row="1" Grid.Column="0"/>
+                        <Label Text="{Binding Yposition}" Grid.Row="1" Grid.Column="1"/>
+
+                        <Label Text="Distance" Grid.Row="2" Grid.Column="0"/>
+                        <Label Text="{Binding Distance}" Grid.Row="2" Grid.Column="1"/>
+
+                        <Label Text="Angle" Grid.Row="3" Grid.Column="0"/>
+                        <Label Text="{Binding Angle}" Grid.Row="3" Grid.Column="1"/>
+
+                    </Grid>-->
+                </Grid>
+
+
+                <!--<StackLayout Orientation="Vertical" Margin="20,20,20,20" BackgroundColor="Transparent" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="1,1,1,1">
                     <Grid Margin="1">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*" />
@@ -29,7 +70,7 @@
                         <Button Text="Grande (16oz)" BackgroundColor="#77000000" BorderRadius="4" BorderColor="White" BorderWidth="2" TextColor="White" HorizontalOptions="FillAndExpand" Grid.Column="1" />
                         <Button Text="Venti (20oz)" BackgroundColor="#77000000" BorderRadius="4" BorderColor="White" BorderWidth="2" TextColor="White" HorizontalOptions="FillAndExpand" Grid.Column="2" />
                     </Grid>
-                </StackLayout>
+                </StackLayout>-->
             </AbsoluteLayout>
 
 

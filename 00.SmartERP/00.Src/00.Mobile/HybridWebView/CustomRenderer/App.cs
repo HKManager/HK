@@ -1,4 +1,5 @@
-﻿using HK.SmartERP.Data;
+﻿using CustomRenderer.Views;
+using HK.SmartERP.Data;
 using SQLite.Net;
 using Xamarin.Forms;
 
@@ -14,7 +15,7 @@ namespace CustomRenderer
 
             연결자_Sqlite.DB연결자 = conn;
 
-            MainPage = new HybridWebViewPage ();
+            MainPage = new HybridWebViewPage();
         }
 
 		protected override void OnStart ()

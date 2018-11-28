@@ -78,7 +78,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CustomRenderers\ActivityResultEventArgs.cs" />
+    <Compile Include="GAME\CustomRenderers\JoystickRenderer.cs" />
     <Compile Include="FileManager.cs" />
+    <Compile Include="GAME\JoystickAndroidCustomControl\JoystickMainLayout.cs" />
+    <Compile Include="GAME\JoystickAndroidCustomControl\SquareLinearLayout.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -325,9 +328,6 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\icon.png" />
-    <AndroidResource Include="Resources\drawable-hdpi\icon.png" />
-    <AndroidResource Include="Resources\drawable-xhdpi\icon.png" />
-    <AndroidResource Include="Resources\drawable-xxhdpi\icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <ItemGroup>
@@ -11388,5 +11388,16 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\Game\site\Model\World.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\pad.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\stick.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\joystickMainLayout.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
 </Project>
