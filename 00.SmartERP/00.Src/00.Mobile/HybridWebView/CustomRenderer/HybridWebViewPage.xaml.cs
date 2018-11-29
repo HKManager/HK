@@ -11,6 +11,8 @@ namespace CustomRenderer
             //hybridWebView.RegisterAction (data => DisplayAlert ("Alert", "Hello " + data, "OK"));
 
             hybridWebView.RegisterAction(data => ShowData(data));
+
+            JoystickControl.Move += onMove;
         }
 
 
@@ -36,6 +38,40 @@ namespace CustomRenderer
         private void Button_Released(object sender, System.EventArgs e)
         {
             hybridWebView.ShowResult("40");
+        }
+
+        private void onMove()
+        {
+            var x = JoystickControl.Xposition;
+            var y = JoystickControl.Yposition;
+
+            var dis = JoystickControl.Distance;
+            var angle = JoystickControl.Angle;
+
+            if (x <= -10 && angle >= 225 && angle <= 315)
+            {
+                hybridWebView.ShowResult("00");
+                hybridWebView.ShowResult("37");
+            }
+            else if (x >= 10 && angle >= 45 && angle <= 135)
+            {
+                hybridWebView.ShowResult("00");
+                hybridWebView.ShowResult("39");
+            }
+            else if (y >= 10 && (angle >= 315 || angle <= 45) )
+            {
+                hybridWebView.ShowResult("00");
+                hybridWebView.ShowResult("38");
+            }
+            else if (y <= -10 && angle >= 135 && angle <= 225)
+            {
+                hybridWebView.ShowResult("00");
+                hybridWebView.ShowResult("40");
+            }
+            else
+            {
+                hybridWebView.ShowResult("00");
+            }
         }
     }
 }

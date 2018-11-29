@@ -7,6 +7,8 @@ namespace CustomRenderer.CustomControls
 {
     public class JoystickControl : View
     {
+        public event Action Move;
+
         public static readonly BindableProperty XpositionProperty =
             BindableProperty.Create(
                 propertyName: "Xposition",
@@ -18,7 +20,7 @@ namespace CustomRenderer.CustomControls
         public int Xposition
         {
             get { return (int)GetValue(XpositionProperty); }
-            set { SetValue(XpositionProperty, value); }
+            set { SetValue(XpositionProperty, value); Move?.Invoke(); }
         }
 
         public static readonly BindableProperty YpositionProperty =
@@ -32,7 +34,7 @@ namespace CustomRenderer.CustomControls
         public int Yposition
         {
             get { return (int)GetValue(YpositionProperty); }
-            set { SetValue(YpositionProperty, value); }
+            set { SetValue(YpositionProperty, value); Move?.Invoke(); }
         }
 
         public static readonly BindableProperty DistanceProperty =
@@ -46,7 +48,7 @@ namespace CustomRenderer.CustomControls
         public double Distance
         {
             get { return (double)GetValue(DistanceProperty); }
-            set { SetValue(DistanceProperty, value); }
+            set { SetValue(DistanceProperty, value); Move?.Invoke(); }
         }
 
         public static readonly BindableProperty AngleProperty =
@@ -60,7 +62,7 @@ namespace CustomRenderer.CustomControls
         public double Angle
         {
             get { return (double)GetValue(AngleProperty); }
-            set { SetValue(AngleProperty, value); }
+            set { SetValue(AngleProperty, value); Move?.Invoke(); }
         }
     }
 }

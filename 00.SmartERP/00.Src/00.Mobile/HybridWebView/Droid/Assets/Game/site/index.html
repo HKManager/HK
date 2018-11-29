@@ -63,11 +63,14 @@
         function logForXamarin(str) {
 
             switch (str) {
-                case '39':
-                    move(str);
-                    break;
-                case '40':
+                case '00':
+                    stop('37');
+                    stop('38');
                     stop('39');
+                    stop('40');
+                    break;
+                default:
+                    move(str);
                     break;
             }
         }
