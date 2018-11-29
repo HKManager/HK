@@ -10,7 +10,7 @@
 			 Padding="0,0,0,0">
 	<ContentPage.Content>
         <AbsoluteLayout x:Name="ViewLayout">
-            <local:HybridWebView x:Name="hybridWebView" Uri="index.html" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" AbsoluteLayout.LayoutBounds="1,1,1,1" AbsoluteLayout.LayoutFlags="All"/>
+            <local:HybridWebView x:Name="hybridWebView" Uri="site/index.html" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" AbsoluteLayout.LayoutBounds="1,1,1,1" AbsoluteLayout.LayoutFlags="All"/>
 
             <AbsoluteLayout x:Name="ViewControls" AbsoluteLayout.LayoutBounds="1,1,1,1" AbsoluteLayout.LayoutFlags="All" BackgroundColor="Transparent" Margin="10,0,10,20" VerticalOptions="End">
 

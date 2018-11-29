@@ -24,10 +24,22 @@ namespace CustomRenderer.Views
 
         private void ShowData(string str)
         {
-            이벤트처리기.이벤트처리(str);
+            //이벤트처리기.이벤트처리(str);
 
-            hybridWebView.ShowResult(str);
+            //hybridWebView.ShowResult(str);
+
+            보기_거래처상세관리();
+
             //hybridWebView.Eval($"logForXamarin({str})");
+        }
+
+        void 보기_거래처상세관리()
+        {
+            Device.BeginInvokeOnMainThread(async () =>
+            {
+                await Navigation.PushAsync(new page거래처상세관리());
+
+            });   
         }
 
         //protected override void OnAppearing()
