@@ -4,7 +4,7 @@ using System.Text;
 
 namespace HK.SmartERP.Data
 {
-    public class DATA_CODE_001
+    public class DATA_CODE_003
     {
         public string CODE_001 { set; get; }
         public string CODE_002 { set; get; }

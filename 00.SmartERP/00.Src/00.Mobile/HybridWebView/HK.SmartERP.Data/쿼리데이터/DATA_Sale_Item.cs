@@ -4,7 +4,7 @@ using System.Text;
 
 namespace HK.SmartERP.Data
 {
-    public class DATA_Buy_Item
+    public class DATA_Sale_Item
     {
         public long SI_SN { set; get; }
         public long SALE_SN { set; get; }

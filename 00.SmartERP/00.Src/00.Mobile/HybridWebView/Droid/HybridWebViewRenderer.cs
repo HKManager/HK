@@ -47,8 +47,8 @@ namespace CustomRenderer.Droid
                 brige.ShowData += onShowData;
 
                 Control.AddJavascriptInterface(brige, "jsBridge");
-                //Control.LoadUrl(string.Format("file:///android_asset/Content/views/{0}", Element.Uri));
-                Control.LoadUrl(string.Format("file:///android_asset/Game/{0}", Element.Uri));
+                Control.LoadUrl(string.Format("file:///android_asset/Content/views/{0}", Element.Uri));
+                //Control.LoadUrl(string.Format("file:///android_asset/Game/{0}", Element.Uri));
                 InjectJS(JavaScriptFunction);
             }
         }
