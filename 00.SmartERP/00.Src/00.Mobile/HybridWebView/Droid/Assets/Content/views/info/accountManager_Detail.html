@@ -47,6 +47,10 @@
 </head>
 
 <body class="theme-red" style="margin:0;">
+
+    <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script type='text/javascript' src='../../js/knockout-3.4.2.js'></script>
+
     <!-- Page Loader -->
     <div class="page-loader-wrapper">
         <div class="loader">
@@ -113,7 +117,7 @@
                             <div class="col-sm-12">
                                 <div class="form-group">
                                     <div class="form-line">
-                                        <input id="AC_NAME" type="text" class="control-detail form-control" placeholder="거래처 명" />
+                                        <input id="AC_NAME" type="text" class="control-detail form-control" placeholder="거래처 명" data-bind="value: userName"/>
                                     </div>
                                 </div>
 
@@ -182,6 +186,22 @@
         </div>
         <!-- #END# Input -->
     </div>
+
+    <script type="text/javascript">
+        var viewModel = {
+            userName: ko.observable(""),        // Initially blank
+            userPassword: ko.observable(""), // Prepopulate
+        };
+
+        viewModel.userName = "safsdsdf";
+
+        ko.applyBindings({
+            userName:viewModel.userName,
+            userPassword:viewModel.userPassword
+        });
+
+    </script>
+    
 
     <!-- Jquery Core Js -->
     <script src="../../plugins/jquery/jquery.min.js"></script>
