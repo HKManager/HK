@@ -1,4 +1,4 @@
-<!-- <!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 
 <head>
@@ -38,9 +38,15 @@
 
     <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
     <link href="../../css/themes/all-themes.css" rel="stylesheet" />
+
+    <style>
+        .control-detail {
+            padding-left: 15px !important;
+        }
+    </style>
 </head>
 
-<body class="theme-red">
+<body class="theme-red" style="margin:0;">
     <!-- Page Loader -->
     <div class="page-loader-wrapper">
         <div class="loader">
@@ -62,7 +68,7 @@
     <div class="overlay"></div>
     <!-- #END# Overlay For Sidebars -->
     <!-- Search Bar -->
-    <div class="search-bar">
+    <!--<div class="search-bar">
         <div class="search-icon">
             <i class="material-icons">search</i>
         </div>
@@ -70,102 +76,102 @@
         <div class="close-search">
             <i class="material-icons">close</i>
         </div>
-    </div>
-    
+    </div>-->
 
-        <div class="container-fluid">
-            <!-- Input -->
-            <div class="row clearfix">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="card">
-                        <div class="header">
+    <br />
 
-                                <div class="row clearfix">
-                                        <div class="col-sm-6">
-                                                <h2>
-                                                    거래처 상세관리
-                                                    <small>거래처 정보를 입력해 주세요.</small>
-                                                </h2>
-                                        </div>
-                                        <div class="col-sm-6 align-right">
+    <div class="container-fluid">
+        <!-- Input -->
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="card">
+                    <div class="header">
 
-                                                <button type="button" class="btn btn-primary m-t-15 waves-effect">저장</button>
+                        <div class="row clearfix">
+                            <div class="col-sm-6">
+                                <h2>
+                                    거래처 상세관리
+                                    <small>거래처 정보를 입력해 주세요.</small>
+                                </h2>
+                            </div>
+                            <div class="col-sm-6 align-right">
 
-                                                <button type="button" class="btn btn-primary m-t-15 waves-effect">취소</button>
+                                <button type="button" class="btn btn-primary m-t-15 waves-effect">저장</button>
 
-                                            <!-- <div class="switch panel-switch-btn">
-                                                <span class="m-r-10 font-12">REAL TIME</span>
-                                                <label>OFF<input type="checkbox" id="realtime" checked><span class="lever switch-col-cyan"></span>ON</label>
-                                            </div> -->
-                                        </div>
-                                    </div>
+                                <button type="button" class="btn btn-primary m-t-15 waves-effect">취소</button>
 
+                                <!-- <div class="switch panel-switch-btn">
+                                    <span class="m-r-10 font-12">REAL TIME</span>
+                                    <label>OFF<input type="checkbox" id="realtime" checked><span class="lever switch-col-cyan"></span>ON</label>
+                                </div> -->
+                            </div>
                         </div>
-                        <div class="body">
-                            <div class="row clearfix">
-                                <div class="col-sm-12">
-                                    <div class="form-group">
-                                        <div class="form-line">
-                                            <input id="AC_NAME" type="text" class="form-control" placeholder="거래처 명" />
-                                        </div>
+
+                    </div>
+                    <div class="body">
+                        <div class="row clearfix">
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <div class="form-line">
+                                        <input id="AC_NAME" type="text" class="control-detail form-control" placeholder="거래처 명" />
                                     </div>
+                                </div>
 
-                                    <div class="form-group">
-                                            <select class="form-control show-tick">
-                                                <option value="">거래처 유형</option>
-                                                <option value="10">10</option>
-                                                <option value="20">20</option>
-                                                <option value="30">30</option>
-                                                <option value="40">40</option>
-                                                <option value="50">50</option>
-                                            </select>
-                                        </div>
+                                <div class="form-group">
+                                    <select class="form-control show-tick">
+                                        <option value="">거래처 유형</option>
+                                        <option value="10">10</option>
+                                        <option value="20">20</option>
+                                        <option value="30">30</option>
+                                        <option value="40">40</option>
+                                        <option value="50">50</option>
+                                    </select>
+                                </div>
 
-                                    <div class="form-group">
-                                        <div class="form-line">
-                                            <input id="AC_ADDRESS" type="text" class="form-control" placeholder="거래처 주소" />
-                                            <!-- <input type="password" class="form-control" placeholder="Password" /> -->
-                                        </div>
+                                <div class="form-group">
+                                    <div class="form-line">
+                                        <input id="AC_ADDRESS" type="text" class="form-control control-detail" placeholder="거래처 주소" />
+                                        <!-- <input type="password" class="form-control" placeholder="Password" /> -->
                                     </div>
+                                </div>
 
-                                    <div class="form-group">
-                                        <div class="form-line">
-                                            <input id="AC_MAN01" type="text" class="form-control" placeholder="담당자 명" />
-                                        </div>
+                                <div class="form-group">
+                                    <div class="form-line">
+                                        <input id="AC_MAN01" type="text" class="form-control control-detail" placeholder="담당자 명" />
                                     </div>
+                                </div>
 
-                                    <div class="form-group">
-                                        <div class="form-line">
-                                            <input id="AC_PHONENUMBER01" type="text" class="form-control" placeholder="담당자 연락처" />
-                                        </div>
+                                <div class="form-group">
+                                    <div class="form-line">
+                                        <input id="AC_PHONENUMBER01" type="text" class="form-control control-detail" placeholder="담당자 연락처" />
                                     </div>
+                                </div>
 
-                                    <div class="form-group">
-                                        <div class="form-line">
-                                            <input id="AC_EMAIL01" type="text" class="form-control" placeholder="담당자 메일" />
-                                        </div>
+                                <div class="form-group">
+                                    <div class="form-line">
+                                        <input id="AC_EMAIL01" type="text" class="form-control control-detail" placeholder="담당자 메일" />
                                     </div>
+                                </div>
 
-                                    <div class="form-group">
-                                        <div class="form-line">
-                                            <input id="AC_PAY" type="text" class="form-control" placeholder="잔금" />
-                                        </div>
+                                <div class="form-group">
+                                    <div class="form-line">
+                                        <input id="AC_PAY" type="text" class="form-control control-detail" placeholder="잔금" />
                                     </div>
+                                </div>
 
-                                    <!-- <div class="input-group date" id="bs_datepicker_component_container">
-                                        <div class="form-line">
-                                            <input type="text" class="form-control" placeholder="수정 일시">
-                                        </div>
-                                        <span class="input-group-addon">
-                                            <i class="material-icons">date_range</i>
-                                        </span>
-                                    </div> -->
+                                <!-- <div class="input-group date" id="bs_datepicker_component_container">
+                                    <div class="form-line">
+                                        <input type="text" class="form-control" placeholder="수정 일시">
+                                    </div>
+                                    <span class="input-group-addon">
+                                        <i class="material-icons">date_range</i>
+                                    </span>
+                                </div> -->
 
 
-                                    <div class="form-group">
-                                            <div class="form-line">
-                                                <textarea id="AC_DESC" rows="4" class="form-control no-resize" placeholder="비고"></textarea>
-                                            </div>
+                                <div class="form-group">
+                                    <div class="form-line">
+                                        <textarea id="AC_DESC" rows="4" class="form-control no-resize control-detail" placeholder="비고"></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -173,8 +179,9 @@
                     </div>
                 </div>
             </div>
-            <!-- #END# Input -->
         </div>
+        <!-- #END# Input -->
+    </div>
 
     <!-- Jquery Core Js -->
     <script src="../../plugins/jquery/jquery.min.js"></script>

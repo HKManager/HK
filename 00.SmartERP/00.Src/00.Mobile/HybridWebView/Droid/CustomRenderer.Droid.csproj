@@ -11438,4 +11438,10 @@
   <ItemGroup>
     <AndroidAsset Include="Assets\Game\puzzle\sample_1\wgts\wgts.js" />
   </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Content\js\knockout-3.4.2.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Content\images\img_logo.png" />
+  </ItemGroup>
 </Project>
