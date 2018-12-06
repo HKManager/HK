@@ -1,4 +1,5 @@
 ﻿using HK.SmartERP.Data;
+using HK.SmartERP.LIB.Tools;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,11 +25,21 @@ namespace CustomRenderer.Views
 
         private void ShowData(string str)
         {
-            //이벤트처리기.이벤트처리(str);
+            var result = 이벤트처리기.이벤트처리(str);
 
-            //hybridWebView.ShowResult(str);
+            var 데이터 = JsonTool.Deserialize<이벤트데이터>(result);
 
-            보기_거래처상세관리();
+            switch(데이터.handle)
+            {
+                case HARDCODE.이벤트.화면호출:
+                    보기_거래처상세관리();
+                    break;
+                case HARDCODE.이벤트.전체조회:
+                    hybridWebView.ShowResult(데이터.data);
+                    break;
+            }
+
+            //보기_거래처상세관리();
 
             //hybridWebView.Eval($"logForXamarin({str})");
         }

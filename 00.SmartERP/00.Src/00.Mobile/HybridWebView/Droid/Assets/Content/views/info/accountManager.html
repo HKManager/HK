@@ -136,18 +136,18 @@
                         <table id="example-table" class="table table-striped">
                             <thead>
                                 <tr>
-                                    <th>Name</th>
-                                    <th>Cost</th>
-                                    <th>Profit</th>
+                                    <th>거래처명</th>
+                                    <th>거래처유형</th>
+                                    <th>연락처</th>
                                     <!--<th>Fun</th>-->
                                 </tr>
                             </thead>
-                            <tbody data-bind="foreach: teams">
+                            <tbody data-bind="foreach: result">
 
                                 <tr>
-                                    <td data-bind="text: User_Name"></td>
-                                    <td data-bind="text: score "></td>
-                                    <td data-bind="text: team "></td>
+                                    <td data-bind="text: AC_NAME"></td>
+                                    <td data-bind="text: AC_TYPE_NAME "></td>
+                                    <td data-bind="text: AC_PHONENUMBER01 "></td>
                                 </tr>
 
                                 <!--<tr>
@@ -212,11 +212,43 @@
             invokeCSharpAction(data);
         }
 
-        $(document).ready(function () {
-            var json = [{ "User_Name": "John Doe", "score": "10", "team": "1" }, { "User_Name": "Jane Smith", "score": "15", "team": "2" }, { "User_Name": "Chuck Berry", "score": "12", "team": "2" }];
+        //function queryAll() {
+        //    var obj = { handle: "01", view: "ACCOUNT", data: "" };
+
+        //    var data = JSON.stringify(obj);
+
+        //    //log("Sending Data:" + data);
+        //    invokeCSharpAction(data);
+        //}
+
+        function logForXamarin(str) {
+            //alert(str);
+            //$('#result').text($('#result').text() + " " + str);
+
+            var jsonObj = $.parseJSON(str);
+
             ko.applyBindings({
-                teams: json
+                result: jsonObj
             });
+        }
+
+        $(document).ready(function () {
+
+            var obj = { handle: "01", view: "ACCOUNT", data: "" };
+
+            var data = JSON.stringify(obj);
+
+
+            var str = '{"id":1,"name":"Test1"},{"id":2,"name":"Test2"}';
+            var jsonObj = $.parseJSON('[' + str + ']');
+
+            //var json = [{ "AC_SN": 1, "AC_ID": "", "AC_TYPE_CODE": "001", "AC_TYPE_NAME": null, "AC_NAME": "등록 거래처", "AC_OWNER": "", "AC_ADDRESS": "", "AC_MAN01": "ㅅㄱㄹ", "AC_PHONENUMBER01": "", "AC_EMAIL01": "", "AC_MAN02": "", "AC_PHONENUMBER02": "", "AC_EMAIL02": "", "AC_PAY": 0.0, "AC_LOT": 0.0, "AC_LAT": 0.0, "AC_UPDATE_SN": 0, "AC_UPDATE_DATE": "0001-01-24T08:34:00.1033347Z", "AC_USEYN": false, "AC_DESC": "" }, { "AC_SN": 2, "AC_ID": "", "AC_TYPE_CODE": "001", "AC_TYPE_NAME": null, "AC_NAME": "ㅛㅗㅕ", "AC_OWNER": "", "AC_ADDRESS": "", "AC_MAN01": "ㅓㅓㅕㅐㅐㅓㅕㅑ", "AC_PHONENUMBER01": "", "AC_EMAIL01": "", "AC_MAN02": "", "AC_PHONENUMBER02": "", "AC_EMAIL02": "", "AC_PAY": 0.0, "AC_LOT": 0.0, "AC_LAT": 0.0, "AC_UPDATE_SN": 0, "AC_UPDATE_DATE": "0001-01-24T08:34:00.104004Z", "AC_USEYN": false, "AC_DESC": "" }];
+
+            
+
+            //ko.applyBindings({
+            //    result: json
+            //});
         });
 
             //$(document).ready(function () {

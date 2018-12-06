@@ -13,11 +13,12 @@ namespace HK.SmartERP.Data
             public const string 등록 = "03";
             public const string 수정 = "04";
             public const string 삭제 = "05";
+            public const string 화면호출 = "06";
         }
 
         public static class 화면
         {
-
+            public const string 거래처 = "ACCOUNT";
         }
     }
 

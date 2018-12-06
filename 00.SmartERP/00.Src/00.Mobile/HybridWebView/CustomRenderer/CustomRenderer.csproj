@@ -113,6 +113,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\HK.SmartERP.Data\HK.SmartERP.Data.csproj" />
+    <ProjectReference Include="..\HK.SmartERP.LIB\HK.SmartERP.LIB.csproj" />
   </ItemGroup>
 
   <ItemGroup>

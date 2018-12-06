@@ -12,16 +12,18 @@ namespace HK.SmartERP.Data
         {
             var 이벤트 = JsonTool.Deserialize<이벤트데이터>(data);
 
-            switch(이벤트.handle)
+            string result = string.Empty;
+
+            switch (이벤트.handle)
             {
                 case HARDCODE.이벤트.전체조회:
                     switch(이벤트.view)
                     {
-
+                        case HARDCODE.화면.거래처:
+                            이벤트.data = JsonTool.Serialize(쿼리_거래처.GetInstance().조회(string.Empty, string.Empty));
+                            result = JsonTool.Serialize(이벤트);
+                            break;
                     }
-
-
-                    쿼리_거래처.GetInstance().조회(string.Empty, string.Empty);
                     break;
                 case HARDCODE.이벤트.개별조회:
                     break;
@@ -31,9 +33,12 @@ namespace HK.SmartERP.Data
                     break;
                 case HARDCODE.이벤트.삭제:
                     break;
+                case HARDCODE.이벤트.화면호출:
+                    
+                    break;
             }
 
-            return string.Empty;
+            return result;
         }
     }
 }
