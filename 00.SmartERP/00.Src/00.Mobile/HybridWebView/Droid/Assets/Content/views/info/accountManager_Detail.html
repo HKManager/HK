@@ -117,18 +117,20 @@
                             <div class="col-sm-12">
                                 <div class="form-group">
                                     <div class="form-line">
-                                        <input id="AC_NAME" type="text" class="control-detail form-control" placeholder="거래처 명" data-bind="value: userName"/>
+                                        <input id="AC_NAME" type="text" class="control-detail form-control" placeholder="거래처 명" data-bind="value: AC_NAME"/>
                                     </div>
                                 </div>
 
                                 <div class="form-group">
-                                    <select class="form-control show-tick">
-                                        <option value="">거래처 유형</option>
-                                        <option value="10">10</option>
+                                    <select class="form-control show-tick" data-bind="options: AC_TYPE_CODES,
+                                                                                       optionsCaption: '유형을 선택해 주세요',
+                                                                                       value: AC_TYPE_CODE,
+                                                                                       valueAllowUnset: true">
+                                        <!--<option value="10">10</option>
                                         <option value="20">20</option>
                                         <option value="30">30</option>
                                         <option value="40">40</option>
-                                        <option value="50">50</option>
+                                        <option value="50">50</option>-->
                                     </select>
                                 </div>
 
@@ -205,15 +207,32 @@
 
     <script type="text/javascript">
         var viewModel = {
-            userName: ko.observable(""),        // Initially blank
-            userPassword: ko.observable(""), // Prepopulate
+            AC_NAME: ko.observable(""),        
+            AC_ADDRESS: ko.observable(""),
+            AC_MAN01: ko.observable(""),
+            AC_PHONENUMBER01: ko.observable(""),
+            AC_EMAIL01: ko.observable(""),
+            AC_PAY: ko.observable(""),
+            AC_DESC: ko.observable(""),
+            AC_TYPE_CODES: ko.observable(""),
+            AC_TYPE_CODE: ko.observable(""),
+            
         };
 
-        viewModel.userName = "safsdsdf";
+        viewModel.AC_NAME = "safsdsdf";
+        viewModel.AC_TYPE_CODES = ['Japan', 'Bolivia', 'New Zealand'];
+        viewModel.AC_TYPE_CODE = "Japan";
 
         ko.applyBindings({
-            userName:viewModel.userName,
-            userPassword:viewModel.userPassword
+            AC_NAME: viewModel.AC_NAME,
+            AC_ADDRESS: viewModel.AC_ADDRESS,
+            AC_MAN01: viewModel.AC_MAN01,
+            AC_PHONENUMBER01: viewModel.AC_PHONENUMBER01,
+            AC_EMAIL01: viewModel.AC_EMAIL01,
+            AC_PAY: viewModel.AC_PAY,
+            AC_DESC: viewModel.AC_DESC,
+            AC_TYPE_CODES: viewModel.AC_TYPE_CODES,
+            AC_TYPE_CODE: viewModel.AC_TYPE_CODE,
         });
 
     </script>
