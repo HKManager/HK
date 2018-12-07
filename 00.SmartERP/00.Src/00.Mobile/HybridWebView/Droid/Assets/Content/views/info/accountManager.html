@@ -24,6 +24,16 @@
     <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
     <link href="../../css/themes/all-themes.css" rel="stylesheet" />
 
+    <style type="text/css">
+        .row-highlight {
+            background-color: Yellow;
+        }
+
+        .row-click {
+            background-color: #8BBDFF;
+        }
+    </style>
+
 </head>
 
 
@@ -126,14 +136,14 @@
 
                                     <td style="width:25%;">
                                         <div class="form-group" style="margin:5px;width:100%;">
-                                            <button type="button" class="btn btn-primary m-t-15 waves-effect" style="width:90%;">수정</button>
+                                            <button type="button" class="btn btn-primary m-t-15 waves-effect" style="width:95%;">수정</button>
                                         </div>
 
                                     </td>
 
                                     <td style="width:25%;">
                                         <div class="form-group" style="margin:5px;width:100%;">
-                                            <button type="button" class="btn btn-primary m-t-15 waves-effect" style="width:90%;">삭제</button>
+                                            <button type="button" class="btn btn-primary m-t-15 waves-effect" style="width:95%;">삭제</button>
                                         </div>
                                     </td>
                                 </tr>
@@ -156,7 +166,7 @@
                         </ul>-->
                     </div>
                     <div class="body">
-                        <table id="example-table" class="table table-striped">
+                        <table id="example-table" class="table">
                             <thead>
                                 <tr>
                                     <th>거래처명</th>
@@ -167,7 +177,7 @@
                             </thead>
                             <tbody data-bind="foreach: result">
 
-                                <tr>
+                                <tr data-bind='click: setEditItem'>
                                     <td data-bind="text: AC_NAME"></td>
                                     <td data-bind="text: AC_TYPE_NAME "></td>
                                     <td data-bind="text: AC_PHONENUMBER01 "></td>
@@ -265,14 +275,30 @@
             var str = '{"id":1,"name":"Test1"},{"id":2,"name":"Test2"}';
             var jsonObj = $.parseJSON('[' + str + ']');
 
-            //var json = [{ "AC_SN": 1, "AC_ID": "", "AC_TYPE_CODE": "001", "AC_TYPE_NAME": null, "AC_NAME": "등록 거래처", "AC_OWNER": "", "AC_ADDRESS": "", "AC_MAN01": "ㅅㄱㄹ", "AC_PHONENUMBER01": "", "AC_EMAIL01": "", "AC_MAN02": "", "AC_PHONENUMBER02": "", "AC_EMAIL02": "", "AC_PAY": 0.0, "AC_LOT": 0.0, "AC_LAT": 0.0, "AC_UPDATE_SN": 0, "AC_UPDATE_DATE": "0001-01-24T08:34:00.1033347Z", "AC_USEYN": false, "AC_DESC": "" }, { "AC_SN": 2, "AC_ID": "", "AC_TYPE_CODE": "001", "AC_TYPE_NAME": null, "AC_NAME": "ㅛㅗㅕ", "AC_OWNER": "", "AC_ADDRESS": "", "AC_MAN01": "ㅓㅓㅕㅐㅐㅓㅕㅑ", "AC_PHONENUMBER01": "", "AC_EMAIL01": "", "AC_MAN02": "", "AC_PHONENUMBER02": "", "AC_EMAIL02": "", "AC_PAY": 0.0, "AC_LOT": 0.0, "AC_LAT": 0.0, "AC_UPDATE_SN": 0, "AC_UPDATE_DATE": "0001-01-24T08:34:00.104004Z", "AC_USEYN": false, "AC_DESC": "" }];
+            var json = [{ "AC_SN": 1, "AC_ID": "", "AC_TYPE_CODE": "001", "AC_TYPE_NAME": null, "AC_NAME": "등록 거래처", "AC_OWNER": "", "AC_ADDRESS": "", "AC_MAN01": "ㅅㄱㄹ", "AC_PHONENUMBER01": "", "AC_EMAIL01": "", "AC_MAN02": "", "AC_PHONENUMBER02": "", "AC_EMAIL02": "", "AC_PAY": 0.0, "AC_LOT": 0.0, "AC_LAT": 0.0, "AC_UPDATE_SN": 0, "AC_UPDATE_DATE": "0001-01-24T08:34:00.1033347Z", "AC_USEYN": false, "AC_DESC": "" }, { "AC_SN": 2, "AC_ID": "", "AC_TYPE_CODE": "001", "AC_TYPE_NAME": null, "AC_NAME": "ㅛㅗㅕ", "AC_OWNER": "", "AC_ADDRESS": "", "AC_MAN01": "ㅓㅓㅕㅐㅐㅓㅕㅑ", "AC_PHONENUMBER01": "", "AC_EMAIL01": "", "AC_MAN02": "", "AC_PHONENUMBER02": "", "AC_EMAIL02": "", "AC_PAY": 0.0, "AC_LOT": 0.0, "AC_LAT": 0.0, "AC_UPDATE_SN": 0, "AC_UPDATE_DATE": "0001-01-24T08:34:00.104004Z", "AC_USEYN": false, "AC_DESC": "" }];
 
             
 
-            //ko.applyBindings({
-            //    result: json
-            //});
+            ko.applyBindings({
+                result: json
+            });
+
+
+            var tr = $('#example-table').find('tr');
+            tr.bind('mouseover', function (event) {
+                tr.removeClass('row-highlight');
+            });
+            tr.bind('click', function (e) {
+                tr.removeClass('row-click');
+                var tds = $(this).addClass('row-click').find('td');
+            });
         });
+
+        this.setEditItem = function (item) {
+            var abc = 0;
+
+            
+        }
 
             //$(document).ready(function () {
             //    var json = [{ "name": "name1", "score": "30" }, { "name": "name2", "score": "50" }];

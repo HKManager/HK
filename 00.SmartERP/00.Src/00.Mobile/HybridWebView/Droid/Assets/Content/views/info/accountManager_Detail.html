@@ -122,15 +122,11 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <select class="form-control show-tick" data-bind="options: AC_TYPE_CODES,
+                                    <select id="AC_TYPE_CODE" class="form-control show-tick" data-bind="options: AC_TYPE_CODES,
                                                                                        optionsCaption: '유형을 선택해 주세요',
                                                                                        value: AC_TYPE_CODE,
+                                                                                       optionsText: 'name',
                                                                                        valueAllowUnset: true">
-                                        <!--<option value="10">10</option>
-                                        <option value="20">20</option>
-                                        <option value="30">30</option>
-                                        <option value="40">40</option>
-                                        <option value="50">50</option>-->
                                     </select>
                                 </div>
 
@@ -186,7 +182,7 @@
 
                                         <tr>
                                             <td style="width:50%;">
-                                                <button type="button" class="btn btn-primary m-t-15 waves-effect" style="width:100%;margin-right:10px;">저장</button>
+                                                <button type="button" class="btn btn-primary m-t-15 waves-effect" style="width:100%;margin-right:10px;" onclick="Create()">저장</button>
                                             </td>
 
                                             <td style="width:50%;">
@@ -206,35 +202,63 @@
     </div>
 
     <script type="text/javascript">
-        var viewModel = {
-            AC_NAME: ko.observable(""),        
-            AC_ADDRESS: ko.observable(""),
-            AC_MAN01: ko.observable(""),
-            AC_PHONENUMBER01: ko.observable(""),
-            AC_EMAIL01: ko.observable(""),
-            AC_PAY: ko.observable(""),
-            AC_DESC: ko.observable(""),
-            AC_TYPE_CODES: ko.observable(""),
-            AC_TYPE_CODE: ko.observable(""),
-            
+        ko.observableArray.fn.find = function (prop, data) {
+            var valueToMatch = data[prop];
+            return ko.utils.arrayFirst(this(), function (item) {
+                return item[prop] === valueToMatch;
+            });
         };
 
-        viewModel.AC_NAME = "safsdsdf";
-        viewModel.AC_TYPE_CODES = ['Japan', 'Bolivia', 'New Zealand'];
-        viewModel.AC_TYPE_CODE = "Japan";
+        function ViewModel() {
+            this.AC_NAME = ko.observable(_AC_NAME);
+            this.AC_ADDRESS = ko.observable(_AC_ADDRESS);
+            this.AC_MAN01 = ko.observable(_AC_MAN01);
+            this.AC_PHONENUMBER01 = ko.observable(_AC_PHONENUMBER01);
+            this.AC_EMAIL01 = ko.observable(_AC_EMAIL01);
+            this.AC_PAY = ko.observable(_AC_PAY);
+            this.AC_DESC = ko.observable(_AC_DESC);
+            this.AC_TYPE_CODES = ko.observableArray(_AC_TYPE_CODES);
+            this.AC_TYPE_CODE = ko.observable(this.AC_TYPE_CODES.find("id", _AC_TYPE_CODE));
+        };
 
-        ko.applyBindings({
-            AC_NAME: viewModel.AC_NAME,
-            AC_ADDRESS: viewModel.AC_ADDRESS,
-            AC_MAN01: viewModel.AC_MAN01,
-            AC_PHONENUMBER01: viewModel.AC_PHONENUMBER01,
-            AC_EMAIL01: viewModel.AC_EMAIL01,
-            AC_PAY: viewModel.AC_PAY,
-            AC_DESC: viewModel.AC_DESC,
-            AC_TYPE_CODES: viewModel.AC_TYPE_CODES,
-            AC_TYPE_CODE: viewModel.AC_TYPE_CODE,
-        });
+        var _AC_NAME = "";
+        var _AC_ADDRESS = "";
+        var _AC_MAN01 = "";
+        var _AC_PHONENUMBER01 = "";
+        var _AC_EMAIL01 = "";
+        var _AC_PAY = "";
+        var _AC_DESC = "";
+        var _AC_TYPE_CODES =null;
+        var _AC_TYPE_CODE = "";
 
+        var vm = null;
+
+        $(document).ready(function () {
+            _AC_NAME = "asdfasdf";
+            _AC_TYPE_CODES = [
+                { id: 1, name: "one" },
+                { id: 2, name: "two" },
+                { id: 3, name: "three" }
+            ];
+            _AC_TYPE_CODE = { id: 2, name: "two" };
+
+            vm = new ViewModel();
+
+            ko.applyBindings(vm);
+        }); 
+
+
+        function Create() {
+            var data = ko.toJS(vm);
+
+            var name = ViewModel.AC_NAME;
+
+
+            //var data = JSON.stringify(obj);
+
+            //log("Sending Data:" + data);
+            invokeCSharpAction(data);
+        }
     </script>
     
 
