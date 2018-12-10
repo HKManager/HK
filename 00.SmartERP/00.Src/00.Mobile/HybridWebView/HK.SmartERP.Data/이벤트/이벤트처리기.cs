@@ -23,8 +23,12 @@ namespace HK.SmartERP.Data
                             이벤트.data = 쿼리_거래처.GetInstance().조회(string.Empty, string.Empty);
                             result = JsonTool.Serialize(이벤트);
                             break;
-                            case HARDCODE.화면.상품:
+                        case HARDCODE.화면.상품:
                             이벤트.data = 쿼리_상품.GetInstance().조회(string.Empty, string.Empty);
+                            break;
+                        case HARDCODE.화면.매입:
+                            break;
+                        case HARDCODE.화면.매출:
                             break;
                     }
                     break;
@@ -45,6 +49,10 @@ namespace HK.SmartERP.Data
                             이벤트.data = 쿼리_상품.GetInstance().등록(상품데이터).ToString();
                             result = JsonTool.Serialize(이벤트);
                             break;
+                        case HARDCODE.화면.매입:
+                            break;
+                        case HARDCODE.화면.매출:
+                            break;
                     }
                     break;
                 case HARDCODE.이벤트.수정:
@@ -55,6 +63,12 @@ namespace HK.SmartERP.Data
                             이벤트.data = 쿼리_거래처.GetInstance().수정(거래처데이터).ToString();
                             result = JsonTool.Serialize(이벤트);
                             break;
+                        case HARDCODE.화면.상품:
+                            break;
+                        case HARDCODE.화면.매입:
+                            break;
+                        case HARDCODE.화면.매출:
+                            break;
                     }
                     break;
                 case HARDCODE.이벤트.삭제:
@@ -64,6 +78,12 @@ namespace HK.SmartERP.Data
                             var 거래처데이터 = JsonTool.Deserialize<DATA_Account>(이벤트.data);
                             이벤트.data = 쿼리_거래처.GetInstance().삭제(거래처데이터).ToString();
                             result = JsonTool.Serialize(이벤트);
+                            break;
+                        case HARDCODE.화면.상품:
+                            break;
+                        case HARDCODE.화면.매입:
+                            break;
+                        case HARDCODE.화면.매출:
                             break;
                     }
                     break;
