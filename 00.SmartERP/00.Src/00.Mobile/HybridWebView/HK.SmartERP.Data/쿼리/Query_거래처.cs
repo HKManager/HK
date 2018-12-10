@@ -26,7 +26,7 @@ namespace HK.SmartERP.Data
 	            , ac.AC_LAT AC_LAT
 	            , ac.AC_UPDATE_SN AC_UPDATE_SN
 	            , ac.AC_UPDATE_DATE AC_UPDATE_DATE
-	            , CASE ac.AC_USEYN WHEN 'Y' THEN 'TRUE' ELSE 'FALSE' END AC_USEYN
+	            , ac.AC_USEYN AC_USEYN
 	            , ac.AC_DESC AC_DESC
             FROM account ac
             WHERE (ac.AC_TYPE_CODE = '{0}'  OR {0} IS NULL)
@@ -104,9 +104,9 @@ namespace HK.SmartERP.Data
 
 
         public const string Delete = @"
-            DELETE 
-            FROM GOODS
-            WHERE GOODS_SN = '{0}'
+            UPDATE account
+            SET AC_USEYN = '0'
+            WHERE AC_SN = {0}
         ";
 
         public const string UpdateAddPrice = @"

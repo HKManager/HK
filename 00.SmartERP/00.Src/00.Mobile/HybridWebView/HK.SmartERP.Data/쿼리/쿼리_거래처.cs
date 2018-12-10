@@ -48,6 +48,8 @@ namespace HK.SmartERP.Data.쿼리
 
             var result = 연결자_Sqlite.DB연결자.Query<DATA_Account>(query).ToList();
 
+            //result = result.Where(t => t.AC_USEYN).ToList();
+
             return JsonTool.Serialize(result);
         }
 
@@ -76,6 +78,8 @@ namespace HK.SmartERP.Data.쿼리
         {
             try
             {
+                DATA_Account account = (DATA_Account)data;
+
                 연결자_Sqlite.DB연결자.Update(data);
             }
             catch (Exception ex)
@@ -88,7 +92,30 @@ namespace HK.SmartERP.Data.쿼리
 
         public bool 삭제(object data)
         {
-            throw new NotImplementedException();
+            try
+            {
+                DATA_Account account = (DATA_Account)data;
+
+                //연결자_Sqlite.DB연결자.Delete(data);
+
+                var query = string.Format(Query_거래처.Delete, account.AC_SN);
+
+                //연결자_Sqlite.DB연결자.Update(data);
+
+                SQLiteCommand commnad = 연결자_Sqlite.DB연결자.CreateCommand(query);
+
+                var result = commnad.ExecuteNonQuery();
+
+
+
+
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+
+            return true;
         }
 
 

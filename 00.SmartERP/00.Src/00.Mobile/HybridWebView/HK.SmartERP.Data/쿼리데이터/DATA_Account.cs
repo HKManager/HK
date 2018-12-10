@@ -6,7 +6,7 @@ namespace HK.SmartERP.Data
 {
     public class DATA_Account
     {
-        public long AC_SN { set; get; }
+        public long? AC_SN { set; get; }
 
         public string AC_ID { set; get; }
         public string AC_TYPE_CODE { set; get; }
@@ -23,11 +23,11 @@ namespace HK.SmartERP.Data
         public string AC_PHONENUMBER02 { set; get; }
         public string AC_EMAIL02 { set; get; }
 
-        public double AC_PAY { set; get; }
-        public double AC_LOT { set; get; }
-        public double AC_LAT { set; get; }
+        public double? AC_PAY { set; get; }
+        public double? AC_LOT { set; get; }
+        public double? AC_LAT { set; get; }
 
-        public long AC_UPDATE_SN { set; get; }
+        public long? AC_UPDATE_SN { set; get; }
         public DateTime? AC_UPDATE_DATE { set; get; }
         public bool AC_USEYN { set; get; }
         public string AC_DESC { set; get; }

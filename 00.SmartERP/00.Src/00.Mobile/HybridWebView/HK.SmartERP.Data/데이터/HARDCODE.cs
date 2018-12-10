@@ -20,6 +20,11 @@ namespace HK.SmartERP.Data
         {
             public const string 거래처 = "ACCOUNT";
         }
+
+        public static class 명령문
+        {
+            public const string 표출 = "SHOW";
+        }
     }
 
 }

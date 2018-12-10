@@ -117,6 +117,7 @@
                             <div class="col-sm-12">
                                 <div class="form-group">
                                     <div class="form-line">
+                                        <input id="AC_SN" type="hidden" class="control-detail form-control" placeholder="거래처 SN" data-bind="value: AC_SN"  />
                                         <input id="AC_NAME" type="text" class="control-detail form-control" placeholder="거래처 명" data-bind="value: AC_NAME" />
                                     </div>
                                 </div>
@@ -184,7 +185,7 @@
 
                                         <tr>
                                             <td style="width:50%;">
-                                                <button type="button" class="btn btn-primary m-t-15 waves-effect" style="width:100%;margin-right:10px;" onclick="logForXamarin();">저장</button>
+                                                <button type="button" class="btn btn-primary m-t-15 waves-effect" style="width:100%;margin-right:10px;" onclick="Create();">저장</button>
                                             </td>
 
                                             <td style="width:50%;">
@@ -212,6 +213,7 @@
         };
 
         function ViewModel() {
+            this.AC_SN = ko.observable("");
             this.AC_NAME = ko.observable("");
             this.AC_ADDRESS = ko.observable("");
             this.AC_MAN01 = ko.observable("");
@@ -275,12 +277,14 @@
 
 
         function Create() {
-            var data = ko.toJS(vm);
+            var objectData = ko.toJS(vm);
 
-            var name = ViewModel.AC_NAME;
+            var jSonData = JSON.stringify(objectData);
 
+            //var name = ViewModel.AC_NAME;
+            var obj = { handle: "03", view: "ACCOUNT", data: jSonData  };
 
-            //var data = JSON.stringify(obj);
+            var data = JSON.stringify(obj);
 
             //log("Sending Data:" + data);
             invokeCSharpAction(data);
@@ -320,6 +324,7 @@
                     case "ALL":
                         var data = jsonObj.value;
                         vm.AC_NAME(data.AC_NAME);
+                        vm.AC_SN(data.AC_SN);
                         break;
                 }
 

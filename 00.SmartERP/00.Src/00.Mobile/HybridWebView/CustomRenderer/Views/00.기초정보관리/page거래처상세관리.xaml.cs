@@ -37,14 +37,36 @@ namespace CustomRenderer
 
         private void ShowData(string str)
         {
+            var data = JsonTool.Deserialize<이벤트데이터>(str);
 
+            if (string.IsNullOrEmpty(_data))
+            {
+                이벤트데이터 데이터 = new 이벤트데이터();
+                데이터.view = HARDCODE.화면.거래처;
+                데이터.handle = HARDCODE.이벤트.등록;
+                데이터.data = data.data;
+
+                var json = JsonTool.Serialize(데이터);
+
+                이벤트처리기.이벤트처리(json);
+            } else
+            {
+                이벤트데이터 데이터 = new 이벤트데이터();
+                데이터.view = HARDCODE.화면.거래처;
+                데이터.handle = HARDCODE.이벤트.수정;
+                데이터.data = data.data;
+
+                var json = JsonTool.Serialize(데이터);
+
+                이벤트처리기.이벤트처리(json);
+            }
         }
 
         private void onShowPage()
         {
             이벤트데이터 데이터 = new 이벤트데이터();
 
-            데이터.handle = "SHOW";
+            데이터.handle = HARDCODE.명령문.표출;
             데이터.view = "AC_TYPE_CODES";
             데이터.value = CodeManager.GetAllList_2nd("015");
 
@@ -54,7 +76,7 @@ namespace CustomRenderer
 
             if (!string.IsNullOrEmpty(_data))
             {
-                데이터.handle = "SHOW";
+                데이터.handle = HARDCODE.명령문.표출;
                 데이터.view = "ALL";
                 데이터.value = JsonTool.Deserialize<DATA_Account>(_data);
 
