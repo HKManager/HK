@@ -42,6 +42,8 @@ namespace HK.SmartERP.Data
                     {
                         case HARDCODE.화면.거래처:
                             var 거래처데이터 = JsonTool.Deserialize<DATA_Account>(이벤트.data);
+                            이벤트.data = 쿼리_거래처.GetInstance().수정(거래처데이터).ToString();
+                            result = JsonTool.Serialize(이벤트);
                             break;
                     }
                     break;

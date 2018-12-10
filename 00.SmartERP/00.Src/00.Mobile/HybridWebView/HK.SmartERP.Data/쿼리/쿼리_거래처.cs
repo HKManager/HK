@@ -59,8 +59,6 @@ namespace HK.SmartERP.Data.쿼리
             {
                 DATA_Account account = (DATA_Account)data;
 
-                //연결자_Sqlite.DB연결자.Insert(data);
-
                 var query = string.Format(Query_거래처.Insert, account.AC_NAME, account.AC_TYPE_CODE, account.AC_ADDRESS, account.AC_MAN01, account.AC_PHONENUMBER01, account.AC_EMAIL01, account.AC_PAY, account.AC_DESC);
 
                 SQLiteCommand commnad = 연결자_Sqlite.DB연결자.CreateCommand(query);
@@ -81,7 +79,11 @@ namespace HK.SmartERP.Data.쿼리
             {
                 DATA_Account account = (DATA_Account)data;
 
-                연결자_Sqlite.DB연결자.Update(data);
+                var query = string.Format(Query_거래처.Update, account.AC_NAME, account.AC_TYPE_CODE, account.AC_ADDRESS, account.AC_MAN01, account.AC_PHONENUMBER01, account.AC_EMAIL01, account.AC_PAY, account.AC_DESC, account.AC_SN);
+
+                SQLiteCommand commnad = 연결자_Sqlite.DB연결자.CreateCommand(query);
+
+                var result = commnad.ExecuteNonQuery();
             }
             catch (Exception ex)
             {
@@ -97,19 +99,11 @@ namespace HK.SmartERP.Data.쿼리
             {
                 DATA_Account account = (DATA_Account)data;
 
-                //연결자_Sqlite.DB연결자.Delete(data);
-
                 var query = string.Format(Query_거래처.Delete, account.AC_SN);
-
-                //연결자_Sqlite.DB연결자.Update(data);
 
                 SQLiteCommand commnad = 연결자_Sqlite.DB연결자.CreateCommand(query);
 
                 var result = commnad.ExecuteNonQuery();
-
-
-
-
             }
             catch (Exception ex)
             {
@@ -118,7 +112,5 @@ namespace HK.SmartERP.Data.쿼리
 
             return true;
         }
-
-
     }
 }

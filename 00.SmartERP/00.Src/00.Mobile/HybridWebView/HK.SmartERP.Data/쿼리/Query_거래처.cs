@@ -61,25 +61,15 @@ namespace HK.SmartERP.Data
 
         public const string Update = @"
             UPDATE account
-            SET    AC_ID = '{0}',
+            SET    AC_NAME = '{0}',
                    AC_TYPE_CODE = '{1}',
-                   AC_NAME = '{2}',
-                   AC_OWNER = '{3}',
-                   AC_ADDRESS = '{4}',
-                   AC_MAN01 = '{5}',
-                   AC_PHONENUMBER01 = '{6}',
-                   AC_EMAIL01 = '{7}',
-                   AC_MAN02 = '{8}',
-                   AC_PHONENUMBER02 = '{9}',
-                   AC_EMAIL02 = '{10}',
-                   AC_LOT = '{11}',
-                   AC_LAT = '{12}',
-                   AC_UPDATE_SN = {13},
-                   AC_UPDATE_DATE = '{14}',
-                   AC_USEYN = '{15}',
-                   AC_DESC = '{16}',
-                   AC_PAY = '{17}'
-            WHERE  AC_SN = {18}
+                   AC_ADDRESS = '{2}',
+                   AC_MAN01 = '{3}',
+                   AC_PHONENUMBER01 = '{4}',
+                   AC_EMAIL01 = '{5}',
+                   AC_PAY = '{6}',
+                   AC_DESC = '{7}'
+            WHERE  AC_SN = {8}
         ";
 
 
