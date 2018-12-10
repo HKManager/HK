@@ -136,7 +136,7 @@
 
                                     <td style="width:25%;">
                                         <div class="form-group" style="margin:5px;width:100%;">
-                                            <button type="button" class="btn btn-primary m-t-15 waves-effect" style="width:95%;">수정</button>
+                                            <button type="button" class="btn btn-primary m-t-15 waves-effect" onclick="Update();" style="width:95%;">수정</button>
                                         </div>
 
                                     </td>
@@ -260,6 +260,17 @@
             }
         }
 
+        function Update() {
+
+            var item = JSON.stringify(selectItem);
+
+            var obj = { handle: "06", view: "ACCOUNT", data: item };
+
+            var data = JSON.stringify(obj);
+
+            invokeCSharpAction(data);
+        }
+
         function logForXamarin(str) {
             //alert(str);
             //$('#result').text($('#result').text() + " " + str);
@@ -268,6 +279,15 @@
 
             ko.applyBindings({
                 result: jsonObj
+            });
+
+            var tr = $('#example-table').find('tr');
+            tr.bind('mouseover', function (event) {
+                tr.removeClass('row-highlight');
+            });
+            tr.bind('click', function (e) {
+                tr.removeClass('row-click');
+                var tds = $(this).addClass('row-click').find('td');
             });
         }
 
@@ -281,29 +301,19 @@
             var str = '{"id":1,"name":"Test1"},{"id":2,"name":"Test2"}';
             var jsonObj = $.parseJSON('[' + str + ']');
 
-            //var json = [{ "AC_SN": 1, "AC_ID": "", "AC_TYPE_CODE": "001", "AC_TYPE_NAME": null, "AC_NAME": "등록 거래처", "AC_OWNER": "", "AC_ADDRESS": "", "AC_MAN01": "ㅅㄱㄹ", "AC_PHONENUMBER01": "", "AC_EMAIL01": "", "AC_MAN02": "", "AC_PHONENUMBER02": "", "AC_EMAIL02": "", "AC_PAY": 0.0, "AC_LOT": 0.0, "AC_LAT": 0.0, "AC_UPDATE_SN": 0, "AC_UPDATE_DATE": "0001-01-24T08:34:00.1033347Z", "AC_USEYN": false, "AC_DESC": "" }, { "AC_SN": 2, "AC_ID": "", "AC_TYPE_CODE": "001", "AC_TYPE_NAME": null, "AC_NAME": "ㅛㅗㅕ", "AC_OWNER": "", "AC_ADDRESS": "", "AC_MAN01": "ㅓㅓㅕㅐㅐㅓㅕㅑ", "AC_PHONENUMBER01": "", "AC_EMAIL01": "", "AC_MAN02": "", "AC_PHONENUMBER02": "", "AC_EMAIL02": "", "AC_PAY": 0.0, "AC_LOT": 0.0, "AC_LAT": 0.0, "AC_UPDATE_SN": 0, "AC_UPDATE_DATE": "0001-01-24T08:34:00.104004Z", "AC_USEYN": false, "AC_DESC": "" }];
+            var json = [{ "AC_SN": 1, "AC_ID": "", "AC_TYPE_CODE": "001", "AC_TYPE_NAME": null, "AC_NAME": "등록 거래처", "AC_OWNER": "", "AC_ADDRESS": "", "AC_MAN01": "ㅅㄱㄹ", "AC_PHONENUMBER01": "", "AC_EMAIL01": "", "AC_MAN02": "", "AC_PHONENUMBER02": "", "AC_EMAIL02": "", "AC_PAY": 0.0, "AC_LOT": 0.0, "AC_LAT": 0.0, "AC_UPDATE_SN": 0, "AC_UPDATE_DATE": "0001-01-24T08:34:00.1033347Z", "AC_USEYN": false, "AC_DESC": "" }, { "AC_SN": 2, "AC_ID": "", "AC_TYPE_CODE": "001", "AC_TYPE_NAME": null, "AC_NAME": "ㅛㅗㅕ", "AC_OWNER": "", "AC_ADDRESS": "", "AC_MAN01": "ㅓㅓㅕㅐㅐㅓㅕㅑ", "AC_PHONENUMBER01": "", "AC_EMAIL01": "", "AC_MAN02": "", "AC_PHONENUMBER02": "", "AC_EMAIL02": "", "AC_PAY": 0.0, "AC_LOT": 0.0, "AC_LAT": 0.0, "AC_UPDATE_SN": 0, "AC_UPDATE_DATE": "0001-01-24T08:34:00.104004Z", "AC_USEYN": false, "AC_DESC": "" }];
 
             
 
-            //ko.applyBindings({
-            //    result: json
-            //});
-
-
-            var tr = $('#example-table').find('tr');
-            tr.bind('mouseover', function (event) {
-                tr.removeClass('row-highlight');
-            });
-            tr.bind('click', function (e) {
-                tr.removeClass('row-click');
-                var tds = $(this).addClass('row-click').find('td');
+            ko.applyBindings({
+                result: json
             });
         });
 
-        this.setEditItem = function (item) {
-            var abc = 0;
+        var selectItem;
 
-            
+        this.setEditItem = function (item) {
+            selectItem = item;
         }
 
             //$(document).ready(function () {

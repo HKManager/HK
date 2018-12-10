@@ -89,6 +89,7 @@
     <Compile Include="JSBridge.cs" />
     <Compile Include="CustomRenderers\VoiceButtonRenderer.cs" />
     <Compile Include="SQLite\SQLiteHelper.cs" />
+    <Compile Include="WevViewCllientCallback.cs" />
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\Content\plugins\bootstrap\fonts\glyphicons-halflings-regular.eot" />

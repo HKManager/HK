@@ -9,7 +9,7 @@ namespace CustomRenderer
 
         public event Action<string> ShowData;
 
-        public event Action<HybridWebView> ShowPage;
+        public event Action OnLoadPage;
 
 		public static readonly BindableProperty UriProperty = BindableProperty.Create (
 			propertyName: "Uri",
@@ -45,9 +45,9 @@ namespace CustomRenderer
             ShowData?.Invoke(data);
         }
 
-        public void LoadPage(HybridWebView page)
+        public void LoadPage()
         {
-            ShowPage?.Invoke(page);
+            OnLoadPage?.Invoke();
         }
 	}
 }

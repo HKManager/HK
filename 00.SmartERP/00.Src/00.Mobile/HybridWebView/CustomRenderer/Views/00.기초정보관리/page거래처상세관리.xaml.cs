@@ -15,7 +15,7 @@ namespace CustomRenderer
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class page거래처상세관리 : ContentPage
     {
-        private string data = string.Empty;
+        private string _data = string.Empty;
 
         public page거래처상세관리(string data)
         {
@@ -25,10 +25,24 @@ namespace CustomRenderer
 
             hybridWebView.BatchBegin();
 
-            data = data;
+            hybridWebView.OnLoadPage += onShowPage;
+
+            _data = data;
+
+            //Account = (DATA_Account)data;
         }
 
         protected override void OnAppearing()
+        {
+            
+        }
+
+        private void ShowData(string str)
+        {
+
+        }
+
+        private void onShowPage()
         {
             이벤트데이터 데이터 = new 이벤트데이터();
 
@@ -40,21 +54,18 @@ namespace CustomRenderer
 
             hybridWebView.ShowResult(type);
 
-            if (!string.IsNullOrEmpty(data))
+            if (!string.IsNullOrEmpty(_data))
             {
                 데이터.handle = "SHOW";
                 데이터.view = "ALL";
-                데이터.data = data;
+                데이터.value = JsonTool.Deserialize<DATA_Account>(_data);
+
+                var data = JsonTool.Serialize(데이터);
 
                 hybridWebView.ShowResult(data);
             }
 
             base.OnAppearing();
-        }
-
-        private void ShowData(string str)
-        {
-
         }
     }
 }

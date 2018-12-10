@@ -6,6 +6,7 @@ using Android.Content;
 using Java.Lang;
 using Android.OS;
 using Android.Webkit;
+using System;
 
 [assembly: ExportRenderer(typeof(HybridWebView), typeof(HybridWebViewRenderer))]
 namespace CustomRenderer.Droid
@@ -16,6 +17,8 @@ namespace CustomRenderer.Droid
         Context _context;
 
         JSBridge brige = null;
+
+        WevViewCllientCallback webViewCallBack = new WevViewCllientCallback();
 
         public HybridWebViewRenderer(Context context) : base(context)
         {
@@ -46,15 +49,24 @@ namespace CustomRenderer.Droid
                 brige = new JSBridge(this);
                 brige.ShowData += onShowData;
 
+                webViewCallBack.PageLoaded += delegate (object sender, EventArgs ex) {
+
+
+                    brige.LoadPage();
+
+                    // What to do next? 
+                    // Do the things you want to do after PageIsLoaded  
+                };
+
+                Control.SetWebViewClient(webViewCallBack);
+
                 Control.AddJavascriptInterface(brige, "jsBridge");
                 Control.LoadUrl(string.Format("file:///android_asset/Content/views/{0}", Element.Uri));
                 //Control.LoadUrl(string.Format("file:///android_asset/Game/{0}", Element.Uri));
                 InjectJS(JavaScriptFunction);
             }
         }
-
-
-
+               
         private void onShowData(string data)
         {
             data = data.Replace(@"\", "");

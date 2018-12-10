@@ -11,12 +11,21 @@ namespace CustomRenderer.Droid
 
         public event Action<string> ShowData;
 
-		public JSBridge (HybridWebViewRenderer hybridRenderer)
+        HybridWebViewRenderer _hybridRenderer;
+
+        public JSBridge (HybridWebViewRenderer hybridRenderer)
 		{
 			hybridWebViewRenderer = new WeakReference <HybridWebViewRenderer> (hybridRenderer);
 
-            hybridRenderer.Element.ShowData += onShowData;
+            _hybridRenderer = hybridRenderer;
 
+            _hybridRenderer.Element.ShowData += onShowData;
+
+        }
+
+        public void LoadPage()
+        {
+            _hybridRenderer.Element.LoadPage();
         }
 
         private void onShowData(string data)
