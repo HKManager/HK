@@ -21,6 +21,8 @@ namespace CustomRenderer.Views
             hybridWebView.RegisterAction(data => ShowData(data));
 
             hybridWebView.BatchBegin();
+
+            hybridWebView.OnLoadPage += onLoadPage;
         }
 
         private void ShowData(string str)
@@ -50,6 +52,19 @@ namespace CustomRenderer.Views
             {
                 await Navigation.PushAsync(new page거래처상세관리(data));
             });   
+        }
+
+        private void onLoadPage()
+        {
+            이벤트데이터 데이터 = new 이벤트데이터();
+
+            데이터.view = HARDCODE.화면.거래처;
+            데이터.handle = HARDCODE.이벤트.전체조회;
+            데이터.data = string.Empty;
+
+            var data = JsonTool.Serialize(데이터);
+
+            ShowData(data);
         }
 
         //protected override void OnAppearing()

@@ -28,8 +28,6 @@ namespace CustomRenderer
             hybridWebView.OnLoadPage += onShowPage;
 
             _data = data;
-
-            //Account = (DATA_Account)data;
         }
 
         protected override void OnAppearing()
