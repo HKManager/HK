@@ -32,6 +32,8 @@ namespace HK.SmartERP.Data
                     {
                         case HARDCODE.화면.거래처:
                             var 거래처데이터 = JsonTool.Deserialize<DATA_Account>(이벤트.data);
+                            거래처데이터.AC_USEYN = true;
+                            이벤트.data = 쿼리_거래처.GetInstance().등록(거래처데이터).ToString();
                             break;
                     }
                     break;
@@ -48,7 +50,6 @@ namespace HK.SmartERP.Data
                     {
                         case HARDCODE.화면.거래처:
                             var 거래처데이터 = JsonTool.Deserialize<DATA_Account>(이벤트.data);
-                            거래처데이터.AC_USEYN = true;
                             이벤트.data = 쿼리_거래처.GetInstance().삭제(거래처데이터).ToString();
                             result = JsonTool.Serialize(이벤트);
                             break;

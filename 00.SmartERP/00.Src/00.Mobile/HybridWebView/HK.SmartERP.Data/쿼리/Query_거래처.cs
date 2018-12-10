@@ -37,24 +37,14 @@ namespace HK.SmartERP.Data
             INSERT INTO
                 account
                 (
-                    AC_ID
+                    AC_NAME
                     , AC_TYPE_CODE
-                    , AC_NAME
-                    , AC_OWNER
                     , AC_ADDRESS
                     , AC_MAN01
                     , AC_PHONENUMBER01
                     , AC_EMAIL01
-                    , AC_MAN02
-                    , AC_PHONENUMBER02
-                    , AC_EMAIL02
-                    , AC_LOT
-                    , AC_LAT
-                    , AC_UPDATE_SN
-                    , AC_UPDATE_DATE
-                    , AC_USEYN
-                    , AC_DESC
                     , AC_PAY
+                    , AC_DESC
                 )
                 VALUES
                 (
@@ -66,16 +56,6 @@ namespace HK.SmartERP.Data
                     , '{5}'
                     , '{6}'
                     , '{7}'
-                    , '{8}'
-                    , '{9}'
-                    , '{10}'
-                    , '{11}'
-                    , '{12}'
-                    , '{13}'
-                    , {14}
-                    , '{15}'
-                    , '{16}'
-                    , '{17}'
                 )
         ";
 

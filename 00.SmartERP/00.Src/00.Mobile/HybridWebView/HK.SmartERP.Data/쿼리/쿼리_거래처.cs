@@ -57,14 +57,15 @@ namespace HK.SmartERP.Data.쿼리
         {
             try
             {
-                연결자_Sqlite.DB연결자.Insert(data);
+                DATA_Account account = (DATA_Account)data;
 
-                //var query = 출고거래처.Insert;
+                //연결자_Sqlite.DB연결자.Insert(data);
 
-                //query = string.Format(query, data.AS_ID, data.AS_TYPE_CODE, data.AS_NAME, data.AS_OWNER, data.AS_ADDRESS, data.AS_MAN01, data.AS_PHONENUMBER01,
-                //    data.AS_EMAIL01, data.AS_MAN02, data.AS_PHONENUMBER02, data.AS_EMAIL02, data.AS_LOT, data.AS_LAT, data.AS_UPDATE_SN, data.AS_UPDATE_DATE, data.AS_USEYN, data.AS_DESC, data.AS_PAY);
+                var query = string.Format(Query_거래처.Insert, account.AC_NAME, account.AC_TYPE_CODE, account.AC_ADDRESS, account.AC_MAN01, account.AC_PHONENUMBER01, account.AC_EMAIL01, account.AC_PAY, account.AC_DESC);
 
-                //conn.Execute(query);
+                SQLiteCommand commnad = 연결자_Sqlite.DB연결자.CreateCommand(query);
+
+                var result = commnad.ExecuteNonQuery();
             }
             catch (Exception ex)
             {
