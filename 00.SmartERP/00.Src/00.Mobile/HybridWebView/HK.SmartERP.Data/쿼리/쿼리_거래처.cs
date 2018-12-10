@@ -1,4 +1,5 @@
-﻿using SQLite.Net;
+﻿using HK.SmartERP.LIB.Tools;
+using SQLite.Net;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,7 +7,7 @@ using System.Text;
 
 namespace HK.SmartERP.Data.쿼리
 {
-    public class 쿼리_거래처
+    public class 쿼리_거래처 : i쿼리
     {
         private static 쿼리_거래처 _instance;
 
@@ -18,17 +19,14 @@ namespace HK.SmartERP.Data.쿼리
             return _instance;
         }
 
-        public void 연결자설정(SQLiteConnection pConn)
-        {
-
-        }
-
-        public List<DATA_Account> 조회(string type_code, string account_name)
+        public string 조회(params object[] data)
         {
             var query = Query_거래처.GetList;
 
             // - 검색조건 만들기
             string strAccount_name = string.Empty;
+            string type_code = data[0].ToString();
+            string account_name = data[1].ToString();
 
             if (string.IsNullOrEmpty(type_code))
             {
@@ -50,10 +48,10 @@ namespace HK.SmartERP.Data.쿼리
 
             var result = 연결자_Sqlite.DB연결자.Query<DATA_Account>(query).ToList();
 
-            return result;
+            return JsonTool.Serialize(result);
         }
 
-        public bool 등록(DATA_Account data)
+        public bool 등록(object data)
         {
             try
             {
@@ -74,17 +72,10 @@ namespace HK.SmartERP.Data.쿼리
             return true;
         }
 
-        public bool 수정(DATA_Account data)
+        public bool 수정(object data)
         {
             try
             {
-                //var query = 출고거래처.Update;
-
-                //query = string.Format(query, data.AS_ID, data.AS_TYPE_CODE, data.AS_NAME, data.AS_OWNER, data.AS_ADDRESS, data.AS_MAN01, data.AS_PHONENUMBER01,
-                //    data.AS_EMAIL01, data.AS_MAN02, data.AS_PHONENUMBER02, data.AS_EMAIL02, data.AS_LOT, data.AS_LAT, data.AS_UPDATE_SN, data.AS_UPDATE_DATE, data.AS_USEYN, data.AS_DESC, data.AS_PAY, data.AS_SN);
-
-                //conn.Execute(query);
-
                 연결자_Sqlite.DB연결자.Update(data);
             }
             catch (Exception ex)
@@ -94,5 +85,12 @@ namespace HK.SmartERP.Data.쿼리
 
             return true;
         }
+
+        public bool 삭제(object data)
+        {
+            throw new NotImplementedException();
+        }
+
+
     }
 }

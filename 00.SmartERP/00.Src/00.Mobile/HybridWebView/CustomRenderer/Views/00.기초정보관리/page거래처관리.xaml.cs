@@ -32,7 +32,7 @@ namespace CustomRenderer.Views
             switch(데이터.handle)
             {
                 case HARDCODE.이벤트.화면호출:
-                    보기_거래처상세관리();
+                    보기_거래처상세관리(데이터.data);
                     break;
                 case HARDCODE.이벤트.전체조회:
                     hybridWebView.ShowResult(데이터.data);
@@ -44,12 +44,11 @@ namespace CustomRenderer.Views
             //hybridWebView.Eval($"logForXamarin({str})");
         }
 
-        void 보기_거래처상세관리()
+        void 보기_거래처상세관리(string data)
         {
             Device.BeginInvokeOnMainThread(async () =>
             {
-                await Navigation.PushAsync(new page거래처상세관리());
-
+                await Navigation.PushAsync(new page거래처상세관리(data));
             });   
         }
 

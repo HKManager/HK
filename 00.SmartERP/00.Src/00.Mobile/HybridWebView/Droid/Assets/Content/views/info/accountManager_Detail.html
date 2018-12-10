@@ -124,8 +124,9 @@
                                 <div class="form-group">
                                     <select id="AC_TYPE_CODE" class="form-control show-tick" data-bind="options: AC_TYPE_CODES,
                                                                                        optionsCaption: '유형을 선택해 주세요',
+                                                                                       optionsValue: 'CODE',
                                                                                        value: AC_TYPE_CODE,
-                                                                                       optionsText: 'name',
+                                                                                       optionsText: 'CODE_NAME',
                                                                                        valueAllowUnset: true">
                                     </select>
                                 </div>
@@ -182,7 +183,7 @@
 
                                         <tr>
                                             <td style="width:50%;">
-                                                <button type="button" class="btn btn-primary m-t-15 waves-effect" style="width:100%;margin-right:10px;" onclick="Create()">저장</button>
+                                                <button type="button" class="btn btn-primary m-t-15 waves-effect" style="width:100%;margin-right:10px;" onclick="logForXamarin();">저장</button>
                                             </td>
 
                                             <td style="width:50%;">
@@ -217,8 +218,8 @@
             this.AC_EMAIL01 = ko.observable(_AC_EMAIL01);
             this.AC_PAY = ko.observable(_AC_PAY);
             this.AC_DESC = ko.observable(_AC_DESC);
-            this.AC_TYPE_CODES = ko.observableArray(_AC_TYPE_CODES);
-            this.AC_TYPE_CODE = ko.observable(this.AC_TYPE_CODES.find("id", _AC_TYPE_CODE));
+            this.AC_TYPE_CODES = ko.observableArray([]);
+            this.AC_TYPE_CODE = ko.observable(this.AC_TYPE_CODES.find("CODE", _AC_TYPE_CODE));
         };
 
         var _AC_NAME = "";
@@ -228,23 +229,47 @@
         var _AC_EMAIL01 = "";
         var _AC_PAY = "";
         var _AC_DESC = "";
-        var _AC_TYPE_CODES =null;
+        var _AC_TYPE_CODES =[];
         var _AC_TYPE_CODE = "";
 
         var vm = null;
 
         $(document).ready(function () {
-            _AC_NAME = "asdfasdf";
-            _AC_TYPE_CODES = [
-                { id: 1, name: "one" },
-                { id: 2, name: "two" },
-                { id: 3, name: "three" }
-            ];
-            _AC_TYPE_CODE = { id: 2, name: "two" };
+            //_AC_NAME = "asdfasdf";
+            //_AC_TYPE_CODES = [
+            //    { id: 1, name: "one" },
+            //    { id: 2, name: "two" },
+            //    { id: 3, name: "three" }
+            //];
+            //_AC_TYPE_CODE = { id: 2, name: "two" };
+
+
+            //var temp = '{ "handle": "SHOW", "view": "AC_TYPE_CODES", "data": [{"CODE":"001","CODE_001":"015","CODE_002":"001","CODE_003":"---","CODE_NAME":"입고","CODE_TYPE":"","CODE_SORT":0,"CODE_USEYN":false,"CODE_UPDATE_SN":1,"CODE_UPDATE_DATE":"0001 - 01 - 24T08: 18: 12.3081354Z","CODE_DESC":""},{"CODE":"002","CODE_001":"015","CODE_002":"002","CODE_003":"-- - ","CODE_NAME":"출고","CODE_TYPE":"","CODE_SORT":0,"CODE_USEYN":false,"CODE_UPDATE_SN":1,"CODE_UPDATE_DATE":"0001 - 01 - 24T08: 18: 12.3081413Z","CODE_DESC":""}] }';
+
+            //var jsonObj = JSON.parse(temp);
+
+            //switch (jsonObj.view) {
+            //    case "AC_TYPE_CODES":
+            //        _AC_TYPE_CODES = jsonObj.data;
+            //        break;
+            //}
 
             vm = new ViewModel();
-
             ko.applyBindings(vm);
+
+
+            //var temp = '{ "handle": "SHOW", "view": "AC_TYPE_CODES", "data": [{"CODE":"001","CODE_001":"015","CODE_002":"001","CODE_003":"---","CODE_NAME":"입1111고","CODE_TYPE":"","CODE_SORT":0,"CODE_USEYN":false,"CODE_UPDATE_SN":1,"CODE_UPDATE_DATE":"0001 - 01 - 24T08: 18: 12.3081354Z","CODE_DESC":""},{"CODE":"002","CODE_001":"015","CODE_002":"002","CODE_003":"-- - ","CODE_NAME":"출고","CODE_TYPE":"","CODE_SORT":0,"CODE_USEYN":false,"CODE_UPDATE_SN":1,"CODE_UPDATE_DATE":"0001 - 01 - 24T08: 18: 12.3081413Z","CODE_DESC":""}] }';
+
+            //var jsonObj = JSON.parse(temp);
+
+            //switch (jsonObj.view) {
+            //    case "AC_TYPE_CODES":
+            //        _AC_TYPE_CODES = jsonObj.data;
+            //        vm.AC_TYPE_CODES(_AC_TYPE_CODES);
+            //        break;
+            //}
+
+            
         }); 
 
 
@@ -258,6 +283,48 @@
 
             //log("Sending Data:" + data);
             invokeCSharpAction(data);
+        }
+
+        function logForXamarin() {
+            //alert(str);
+            //$('#result').text($('#result').text() + " " + str);
+
+
+            //var str = '{ "handle": "SHOW", "view": "AC_TYPE_CODES", "data": [{"CODE":"001","CODE_001":"015","CODE_002":"001","CODE_003":"---","CODE_NAME":"입1111고","CODE_TYPE":"","CODE_SORT":0,"CODE_USEYN":false,"CODE_UPDATE_SN":1,"CODE_UPDATE_DATE":"0001 - 01 - 24T08: 18: 12.3081354Z","CODE_DESC":""},{"CODE":"002","CODE_001":"015","CODE_002":"002","CODE_003":"-- - ","CODE_NAME":"출고","CODE_TYPE":"","CODE_SORT":0,"CODE_USEYN":false,"CODE_UPDATE_SN":1,"CODE_UPDATE_DATE":"0001 - 01 - 24T08: 18: 12.3081413Z","CODE_DESC":""}] }';
+
+            //alert(str);
+
+            try {
+            //    var jsonObj = $.parseJSON(str);
+
+            //    switch (jsonObj.view) {
+            //        case "AC_TYPE_CODES":
+            //            alert(str);
+            //            _AC_TYPE_CODES = jsonObj.data;
+            //            vm.AC_TYPE_CODES(_AC_TYPE_CODES);
+            //            vm.AC_NAME("asdfasdfdsaf");
+            //            break;
+            //    }
+
+
+            var temp = '{ "handle": "SHOW", "view": "AC_TYPE_CODES", "data": [{"CODE":"001","CODE_001":"015","CODE_002":"001","CODE_003":"---","CODE_NAME":"입1111고","CODE_TYPE":"","CODE_SORT":0,"CODE_USEYN":false,"CODE_UPDATE_SN":1,"CODE_UPDATE_DATE":"0001 - 01 - 24T08: 18: 12.3081354Z","CODE_DESC":""},{"CODE":"002","CODE_001":"015","CODE_002":"002","CODE_003":"-- - ","CODE_NAME":"출고","CODE_TYPE":"","CODE_SORT":0,"CODE_USEYN":false,"CODE_UPDATE_SN":1,"CODE_UPDATE_DATE":"0001 - 01 - 24T08: 18: 12.3081413Z","CODE_DESC":""}] }';
+
+            var jsonObj = JSON.parse(temp);
+
+            switch (jsonObj.view) {
+                case "AC_TYPE_CODES":
+                    _AC_TYPE_CODES = jsonObj.data;
+                    vm.AC_TYPE_CODES(_AC_TYPE_CODES);
+                    //$('#AC_TYPE_CODE').selectmenu("refresh", true);
+                    $('select').selectmenu('refresh', true);
+                    break;
+            }
+
+                //vm = new ViewModel();
+                //ko.applyBindings(vm);
+            } catch (excetion) {
+                alert(excetion);
+            }
         }
     </script>
     

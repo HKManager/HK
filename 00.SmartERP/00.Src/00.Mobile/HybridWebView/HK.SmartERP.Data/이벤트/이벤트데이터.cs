@@ -9,5 +9,6 @@ namespace HK.SmartERP.Data
         public string handle { set; get; }
         public string view { set; get; }
         public string data { set; get; }
+        public object value { set; get; }
     }
 }

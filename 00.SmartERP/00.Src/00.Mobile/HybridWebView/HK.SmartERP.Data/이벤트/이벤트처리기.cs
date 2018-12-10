@@ -20,7 +20,7 @@ namespace HK.SmartERP.Data
                     switch(이벤트.view)
                     {
                         case HARDCODE.화면.거래처:
-                            이벤트.data = JsonTool.Serialize(쿼리_거래처.GetInstance().조회(string.Empty, string.Empty));
+                            이벤트.data = 쿼리_거래처.GetInstance().조회(string.Empty, string.Empty);
                             result = JsonTool.Serialize(이벤트);
                             break;
                     }
@@ -34,7 +34,7 @@ namespace HK.SmartERP.Data
                 case HARDCODE.이벤트.삭제:
                     break;
                 case HARDCODE.이벤트.화면호출:
-                    
+                    result = data;
                     break;
             }
 

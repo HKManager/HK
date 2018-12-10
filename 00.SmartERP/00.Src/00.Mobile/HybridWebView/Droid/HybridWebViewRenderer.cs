@@ -57,6 +57,8 @@ namespace CustomRenderer.Droid
 
         private void onShowData(string data)
         {
+            data = data.Replace(@"\", "");
+
             string script = $"javascript:logForXamarin('{data}')";
 
             //Control.LoadUrl(script, null);
