@@ -23,6 +23,9 @@ namespace HK.SmartERP.Data
                             이벤트.data = 쿼리_거래처.GetInstance().조회(string.Empty, string.Empty);
                             result = JsonTool.Serialize(이벤트);
                             break;
+                            case HARDCODE.화면.상품:
+                            이벤트.data = 쿼리_상품.GetInstance().조회(string.Empty, string.Empty);
+                            break;
                     }
                     break;
                 case HARDCODE.이벤트.개별조회:
@@ -34,6 +37,13 @@ namespace HK.SmartERP.Data
                             var 거래처데이터 = JsonTool.Deserialize<DATA_Account>(이벤트.data);
                             거래처데이터.AC_USEYN = true;
                             이벤트.data = 쿼리_거래처.GetInstance().등록(거래처데이터).ToString();
+                            result = JsonTool.Serialize(이벤트);
+                            break;
+                        case HARDCODE.화면.상품:
+                            var 상품데이터 = JsonTool.Deserialize<DATA_Item>(이벤트.data);
+                            상품데이터.ITE_USEYN = true;
+                            이벤트.data = 쿼리_상품.GetInstance().등록(상품데이터).ToString();
+                            result = JsonTool.Serialize(이벤트);
                             break;
                     }
                     break;

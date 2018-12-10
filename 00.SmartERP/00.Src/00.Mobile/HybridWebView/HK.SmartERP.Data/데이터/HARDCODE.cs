@@ -19,6 +19,7 @@ namespace HK.SmartERP.Data
         public static class 화면
         {
             public const string 거래처 = "ACCOUNT";
+            public const string 상품 = "ITEM";
         }
 
         public static class 명령문
