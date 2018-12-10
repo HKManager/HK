@@ -64,6 +64,10 @@ namespace HK.SmartERP.Data
                             result = JsonTool.Serialize(이벤트);
                             break;
                         case HARDCODE.화면.상품:
+                            var 상품데이터 = JsonTool.Deserialize<DATA_Item>(이벤트.data);
+                            상품데이터.ITE_USEYN = true;
+                            이벤트.data = 쿼리_상품.GetInstance().수정(상품데이터).ToString();
+                            result = JsonTool.Serialize(이벤트);
                             break;
                         case HARDCODE.화면.매입:
                             break;
@@ -80,6 +84,10 @@ namespace HK.SmartERP.Data
                             result = JsonTool.Serialize(이벤트);
                             break;
                         case HARDCODE.화면.상품:
+                            var 상품데이터 = JsonTool.Deserialize<DATA_Item>(이벤트.data);
+                            상품데이터.ITE_USEYN = true;
+                            이벤트.data = 쿼리_상품.GetInstance().삭제(상품데이터).ToString();
+                            result = JsonTool.Serialize(이벤트);
                             break;
                         case HARDCODE.화면.매입:
                             break;
