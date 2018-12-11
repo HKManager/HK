@@ -4,7 +4,7 @@
              
              xmlns:local="clr-namespace:CustomRenderer;assembly=CustomRenderer"
              
-             x:Class="CustomRenderer.pagepage상품상세관리"
+             x:Class="CustomRenderer.page상품상세관리"
              
              Title="상품상세관리">
     <ContentPage.Content>

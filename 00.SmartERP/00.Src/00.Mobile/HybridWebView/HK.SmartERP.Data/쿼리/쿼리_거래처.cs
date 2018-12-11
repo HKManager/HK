@@ -48,7 +48,7 @@ namespace HK.SmartERP.Data.쿼리
 
             var result = 연결자_Sqlite.DB연결자.Query<DATA_Account>(query).ToList();
 
-            //result = result.Where(t => t.AC_USEYN).ToList();
+            result = result.Where(t => t.AC_USEYN).ToList();
 
             return JsonTool.Serialize(result);
         }

@@ -46,7 +46,7 @@ namespace CustomRenderer.Views
         {
             Device.BeginInvokeOnMainThread(async () =>
             {
-                await Navigation.PushAsync(new page거래처상세관리(data));
+                await Navigation.PushAsync(new page상품상세관리(data));
             });
         }
 

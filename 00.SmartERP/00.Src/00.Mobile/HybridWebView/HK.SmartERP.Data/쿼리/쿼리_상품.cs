@@ -44,11 +44,11 @@ namespace HK.SmartERP.Data.쿼리
             }
             // - 검색조건 만들기
 
-            query = string.Format(query, type_code, account_name, strAccount_name);
+            //query = string.Format(query, type_code, account_name, strAccount_name);
 
-            var result = 연결자_Sqlite.DB연결자.Query<DATA_Account>(query).ToList();
+            var result = 연결자_Sqlite.DB연결자.Query<DATA_Item>(query).ToList();
 
-            //result = result.Where(t => t.AC_USEYN).ToList();
+            result = result.Where(t => t.ITEM_USEYN).ToList();
 
             return JsonTool.Serialize(result);
         }

@@ -11457,4 +11457,10 @@
   <ItemGroup>
     <AndroidAsset Include="Assets\Content\views\sale\saleManager_Detail.html" />
   </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Content\views\info\itemManager.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Content\views\info\itemManager_Detail.html" />
+  </ItemGroup>
 </Project>

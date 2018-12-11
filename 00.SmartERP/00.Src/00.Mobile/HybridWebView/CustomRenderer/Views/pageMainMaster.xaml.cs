@@ -34,7 +34,7 @@ namespace CustomRenderer.Views
                 MenuItems = new ObservableCollection<pageMainMenuItem>(new[]
                 {
                     new pageMainMenuItem { Id = 0, Title = "거래처관리", TargetType = typeof(page거래처관리) },
-                    new pageMainMenuItem { Id = 1, Title = "Page 2" },
+                    new pageMainMenuItem { Id = 1, Title = "상품 관리", TargetType = typeof(page상품관리) },
                     new pageMainMenuItem { Id = 2, Title = "Page 3" },
                     new pageMainMenuItem { Id = 3, Title = "Page 4" },
                     new pageMainMenuItem { Id = 4, Title = "Page 5" },
