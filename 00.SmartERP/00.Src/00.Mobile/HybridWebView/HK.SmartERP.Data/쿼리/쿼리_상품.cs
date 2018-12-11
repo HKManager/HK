@@ -57,7 +57,7 @@ namespace HK.SmartERP.Data.쿼리
         {
             try
             {
-                DATA_Item item = (DATA_Account)data;
+                DATA_Item item = (DATA_Item)data;
 
                 var query = string.Format(Query_상품.Insert, item.ITEM_NAME, item.ITEM_COUNT, item.ITEM_PRICE_BUY, item.ITEM_PRICE_SALE, item.ITEM_DESC);
 
@@ -77,7 +77,7 @@ namespace HK.SmartERP.Data.쿼리
         {
             try
             {
-                DATA_Item item = (DATA_Account)data;
+                DATA_Item item = (DATA_Item)data;
 
                 var query = string.Format(Query_상품.Update, item.ITEM_NAME, item.ITEM_COUNT, item.ITEM_PRICE_BUY, item.ITEM_PRICE_SALE, item.ITEM_DESC, item.ITEM_SN);
 
@@ -97,10 +97,8 @@ namespace HK.SmartERP.Data.쿼리
         {
             try
             {
-                DATA_Item item = (DATA_Account)data;
-
-                DATA_Item item = (DATA_Account)data;
-                var query = string.Format(Query_상품.Delete, account.ITEM_SN);
+                DATA_Item item = (DATA_Item)data;
+                var query = string.Format(Query_상품.Delete, item.ITEM_SN);
 
                 SQLiteCommand commnad = 연결자_Sqlite.DB연결자.CreateCommand(query);
 

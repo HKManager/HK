@@ -4,7 +4,7 @@ using System.Text;
 
 namespace HK.SmartERP.Data
 {
-    public class Query_거래처
+    public class Query_상품
     {
         public const string GetList = @"
             SELECT 

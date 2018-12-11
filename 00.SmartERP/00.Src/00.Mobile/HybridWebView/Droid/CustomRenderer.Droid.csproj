@@ -11445,4 +11445,16 @@
   <ItemGroup>
     <AndroidAsset Include="Assets\Content\images\img_logo.png" />
   </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Content\views\buy\buyManager.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Content\views\buy\buyManager_Detail.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Content\views\sale\saleManager.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Content\views\sale\saleManager_Detail.html" />
+  </ItemGroup>
 </Project>
