@@ -35,7 +35,7 @@ namespace CustomRenderer.Views
                 {
                     new pageMainMenuItem { Id = 0, Title = "거래처관리", TargetType = typeof(page거래처관리) },
                     new pageMainMenuItem { Id = 1, Title = "상품 관리", TargetType = typeof(page상품관리) },
-                    new pageMainMenuItem { Id = 2, Title = "Page 3" },
+                    new pageMainMenuItem { Id = 2, Title = "매입 관리",  TargetType = typeof(page매입관리)},
                     new pageMainMenuItem { Id = 3, Title = "Page 4" },
                     new pageMainMenuItem { Id = 4, Title = "Page 5" },
                 });

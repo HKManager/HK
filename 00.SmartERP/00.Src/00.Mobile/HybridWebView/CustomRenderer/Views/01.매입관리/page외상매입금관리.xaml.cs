@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace CustomRenderer.Views
+namespace CustomRenderer
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class page외상매입금관리 : ContentPage
