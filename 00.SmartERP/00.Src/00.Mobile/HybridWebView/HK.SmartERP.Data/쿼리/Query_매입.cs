@@ -40,10 +40,11 @@ namespace HK.SmartERP.Data
         public const string Update = @"
             UPDATE buy
             SET    BUY_NAME = '{0}',
-                   BUY_ITEMS = '{1}',
-                   BUY_REGISTER_DT = '{2}',
-                   BUY_REGISTER_DT = '{3}'
-            WHERE  BUY_SN = {4}
+                   AC_SN = '{1}',
+                   BUY_ITEMS = '{2}',
+                   BUY_REGISTER_DT = '{3}',
+                   BUY_DESC = '{4}'
+            WHERE  BUY_SN = {5}
         ";
 
 

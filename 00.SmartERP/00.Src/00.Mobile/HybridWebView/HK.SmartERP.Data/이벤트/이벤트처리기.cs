@@ -26,6 +26,7 @@ namespace HK.SmartERP.Data
                             이벤트.data = 쿼리_상품.GetInstance().조회(string.Empty, string.Empty);
                             break;
                         case HARDCODE.화면.매입:
+                            이벤트.data = 쿼리_매입.GetInstance().조회(string.Empty, string.Empty);
                             break;
                         case HARDCODE.화면.매출:
                             break;
@@ -47,6 +48,8 @@ namespace HK.SmartERP.Data
                             이벤트.data = 쿼리_상품.GetInstance().등록(상품데이터).ToString();
                             break;
                         case HARDCODE.화면.매입:
+                            var 매입데이터 = JsonTool.Deserialize<DATA_Buy>(이벤트.data);
+                            이벤트.data = 쿼리_매입.GetInstance().등록(매입데이터).ToString();
                             break;
                         case HARDCODE.화면.매출:
                             break;
@@ -65,6 +68,8 @@ namespace HK.SmartERP.Data
                             이벤트.data = 쿼리_상품.GetInstance().수정(상품데이터).ToString();
                             break;
                         case HARDCODE.화면.매입:
+                            var 매입데이터 = JsonTool.Deserialize<DATA_Buy>(이벤트.data);
+                            이벤트.data = 쿼리_매입.GetInstance().수정(매입데이터).ToString();
                             break;
                         case HARDCODE.화면.매출:
                             break;
@@ -83,6 +88,8 @@ namespace HK.SmartERP.Data
                             이벤트.data = 쿼리_상품.GetInstance().삭제(상품데이터).ToString();
                             break;
                         case HARDCODE.화면.매입:
+                            var 매입데이터 = JsonTool.Deserialize<DATA_Buy>(이벤트.data);
+                            이벤트.data = 쿼리_매입.GetInstance().삭제(매입데이터).ToString();
                             break;
                         case HARDCODE.화면.매출:
                             break;

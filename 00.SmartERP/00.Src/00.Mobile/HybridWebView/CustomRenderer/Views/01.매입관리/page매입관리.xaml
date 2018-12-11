@@ -1,12 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="CustomRenderer.page매입관리">
+             
+             xmlns:local="clr-namespace:CustomRenderer;assembly=CustomRenderer"
+             
+             x:Class="CustomRenderer.page매입관리"
+             
+             Title="매입관리">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+
+        <local:HybridWebView x:Name="hybridWebView" Uri="buy/buyManager.html" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
+
+        <!--<Label Text="This is a detail page. To get the 'triple' line icon on each platform add a icon to each platform and update the 'Master' page with an Icon that references it."/>-->
     </ContentPage.Content>
 </ContentPage>
