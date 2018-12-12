@@ -1,0 +1,16 @@
+# Ignore bundler config.
+/.bundle
+
+# Ignore all logfiles and tempfiles.
+/log/*
+!/log/.keep
+/tmp
+.DS_Store
+
+#Ignore node modules and bundles
+#node_modules/
+#bundle.js
+bundle.js.map
+
+# Ignore application configuration
+/config/application.yml
