@@ -450,7 +450,7 @@ window.onload = function() {
                     // Apple
                     
                     // Draw apple background
-                    context.fillStyle = "#000000";
+                    context.fillStyle = "#ff0000";
                     //context.fillStyle = "rgba(255, 255, 255, 0)";
                     context.fillText("apple", tilex, tiley+32, level.tilewidth, level.tileheight);
                     //context.fillRect(tilex, tiley, level.tilewidth, level.tileheight);
