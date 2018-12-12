@@ -1,0 +1,17 @@
+{
+  "name": "gre-js1k-dragons",
+  "version": "1.0.0",
+  "devDependencies": {
+    "uglify-js": "2.4.x",
+    "jscrush": "0.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gist.github.com/1c34c68cf81264e6c043.git"
+  },
+  "scripts": {
+    "build": "npm run uglify",
+    "uglify": "cat source.js | uglifyjs -c unused=false | tee minified.js | jscrush > crushed.js && wc -c *.js",
+    "closure": "cat source.js | curl -d compilation_level=ADVANCED_OPTIMIZATIONS -d output_format=text -d output_info=compiled_code --data-urlencode \"js_code@-\" http://closure-compiler.appspot.com/compile | tee minified.js | jscrush > minified.js && wc -c *.js"
+  }
+}
