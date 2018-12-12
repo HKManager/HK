@@ -450,15 +450,19 @@ window.onload = function() {
                     // Apple
                     
                     // Draw apple background
-                    context.fillStyle = "rgba(255, 255, 255, 0)";
-                    context.fillRect(tilex, tiley, level.tilewidth, level.tileheight);
+                    context.fillStyle = "#000000";
+                    //context.fillStyle = "rgba(255, 255, 255, 0)";
+                    context.fillText("apple", tilex, tiley+32, level.tilewidth, level.tileheight);
+                    //context.fillRect(tilex, tiley, level.tilewidth, level.tileheight);
                     
                     // Draw the apple image
                     var tx = 0;
                     var ty = 3;
                     var tilew = 64;
                     var tileh = 64;
-                    context.drawImage(tileimage, tx*tilew, ty*tileh, tilew, tileh, tilex, tiley, level.tilewidth, level.tileheight);
+                    //context.fillText("adsfasdf", tx * tilew, ty * tileh);
+                    //context.drawImage(tileimage, tx*tilew, ty*tileh, tilew, tileh, tilex, tiley, level.tilewidth, level.tileheight);
+                    //drawCenterText("asdfdasf", tx * tilew, ty * tileh);
                 }
             }
         }
