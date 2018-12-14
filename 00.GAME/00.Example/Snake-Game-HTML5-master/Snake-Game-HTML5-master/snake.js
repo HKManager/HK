@@ -437,7 +437,7 @@ window.onload = function() {
                     // Empty space
                     //context.fillStyle = "#f7e697";
                     context.fillStyle = "rgba(255, 255, 255, 0)";
-                    context.globalAlpha = 0.1;
+                    // context.globalAlpha = 0.1;
                     //context.drawImage(img, tilex, tiley, level.tilewidth, level.tileheight);
 
                     context.fillRect(tilex, tiley, level.tilewidth, level.tileheight);

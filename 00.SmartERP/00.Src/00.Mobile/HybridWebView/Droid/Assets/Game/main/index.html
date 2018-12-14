@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/earlyaccess/nanumpenscript.css">;
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/earlyaccess/nanumgothic.css">;
     <link rel="stylesheet" href="css/reset.css"> <!-- CSS reset -->
     <link rel="stylesheet" href="css/style.css"> <!-- Resource style -->
     <script src="js/modernizr.js"></script> <!-- Modernizr -->
@@ -40,11 +41,18 @@
 
         .button {
             border: none;
-            font-family: 'Nanum Pen Script';
+            font-family: 'Nanum Gothic', serif;
+            /* font-family: 'Nanum Pen Script', serif; */
+            font-weight: bold;
             font-size: 35px;
             background-color: transparent;
-            color: #0053ff;
+            /* color: #0053ff; */
             cursor: pointer;
+            
+
+            background: -webkit-linear-gradient(#F29661, #CC723D);
+             -webkit-background-clip: text; 
+            -webkit-text-fill-color: transparent;
         }
 
         .button2 {
@@ -77,19 +85,17 @@
     <div>
         <nav>
             <ul class="cd-primary-nav">
-                <li><a href="#0">The team</a></li>
-                <li><a href="#0">Our services</a></li>
-                <li><a href="#0">Our projects</a></li>
-                <li><a href="#0">Start a project</a></li>
-                <li><a href="#0">Join In</a></li>
-                <li><a href="#0">Create an account</a></li>
+                <li><a href="#0" style="font-weight: bold;">게임하기 (두근두근 단어 오락실)</a></li>
+                <li><a href="#0" style="font-weight: bold;">땅따먹기 (알쏭달쏭 단어 학습실)</a></li>
+                <li><a href="#0" style="font-weight: bold;">관리하기 (이것저것 단어 관리방)</a></li>
+                <li><a href="#0" style="font-weight: bold;">설정하기 (오밀조밀 어플 설정방)</a></li>
             </ul>
         </nav>
         <main style="padding-left:30px;">
             
             <br />
             
-            <button class="button s1">
+            <button class="button">
                 스넥스넥
             </button>
 
@@ -101,7 +107,7 @@
             <br />
             <br />
 
-            <button class="button s1">
+            <button class="button">
                 쿵쾅쿵쾅
             </button>
 
@@ -109,7 +115,7 @@
             <br />
             <br />
 
-            <button class="button s1">
+            <button class="button">
                 삐용삐용
             </button>
 
@@ -117,7 +123,7 @@
             <br />
             <br />
 
-            <button class="button s1">
+            <button class="button">
                 뿌요뿌요
             </button>
 
