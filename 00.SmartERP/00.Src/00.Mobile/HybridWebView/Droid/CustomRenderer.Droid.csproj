@@ -77,6 +77,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Act_Intro.cs" />
     <Compile Include="CustomRenderers\ActivityResultEventArgs.cs" />
     <Compile Include="GAME\CustomRenderers\JoystickRenderer.cs" />
     <Compile Include="FileManager.cs" />
@@ -11462,5 +11463,19 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\Content\views\info\itemManager_Detail.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Game\image\intro.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Game\image\game_intro.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\layoutIntro.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\image_intro.png" />
   </ItemGroup>
 </Project>

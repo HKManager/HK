@@ -11,11 +11,11 @@ namespace CustomRenderer
 
         public App ()
 		{
-            conn = DependencyService.Get<ISQLite>().GetConnection();
+            //conn = DependencyService.Get<ISQLite>().GetConnection();
 
-            연결자_Sqlite.DB연결자 = conn;
+            //연결자_Sqlite.DB연결자 = conn;
 
-            CodeManager.Load(string.Empty);
+            //CodeManager.Load(string.Empty);
 
             //MainPage = new HybridWebViewPage();
             MainPage = new pageMain();
