@@ -18,7 +18,7 @@ namespace CustomRenderer
             //CodeManager.Load(string.Empty);
 
             //MainPage = new HybridWebViewPage();
-            MainPage = new pageMain();
+            MainPage = new pageMainHome();
             //MainPage = new page퍼즐_예은();
         }
 
