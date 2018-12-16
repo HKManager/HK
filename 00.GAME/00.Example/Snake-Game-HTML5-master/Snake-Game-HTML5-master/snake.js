@@ -96,14 +96,17 @@ window.onload = function() {
     Level.prototype.generate = function() {
         for (var i=0; i<this.columns; i++) {
             for (var j=0; j<this.rows; j++) {
-                if (i == 0 || i == this.columns-1 ||
-                    j == 0 || j == this.rows-1) {
-                    // Add walls at the edges of the level
-                    this.tiles[i][j] = 1;
-                } else {
-                    // Add empty space
-                    this.tiles[i][j] = 0;
-                }
+                this.tiles[i][j] = 0;
+
+                // - 테두리 없애기
+                // if (i == 0 || i == this.columns-1 ||
+                //     j == 0 || j == this.rows-1) {
+                //     // Add walls at the edges of the level
+                //     this.tiles[i][j] = 1;
+                // } else {
+                //     // Add empty space
+                    
+                // }
             }
         }
     };
