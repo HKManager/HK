@@ -193,7 +193,8 @@ window.onload = function() {
 
     // Create objects
     var snake = new Snake();
-    var level = new Level(20, 15, 32, 32);
+    // - 신인환주석 : 배경 배열
+    var level = new Level(30, 15, 32, 32);
     
     // Variables
     var score = 0;              // Score
@@ -269,6 +270,10 @@ window.onload = function() {
                 }
             }
             
+            if(ax != 0) {
+                ax = ax -1;
+            }
+
             // Tile must be empty
             if (!overlap && level.tiles[ax][ay] == 0) {
                 // Add an apple at the tile position
@@ -362,6 +367,9 @@ window.onload = function() {
                     // Move the snake
                     snake.move();
                     
+
+
+                    // - 신인환 주석 : 사과 먹음
                     // Check collision with an apple
                     if (level.tiles[nx][ny] == 2) {
                         // Remove the apple
@@ -377,7 +385,19 @@ window.onload = function() {
                         score++;
                     }
                     
-
+                    if (level.tiles[nx-1][ny] == 2) {
+                        // Remove the apple
+                        level.tiles[nx-1][ny] = 0;
+                        
+                        // Add a new apple
+                        addApple();
+                        
+                        // Grow the snake
+                        snake.grow();
+                        
+                        // Add a point to the score
+                        score++;
+                    }
                 }
             } else {
                 // Out of bounds
@@ -426,6 +446,7 @@ window.onload = function() {
         }
     }
     
+    // - 신인환주석 : 배경입히기
     // Draw the level tiles
     function drawLevel() {
         for (var i=0; i<level.columns; i++) {
@@ -453,9 +474,9 @@ window.onload = function() {
                     // Apple
                     
                     // Draw apple background
-                    context.fillStyle = "#ff0000";
+                    context.fillStyle = "#0054FF";
                     //context.fillStyle = "rgba(255, 255, 255, 0)";
-                    context.fillText("apple", tilex, tiley+32, level.tilewidth, level.tileheight);
+                    context.fillText("applereqq", tilex, tiley+32, level.tilewidth+32, level.tileheight);
                     //context.fillRect(tilex, tiley, level.tilewidth, level.tileheight);
                     
                     // Draw the apple image
