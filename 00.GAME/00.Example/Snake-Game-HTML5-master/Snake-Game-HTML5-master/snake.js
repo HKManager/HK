@@ -98,7 +98,7 @@ window.onload = function() {
             for (var j=0; j<this.rows; j++) {
                 this.tiles[i][j] = 0;
 
-                // - 테두리 없애기
+                // - 신인환 주석 : 테두리 없애기
                 // if (i == 0 || i == this.columns-1 ||
                 //     j == 0 || j == this.rows-1) {
                 //     // Add walls at the edges of the level
