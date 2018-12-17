@@ -11477,9 +11477,6 @@
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\image_intro.png" />
-  </ItemGroup>
-  <ItemGroup>
     <AndroidAsset Include="Assets\Game\main\css\reset.css" />
   </ItemGroup>
   <ItemGroup>
@@ -11504,9 +11501,30 @@
     <AndroidAsset Include="Assets\Game\image\game_back.gif" />
   </ItemGroup>
   <ItemGroup>
+    <AndroidResource Include="Resources\drawable\image_intro.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Game\main\img\btnPuyoPuyo_off.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Game\main\img\btnPuyoPuyo_on.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Game\main\img\btnShooting_off.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Game\main\img\btnShooting_on.png" />
+  </ItemGroup>
+  <ItemGroup>
     <AndroidAsset Include="Assets\Game\main\img\btnSnake_off.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\Game\main\img\btnSnake_on.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Game\main\img\btnWallOut_off.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Game\main\img\btnWallOut_on.png" />
   </ItemGroup>
 </Project>
