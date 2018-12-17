@@ -18,6 +18,9 @@ namespace CustomRenderer.Droid
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
 
+            this.Window.AddFlags(WindowManagerFlags.Fullscreen);
+
+
             base.OnCreate(bundle);
             global::Xamarin.Forms.Forms.Init(this, bundle);
             

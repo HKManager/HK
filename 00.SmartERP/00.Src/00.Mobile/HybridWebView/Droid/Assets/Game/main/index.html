@@ -79,6 +79,10 @@
             border: 2px solid #555555;
         }
 
+        /*.visited {
+            background: url("img/btnPuyoPuyo_on.png");
+        }*/
+
     </style>
 </head>
 <body class="currently-loading">
@@ -104,25 +108,25 @@
             <br />
             <br />
 
-            <img src="img/btnSnake_off.png" style="width:160px;" />
+            <img id="btnSnake" src="img/btnSnake_off.png" style="width:160px;" onmousedown="downSnake()" onmouseup="upSnake()" />
 
             <br />
             <br />
             <br />
 
-            <img src="img/btnShooting_off.png" style="width:160px;" />
+            <img id="btnShooting" src="img/btnShooting_off.png" style="width:160px;" onmousedown="downShooting()" onmouseup="upShooting()" />
 
             <br />
             <br />
             <br />
 
-            <img src="img/btnWallOut_off.png" style="width:160px;" />
+            <img id="btnWallOut" src="img/btnWallOut_off.png" style="width:160px;" onmousedown="downWallOut()" onmouseup="upWallOut()"/>
 
             <br />
             <br />
             <br />
 
-            <img src="img/btnPuyoPuyo_off.png" style="width:160px;" />
+            <img id="btnPuyoPuyo" src="img/btnPuyoPuyo_off.png" style="width:160px;" onmousedown="downPuyoPuyo()" onmouseup="upPuyoPuyo()"/>
 
             <!-- your content here -->
             <!--<div class="cd-intro">
@@ -143,8 +147,79 @@
 
     <script type="text/javascript">
 
-        function abc(btn) {
-            btn.style.color = "red";
+        //var isTouchSupported = 'ontouchstart' in window;
+        //var startEvent = isTouchSupported ? 'touchstart' : 'mousedown';
+        //var moveEvent = isTouchSupported ? 'touchmove' : 'mousemove';
+        //var endEvent = isTouchSupported ? 'touchend' : 'mouseup';
+
+        window.onload = function () {
+            $("#btnSnake").bind("touchstart", function (e) {
+                $('#btnSnake').attr("src", "img/btnSnake_on.png");
+            });
+
+            $("#btnSnake").bind("touchend", function (e) {
+                $('#btnSnake').attr("src", "img/btnSnake_off.png");
+            });
+
+            $("#btnShooting").bind("touchstart", function (e) {
+                $('#btnShooting').attr("src", "img/btnShooting_on.png");
+            });
+
+            $("#btnShooting").bind("touchend", function (e) {
+                $('#btnShooting').attr("src", "img/btnShooting_off.png");
+            });
+
+            $("#btnWallOut").bind("touchstart", function (e) {
+                $('#btnWallOut').attr("src", "img/btnWallOut_on.png");
+            });
+
+            $("#btnWallOut").bind("touchend", function (e) {
+                $('#btnWallOut').attr("src", "img/btnWallOut_off.png");
+            });
+
+            $("#btnPuyoPuyo").bind("touchstart", function (e) {
+                $('#btnPuyoPuyo').attr("src", "img/btnPuyoPuyo_on.png");
+            });
+
+            $("#btnPuyoPuyo").bind("touchend", function (e) {
+                $('#btnPuyoPuyo').attr("src", "img/btnPuyoPuyo_off.png");
+            });
+        };
+
+        //$(document).ready(function () {
+
+        //});
+
+        function downSnake() {
+            $('#btnSnake').attr("src", "img/btnSnake_on.png");
+        }
+
+        function upSnake() {
+            $('#btnSnake').attr("src", "img/btnSnake_off.png");
+        }
+
+        function downShooting() {
+            $('#btnShooting').attr("src", "img/btnShooting_on.png");
+        }
+
+        function upShooting() {
+            $('#btnShooting').attr("src", "img/btnShooting_off.png");
+        }
+
+        function downWallOut() {
+            $('#btnWallOut').attr("src", "img/btnWallOut_on.png");
+        }
+
+        function upWallOut() {
+            $('#btnWallOut').attr("src", "img/btnWallOut_off.png");
+        }
+
+        function downPuyoPuyo() {
+            $('#btnPuyoPuyo').attr("src", "img/btnPuyoPuyo_on.png");
+        }
+
+        function upPuyoPuyo() {
+            $('#btnPuyoPuyo').attr("src", "img/btnPuyoPuyo_off.png");
         }
 
     </script>
