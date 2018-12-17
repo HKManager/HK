@@ -11503,4 +11503,10 @@
   <ItemGroup>
     <AndroidAsset Include="Assets\Game\image\game_back.gif" />
   </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Game\main\img\btnSnake_off.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Game\main\img\btnSnake_on.png" />
+  </ItemGroup>
 </Project>
