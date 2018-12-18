@@ -194,7 +194,7 @@ window.onload = function() {
     // Create objects
     var snake = new Snake();
     // - 신인환주석 : 배경 배열
-    var level = new Level(30, 15, 32, 32);
+    var level = new Level(20, 15, 32, 32);
     
     // Variables
     var score = 0;              // Score
