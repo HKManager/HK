@@ -6,7 +6,7 @@
              x:Class="HK.PoyoWordBook.MainPage">
 
     <ContentPage.Content>
-        <local:HybridWebView x:Name="hybridWebView" Uri="index.html" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
+        <local:HybridWebView x:Name="hybridWebView" Uri="main/index.html" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
     </ContentPage.Content>
 
 </ContentPage>

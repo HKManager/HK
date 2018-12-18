@@ -74,7 +74,7 @@
     <Compile Include="WebView\WevViewCllientCallback.cs" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidAsset Include="Assets\Poyo\_js\menu\velocity-LICENSE.md" />
+    <AndroidAsset Include="Assets\Poyo\js\menu\velocity-LICENSE.md" />
     <AndroidAsset Include="Assets\smarterp_farm.db" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
@@ -138,22 +138,22 @@
     <AndroidAsset Include="Assets\Content\index.html" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidAsset Include="Assets\Poyo\_css\menu\reset.css" />
+    <AndroidAsset Include="Assets\Poyo\css\menu\reset.css" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidAsset Include="Assets\Poyo\_css\menu\style.css" />
+    <AndroidAsset Include="Assets\Poyo\css\menu\style.css" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidAsset Include="Assets\Poyo\_js\menu\jquery-2.1.1.js" />
+    <AndroidAsset Include="Assets\Poyo\js\menu\jquery-2.1.1.js" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidAsset Include="Assets\Poyo\_js\menu\main.js" />
+    <AndroidAsset Include="Assets\Poyo\js\menu\main.js" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidAsset Include="Assets\Poyo\_js\menu\modernizr.js" />
+    <AndroidAsset Include="Assets\Poyo\js\menu\modernizr.js" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidAsset Include="Assets\Poyo\_js\menu\velocity.min.js" />
+    <AndroidAsset Include="Assets\Poyo\js\menu\velocity.min.js" />
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\Poyo\main\img\btnPuyoPuyo_off.png" />
