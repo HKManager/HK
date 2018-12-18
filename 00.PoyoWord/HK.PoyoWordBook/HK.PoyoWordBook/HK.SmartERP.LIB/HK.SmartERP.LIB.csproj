@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="MQ\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="DotSpatial.Projections">
+      <HintPath>LIB\DotSpatial.Projections.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>LIB\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="RabbitMQ.Client">
+      <HintPath>LIB\RabbitMQ.Client.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

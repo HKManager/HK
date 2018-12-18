@@ -50,6 +50,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="SQLite.Net-PCL">
+      <Version>3.1.1</Version>
+    </PackageReference>
+    <PackageReference Include="SQLite.Net.Core-PCL">
+      <Version>3.1.1</Version>
+    </PackageReference>
     <PackageReference Include="Xamarin.Forms" Version="3.3.0.967583" />
     <PackageReference Include="Xamarin.Android.Support.Design" Version="27.0.2.1" />
     <PackageReference Include="Xamarin.Android.Support.v7.AppCompat" Version="27.0.2.1" />
@@ -99,6 +105,14 @@
     <ProjectReference Include="..\HK.PoyoWordBook\HK.PoyoWordBook.csproj">
       <Project>{45ACBB65-587F-4702-959F-FEBD3ED6D418}</Project>
       <Name>HK.PoyoWordBook</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SolidDataType\SolidDataType.csproj">
+      <Project>{f0fc212b-577c-4504-97c9-eb053dc2be3e}</Project>
+      <Name>SolidDataType</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Solidroid\Solidroid.csproj">
+      <Project>{f318fc01-16a6-415f-b8db-57091e8b3bf1}</Project>
+      <Name>Solidroid</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
