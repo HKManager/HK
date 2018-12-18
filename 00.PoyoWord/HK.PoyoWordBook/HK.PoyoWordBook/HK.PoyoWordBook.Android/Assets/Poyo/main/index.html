@@ -1,0 +1,223 @@
+﻿<!doctype html>
+<html lang="en" class="no-js">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/earlyaccess/nanumpenscript.css">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/earlyaccess/nanumgothic.css">
+    <link rel="stylesheet" href="../_css/menu/reset.css"> <!-- CSS reset -->
+    <link rel="stylesheet" href="../_css/menu/style.css"> <!-- Resource style -->
+    <script src="../_js/menu/modernizr.js"></script> <!-- Modernizr -->
+
+    <title>Rounded Animated Navigation | CodyHouse</title>
+    <style>
+        .currently-loading {
+            border: 0;
+            padding: 0;
+            /*opacity: 0.45;*/
+            background-image: url(img/game_back.gif);
+            background-size: cover;
+        }
+
+        /*button {
+            border: none;
+            font-family: 'Nanum Pen Script';
+            font-size: 35px;
+            background-color:transparent;
+            color: #0053ff;
+        }*/
+
+        .s1 {
+            text-shadow: 2px 2px 2px gray;
+        }
+
+        .s2 {
+            text-shadow: 4px 2px 2px gray;
+        }
+
+        .s3 {
+            text-shadow: 6px 2px 2px gray;
+        }
+
+        .button {
+            border: none;
+            font-family: 'Nanum Gothic', serif;
+            /* font-family: 'Nanum Pen Script', serif; */
+            font-weight: bold;
+            font-size: 35px;
+            background-color: transparent;
+            /* color: #0053ff; */
+            cursor: pointer;
+            
+
+            background: -webkit-linear-gradient(#F29661, #CC723D);
+             -webkit-background-clip: text; 
+            -webkit-text-fill-color: transparent;
+        }
+
+        .button2 {
+            background-color: white;
+            color: black;
+            border: 2px solid #008CBA;
+        }
+
+        .button3 {
+            background-color: white;
+            color: black;
+            border: 2px solid #f44336;
+        }
+
+        .button4 {
+            background-color: white;
+            color: black;
+            border: 2px solid #e7e7e7;
+        }
+
+        .button5 {
+            background-color: white;
+            color: black;
+            border: 2px solid #555555;
+        }
+    </style>
+</head>
+
+<body class="currently-loading">
+    <div>
+        <nav>
+            <ul class="cd-primary-nav">
+                <li><a href="#0" style="font-weight: bold;" onclick="ShowGame()">게임하기 (두근두근 단어 오락실)</a></li>
+                <li><a href="#0" style="font-weight: bold;">땅따먹기 (알쏭달쏭 단어 학습실)</a></li>
+                <li><a href="#0" style="font-weight: bold;">관리하기 (이것저것 단어 관리방)</a></li>
+                <li><a href="#0" style="font-weight: bold;">조회하기 (오목조목 정보 조회방)</a></li>
+                <li><a href="#0" style="font-weight: bold;">설정하기 (오밀조밀 어플 설정방)</a></li>
+            </ul>
+        </nav>
+        <main style="padding-left:30px;">
+
+            <div id="divGame">
+
+                <br />
+                <br />
+
+                <img id="btnSnake" src="img/btnSnake_off.png" style="width:160px;" onmousedown="downSnake()" onmouseup="upSnake()" />
+
+                <br />
+                <br />
+                <br />
+
+                <img id="btnShooting" src="img/btnShooting_off.png" style="width:160px;" onmousedown="downShooting()"
+                    onmouseup="upShooting()" />
+
+                <br />
+                <br />
+                <br />
+
+                <img id="btnWallOut" src="img/btnWallOut_off.png" style="width:160px;" onmousedown="downWallOut()"
+                    onmouseup="upWallOut()" />
+
+                <br />
+                <br />
+                <br />
+
+                <img id="btnPuyoPuyo" src="img/btnPuyoPuyo_off.png" style="width:160px;" onmousedown="downPuyoPuyo()"
+                    onmouseup="upPuyoPuyo()" />
+
+            </div>
+
+        </main> <!-- cd-content -->
+        <div class="cd-overlay-nav">
+            <span></span>
+        </div> <!-- cd-overlay-nav -->
+        <div class="cd-overlay-content">
+            <span></span>
+        </div> <!-- cd-overlay-content -->
+        <a href="#0" class="cd-nav-trigger">Menu<span class="cd-icon"></span></a>
+    </div>
+
+    <script type="text/javascript">
+
+        window.onload = function () {
+            $("#btnSnake").bind("touchstart", function (e) {
+                $('#btnSnake').attr("src", "img/btnSnake_on.png");
+            });
+
+            $("#btnSnake").bind("touchend", function (e) {
+                $('#btnSnake').attr("src", "img/btnSnake_off.png");
+            });
+
+            $("#btnShooting").bind("touchstart", function (e) {
+                $('#btnShooting').attr("src", "img/btnShooting_on.png");
+            });
+
+            $("#btnShooting").bind("touchend", function (e) {
+                $('#btnShooting').attr("src", "img/btnShooting_off.png");
+            });
+
+            $("#btnWallOut").bind("touchstart", function (e) {
+                $('#btnWallOut').attr("src", "img/btnWallOut_on.png");
+            });
+
+            $("#btnWallOut").bind("touchend", function (e) {
+                $('#btnWallOut').attr("src", "img/btnWallOut_off.png");
+            });
+
+            $("#btnPuyoPuyo").bind("touchstart", function (e) {
+                $('#btnPuyoPuyo').attr("src", "img/btnPuyoPuyo_on.png");
+            });
+
+            $("#btnPuyoPuyo").bind("touchend", function (e) {
+                $('#btnPuyoPuyo').attr("src", "img/btnPuyoPuyo_off.png");
+            });
+        };
+
+        function downSnake() {
+            $('#btnSnake').attr("src", "img/btnSnake_on.png");
+        }
+
+        function upSnake() {
+            $('#btnSnake').attr("src", "img/btnSnake_off.png");
+        }
+
+        function downShooting() {
+            $('#btnShooting').attr("src", "img/btnShooting_on.png");
+        }
+
+        function upShooting() {
+            $('#btnShooting').attr("src", "img/btnShooting_off.png");
+        }
+
+        function downWallOut() {
+            $('#btnWallOut').attr("src", "img/btnWallOut_on.png");
+        }
+
+        function upWallOut() {
+            $('#btnWallOut').attr("src", "img/btnWallOut_off.png");
+        }
+
+        function downPuyoPuyo() {
+            $('#btnPuyoPuyo').attr("src", "img/btnPuyoPuyo_on.png");
+        }
+
+        function upPuyoPuyo() {
+            $('#btnPuyoPuyo').attr("src", "img/btnPuyoPuyo_off.png");
+        }
+
+        function hideDiv() {
+            $('#divGame').hide();
+        }
+
+        function ShowGame() {
+            this.hideDiv();
+            $('#divGame').show();
+            toggleNavView();
+        }
+
+    </script>
+
+    <script src="../_js/menu/jquery-2.1.1.js"></script>
+    <script src="../_js/menu/velocity.min.js"></script>
+    <script src="../_js/menu/main.js"></script> <!-- Resource jQuery -->
+</body>
+
+</html>
