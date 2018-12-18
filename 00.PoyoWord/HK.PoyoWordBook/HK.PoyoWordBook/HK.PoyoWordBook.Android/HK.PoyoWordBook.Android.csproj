@@ -65,6 +65,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Act_Intro.cs" />
+    <Compile Include="SQLite\SQLiteHelper.cs" />
     <Compile Include="WebView\JSBridge.cs" />
     <Compile Include="WebView\HybridWebViewRenderer.cs" />
     <Compile Include="MainActivity.cs" />
@@ -74,6 +75,7 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\Poyo\_js\menu\velocity-LICENSE.md" />
+    <AndroidAsset Include="Assets\smarterp_farm.db" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <None Include="Properties\AndroidManifest.xml" />
@@ -106,6 +108,10 @@
     <Folder Include="Resources\drawable-xxxhdpi\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\HK.PoyoWordBook.Data\HK.PoyoWordBook.Data.csproj">
+      <Project>{76e9e89f-c6b0-408a-88d9-1c5fb3759c9f}</Project>
+      <Name>HK.PoyoWordBook.Data</Name>
+    </ProjectReference>
     <ProjectReference Include="..\HK.PoyoWordBook\HK.PoyoWordBook.csproj">
       <Project>{45ACBB65-587F-4702-959F-FEBD3ED6D418}</Project>
       <Name>HK.PoyoWordBook</Name>

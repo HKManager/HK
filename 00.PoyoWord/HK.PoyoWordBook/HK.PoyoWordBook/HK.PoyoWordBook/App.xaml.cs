@@ -1,4 +1,6 @@
-﻿using System;
+﻿using HK.PoyoWordBook.Data;
+using SQLite.Net;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -7,9 +9,15 @@ namespace HK.PoyoWordBook
 {
     public partial class App : Application
     {
+        private SQLiteConnection conn;
+
         public App()
         {
             InitializeComponent();
+
+            conn = DependencyService.Get<ISQLite>().GetConnection();
+
+            연결자_Sqlite.DB연결자 = conn;
 
             MainPage = new MainPage();
         }

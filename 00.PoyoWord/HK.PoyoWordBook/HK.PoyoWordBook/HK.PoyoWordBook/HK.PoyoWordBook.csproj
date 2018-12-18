@@ -14,6 +14,13 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\HK.PoyoWordBook.Data\HK.PoyoWordBook.Data.csproj" />
     <ProjectReference Include="..\HK.SmartERP.LIB\HK.SmartERP.LIB.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="SQLite.Net">
+      <HintPath>..\..\HK.PoyoWordBook.Data\LIB\SQLite.Net.dll</HintPath>
+    </Reference>
   </ItemGroup>
 </Project>
