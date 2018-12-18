@@ -100,7 +100,7 @@
                 <br />
                 <br />
 
-                <img id="btnSnake" src="img/btnSnake_off.png" style="width:160px;" onmousedown="downSnake()" onmouseup="upSnake()" />
+                <img id="btnSnake" src="img/btnSnake_off.png" style="width:160px;" onmousedown="downSnake()" onmouseup="upSnake()" onclick="ShowSnake()" />
 
                 <br />
                 <br />
@@ -211,6 +211,10 @@
             this.hideDiv();
             $('#divGame').show();
             toggleNavView();
+        }
+
+        function ShowSnake() {
+            window.location.href = "../game/Snake/snake.html";
         }
 
     </script>

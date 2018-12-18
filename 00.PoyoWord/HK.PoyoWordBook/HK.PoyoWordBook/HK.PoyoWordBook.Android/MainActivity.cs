@@ -27,6 +27,14 @@ namespace HK.PoyoWordBook.Droid
             if (!FileManager.isCheckFile(this, "SmartERP", "smarterp_farm.db"))
                 FileManager.CopyFile(this, "SmartERP", "smarterp_farm.db");
 
+
+            var width = Resources.DisplayMetrics.WidthPixels;
+            var height = Resources.DisplayMetrics.HeightPixels;
+            var density = Resources.DisplayMetrics.Density;
+
+            var ScreenWidth = (width - 0.5f) / density;
+            var ScreenHeight = (height - 0.5f) / density;
+
             LoadApplication(new App());
         }
 
