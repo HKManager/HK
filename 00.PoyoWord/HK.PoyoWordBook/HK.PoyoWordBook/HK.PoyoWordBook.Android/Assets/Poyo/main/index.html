@@ -107,21 +107,21 @@
                 <br />
 
                 <img id="btnShooting" src="img/btnShooting_off.png" style="width:200px;" onmousedown="downShooting()"
-                    onmouseup="upShooting()" />
+                    onmouseup="upShooting()"/>
 
                 <br />
                 <br />
                 <br />
 
                 <img id="btnWallOut" src="img/btnWallOut_off.png" style="width:200px;" onmousedown="downWallOut()"
-                    onmouseup="upWallOut()" />
+                    onmouseup="upWallOut()" onclick="ShowBlockOut()" />
 
                 <br />
                 <br />
                 <br />
 
                 <img id="btnPuyoPuyo" src="img/btnPuyoPuyo_off.png" style="width:200px;" onmousedown="downPuyoPuyo()"
-                    onmouseup="upPuyoPuyo()" />
+                    onmouseup="upPuyoPuyo()" onclick="ShowPuyoPuyo()" />
 
             </div>
 
@@ -215,6 +215,14 @@
 
         function ShowSnake() {
             window.location.href = "../game/Snake/snake.html";
+        }
+
+        function ShowBlockOut() {
+            window.location.href = "../game/BlockOut/example/game-breakout/index.html";
+        }
+
+        function ShowPuyoPuyo() {
+            window.location.href = "../game/PuyoPuyo/example/game-samegame/index.html";
         }
 
     </script>
