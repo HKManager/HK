@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             
+             xmlns:local="clr-namespace:HK.PoyoWordBook;assembly=HK.PoyoWordBook"
+             
+             xmlns:CustomControls="clr-namespace:HK.PoyoWordBook.CustomControls"
+             xmlns:ValueConverters="clr-namespace:HK.PoyoWordBook.ValueConverters"
+             
+             x:Class="HK.PoyoWordBook.page뱀키우기">
+    <ContentPage.Content>
+        <AbsoluteLayout x:Name="ViewLayout">
+            <local:HybridWebView x:Name="hybridWebView" Uri="game/Snake/snake.html" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" AbsoluteLayout.LayoutBounds="1,1,1,1" AbsoluteLayout.LayoutFlags="All"/>
+
+            <AbsoluteLayout x:Name="ViewControls" AbsoluteLayout.LayoutBounds="1,1,1,1" AbsoluteLayout.LayoutFlags="All" BackgroundColor="Transparent" Margin="10,0,10,20" VerticalOptions="End">
+
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <CustomControls:JoystickControl x:Name="JoystickControl" Grid.Row="1" BackgroundColor="Transparent"
+                                        HeightRequest="100" WidthRequest="150"/>
+                </Grid>
+            </AbsoluteLayout>
+
+        </AbsoluteLayout>
+
+    </ContentPage.Content>
+</ContentPage>

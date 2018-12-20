@@ -137,6 +137,15 @@
 
     <script type="text/javascript">
 
+
+        function invokeCSCode(data) {
+            try {
+                invokeCSharpAction(data);
+            }
+            catch (err) {
+            }
+        }
+
         window.onload = function () {
             $("#btnSnake").bind("touchstart", function (e) {
                 $('#btnSnake').attr("src", "img/btnSnake_on.png");
@@ -214,7 +223,8 @@
         }
 
         function ShowSnake() {
-            window.location.href = "../game/Snake/snake.html";
+            //window.location.href = "../game/Snake/snake.html";
+            //invokeCSCode("/game/Snake/snake.html");
         }
 
         function ShowBlockOut() {

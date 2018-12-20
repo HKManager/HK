@@ -19,7 +19,7 @@ namespace HK.PoyoWordBook
 
             //연결자_Sqlite.DB연결자 = conn;
 
-            MainPage = new MainPage();
+            MainPage = new page뱀키우기();
         }
 
         protected override void OnStart()
