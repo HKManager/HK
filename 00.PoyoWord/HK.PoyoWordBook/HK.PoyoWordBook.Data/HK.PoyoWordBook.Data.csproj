@@ -10,4 +10,8 @@
     </Reference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\HK.PoyoWordBook\HK.SmartERP.LIB\HK.SmartERP.LIB.csproj" />
+  </ItemGroup>
+
 </Project>

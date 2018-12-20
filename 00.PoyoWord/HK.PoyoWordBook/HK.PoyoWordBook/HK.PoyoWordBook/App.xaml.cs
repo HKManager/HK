@@ -15,9 +15,11 @@ namespace HK.PoyoWordBook
         {
             InitializeComponent();
 
-            //conn = DependencyService.Get<ISQLite>().GetConnection();
+            conn = DependencyService.Get<ISQLite>().GetConnection();
 
-            //연결자_Sqlite.DB연결자 = conn;
+            연결자_Sqlite.DB연결자 = conn;
+
+            CodeManager.Load(string.Empty);
 
             MainPage = new page뱀키우기();
         }
