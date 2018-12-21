@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <title>Basic Form Elements | Bootstrap Based Admin Template - Material Design</title>
+    <!-- Favicon-->
+    <link rel="icon" href="../../favicon.ico" type="image/x-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
+
+    <!-- Bootstrap Core Css -->
+    <link href="../../plugins/bootstrap/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Waves Effect Css -->
+    <link href="../../plugins/node-waves/waves.css" rel="stylesheet" />
+
+    <!-- Animation Css -->
+    <link href="../../plugins/animate-css/animate.css" rel="stylesheet" />
+
+    <!-- Bootstrap Material Datetime Picker Css -->
+    <link href="../../plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css" rel="stylesheet" />
+
+    <!-- Bootstrap DatePicker Css -->
+    <link href="../../plugins/bootstrap-datepicker/css/bootstrap-datepicker.css" rel="stylesheet" />
+
+    <!-- Wait Me Css -->
+    <link href="../../plugins/waitme/waitMe.css" rel="stylesheet" />
+
+    <!-- Bootstrap Select Css -->
+    <link href="../../plugins/bootstrap-select/css/bootstrap-select.css" rel="stylesheet" />
+
+    <!-- Custom Css -->
+    <link href="../../css/style.css" rel="stylesheet">
+
+    <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
+    <link href="../../css/themes/all-themes.css" rel="stylesheet" />
+
+    <style>
+        .control-detail {
+            padding-left: 15px !important;
+        }
+    </style>
+</head>
+
+<body class="theme-red" style="margin:0;">
+
+    <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script type='text/javascript' src='../../js/knockout-3.4.2.js'></script>
+
+    <!-- Page Loader -->
+    <div class="page-loader-wrapper">
+        <div class="loader">
+            <div class="preloader">
+                <div class="spinner-layer pl-red">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+            </div>
+            <p>Please wait...</p>
+        </div>
+    </div>
+    <!-- #END# Page Loader -->
+    <!-- Overlay For Sidebars -->
+    <div class="overlay"></div>
+    <!-- #END# Overlay For Sidebars -->
+
+    <br />
+
+    <div class="container-fluid">
+        <!-- Input -->
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="card">
+                    <div class="header">
+
+                        <div class="row clearfix">
+                            <div class="col-sm-6">
+                                <h2>
+                                    매입 상세관리
+                                    <small>매입 정보를 입력해 주세요.</small>
+                                </h2>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="body">
+                        <div class="row clearfix">
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <div class="form-line">
+                                        <input id="BUY_SN" type="hidden" class="control-detail form-control" placeholder="매입 SN" data-bind="value: BUY_SN"  />
+                                        <input id="BUY_NAME" type="text" class="control-detail form-control" placeholder="매입 명" data-bind="value: BUY_NAME" />
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="form-line">
+                                        <select id="AC_SN" class="form-control control-detail show-tick" data-bind="options: AC_SN_LIST,
+                                                                                       optionsCaption: '매입거래처를 선택해 주세요',
+                                                                                       optionsValue: 'AC_SN',
+                                                                                       value: AC_SN,
+                                                                                       optionsText: 'AC_NAME',
+                                                                                       valueAllowUnset: true"></select>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="form-line">
+                                        <input id="BUY_REGISTER_DT" type="text" class="form-control control-detail" placeholder="상품 개수" data-bind="value: BUY_REGISTER_DT" />
+                                    </div>
+                                </div>
+
+                                <!-- <div class="form-group">
+                                    <div class="form-line">
+                                        <input id="ITEM_PRICE_BUY" type="text" class="form-control control-detail" placeholder="매입 금액" data-bind="value: ITEM_PRICE_BUY" />
+                                    </div>
+                                </div> -->
+
+                                <!-- <div class="form-group">
+                                    <div class="form-line">
+                                        <input id="ITEM_PRICE_SALE" type="text" class="form-control control-detail" placeholder="매출 금액" data-bind="value: ITEM_PRICE_SALE" />
+                                    </div>
+                                </div> -->
+
+                                <!-- <div class="form-group">
+                                    <div class="form-line">
+                                        <input id="AC_EMAIL01" type="text" class="form-control control-detail" placeholder="담당자 메일" />
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="form-line">
+                                        <input id="AC_PAY" type="text" class="form-control control-detail" placeholder="잔금" />
+                                    </div>
+                                </div> -->
+
+                                <div class="form-group">
+                                    <div class="form-line">
+                                        <textarea id="BUY_DESC" rows="4" class="form-control no-resize control-detail" placeholder="비고" data-bind="value: BUY_DESC" ></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <table style="width:100%;">
+
+                                        <tr>
+                                            <td style="width:50%;">
+                                                <button type="button" class="btn btn-primary m-t-15 waves-effect" style="width:100%;margin-right:10px;" onclick="Create();">저장</button>
+                                            </td>
+
+                                            <td style="width:50%;">
+                                                <button type="button" class="btn btn-primary m-t-15 waves-effect" style="width:100%;margin-left:10px">취소</button>
+                                            </td>
+                                        </tr>
+
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- #END# Input -->
+    </div>
+
+    <script type="text/javascript">
+        ko.observableArray.fn.find = function (prop, data) {
+            var valueToMatch = data[prop];
+            return ko.utils.arrayFirst(this(), function (item) {
+                return item[prop] === valueToMatch;
+            });
+        };
+
+        function ViewModel() {
+            this.BUY_SN = ko.observable("");
+            this.BUY_NAME = ko.observable("");
+            this.AC_SN_LIST = ko.observableArray([]);
+            this.AC_SN = ko.observable(this.AC_SN_LIST.find("AC_SN", _AC_SN));
+            this.BUY_REGISTER_DT = ko.observable("");
+            this.BUY_DESC = ko.observable("");
+        };
+
+        var _AC_SN_LIST = [];
+        var _AC_SN = "";
+
+        var vm = null;
+
+        $(document).ready(function () {
+            vm = new ViewModel();
+            ko.applyBindings(vm);
+        });
+
+
+        function Create() {
+            var objectData = ko.toJS(vm);
+
+            var jSonData = JSON.stringify(objectData);
+            var obj = { handle: "03", view: "BUY", data: jSonData  };
+
+            var data = JSON.stringify(obj);
+            invokeCSharpAction(data);
+        }
+
+        function logForXamarin(str) {
+            try {
+                var jsonObj = JSON.parse(str);
+
+                switch (jsonObj.view) {
+                    case "ALL":
+                        var data = jsonObj.value;
+                        vm.BUY_SN(data.BUY_SN);
+                        vm.BUY_NAME(data.BUY_NAME);
+                        vm.AC_SN(data.AC_SN);
+                        vm.BUY_REGISTER_DT(data.BUY_REGISTER_DT);
+                        vm.BUY_DESC(data.BUY_DESC);
+                        break;
+                }
+            } catch (excetion) {
+                alert(excetion);
+            }
+        }
+    </script>
+    
+
+    <!-- Jquery Core Js -->
+    <script src="../../plugins/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core Js -->
+    <script src="../../plugins/bootstrap/js/bootstrap.js"></script>
+
+    <!-- Select Plugin Js -->
+    <!--<script src="../../plugins/bootstrap-select/js/bootstrap-select.js"></script>-->
+
+    <!-- Slimscroll Plugin Js -->
+    <script src="../../plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
+
+    <!-- Waves Effect Plugin Js -->
+    <script src="../../plugins/node-waves/waves.js"></script>
+
+    <!-- Autosize Plugin Js -->
+    <script src="../../plugins/autosize/autosize.js"></script>
+
+    <!-- Moment Plugin Js -->
+    <script src="../../plugins/momentjs/moment.js"></script>
+
+    <!-- Bootstrap Material Datetime Picker Plugin Js -->
+    <script src="../../plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
+
+    <!-- Bootstrap Datepicker Plugin Js -->
+    <script src="../../plugins/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+
+    <!-- Custom Js -->
+    <script src="../../js/admin.js"></script>
+    <script src="../../js/pages/forms/basic-form-elements.js"></script>
+
+    <!-- Demo Js -->
+    <script src="../../js/demo.js"></script>
+</body>
+</html>

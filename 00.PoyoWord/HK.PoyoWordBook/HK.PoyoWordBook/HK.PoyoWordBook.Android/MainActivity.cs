@@ -35,7 +35,7 @@ namespace HK.PoyoWordBook.Droid
             var ScreenWidth = (width - 0.5f) / density;
             var ScreenHeight = (height - 0.5f) / density;
 
-            LoadApplication(new App());
+            LoadApplication(new App((int)ScreenWidth, (int)ScreenHeight));
         }
 
         public void SetDevicePortaitOrientation()

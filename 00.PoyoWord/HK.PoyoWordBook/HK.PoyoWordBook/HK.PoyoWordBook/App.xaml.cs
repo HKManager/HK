@@ -13,9 +13,16 @@ namespace HK.PoyoWordBook
 
         public static Page PageView;
 
-        public App()
+        public static int deviceWidth = 0;
+        public static int deviceHeight= 0;
+        
+
+        public App(int width, int height)
         {
             InitializeComponent();
+
+            deviceWidth = width;
+            deviceHeight = height;
 
             conn = DependencyService.Get<ISQLite>().GetConnection();
 

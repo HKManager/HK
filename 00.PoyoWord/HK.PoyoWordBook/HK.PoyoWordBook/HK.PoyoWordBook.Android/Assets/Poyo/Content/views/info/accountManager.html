@@ -1,0 +1,343 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport" />
+    <title>Welcome To | Bootstrap Based Admin Template - Material Design</title>
+    <!-- Favicon-->
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css" />
+    <!-- Bootstrap Core Css -->
+    <link href="../../plugins/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <!-- Waves Effect Css -->
+    <link href="../../plugins/node-waves/waves.css" rel="stylesheet" />
+    <!-- Animation Css -->
+    <link href="../../plugins/animate-css/animate.css" rel="stylesheet" />
+    <!-- Morris Chart Css-->
+    <link href="../../plugins/morrisjs/morris.css" rel="stylesheet" />
+    <!-- Custom Css -->
+    <link href="../../css/style.css" rel="stylesheet" />
+    <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
+    <link href="../../css/themes/all-themes.css" rel="stylesheet" />
+
+    <style type="text/css">
+        .row-highlight {
+            background-color: Yellow;
+        }
+
+        .row-click {
+            background-color: #8BBDFF;
+        }
+    </style>
+
+</head>
+
+
+<body class="theme-red" style="margin:0;">
+    <script src="http://code.jquery.com/jquery-2.1.4.min.js">
+    </script>
+
+    <script type='text/javascript' src='../../js/knockout-3.4.2.js'></script>
+
+
+    <!-- Page Loader -->
+    <div class="page-loader-wrapper">
+        <div class="loader">
+            <div class="preloader">
+                <div class="spinner-layer pl-red">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+            </div>
+            <p>Please wait...</p>
+        </div>
+    </div>
+    <!-- #END# Page Loader -->
+    <!-- Overlay For Sidebars -->
+    <div class="overlay"></div>
+    <!-- #END# Overlay For Sidebars -->
+    <!--<br />
+    Enter name: <input type="text" id="name" />
+    <br />
+    <br />
+    <button type="button" onclick="javascript:invokeCSCode($('#name').val());">Invoke C# Code</button>
+    <br />
+    <div id="result" style="height:400px;width:400px;">Result:</div>
+
+    <script type="text/javascript">
+        function log(str) {
+            $('#result').text($('#result').text() + " " + str);
+        }
+
+        function logForXamarin(str) {
+            $('#result').text($('#result').text() + " " + str);
+        }
+
+        function invokeCSCode(data) {
+            try {
+                //log("Sending Data:" + data);
+                invokeCSharpAction(data);
+            }
+            catch (err) {
+                log(err);
+            }
+        }
+    </script>-->
+
+
+    <br />
+
+
+    <div class="container-fluid">
+        <!--<div class="block-header">
+            <h2>
+                EDITABLE TABLE
+                <small>Taken from <a href="https://github.com/mindmup/editable-table" taget="_blank">github.com/mindmup/editable-table</a></small>
+            </h2>
+        </div>-->
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="card" style="min-height:600px">
+                    <div class="header">
+
+
+
+                        <div class="row clearfix">
+                            <div class="col-sm-6">
+                                <h2>
+                                    거래처관리
+                                    <small>거래처를 등록/수정/삭제 하세요.</small>
+                                </h2>
+                            </div>
+
+                            <table style="width:100%;">
+
+                                <tr>
+                                    <td style="width:25%;">
+                                        <div class="form-group" style="margin:5px;width:100%;">
+                                            <button type="button" class="btn btn-primary m-t-15 waves-effect" onclick="QueryAll();" style="width:95%;">재조회</button>
+                                        </div>
+                                    </td>
+
+                                    <td style="width:25%;">
+                                        <div class="form-group" style="margin:5px;width:100%;">
+                                            <button type="button" class="btn btn-primary m-t-15 waves-effect" onclick="Create();" style="width:95%;">등록</button>
+                                        </div>
+
+                                    </td>
+
+                                    <td style="width:25%;">
+                                        <div class="form-group" style="margin:5px;width:100%;">
+                                            <button type="button" class="btn btn-primary m-t-15 waves-effect" onclick="Update();" style="width:95%;">수정</button>
+                                        </div>
+
+                                    </td>
+
+                                    <td style="width:25%;">
+                                        <div class="form-group" style="margin:5px;width:100%;">
+                                            <button type="button" class="btn btn-primary m-t-15 waves-effect" onclick="Delete();" style="width:95%;">삭제</button>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                            </table>
+
+                        </div>
+
+                        <!--<ul class="header-dropdown m-r--5">
+                            <li class="dropdown">
+                                <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                    <i class="material-icons">more_vert</i>
+                                </a>
+                                <ul class="dropdown-menu pull-right">
+                                    <li><a href="javascript:void(0);">Action</a></li>
+                                    <li><a href="javascript:void(0);">Another action</a></li>
+                                    <li><a href="javascript:void(0);">Something else here</a></li>
+                                </ul>
+                            </li>
+                        </ul>-->
+                    </div>
+                    <div class="body">
+                        <table id="example-table" class="table">
+                            <thead>
+                                <tr>
+                                    <th>거래처명</th>
+                                    <th>거래처유형</th>
+                                    <th>연락처</th>
+                                    <!--<th>Fun</th>-->
+                                </tr>
+                            </thead>
+                            <tbody data-bind="foreach: list">
+
+                                <tr data-bind='click: setEditItem'>
+                                    <td data-bind="text: AC_NAME"></td>
+                                    <td data-bind="text: AC_TYPE_NAME "></td>
+                                    <td data-bind="text: AC_PHONENUMBER01 "></td>
+                                </tr>
+                            </tbody>
+                            <!--<tfoot>
+                                <tr>
+                                    <th><strong>TOTAL</strong></th>
+                                    <th>1290</th>
+                                    <th>1420</th>
+                                    <th>5</th>
+                                </tr>
+                            </tfoot>-->
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script type="text/javascript">
+
+        function QueryAll() {
+            var obj = { handle: "01", view: "ACCOUNT", data: "" };
+
+            var data = JSON.stringify(obj);
+
+            //log("Sending Data:" + data);
+            invokeCSharpAction(data);
+        }
+
+        function Create() {
+
+            try {
+
+                var obj = { handle: "06", view: "ACCOUNT", data: "" };
+
+                var data = JSON.stringify(obj);
+
+                invokeCSharpAction(data);
+
+            } catch (excetion) {
+                alert(excetion);
+            }
+        }
+
+        function Update() {
+
+            var item = JSON.stringify(selectItem);
+
+            var obj = { handle: "06", view: "ACCOUNT", data: item };
+
+            var data = JSON.stringify(obj);
+
+            invokeCSharpAction(data);
+        }
+
+        function Delete() {
+            var item = JSON.stringify(selectItem);
+
+            var obj = { handle: "05", view: "ACCOUNT", data: item };
+
+            var data = JSON.stringify(obj);
+
+            invokeCSharpAction(data);
+        }
+
+        function logForXamarin(str) {
+            //alert(str);
+            //$('#result').text($('#result').text() + " " + str);
+
+            var jsonObj = $.parseJSON(str);
+
+            viewModel.list(jsonObj);
+
+            var tr = $('#example-table').find('tr');
+            tr.bind('mouseover', function (event) {
+                tr.removeClass('row-highlight');
+            });
+            tr.bind('click', function (e) {
+                tr.removeClass('row-click');
+                var tds = $(this).addClass('row-click').find('td');
+            });
+        }
+
+        var viewModel = {
+            list: ko.observableArray([])
+        };
+
+        $(document).ready(function () {
+
+            //var obj = { handle: "01", view: "ACCOUNT", data: "" };
+
+            //var data = JSON.stringify(obj);
+
+
+            //var str = '{"id":1,"name":"Test1"},{"id":2,"name":"Test2"}';
+            //var jsonObj = $.parseJSON('[' + str + ']');
+
+            //var json = [{ "AC_SN": 1, "AC_ID": "", "AC_TYPE_CODE": "001", "AC_TYPE_NAME": null, "AC_NAME": "등록 거래처", "AC_OWNER": "", "AC_ADDRESS": "", "AC_MAN01": "ㅅㄱㄹ", "AC_PHONENUMBER01": "", "AC_EMAIL01": "", "AC_MAN02": "", "AC_PHONENUMBER02": "", "AC_EMAIL02": "", "AC_PAY": 0.0, "AC_LOT": 0.0, "AC_LAT": 0.0, "AC_UPDATE_SN": 0, "AC_UPDATE_DATE": "0001-01-24T08:34:00.1033347Z", "AC_USEYN": false, "AC_DESC": "" }, { "AC_SN": 2, "AC_ID": "", "AC_TYPE_CODE": "001", "AC_TYPE_NAME": null, "AC_NAME": "ㅛㅗㅕ", "AC_OWNER": "", "AC_ADDRESS": "", "AC_MAN01": "ㅓㅓㅕㅐㅐㅓㅕㅑ", "AC_PHONENUMBER01": "", "AC_EMAIL01": "", "AC_MAN02": "", "AC_PHONENUMBER02": "", "AC_EMAIL02": "", "AC_PAY": 0.0, "AC_LOT": 0.0, "AC_LAT": 0.0, "AC_UPDATE_SN": 0, "AC_UPDATE_DATE": "0001-01-24T08:34:00.104004Z", "AC_USEYN": false, "AC_DESC": "" }];
+
+            //var json = [];
+
+            //viewModel.list(json);
+
+            ko.applyBindings(viewModel);
+        });
+
+        var selectItem;
+
+        this.setEditItem = function (item) {
+            selectItem = item;
+        }
+
+            //$(document).ready(function () {
+            //    var json = [{ "name": "name1", "score": "30" }, { "name": "name2", "score": "50" }];
+
+            //    $.getJSON(url, function (json) {
+            //        ko.applyBindings({
+            //            teams: json
+            //        });
+            //    }
+            //});
+
+
+
+    </script>
+
+
+
+
+    <!-- Jquery Core Js -->
+    <script src="../../plugins/jquery/jquery.min.js">
+    </script>
+    <!-- Bootstrap Core Js -->
+    <script src="../../plugins/bootstrap/js/bootstrap.js">
+    </script>
+    <!-- Select Plugin Js -->
+    <script src="../../plugins/bootstrap-select/js/bootstrap-select.js">
+    </script>
+    <!-- Slimscroll Plugin Js -->
+    <script src="../../plugins/jquery-slimscroll/jquery.slimscroll.js">
+    </script>
+    <!-- Waves Effect Plugin Js -->
+    <script src="../../plugins/node-waves/waves.js">
+    </script>
+    <!-- Editable Table Plugin Js -->
+    <script src="../../plugins/editable-table/mindmup-editabletable.js">
+    </script>
+    <!-- Custom Js -->
+    <script src="../../js/admin.js">
+    </script>
+    <script src="../../js/pages/tables/editable-table.js">
+    </script>
+    <!-- Demo Js -->
+    <script src="../../js/demo.js">
+    </script>
+
+
+</body>
+</html>
