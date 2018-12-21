@@ -1,29 +1,110 @@
 ﻿<html>
-<body>
-    <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <h1>HybridWebView Test</h1>
-    <br />
-    Enter name: <input type="text" id="name">
-    <br />
-    <br />
-    <button type="button" onclick="javascript:invokeCSCode($('#name').val());">Invoke C# Code</button>
-    <br />
-    <p id="result">Result:</p>
-    <script type="text/javascript">
-        function log(str) {
-            $('#result').text($('#result').text() + " " + str);
+
+<head>
+    <meta charset="utf-8" />
+    <!--<style>
+        @font-face {
+            font-family: 'overwatch';
+            src: url('fonts/koverwatch.woff2');
+        }
+    </style>-->
+</head>
+
+
+<body onload="abc()">
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+    <script src="https://rawgit.com/jasondavies/d3-cloud/master/build/d3.layout.cloud.js" type="text/JavaScript"></script>
+    <script>
+        var width = 960,
+            height = 500
+
+        var svg = d3.select("body").append("svg")
+            .attr("width", width)
+            .attr("height", height);
+
+        var svg = d3.select("svg")
+            .append("g")
+            .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")")
+
+
+        function showCloud(data) {
+            d3.layout.cloud().size([width, height])
+                //클라우드 레이아웃에 데이터 전달
+                .words(data)
+                .rotate(function (d) {
+                    return d.text.length > 3 ? 0 : 90;
+                })
+                //스케일로 각 단어의 크기를 설정
+                .fontSize(function (d) {
+                    return d.frequency;
+                })
+                //클라우드 레이아웃을 초기화 > end이벤트 발생 > 연결된 함수 작동
+                .on("end", draw)
+                .start();
+
+            function draw(words) {
+                var cloud = svg.selectAll("text").data(words)
+                //Entering words
+                cloud.enter()
+                    .append("text")
+                    .style("font-family", "overwatch")
+                    //.style("fill", function (d) {
+                    //    return (keywords.indexOf(d.text) > -1 ? "#fbc280" : "#405275");
+                    //})
+                    .style("fill-opacity", .5)
+                    .attr("text-anchor", "middle")
+                    .attr('font-size', 1)
+                    .text(function (d) {
+                        return d.text;
+                    });
+                cloud
+                    .transition()
+                    .duration(600)
+                    .style("font-size", function (d) {
+                        var fontSize = d.size + "px"
+
+                        return fontSize;
+                    })
+                    .attr("transform", function (d) {
+                        return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
+                    })
+                    .style("fill-opacity", 1);
+            }
         }
 
-        function invokeCSCode(data) {
-            try {
-                log("Sending Data:" + data);
-                invokeCSharpAction(data);
-            }
-            catch (err) {
-                log(err);
-            }
+        function abc() {
+            var data = [
+                { text: '공항로팔공로:4분', frequency: Math.round(226 * 0.2) },
+                { text: '무열로황금로', frequency: Math.round(135 * 0.2) },
+                { text: '매천로', frequency: Math.round(258 * 0.2) },
+                { text: '달성로', frequency: Math.round(200 * 0.2) },
+                { text: '서성로 침산로', frequency: Math.round(145 * 0.2), href: 'https://en.wikipedia.org/wiki/Beadle' },
+                { text: '공평로 이천로', frequency: Math.round(187 * 0.2) },
+                { text: '달서대로', frequency: Math.round(275 * 0.2) },
+                { text: '평리로선원로', frequency: Math.round(255 * 0.2) },
+                { text: '월곡로', frequency: Math.round(195 * 0.2) },
+                { text: '현충로', frequency: Math.round(226 * 0.2) },
+                { text: '범안로', frequency: Math.round(240 * 0.2) },
+                { text: '무학로', frequency: Math.round(79 * 0.2) },
+                { text: '앞산터널로', frequency: Math.round(657 * 0.2) },
+                { text: '성북로', frequency: Math.round(409 * 0.2) },
+                { text: '연암로', frequency: Math.round(181 * 0.2) },
+                { text: '대학로', frequency: Math.round(390 * 0.2) },
+                { text: '동원로', frequency: Math.round(200 * 0.2) },
+                { text: '구암로', frequency: Math.round(280 * 0.2) },
+                { text: '동화천로', frequency: Math.round(640 * 0.2) },
+                { text: '봉덕로', frequency: Math.round(201 * 0.2) },
+                { text: '서변남로', frequency: Math.round(188 * 0.2) },
+                { text: '성서로', frequency: Math.round(238 * 0.2) },
+                { text: '용학로', frequency: Math.round(163 * 0.2) },
+                { text: '경안로', frequency: Math.round(162 * 0.2) },
+                { text: '남산로', frequency: Math.round(169 * 0.2) },
+                { text: '북비산로태평로', frequency: Math.round(136 * 0.2) },
+            ];
+
+            showCloud(data)
         }
     </script>
 </body>
-</html>
 
+</html>
