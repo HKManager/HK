@@ -11,6 +11,8 @@ namespace HK.PoyoWordBook
     {
         private SQLiteConnection conn;
 
+        public static Page PageView;
+
         public App()
         {
             InitializeComponent();
@@ -21,7 +23,9 @@ namespace HK.PoyoWordBook
 
             CodeManager.Load(string.Empty);
 
-            MainPage = new page뱀키우기();
+            PageView = MainPage;
+
+            MainPage = new MainPage();
         }
 
         protected override void OnStart()
