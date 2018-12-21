@@ -18,8 +18,13 @@
         function logForXamarin(str) {
 
             //alert(str);
+            try {
+                onKeyDown(str);
+            }catch(exception) {
+                alert(exception);
+            }
 
-            onKeyDown(str);
+            
         }
     </script>
 
