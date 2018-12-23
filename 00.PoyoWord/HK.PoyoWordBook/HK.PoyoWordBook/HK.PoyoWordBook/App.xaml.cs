@@ -17,12 +17,9 @@ namespace HK.PoyoWordBook
         public static int deviceHeight= 0;
         
 
-        public App(int width, int height)
+        public App()
         {
             InitializeComponent();
-
-            deviceWidth = width;
-            deviceHeight = height;
 
             conn = DependencyService.Get<ISQLite>().GetConnection();
 

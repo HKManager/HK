@@ -97,47 +97,15 @@ var level = null;
 // The function gets called when the window is fully loaded
 window.onload = function() {
 
-    canvas = document.getElementById("viewport"); 
+
+};
+
+function SetLevel(countWidth, countHeight) {
+
+    canvas = document.getElementById("viewport");
     context = canvas.getContext("2d");
 
     img = document.getElementById("scream");
-
-    // Level properties
-    Level = function (columns, rows, tilewidth, tileheight) {
-        this.columns = columns;
-        this.rows = rows;
-        this.tilewidth = tilewidth;
-        this.tileheight = tileheight;
-        
-        // Initialize tiles array
-        this.tiles = [];
-        for (var i=0; i<this.columns; i++) {
-            this.tiles[i] = [];
-            for (var j=0; j<this.rows; j++) {
-                this.tiles[i][j] = 0;
-            }
-        }
-    };
-    
-    // Generate a default level with walls
-    Level.prototype.generate = function() {
-        for (var i=0; i<this.columns; i++) {
-            for (var j=0; j<this.rows; j++) {
-                this.tiles[i][j] = 0;
-
-                // - 신인환 주석 : 테두리 없애기
-                // if (i == 0 || i == this.columns-1 ||
-                //     j == 0 || j == this.rows-1) {
-                //     // Add walls at the edges of the level
-                //     this.tiles[i][j] = 1;
-                // } else {
-                //     // Add empty space
-                    
-                // }
-            }
-        }
-    };
-
 
     Snake = function () {
         this.init(0, 0, 1, 10, 1);
@@ -221,14 +189,48 @@ window.onload = function() {
 
     snake = new Snake();
 
+    // Level properties
+    Level = function (columns, rows, tilewidth, tileheight) {
+        this.columns = columns;
+        this.rows = rows;
+        this.tilewidth = tilewidth;
+        this.tileheight = tileheight;
+
+        // Initialize tiles array
+        this.tiles = [];
+        for (var i = 0; i < this.columns; i++) {
+            this.tiles[i] = [];
+            for (var j = 0; j < this.rows; j++) {
+                this.tiles[i][j] = 0;
+            }
+        }
+    };
+
+    // Generate a default level with walls
+    Level.prototype.generate = function () {
+        for (var i = 0; i < this.columns; i++) {
+            for (var j = 0; j < this.rows; j++) {
+                this.tiles[i][j] = 0;
+
+                // - 신인환 주석 : 테두리 없애기
+                // if (i == 0 || i == this.columns-1 ||
+                //     j == 0 || j == this.rows-1) {
+                //     // Add walls at the edges of the level
+                //     this.tiles[i][j] = 1;
+                // } else {
+                //     // Add empty space
+
+                // }
+            }
+        }
+    };
+
     // - 신인환주석 : 배경 배열
-    level = new Level(20, 15, 32, 32);
+    level = new Level(countWidth, countHeight, 32, 32);
 
     // Call init to start the game
     init();
-};
-
-
+}
 
 // Initialize the game
 function init() {
@@ -237,7 +239,7 @@ function init() {
     tileimage = images[0];
 
     // Add mouse events
-    canvas.addEventListener("mousedown", onMouseDown);
+    //canvas.addEventListener("mousedown", onMouseDown);
 
     // Add keyboard events
     //document.addEventListener("keydown", onKeyDown);
@@ -627,22 +629,22 @@ function onKeyDown(e) {
     if (gameover) {
         tryNewGame();
     } else {
-        if (e == '37' || e.keyCode == 65) {
+        if (e == '37') {
             // Left or A
             if (snake.direction != 1) {
                 snake.direction = 3;
             }
-        } else if (e == '38' || e.keyCode == 87) {
+        } else if (e == '38') {
             // Up or W
             if (snake.direction != 2) {
                 snake.direction = 0;
             }
-        } else if (e == '39' || e.keyCode == 68) {
+        } else if (e == '39') {
             // Right or D
             if (snake.direction != 3) {
                 snake.direction = 1;
             }
-        } else if (e == '40' || e.keyCode == 83) {
+        } else if (e == '40') {
             // Down or S
             if (snake.direction != 0) {
                 snake.direction = 2;
@@ -650,9 +652,9 @@ function onKeyDown(e) {
         }
 
         // Grow for demonstration purposes
-        if (e.keyCode == 32) {
-            snake.grow();
-        }
+        //if (e.keyCode == 32) {
+        //    snake.grow();
+        //}
     }
 }
 

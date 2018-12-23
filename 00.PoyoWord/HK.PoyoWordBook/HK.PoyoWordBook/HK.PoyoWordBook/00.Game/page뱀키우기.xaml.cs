@@ -40,8 +40,31 @@ namespace HK.PoyoWordBook
         {
             이벤트데이터 데이터 = new 이벤트데이터();
             데이터.handle = "resize";
-            데이터.value = new Point(App.deviceWidth, App.deviceHeight);
             데이터.view = "뱀키우기";
+
+            int width = 0;
+            int height = 0;
+            int countWidth = 0;
+            int countHeight = 0;
+
+            for(; width < App.deviceWidth-32; width += 32)
+            {
+                countWidth++;
+            }
+
+            for (; height < App.deviceHeight-64; height += 32)
+            {
+                countHeight++;
+            }
+
+            데이터.value = new ViewSize
+            {
+                DeviceWidth = width,
+                DeviceHeight = height,
+
+                CountWidth = countWidth,
+                CountHeight = countHeight
+            };
 
             var jsonData = JsonTool.Serialize(데이터);
 
@@ -68,19 +91,19 @@ namespace HK.PoyoWordBook
             }
             else if (x >= 10 && angle >= 45 && angle <= 135)
             {
-                데이터.data = "37";
+                데이터.data = "39";
                 //hybridWebView.ShowResult("00");
                 //hybridWebView.ShowResult("39");
             }
             else if (y >= 10 && (angle >= 315 || angle <= 45))
             {
-                데이터.data = "37";
+                데이터.data = "38";
                 //hybridWebView.ShowResult("00");
                 //hybridWebView.ShowResult("38");
             }
             else if (y <= -10 && angle >= 135 && angle <= 225)
             {
-                데이터.data = "37";
+                데이터.data = "40";
                 //hybridWebView.ShowResult("00");
                 
             }
@@ -88,5 +111,15 @@ namespace HK.PoyoWordBook
             var jsonData = JsonTool.Serialize(데이터);
             hybridWebView.ShowResult(jsonData);
         }
+    }
+
+    public class ViewSize
+    {
+        public int DeviceWidth { set; get; }
+        public int DeviceHeight { set; get; }
+
+        public int CountWidth { set; get; }
+
+        public int CountHeight { set; get; }
     }
 }

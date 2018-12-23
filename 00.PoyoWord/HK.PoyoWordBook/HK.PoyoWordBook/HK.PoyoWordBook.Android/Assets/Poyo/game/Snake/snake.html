@@ -1,25 +1,54 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Rembound.com Example</title>
+    <meta charset="UTF-8">
+    <title>Rembound.com Example</title>
+
+    <style>
+        .center {
+            display: block;
+            margin:auto;
+        }
+    </style>
 
 </head>
 <body>
 
     <img id="scream" width="220" height="277" src="snake_02.png" alt="The Scream" style="display:none;">
 
-    <canvas id="viewport" width="640" height="480"></canvas>
+    <canvas id="viewport" class="center" width="640" height="480"></canvas>
 
     <script type="text/javascript" src="snake.js"></script>
 
+    <script type="text/javascript" src="../../Content/plugins/jquery/jquery.min.js"></script>
+
     <script type="text/javascript">
+
+        //$(document).ready(function () {
+        //    logForXamarin('abc');
+        //});
 
         function logForXamarin(str) {
 
             //alert(str);
             try {
-                onKeyDown(str);
+
+                //var str = '{ "handle": "resize", "view": "뱀키우기", "data": null, "value": { "DeviceWidth": 640, "DeviceHeight": 384, "CountWidth": 20, "CountHeight": 12 } }';
+
+                var jsonObj = JSON.parse(str);
+
+
+                switch (jsonObj.handle) {
+                    case "resize":
+                        $("#viewport").width(jsonObj.value.DeviceWidth);
+                        $("#viewport").height(jsonObj.value.DeviceHeight);
+
+                        SetLevel(jsonObj.value.CountWidth, jsonObj.value.CountHeight);
+                        break;
+                    case "move":
+                        onKeyDown(jsonObj.data);
+                        break;
+                }
             }catch(exception) {
                 alert(exception);
             }
