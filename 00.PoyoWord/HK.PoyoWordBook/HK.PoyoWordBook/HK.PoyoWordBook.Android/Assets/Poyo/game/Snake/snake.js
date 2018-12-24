@@ -97,7 +97,7 @@ var level = null;
 // The function gets called when the window is fully loaded
 window.onload = function() {
 
-
+    //SetLevel(20, 15);
 };
 
 function SetLevel(countWidth, countHeight) {
@@ -624,29 +624,29 @@ function onMouseDown(e) {
     }
 }
 
-// Keyboard event handler
+ //Keyboard event handler
 function onKeyDown(e) {
     if (gameover) {
         tryNewGame();
     } else {
         if (e == '37') {
             // Left or A
-            if (snake.direction != 1) {
+            if (snake.direction != 1 || snake.direction != 3) {
                 snake.direction = 3;
             }
         } else if (e == '38') {
             // Up or W
-            if (snake.direction != 2) {
+            if (snake.direction != 2 || snake.direction != 0) {
                 snake.direction = 0;
             }
         } else if (e == '39') {
             // Right or D
-            if (snake.direction != 3) {
+            if (snake.direction != 3 || snake.direction != 1) {
                 snake.direction = 1;
             }
         } else if (e == '40') {
             // Down or S
-            if (snake.direction != 0) {
+            if (snake.direction != 0 || snake.direction != 2) {
                 snake.direction = 2;
             }
         }
@@ -657,6 +657,35 @@ function onKeyDown(e) {
         //}
     }
 }
+
+//function onKeyDown(e) {
+//    if (gameover) {
+//        tryNewGame();
+//    } else {
+//        if (e.keyCode == 37) {
+
+//            // Left or A
+//            if (snake.direction != 1) {
+//                snake.direction = 3;
+//            }
+//        } else if (e.keyCode == 38) {
+//            // Up or W
+//            if (snake.direction != 2) {
+//                snake.direction = 0;
+//            }
+//        } else if (e.keyCode == 39) {
+//            // Right or D
+//            if (snake.direction != 3) {
+//                snake.direction = 1;
+//            }
+//        } else if (e.keyCode == 40) {
+//            // Down or S
+//            if (snake.direction != 0) {
+//                snake.direction = 2;
+//            }
+//        }
+//    }
+//}
 
 // Get the mouse position
 function getMousePos(canvas, e) {

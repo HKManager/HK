@@ -44,8 +44,8 @@ namespace HK.PoyoWordBook
 
             int width = 0;
             int height = 0;
-            int countWidth = 0;
-            int countHeight = 0;
+            int countWidth = 1;
+            int countHeight = 5;
 
             for(; width < App.deviceWidth-32; width += 32)
             {
