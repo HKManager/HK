@@ -1,0 +1,37 @@
+{
+  "name": "Game",
+  "version": "1.0.0",
+  "description": "Test application",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp": "^3.9.0"
+  },
+  "devDependencies": {
+    "connect": "^3.4.0",
+    "del": "^2.0.2",
+    "gulp": "^3.9.0",
+    "gulp-help": "^1.6.0",
+    "gulp-rename": "^1.2.0",
+    "gulp-sass": "^2.0.4",
+    "gulp-tslint": "^3.1.1-beta",
+    "gulp-typescript": "*",
+    "gulp-watch": "^1.1.0",
+    "http": "0.0.0",
+    "open": "0.0.5",
+    "serve-static": "^1.10.0",
+    "typescript": "^1.5.3"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "Cory Rylan",
+  "license": "MIT",
+  "bugs": {
+    "url": ""
+  },
+  "homepage": ""
+}

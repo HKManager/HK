@@ -1,0 +1,64 @@
+@font-face {
+    font-family: 'ARCADE';
+    src: url('../../vendor/arcade-font.ttf');
+}
+.spash-page{
+  -webkit-filter: blur(2px);
+  -moz-filter: blur(2px);
+  -o-filter: blur(2px);
+  -ms-filter: blur(2px);
+  filter: blur(2px);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+}
+
+#game-container{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 2px;
+  background: rgba(235, 235, 235, 0.65);
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0px 10px 2px black;
+}
+
+canvas{
+  position: relative;
+}
+
+.contact-info{
+  position: relative;
+  display: flex;
+  justify-content:center;
+  align-items:center;
+}
+.contact-info > ul{
+  list-style: none;
+  display: flex;
+  padding: 0;
+  margin-left:5%;
+}
+
+.contact-info > ul > li{
+  padding-right: 2em;
+}
+
+.contact-info > ul > li > a{
+  text-decoration: none;
+}
+
+.background-container{
+  height: 100vh;
+  width: 100vw;
+  background-image: url("../bg.jpg");
+  background-size: cover;
+}
+
+a:visited { text-decoration: none; color: black; }
+a:focus { text-decoration: none; color: black; }
+a:hover, a:active { text-decoration: none; color:#333333 }

@@ -1,0 +1,86 @@
+body{
+    background-color: black;
+    width: 800px;
+    margin: 10px auto;
+	overflow:auto;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+#instruction {
+    color: white;
+    position: absolute;
+    top: 620px;
+    left: 0px;
+    min-width: 100%;
+}
+#splashScreen{
+    width: 800px;
+    height: 600px;
+    border: 2px solid red;
+    background-color: gray;
+    position: absolute;
+    z-index: 9;
+}
+#play_text{
+    color: black;
+    font-family: Helvetica;
+    position: absolute;
+    margin: 32px 0 0 65px;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+#play{
+    margin: 30px;
+    cursor: pointer;
+}
+#scoreBoard{
+    width: 260px;
+    line-height: 35px;
+    border: 2px solid red;
+    position: relative;
+    right:0px;
+    border-radius: 20px;
+    top: -560px;
+    z-index: -9;
+    float: right;
+    padding-top: 15px;
+}
+#score, #tank_life, #star_collected, .info, #scoreBoardText{
+    color: white;
+    font-size: 1.5em;
+    margin-left:45px;
+    font-family: Helvetica;
+}
+#difficulty{
+    color: black;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-right: 45px;
+    margin-top: -95px;
+    float: right;
+    line-height: 41px;
+}
+input{
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+#previousScore{
+    width: 260px;
+    border: 2px solid red;
+    position: relative;
+    left:0px;
+    border-radius: 20px;
+    top: -560px;
+    z-index: -9;
+    color: white;
+    font-size: 1.2em;
+    padding: 15px 0px 0px 10px;
+    line-height: 30px;
+    font-family: Helvetica;
+}

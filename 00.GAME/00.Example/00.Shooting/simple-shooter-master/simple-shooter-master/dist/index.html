@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>HTML5 2D shooting game</title>
+    <meta name="description" content="Unit9 HTML5 Challenge">
+    <meta name="author" content="Marco Ciampini">
+    <link rel="stylesheet" href="./css/app.css">
+  </head>
+  <body>
+    <h1>HTML5 2D Shooting Game</h1>
+
+    <div id="canvas_container">
+      <canvas id="bg" width="640" height="200">Canvas not supported by the browser</canvas>
+      <canvas id="main" width="640" height="200">Canvas not supported by the browser</canvas>
+      <canvas id="enemies" width="640" height="200">Canvas not supported by the browser</canvas>
+      <canvas id="obstacles" width="640" height="200">Canvas not supported by the browser</canvas>
+      <div id="gameOver">
+        Game Over
+        <p onclick="game.restart();">Restart</p>
+      </div>
+      <div id="gameWin">
+        YOU WON !!
+        <p onclick="game.restart();">Restart</p>
+      </div>
+    </div>
+    
+    <div id="instructions">
+      <p>Move: left &amp; right arrow<br>
+      Jump: up arrow<br>
+      Shoot: space</p>
+
+      <p>To kill the enemies, shoot them !</p>
+      <p>If you touch the enemies or if you get shot by them, you loose; if you kill all the enemies, you win !</p>
+      <p>If you have troubles, simply refresh the page</p>
+    </div>
+
+    <small>by Marco Ciampini</small>
+
+    <script src="./js/app.min.js"></script>
+  </body>
+</html>

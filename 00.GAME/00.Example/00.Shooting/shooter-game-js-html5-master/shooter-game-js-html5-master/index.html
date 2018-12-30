@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<!-- Shooter Game Project by Alex Gomes and Waleed Dogar Last edited on 08/08/2014 -->
+<html data-wf-site="53e426cda4bf49cb45b748f9">
+<head>
+  <meta charset="utf-8">
+  <title>Shooter</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="generator" content="Webflow">
+  <link rel="stylesheet" type="text/css" href="css/normalize.css">
+  <link rel="stylesheet" type="text/css" href="css/webflow.css">
+  <link rel="stylesheet" type="text/css" href="css/shootergame.webflow.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
+  <script>
+    WebFont.load({
+      google: {
+        families: ["Exo:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic"]
+      }
+    });
+  </script>
+  <script type="text/javascript" src="js/modernizr.js"></script>
+  <link rel="shortcut icon" type="image/x-icon" href="https://daks2k3a4ib2z.cloudfront.net/placeholder/favicon.ico">
+</head>
+<body>
+  <main class="main">
+    <div id="game"></div>
+    <div id="splashScreen"><a class="button start" onclick="startGame()" id = "play">START GAME</a>
+      <div class="w-form difficulty">
+        <form action="" id="difficulty" name="email-form">
+          <h3>Use A and D to move player <br><br> W to jump<br><br>Use the Mouse to Shoot<br><br>Goal: Kill the Tank</h3>
+          <br><br>
+          <h3>Choose Difficulty</h3>
+          <div class="w-radio w-clearfix radio">
+            <input class="w-radio-input" id="easy" type="radio" name="difficulty" value="easy" data-name="Difficulty">
+            <label class="w-form-label radiobutton" for="easy">Easy</label>
+          </div>
+          <div class="w-radio w-clearfix radio">
+            <input class="w-radio-input" id="medium" type="radio" name="difficulty" checked="checked" value="medium" data-name="Difficulty">
+            <label class="w-form-label radiobutton" for="medium">Medium</label>
+          </div>
+          <div class="w-radio w-clearfix radio">
+            <input class="w-radio-input" id="Hard" type="radio" name="difficulty" value="hard" data-name="Difficulty">
+            <label class="w-form-label radiobutton" for="Hard">Hard</label>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div id = "scoreBoard"class="scoreboard">
+      <div class="w-embed scoreboard"><span style="color: yellow" id="scoreBoardText">Score Board</span>
+        <br>
+        <span id="score"></span>
+        <br>
+        <span id="tank_life"></span>
+        <br>
+        <span id="star_collected"></span>
+        <br>
+        <br>
+        <span class="info">Hit Tank = 1pt       ------</span>
+        <span class="info">Collect Stars = 20pt     ------      </span>
+        <span class="info">Stop Bombs = 2pt</span>
+        <br>
+        <br>
+      </div>
+    </div>
+    <div class="instructions">
+      <h1>SHOOTER</h1>
+      <h3>Use A and D to control player and W to jump<br>Use the Mouse to Shoot<br>Goal: Kill the Tank</h3>
+    </div>
+  </main>
+  <footer class="footer">
+    <h3>By: Alex Gomes and Waleed Dogar</h3>
+  </footer>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script type="text/javascript" src="js/webflow.js"></script>
+  <script type="text/javascript" src="script/phaser.min.js"></script>
+  <script type="text/javascript" src="script/splashScreen.js" id="splashScript"></script>
+  <script type="text/javascript" src="" id="gameScript"></script>
+  <!--[if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
+</body>
+</html>
