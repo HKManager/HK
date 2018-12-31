@@ -1,22 +1,17 @@
 ﻿<!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="UTF-8">
     <title>Rembound.com Example</title>
 
     <style>
         .center {
-            margin: 0;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+            display: block;
+            margin: auto;
         }
     </style>
 
 </head>
-
 <body>
 
     <img id="scream" width="220" height="277" src="snake_02.png" alt="The Scream" style="display:none;">
@@ -29,16 +24,16 @@
 
     <script type="text/javascript">
 
-        $(document).ready(function () {
-            logForXamarin('abc');
-        });
+        //$(document).ready(function () {
+        //    logForXamarin('abc');
+        //});
 
         function logForXamarin(str) {
 
             //alert(str);
             try {
 
-                var str = '{ "handle": "resize", "view": "뱀키우기", "data": null, "value": { "DeviceWidth": 640, "DeviceHeight": 384, "CountWidth": 20, "CountHeight": 12 } }';
+                //var str = '{ "handle": "resize", "view": "뱀키우기", "data": null, "value": { "DeviceWidth": 640, "DeviceHeight": 384, "CountWidth": 20, "CountHeight": 12 } }';
 
                 var jsonObj = JSON.parse(str);
 
@@ -63,5 +58,4 @@
     </script>
 
 </body>
-
-</html>
+</html> 

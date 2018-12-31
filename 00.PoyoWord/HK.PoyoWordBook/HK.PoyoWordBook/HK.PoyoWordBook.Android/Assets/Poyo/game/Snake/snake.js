@@ -242,7 +242,7 @@ function init() {
     //canvas.addEventListener("mousedown", onMouseDown);
 
     // Add keyboard events
-    document.addEventListener("keydown", onKeyDown);
+    //document.addEventListener("keydown", onKeyDown);
 
     // New game
     newGame();
@@ -625,67 +625,67 @@ function onMouseDown(e) {
 }
 
  //Keyboard event handler
-// function onKeyDown(e) {
-//     if (gameover) {
-//         tryNewGame();
-//     } else {
-//         if (e == '37') {
-//             // Left or A
-//             if (snake.direction != 1 || snake.direction != 3) {
-//                 snake.direction = 3;
-//             }
-//         } else if (e == '38') {
-//             // Up or W
-//             if (snake.direction != 2 || snake.direction != 0) {
-//                 snake.direction = 0;
-//             }
-//         } else if (e == '39') {
-//             // Right or D
-//             if (snake.direction != 3 || snake.direction != 1) {
-//                 snake.direction = 1;
-//             }
-//         } else if (e == '40') {
-//             // Down or S
-//             if (snake.direction != 0 || snake.direction != 2) {
-//                 snake.direction = 2;
-//             }
-//         }
-
-//         // Grow for demonstration purposes
-//         //if (e.keyCode == 32) {
-//         //    snake.grow();
-//         //}
-//     }
-// }
-
 function onKeyDown(e) {
-   if (gameover) {
-       tryNewGame();
-   } else {
-       if (e.keyCode == 37) {
+    if (gameover) {
+        tryNewGame();
+    } else {
+        if (e == '37') {
+            // Left or A
+            if (snake.direction != 1 || snake.direction != 3) {
+                snake.direction = 3;
+            }
+        } else if (e == '38') {
+            // Up or W
+            if (snake.direction != 2 || snake.direction != 0) {
+                snake.direction = 0;
+            }
+        } else if (e == '39') {
+            // Right or D
+            if (snake.direction != 3 || snake.direction != 1) {
+                snake.direction = 1;
+            }
+        } else if (e == '40') {
+            // Down or S
+            if (snake.direction != 0 || snake.direction != 2) {
+                snake.direction = 2;
+            }
+        }
 
-           // Left or A
-           if (snake.direction != 1) {
-               snake.direction = 3;
-           }
-       } else if (e.keyCode == 38) {
-           // Up or W
-           if (snake.direction != 2) {
-               snake.direction = 0;
-           }
-       } else if (e.keyCode == 39) {
-           // Right or D
-           if (snake.direction != 3) {
-               snake.direction = 1;
-           }
-       } else if (e.keyCode == 40) {
-           // Down or S
-           if (snake.direction != 0) {
-               snake.direction = 2;
-           }
-       }
-   }
+        // Grow for demonstration purposes
+        //if (e.keyCode == 32) {
+        //    snake.grow();
+        //}
+    }
 }
+
+//function onKeyDown(e) {
+//    if (gameover) {
+//        tryNewGame();
+//    } else {
+//        if (e.keyCode == 37) {
+
+//            // Left or A
+//            if (snake.direction != 1) {
+//                snake.direction = 3;
+//            }
+//        } else if (e.keyCode == 38) {
+//            // Up or W
+//            if (snake.direction != 2) {
+//                snake.direction = 0;
+//            }
+//        } else if (e.keyCode == 39) {
+//            // Right or D
+//            if (snake.direction != 3) {
+//                snake.direction = 1;
+//            }
+//        } else if (e.keyCode == 40) {
+//            // Down or S
+//            if (snake.direction != 0) {
+//                snake.direction = 2;
+//            }
+//        }
+//    }
+//}
 
 // Get the mouse position
 function getMousePos(canvas, e) {
