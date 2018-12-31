@@ -9,14 +9,35 @@
             display: block;
             margin: auto;
         }
+
+        .menu {
+            position: absolute;
+            bottom: 0;
+            height: 32px;
+            left: 50%;
+            -webkit-transform: translateX(-50%);
+            transform: translateX(-50%)
+        }
+
+        .but {
+            float: left;
+        }
+
     </style>
 
 </head>
 <body>
 
-    <img id="scream" width="220" height="277" src="snake_02.png" alt="The Scream" style="display:none;">
+    <div style="width:100%;height:100%;position:relative;">
+        <canvas id="viewport" class="center" width="640" height="480" style="padding-top:12px;">
+        </canvas>
 
-    <canvas id="viewport" class="center" width="640" height="480"></canvas>
+        <div class="menu">
+            <p class="but">개수 : 5 개                   점수 : 2000 점</p>
+        </div>
+
+        <img id="scream" width="220" height="277" src="snake_02.png" alt="The Scream" style="display:none;">
+    </div>
 
     <script type="text/javascript" src="snake.js"></script>
 

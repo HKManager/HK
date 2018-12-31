@@ -284,7 +284,7 @@ function addApple() {
     while (!valid) {
         // Get a random position
         var ax = randRange(0, level.columns - 1);
-        var ay = randRange(0, level.rows - 1);
+        var ay = randRange(0, level.rows - 2);
 
         // Make sure the snake doesn't overlap the new apple
         var overlap = false;
