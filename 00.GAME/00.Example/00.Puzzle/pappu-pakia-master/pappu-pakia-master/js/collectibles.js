@@ -44,6 +44,7 @@
     };
 
 
+    // - 신인환 주석 : 과일 삽입
     this.draw = function(ctx) {
       switch (this.type) {
 
