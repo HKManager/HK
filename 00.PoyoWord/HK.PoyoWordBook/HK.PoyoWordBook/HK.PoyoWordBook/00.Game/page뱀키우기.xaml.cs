@@ -20,6 +20,8 @@ namespace HK.PoyoWordBook
 
             hybridWebView.OnLoadPage += onLoadPage;
             JoystickControl.Move += onMove;
+
+            hybridWebView.RegisterAction(data => ShowData(data));
         }
 
         protected override void OnAppearing()
@@ -110,6 +112,13 @@ namespace HK.PoyoWordBook
 
             var jsonData = JsonTool.Serialize(데이터);
             hybridWebView.ShowResult(jsonData);
+        }
+
+        private void ShowData(string str)
+        {
+            TTSManager.GetInstance().TellVoice(false, "ko-KR", str);
+
+            //Application.Current.MainPage = new page뱀키우기();
         }
     }
 

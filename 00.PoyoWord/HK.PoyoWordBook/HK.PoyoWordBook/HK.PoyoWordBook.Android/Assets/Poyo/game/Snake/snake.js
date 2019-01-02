@@ -414,6 +414,8 @@ function updateGame(dt) {
 
                     //viewEffect(tilex, tiley);
 
+                    invokeCSCode("apple 사과");
+
                     // Grow the snake
                     snake.grow();
 
@@ -429,6 +431,8 @@ function updateGame(dt) {
                     //var tiley = ny * level.tileheight;
 
                     //viewEffect(tilex, tiley);
+
+                    invokeCSCode("apple 사과");
 
                     // Add a new apple
                     addApple();
@@ -448,6 +452,14 @@ function updateGame(dt) {
         if (gameover) {
             gameovertime = 0;
         }
+    }
+}
+
+function invokeCSCode(data) {
+    try {
+        invokeCSharpAction(data);
+    }
+    catch (err) {
     }
 }
 
