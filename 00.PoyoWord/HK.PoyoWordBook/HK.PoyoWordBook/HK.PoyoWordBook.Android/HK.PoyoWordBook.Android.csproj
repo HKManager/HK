@@ -313,6 +313,16 @@
     <AndroidAsset Include="Assets\Poyo\Content\scss\themes\theme-red.scss" />
     <AndroidAsset Include="Assets\Poyo\Content\scss\themes\theme-teal.scss" />
     <AndroidAsset Include="Assets\Poyo\Content\scss\themes\theme-yellow.scss" />
+    <AndroidAsset Include="Assets\Poyo\game\RunBird\fonts\happy_sans-webfont.eot" />
+    <AndroidAsset Include="Assets\Poyo\game\RunBird\fonts\happy_sans-webfont.ttf" />
+    <AndroidAsset Include="Assets\Poyo\game\RunBird\fonts\happy_sans-webfont.woff" />
+    <AndroidAsset Include="Assets\Poyo\game\RunBird\sound\flap.ogg" />
+    <AndroidAsset Include="Assets\Poyo\game\RunBird\sound\jump1.ogg" />
+    <AndroidAsset Include="Assets\Poyo\game\RunBird\sound\jump2.ogg" />
+    <AndroidAsset Include="Assets\Poyo\game\RunBird\sound\jump3.ogg" />
+    <AndroidAsset Include="Assets\Poyo\game\RunBird\sound\pappu-pakia2.3.ogg" />
+    <AndroidAsset Include="Assets\Poyo\game\RunBird\sound\ting.ogg" />
+    <AndroidAsset Include="Assets\Poyo\game\RunBird\README.md" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <None Include="Properties\AndroidManifest.xml" />
@@ -11748,6 +11758,144 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\Poyo\Content\views\sale\saleManager_Detail.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunBird\css\main.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunBird\fonts\happy_sans-webfont.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunBird\img\angry_pakia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunBird\img\apple.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunBird\img\back_trees.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunBird\img\berries.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunBird\img\bg_combined.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunBird\img\branch.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunBird\img\clouds.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunBird\img\coins.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunBird\img\coins_old.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunBird\img\controls.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunBird\img\dig.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunBird\img\fork_handle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunBird\img\fork_head.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunBird\img\front_trees.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunBird\img\grass.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunBird\img\ground.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunBird\img\happy_pakia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunBird\img\log.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunBird\img\mute.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunBird\img\pappu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunBird\img\plank_bot.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunBird\img\plank_mid.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunBird\img\plank_top.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunBird\img\sad_pakia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunBird\img\stand.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunBird\img\star.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunBird\js\backgrounds.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunBird\js\branches.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunBird\js\collectibles.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunBird\js\forks.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunBird\js\jquery-1.8.2.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunBird\js\loader.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunBird\js\main.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunBird\js\pakia.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunBird\js\pappu.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunBird\js\utils.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunBird\sound\flap.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunBird\sound\jump1.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunBird\sound\jump2.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunBird\sound\jump3.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunBird\sound\pappu-pakia2.3.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunBird\sound\ting.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunBird\index.htm" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunBird\kong.htm" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

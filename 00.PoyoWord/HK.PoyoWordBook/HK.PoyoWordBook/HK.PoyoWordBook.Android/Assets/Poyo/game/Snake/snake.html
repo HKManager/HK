@@ -2,9 +2,13 @@
 <html>
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Rembound.com Example</title>
 
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/earlyaccess/nanumpenscript.css">
+    <link rel="stylesheet" href="../../css/menu/reset.css"> <!-- CSS reset -->
+    <link rel="stylesheet" href="../../css/menu/style.css"> <!-- Resource style -->
+    <script src="../../js/menu/modernizr.js"></script> <!-- Modernizr -->
 
     <style>
         .center {
@@ -23,27 +27,55 @@
 
         .but {
             float: left;
-            font-family: 'Nanum Pen Script', serif;
+            font-family: 'Nanum Pen Script';
+            font-size:23px;
+            padding-top:10px;
         }
     </style>
 
 </head>
 <body>
 
-    <div style="width:100%;height:100%;position:relative;">
-        <canvas id="viewport" class="center" width="640" height="480" style="padding-top:12px;">
-        </canvas>
+    <div style="position:relative;">
+        <nav>
+            <ul class="cd-primary-nav">
+                <li><a href="#0" style="font-weight: bold;" onclick="ShowGame()">게임하기 (두근두근 단어 오락실)</a></li>
+                <li><a href="#0" style="font-weight: bold;">땅따먹기 (알쏭달쏭 단어 학습실)</a></li>
+                <li><a href="#0" style="font-weight: bold;">관리하기 (이것저것 단어 관리방)</a></li>
+                <li><a href="#0" style="font-weight: bold;">조회하기 (오목조목 정보 조회방)</a></li>
+                <li><a href="#0" style="font-weight: bold;">설정하기 (오밀조밀 어플 설정방)</a></li>
+            </ul>
+        </nav>
 
-        <div class="menu">
-            <p class="but">개수 : 5 개</p>                   <p class="but">점수 : 2000 점</p>
-</div>
+        <main id="divGame">
+            <div>
+                <canvas id="viewport" class="center" width="640" height="480" style="padding-top:20px;"></canvas>
 
-        <img id="scream" width="220" height="277" src="snake_02.png" alt="The Scream" style="display:none;">
+                <div class="menu">
+                    <p class="but">개수 : 5 개</p>                   <p class="but">점수 : 2000 점</p>
+                </div>
+
+                <img id="scream" width="220" height="277" src="snake_02.png" alt="The Scream" style="display:none;">
+            </div>
+        </main>
+
+        <div class="cd-overlay-nav">
+            <span></span>
+        </div> <!-- cd-overlay-nav -->
+        <div class="cd-overlay-content">
+            <span></span>
+        </div> <!-- cd-overlay-content -->
+        <a href="#0" class="cd-nav-trigger">Menu<span class="cd-icon"></span></a>
     </div>
 
     <script type="text/javascript" src="snake.js"></script>
 
     <script type="text/javascript" src="../../Content/plugins/jquery/jquery.min.js"></script>
+
+
+    <script src="../../js/menu/jquery-2.1.1.js"></script>
+    <script src="../../js/menu/velocity.min.js"></script>
+    <script src="../../js/menu/main.js"></script> <!-- Resource jQuery -->
 
     <script type="text/javascript">
 
