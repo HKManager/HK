@@ -404,9 +404,15 @@ function updateGame(dt) {
                 if (level.tiles[nx][ny] == 2) {
                     // Remove the apple
                     level.tiles[nx][ny] = 0;
+                    level.tiles[nx + 1][ny] = 0;
 
                     // Add a new apple
                     addApple();
+
+                    //var tilex = nx * level.tilewidth;
+                    //var tiley = ny * level.tileheight;
+
+                    //viewEffect(tilex, tiley);
 
                     // Grow the snake
                     snake.grow();
@@ -418,6 +424,11 @@ function updateGame(dt) {
                 if (level.tiles[nx - 1][ny] == 2) {
                     // Remove the apple
                     level.tiles[nx - 1][ny] = 0;
+
+                    //var tilex = (nx-1) * level.tilewidth;
+                    //var tiley = ny * level.tileheight;
+
+                    //viewEffect(tilex, tiley);
 
                     // Add a new apple
                     addApple();
@@ -438,6 +449,11 @@ function updateGame(dt) {
             gameovertime = 0;
         }
     }
+}
+
+function viewEffect(x, y) {
+    $('$effect').offset({ top: y, left: x });
+    $('$effect').show();
 }
 
 function updateFps(dt) {

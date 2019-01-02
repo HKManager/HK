@@ -65,7 +65,13 @@
                     <p class="but">점수 : 2000 점</p>
                 </div>
 
-                <img id="scream" width="220" height="277" src="snake_02.png" alt="The Scream" style="display:none;">
+                <div id="overimg" class="center menu" style="padding-top:20px;width:640px;height:480px;">
+                    <!--<img id="effect" style="width:64px;height:32px;position:absolute;" src="impact.gif">-->
+                </div>
+
+                
+
+                <img id="scream" width="220" height="277" src="snake_02.png" style="display:none;" alt="The Scream">
             </div>
         </main>
 
@@ -90,13 +96,16 @@
     <script type="text/javascript">
 
         //$(document).ready(function () {
-        //    logForXamarin('abc');
+            
         //});
 
         function logForXamarin(str) {
 
             //alert(str);
             try {
+
+
+                //$('#effect').hide();
 
                 //var str = '{ "handle": "resize", "view": "뱀키우기", "data": null, "value": { "DeviceWidth": 640, "DeviceHeight": 384, "CountWidth": 20, "CountHeight": 12 } }';
 
@@ -106,6 +115,9 @@
                     case "resize":
                         $("#viewport").width(jsonObj.value.DeviceWidth);
                         $("#viewport").height(jsonObj.value.DeviceHeight);
+
+                        $("#overimg").width(jsonObj.value.DeviceWidth);
+                        $("#overimg").height(jsonObj.value.DeviceHeight);
 
                         SetLevel(jsonObj.value.CountWidth, jsonObj.value.CountHeight);
                         break;
