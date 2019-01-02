@@ -67,25 +67,26 @@
 
     this.drawCoin = function(ctx) {
       // Get coin color based on sub type
-      var pos = mit.CollectibleUtils.getCoinSpritePos(this.sub_type);
+      //var pos = mit.CollectibleUtils.getCoinSpritePos(this.sub_type);
 
-      //ctx.fillText("applereqq", pos.x, pos.y, 64, 30);
+      ctx.font = "35px Verdana";
+      ctx.fillText("apple", this.x, this.y, 64, 35);
 
-      ctx.drawImage(
-        mit.CollectibleUtils.coin_img,
-        pos.x, pos.y,
-        30, 30,
-        this.x, this.y,
-        30, 30
-      );
+      // ctx.drawImage(
+      //   mit.CollectibleUtils.coin_img,
+      //   pos.x, pos.y,
+      //   30, 30,
+      //   this.x, this.y,
+      //   30, 30
+      // );
     };
 
     this.drawClone = function(ctx) {
 
       //ctx.fillText("applereqq", pos.x, pos.y + 32, 64, 30);
 
-      ctx.font = "18px Verdana";
-      ctx.fillText("applereqq", this.x, this.y + 32, 64, 30);
+      ctx.font = "35px Verdana";
+      ctx.fillText("apple", this.x, this.y + 32, 64, 35);
 
       // ctx.drawImage(
       //   mit.CollectibleUtils.clone_img,
@@ -96,8 +97,8 @@
 
     this.drawInvincible = function(ctx) {
 
-      ctx.font = "18px Verdana";
-      ctx.fillText("applereqq", this.x, this.y + 32, 64, 30);
+      ctx.font = "35px Verdana";
+      ctx.fillText("apple", this.x, this.y + 32, 64, 35);
 
       // ctx.drawImage(
       //   mit.CollectibleUtils.invincible_img,
