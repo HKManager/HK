@@ -69,8 +69,8 @@
       // Get coin color based on sub type
       //var pos = mit.CollectibleUtils.getCoinSpritePos(this.sub_type);
 
-      ctx.font = "35px Verdana";
-      ctx.fillText("apple", this.x, this.y, 64, 35);
+      ctx.font = "40px Verdana";
+      ctx.fillText("apple", this.x, this.y, 72, 40);
 
       // ctx.drawImage(
       //   mit.CollectibleUtils.coin_img,
@@ -85,8 +85,8 @@
 
       //ctx.fillText("applereqq", pos.x, pos.y + 32, 64, 30);
 
-      ctx.font = "35px Verdana";
-      ctx.fillText("apple", this.x, this.y + 32, 64, 35);
+      ctx.font = "40px Verdana";
+      ctx.fillText("apple", this.x, this.y + 32, 72, 40);
 
       // ctx.drawImage(
       //   mit.CollectibleUtils.clone_img,
@@ -97,8 +97,8 @@
 
     this.drawInvincible = function(ctx) {
 
-      ctx.font = "35px Verdana";
-      ctx.fillText("apple", this.x, this.y + 32, 64, 35);
+      ctx.font = "40px Verdana";
+      ctx.fillText("apple", this.x, this.y + 32, 72, 40);
 
       // ctx.drawImage(
       //   mit.CollectibleUtils.invincible_img,
