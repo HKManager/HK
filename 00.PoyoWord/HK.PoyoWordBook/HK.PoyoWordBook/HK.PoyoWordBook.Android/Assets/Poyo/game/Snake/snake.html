@@ -18,18 +18,24 @@
 
         .menu {
             position: absolute;
-            bottom: 0;
+            top: 0;
             height: 32px;
-            left: 50%;
-            -webkit-transform: translateX(-50%);
-            transform: translateX(-50%)
         }
 
         .but {
             float: left;
             font-family: 'Nanum Pen Script';
-            font-size:23px;
-            padding-top:10px;
+            font-weight: bold;
+            font-size: 27px;
+            padding-top: 25px;
+
+            text-shadow: 1px 2px 2px gray;
+        }
+
+        .horizontalCenter {
+            left: 50%;
+            -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
         }
     </style>
 
@@ -51,8 +57,12 @@
             <div>
                 <canvas id="viewport" class="center" width="640" height="480" style="padding-top:20px;"></canvas>
 
-                <div class="menu">
-                    <p class="but">개수 : 5 개</p>                   <p class="but">점수 : 2000 점</p>
+                <div class="menu" style="margin-left:30px;">
+                    <p class="but">개수 : 5 개</p>
+                </div>
+
+                <div class="menu horizontalCenter">
+                    <p class="but">점수 : 2000 점</p>
                 </div>
 
                 <img id="scream" width="220" height="277" src="snake_02.png" alt="The Scream" style="display:none;">
