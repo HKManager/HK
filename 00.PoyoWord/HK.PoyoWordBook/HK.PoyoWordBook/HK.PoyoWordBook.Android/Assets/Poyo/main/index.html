@@ -114,7 +114,7 @@
                 <br />
 
                 <img id="btnWallOut" src="img/btnWallOut_off.png" style="width:200px;" onmousedown="downWallOut()"
-                    onmouseup="upWallOut()" onclick="ShowBlockOut()" />
+                    onmouseup="upWallOut()" onclick="ShowFlyBird()" />
 
                 <br />
                 <br />
@@ -223,8 +223,13 @@
         }
 
         function ShowSnake() {
+
+            var obj = { handle: "06", view: "main", data: "snake" };
+
+            var data = JSON.stringify(obj);
+
             //window.location.href = "../game/Snake/snake.html";
-            invokeCSCode("/game/Snake/snake.html");
+            invokeCSCode(data);
         }
 
         function ShowBlockOut() {
@@ -233,6 +238,15 @@
 
         function ShowPuyoPuyo() {
             window.location.href = "../game/PuyoPuyo/example/game-samegame/index.html";
+        }
+
+        function ShowFlyBird() {
+            var obj = { handle: "06", view: "main", data: "flybird" };
+
+            var data = JSON.stringify(obj);
+
+            //window.location.href = "../game/Snake/snake.html";
+            invokeCSCode(data);
         }
 
     </script>
