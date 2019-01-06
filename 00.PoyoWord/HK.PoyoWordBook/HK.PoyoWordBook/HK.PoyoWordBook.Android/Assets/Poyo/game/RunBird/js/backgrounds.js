@@ -92,16 +92,17 @@
       // this.combined_bg_img.src = 'img/bg_combined.png';
       this.combined_bg_img = mit.image.bg_combined;
 
+
+      this.rainbow_bg_img = mit.image.bg_rainbow;
       // Reset all speed
       this.resetAllSpeed();
     },
 
-    // - 신인환 주석 이동 속도 개선 필요
     resetAllSpeed: function() {
         this.cloud_bg_move_speed = 2;
         this.backtree_bg_move_speed = 3;
         this.fronttree_bg_move_speed = 5;
-        this.ground_bg_move_speed = 5;
+        this.ground_bg_move_speed = 7;
         
         this.combined_bg_move_speed = 3;
     },
@@ -369,6 +370,45 @@
       }
     },
 
+    drawNyanBG: function(ctx) {
+      var combined_bg_vx_abs = Math.abs(this.combined_bg_vx);
+      // fixing weird indexSizeError bugs for the most nonsensical browsers - opera and IE
+      try {
+        ctx.drawImage(
+          this.rainbow_bg_img,
+
+          combined_bg_vx_abs,
+          0,
+          mit.W + this.combined_bg_vx,
+          mit.H,
+
+          0, 0,
+          mit.W + this.combined_bg_vx,
+          mit.H
+        );
+
+        ctx.drawImage(
+          this.rainbow_bg_img,
+
+          0, 0,
+          combined_bg_vx_abs,
+          mit.H,
+
+          mit.W + this.combined_bg_vx,
+          0,
+          combined_bg_vx_abs,
+          mit.H
+        );
+      }
+      catch(e) {}
+
+      if (mit.game_started)
+        this.combined_bg_vx -= this.combined_bg_move_speed * this.common_bg_speed;
+
+      if (-this.combined_bg_vx >= mit.W) {
+        this.combined_bg_vx = 0;
+      }
+    },
     // Draw Awesome Backgrounds
     // Backgrounds have been made for 1000x500 dimensions
     draw: function(ctx) {
@@ -390,17 +430,25 @@
         ctx.fillRect(0, 0, mit.W, mit.H);
         ctx.restore();
 
-        // Clouds
-        this.drawClouds(ctx);
-        
-        // Back Small Trees
-        this.drawBackTrees(ctx);
 
-        // Front Big Trees
-        this.drawFrontTrees(ctx);
+        if (mit.nyanMode !=1){
+          this.drawClouds(ctx);        
+          // Back Small Trees
+          this.drawBackTrees(ctx);
+          // Front Big Trees
+          this.drawFrontTrees(ctx);
+        }
+        else {
+          this.drawNyanBG(ctx);
+        }
       }
       else {
-        this.drawCombinedBG(ctx);
+        if(mit.nyanMode !=1){
+          this.drawCombinedBG(ctx);
+        }
+        else{
+          this.drawNyanBG(ctx);
+        }
       }
 
       // Drawing the initial wood log on which

@@ -1,0 +1,147 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Pappu Pakia Fighter Cat| Liline, omegadeath88, gong123 | Khelein</title>
+
+  <link rel="stylesheet" href="css/main.css">
+
+</head>
+
+<body>
+
+  <div class="container">
+
+    <!-- Start Screen -->
+    <div id="start_screen">
+      <h1 id="title">pappu pakia fighter cat</h1>
+      <h3 id="last_score"></h3>
+      <h3 id="high_score"></h3>
+
+      <div class="controls"></div>
+
+      <div class="options">
+        <ul>
+          <li><a href="javascript:void(0);" id="start_game">start</a></li>
+        </ul>
+      </div>
+    </div>
+    <!-- /Start Screen -->
+  
+    <!-- Loading sounds -->
+    <audio id="start" loop>
+      <source src="sound/pappu-pakia2.3.ogg"  type="audio/ogg">
+      <source src="sound/pappu-pakia2.3.mp3"  type="audio/mp3">
+    </audio>
+
+    <audio id="nyanMusic" loop>
+      <source src="sound/Nyan Cat.mp3"  type="audio/mp3">
+    </audio>
+
+    <audio id="angry_jump">
+      <source src="sound/jump1.ogg" type="audio/ogg">
+      <source src="sound/jump1.mp3" type="audio/mp3">
+    </audio>
+    
+    <audio id="sad_jump">
+      <source src="sound/jump2.ogg" type="audio/ogg">
+      <source src="sound/jump2.mp3" type="audio/mp3">
+    </audio>
+    
+    <audio id="happy_jump">
+      <source src="sound/jump3.ogg" type="audio/ogg">
+      <source src="sound/jump3.mp3" type="audio/mp3">
+    </audio>
+    
+    <audio id="flap">
+      <source src="sound/flap.ogg" type="audio/ogg">
+      <source src="sound/flap.mp3" type="audio/mp3">
+    </audio>
+    
+    <audio id="ting">
+      <source src="sound/ting.ogg" type="audio/ogg">
+      <source src="sound/ting.mp3" type="audio/mp3">
+    </audio>
+
+    <canvas id="game_bg"></canvas>
+    <canvas id="game_main"></canvas>
+
+    <div id="score_board">0</div>
+    <progress id="nyan_score" value="0" max="450"></progress>
+
+    <div id="invincible_timer">
+      <div id="invincible_loader"></div>
+    </div>
+
+
+    <div id="nyanMode_timer">
+      <div id="nyanMode_loader"></div>
+    </div>
+
+    <a href="javascript:void(0)" id="mute"></a>
+    
+    <!-- Loading Screen -->
+    <div id="loading">
+      <p id="loadText">Loading...</p>
+      <div id="barCont">
+        <div id="bar"></div>
+      </div>
+    </div>
+
+  </div>
+
+  <div id="fps_count"></div>
+<footer class="os">
+    <h3>About Pappu Pakia Fighter Cat! </h3>
+    <p>
+      This HTML5 game has been happily modified from a previous game 
+      for GIT GAME OFF 2015.  This was created by the great trio of<a href = "https://github.com/liline"> Liline</a>,<a href ="https://github.com/omegadeath88"> omegadeath88</a>, and <a href = "https://github.com/glennong">Gong123</a>.  We hope you enjoy the adaptation we made
+      to add a little bit of our taste into the game :).
+    </p>
+    <p>
+      The original game, is here: <a href = "https://github.com/mindd-it/pappu-pakia"> Pappu Pakia </a> 
+    </p>
+    <h3> Original Description </h3>
+    <p>
+      You are pappu in the game, a little character. You need to
+      click the mouse or tap (touch screen) to levitate else
+      pappu will descend. If he hits the top or bottom boundaries
+      that'll end the game.
+    </p>
+    <p>
+      There will be some obstacles along the way like forks, branches
+      and some enemies who are also known as "pakias". Hitting them
+      will end the game. 3 types of pakias - sad (pull you),
+      happy (push you), angry (kill you). Keep safe distance from
+      them!
+    </p>
+    <p>
+      There are some collectibles too! Coins for points (yellow for 50,
+      pink for 100, red for 500). Stars for invincibility
+      for a short period. Berries spawning clones that'll destroy
+      anything that comes in their way!
+    </p>
+    <p>
+      Collisions are not super strict
+      to make the gameplay a little less harder.
+    </p>
+    <p>
+      Hit Enter or Spacebar keys to (re)start the game.
+    </p>
+    </footer>
+    
+  <script src="js/jquery-1.8.2.min.js"></script>
+  <script>window.mit = window.mit || {};</script>
+  <script src="js/utils.js"></script>
+  <script src="js/backgrounds.js"></script>
+  <script src="js/forks.js"></script>
+  <script src="js/branches.js"></script>
+  <script src="js/collectibles.js"></script>
+  <script src="js/pappu.js"></script>
+  <script src="js/pakia.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/loader.js"></script>
+
+
+</body>
+</html>

@@ -1,13 +1,18 @@
-# Pappu Pakia
+# Pappu Pakia Fighter Cat:
 
-![Pappu Pakia](http://i.imgur.com/zYD37.png)
+We've given Pappu a special treat. What happens when he collects rainbow powerups?
 
-This HTML5 Game (Pappu Pakia) has been happily made for the
-[Github Game Off 2012](https://github.com/blog/1303-github-game-off).
+Here's a little hint... nyan nyan nyan! Enjoy!
 
-**[PLAY THE GAME HERE](http://khele.in/pappu-pakia/)**
+![alt tag](nyan_screen2.jpg)
 
-## Credits
+## Developers that modified the original project:
+This game was modified based on the original pappu-pakia game found here: https://github.com/mindd-it/pappu-pakia
+
+The modifiers: [liline](https://github.com/liline), [omegadeath88](https://github.com/omegadeath88), [gage](https://github.com/glennong)
+
+# Pappu Pakia Original Information:
+## Original Credits:
 
 Handsomely coded by [Rishabh](http://twitter.com/_rishabhp).
 Beautiful graphics by [Kushagra](http://twitter.com/solitarydesigns).
@@ -29,9 +34,9 @@ Based on the compo's rules, the concepts
 that we tried to incorporate are fork, branch, push, pull, clone.
 
 You are pappu in the game, a little character. You need to
-click the mouse or tap (touch screen) to levitate or else
+click the mouse or tap (touch screen) to levitate else
 pappu will descend. If he hits the top or bottom boundaries
-that will end the game.
+that'll end the game.
 
 There will be some obstacles along the way like forks, branches
 and some enemies who are also known as "pakias". Hitting them

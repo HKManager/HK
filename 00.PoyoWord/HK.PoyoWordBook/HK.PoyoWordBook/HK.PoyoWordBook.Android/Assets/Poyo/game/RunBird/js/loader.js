@@ -15,7 +15,8 @@
       loadSad = document.getElementById("sad_jump"),
       loadHappy = document.getElementById("happy_jump"),
       loadFlap = document.getElementById("flap"),
-      loadTing = document.getElementById("ting");
+      loadTing = document.getElementById("ting"),
+      loadNyanMusic = document.getElementById("nyanMusic");
 
   // Preloading image stuff
 
@@ -26,6 +27,7 @@
     loadHappy,
     loadFlap, 
     loadTing,
+    loadNyanMusic
   ];
 
   var images = {
@@ -33,6 +35,7 @@
     backtrees : "img/back_trees.png",
     berries : "img/berries.png",
     bg_combined: "img/bg_combined.png",
+    bg_rainbow: "img/bg_nyan_sky_with_stars.png",
     branch : "img/branch.png",
     clouds : "img/clouds.png",
     coins : "img/coins.png",
@@ -47,11 +50,11 @@
     log : "img/log.png",
     pappu : "img/pappu.png",
     plank_bot : "img/plank_bot.png",
-    plank_mid : "img/plank_mid.png",
-    plank_top : "img/plank_top.png",
     sad_pakia : "img/sad_pakia.png",
     stand : "img/stand.png",
-    star : "img/star.png"
+    star : "img/star.png",
+    rainbow: "img/rainbow.png",
+    nyancat: "img/nyancat.png"
   };
 
   mit.image = {};

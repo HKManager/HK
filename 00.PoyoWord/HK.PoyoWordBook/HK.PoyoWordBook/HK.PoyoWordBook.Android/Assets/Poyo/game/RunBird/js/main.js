@@ -32,15 +32,16 @@ mit.main = function() {
   var ui = mit.ui = {
     body: $('body'),
     score_board: $('#score_board'),
+    nyan_score: $('#nyan_score'),
     last_score: $('#last_score'),
     high_score: $('#high_score'),
     start_screen: $('#start_screen'),
     start_game: $('#start_game'),
-    tweet: $('#tweet'),
-    fb: $('#fb'),
     fps_count: $('#fps_count'),
     invincible_timer: $('#invincible_timer'),
-    invincible_loader: $('#invincible_loader')
+    invincible_loader: $('#invincible_loader'),
+    nyanMode_timer: $('#nyanMode_timer'),
+    nyanMode_loader: $('#nyanMode_loader')
   };
 
   /*
@@ -79,6 +80,7 @@ mit.main = function() {
   bg_canvas.height = canvas.height;
 
   var music = document.getElementById("start");
+  var music2 = document.getElementById("nyanMusic");
   music.volume = 0.2;
   
   var isMute = false;
@@ -88,12 +90,14 @@ mit.main = function() {
     if(isMute == false) {
       $(this).css("backgroundPosition", "0px -40px");
       music.volume = 0;
+      music2.volume = 0;
       isMute = true;
     }
 
     else {
       $(this).css("backgroundPosition", "0px 0px");
       music.volume = 0.2;
+      music2.volume = 0.2;
       isMute = false;
     }
 
@@ -141,6 +145,9 @@ mit.main = function() {
 
     // reset score
     mit.score = 0;
+    mit.nyanScore = 0;
+    mit.nyanBar = 0;
+    mit.nyanMode = 0;
 
     // Nuke all forks
     mit.ForkUtils.forks = [];
@@ -163,16 +170,9 @@ mit.main = function() {
 
   // startGame();
 
-  // Share links
-  var tweet = document.getElementById("tweet");
-  tweet.href='http://twitter.com/share?url=http://khele.in/pappu-pakia/&text=I am playing Pappu Pakia, a cute HTML5 game on khele.in!&count=horiztonal&via=_rishabhp&related=solitarydesigns';
-
-  var facebook = document.getElementById("fb");
-  facebook.href='http://facebook.com/sharer.php?s=100&p[url]=http://khele.in/pappu-pakia/&p[title]=I am playing Pappu Pakia, a cute HTML5 game on khele.in!';
-
-
   // Score Board
   mit.score = 0;
+  mit.nyanScore = 0;
   try {
 
     mit.highScore = JSON.parse(localStorage.getItem("highScore"));
@@ -303,8 +303,6 @@ mit.main = function() {
 
 
     ui.start_game.html('re-start');
-    ui.tweet.html('tweet score');
-    ui.fb.html('post on fb');
 
     mit.descend();
 
@@ -318,17 +316,10 @@ mit.main = function() {
 
     // Pappu if invincible will be no morez
     mit.Pappu.undoInvincible();
+    mit.Pappu.undoNyanMode();
 
     // Nuke all clones
     mit.Pappu.clones.length = 0;
-
-    // Share
-    var tweet = document.getElementById("tweet");
-    tweet.href='http://twitter.com/share?url=http://khele.in/pappu-pakia/&text=I just scored ' +Math.floor(mit.score)+ ' points in Pappu Pakia!&count=horiztonal&via=_rishabhp&related=solitarydesigns';
-  
-    var facebook = document.getElementById("fb");
-    facebook.href='http://facebook.com/sharer.php?s=100&p[url]=http://khele.in/pappu-pakia/&p[title]=I just scored ' +Math.floor(mit.score)+ ' points in the Pappu Pakia!';
-
   };
 
   mit.last_time = new Date();
@@ -400,11 +391,15 @@ mit.main = function() {
       mit.Pappu.drawClones(ctx);
 
       // Check Collisions with pappu
-      if (!mit.Pappu.invincible) {
+      if (!mit.nyanMode && !mit.Pappu.invincible) {
+        //alert("not invincible or not nyan mode");
         mit.ForkUtils.checkCollision();
         mit.BranchUtils.checkCollision();
         mit.PakiaUtils.checkCollision();
       }
+
+
+
       mit.CollectibleUtils.checkCollision();
       mit.Pappu.checkCloneCollision();
 
@@ -416,6 +411,7 @@ mit.main = function() {
       if (!mit.game_over) {
         mit.score = mit.score += 0.1;
         ui.score_board.text(parseInt(mit.score));
+        ui.nyan_score.text(parseInt(mit.nyanScore));
       }
 
       // Acceleration + Gravity

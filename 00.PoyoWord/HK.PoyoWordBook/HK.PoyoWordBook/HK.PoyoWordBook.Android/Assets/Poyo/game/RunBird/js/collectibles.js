@@ -10,7 +10,12 @@
 
   - One for pappu's invincibility
   */
-  
+
+  const RAINBOWS_MAX = 5;
+  const max = 5;
+  const RAINBOW_POINTS = 450;
+  const MAX_RAINBOW_POINTS = 450;
+
   mit.Collectible = function() {
 
     // x/y pos
@@ -44,7 +49,6 @@
     };
 
 
-    // - 신인환 주석 : 과일 삽입
     this.draw = function(ctx) {
       switch (this.type) {
 
@@ -60,6 +64,10 @@
           this.drawInvincible(ctx);
           break;
 
+        case 'nyan':
+          this.drawNyan(ctx);
+          break;
+
       }
 
       return;
@@ -67,44 +75,39 @@
 
     this.drawCoin = function(ctx) {
       // Get coin color based on sub type
-      //var pos = mit.CollectibleUtils.getCoinSpritePos(this.sub_type);
+      var pos = mit.CollectibleUtils.getCoinSpritePos(this.sub_type);
 
-      ctx.font = "40px Verdana";
-      ctx.fillText("apple", this.x, this.y, 72, 40);
-
-      // ctx.drawImage(
-      //   mit.CollectibleUtils.coin_img,
-      //   pos.x, pos.y,
-      //   30, 30,
-      //   this.x, this.y,
-      //   30, 30
-      // );
+      ctx.drawImage(
+        mit.CollectibleUtils.coin_img,
+        pos.x, pos.y,
+        30, 30,
+        this.x, this.y,
+        30, 30
+      );
     };
 
     this.drawClone = function(ctx) {
-
-      //ctx.fillText("applereqq", pos.x, pos.y + 32, 64, 30);
-
-      ctx.font = "40px Verdana";
-      ctx.fillText("apple", this.x, this.y + 32, 72, 40);
-
-      // ctx.drawImage(
-      //   mit.CollectibleUtils.clone_img,
-      //   this.x,
-      //   this.y
-      // );
+      ctx.drawImage(
+        mit.CollectibleUtils.clone_img,
+        this.x,
+        this.y
+      );
     };
 
     this.drawInvincible = function(ctx) {
-
-      ctx.font = "40px Verdana";
-      ctx.fillText("apple", this.x, this.y + 32, 72, 40);
-
-      // ctx.drawImage(
-      //   mit.CollectibleUtils.invincible_img,
-      //   this.x,
-      //   this.y
-      // );
+      ctx.drawImage(
+        mit.CollectibleUtils.invincible_img,
+        this.x,
+        this.y
+      );
+    };
+  
+    this.drawNyan = function(ctx) {
+      ctx.drawImage(
+        mit.CollectibleUtils.nyan_img,
+        this.x,
+        this.y
+      );
     };
   };
 
@@ -115,7 +118,9 @@
 
     count: 2,
 
-    types: ['coin', 'clone', 'invincible'],
+
+    types: ['coin', 'clone', 'invincible', 'nyan'],
+
     //types: ['invincible'],
 
     sub_types: {
@@ -134,6 +139,9 @@
       // this.invincible_img = new Image();
       // this.invincible_img.src = 'img/star.png';
       this.invincible_img = mit.image.star;
+
+      //rainbow powerup
+      this.nyan_img = mit.image.rainbow;
     },
 
     getCoinSpritePos: function(sub_type) {
@@ -217,11 +225,13 @@
         // Type
         collec.type = this.types[utils.randomNumber(0, this.types.length-1)];
 
+        //collec.type = this.types[3];
+
         // Choosing Sub types if any
         sub_types = this.sub_types[collec.type];
         if (sub_types)
           collec.sub_type = sub_types[utils.randomNumber(0, sub_types.length-1)];
-
+          //collec.sub_type = sub_types[3];
         this.collecs.push(collec);
       }
     },
@@ -273,24 +283,20 @@
             break;
 
           case 'invincible':
-            mit.Pappu.invincible = 1;
+              mit.Pappu.transformtoInvin();
+            break;
 
-            // Kush says we shouldnt add up
-            /*if (!mit.Pappu.invincibility_start) {
-              mit.Pappu.invincibility_time = 5000;
+          case 'nyan':
+            mit.nyanBar = $("#nyan_score").attr("value");
+
+              mit.nyanBar += RAINBOW_POINTS;
+              $("#nyan_score").attr("value", mit.nyanBar);
+          
+            if (mit.nyanBar >= MAX_RAINBOW_POINTS && mit.nyanMode == 0){
+              mit.Pappu.nyanInitSprite();
+              mit.nyanScore = 0;
+              mit.Pappu.changeMusic();
             }
-            else {
-              var cur_time = new Date().getTime();
-              var prev_remaining_time = cur_time - mit.Pappu.invincibility_start;
-
-              mit.Pappu.invincibility_time = 5000 + prev_remaining_time;
-            }*/
-
-            mit.Pappu.invincibility_start = new Date().getTime();
-            mit.Pappu.invincibility_time = 5000;
-
-            // Show timer
-            mit.ui.invincible_timer.show();
 
             break;
         }
