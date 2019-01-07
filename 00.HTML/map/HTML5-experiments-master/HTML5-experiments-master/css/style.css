@@ -1,0 +1,145 @@
+
+/*FONTS FOR FIREFOX*/
+/*SegoUI*/
+@font-face {
+  font-family: "Segoe UI Bold";
+  src: url(../fonts/SEGOEUIB.eot);
+  src: url(../fonts/SEGOEUIB.eot?#iefix) format('eot'), url(../fonts/SEGOEUIB.woff) format('woff'), url(../fonts/SEGOEUIB.ttf) format('truetype'), url(../fonts/SEGOEUIB.svg) format('svg');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Segoe UI Bold Italic";
+  src: url(../fonts/SEGOEUIZ.eot);
+  src: url(../fonts/SEGOEUIZ.eot?#iefix) format('eot'), url(../fonts/SEGOEUIZ.woff) format('woff'), url(../fonts/SEGOEUIZ.ttf) format('truetype'), url(../fonts/SEGOEUIZ.svg) format('svg');
+  font-weight: bold;
+  font-style: italic;
+}
+
+/*Helvetica*/
+@font-face {
+  font-family: "Helvetica Bold";
+  src: url(../fonts/HelveticaLTStd-Bold.eot);
+  src: url(../fonts/HelveticaLTStd-Bold.eot?#iefix) format('eot'), url(../fonts/HelveticaLTStd-Bold.ttf) format('truetype'), url(../fonts/HelveticaLTStd-Bold.svg) format('svg');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Helvetica Neue";
+  src: url(../fonts/HelveticaNeueLTCom-Roman.eot);
+  src: url(../fonts/HelveticaNeueLTCom-Roman.eot?#iefix) format('eot'), url(../fonts/HelveticaNeueLTCom-Roman.woff) format('woff'), url(../fonts/HelveticaNeueLTCom-Roman.ttf) format('truetype'), url(../fonts/HelveticaNeueLTCom-Roman.svg) format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+ul.examples_list li {
+  background:none;
+  border:none!important;
+  width:240px!important;
+}
+
+ul.examples_list li:before {
+  position:absolute;
+  content: " ";
+  top:0px!important;
+  left:0px;
+  height:1px;
+  width:100%;
+  background:rgba(0,0,0,0.25);
+  z-index:100;
+}
+
+ul.examples_list li:after {
+  position:absolute;
+  content: " ";
+  top:0;
+  right:0;
+  height:100%;
+  width:1px;
+  background:rgba(0,0,0,0.25);
+  z-index:100;
+}
+
+ul.examples_list li:last-child {
+  width:240px!important;
+}
+
+ul.examples_list li:nth-child(3n)::after {
+  display:none;
+}
+
+ul.examples_list li img {
+  position:absolute;
+  z-index:0;
+  top:0;
+  left:0;
+  height:270px;
+}
+
+ul.examples_list li div {
+  position:absolute;
+  top:-40px;
+  left:-40px;
+  width:100%;
+  height:100%;
+  padding:40px;
+  display:none;
+  background:rgba(255,255,255,0.92);
+  background:white\9;
+}
+
+ul.examples_list li:hover div {
+  position:relative;
+  display:block;
+  z-index:10;
+}
+
+ul.examples_list li hgroup {
+  position:absolute;
+  bottom:40px;
+  left:0;
+}
+
+ul.examples_list li em {
+  position:relative!important;
+  top:0;
+  left:0;  
+  display: -moz-inline-box;
+  -moz-box-orient: vertical;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  vertical-align: middle;
+  height: 19px;
+  padding: 4px 6px;
+  margin: 3px 5px 0 0;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 2px;
+  border-radius: 2px;
+  font: bold 13px "Segoe UI Bold";
+  line-height: 16px;
+  color: white;
+  background:#DCDCDC;
+}
+
+section.grey.carto .left p a {
+  color:#666666;
+  text-decoration:underline;
+}
+
+section.grey.carto .left p a:hover {
+  color:#333333;
+  text-decoration:underline;
+}
+
+section.top.black a.button.blue {
+  margin:50px 0 0 285px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.8) 0 0 0 3px!important;
+  -moz-box-shadow: rgba(0, 0, 0, 0.8) 0 0 0 3px!important;
+  box-shadow: rgba(0, 0, 0, 0.8) 0 0 0 3px!important;
+}

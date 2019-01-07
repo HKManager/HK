@@ -1,0 +1,156 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]> <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="description" content="CartoDB - These are some of the new experiments using CartoDB for HTML5 browsers. Browse all the crazy things we are thinking about.">
+    <meta name="keywords" content="cartodb,postgresql,posgis,analysis,data visualization,google maps,leaflet,maps,html5,vector,data,">
+    <meta name="distribution" content="global">
+    <meta name="author" content="Vizzuality">
+    <meta name="robots" content="index">
+    <meta name="DC.title" content="CartoDB | HTML5 Experiments">
+    <meta name="geo.region" content="USA">
+    <meta name="geo.placename" content="New York">
+    <meta name="geo.position" content="40.7143528,-74.0059731">
+    <meta name="ICBM" content="40.7143528,-74.0059731">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="og:url" content="http://cartodb.com">
+    <meta name="og:site_name" content="CartoDB | HTML5 Experiments">
+    <meta name="og:title" content="CartoDB | HTML5 Experiments">
+    <meta name="og:description" content="CartoDB - These are some of the new experiments using CartoDB for HTML5 browsers. All of them Open Source!">
+    <meta name="og:type" content="website">
+    <meta name="og:image" content="http://cartodb.com/assets/layout/tour6.jpg">
+    <title>CartoDB | HTML5 Experiments</title>
+    <link href="http://cartodb.com/assets/front.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="http://developers.cartodb.com/stylesheets/all.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="css/style.css" media="screen" rel="stylesheet" type="text/css" />
+    <script src="js/vendor/mustache.min.js"></script>
+    <script src="app.js" type="text/javascript"></script>
+    <link rel="shortcut icon" href="http://cartodb.com/assets/favicon.ico" />
+    <noscript><meta http-equiv="refresh" content="0;url=http://cartodb.com/no_javascript.html"></noscript>
+    <meta content="authenticity_token" name="csrf-param" />
+    <meta content="ePFuS9aLVGpavmrAoGUpu4qUy0+i7KO/c4+kxuRgmxU=" name="csrf-token" />
+    <script type="text/javascript">
+        var _gaq = _gaq || []; _gaq.push(['_setAccount', 'UA-20934186-3']); _gaq.push(['_setDomainName', 'cartodb.com']); _gaq.push(['_trackPageview']); (function() { var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); })();
+    </script>
+  </head>
+    <body class="developers examples" onload="init()">
+      <div class="background blue grid fixed">
+        <header>
+          <h1 class="left">
+            <a href="http://cartodb.com">CartoDB</a>
+          </h1>
+          <nav class="right">
+            <a href="http://cartodb.com/tour">Tour</a>
+            <a href="http://cartodb.com/maps">Maps</a>
+            <a href="https://developers.cartodb.com">Developers</a>
+            <a href="http://cartodb.com/pricing">Pricing</a>    
+            <a href="http://cartodb.com/login">Sign in</a>
+          </nav>
+        </header>
+      </div>
+
+      <div class="background floating">
+        <section class="top black no_padding shadow">
+          <div class="content">
+            <h2 class="center big">Welcome! Take a look at our latest <br>HTML5 mapping experiments.</h2>
+            <a href="http://github.com/Vizzuality/HTML5-experiments/" class="button blue">Download the code at Github</a>
+          </div>
+        </section>
+
+        <section class="shadow bottom">
+          <div class="content no_padding">
+            <ul class="examples_list" id="examples">
+            </ul>
+          </div>
+        </section>
+
+        <section class="grey carto shadow margin40">
+          <div class="content less_padding">
+            <div class="left">
+              <h2 class="compact dark">Check out our tutorials gallery</h2>
+              <p class="light margin10">or read our <a href="http://developers.cartodb.com">documentation</a> to learn more about the code behind these experiments.</p>
+            </div>
+            <div class="right">
+              <a class="button blue right margin5" href="http://developers.cartodb.com/tutorials.html">Go to the tutorials</a>
+            </div>
+          </div>
+        </section>
+
+      <div class="background white border margin40">
+        <section>
+          <div class="content less_padding">
+            <div class="left">
+              <h3 class="lighter margin10">CartoDB is also used by</h3>
+            </div>
+            <div class="right">
+              <ul class="logos">
+                <li><a href="http://www.harvard.edu/" class="harvard" target="_blank"><img alt="Harvard" src="http://cartodb.com/assets/logos/harvard.png" title="Harvard" /></a></li>
+                <li><a class="unep-wcmc" target="_blank" href="http://www.unep-wcmc.org/"><img alt="UNEP-WCMC" title="UNEP-WCMC" src="http://cartodb.com/assets/logos/unep-wcmc.png" /></a></li>
+                <li><a class="nasa" target="nasa" href="http://www.nasa.gov"><img alt="NASA" title="NASA" src="http://cartodb.com/assets/logos/nasa.png" /></a></li>
+                <li><a class="diversity" target="_blank" href="http://www.cbd.int/"><img alt="Convention on Biological Diversity" title="Convention on Biological Diversity" src="http://cartodb.com/assets/logos/diversity.png" /></a></li>
+                <li><a class="wsj" target="_blank" href="http://europe.wsj.com/home-page"><img alt="Wall Street Journal" title="Wall Street Journal" src="http://cartodb.com/assets/logos/wsj.png" /></a></li>
+                <li><a class="wri" target="_blank" href="http://www.wri.org/"><img alt="WORLD RESOURCES INSTITUTE" title="WORLD RESOURCES INSTITUTE" src="http://cartodb.com/assets/logos/wri.png" /></a></li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <div class="background white border">
+        <section id="blog">
+          <div class="content no_padding">
+            <ul class="hz">
+              <li>
+                <h3>Common questions</h3>
+              </li>
+              <li>
+                <h3>Do you have any educational plans?</h3>
+                <p class="light margin15">Yes we have. <a href="mailto:support@cartodb.com">Contact us</a> for getting more information. We are quite friends of academics so, you will get a lot of benefits.</p>
+              </li>
+              <li>
+                <h3>Need something extra? Let us now.</h3>
+                <p class="light margin15">Need us to help you with your visualization or application? Does your organization have unique requirements that don’t quite fit our plans? <a href="mailto:support@cartodb.com">Contact us</a>.</p>
+              </li>
+            </ul>
+          </div>
+        </section>
+      </div>
+
+      <footer>
+        <div class="wrap">
+          <span class="cartodb">CartoDB</span>
+          <p class="lighter small left">CartoDB is a product of <a class="vizzuality" href="http://vizzuality.com">Vizzuality</a>
+          </p>
+          <nav class="right">
+            <a href="http://cartodb.com/tutorial/step/1">Getting started</a>
+            <a href="http://developers.cartodb.com">Developers</a>
+            <a href="http://blog.cartodb.com">Blog</a>
+            <a href="http://cartodb.com/media">Media</a>
+            <a href="http://cartodb.com/partners">Partners</a>
+            <a href="mailto:support@cartodb.com">Contact</a>
+          </nav>
+        </div>
+      </footer>
+    </div>
+
+    <div id="example-tmpl" style="display:none"> 
+      <li>
+        <img src='{{img}}'/>
+        <div>
+        <h3><a href="{{link}}">{{title}}</a></h3>
+        <p>{{{description}}}</p>
+        <hgroup>
+          {{#labels}}
+            <em class="grey">{{name}}</em>
+          {{/labels}}
+        </hgroup>
+      </div>
+      </li>
+    </div>
+  </body>
+</html>
