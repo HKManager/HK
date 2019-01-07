@@ -1,0 +1,23 @@
+{
+"images": ["atlas.png"],
+"frames": [
+
+    [2, 2, 96, 106], 
+    [236, 65, 40, 40], 
+    [278, 65, 40, 40], 
+    [100, 2, 134, 66], 
+    [236, 2, 124, 61]
+],
+"animations": {
+    
+        "candy-craver":[0], 
+        "mute":[1], 
+        "not-mute":[2], 
+        "playButton":[3], 
+        "tryAgainButton":[4]
+},
+"texturepacker": [
+        "SmartUpdateHash: $TexturePacker:SmartUpdate:904add47d36fa24bcac4c7a1be859528:087236052bbd206c72459ce4e4628b5b:cbce6b53f0f49e0bf15173c25c41f876$",
+        "Created with TexturePacker (http://www.texturepacker.com) for EaselJS"
+]
+}

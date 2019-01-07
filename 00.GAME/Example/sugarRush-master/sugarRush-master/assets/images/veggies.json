@@ -1,0 +1,33 @@
+{
+"images": ["veggies.png"],
+"frames": [
+
+    [282, 632, 119, 502], 
+    [283, 2, 145, 628], 
+    [2, 1409, 244, 309], 
+    [255, 1136, 226, 399], 
+    [2, 2, 279, 427], 
+    [248, 1537, 243, 463], 
+    [2, 1720, 218, 314], 
+    [2, 758, 257, 314], 
+    [2, 1074, 251, 333], 
+    [2, 431, 278, 325]
+],
+"animations": {
+    
+        "carrot":[0], 
+        "cellery":[1], 
+        "green-pepper":[2], 
+        "hot-pepper":[3], 
+        "jalapeno":[4], 
+        "lettuce":[5], 
+        "onion":[6], 
+        "orange-pepper":[7], 
+        "red-pepper":[8], 
+        "yellow-pepper":[9]
+},
+"texturepacker": [
+        "SmartUpdateHash: $TexturePacker:SmartUpdate:f50d53a4935a98d8c1cd23fea69144a7:aa94b32b864b9a02e25e1ce385b5ea32:1d8850353386b267aa2e4dbd389eb540$",
+        "Created with TexturePacker (http://www.texturepacker.com) for EaselJS"
+]
+}
