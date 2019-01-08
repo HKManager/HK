@@ -355,6 +355,15 @@
     <AndroidAsset Include="Assets\Poyo\game\RunMan\README.md" />
     <AndroidAsset Include="Assets\Poyo\game\Shoot\package.json" />
     <AndroidAsset Include="Assets\Poyo\game\Shoot\README.md" />
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\audio\001.ogg" />
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\audio\002.ogg" />
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\fonts\droid-serif\droid-serif.eot" />
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\fonts\droid-serif\droid-serif.ttf" />
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\fonts\droid-serif\droid-serif.woff" />
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\fonts\reenie-beanie\reenie-beanie.eot" />
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\fonts\reenie-beanie\reenie-beanie.ttf" />
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\fonts\reenie-beanie\reenie-beanie.woff" />
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\README.md" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <None Include="Properties\AndroidManifest.xml" />
@@ -380,7 +389,6 @@
   <ItemGroup>
     <Folder Include="Assets\Poyo\Content\viewscontroller\" />
     <Folder Include="Assets\Poyo\manager\" />
-    <Folder Include="Assets\Poyo\study\" />
     <Folder Include="Resources\drawable-hdpi\" />
     <Folder Include="Resources\drawable-xhdpi\" />
     <Folder Include="Resources\drawable-xxhdpi\" />
@@ -12483,6 +12491,348 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\Poyo\game\Snake\background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\css\engine.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\engine\css\engine.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\engine\js\audible.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\engine\js\audioPlayer.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\engine\js\book.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\engine\js\cycler.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\engine\js\drawingPad.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\engine\js\eventDispatcher.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\engine\js\interaction.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\engine\js\page.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\engine\js\pbs.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\engine\js\resourceLoader.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\engine\js\sound.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\engine\js\sprite.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\engine\js\textArea.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\engine\js\view.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\engine\plug\mediaelementjs\mediaelement-and-player.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\engine\plug\mediaelementjs\mediaelement.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\engine\plug\mediaelementjs\mediaelementplayer.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\engine\plug\soundjs\FlashAudioPlugin.swf" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\engine\plug\soundjs\FlashPlugin.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\engine\plug\soundjs\HTMLAudioPlugin.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\engine\plug\soundjs\preloadjs-0.2.0.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\engine\plug\soundjs\SoundJS.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\engine\plug\soundjs\swfobject.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\engine\plug\williammalone\html5-canvas-drawing-canvas.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\index.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\audio\001.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\audio\002.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\config\config-book.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\config\config-page-01.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\config\config-page-02.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\config\config-page-03.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\config\config-page-04-and-05.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\config\config-page-06.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\config\config-page-07.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\config\config-page-08.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\config\config-page-09.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\config\config-page-10.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\config\config-page-11.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\config\config-page-12.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\config\config-page-13-and-14.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\config\config-page-15-and-16.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\config\config-page-17-and-18.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\config\config-page-17.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\config\config-page-19-and-20.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\config\config-page-21-23.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\config\config-page-21-25.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\config\config-page-21.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\css\custom.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\fonts\fonts.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\fonts\droid-serif\droid-serif-license.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\fonts\droid-serif\droid-serif.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\fonts\reenie-beanie\reenie-beanie-license.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\fonts\reenie-beanie\reenie-beanie.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\images\apple-cart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\images\apple-drop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\images\ball-bounce.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\images\ball-roll.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\images\banner-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\images\bee-circle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\images\bee-float.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\images\bounce-page.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\images\carpet-left.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\images\carpet-right.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\images\char-jump.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\images\character-jump-animation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\images\character-page-1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\images\character-page-2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\images\character-page-3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\images\character-page-4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\images\circles-background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\images\clear-button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\images\cloud-page.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\images\cover.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\images\default-page.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\images\desert-left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\images\double-page-left.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\images\double-page-right.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\images\entrance-left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\images\entrance-right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\images\eraser-button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\images\frozen-left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\images\frozen-right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\images\green-hill.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\images\music-note-sign.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\images\next-page-button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\images\orchard-left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\images\orchard-right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\images\paint-brush-purple.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\images\paint-brush-yellow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\images\prev-page-button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\images\sunrise.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\images\tower-top-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\images\tower-top-2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\images\tower-top-3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\images\trees-left.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\images\trees-right.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\images\tundra-left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\images\tundra-right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\images\water-creature-hide-animation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\images\window-texture.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\js\book.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\js\eventDispatcher.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\js\interaction.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\js\page.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\js\pbs.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\js\resourceLoader.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\js\sprite.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\js\textArea.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\js\view.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\js\_notes\dwsync.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\.gitignore" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\licenses.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>
