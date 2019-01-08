@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Sugar Rush</title>
+    <!-- CSS Section -->
+    <link href="css/normalize.css" rel="stylesheet" />
+    <link href="css/app.css" rel="stylesheet" />
+</head>
+<body onload="preload()">
+    <div class="logo"><a href="/"><img src="images/stamp-light-bevel.png" alt="Created By Haden Hiles" /></a></div>
+    <canvas id="canvas" width="880" height="428"></canvas>
+
+    <!-- JavaScript Section -->
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <script src="js/createjs-2013.12.12.min.js"></script>
+    <script src="js/easeljs-0.7.1.min.js"></script>
+    <script src="js/tweenjs-0.5.1.min.js"></script>
+    <script src="js/soundjs-0.5.2.min.js"></script>
+    <script src="js/preloadjs-0.4.1.min.js"></script>
+    <script src="Scripts/constants.js"></script>
+    <script src="Scripts/managers/asset.js"></script>
+    <script src="Scripts/objects/image.js"></script>
+    <script src="Scripts/objects/movingImage.js"></script>
+    <script src="Scripts/objects/rotatingGroup.js"></script>
+    <script src="Scripts/objects/candy.js"></script>
+    <script src="Scripts/objects/background.js"></script>
+    <script src="Scripts/objects/character.js"></script>
+    <script src="Scripts/objects/scoreboard.js"></script>
+    <script src="Scripts/objects/button.js"></script>
+    <script src="Scripts/objects/label.js"></script>
+    <script src="Scripts/objects/instructions.js"></script>
+    <script src="Scripts/objects/collidableSprite.js"></script>
+    <script src="Scripts/managers/collision.js"></script>
+    <script src="Scripts/managers/ObstacleManager.js"></script>
+    <script src="Scripts/managers/groupManager.js"></script>
+    <script src="Scripts/filters/scale.js"></script>
+    <script src="Scripts/states/menu.js"></script>
+    <script src="Scripts/states/gameover.js"></script>
+    <script src="Scripts/states/play.js"></script>
+    <script src="Scripts/game.js"></script>
+    <!--<script src="Scripts/managers/testCollision.js"></script>-->
+</body>
+</html>

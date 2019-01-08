@@ -1,0 +1,25 @@
+﻿body{
+    background: rgba(154, 215, 233, 1);
+    min-width: 900px;
+}
+.logo{
+    position: absolute;
+    left: 50%;
+    top: 25.5%;
+    margin-left: -85px;
+    margin-top: -126px;
+}
+.logo img{
+    width: 160px;
+}
+#canvas {
+    background: url('../images/loading.gif') center center no-repeat #fff;
+    width: 880px;
+    height: 428px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -440px;
+    margin-top: -214px;
+    border: 6px solid rgba(99, 138, 150, 1);
+}
