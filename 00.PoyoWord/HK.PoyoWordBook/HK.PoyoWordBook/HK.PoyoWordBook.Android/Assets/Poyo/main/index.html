@@ -107,7 +107,7 @@
                 <br />
 
                 <img id="btnShooting" src="img/btnShooting_off.png" style="width:200px;" onmousedown="downShooting()"
-                    onmouseup="upShooting()"/>
+                    onmouseup="upShooting()" onclick="ShowShooting()" />
 
                 <br />
                 <br />
@@ -245,8 +245,12 @@
 
             //var data = JSON.stringify(obj);
 
-            window.location.href = "../study/Letters/compare.html";
+            window.location.href = "../study/StoryBook/example/index.html";
             //invokeCSCode(data);
+        }
+
+        function ShowShooting() {
+            window.location.href = "../game/Shoot/index.html";
         }
 
     </script>
