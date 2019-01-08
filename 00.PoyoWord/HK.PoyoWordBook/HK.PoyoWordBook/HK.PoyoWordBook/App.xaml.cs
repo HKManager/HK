@@ -13,15 +13,19 @@ namespace HK.PoyoWordBook
 
         public static Page PageView;
 
+        public static int deviceWidth = 0;
+        public static int deviceHeight= 0;
+        
+
         public App()
         {
             InitializeComponent();
 
-            conn = DependencyService.Get<ISQLite>().GetConnection();
+            //conn = DependencyService.Get<ISQLite>().GetConnection();
 
-            연결자_Sqlite.DB연결자 = conn;
+            //연결자_Sqlite.DB연결자 = conn;
 
-            CodeManager.Load(string.Empty);
+            //CodeManager.Load(string.Empty);
 
             PageView = MainPage;
 

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!-- saved from url=(0045)http://sangamkaushik.github.io/SpaceShooter/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>My JavaScript Game</title>
+
+    <script src="./My JavaScript Game_files/easeljs-0.8.2.min.js"></script><style type="text/css"></style>
+    <script src="./My JavaScript Game_files/tweenjs-0.6.2.min.js"></script>
+
+    <script src="./My JavaScript Game_files/keymaster.js"></script>
+    <script src="./My JavaScript Game_files/gameView.js"></script>
+    <script src="./My JavaScript Game_files/util.js"></script>
+    <script src="./My JavaScript Game_files/movingObject.js"></script>
+    <script src="./My JavaScript Game_files/ship.js"></script>
+    <script src="./My JavaScript Game_files/enemyShip.js"></script>
+    <script src="./My JavaScript Game_files/bullet.js"></script>
+    <script src="./My JavaScript Game_files/enemyBullet.js"></script>
+    <script src="./My JavaScript Game_files/wave.js"></script>
+    <script src="./My JavaScript Game_files/game.js"></script>
+
+    <script type="text/javascript">
+      function init(){
+        var canvas = document.getElementById("canvas");
+        var ctx = canvas.getContext("2d");
+        ctx.canvas.width  = 500;
+        ctx.canvas.height = 600;
+        var gameView = new SpaceShooter.GameView(ctx);
+        gameView.start();
+      }
+    </script>
+  </head>
+
+  <body onload="init();">
+    <canvas id="canvas" width="500" height="600"></canvas>
+  
+
+
+</body></html>

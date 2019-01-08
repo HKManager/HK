@@ -1,0 +1,143 @@
+@charset "UTF-8";
+/*This CSS file does not validate to W3 CSS3 due to vendor prefixes required to create gradients in CSS3,
+this causes parsing errors in the validator. The correct syntax has been used according to each browser
+vendor.*/
+body.info {
+	background-image: url("../images/menu/backdrop/stars.png");
+}
+
+h1.error {
+	position:absolute;
+	top: 50%;
+	left: 100px;
+	z-index: -1;
+}
+
+header {
+	text-align: center;
+	text-decoration: underline;
+}
+
+header#top{
+	background-color: #000000;
+	position:absolute;
+	width: 100%;
+	height: 70px;
+	top: 0px;
+	left:0px;
+	z-index: 1;
+}
+
+nav {
+	position: absolute;
+	top: 0px;
+	left: 360px;	
+	z-index: 2;
+}
+
+ nav#buttons ul{
+list-style-type:none;
+text-align:center;
+}
+
+ nav#buttons li{
+display:inline;
+padding:0 30px;
+font-size:1.1em;
+}
+
+nav#buttons a{
+	display: inline-block;
+	color: white;
+	font-family:sans-serif;
+	letter-spacing:0.035em;
+	text-shadow: 0px -1px 0px #b1b1b1;
+	padding:2px 100px;
+	background:#136caa; /*for unsupported browsers*/
+	background: -webkit-linear-gradient(top, #136caa, #4f98cb);
+	background: -moz-linear-gradient(top, #136caa, #4f98cb);
+	background: -o-linear-gradient(top, #136caa, #4f98cb);
+	background: -ms-linear-gradient(top, #136caa, #4f98cb);
+	background: linear-gradient(top, #136caa, #4f98cb);
+
+	/*add a drop shadow to the button*/
+	-webkit-box-shadow: rgba(93, 100, 106, .75) 0 1px 10px;
+	-moz-box-shadow: rgba(93, 100, 106, .75) 0 1px 10px;
+	box-shadow: rgba(93, 100, 106, .75) 0 1px 10px;
+}
+
+nav#buttons a:hover, nav#buttons a:focus{
+	color:#e0e0d5;
+	text-shadow:none;
+	/*reduce the size of the box-shadow to give an impression of the button being pushed*/
+	-webkit-box-shadow: rgba(93, 100, 106, .75) 0 0 2px;
+	-moz-box-shadow: rgba(93, 100, 106, .75) 0 0 2px;
+	box-shadow: rgba(93, 100, 106, .75) 0 0 2px;
+}
+
+div#logo {
+	background-image: url("../images/logo/logo_small.png");
+	background-position:center; 
+	background-repeat:no-repeat;
+	position:absolute;
+	left: 0px;
+	width: 387px;
+	height: 70px;
+	top: 0px;
+	z-index: 4;
+}
+
+section#gameSection {
+  overflow: hidden;
+}
+
+@font-face {
+    font-family: 'zephyrean_brknormal';
+    src: url('zephyrea-webfont.eot');
+	/*Ensures increased browser compatibility*/
+    src: url('zephyrea-webfont.eot?#iefix') format('embedded-opentype'),
+         url('zephyrea-webfont.woff') format('woff'),
+         url('zephyrea-webfont.ttf') format('truetype'),
+         url('zephyrea-webfont.svg#zephyrean_brknormal') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+article#about {
+	position: absolute;
+	top: 70px;
+	left: 4%;
+	width: 90%;
+	color: yellow;
+	font-size:	130%;
+	font-family: zephyrean_brknormal, Futura, "Trebuchet MS", Arial, sans-serif;
+}
+
+article#about ul {
+	font-size:	85%;
+	font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+}
+
+article#about p {
+	font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+}
+
+article#about h2 {
+	text-shadow: 2px 2px 3px #333333;
+}
+
+section.credits {
+	position: relative;
+	left: 5%;
+}
+
+section.credits a {
+	color:#FF8000;
+}
+
+#gameCanvas {
+	cursor: crosshair;
+	position: absolute;
+	top: 69px;
+	left: 0px;
+}

@@ -1,0 +1,139 @@
+@require 'nib'
+@require './../../node_modules/normalize.css/normalize.css'
+
+body
+  background-color #000
+  color #333
+
+  font-family "Helvetica Neue", Arial, Helvetica, sans-serif
+  font-size 12px
+  font-weight normal
+  text-decoration none
+  line-height 1.5em
+
+  -webkit-font-smoothing antialiased
+  -moz-osx-font-smoothing grayscale
+
+h1
+h2
+h3
+h4
+h5
+h6
+  color #fff
+  opacity 0.75
+  font-weight 100
+  text-shadow 0 2px 8px #222
+  text-transform uppercase
+
+button
+  appearance none
+  border 0
+  outline 0
+
+  background-color transparent
+  color #fff
+
+  font-size 24px
+  font-weight 300
+  line-height 1em
+
+  border-bottom 1px solid @color
+
+  transition transform 200ms
+  transform scale(0.75)
+  transform-origin center bottom
+
+  &:hover
+    transform none
+
+#game-wrapper
+  position relative
+
+#main-menu
+  text-align center
+
+  h1
+    margin-top 64px
+    margin-bottom 192px
+    font-size 120px
+    line-height 1em
+
+#game-over-menu
+  display none
+  background rgba(#666, 0.2)
+  opacity 0
+  text-align center
+
+  .content
+    display none
+    margin 0 auto
+    width 416px
+    height 544px
+    background rgba(#222, 0.7)
+    opacity 0
+
+  #score
+    margin-bottom 0
+    padding-top 24px
+    font-size 96px
+    line-height @font-size
+
+    #L
+      font-size 60px
+
+  #high-score
+    margin-top 0
+    margin-bottom 192px
+    font-size 24px
+    line-height 1em
+
+    #L
+      font-size 16px
+
+  #next-level
+    font-size 24px
+    font-weight 300
+
+#hud
+  position absolute
+  display none
+  width 100%
+  top 0
+  left 0
+
+  #score
+    float left
+    margin 16px 0 0 16px
+    font-size 72px
+    line-height 1em
+
+  #level
+    float right
+    margin 16px 16px 0 0
+    font-size 72px
+    line-height 1em
+
+.overlay
+  position absolute
+  top 0
+  left 0
+  bottom 0
+  right 0
+  z-index 1
+
+#flash
+  display none
+  background #fff
+
+canvas
+  position relative
+  display block
+  outline 0
+
+#content
+  position absolute
+  top 0
+  left 0
+  bottom 0
+  right 0

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using HK.PoyoWordBook.Data;
+using HK.SmartERP.LIB.Tools;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -32,7 +34,24 @@ namespace HK.PoyoWordBook
 
         private void ShowData(string str)
         {
-            Application.Current.MainPage = new page뱀키우기();
+            var data = JsonTool.Deserialize<이벤트데이터>(str);
+
+            switch (data.handle)
+            {
+                case HARDCODE.이벤트.화면호출:
+                    switch (data.data)
+                    {
+                        case "snake":
+                            Application.Current.MainPage = new page뱀키우기();
+                            break;
+                        case "flybird":
+                            Application.Current.MainPage = new page멀리날기();
+                            break;
+                    }
+                    break;
+            }
+
+            
 
             //App.PageView = ;
 

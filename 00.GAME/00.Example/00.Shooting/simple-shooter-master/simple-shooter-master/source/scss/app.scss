@@ -1,0 +1,65 @@
+#canvas_container {
+	border: 1px solid black;
+	width: 640px;
+	height: 200px;
+	position: relative;
+
+	background: url('../img/wall.jpg');
+	background-repeat: repeat;
+	background-size: contain;
+}
+
+canvas {
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: transparent;
+}
+
+#bg {z-index: 3}
+#main {z-index: 0}
+#enemies {z-index: 1}
+#obstacles {z-index: 2}
+
+#gameOver, #gameWin {
+
+	display: none;
+
+	z-index: 10;
+	position: absolute;
+	top:0;
+	bottom:0;
+	left:0;
+	right:0;
+
+	text-align: center;
+
+	padding-top: 50px;
+
+	p {
+		cursor: pointer;
+		width: 150px;
+		padding-top:8px;
+		padding-bottom: 8px;
+		margin-right: auto;
+		margin-left: auto;
+	}
+}
+
+#gameOver {
+	background: black;
+	color: white;
+
+	p {
+		border: 1px solid white;
+	}
+}
+
+#gameWin {
+	background: gold;
+	color: black;
+
+	p {
+		border: 1px solid black;
+	}
+}
