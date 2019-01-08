@@ -364,6 +364,14 @@
     <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\fonts\reenie-beanie\reenie-beanie.ttf" />
     <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\fonts\reenie-beanie\reenie-beanie.woff" />
     <AndroidAsset Include="Assets\Poyo\study\StoryBook\README.md" />
+    <AndroidAsset Include="Assets\Poyo\study\Letters\.htaccess" />
+    <AndroidAsset Include="Assets\Poyo\study\Letters\error.ogg" />
+    <AndroidAsset Include="Assets\Poyo\study\Letters\letterpaint.manifest" />
+    <AndroidAsset Include="Assets\Poyo\study\Letters\manifest.webapp" />
+    <AndroidAsset Include="Assets\Poyo\study\Letters\opensans.ttf" />
+    <AndroidAsset Include="Assets\Poyo\study\Letters\opensans-bold.ttf" />
+    <AndroidAsset Include="Assets\Poyo\study\Letters\README.md" />
+    <AndroidAsset Include="Assets\Poyo\study\Letters\win.ogg" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <None Include="Properties\AndroidManifest.xml" />
@@ -12833,6 +12841,36 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\Poyo\study\StoryBook\licenses.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\Letters\images\logo128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\Letters\images\logo16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\Letters\images\logo32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\Letters\images\logo48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\Letters\images\logo64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\Letters\index.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\Letters\letterpaint.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\Letters\letterpaint.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\Letters\compare.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\Letters\compare.js" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>
