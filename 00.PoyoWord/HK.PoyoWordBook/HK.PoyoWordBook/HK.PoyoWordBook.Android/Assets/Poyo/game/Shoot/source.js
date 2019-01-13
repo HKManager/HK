@@ -158,7 +158,7 @@ L = function (e) {
       fl();
       fillStyle = "aliceblue";
       font = "30px Arial";
-      fillText("applereqq", e[0]-e[2], e[1]+e[3], 32 + 64, 32);
+      fillText("applereqq", e[0]-e[2], e[1]+e[3]+5, 32 + 64, 32);
 
       f = [x, y, 18]; // Cursor "tuple", used for factorizing the distance formula
 
