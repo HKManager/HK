@@ -359,6 +359,12 @@
     <AndroidAsset Include="Assets\Poyo\study\QuizWord\wireframes\TNmockupsfinal.pdf" />
     <AndroidAsset Include="Assets\Poyo\study\QuizWord\wireframes\TriviaNerd - userflowsheet.pdf" />
     <AndroidAsset Include="Assets\Poyo\study\QuizWord\wireframes\TriviaNerd_wireframes.pdf" />
+    <AndroidAsset Include="Assets\Poyo\game\Racing\music\racer.ogg" />
+    <AndroidAsset Include="Assets\Poyo\game\Racing\LICENSE" />
+    <AndroidAsset Include="Assets\Poyo\game\Racing\Rakefile" />
+    <AndroidAsset Include="Assets\Poyo\game\Racing\README.md" />
+    <AndroidAsset Include="Assets\Poyo\game\RacingCrazy\README.md" />
+    <AndroidAsset Include="Assets\Poyo\game\RunRoad\README.md" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <None Include="Properties\AndroidManifest.xml" />
@@ -12963,6 +12969,282 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\Poyo\study\QuizWord\main.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\Racing\images\background.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\Racing\images\background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\Racing\images\mute.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\Racing\images\sprites.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\Racing\images\sprites.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\Racing\images\background\background.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\Racing\images\background\hills.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\Racing\images\background\sky.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\Racing\images\background\trees.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\Racing\images\sprites\billboard01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\Racing\images\sprites\billboard02.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\Racing\images\sprites\billboard03.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\Racing\images\sprites\billboard04.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\Racing\images\sprites\billboard05.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\Racing\images\sprites\billboard06.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\Racing\images\sprites\billboard07.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\Racing\images\sprites\billboard08.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\Racing\images\sprites\billboard09.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\Racing\images\sprites\boulder1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\Racing\images\sprites\boulder2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\Racing\images\sprites\boulder3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\Racing\images\sprites\bush1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\Racing\images\sprites\bush2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\Racing\images\sprites\cactus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\Racing\images\sprites\car01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\Racing\images\sprites\car02.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\Racing\images\sprites\car03.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\Racing\images\sprites\car04.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\Racing\images\sprites\column.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\Racing\images\sprites\dead_tree1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\Racing\images\sprites\dead_tree2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\Racing\images\sprites\palm_tree.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\Racing\images\sprites\player_left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\Racing\images\sprites\player_right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\Racing\images\sprites\player_straight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\Racing\images\sprites\player_uphill_left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\Racing\images\sprites\player_uphill_right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\Racing\images\sprites\player_uphill_straight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\Racing\images\sprites\semi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\Racing\images\sprites\stump.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\Racing\images\sprites\tree1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\Racing\images\sprites\tree2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\Racing\images\sprites\truck.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\Racing\music\racer.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\Racing\common.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\Racing\common.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\Racing\index.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\Racing\stats.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\Racing\v1.straight.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\Racing\v2.curves.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\Racing\v3.hills.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\Racing\v4.final.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RacingCrazy\images\button_pause_sheet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RacingCrazy\images\button_sheet.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RacingCrazy\images\cars_atlas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RacingCrazy\images\default_menu_background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RacingCrazy\images\explosion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RacingCrazy\images\help.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RacingCrazy\images\menu_car_icons.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RacingCrazy\images\misc_atlas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RacingCrazy\images\numbers.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RacingCrazy\images\preloader_background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RacingCrazy\images\preloader_bar.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RacingCrazy\images\preloader_bar_background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RacingCrazy\images\street_canyon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RacingCrazy\images\street_city.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RacingCrazy\images\street_desert.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RacingCrazy\images\street_grass.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RacingCrazy\images\street_snow.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RacingCrazy\images\street_water.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RacingCrazy\js\ytAboutLayer.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RacingCrazy\js\ytBackground.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RacingCrazy\js\ytButton.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RacingCrazy\js\ytCar.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RacingCrazy\js\ytCarLayer.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RacingCrazy\js\ytExplosion.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RacingCrazy\js\ytGameLayer.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RacingCrazy\js\ytHelpLayer.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RacingCrazy\js\ytMain.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RacingCrazy\js\ytMenuLayer.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RacingCrazy\js\ytOptionLayer.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RacingCrazy\js\ytPoint.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RacingCrazy\js\ytPreloader.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RacingCrazy\js\ytResultBox.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RacingCrazy\js\ytStreetView.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RacingCrazy\lib\lufylegend-1.9.7.simple.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RacingCrazy\index.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunRoad\car.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunRoad\game.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunRoad\index.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunRoad\powerups.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunRoad\track.js" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>
