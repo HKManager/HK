@@ -1,0 +1,84 @@
+body {
+  background-image: url("../images/background.jpg");
+  background-position: top center !important;
+  background-repeat: no-repeat !important;
+  background-size: auto;
+}
+
+footer {
+  position: fixed;
+  bottom: 5px;
+  width: 100%;
+  text-align: center;
+  color: black;
+}
+
+.topPanel {
+  height: 280px;
+  text-align: center;
+}
+
+#gamePanel {
+  position: relative;
+  top: 100px;
+  bottom: 100px;
+  height: 500px;
+  font-family: 'Ropa Sans', sans-serif;
+  font-size: 24px;
+}
+
+#logo {
+  width: 300px;
+  height: auto;
+}
+
+#correct {
+  text-align: center;
+}
+
+#dancingTrio {
+  width: 400px;
+  height: auto;
+}
+
+#losses {
+  float: right;
+}
+
+#question {
+  text-align: center;
+}
+
+#results {
+  text-align: center;
+}
+
+#timer {
+  font-size: 36px;
+  text-align: center;
+}
+
+
+#q0:hover {
+  font-family: 'Ropa Sans', sans-serif;
+  font-size: 24px;
+  color: red;
+}
+
+#q1:hover {
+  font-family: 'Ropa Sans', sans-serif;
+  font-size: 24px;
+  color: red;
+}
+
+#q2:hover {
+  font-family: 'Ropa Sans', sans-serif;
+  font-size: 24px;
+  color: red;  
+}
+
+#q3:hover {
+  font-family: 'Ropa Sans', sans-serif;
+  font-size: 24px;
+  color: red;  
+}
