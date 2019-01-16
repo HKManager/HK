@@ -44,6 +44,8 @@ var ytCarLayer = (function () {
 		};
 	};
 
+    var statusText = new LTextField();
+
 	ytCarLayer.prototype.addCar = function(group, index, pi, speed) {
 		var s = this;
 
@@ -61,6 +63,21 @@ var ytCarLayer = (function () {
 
 			if (index != 0 && index != 4) {
 				car.addShape(LShape.RECT, [0, 18, s.car.getWidth(), 80]);
+
+
+                // - 신인환 주석 : 최초 장애물 차량 생성
+                var temp = s.car.getWidth();
+
+                statusText.size = 15;
+                statusText.weight = "bold";
+                statusText.color = "white";
+                statusText.text = 'go';
+                //statusText.x = 3;
+                statusText.x = (temp - statusText.getWidth())*0.5;
+                statusText.y = 40;
+
+                car.addChild(statusText);
+
 			}else if (index == 4) {
 				car.addShape(LShape.RECT, [0, 0, s.car.getWidth(), 115]);
 			}
@@ -92,6 +109,8 @@ var ytCarLayer = (function () {
 						cDir = o.dir,
 						canMove = true,
 						oSh = o.shapes.slice(0);
+
+                        var oSt = o.childList.slice(1);
 
 						o.x = o.roadPositionList[toPosition];
 

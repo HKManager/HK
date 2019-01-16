@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace HK.PoyoWordBook
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class page색맞추기 : ContentPage
+	public partial class page대전게임 : ContentPage
 	{
-		public page색맞추기 ()
+		public page대전게임 ()
 		{
 			InitializeComponent ();
 		}
