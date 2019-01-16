@@ -365,6 +365,21 @@
     <AndroidAsset Include="Assets\Poyo\game\Racing\README.md" />
     <AndroidAsset Include="Assets\Poyo\game\RacingCrazy\README.md" />
     <AndroidAsset Include="Assets\Poyo\game\RunRoad\README.md" />
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\audio\correct.ogg" />
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\audio\incorrect.ogg" />
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\fonts\kraash-webfont.eot" />
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\fonts\kraash-webfont.ttf" />
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\fonts\kraash-webfont.woff" />
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\fonts\kraash-webfont.woff2" />
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\fonts\thekingsofthehouse-regular_0-webfont.eot" />
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\fonts\thekingsofthehouse-regular_0-webfont.ttf" />
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\fonts\thekingsofthehouse-regular_0-webfont.woff" />
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\fonts\thekingsofthehouse-regular_0-webfont.woff2" />
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\Thumbs.db" />
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\ladders\Thumbs.db" />
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\snakes\Thumbs.db" />
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\wellDone\Thumbs.db" />
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\README.md" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <None Include="Properties\AndroidManifest.xml" />
@@ -13245,6 +13260,267 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\Poyo\game\RunRoad\track.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\audio\correct.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\audio\correct.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\audio\incorrect.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\audio\incorrect.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\css\sl.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\fonts\kraash-webfont.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\fonts\thekingsofthehouse-regular_0-webfont.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\-dice.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\-surface.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\dice.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\digit1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\digit2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\digit3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\digit4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\digit5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\digit6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\game-1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\game-2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\grass.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\index.fidget-spinner.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\instr-bg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\Level-bg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\ludo_bg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\options-bg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\options-bg_active.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\play_bg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\ques-box.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\ques-holder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\screen1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\screen2-ladder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\screen2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\screen3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\screen4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\screen5.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\selectLevel-bg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\snake1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\snake2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\submitBtn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\surface.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\title_bg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\wellDone-bg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\ladders\ladder1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\ladders\ladder10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\ladders\ladder11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\ladders\ladder12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\ladders\ladder13.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\ladders\ladder14.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\ladders\ladder15.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\ladders\ladder16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\ladders\ladder2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\ladders\ladder3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\ladders\ladder4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\ladders\ladder5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\ladders\ladder6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\ladders\ladder7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\ladders\ladder8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\ladders\ladder9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\snakes\ludoSnake1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\snakes\ludoSnake10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\snakes\ludoSnake11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\snakes\ludoSnake12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\snakes\ludoSnake13.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\snakes\ludoSnake14.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\snakes\ludoSnake15.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\snakes\ludoSnake16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\snakes\ludoSnake2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\snakes\ludoSnake3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\snakes\ludoSnake4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\snakes\ludoSnake5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\snakes\ludoSnake6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\snakes\ludoSnake7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\snakes\ludoSnake8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\snakes\ludoSnake9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\wellDone\1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\wellDone\2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\wellDone\3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\wellDone\4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\wellDone\5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\wellDone\6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\wellDone\7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\wellDone\8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\wellDone\9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\js\jquery-1.11.1.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\js\sl.config.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\js\sl.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\js\taffy-min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\index.html" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>
