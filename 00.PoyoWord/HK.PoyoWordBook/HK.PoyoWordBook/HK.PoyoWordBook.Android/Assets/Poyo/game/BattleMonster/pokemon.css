@@ -39,10 +39,17 @@ body {
   bottom: 0px;
 }
 
-.player .stats {
+.player .statsPlayer {
   position: absolute;
   top: 48px;
-  right: 40px;
+  left: 10px;
+  width: 320px;
+}
+
+.player .statsBad {
+  position: absolute;
+  top: 48px;
+  right: 10px;
   width: 320px;
 }
 
