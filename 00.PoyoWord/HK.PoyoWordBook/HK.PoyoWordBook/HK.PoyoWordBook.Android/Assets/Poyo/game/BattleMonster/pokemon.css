@@ -35,7 +35,8 @@ body {
 
 .player {
   position: relative;
-  height: 192px;
+  height: 100%;
+  bottom: 0px;
 }
 
 .player .stats {
@@ -45,9 +46,16 @@ body {
   width: 320px;
 }
 
-.player .pokemon {
+.player .pokemonPlayer {
   position: absolute;
   left: 100px;
+  bottom: 60px;
+  width: 160px;
+}
+
+.player .pokemonBad {
+  position: absolute;
+  right: 100px;
   bottom: 60px;
   width: 160px;
 }
