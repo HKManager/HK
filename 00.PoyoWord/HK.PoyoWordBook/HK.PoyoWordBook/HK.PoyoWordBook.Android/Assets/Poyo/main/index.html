@@ -10,7 +10,20 @@
     <link rel="stylesheet" href="../css/menu/style.css"> <!-- Resource style -->
     <script src="../js/menu/modernizr.js"></script> <!-- Modernizr -->
 
-    <title>Rounded Animated Navigation | CodyHouse</title>
+
+
+    <!--
+        This map was created using Pixel Map Generator by amCharts and is licensed under the Creative Commons Attribution 4.0 International License.
+        You may use this map the way you see fit as long as proper attribution to the name of amCharts is given in the form of link to https://pixelmap.amcharts.com/
+        To view a copy of this license, visit http://creativecommons.org/licenses/by/4.0/
+
+        If you would like to use this map without any attribution, you can acquire a commercial license for the JavaScript Maps - a tool that was used to produce this map.
+        To do so, visit amCharts Online Store: https://www.amcharts.com/online-store/
+    -->
+    <!-- amCharts javascript sources -->
+    <script type="text/javascript" src="https://www.amcharts.com/lib/3/ammap.js"></script>
+    <script type="text/javascript" src="https://www.amcharts.com/lib/3/maps/js/southKoreaLow.js"></script>
+
     <style>
         .currently-loading {
             /*border: 0;
@@ -49,10 +62,8 @@
             background-color: transparent;
             /* color: #0053ff; */
             cursor: pointer;
-            
-
             background: -webkit-linear-gradient(#F29661, #CC723D);
-             -webkit-background-clip: text; 
+            -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
@@ -87,15 +98,15 @@
         <nav>
             <ul class="cd-primary-nav">
                 <li><a href="#0" style="font-weight: bold;" onclick="ShowGame()">게임하기 (두근두근 단어 오락실)</a></li>
-                <li><a href="#0" style="font-weight: bold;">땅따먹기 (알쏭달쏭 단어 학습실)</a></li>
+                <li><a href="#0" style="font-weight: bold;" onclick="ShowStudy()">땅따먹기 (알쏭달쏭 단어 학습실)</a></li>
                 <li><a href="#0" style="font-weight: bold;">관리하기 (이것저것 단어 관리방)</a></li>
                 <li><a href="#0" style="font-weight: bold;">조회하기 (오목조목 정보 조회방)</a></li>
                 <li><a href="#0" style="font-weight: bold;">설정하기 (오밀조밀 어플 설정방)</a></li>
             </ul>
         </nav>
-        <main style="padding-left:30px;">
+        <main>
 
-            <div id="divGame">
+            <div id="divGame" style="padding-left:30px;">
 
                 <br />
                 <br />
@@ -107,22 +118,26 @@
                 <br />
 
                 <img id="btnShooting" src="img/btnShooting_off.png" style="width:200px;" onmousedown="downShooting()"
-                    onmouseup="upShooting()" onclick="ShowShooting()" />
+                     onmouseup="upShooting()" onclick="ShowShooting()" />
 
                 <br />
                 <br />
                 <br />
 
                 <img id="btnWallOut" src="img/btnWallOut_off.png" style="width:200px;" onmousedown="downWallOut()"
-                    onmouseup="upWallOut()" onclick="ShowFlyBird()" />
+                     onmouseup="upWallOut()" onclick="ShowFlyBird()" />
 
                 <br />
                 <br />
                 <br />
 
                 <img id="btnPuyoPuyo" src="img/btnPuyoPuyo_off.png" style="width:200px;" onmousedown="downPuyoPuyo()"
-                    onmouseup="upPuyoPuyo()" onclick="ShowPuyoPuyo()" />
+                     onmouseup="upPuyoPuyo()" onclick="ShowPuyoPuyo()" />
 
+            </div>
+
+            <div id="divStudy" style="width: 100%; height: 100%;">
+                <div id="map" style="width: 100%; height: 500px;"></div>
             </div>
 
         </main> <!-- cd-content -->
@@ -147,6 +162,9 @@
         }
 
         window.onload = function () {
+
+            ShowGame();
+
             $("#btnSnake").bind("touchstart", function (e) {
                 $('#btnSnake').attr("src", "img/btnSnake_on.png");
             });
@@ -218,8 +236,105 @@
 
         function ShowGame() {
             this.hideDiv();
+            $('#divStudy').hide();
             $('#divGame').show();
             toggleNavView();
+        }
+
+        function ShowStudy() {
+            $('#divGame').hide();
+            this.hideDiv();
+            $('#divStudy').show();
+            toggleNavView();
+
+            AmCharts.makeChart("map", {
+                "type": "map",
+                "pathToImages": "http://www.amcharts.com/lib/3/images/",
+                "addClassNames": true,
+                "fontSize": 15,
+                "color": "#FFFFFF",
+                "projection": "mercator",
+                "backgroundAlpha": 1,
+                "backgroundColor": "rgba(80,80,80,1)",
+                "dataProvider": {
+                    "map": "southKoreaLow",
+                    "getAreasFromMap": true,
+                    "images": [
+                        {
+                            "top": 40,
+                            "left": 60,
+                            "width": 80,
+                            "height": 40,
+                            "pixelMapperLogo": true,
+                            "imageURL": "http://pixelmap.amcharts.com/static/img/logo.svg",
+                            "url": "http://www.amcharts.com"
+                        }
+                    ],
+                    "areas": [
+                        {
+                            "id": "KR-41",
+                            "title": "Gyeonggi",
+                            "color": "rgba(75,216,181,0.8)"
+                        },
+                        {
+                            "id": "KR-42",
+                            "title": "Gangwon",
+                            "color": "rgba(216,75,75,0.8)"
+                        },
+                        {
+                            "id": "KR-47",
+                            "title": "North Gyeongsang",
+                            "color": "rgba(255,0,0,0.8)"
+                        }
+                    ]
+                },
+                "balloon": {
+                    "horizontalPadding": 15,
+                    "borderAlpha": 0,
+                    "borderThickness": 1,
+                    "verticalPadding": 15
+                },
+                "areasSettings": {
+                    "color": "rgba(129,129,129,1)",
+                    "outlineColor": "rgba(80,80,80,1)",
+                    "rollOverOutlineColor": "rgba(80,80,80,1)",
+                    "rollOverBrightness": 20,
+                    "selectedBrightness": 20,
+                    "selectable": true,
+                    "unlistedAreasAlpha": 0,
+                    "unlistedAreasOutlineAlpha": 0
+                },
+                "imagesSettings": {
+                    "alpha": 1,
+                    "color": "rgba(129,129,129,1)",
+                    "outlineAlpha": 0,
+                    "rollOverOutlineAlpha": 0,
+                    "outlineColor": "rgba(80,80,80,1)",
+                    "rollOverBrightness": 20,
+                    "selectedBrightness": 20,
+                    "selectable": true
+                },
+                "linesSettings": {
+                    "color": "rgba(129,129,129,1)",
+                    "selectable": true,
+                    "rollOverBrightness": 20,
+                    "selectedBrightness": 20
+                },
+                "zoomControl": {
+                    "zoomControlEnabled": true,
+                    "homeButtonEnabled": false,
+                    "panControlEnabled": false,
+                    "right": 38,
+                    "bottom": 30,
+                    "minZoomLevel": 0.25,
+                    "gridHeight": 100,
+                    "gridAlpha": 0.1,
+                    "gridBackgroundAlpha": 0,
+                    "gridColor": "#FFFFFF",
+                    "draggerAlpha": 1,
+                    "buttonCornerRadius": 2
+                }
+            });
         }
 
         function ShowSnake() {
@@ -256,6 +371,11 @@
             window.location.href = "../game/BattleMonster/pokemon.html";
         }
 
+    </script>
+
+    <!-- amCharts javascript code -->
+    <script type="text/javascript">
+        
     </script>
 
     <script src="../js/menu/jquery-2.1.1.js"></script>
