@@ -4,14 +4,14 @@ body {
 }
 
 .game {
-  position: relative;
-  background-image: url('http://bit.ly/pokemonbg');
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  border: 3px solid black;
-  border-radius: 8px 8px 0 0;
-  height: 480px;
-  width: 800px;
+    position: relative;
+    background-image: url('background1.gif');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    border: 3px solid black;
+    border-radius: 8px 8px 0 0;
+    height: 480px;
+    width: 800px;
 }
 
 .opponent {
@@ -48,7 +48,7 @@ body {
 .player .pokemon {
   position: absolute;
   left: 100px;
-  bottom: 10px;
+  bottom: 60px;
   width: 160px;
 }
 

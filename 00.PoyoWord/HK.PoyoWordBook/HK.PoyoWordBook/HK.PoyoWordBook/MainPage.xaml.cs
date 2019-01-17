@@ -45,7 +45,7 @@ namespace HK.PoyoWordBook
                             Application.Current.MainPage = new page뱀키우기();
                             break;
                         case "flybird":
-                            Application.Current.MainPage = new page멀리날기();
+                            //Application.Current.MainPage = new page멀리날기();
                             break;
                     }
                     break;
