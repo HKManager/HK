@@ -1512,7 +1512,7 @@ function AppLoader(app, configs) {
             
 
             width = document.getElementById('puzzle').clientWidth;
-            height = 500;
+            height = 350;
             canvas.style.width = width + "px";
             canvas.style.height = height + "px";
         } else {
