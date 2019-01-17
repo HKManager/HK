@@ -11,7 +11,7 @@ body {
     background-repeat: no-repeat;
     border: 3px solid black;
     border-radius: 8px 8px 0px 0px;
-    height: 280px;
+    height: 180px;
     width: 100%;
 }
 
@@ -21,7 +21,7 @@ body {
   background-repeat: no-repeat;
   border: 3px solid black;
   border-radius: 0px px 8px 8px;
-  height: 280px;
+  height: 100px;
   width: 100%;
 }
 
@@ -34,14 +34,14 @@ body {
   position: absolute;
   top: 96px;
   left: 40px;
-  width: 320px;
+  width: 80px;
 }
 
 .opponent .pokemon {
   position: absolute;
   bottom: 0;
-  right: 440px;
-  width: 100px;
+  right: 140px;
+  width: 50px;
 }
 
 .player {
@@ -52,30 +52,30 @@ body {
 
 .player .statsPlayer {
   position: absolute;
-  top: 48px;
+  top: 18px;
   left: 10px;
-  width: 320px;
+  width: 140px;
 }
 
 .player .statsBad {
   position: absolute;
-  top: 48px;
+  top: 18px;
   right: 10px;
-  width: 320px;
+  width: 140px;
 }
 
 .player .pokemonPlayer {
   position: absolute;
-  left: 100px;
-  bottom: 60px;
-  width: 160px;
+  left: 40px;
+  bottom: 30px;
+  width: 70px;
 }
 
 .player .pokemonBad {
   position: absolute;
-  right: 100px;
-  bottom: 60px;
-  width: 160px;
+  right: 40px;
+  bottom: 30px;
+  width: 70px;
 }
 
 .box {
@@ -177,6 +177,7 @@ body {
   position: relative;
   float: left;
   background-image: url('http://bit.ly/pokeballimg');
+  background-size: 100% 100%;
   background-size: 100% 100%;
   width: 25px;
   height: 25px;
