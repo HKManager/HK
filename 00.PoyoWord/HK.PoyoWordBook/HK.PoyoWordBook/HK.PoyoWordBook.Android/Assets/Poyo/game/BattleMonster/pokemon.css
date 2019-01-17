@@ -3,15 +3,26 @@ body {
   font-size: 20px;
 }
 
+
 .game {
     position: relative;
     background-image: url('background1.gif');
     background-size: 100% 100%;
     background-repeat: no-repeat;
     border: 3px solid black;
-    border-radius: 8px 8px 0 0;
-    height: 480px;
-    width: 800px;
+    border-radius: 8px 8px 0px 0px;
+    height: 280px;
+    width: 100%;
+}
+
+.puzzle {
+  position: relative;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  border: 3px solid black;
+  border-radius: 0px px 8px 8px;
+  height: 280px;
+  width: 100%;
 }
 
 .opponent {
@@ -29,7 +40,7 @@ body {
 .opponent .pokemon {
   position: absolute;
   bottom: 0;
-  right: 140px;
+  right: 440px;
   width: 100px;
 }
 
@@ -75,7 +86,7 @@ body {
   border-radius: 0 0 8px 8px;
   color: #fff;
   height: 120px;
-  width: 784px;
+  width: 100%;
 }
 
 .box .message {
