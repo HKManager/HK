@@ -8,8 +8,6 @@ function invokeCSCode(data) {
 
 window.onload = function () {
 
-    ShowGame();
-
     initPopup_Study();
 
     $("#btnSnake").bind("touchstart", function (e) {
@@ -44,6 +42,25 @@ window.onload = function () {
         $('#btnPuyoPuyo').attr("src", "img/btnPuyoPuyo_off.png");
     });
 };
+
+function playBGM() {
+    //var bgm = $('#sound');
+
+
+    var bgm = document.getElementById("sound");
+
+    if (bgm.paused) {
+        bgm.play();
+    }
+
+    //bgm.addEventListener("loadstart", function () {
+    //    alert("Starting to load video");
+    //});
+
+    //bgm.onloadstart  = function () {
+        
+    //}
+}
 
 function initPopup_Study() {
     $('a.login-window').click(function () {
@@ -118,6 +135,9 @@ function hideDiv() {
 }
 
 function ShowGame() {
+
+    playBGM();
+
     this.hideDiv();
     $('#divStudy').hide();
     $('#divGame').show();
@@ -141,6 +161,8 @@ var mapChart = null;
 function ShowStudy() {
 
     fillHeight();
+
+    playBGM();
 
     //$(window).resize(fillHeight);
 
