@@ -12,6 +12,8 @@
 
 
 
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/main.js"></script> <!-- Modernizr -->
     <!--
         This map was created using Pixel Map Generator by amCharts and is licensed under the Creative Commons Attribution 4.0 International License.
         You may use this map the way you see fit as long as proper attribution to the name of amCharts is given in the form of link to https://pixelmap.amcharts.com/
@@ -25,83 +27,6 @@
     <script type="text/javascript" src="https://www.amcharts.com/lib/3/maps/js/southKoreaLow.js"></script>
 
     <style>
-        .currently-loading {
-            /*border: 0;
-            padding: 0;*/
-            /*opacity: 0.45;*/
-            background-image: url(img/game_bakground.gif);
-            /*background-size: cover;*/
-        }
-
-        .centerDiv {
-            display: block;
-            margin: auto;
-        }
-
-        .horizontalCenter {
-            position: absolute;
-            left: 50%;
-            top:50%;
-            -webkit-transform: translateX(-50%);
-            transform: translateX(-50%);
-        }
-
-        /*button {
-            border: none;
-            font-family: 'Nanum Pen Script';
-            font-size: 35px;
-            background-color:transparent;
-            color: #0053ff;
-        }*/
-
-        .s1 {
-            text-shadow: 2px 2px 2px gray;
-        }
-
-        .s2 {
-            text-shadow: 4px 2px 2px gray;
-        }
-
-        .s3 {
-            text-shadow: 6px 2px 2px gray;
-        }
-
-        .button {
-            border: none;
-            font-family: 'Nanum Gothic', serif;
-            /* font-family: 'Nanum Pen Script', serif; */
-            font-weight: bold;
-            font-size: 35px;
-            background-color: transparent;
-            /* color: #0053ff; */
-            cursor: pointer;
-            background: -webkit-linear-gradient(#F29661, #CC723D);
-            -webkit-text-fill-color: transparent;
-        }
-
-        .button2 {
-            background-color: white;
-            color: black;
-            border: 2px solid #008CBA;
-        }
-
-        .button3 {
-            background-color: white;
-            color: black;
-            border: 2px solid #f44336;
-        }
-
-        .button4 {
-            background-color: white;
-            color: black;
-            border: 2px solid #e7e7e7;
-        }
-
-        .button5 {
-            background-color: white;
-            color: black;
-            border: 2px solid #555555;
-        }
     </style>
 </head>
 
@@ -118,6 +43,7 @@
         </nav>
         <main>
 
+            <!-- 게임패널 -->
             <div id="divGame" class="horizontalCenter">
 
                 <br />
@@ -148,6 +74,7 @@
 
             </div>
 
+            <!-- 학습 패널 -->
             <div id="divStudy" style="width: 100%; min-height: 100%;">
                 <div id="map" style="width: 100%;min-height: 100%;"></div>
             </div>
@@ -161,255 +88,6 @@
         </div> <!-- cd-overlay-content -->
         <a href="#0" class="cd-nav-trigger">Menu<span class="cd-icon"></span></a>
     </div>
-
-    <script type="text/javascript">
-
-
-        function invokeCSCode(data) {
-            try {
-                invokeCSharpAction(data);
-            }
-            catch (err) {
-            }
-        }
-
-        window.onload = function () {
-
-            ShowGame();
-
-            $("#btnSnake").bind("touchstart", function (e) {
-                $('#btnSnake').attr("src", "img/btnSnake_on.png");
-            });
-
-            $("#btnSnake").bind("touchend", function (e) {
-                $('#btnSnake').attr("src", "img/btnSnake_off.png");
-            });
-
-            $("#btnShooting").bind("touchstart", function (e) {
-                $('#btnShooting').attr("src", "img/btnShooting_on.png");
-            });
-
-            $("#btnShooting").bind("touchend", function (e) {
-                $('#btnShooting').attr("src", "img/btnShooting_off.png");
-            });
-
-            $("#btnWallOut").bind("touchstart", function (e) {
-                $('#btnWallOut').attr("src", "img/btnWallOut_on.png");
-            });
-
-            $("#btnWallOut").bind("touchend", function (e) {
-                $('#btnWallOut').attr("src", "img/btnWallOut_off.png");
-            });
-
-            $("#btnPuyoPuyo").bind("touchstart", function (e) {
-                $('#btnPuyoPuyo').attr("src", "img/btnPuyoPuyo_on.png");
-            });
-
-            $("#btnPuyoPuyo").bind("touchend", function (e) {
-                $('#btnPuyoPuyo').attr("src", "img/btnPuyoPuyo_off.png");
-            });
-        };
-
-        function downSnake() {
-            $('#btnSnake').attr("src", "img/btnSnake_on.png");
-        }
-
-        function upSnake() {
-            $('#btnSnake').attr("src", "img/btnSnake_off.png");
-        }
-
-        function downShooting() {
-            $('#btnShooting').attr("src", "img/btnShooting_on.png");
-        }
-
-        function upShooting() {
-            $('#btnShooting').attr("src", "img/btnShooting_off.png");
-        }
-
-        function downWallOut() {
-            $('#btnWallOut').attr("src", "img/btnWallOut_on.png");
-        }
-
-        function upWallOut() {
-            $('#btnWallOut').attr("src", "img/btnWallOut_off.png");
-        }
-
-        function downPuyoPuyo() {
-            $('#btnPuyoPuyo').attr("src", "img/btnPuyoPuyo_on.png");
-        }
-
-        function upPuyoPuyo() {
-            $('#btnPuyoPuyo').attr("src", "img/btnPuyoPuyo_off.png");
-        }
-
-        function hideDiv() {
-            $('#divGame').hide();
-        }
-
-        function ShowGame() {
-            this.hideDiv();
-            $('#divStudy').hide();
-            $('#divGame').show();
-            toggleNavView();
-        }
-
-
-        function fillHeight() {
-            var height = window.innerHeight > 0 ? window.innerHeight : screen.height;
-
-            var divMap = document.getElementById('map');
-            var divStudy = document.getElementById('divStudy');
-
-            divStudy.style.height = height + "px";
-            divMap.style.height = height + "px";
-        }
-
-
-        var mapChart = null;
-
-        function ShowStudy() {
-
-            fillHeight();
-
-            //$(window).resize(fillHeight);
-
-            $('#divGame').hide();
-            this.hideDiv();
-            $('#divStudy').show();
-            toggleNavView();
-
-            mapChart = AmCharts.makeChart("map", {
-                "type": "map",
-                "addClassNames": true,
-                "fontSize": 15,
-                "color": "#FFFFFF",
-                "projection": "mercator",
-                "backgroundAlpha": 1,
-                "backgroundColor": "rgba(80,80,80,1)",
-                "dataProvider": {
-                    "map": "southKoreaLow",
-                    "getAreasFromMap": true,
-                    "areas": [
-                        {
-                            "id": "KR-41",
-                            "title": "Gyeonggi",
-                            "color": "rgba(75,216,181,0.8)"
-                        },
-                        {
-                            "id": "KR-42",
-                            "title": "Gangwon",
-                            "color": "rgba(216,75,75,0.8)"
-                        },
-                        {
-                            "id": "KR-47",
-                            "title": "North Gyeongsang",
-                            "color": "rgba(255,0,0,0.8)"
-                        }
-                    ]
-                },
-                "balloon": {
-                    "horizontalPadding": 15,
-                    "borderAlpha": 0,
-                    "borderThickness": 1,
-                    "verticalPadding": 15
-                },
-                "areasSettings": {
-                    "color": "rgba(129,129,129,1)",
-                    "outlineColor": "rgba(80,80,80,1)",
-                    "rollOverOutlineColor": "rgba(80,80,80,1)",
-                    "rollOverBrightness": 20,
-                    "selectedBrightness": 20,
-                    "selectable": true,
-                    "unlistedAreasAlpha": 0,
-                    "unlistedAreasOutlineAlpha": 0
-                },
-                "imagesSettings": {
-                    "alpha": 1,
-                    "color": "rgba(129,129,129,1)",
-                    "outlineAlpha": 0,
-                    "rollOverOutlineAlpha": 0,
-                    "outlineColor": "rgba(80,80,80,1)",
-                    "rollOverBrightness": 20,
-                    "selectedBrightness": 20,
-                    "selectable": true
-                },
-                "linesSettings": {
-                    "color": "rgba(129,129,129,1)",
-                    "selectable": true,
-                    "rollOverBrightness": 20,
-                    "selectedBrightness": 20
-                },
-                "zoomControl": {
-                    "zoomControlEnabled": true,
-                    "homeButtonEnabled": false,
-                    "panControlEnabled": false,
-                    "right": 38,
-                    "bottom": 30,
-                    "minZoomLevel": 0.25,
-                    "gridHeight": 100,
-                    "gridAlpha": 0.1,
-                    "gridBackgroundAlpha": 0,
-                    "gridColor": "#FFFFFF",
-                    "draggerAlpha": 1,
-                    "buttonCornerRadius": 2
-                }
-            });
-
-
-            mapChart.allowClickOnSelectedObject = true;
-
-            mapChart.addListener("clickMapObject", handleClick);
-        }
-
-        function handleClick(event) {
-            alert(event.mapObject.id);
-        }
-
-        AmCharts.ready(function () {
-            // add click listener
-            
-        });
-
-        function ShowSnake() {
-
-            var obj = { handle: "06", view: "main", data: "snake" };
-
-            var data = JSON.stringify(obj);
-
-            //window.location.href = "../game/Snake/snake.html";
-            invokeCSCode(data);
-        }
-
-        function ShowBlockOut() {
-            window.location.href = "../game/BlockOut/example/game-breakout/index.html";
-        }
-
-        function ShowPuyoPuyo() {
-            window.location.href = "../game/PuyoPuyo/example/game-samegame/index.html";
-        }
-
-        function ShowFlyBird() {
-            //var obj = { handle: "06", view: "main", data: "flybird" };
-
-            //var data = JSON.stringify(obj);
-
-            //window.location.href = "../study/QuizQuiz/index.html";
-
-            window.location.href = "../game/RacingCrazy/index.html";
-
-            //invokeCSCode(data);
-        }
-
-        function ShowShooting() {
-            window.location.href = "../game/BattleMonster/pokemon.html";
-        }
-
-    </script>
-
-    <!-- amCharts javascript code -->
-    <script type="text/javascript">
-        
-    </script>
 
     <script src="../js/menu/jquery-2.1.1.js"></script>
     <script src="../js/menu/velocity.min.js"></script>
