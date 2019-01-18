@@ -10,6 +10,8 @@ window.onload = function () {
 
     initPopup_Study();
 
+    toggleNavView();
+
     $("#btnSnake").bind("touchstart", function (e) {
         $('#btnSnake').attr("src", "img/btnSnake_on.png");
     });
@@ -135,6 +137,12 @@ function hideDiv() {
 }
 
 function ShowGame() {
+
+    var height = window.innerHeight > 0 ? window.innerHeight : screen.height;
+    var box = document.getElementById('divGame');
+    var y = ((height - box.style.height) * 0.5)+10;
+
+    box.style.top = y + "px";
 
     playBGM();
 
@@ -320,7 +328,7 @@ function closePopupStudy() {
 }
 
 function ShowWordCard() {
-    window.location.href = "../study/StoryBook/example/index.html";
+    window.location.href = "../study/StudyRoom/index.html";
 }
 
 function ShowWordQuiz() {
@@ -328,6 +336,6 @@ function ShowWordQuiz() {
 }
 
 function ShowWordTest() {
-
+    window.location.href = "../study/WordTest/demo/index.html";
 }
 

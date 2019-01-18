@@ -381,6 +381,16 @@
     <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\wellDone\Thumbs.db" />
     <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\README.md" />
     <AndroidAsset Include="Assets\Poyo\game\BattleMonster\bgm\bgm_3.ogg" />
+    <AndroidAsset Include="Assets\Poyo\study\StudyRoom\css\fonts\BebasNeue-webfont.eot" />
+    <AndroidAsset Include="Assets\Poyo\study\StudyRoom\css\fonts\BebasNeue-webfont.ttf" />
+    <AndroidAsset Include="Assets\Poyo\study\StudyRoom\css\fonts\BebasNeue-webfont.woff" />
+    <AndroidAsset Include="Assets\Poyo\study\StudyRoom\images\Thumbs.db" />
+    <AndroidAsset Include="Assets\Poyo\study\WordTest\src\.jshintrc" />
+    <AndroidAsset Include="Assets\Poyo\study\WordTest\tests\.jshintrc" />
+    <AndroidAsset Include="Assets\Poyo\study\WordTest\.travis.yml" />
+    <AndroidAsset Include="Assets\Poyo\study\WordTest\LICENSE" />
+    <AndroidAsset Include="Assets\Poyo\study\WordTest\package.json" />
+    <AndroidAsset Include="Assets\Poyo\study\WordTest\README.md" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <None Include="Properties\AndroidManifest.xml" />
@@ -13697,6 +13707,156 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\Poyo\main\bgm\bgm_1.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\bgm\bgm_0.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StudyRoom\css\demo.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StudyRoom\css\style.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StudyRoom\css\fonts\BebasNeue-webfont.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StudyRoom\css\fonts\Dharma Type Font License.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StudyRoom\images\1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StudyRoom\images\10.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StudyRoom\images\11.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StudyRoom\images\12.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StudyRoom\images\2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StudyRoom\images\3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StudyRoom\images\4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StudyRoom\images\5.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StudyRoom\images\6.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StudyRoom\images\7.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StudyRoom\images\8.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StudyRoom\images\9.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StudyRoom\images\arrows.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StudyRoom\images\bg.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StudyRoom\images\browser.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StudyRoom\images\ImageAttribution.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StudyRoom\js\jquery.gallery.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StudyRoom\js\modernizr.custom.53451.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StudyRoom\index.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StudyRoom\index2.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StudyRoom\index3.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\WordTest\demo\demo.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\WordTest\demo\demo.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\WordTest\demo\index.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\WordTest\resources\blanket-1.1.5.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\WordTest\resources\grunt-reporter.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\WordTest\resources\jquery-1.10.2.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\WordTest\resources\jquery-ui.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\WordTest\resources\jquery-ui.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\WordTest\resources\jquery.simulate.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\WordTest\resources\qunit-1.12.0.min.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\WordTest\resources\qunit-1.12.0.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\WordTest\resources\qunit-1.13.0.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\WordTest\resources\qunit-1.13.0.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\WordTest\src\jquery-fsortable.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\WordTest\tests\index.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\WordTest\tests\test_connected.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\WordTest\tests\test_core.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\WordTest\tests\test_draggable.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\WordTest\tests\test_sort.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\WordTest\tests\tests.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\WordTest\tests\utils.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\WordTest\.gitignore" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\WordTest\Gruntfile.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\main\img\img_1.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>
