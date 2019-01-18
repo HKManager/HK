@@ -11,6 +11,14 @@
 </head>
 
 <body>
+    
+    <style>
+        .center {
+            display: block;
+            margin: auto;
+        }
+    </style>
+
 
 
     <!--<audio controls="controls" autoplay="autoplay" loop="loop" style="height: 40px;width: 200px;">
@@ -19,7 +27,13 @@
 
     </audio>-->
 
-    <div class="game">
+    <audio id="start" loop>
+        <source src="./bgm/bgm_1.mp3" type="audio/mp3">
+    </audio>
+
+
+    <div class="game center" onclick="playBGM()">
+
         <div class="player">
             <!--<div class="stats statsPlayer">
                 <div class="top">
@@ -59,11 +73,48 @@
                 </span>
             </div>-->
 
-            <img class="pokemonBad" src="bad_anigif.gif" alt="A gif from blastoises back sprite" />
-            <img class="pokemonPlayer" src="anigif.gif" alt="A gif from blastoises back sprite" />
+            <img class="pokemonPlayer" src="./img/player/orc_1.gif" alt="A gif from blastoises back sprite" />
+
+            <img class="pokemonBad" src="./img/monster/orc_1.gif" alt="A gif from blastoises back sprite" />
+
 
         </div>
     </div>
+
+    <script src="../../js/menu/jquery-2.1.1.js"></script>
+
+    <script type="text/javascript">
+
+        window.onload = function () {
+
+            var music = document.getElementById("start");
+            music.volume = 0.2;
+
+            var isMute = false;
+
+            // Mute the game if button is clicked
+            $("#mute").click(function () {
+                if (isMute == false) {
+                    $(this).css("backgroundPosition", "0px -40px");
+                    music.volume = 0;
+                    isMute = true;
+                }
+
+                else {
+                    $(this).css("backgroundPosition", "0px 0px");
+                    music.volume = 0.2;
+                    isMute = false;
+                }
+            });
+        };
+
+
+        function playBGM() {
+            var music = document.getElementById("start");
+            music.play();
+        }
+
+    </script>
 
     <canvas id="puzzle" class="puzzle"></canvas>
 

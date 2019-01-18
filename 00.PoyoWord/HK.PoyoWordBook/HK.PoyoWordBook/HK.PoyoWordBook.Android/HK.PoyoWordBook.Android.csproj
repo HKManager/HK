@@ -380,6 +380,7 @@
     <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\snakes\Thumbs.db" />
     <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\wellDone\Thumbs.db" />
     <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\README.md" />
+    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\bgm\bgm_3.ogg" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <None Include="Properties\AndroidManifest.xml" />
@@ -404,6 +405,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Assets\Poyo\Content\viewscontroller\" />
+    <Folder Include="Assets\Poyo\css\common\" />
     <Folder Include="Assets\Poyo\manager\" />
     <Folder Include="Resources\drawable-hdpi\" />
     <Folder Include="Resources\drawable-xhdpi\" />
@@ -13523,139 +13525,10 @@
     <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\index.html" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\1.gif" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\1_animation_attack_000.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\1d5b4ee93daba35ddf57ac31e20ea411.gif" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\021.gif" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\26pm.gif" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\123.gif" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\211E663B591AF66E2C.gif" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\2110D04C591AF8A228.gif" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\4003cn5.gif" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\2556494153D8836206.gif" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\1461714986213.gif" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\13692398507244.gif" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\aaa.gif" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\aaad.gif" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\aawwq.gif" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\anigif.gif" />
-  </ItemGroup>
-  <ItemGroup>
     <AndroidAsset Include="Assets\Poyo\game\BattleMonster\ATTACK_000.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\background1.gif" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\background1_.gif" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\background2.gif" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\background3.gif" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\background4.gif" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\background5.gif" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\background6.gif" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\background7.gif" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\background8.gif" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\background9.gif" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\background10.gif" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\background11.gif" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\background12.gif" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\background13.gif" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\background221.gif" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\background1111.gif" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\bad_anigif.gif" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\bgm01.mp3" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\bgm01.wav" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\main.png" />
-  </ItemGroup>
-  <ItemGroup>
     <AndroidAsset Include="Assets\Poyo\game\BattleMonster\Misty-Bog.mp3" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\orig.gif" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\Puzzle-Game.mp3" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\svc-forest.gif" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\tumblr_nt8s4tMNLp1tdjgz4o7_1280.gif" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\tumblr_o0tsymjERP1tl8u0ko1_500.gif" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\VshN.gif" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\xzcvzxcv.gif" />
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\Poyo\game\BattleMonster\css\example.css" />
@@ -13677,6 +13550,138 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\Poyo\game\BattleMonster\js\textures.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\img\background_\aawwq.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\img\background_\background1_.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\img\background_\background221.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\img\background_\background1111.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\img\background_\orig.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\img\background_\tumblr_nt8s4tMNLp1tdjgz4o7_1280.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\img\background_\tumblr_o0tsymjERP1tl8u0ko1_500.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\img\background_\VshN.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\img\background_\xzcvzxcv.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\img\background_\1.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\img\background_\1d5b4ee93daba35ddf57ac31e20ea411.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\img\background_\021.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\img\background_\26pm.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\img\background_\123.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\img\background_\211E663B591AF66E2C.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\img\background_\2110D04C591AF8A228.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\img\background_\4003cn5.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\img\background_\2556494153D8836206.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\img\background_\1461714986213.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\img\background_\13692398507244.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\img\background_\aaa.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\img\background_\aaad.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\img\backgournd\background_1.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\img\backgournd\background_2.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\img\backgournd\background_3.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\img\backgournd\background_4.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\img\backgournd\background_5.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\img\backgournd\background_6.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\img\backgournd\background_7.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\img\backgournd\background_8.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\img\backgournd\background_9.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\img\backgournd\background_10.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\img\backgournd\background_11.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\img\backgournd\background_12.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\img\backgournd\background_13.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\img\backgournd\background_boss_final.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\img\monster\boss_final.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\img\player\dragon_1.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\img\other\main.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\img\player\orc_1.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\img\monster\orc_1.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\bgm\bgm_3.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\bgm\bgm_1.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\bgm\bgm_2.mp3" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

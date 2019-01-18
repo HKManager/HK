@@ -6,7 +6,7 @@ body {
 
 .game {
     position: relative;
-    background-image: url('background1.gif');
+    background-image: url('./img/backgournd/background_4.gif');
     background-size: 100% 100%;
     background-repeat: no-repeat;
     border: 3px solid black;
@@ -67,14 +67,14 @@ body {
 .player .pokemonPlayer {
   position: absolute;
   left: 40px;
-  bottom: 30px;
+  bottom: 10px;
   width: 100px;
 }
 
 .player .pokemonBad {
   position: absolute;
   right: 40px;
-  bottom: 30px;
+  bottom: 10px;
   width: 100px;
 }
 
