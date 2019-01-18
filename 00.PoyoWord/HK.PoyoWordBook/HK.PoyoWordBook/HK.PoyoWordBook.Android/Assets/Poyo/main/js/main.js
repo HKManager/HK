@@ -55,13 +55,13 @@ function initPopup_Study() {
         $(loginBox).fadeIn(300);
 
         //Set the center alignment padding + border
-        var popMargTop = ($(loginBox).height() + 24) / 2;
-        var popMargLeft = ($(loginBox).width() + 24) / 2;
+        //var popMargTop = ($(loginBox).height() + 24) / 2;
+        //var popMargLeft = ($(loginBox).width() + 24) / 2;
 
-        $(loginBox).css({
-            'margin-top': -popMargTop,
-            'margin-left': -popMargLeft
-        });
+        //$(loginBox).css({
+        //    'margin-top': -popMargTop,
+        //    'margin-left': -popMargLeft
+        //});
 
         // Add the mask to body
         $('body').append('<div id="mask"></div>');
@@ -236,6 +236,17 @@ function handleClick(event) {
     //alert(event.mapObject.id);
     //window.opener.location.href = "http://www.naver.com";
 
+    var width = window.innerWidth > 0 ? window.innerWidth : screen.width;
+    var height = window.innerHeight > 0 ? window.innerHeight : screen.height;
+
+    var box = document.getElementById('login-box');
+
+    var x = ((width - box.style.width) * 0.5) -100;
+    var y = ((height - box.style.height) * 0.5) - 75;
+
+    box.style.left = x + "px";
+    box.style.top = y + "px";
+
     $('#login-box').show();
 }
 
@@ -273,9 +284,28 @@ function ShowShooting() {
     window.location.href = "../game/BattleMonster/pokemon.html";
 }
 
+// - 게임 관련
+
+
+
+
+// - 학습방 관련
 function closePopupStudy() {
             $('#mask , .login-popup').fadeOut(300, function () {
             $('#mask').remove();
         });
         return false;
 }
+
+function ShowWordCard() {
+    window.location.href = "../study/StoryBook/example/index.html";
+}
+
+function ShowWordQuiz() {
+    window.location.href = "../study/QuizQuiz/index.html";
+}
+
+function ShowWordTest() {
+
+}
+
