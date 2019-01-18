@@ -41,7 +41,7 @@
         .horizontalCenter {
             position: absolute;
             left: 50%;
-            top:30%;
+            top:50%;
             -webkit-transform: translateX(-50%);
             transform: translateX(-50%);
         }
@@ -265,6 +265,8 @@
         }
 
 
+        var mapChart = null;
+
         function ShowStudy() {
 
             fillHeight();
@@ -276,9 +278,8 @@
             $('#divStudy').show();
             toggleNavView();
 
-            AmCharts.makeChart("map", {
+            mapChart = AmCharts.makeChart("map", {
                 "type": "map",
-                "pathToImages": "http://www.amcharts.com/lib/3/images/",
                 "addClassNames": true,
                 "fontSize": 15,
                 "color": "#FFFFFF",
@@ -288,17 +289,6 @@
                 "dataProvider": {
                     "map": "southKoreaLow",
                     "getAreasFromMap": true,
-                    "images": [
-                        {
-                            "top": 40,
-                            "left": 60,
-                            "width": 80,
-                            "height": 40,
-                            "pixelMapperLogo": true,
-                            "imageURL": "http://pixelmap.amcharts.com/static/img/logo.svg",
-                            "url": "http://www.amcharts.com"
-                        }
-                    ],
                     "areas": [
                         {
                             "id": "KR-41",
@@ -364,7 +354,21 @@
                     "buttonCornerRadius": 2
                 }
             });
+
+
+            mapChart.allowClickOnSelectedObject = true;
+
+            mapChart.addListener("clickMapObject", handleClick);
         }
+
+        function handleClick(event) {
+            alert(event.mapObject.id);
+        }
+
+        AmCharts.ready(function () {
+            // add click listener
+            
+        });
 
         function ShowSnake() {
 
