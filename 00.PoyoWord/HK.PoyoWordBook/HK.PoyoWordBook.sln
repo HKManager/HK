@@ -15,7 +15,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolidDataType", "HK.PoyoWor
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Solidroid", "HK.PoyoWordBook\Solidroid\Solidroid.csproj", "{F318FC01-16A6-415F-B8DB-57091E8B3BF1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HK.PoyoWordBook.Data", "HK.PoyoWordBook.Data\HK.PoyoWordBook.Data.csproj", "{76E9E89F-C6B0-408A-88D9-1C5FB3759C9F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HK.PoyoWordBook.Data", "HK.PoyoWordBook.Data\HK.PoyoWordBook.Data.csproj", "{76E9E89F-C6B0-408A-88D9-1C5FB3759C9F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
