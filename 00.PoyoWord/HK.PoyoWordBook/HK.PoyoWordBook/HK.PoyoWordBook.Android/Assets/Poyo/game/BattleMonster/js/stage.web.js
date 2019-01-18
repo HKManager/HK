@@ -1509,7 +1509,15 @@ function AppLoader(app, configs) {
         if (full) {
             // screen.availWidth/Height?
 
-            
+
+            // - 신인환 수정 
+            // - 퍼즐 캔버스 크기 조절
+            //width = window.innerWidth > 0 ? window.innerWidth : screen.width;
+            //height = window.innerHeight > 0 ? window.innerHeight : screen.height;
+            //canvas.style.width = width + "px";
+            //canvas.style.height = height + "px";
+
+
 
             width = document.getElementById('puzzle').clientWidth;
             height = 350;

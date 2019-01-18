@@ -137,7 +137,7 @@
             </div>
 
             <div id="divStudy" style="width: 100%; height: 100%;">
-                <div id="map" style="width: 100%; height: 500px;"></div>
+                <div id="map" style="width: 100%;"></div>
             </div>
 
         </main> <!-- cd-content -->
@@ -242,6 +242,14 @@
         }
 
         function ShowStudy() {
+
+            var height = window.innerHeight > 0 ? window.innerHeight : screen.height;
+
+            var divMap = document.getElementById('map');
+
+            divMap.height = height;
+            
+
             $('#divGame').hide();
             this.hideDiv();
             $('#divStudy').show();
