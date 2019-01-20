@@ -140,7 +140,7 @@ function ShowGame() {
 
     var height = window.innerHeight > 0 ? window.innerHeight : screen.height;
     var box = document.getElementById('divGame');
-    var y = ((height - box.style.height) * 0.5)+10;
+    var y = ((height - box.style.height) * 0.5)-40;
 
     box.style.top = y + "px";
 

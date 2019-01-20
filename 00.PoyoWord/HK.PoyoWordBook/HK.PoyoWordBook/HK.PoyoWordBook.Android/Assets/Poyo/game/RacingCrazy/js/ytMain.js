@@ -110,7 +110,14 @@ function addOptionInterface() {
 	addChild(optionInterface);
 }
 
-function addGameInterface (car, place) {
+function addGameInterface(car, place) {
+
+    var bgm = document.getElementById("sound");
+
+    if (bgm.paused) {
+        bgm.play();
+    }
+
 	var gameInterface = new ytGameLayer(car, place);
 	addChild(gameInterface);
 }
