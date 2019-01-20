@@ -375,16 +375,11 @@
     <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\fonts\thekingsofthehouse-regular_0-webfont.ttf" />
     <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\fonts\thekingsofthehouse-regular_0-webfont.woff" />
     <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\fonts\thekingsofthehouse-regular_0-webfont.woff2" />
-    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\Thumbs.db" />
-    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\ladders\Thumbs.db" />
-    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\snakes\Thumbs.db" />
-    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\wellDone\Thumbs.db" />
     <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\README.md" />
     <AndroidAsset Include="Assets\Poyo\game\BattleMonster\bgm\bgm_3.ogg" />
     <AndroidAsset Include="Assets\Poyo\study\StudyRoom\css\fonts\BebasNeue-webfont.eot" />
     <AndroidAsset Include="Assets\Poyo\study\StudyRoom\css\fonts\BebasNeue-webfont.ttf" />
     <AndroidAsset Include="Assets\Poyo\study\StudyRoom\css\fonts\BebasNeue-webfont.woff" />
-    <AndroidAsset Include="Assets\Poyo\study\StudyRoom\images\Thumbs.db" />
     <AndroidAsset Include="Assets\Poyo\study\WordTest\src\.jshintrc" />
     <AndroidAsset Include="Assets\Poyo\study\WordTest\tests\.jshintrc" />
     <AndroidAsset Include="Assets\Poyo\study\WordTest\.travis.yml" />
