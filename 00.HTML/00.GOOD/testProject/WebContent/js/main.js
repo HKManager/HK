@@ -125,7 +125,10 @@ function start(e) {
 					loadMissileData(function() {
 						loadTestData(function() {
 							initScene();
-							animate();
+							
+							
+							// -  신인환 주석 지도쪽 애니매이션 파트 
+							//animate();
 						});
 					});
 				});
@@ -184,19 +187,6 @@ function initScene() {
 
 	scene.add( new THREE.AmbientLight( 0x505050 ) );
 
-	light1 = new THREE.SpotLight( 0xeeeeee, 3 );
-	light1.position.x = 730;
-	light1.position.y = 520;
-	light1.position.z = 626;
-	light1.castShadow = true;
-	scene.add( light1 );
-
-	light2 = new THREE.PointLight( 0x222222, 14.8 );
-	light2.position.x = -640;
-	light2.position.y = -500;
-	light2.position.z = -1000;
-	scene.add( light2 );
-
 	rotating = new THREE.Object3D();
 	scene.add(rotating);
 
@@ -221,15 +211,6 @@ function initScene() {
 	sphere.rotation.z = Math.PI;
 	sphere.id = "base";
 	rotating.add( sphere );
-
-
-	var wireframeGeo = new THREE.EdgesGeometry(sphere.geometry, 0.3);
-	var wireframeMaterial = new THREE.LineBasicMaterial({
-		color: Math.random() * 0xffffff,
-		linewidth: 0.5
-	});
-	var wireframe = new THREE.LineSegments(wireframeGeo, wireframeMaterial);
-	sphere.add(wireframe);
 
 	var atmosphereMaterial = new THREE.ShaderMaterial({
 		vertexShader: document.getElementById('vertexShaderAtmosphere').textContent,
@@ -276,6 +257,7 @@ function initScene() {
 
 	selectionData = new Selection(selectedYear, selectedTestName);
 
+	// - 신인환 주석  전체 레이어 관련
 	selectVisualization(timeBins, selectedYear, [selectedTestName], Object.keys(outcomeLookup), Object.keys(missileLookup));
 
 
@@ -291,30 +273,22 @@ function initScene() {
 
 	glContainer.appendChild( renderer.domElement );
 
-
-	// Detect passive event support
-	var passive = false;
-	var options = Object.defineProperty({}, 'passive', {
-		get: function() {
-			passive = true;
-		}
-	});
-	document.addEventListener('testPassiveEventSupport', function() {}, options);
-	document.removeEventListener('testPassiveEventSupport', function() {}, options);
+//	document.addEventListener('testPassiveEventSupport', function() {}, options);
+//	document.removeEventListener('testPassiveEventSupport', function() {}, options);
 
 	//	-----------------------------------------------------------------------------
 	//	Event listeners
-	document.addEventListener( 'mousemove', onDocumentMouseMove, true );
-	document.addEventListener( 'touchmove', onDocumentMouseMove, passive ? { capture: true, passive: false } : true );
-	document.addEventListener( 'windowResize', onDocumentResize, false );
+//	document.addEventListener( 'mousemove', onDocumentMouseMove, true );
+//	document.addEventListener( 'touchmove', onDocumentMouseMove, passive ? { capture: true, passive: false } : true );
+//	document.addEventListener( 'windowResize', onDocumentResize, false );
 
 	//masterContainer.addEventListener( 'mousedown', onDocumentMouseDown, true );
 	//masterContainer.addEventListener( 'mouseup', onDocumentMouseUp, false );
 	document.addEventListener( 'mousedown', onDocumentMouseDown, true );
-	document.addEventListener( 'touchstart', onDocumentMouseDown, passive ? { capture: true, passive: false } : true );
-	document.addEventListener( 'mouseup', onDocumentMouseUp, false );
-	document.addEventListener( 'touchend', onDocumentMouseUp, false );
-	document.addEventListener( 'touchcancel', onDocumentMouseUp, false );
+//	document.addEventListener( 'touchstart', onDocumentMouseDown, passive ? { capture: true, passive: false } : true );
+//	document.addEventListener( 'mouseup', onDocumentMouseUp, false );
+//	document.addEventListener( 'touchend', onDocumentMouseUp, false );
+//	document.addEventListener( 'touchcancel', onDocumentMouseUp, false );
 
 	var mc = new Hammer(document);
 	mc.get('pinch').set({ enable: true });
@@ -324,34 +298,10 @@ function initScene() {
 
 	masterContainer.addEventListener( 'click', onClick, true );
 	masterContainer.addEventListener( 'mousewheel', onMouseWheel, false );
-
-	//	firefox
-	masterContainer.addEventListener( 'DOMMouseScroll', function(e){
-			var evt=window.event || e; //equalize event object
-			onMouseWheel(evt);
-	}, false );
-
-	document.addEventListener( 'keydown', onKeyDown, false);
-
-	//	-----------------------------------------------------------------------------
-	//	Setup our camera
-	var aspect = window.innerWidth / window.innerHeight;
-	camera = new THREE.PerspectiveCamera(12 / Math.min(aspect, 1), aspect, 1, 20000);
-	camera.position.z = 400;
-	camera.position.y = 0;
-	camera.lookAt(scene.position);
-	camera.zoom = 0.5;
-	scene.add( camera );
-
-	camera2d = new THREE.OrthographicCamera(0, window.innerWidth, 0, window.innerHeight, 1, 20000);
-	camera2d.position.z = 400;
-	camera2d.position.y = 0;
-	camera.lookAt(scene2d.position);
-
-	var windowResize = THREEx.WindowResize(renderer, camera, camera2d);
 }
 
 
+// - 신인환 주석 : 지도쪽 애니메이션 파트
 function animate() {
 
 	//	Disallow roll for now, this is interfering with keyboard input during search

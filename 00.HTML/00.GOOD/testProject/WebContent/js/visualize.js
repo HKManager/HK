@@ -319,6 +319,7 @@ function getVisualizedMesh( linearData, year, outcomeCategories, missileCategori
 	return splineOutline;
 }
 
+// - 신인환 주석 전체 레이어 관련
 function selectVisualization( linearData, year, tests, outcomeCategories, missileCategories ){
 	//	we're only doing one test for now so...
 	var cName = tests[0].toUpperCase();
@@ -354,60 +355,13 @@ function selectVisualization( linearData, year, tests, outcomeCategories, missil
 		removeMarkerFromTest( selectableTests[i] );
 	}
 
-	//	clear children
-	while( visualizationMesh.children.length > 0 ){
-		var c = visualizationMesh.children[0];
-		visualizationMesh.remove(c);
-	}
-
 	//	build the mesh
+	
+	
+	// - 신인환 주석 좌측 하단 관련 데이터 표출
 	console.time('getVisualizedMesh');
-	var mesh = getVisualizedMesh( timeBins, year, outcomeCategories, missileCategories );
+	
 	console.timeEnd('getVisualizedMesh');
-
-	//	add it to scene graph
-	visualizationMesh.add( mesh );
-
-	for( var i in mesh.affectedTests ){
-		var testName = mesh.affectedTests[i];
-		var test = testData[testName];
-		attachMarkerToTest( testName );
-	}
-
-	if( previouslySelectedTest !== selectedTest ){
-		if( selectedTest ){
-			var facility = facilityData[selectedTest.facility];
-			var landing = selectedTest.landingLocation;
-
-			rotateTargetX = (facility.lat + landing.lat) / 2 * Math.PI / 180;
-			var targetY0 = -((facility.lon + landing.lon) / 2 - 9.9) * Math.PI / 180;
-			var piCounter = 0;
-			while(true) {
-				var targetY0Neg = targetY0 - Math.PI * 2 * piCounter;
-				var targetY0Pos = targetY0 + Math.PI * 2 * piCounter;
-				if(Math.abs(targetY0Neg - rotating.rotation.y) < Math.PI) {
-					rotateTargetY = targetY0Neg;
-					break;
-				} else if(Math.abs(targetY0Pos - rotating.rotation.y) < Math.PI) {
-					rotateTargetY = targetY0Pos;
-					break;
-				}
-				piCounter++;
-				rotateTargetY = wrap(targetY0, -Math.PI, Math.PI);
-			}
-			// console.log(rotateTargetY);
-			//lines commented below source of rotation error
-			//is there a more reliable way to ensure we don't rotate around the globe too much?
-			/*
-			if( Math.abs(rotateTargetY - rotating.rotation.y) > Math.PI )
-				rotateTargetY += Math.PI;
-			*/
-			rotateVX *= 0.6;
-			rotateVY *= 0.6;
-
-			scaleTarget = 90 / (landing.center.clone().sub(facility.center).length() + 30);
-		}
-	}
 
 	d3Graphs.initGraphs();
 }
