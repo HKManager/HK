@@ -1,0 +1,91 @@
+<!-- https://murmuring-ravine-86224.herokuapp.com/ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pokémon Trivia</title>
+  <!-- Latest compiled and minified CSS & JS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="https://bootswatch.com/superhero/bootstrap.css">
+  <link href='https://fonts.googleapis.com/css?family=Bangers|Ropa+Sans' rel='stylesheet' type='text/css'>
+  <script src="https://code.jquery.com/jquery.js"></script>
+</head>
+<body>
+<!-- Container -->
+<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+</div>
+<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+<!-- jumbotron -->
+<div class="topPanel">
+<div class="panel panel-danger">
+  <div class="panel-body">
+    <img src="assets/images/logo.jpg" id="logo">
+    <p>Want to be the very best?</p>
+    <p>
+      <a class="btn btn-success" id="startButton">Click to play!</a>
+    </p>
+  </div>
+</div>
+</div>
+<!-- jumbotron -->
+
+<!-- Dancing Trio -->
+<div class="dancingTrio">
+<center>
+<p>
+<img src="assets/images/dancingTrio.gif" id="dancingTrio">
+</p>
+</center>
+</div>
+<!-- Dancing Trio -->
+
+<!-- Game -->
+<div class="panel panel-danger" id="gamePanel">
+  <div class="panel-heading">
+    <h3 class="panel-title" align="middle">Good luck!</h3>
+  </div>
+  <div class="panel-body">
+
+    <div id="timer">Time remaining: 20 seconds.</div><br>
+
+    <div id="question">Question:</div><br>
+
+    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2"></div>
+  
+      <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+            <div id="choices"></div><br>
+      </div>
+
+    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2"></div><br>
+
+    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+          <div id="wins">Wins: 0</div>
+    </div>
+
+    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+          <div id="results"></div>
+    </div>
+
+    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+          <div id="losses">Losses: 0</div>
+    </div>
+      
+    </div>
+
+  </div>
+
+</div>
+<!-- Game -->
+
+</div>
+<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+</div>
+<!-- Container -->
+<script type="text/javascript" src="assets/javascript/app.js">
+</script>
+<script type="text/javascript" src="assets/javascript/questions.js"></script>
+<footer>
+  &copy;Eric Ho
+</footer>
+</body>
+</html>

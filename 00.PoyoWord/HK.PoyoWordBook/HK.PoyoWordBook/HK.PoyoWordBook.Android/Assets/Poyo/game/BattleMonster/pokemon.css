@@ -1,0 +1,201 @@
+body {
+  font-family: monospace;
+  font-size: 20px;
+}
+
+
+.game {
+    position: relative;
+    background-image: url('./img/backgournd/background_4.gif');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    border: 3px solid black;
+    border-radius: 8px 8px 0px 0px;
+    height: 230px;
+    width: 100%;
+}
+
+.puzzle {
+  position: relative;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  border: 3px solid black;
+  border-radius: 0px 0px 8px 8px;
+  height: 100px;
+  width: 100%;
+}
+
+.opponent {
+  position: relative;
+  height: 300px;
+}
+
+.opponent .stats {
+  position: absolute;
+  top: 96px;
+  left: 40px;
+  width: 80px;
+}
+
+.opponent .pokemon {
+  position: absolute;
+  bottom: 0;
+  right: 140px;
+  width: 50px;
+}
+
+.player {
+  position: relative;
+  height: 100%;
+  bottom: 0px;
+}
+
+.player .statsPlayer {
+  position: absolute;
+  top: 18px;
+  left: 10px;
+  width: 140px;
+}
+
+.player .statsBad {
+  position: absolute;
+  top: 18px;
+  right: 10px;
+  width: 140px;
+}
+
+.player .pokemonPlayer {
+  position: absolute;
+  left: 40px;
+  bottom: 10px;
+  width: 100px;
+}
+
+.player .pokemonBad {
+  position: absolute;
+  right: 40px;
+  bottom: 10px;
+  width: 100px;
+}
+
+.box {
+  padding: 8px;
+  background: #333;
+  border: 3px solid black;
+  border-top: none;
+  border-radius: 0 0 8px 8px;
+  color: #fff;
+  height: 120px;
+  width: 100%;
+}
+
+.box .message {
+  position: relative;
+  float: left;
+  font-size: 24px;
+  width: 50%;
+}
+.box .continue {
+  position: absolute;
+  margin-top: 30px;
+  float: left;
+  width: 25%;
+  height: 100%;
+}
+.box .continue  button {
+  position: relative;
+  float: left;
+  background: #666;
+  border: 3px solid #888;
+  border-radius: 4px;
+  color: #fff;
+  font-family: monospace;
+  font-size: 20px;
+  line-height: 14px;
+  margin: 4px;
+  padding: 16px;
+  outline: none !important;
+}
+.box .continue button:hover {
+  background: #777;
+  border-color: #999;
+}
+
+.box .continue button:active {
+  background: #555;
+  border-color: #666;
+}
+
+.box .actions {
+  position: relative;
+  float: left;
+  width: 50%;
+  height: 100%;
+}
+
+.box .actions button {
+  position: relative;
+  float: left;
+  background: #666;
+  border: 3px solid #888;
+  border-radius: 4px;
+  color: #fff;
+  font-family: monospace;
+  font-size: 20px;
+  line-height: 14px;
+  margin: 4px;
+  padding: 16px;
+  width: calc(50% - 8px);
+  height: calc(50% - 8px);
+  outline: none !important;
+}
+
+.box .actions button:hover {
+  background: #777;
+  border-color: #999;
+}
+
+.box .actions button:active {
+  background: #555;
+  border-color: #666;
+}
+.stats {
+  background: #111;
+  border: 2px solid black;
+  border-radius: 8px;
+  color: white;
+  padding: 12px;
+}
+
+.stats .pokeballs {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.stats .pokeballs .pokeball {
+  position: relative;
+  float: left;
+  background-image: url('http://bit.ly/pokeballimg');
+  background-size: 100% 100%;
+  background-size: 100% 100%;
+  width: 25px;
+  height: 25px;
+}
+
+.stats .hp-count:before {
+  content: 'HP: '
+}
+
+.stats .hp-count {
+  float: right;
+}
+
+
+.stats .name {
+  font-weight: bold;
+}
+
+.stats .level:before {
+  content: "LVL"
+}

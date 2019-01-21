@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+
+
+
+<html>
+
+<head>
+  <title>Pokemon</title>
+  <script type="text/javascript" src="./pokemon.js"></script>
+  <link rel="stylesheet" type="text/css" href="pokemon.css" />
+</head>
+
+<body>
+    
+    <style>
+        .center {
+            display: block;
+            margin: auto;
+        }
+    </style>
+
+
+
+    <!--<audio controls="controls" autoplay="autoplay" loop="loop" style="height: 40px;width: 200px;">
+
+        <source src="bgm01.mp3" />
+
+    </audio>-->
+
+    <audio id="start" loop>
+        <source src="./bgm/bgm_0.mp3" type="audio/mp3">
+    </audio>
+
+
+    <div class="game center" onclick="playBGM()">
+
+        <div class="player">
+            <!--<div class="stats statsPlayer">
+                <div class="top">
+                    <div class="pokeballs">
+                        <div class="pokeball"></div>
+                        <div class="pokeball"></div>
+                        <div class="pokeball"></div>
+                        <div class="pokeball"></div>
+                        <div class="pokeball"></div>
+                    </div>
+                    <div id="myHP" class="hp-count">100</div>
+                </div>
+                <span class="name">
+                    Blastoise
+                </span>
+                <span class="level">
+                    86
+                </span>
+            </div>
+
+            <div class="stats statsBad">
+                <div class="top">
+                    <div class="pokeballs">
+                        <div class="pokeball"></div>
+                        <div class="pokeball"></div>
+                        <div class="pokeball"></div>
+                        <div class="pokeball"></div>
+                        <div class="pokeball"></div>
+                    </div>
+                    <div id="myHP" class="hp-count">100</div>
+                </div>
+                <span class="name">
+                    Blastoise
+                </span>
+                <span class="level">
+                    86
+                </span>
+            </div>-->
+
+            <img class="pokemonPlayer" src="./img/player/orc_1.gif" alt="A gif from blastoises back sprite" />
+
+            <img class="pokemonBad" src="./img/monster/orc_1.gif" alt="A gif from blastoises back sprite" />
+
+
+        </div>
+    </div>
+
+    <script src="../../js/menu/jquery-2.1.1.js"></script>
+
+    <script type="text/javascript">
+
+        window.onload = function () {
+
+            var music = document.getElementById("start");
+            music.volume = 0.2;
+
+            var isMute = false;
+
+            // Mute the game if button is clicked
+            $("#mute").click(function () {
+                if (isMute == false) {
+                    $(this).css("backgroundPosition", "0px -40px");
+                    music.volume = 0;
+                    isMute = true;
+                }
+
+                else {
+                    $(this).css("backgroundPosition", "0px 0px");
+                    music.volume = 0.2;
+                    isMute = false;
+                }
+            });
+        };
+
+
+        function playBGM() {
+            var music = document.getElementById("start");
+            music.play();
+        }
+
+    </script>
+
+    <canvas id="puzzle" class="puzzle"></canvas>
+
+    <script src="./js/stage.web.js"></script>
+    <script src="./js/example.js"></script>
+    <script src="./js/app.js"></script>
+    <script src="./js/textures.js"></script>
+
+</body>
+
+
+
+</html>

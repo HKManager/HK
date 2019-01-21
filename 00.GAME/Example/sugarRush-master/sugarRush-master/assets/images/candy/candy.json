@@ -1,0 +1,25 @@
+{
+"images": ["candy.png"],
+"frames": [
+
+    [136, 2, 65, 65], 
+    [203, 2, 65, 65], 
+    [270, 2, 65, 65], 
+    [337, 2, 65, 64], 
+    [2, 2, 65, 70], 
+    [69, 2, 65, 69]
+],
+"animations": {
+    
+        "candy":[0], 
+        "candy1":[1], 
+        "candy2":[2], 
+        "candy3":[3], 
+        "candy4":[4], 
+        "candy5":[5]
+},
+"texturepacker": [
+        "SmartUpdateHash: $TexturePacker:SmartUpdate:0862730e8606b093ebd419c6fc3aaf1b:396cb5180a2780afd91f6fcd5413b4ed:45fe36101e57ad1032e9d97a079c7e96$",
+        "Created with TexturePacker (http://www.texturepacker.com) for EaselJS"
+]
+}

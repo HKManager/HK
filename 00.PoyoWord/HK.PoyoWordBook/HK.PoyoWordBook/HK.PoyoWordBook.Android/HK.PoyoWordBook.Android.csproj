@@ -313,16 +313,79 @@
     <AndroidAsset Include="Assets\Poyo\Content\scss\themes\theme-red.scss" />
     <AndroidAsset Include="Assets\Poyo\Content\scss\themes\theme-teal.scss" />
     <AndroidAsset Include="Assets\Poyo\Content\scss\themes\theme-yellow.scss" />
-    <AndroidAsset Include="Assets\Poyo\game\RunBird\fonts\happy_sans-webfont.eot" />
-    <AndroidAsset Include="Assets\Poyo\game\RunBird\fonts\happy_sans-webfont.ttf" />
-    <AndroidAsset Include="Assets\Poyo\game\RunBird\fonts\happy_sans-webfont.woff" />
-    <AndroidAsset Include="Assets\Poyo\game\RunBird\sound\flap.ogg" />
-    <AndroidAsset Include="Assets\Poyo\game\RunBird\sound\jump1.ogg" />
-    <AndroidAsset Include="Assets\Poyo\game\RunBird\sound\jump2.ogg" />
-    <AndroidAsset Include="Assets\Poyo\game\RunBird\sound\jump3.ogg" />
-    <AndroidAsset Include="Assets\Poyo\game\RunBird\sound\pappu-pakia2.3.ogg" />
-    <AndroidAsset Include="Assets\Poyo\game\RunBird\sound\ting.ogg" />
-    <AndroidAsset Include="Assets\Poyo\game\RunBird\README.md" />
+    <AndroidAsset Include="Assets\Poyo\game\JumpFrag\assets\sounds\bonk.ogg" />
+    <AndroidAsset Include="Assets\Poyo\game\JumpFrag\assets\sounds\cake.ogg" />
+    <AndroidAsset Include="Assets\Poyo\game\JumpFrag\assets\sounds\click.ogg" />
+    <AndroidAsset Include="Assets\Poyo\game\JumpFrag\assets\sounds\dead.ogg" />
+    <AndroidAsset Include="Assets\Poyo\game\JumpFrag\assets\sounds\fork.ogg" />
+    <AndroidAsset Include="Assets\Poyo\game\JumpFrag\assets\sounds\hoop.ogg" />
+    <AndroidAsset Include="Assets\Poyo\game\JumpFrag\assets\sounds\jump.ogg" />
+    <AndroidAsset Include="Assets\Poyo\game\JumpFrag\assets\sounds\pull.ogg" />
+    <AndroidAsset Include="Assets\Poyo\game\JumpFrag\assets\sounds\push.ogg" />
+    <AndroidAsset Include="Assets\Poyo\game\JumpFrag\assets\sounds\spin.ogg" />
+    <AndroidAsset Include="Assets\Poyo\game\JumpFrag\assets\sounds\star.ogg" />
+    <AndroidAsset Include="Assets\Poyo\game\JumpFrag\server\package-lock.json" />
+    <AndroidAsset Include="Assets\Poyo\game\JumpFrag\server\package.json" />
+    <AndroidAsset Include="Assets\Poyo\game\JumpFrag\README.md" />
+    <AndroidAsset Include="Assets\Poyo\game\FruitKnight\img\bg-pinwheel.psd" />
+    <AndroidAsset Include="Assets\Poyo\game\FruitKnight\img\VeggieKnight.psd" />
+    <AndroidAsset Include="Assets\Poyo\game\FruitKnight\img\veggies_original.psd" />
+    <AndroidAsset Include="Assets\Poyo\game\FruitKnight\README" />
+    <AndroidAsset Include="Assets\Poyo\game\RunMan\dist\game.zip" />
+    <AndroidAsset Include="Assets\Poyo\game\RunMan\package.json" />
+    <AndroidAsset Include="Assets\Poyo\game\RunMan\README.md" />
+    <AndroidAsset Include="Assets\Poyo\game\Shoot\package.json" />
+    <AndroidAsset Include="Assets\Poyo\game\Shoot\README.md" />
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\audio\001.ogg" />
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\audio\002.ogg" />
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\fonts\droid-serif\droid-serif.eot" />
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\fonts\droid-serif\droid-serif.ttf" />
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\fonts\droid-serif\droid-serif.woff" />
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\fonts\reenie-beanie\reenie-beanie.eot" />
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\fonts\reenie-beanie\reenie-beanie.ttf" />
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\fonts\reenie-beanie\reenie-beanie.woff" />
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\README.md" />
+    <AndroidAsset Include="Assets\Poyo\study\Letters\.htaccess" />
+    <AndroidAsset Include="Assets\Poyo\study\Letters\error.ogg" />
+    <AndroidAsset Include="Assets\Poyo\study\Letters\letterpaint.manifest" />
+    <AndroidAsset Include="Assets\Poyo\study\Letters\manifest.webapp" />
+    <AndroidAsset Include="Assets\Poyo\study\Letters\opensans.ttf" />
+    <AndroidAsset Include="Assets\Poyo\study\Letters\opensans-bold.ttf" />
+    <AndroidAsset Include="Assets\Poyo\study\Letters\README.md" />
+    <AndroidAsset Include="Assets\Poyo\study\Letters\win.ogg" />
+    <AndroidAsset Include="Assets\Poyo\game\RunGame\README.md" />
+    <AndroidAsset Include="Assets\Poyo\study\Quiz\composer.json" />
+    <AndroidAsset Include="Assets\Poyo\study\Quiz\README.md" />
+    <AndroidAsset Include="Assets\Poyo\study\QuizWord\wireframes\TNmockupsfinal.pdf" />
+    <AndroidAsset Include="Assets\Poyo\study\QuizWord\wireframes\TriviaNerd - userflowsheet.pdf" />
+    <AndroidAsset Include="Assets\Poyo\study\QuizWord\wireframes\TriviaNerd_wireframes.pdf" />
+    <AndroidAsset Include="Assets\Poyo\game\Racing\music\racer.ogg" />
+    <AndroidAsset Include="Assets\Poyo\game\Racing\LICENSE" />
+    <AndroidAsset Include="Assets\Poyo\game\Racing\Rakefile" />
+    <AndroidAsset Include="Assets\Poyo\game\Racing\README.md" />
+    <AndroidAsset Include="Assets\Poyo\game\RacingCrazy\README.md" />
+    <AndroidAsset Include="Assets\Poyo\game\RunRoad\README.md" />
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\audio\correct.ogg" />
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\audio\incorrect.ogg" />
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\fonts\kraash-webfont.eot" />
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\fonts\kraash-webfont.ttf" />
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\fonts\kraash-webfont.woff" />
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\fonts\kraash-webfont.woff2" />
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\fonts\thekingsofthehouse-regular_0-webfont.eot" />
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\fonts\thekingsofthehouse-regular_0-webfont.ttf" />
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\fonts\thekingsofthehouse-regular_0-webfont.woff" />
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\fonts\thekingsofthehouse-regular_0-webfont.woff2" />
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\README.md" />
+    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\bgm\bgm_3.ogg" />
+    <AndroidAsset Include="Assets\Poyo\study\StudyRoom\css\fonts\BebasNeue-webfont.eot" />
+    <AndroidAsset Include="Assets\Poyo\study\StudyRoom\css\fonts\BebasNeue-webfont.ttf" />
+    <AndroidAsset Include="Assets\Poyo\study\StudyRoom\css\fonts\BebasNeue-webfont.woff" />
+    <AndroidAsset Include="Assets\Poyo\study\WordTest\src\.jshintrc" />
+    <AndroidAsset Include="Assets\Poyo\study\WordTest\tests\.jshintrc" />
+    <AndroidAsset Include="Assets\Poyo\study\WordTest\.travis.yml" />
+    <AndroidAsset Include="Assets\Poyo\study\WordTest\LICENSE" />
+    <AndroidAsset Include="Assets\Poyo\study\WordTest\package.json" />
+    <AndroidAsset Include="Assets\Poyo\study\WordTest\README.md" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <None Include="Properties\AndroidManifest.xml" />
@@ -347,8 +410,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Assets\Poyo\Content\viewscontroller\" />
+    <Folder Include="Assets\Poyo\css\common\" />
     <Folder Include="Assets\Poyo\manager\" />
-    <Folder Include="Assets\Poyo\study\" />
     <Folder Include="Resources\drawable-hdpi\" />
     <Folder Include="Resources\drawable-xhdpi\" />
     <Folder Include="Resources\drawable-xxhdpi\" />
@@ -11760,141 +11823,6 @@
     <AndroidAsset Include="Assets\Poyo\Content\views\sale\saleManager_Detail.html" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidAsset Include="Assets\Poyo\game\RunBird\css\main.css" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Poyo\game\RunBird\fonts\happy_sans-webfont.svg" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Poyo\game\RunBird\img\angry_pakia.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Poyo\game\RunBird\img\apple.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Poyo\game\RunBird\img\back_trees.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Poyo\game\RunBird\img\berries.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Poyo\game\RunBird\img\bg_combined.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Poyo\game\RunBird\img\branch.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Poyo\game\RunBird\img\clouds.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Poyo\game\RunBird\img\coins.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Poyo\game\RunBird\img\coins_old.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Poyo\game\RunBird\img\controls.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Poyo\game\RunBird\img\dig.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Poyo\game\RunBird\img\fork_handle.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Poyo\game\RunBird\img\fork_head.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Poyo\game\RunBird\img\front_trees.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Poyo\game\RunBird\img\grass.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Poyo\game\RunBird\img\ground.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Poyo\game\RunBird\img\happy_pakia.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Poyo\game\RunBird\img\log.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Poyo\game\RunBird\img\mute.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Poyo\game\RunBird\img\pappu.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Poyo\game\RunBird\img\plank_bot.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Poyo\game\RunBird\img\plank_mid.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Poyo\game\RunBird\img\plank_top.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Poyo\game\RunBird\img\sad_pakia.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Poyo\game\RunBird\img\stand.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Poyo\game\RunBird\img\star.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Poyo\game\RunBird\js\backgrounds.js" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Poyo\game\RunBird\js\branches.js" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Poyo\game\RunBird\js\collectibles.js" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Poyo\game\RunBird\js\forks.js" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Poyo\game\RunBird\js\jquery-1.8.2.min.js" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Poyo\game\RunBird\js\loader.js" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Poyo\game\RunBird\js\main.js" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Poyo\game\RunBird\js\pakia.js" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Poyo\game\RunBird\js\pappu.js" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Poyo\game\RunBird\js\utils.js" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Poyo\game\RunBird\sound\flap.mp3" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Poyo\game\RunBird\sound\jump1.mp3" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Poyo\game\RunBird\sound\jump2.mp3" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Poyo\game\RunBird\sound\jump3.mp3" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Poyo\game\RunBird\sound\pappu-pakia2.3.mp3" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Poyo\game\RunBird\sound\ting.mp3" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\Poyo\game\RunBird\kong.htm" />
-  </ItemGroup>
-  <ItemGroup>
     <AndroidAsset Include="Assets\Poyo\game\Snake\impact.gif" />
   </ItemGroup>
   <ItemGroup>
@@ -11910,7 +11838,2035 @@
     <AndroidAsset Include="Assets\Poyo\game\Snake\bg_fire.gif" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidAsset Include="Assets\Poyo\game\RunBird\index.html" />
+    <AndroidAsset Include="Assets\Poyo\game\JumpFrag\assets\images\apple.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\JumpFrag\assets\images\bg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\JumpFrag\assets\images\black_end_cap.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\JumpFrag\assets\images\blue_end_cap.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\JumpFrag\assets\images\briefcase.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\JumpFrag\assets\images\business_frog.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\JumpFrag\assets\images\cake.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\JumpFrag\assets\images\coffee.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\JumpFrag\assets\images\frog.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\JumpFrag\assets\images\frog_jumping.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\JumpFrag\assets\images\gantt_bg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\JumpFrag\assets\images\mute.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\JumpFrag\assets\images\og_image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\JumpFrag\assets\images\portal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\JumpFrag\assets\images\red_end_cap.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\JumpFrag\assets\images\ring_back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\JumpFrag\assets\images\ring_front.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\JumpFrag\assets\images\smoke_jump.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\JumpFrag\assets\images\speaker.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\JumpFrag\assets\images\ss-3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\JumpFrag\assets\images\ss-gameplay.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\JumpFrag\assets\images\ss-highscores.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\JumpFrag\assets\images\ss-title.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\JumpFrag\assets\images\title.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\JumpFrag\assets\sounds\bonk.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\JumpFrag\assets\sounds\bonk.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\JumpFrag\assets\sounds\cake.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\JumpFrag\assets\sounds\cake.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\JumpFrag\assets\sounds\click.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\JumpFrag\assets\sounds\click.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\JumpFrag\assets\sounds\dead.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\JumpFrag\assets\sounds\dead.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\JumpFrag\assets\sounds\fork.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\JumpFrag\assets\sounds\fork.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\JumpFrag\assets\sounds\hoop.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\JumpFrag\assets\sounds\hoop.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\JumpFrag\assets\sounds\jump.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\JumpFrag\assets\sounds\jump.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\JumpFrag\assets\sounds\pull.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\JumpFrag\assets\sounds\pull.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\JumpFrag\assets\sounds\push.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\JumpFrag\assets\sounds\push.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\JumpFrag\assets\sounds\spin.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\JumpFrag\assets\sounds\spin.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\JumpFrag\assets\sounds\star.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\JumpFrag\assets\sounds\star.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\JumpFrag\server\.gitignore" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\JumpFrag\server\app.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\JumpFrag\.gitignore" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\JumpFrag\crafty.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\JumpFrag\index.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\JumpFrag\jquery-1.11.2.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\JumpFrag\license.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\JumpFrag\octocatjump.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\FruitKnight\img\bg-pinwheel-rays-blue-1000.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\FruitKnight\img\bg-pinwheel-rays-green-1000.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\FruitKnight\img\bg-pinwheel-rays-red-1000.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\FruitKnight\img\bg-pinwheel-rays-yellow-1000.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\FruitKnight\img\pinwheel-blue-1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\FruitKnight\img\pinwheel-green-1200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\FruitKnight\img\pinwheel.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\FruitKnight\img\VeggieKnight.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\FruitKnight\img\VeggieKnight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\FruitKnight\img\VeggieKnight.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\FruitKnight\img\veggies-zoned.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\FruitKnight\img\veggies.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\FruitKnight\img\veggies.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\FruitKnight\img\veggies_original.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\FruitKnight\lib\jquery-1.11.1.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\FruitKnight\src\ComboNotice.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\FruitKnight\src\Controls.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\FruitKnight\src\Convert.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\FruitKnight\src\FrenzyMode.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\FruitKnight\src\GameLoop.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\FruitKnight\src\Mode.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\FruitKnight\src\NormalMode.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\FruitKnight\src\PauseScreen.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\FruitKnight\src\Random.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\FruitKnight\src\ScoreBoard.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\FruitKnight\src\Stage.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\FruitKnight\src\SwipeEvents.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\FruitKnight\src\Veggie.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\FruitKnight\src\VeggieFactory.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\FruitKnight\src\VeggieLauncher.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\FruitKnight\.gitignore" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\FruitKnight\bootstrap.yeti.min.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\FruitKnight\index.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\FruitKnight\test.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\FruitKnight\test.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunMan\dist\index.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunMan\dist\img\coin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunMan\dist\img\dash.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunMan\dist\img\djum.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunMan\dist\img\focus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunMan\dist\img\glide.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunMan\dist\img\house.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunMan\dist\img\jump.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunMan\dist\img\moon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunMan\dist\img\obstacle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunMan\dist\img\pcoin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunMan\dist\img\shield.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunMan\dist\img\test.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunMan\dist\img\test2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunMan\dist\img\test3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunMan\src\index.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunMan\src\production.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunMan\src\img\coin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunMan\src\img\dash.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunMan\src\img\djum.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunMan\src\img\focus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunMan\src\img\glide.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunMan\src\img\house.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunMan\src\img\jump.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunMan\src\img\moon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunMan\src\img\obstacle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunMan\src\img\pcoin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunMan\src\img\shield.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunMan\src\img\test.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunMan\src\img\test2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunMan\src\img\test3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunMan\src\js\game.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunMan\src\js\kontra.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunMan\src\js\music.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunMan\src\js\text.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunMan\src\js\TinyMusic.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunMan\.gitattributes" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunMan\.gitignore" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunMan\Gruntfile.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunMan\LICENSE.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\Shoot\crushed.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\Shoot\index.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\Shoot\minified.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\Shoot\source.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\Snake\background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\css\engine.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\engine\css\engine.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\engine\js\audible.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\engine\js\audioPlayer.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\engine\js\book.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\engine\js\cycler.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\engine\js\drawingPad.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\engine\js\eventDispatcher.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\engine\js\interaction.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\engine\js\page.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\engine\js\pbs.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\engine\js\resourceLoader.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\engine\js\sound.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\engine\js\sprite.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\engine\js\textArea.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\engine\js\view.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\engine\plug\mediaelementjs\mediaelement-and-player.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\engine\plug\mediaelementjs\mediaelement.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\engine\plug\mediaelementjs\mediaelementplayer.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\engine\plug\soundjs\FlashAudioPlugin.swf" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\engine\plug\soundjs\FlashPlugin.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\engine\plug\soundjs\HTMLAudioPlugin.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\engine\plug\soundjs\preloadjs-0.2.0.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\engine\plug\soundjs\SoundJS.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\engine\plug\soundjs\swfobject.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\engine\plug\williammalone\html5-canvas-drawing-canvas.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\index.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\audio\001.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\audio\002.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\config\config-book.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\config\config-page-01.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\config\config-page-02.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\config\config-page-03.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\config\config-page-04-and-05.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\config\config-page-06.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\config\config-page-07.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\config\config-page-08.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\config\config-page-09.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\config\config-page-10.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\config\config-page-11.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\config\config-page-12.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\config\config-page-13-and-14.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\config\config-page-15-and-16.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\config\config-page-17-and-18.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\config\config-page-17.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\config\config-page-19-and-20.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\config\config-page-21-23.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\config\config-page-21-25.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\config\config-page-21.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\css\custom.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\fonts\fonts.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\fonts\droid-serif\droid-serif-license.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\fonts\droid-serif\droid-serif.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\fonts\reenie-beanie\reenie-beanie-license.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\fonts\reenie-beanie\reenie-beanie.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\images\apple-cart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\images\apple-drop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\images\ball-bounce.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\images\ball-roll.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\images\banner-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\images\bee-circle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\images\bee-float.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\images\bounce-page.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\images\carpet-left.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\images\carpet-right.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\images\char-jump.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\images\character-jump-animation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\images\character-page-1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\images\character-page-2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\images\character-page-3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\images\character-page-4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\images\circles-background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\images\clear-button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\images\cloud-page.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\images\cover.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\images\default-page.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\images\desert-left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\images\double-page-left.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\images\double-page-right.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\images\entrance-left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\images\entrance-right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\images\eraser-button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\images\frozen-left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\images\frozen-right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\images\green-hill.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\images\music-note-sign.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\images\next-page-button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\images\orchard-left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\images\orchard-right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\images\paint-brush-purple.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\images\paint-brush-yellow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\images\prev-page-button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\images\sunrise.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\images\tower-top-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\images\tower-top-2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\images\tower-top-3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\images\trees-left.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\images\trees-right.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\images\tundra-left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\images\tundra-right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\images\water-creature-hide-animation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\example\images\window-texture.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\js\book.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\js\eventDispatcher.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\js\interaction.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\js\page.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\js\pbs.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\js\resourceLoader.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\js\sprite.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\js\textArea.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\js\view.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\js\_notes\dwsync.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\.gitignore" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StoryBook\licenses.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\Letters\images\logo128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\Letters\images\logo16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\Letters\images\logo32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\Letters\images\logo48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\Letters\images\logo64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\Letters\index.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\Letters\letterpaint.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\Letters\letterpaint.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\Letters\compare.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\Letters\compare.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunDead\Audio\bgnd_mus.flac" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunDead\Audio\coin_pickup.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunDead\Audio\enemy_killed.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunDead\Audio\gameover.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunDead\Audio\jump_04.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunDead\Audio\win_sound.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunDead\Pictures\audioOff.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunDead\Pictures\audioOn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunDead\Pictures\Backbtn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunDead\Pictures\background_1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunDead\Pictures\background_1_reverse.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunDead\Pictures\background_2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunDead\Pictures\background_2_reverse.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunDead\Pictures\background_3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunDead\Pictures\background_3_reverse.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunDead\Pictures\background_4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunDead\Pictures\background_4_reverse.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunDead\Pictures\background_5.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunDead\Pictures\background_5_reverse.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunDead\Pictures\banner.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunDead\Pictures\blackArrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunDead\Pictures\BlackBlob.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunDead\Pictures\clock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunDead\Pictures\cloud.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunDead\Pictures\cloud2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunDead\Pictures\cloud3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunDead\Pictures\coin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunDead\Pictures\coin2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunDead\Pictures\coin3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunDead\Pictures\coin4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunDead\Pictures\CyclopsCrab.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunDead\Pictures\duck.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunDead\Pictures\FloatingFish.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunDead\Pictures\game_over.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunDead\Pictures\goldArrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunDead\Pictures\good_girl.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunDead\Pictures\good_girl_left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunDead\Pictures\good_guy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunDead\Pictures\good_guy_left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunDead\Pictures\jump.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunDead\Pictures\left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunDead\Pictures\ninja.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunDead\Pictures\ninja_left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunDead\Pictures\pause.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunDead\Pictures\play.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunDead\Pictures\restart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunDead\Pictures\resume.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunDead\Pictures\right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunDead\Pictures\ScarletStabber.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunDead\Pictures\Settingsbtn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunDead\Pictures\SlidingSkull.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunDead\Pictures\SpinningSword.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunDead\Pictures\stars.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunDead\Pictures\victory.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunDead\Pictures\zombie.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunDead\Style-Sheets\GameCompleteModal.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunDead\Style-Sheets\GameOverModal.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunDead\Style-Sheets\InstructionsModal.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunDead\Style-Sheets\JS_game.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunDead\Game.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunDead\index.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunGame\images\4603.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunGame\images\background_sprite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunGame\images\background_sprite1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunGame\images\bat_sprite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunGame\images\coin_sprite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunGame\images\exit_sprite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunGame\images\good_item_sprite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunGame\images\good_item_sprite2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunGame\images\hyptosis_sprites-and-tiles-for-you.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunGame\images\hyptosis_tile-art-batch-5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunGame\images\mario_sheet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunGame\images\monster_sprite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunGame\images\monster_sprite2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunGame\images\pipe_sprite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunGame\images\projectile_sprite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunGame\images\sprite_sheet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunGame\images\sprite_sheet2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunGame\images\Teleporter Sprite By Tafs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunGame\images\teleporter_sprite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunGame\images\tile_sprite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunGame\sounds\arrow.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunGame\sounds\background.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunGame\sounds\begin.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunGame\sounds\explosion.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunGame\sounds\gameover.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunGame\sounds\hit.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunGame\sounds\levelup.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunGame\game.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\pokemon.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\pokemon.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\pokemon.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\ZOP\index.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\Quiz\assets\css\style.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\Quiz\assets\images\background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\Quiz\assets\images\dancingTrio.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\Quiz\assets\images\logo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\Quiz\assets\images\pokeball.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\Quiz\assets\javascript\app.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\Quiz\assets\javascript\questions.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\Quiz\assets\music\correct.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\Quiz\assets\music\entryMusic.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\Quiz\assets\music\incorrect.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\Quiz\assets\music\question.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\Quiz\assets\music\question.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\Quiz\assets\music\question2.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\Quiz\assets\music\win.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\Quiz\index.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\Quiz\index.php" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizWord\img\patternbg-lite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizWord\img\sadface.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizWord\img\star.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizWord\img\tnlogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizWord\img\trophy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizWord\prev_builds\app-old.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizWord\prev_builds\app2.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizWord\prev_builds\appold.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizWord\prev_builds\coinsapp.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizWord\prev_builds\index-old.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizWord\prev_builds\main-old.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizWord\sounds\game_over.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizWord\sounds\right.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizWord\sounds\success.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizWord\sounds\wrong.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizWord\app.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizWord\index.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizWord\main.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\Racing\images\background.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\Racing\images\background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\Racing\images\mute.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\Racing\images\sprites.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\Racing\images\sprites.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\Racing\images\background\background.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\Racing\images\background\hills.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\Racing\images\background\sky.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\Racing\images\background\trees.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\Racing\images\sprites\billboard01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\Racing\images\sprites\billboard02.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\Racing\images\sprites\billboard03.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\Racing\images\sprites\billboard04.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\Racing\images\sprites\billboard05.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\Racing\images\sprites\billboard06.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\Racing\images\sprites\billboard07.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\Racing\images\sprites\billboard08.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\Racing\images\sprites\billboard09.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\Racing\images\sprites\boulder1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\Racing\images\sprites\boulder2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\Racing\images\sprites\boulder3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\Racing\images\sprites\bush1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\Racing\images\sprites\bush2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\Racing\images\sprites\cactus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\Racing\images\sprites\car01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\Racing\images\sprites\car02.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\Racing\images\sprites\car03.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\Racing\images\sprites\car04.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\Racing\images\sprites\column.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\Racing\images\sprites\dead_tree1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\Racing\images\sprites\dead_tree2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\Racing\images\sprites\palm_tree.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\Racing\images\sprites\player_left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\Racing\images\sprites\player_right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\Racing\images\sprites\player_straight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\Racing\images\sprites\player_uphill_left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\Racing\images\sprites\player_uphill_right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\Racing\images\sprites\player_uphill_straight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\Racing\images\sprites\semi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\Racing\images\sprites\stump.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\Racing\images\sprites\tree1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\Racing\images\sprites\tree2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\Racing\images\sprites\truck.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\Racing\music\racer.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\Racing\common.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\Racing\common.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\Racing\index.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\Racing\stats.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\Racing\v1.straight.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\Racing\v2.curves.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\Racing\v3.hills.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\Racing\v4.final.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RacingCrazy\images\button_pause_sheet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RacingCrazy\images\button_sheet.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RacingCrazy\images\cars_atlas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RacingCrazy\images\default_menu_background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RacingCrazy\images\explosion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RacingCrazy\images\help.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RacingCrazy\images\menu_car_icons.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RacingCrazy\images\misc_atlas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RacingCrazy\images\numbers.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RacingCrazy\images\preloader_background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RacingCrazy\images\preloader_bar.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RacingCrazy\images\preloader_bar_background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RacingCrazy\images\street_canyon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RacingCrazy\images\street_city.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RacingCrazy\images\street_desert.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RacingCrazy\images\street_grass.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RacingCrazy\images\street_snow.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RacingCrazy\images\street_water.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RacingCrazy\js\ytAboutLayer.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RacingCrazy\js\ytBackground.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RacingCrazy\js\ytButton.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RacingCrazy\js\ytCar.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RacingCrazy\js\ytCarLayer.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RacingCrazy\js\ytExplosion.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RacingCrazy\js\ytGameLayer.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RacingCrazy\js\ytHelpLayer.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RacingCrazy\js\ytMain.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RacingCrazy\js\ytMenuLayer.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RacingCrazy\js\ytOptionLayer.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RacingCrazy\js\ytPoint.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RacingCrazy\js\ytPreloader.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RacingCrazy\js\ytResultBox.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RacingCrazy\js\ytStreetView.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RacingCrazy\lib\lufylegend-1.9.7.simple.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RacingCrazy\index.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunRoad\car.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunRoad\game.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunRoad\index.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunRoad\powerups.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RunRoad\track.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\audio\correct.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\audio\correct.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\audio\incorrect.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\audio\incorrect.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\css\sl.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\fonts\kraash-webfont.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\fonts\thekingsofthehouse-regular_0-webfont.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\-dice.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\-surface.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\dice.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\digit1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\digit2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\digit3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\digit4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\digit5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\digit6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\game-1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\game-2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\grass.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\index.fidget-spinner.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\instr-bg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\Level-bg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\ludo_bg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\options-bg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\options-bg_active.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\play_bg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\ques-box.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\ques-holder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\screen1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\screen2-ladder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\screen2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\screen3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\screen4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\screen5.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\selectLevel-bg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\snake1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\snake2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\submitBtn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\surface.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\title_bg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\wellDone-bg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\ladders\ladder1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\ladders\ladder10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\ladders\ladder11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\ladders\ladder12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\ladders\ladder13.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\ladders\ladder14.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\ladders\ladder15.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\ladders\ladder16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\ladders\ladder2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\ladders\ladder3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\ladders\ladder4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\ladders\ladder5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\ladders\ladder6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\ladders\ladder7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\ladders\ladder8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\ladders\ladder9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\snakes\ludoSnake1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\snakes\ludoSnake10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\snakes\ludoSnake11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\snakes\ludoSnake12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\snakes\ludoSnake13.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\snakes\ludoSnake14.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\snakes\ludoSnake15.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\snakes\ludoSnake16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\snakes\ludoSnake2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\snakes\ludoSnake3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\snakes\ludoSnake4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\snakes\ludoSnake5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\snakes\ludoSnake6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\snakes\ludoSnake7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\snakes\ludoSnake8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\snakes\ludoSnake9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\wellDone\1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\wellDone\2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\wellDone\3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\wellDone\4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\wellDone\5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\wellDone\6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\wellDone\7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\wellDone\8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\img\wellDone\9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\js\jquery-1.11.1.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\js\sl.config.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\js\sl.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\js\taffy-min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\QuizQuiz\index.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\ATTACK_000.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\Misty-Bog.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\css\example.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\js\app.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\js\bezier.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\js\example.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\js\main.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\js\stage.web.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\js\textures.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\img\background_\aawwq.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\img\background_\background1_.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\img\background_\background221.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\img\background_\background1111.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\img\background_\orig.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\img\background_\tumblr_nt8s4tMNLp1tdjgz4o7_1280.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\img\background_\tumblr_o0tsymjERP1tl8u0ko1_500.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\img\background_\VshN.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\img\background_\xzcvzxcv.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\img\background_\1.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\img\background_\1d5b4ee93daba35ddf57ac31e20ea411.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\img\background_\021.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\img\background_\26pm.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\img\background_\123.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\img\background_\211E663B591AF66E2C.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\img\background_\2110D04C591AF8A228.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\img\background_\4003cn5.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\img\background_\2556494153D8836206.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\img\background_\1461714986213.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\img\background_\13692398507244.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\img\background_\aaa.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\img\background_\aaad.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\img\backgournd\background_1.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\img\backgournd\background_2.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\img\backgournd\background_3.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\img\backgournd\background_4.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\img\backgournd\background_5.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\img\backgournd\background_6.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\img\backgournd\background_7.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\img\backgournd\background_8.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\img\backgournd\background_9.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\img\backgournd\background_10.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\img\backgournd\background_11.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\img\backgournd\background_12.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\img\backgournd\background_13.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\img\backgournd\background_boss_final.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\img\monster\boss_final.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\img\player\dragon_1.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\img\other\main.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\img\player\orc_1.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\img\monster\orc_1.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\bgm\bgm_3.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\bgm\bgm_1.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\bgm\bgm_2.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\main\img\game_bakground.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\main\css\style.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\main\js\main.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\main\img\close_pop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\main\bgm\bgm_1.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\BattleMonster\bgm\bgm_0.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StudyRoom\css\demo.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StudyRoom\css\style.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StudyRoom\css\fonts\BebasNeue-webfont.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StudyRoom\css\fonts\Dharma Type Font License.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StudyRoom\images\1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StudyRoom\images\10.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StudyRoom\images\11.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StudyRoom\images\12.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StudyRoom\images\2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StudyRoom\images\3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StudyRoom\images\4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StudyRoom\images\5.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StudyRoom\images\6.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StudyRoom\images\7.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StudyRoom\images\8.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StudyRoom\images\9.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StudyRoom\images\arrows.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StudyRoom\images\bg.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StudyRoom\images\browser.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StudyRoom\images\ImageAttribution.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StudyRoom\js\jquery.gallery.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StudyRoom\js\modernizr.custom.53451.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StudyRoom\index.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StudyRoom\index2.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\StudyRoom\index3.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\WordTest\demo\demo.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\WordTest\demo\demo.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\WordTest\demo\index.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\WordTest\resources\blanket-1.1.5.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\WordTest\resources\grunt-reporter.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\WordTest\resources\jquery-1.10.2.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\WordTest\resources\jquery-ui.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\WordTest\resources\jquery-ui.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\WordTest\resources\jquery.simulate.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\WordTest\resources\qunit-1.12.0.min.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\WordTest\resources\qunit-1.12.0.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\WordTest\resources\qunit-1.13.0.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\WordTest\resources\qunit-1.13.0.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\WordTest\src\jquery-fsortable.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\WordTest\tests\index.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\WordTest\tests\test_connected.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\WordTest\tests\test_core.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\WordTest\tests\test_draggable.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\WordTest\tests\test_sort.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\WordTest\tests\tests.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\WordTest\tests\utils.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\WordTest\.gitignore" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\study\WordTest\Gruntfile.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\main\img\img_1.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\main\img\img_2.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\main\img\img_3.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\main\img\img_4.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\main\img\img_5.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\Poyo\game\RacingCrazy\bgm\bgm_0.mp3" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

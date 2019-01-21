@@ -29,13 +29,10 @@
     <EmbeddedResource Update="00.Game\page뱀키우기.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="00.Game\page색맞추기.xaml">
+    <EmbeddedResource Update="00.Game\page대전게임.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="00.Game\page벽돌깨기.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="00.Game\page멀리날기.xaml">
+    <EmbeddedResource Update="00.Game\page카레이싱.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

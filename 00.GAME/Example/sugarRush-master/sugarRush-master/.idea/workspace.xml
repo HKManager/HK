@@ -1,0 +1,1705 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="7bf6f163-2474-4df3-9125-596297f7400e" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Generated_files.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Generated_files.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Scripts/game.js.map" afterPath="$PROJECT_DIR$/Scripts/game.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Scripts/game.js" afterPath="$PROJECT_DIR$/Scripts/game.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Scripts/game.ts" afterPath="$PROJECT_DIR$/Scripts/game.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Scripts/managers/groupManager.js.map" afterPath="$PROJECT_DIR$/Scripts/managers/groupManager.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Scripts/managers/groupManager.js" afterPath="$PROJECT_DIR$/Scripts/managers/groupManager.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Scripts/managers/groupManager.ts" afterPath="$PROJECT_DIR$/Scripts/managers/groupManager.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Scripts/states/play.js.map" afterPath="$PROJECT_DIR$/Scripts/states/play.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Scripts/states/play.js" afterPath="$PROJECT_DIR$/Scripts/states/play.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Scripts/states/play.ts" afterPath="$PROJECT_DIR$/Scripts/states/play.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Scripts/objects/rotatingGroup.js.map" afterPath="$PROJECT_DIR$/Scripts/objects/rotatingGroup.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Scripts/objects/rotatingGroup.js" afterPath="$PROJECT_DIR$/Scripts/objects/rotatingGroup.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Scripts/objects/rotatingGroup.ts" afterPath="$PROJECT_DIR$/Scripts/objects/rotatingGroup.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Scripts/filters/scale.js" afterPath="$PROJECT_DIR$/Scripts/filters/scale.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Scripts/filters/scale.ts" afterPath="$PROJECT_DIR$/Scripts/filters/scale.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
+    <ignored path="sugarRush.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <file path="/Dummy.txt" changelist="7bf6f163-2474-4df3-9125-596297f7400e" time="1418517628717" ignored="false" />
+    <file path="/app.css" changelist="7bf6f163-2474-4df3-9125-596297f7400e" time="1416601453863" ignored="false" />
+    <file path="/game.js" changelist="7bf6f163-2474-4df3-9125-596297f7400e" time="1415404922317" ignored="false" />
+    <file path="/gameOriginal.js" changelist="7bf6f163-2474-4df3-9125-596297f7400e" time="1415405098305" ignored="false" />
+    <file path="/plane.js" changelist="7bf6f163-2474-4df3-9125-596297f7400e" time="1415406169874" ignored="false" />
+    <file path="/index.html" changelist="7bf6f163-2474-4df3-9125-596297f7400e" time="1418513530525" ignored="false" />
+    <file path="/menu.js" changelist="7bf6f163-2474-4df3-9125-596297f7400e" time="1415561935357" ignored="false" />
+    <file path="/background.js.map" changelist="7bf6f163-2474-4df3-9125-596297f7400e" time="1415414478990" ignored="false" />
+    <file path="/a.dummy" changelist="7bf6f163-2474-4df3-9125-596297f7400e" time="1418512960043" ignored="false" />
+    <file path="/createjs-lib.d.ts" changelist="7bf6f163-2474-4df3-9125-596297f7400e" time="1415555432751" ignored="false" />
+    <file path="/test.ts" changelist="7bf6f163-2474-4df3-9125-596297f7400e" time="1415557044217" ignored="false" />
+    <file path="/background.ts" changelist="7bf6f163-2474-4df3-9125-596297f7400e" time="1418262399599" ignored="false" />
+    <file path="/game.ts" changelist="7bf6f163-2474-4df3-9125-596297f7400e" time="1418524779060" ignored="false" />
+    <file path="/play.ts" changelist="7bf6f163-2474-4df3-9125-596297f7400e" time="1418524762074" ignored="false" />
+    <file path="$USER_HOME$/Downloads/mailPilot-v11-master/mailPilot-v11/Scripts/states/play.js" changelist="7bf6f163-2474-4df3-9125-596297f7400e" time="1415561515567" ignored="false" />
+    <file path="/menu.ts" changelist="7bf6f163-2474-4df3-9125-596297f7400e" time="1417991494620" ignored="false" />
+    <file path="/gameover.ts" changelist="7bf6f163-2474-4df3-9125-596297f7400e" time="1416029552445" ignored="false" />
+    <file path="/plane.ts" changelist="7bf6f163-2474-4df3-9125-596297f7400e" time="1415893626383" ignored="false" />
+    <file path="/cloud.ts" changelist="7bf6f163-2474-4df3-9125-596297f7400e" time="1415769327099" ignored="false" />
+    <file path="/island.ts" changelist="7bf6f163-2474-4df3-9125-596297f7400e" time="1415893850019" ignored="false" />
+    <file path="/fragment.java" changelist="7bf6f163-2474-4df3-9125-596297f7400e" time="1415584663037" ignored="false" />
+    <file path="/collision.ts" changelist="7bf6f163-2474-4df3-9125-596297f7400e" time="1418516041253" ignored="false" />
+    <file path="/play.js" changelist="7bf6f163-2474-4df3-9125-596297f7400e" time="1415589379697" ignored="false" />
+    <file path="/asset.ts" changelist="7bf6f163-2474-4df3-9125-596297f7400e" time="1417988581666" ignored="false" />
+    <file path="/redPeppers.ts" changelist="7bf6f163-2474-4df3-9125-596297f7400e" time="1415836751167" ignored="false" />
+    <file path="/testCollision.ts" changelist="7bf6f163-2474-4df3-9125-596297f7400e" time="1415769833276" ignored="false" />
+    <file path="/movingImage.ts" changelist="7bf6f163-2474-4df3-9125-596297f7400e" time="1418454228357" ignored="false" />
+    <file path="/red-peppers.ts" changelist="7bf6f163-2474-4df3-9125-596297f7400e" time="1415834008273" ignored="false" />
+    <file path="/testContainer.html" changelist="7bf6f163-2474-4df3-9125-596297f7400e" time="1415834202092" ignored="false" />
+    <file path="/fragment.js2" changelist="7bf6f163-2474-4df3-9125-596297f7400e" time="1415850664193" ignored="false" />
+    <file path="/ObstacleManager.ts" changelist="7bf6f163-2474-4df3-9125-596297f7400e" time="1418269894116" ignored="false" />
+    <file path="/character.ts" changelist="7bf6f163-2474-4df3-9125-596297f7400e" time="1418432602432" ignored="false" />
+    <file path="/constants.ts" changelist="7bf6f163-2474-4df3-9125-596297f7400e" time="1415998500870" ignored="false" />
+    <file path="/instructions.ts" changelist="7bf6f163-2474-4df3-9125-596297f7400e" time="1415998217370" ignored="false" />
+    <file path="/candy.ts" changelist="7bf6f163-2474-4df3-9125-596297f7400e" time="1418527566868" ignored="false" />
+    <file path="/scoreboard.ts" changelist="7bf6f163-2474-4df3-9125-596297f7400e" time="1418267604340" ignored="false" />
+    <file path="/obstacleManager.ts" changelist="7bf6f163-2474-4df3-9125-596297f7400e" time="1417976051587" ignored="false" />
+    <file path="/imageGroup.ts" changelist="7bf6f163-2474-4df3-9125-596297f7400e" time="1418174347004" ignored="false" />
+    <file path="/scale.ts" changelist="7bf6f163-2474-4df3-9125-596297f7400e" time="1418505295629" ignored="false" />
+    <file path="$USER_HOME$/Dropbox/Websites/amcustom.ca/includes/support-files.php" changelist="7bf6f163-2474-4df3-9125-596297f7400e" time="1418092678071" ignored="false" />
+    <file path="/support-files.php" changelist="7bf6f163-2474-4df3-9125-596297f7400e" time="1418092660950" ignored="false" />
+    <file path="/abstractImage.ts" changelist="7bf6f163-2474-4df3-9125-596297f7400e" time="1418230262418" ignored="false" />
+    <file path="/rotatingGroup.ts" changelist="7bf6f163-2474-4df3-9125-596297f7400e" time="1418509717477" ignored="false" />
+    <file path="/image.ts" changelist="7bf6f163-2474-4df3-9125-596297f7400e" time="1418516588002" ignored="false" />
+    <file path="$USER_HOME$/Downloads/sugarRush-todd/.idea/workspace.xml" changelist="7bf6f163-2474-4df3-9125-596297f7400e" time="1418252778229" ignored="false" />
+    <file path="$USER_HOME$/Downloads/sugarRush-todd/.idea/libraries/Generated_files.xml" changelist="7bf6f163-2474-4df3-9125-596297f7400e" time="1418252160245" ignored="false" />
+    <file path="$PROJECT_DIR$/Scripts/constants.js" changelist="7bf6f163-2474-4df3-9125-596297f7400e" time="1418268120023" ignored="false" />
+    <file path="/groupManager.ts" changelist="7bf6f163-2474-4df3-9125-596297f7400e" time="1418526380503" ignored="false" />
+    <file path="/collision.js" changelist="7bf6f163-2474-4df3-9125-596297f7400e" time="1418507468200" ignored="false" />
+    <file path="/collidableSprite.ts" changelist="7bf6f163-2474-4df3-9125-596297f7400e" time="1418516999061" ignored="false" />
+    <file path="$PROJECT_DIR$/Scripts/objects/image.js" changelist="7bf6f163-2474-4df3-9125-596297f7400e" time="1418528119483" ignored="false" />
+    <file path="$PROJECT_DIR$/Scripts/objects/background.js" changelist="7bf6f163-2474-4df3-9125-596297f7400e" time="1418528119483" ignored="false" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="Commander">
+    <leftPanel />
+    <rightPanel />
+    <splitter proportion="0.5" />
+  </component>
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DaemonCodeAnalyzer">
+    <disable_hints />
+  </component>
+  <component name="DebuggerManager">
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
+    <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
+      <breakpoint>
+        <option name="NOTIFY_CAUGHT" value="true" />
+        <option name="NOTIFY_UNCAUGHT" value="true" />
+        <option name="ENABLED" value="false" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint>
+        <option name="NOTIFY_CAUGHT" value="true" />
+        <option name="NOTIFY_UNCAUGHT" value="true" />
+        <option name="ENABLED" value="false" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+    </breakpoint_any>
+    <breakpoint_rules />
+    <ui_properties />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="sugarRush" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="play.ts" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Scripts/states/play.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="89" column="62" selection-start="3614" selection-end="3614" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="asset.ts" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Scripts/managers/asset.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="115" column="29" selection-start="3358" selection-end="3358" vertical-scroll-proportion="0.7186147">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="game.ts" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Scripts/game.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="36" column="46" selection-start="1388" selection-end="1388" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="rotatingGroup.ts" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Scripts/objects/rotatingGroup.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="45" column="46" selection-start="1619" selection-end="1619" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="movingImage.ts" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Scripts/objects/movingImage.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="15" column="0" selection-start="563" selection-end="563" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="scale.ts" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Scripts/filters/scale.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="21" column="35" selection-start="675" selection-end="675" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="collidableSprite.ts" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Scripts/objects/collidableSprite.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="36" column="28" selection-start="1337" selection-end="1337" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="candy.ts" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Scripts/objects/candy.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="58" column="55" selection-start="2180" selection-end="2180" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="groupManager.ts" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Scripts/managers/groupManager.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="34" column="37" selection-start="1173" selection-end="1173" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="image.ts" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Scripts/objects/image.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="158" column="5" selection-start="5267" selection-end="5267" vertical-scroll-proportion="0.0">
+              <folding>
+                <marker date="1418517408000" expanded="true" signature="624:5267" placeholder="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindManager">
+    <FindUsagesManager>
+      <setting name="OPEN_NEW_TAB" value="false" />
+    </FindUsagesManager>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitLogSettings">
+    <option name="myDateState">
+      <MyDateState />
+    </option>
+  </component>
+  <component name="GradleLocalSettings">
+    <option name="modificationStamps">
+      <map>
+        <entry key="$PROJECT_DIR$/../grails-core" value="77878961924222" />
+      </map>
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="changedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/Scripts/states/gameover.ts" />
+        <option value="$PROJECT_DIR$/Scripts/constants.ts" />
+        <option value="$PROJECT_DIR$/Scripts/managers/collision.js" />
+        <option value="$PROJECT_DIR$/Scripts/managers/ObstacleManager.ts" />
+        <option value="$PROJECT_DIR$/Scripts/objects/character.ts" />
+        <option value="$PROJECT_DIR$/Scripts/objects/movingImage.ts" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/Scripts/managers/collision.ts" />
+        <option value="$PROJECT_DIR$/Scripts/objects/image.ts" />
+        <option value="$PROJECT_DIR$/Scripts/filters/scale.ts" />
+        <option value="$PROJECT_DIR$/Scripts/game.ts" />
+        <option value="$PROJECT_DIR$/Scripts/objects/rotatingGroup.ts" />
+        <option value="$PROJECT_DIR$/Scripts/objects/candy.ts" />
+        <option value="$PROJECT_DIR$/Scripts/objects/collidableSprite.ts" />
+        <option value="$PROJECT_DIR$/Scripts/managers/groupManager.ts" />
+        <option value="$PROJECT_DIR$/Scripts/states/play.ts" />
+      </list>
+    </option>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
+  <component name="ProjectFrameBounds">
+    <option name="y" value="23" />
+    <option name="width" value="1440" />
+    <option name="height" value="873" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+          <State>
+            <id>AOP</id>
+          </State>
+          <State>
+            <id>Abstraction issues</id>
+          </State>
+          <State>
+            <id>ActionScript specificJavaScript</id>
+          </State>
+          <State>
+            <id>Android</id>
+          </State>
+          <State>
+            <id>Android Lint</id>
+          </State>
+          <State>
+            <id>Ant inspections</id>
+          </State>
+          <State>
+            <id>Application Server Specific Inspections</id>
+          </State>
+          <State>
+            <id>Assignment issues</id>
+          </State>
+          <State>
+            <id>BPMN 2.0 configuration errors</id>
+          </State>
+          <State>
+            <id>Bash</id>
+          </State>
+          <State>
+            <id>Batch Applications Issues</id>
+          </State>
+          <State>
+            <id>Bean Validation issues</id>
+          </State>
+          <State>
+            <id>CDI(Contexts and Dependency Injection) issues</id>
+          </State>
+          <State>
+            <id>CFML</id>
+          </State>
+          <State>
+            <id>CSS</id>
+          </State>
+          <State>
+            <id>Class metrics</id>
+          </State>
+          <State>
+            <id>Class structure</id>
+          </State>
+          <State>
+            <id>Cloning issues</id>
+          </State>
+          <State>
+            <id>Code StylePHP</id>
+          </State>
+          <State>
+            <id>Code quality toolsJavaScript</id>
+          </State>
+          <State>
+            <id>Code style issues</id>
+          </State>
+          <State>
+            <id>Code style issuesJavaScript</id>
+          </State>
+          <State>
+            <id>CoffeeScript</id>
+          </State>
+          <State>
+            <id>Concurrency annotation issues</id>
+          </State>
+          <State>
+            <id>Control FlowGroovy</id>
+          </State>
+          <State>
+            <id>Control FlowPHP</id>
+          </State>
+          <State>
+            <id>Control flow issues</id>
+          </State>
+          <State>
+            <id>Control flow issuesJavaScript</id>
+          </State>
+          <State>
+            <id>Cucumber</id>
+          </State>
+          <State>
+            <id>Cucumber Java</id>
+          </State>
+          <State>
+            <id>Data flow issues</id>
+          </State>
+          <State>
+            <id>Declaration redundancy</id>
+          </State>
+          <State>
+            <id>Declaration redundancyGroovy</id>
+          </State>
+          <State>
+            <id>DeclarationGroovy</id>
+          </State>
+          <State>
+            <id>Dependency issues</id>
+          </State>
+          <State>
+            <id>Encapsulation issues</id>
+          </State>
+          <State>
+            <id>Error handling</id>
+          </State>
+          <State>
+            <id>Error handlingGroovy</id>
+          </State>
+          <State>
+            <id>Error handlingJavaScript</id>
+          </State>
+          <State>
+            <id>Faces Model</id>
+          </State>
+          <State>
+            <id>Finalization issues</id>
+          </State>
+          <State>
+            <id>FlexUnit inspections</id>
+          </State>
+          <State>
+            <id>FreeMarker inspections</id>
+          </State>
+          <State>
+            <id>General</id>
+          </State>
+          <State>
+            <id>GeneralCoffeeScript</id>
+          </State>
+          <State>
+            <id>GeneralJavaScript</id>
+          </State>
+          <State>
+            <id>Google Web Toolkit issues</id>
+          </State>
+          <State>
+            <id>GrailsGroovy</id>
+          </State>
+          <State>
+            <id>Groovy</id>
+          </State>
+          <State>
+            <id>Guice Inspections</id>
+          </State>
+          <State>
+            <id>HTML</id>
+          </State>
+          <State>
+            <id>Hibernate Issues</id>
+          </State>
+          <State>
+            <id>Imports</id>
+          </State>
+          <State>
+            <id>Inheritance issues</id>
+          </State>
+          <State>
+            <id>Ini Files</id>
+          </State>
+          <State>
+            <id>Initialization issues</id>
+          </State>
+          <State>
+            <id>Internationalization issues</id>
+          </State>
+          <State>
+            <id>J2ME Plugin</id>
+          </State>
+          <State>
+            <id>J2ME issues</id>
+          </State>
+          <State>
+            <id>JBoss Seam issues</id>
+          </State>
+          <State>
+            <id>JPA issues</id>
+          </State>
+          <State>
+            <id>JRuby</id>
+          </State>
+          <State>
+            <id>JSP Inspections</id>
+          </State>
+          <State>
+            <id>JUnit issues</id>
+          </State>
+          <State>
+            <id>Java EE issues</id>
+          </State>
+          <State>
+            <id>Java language level issues</id>
+          </State>
+          <State>
+            <id>Java language level migration aids</id>
+          </State>
+          <State>
+            <id>JavaBeans issues</id>
+          </State>
+          <State>
+            <id>JavaFX</id>
+          </State>
+          <State>
+            <id>JavaScript</id>
+          </State>
+          <State>
+            <id>JavaScript function metricsJavaScript</id>
+          </State>
+          <State>
+            <id>Javadoc issues</id>
+          </State>
+          <State>
+            <id>Logging issues</id>
+          </State>
+          <State>
+            <id>Manifest</id>
+          </State>
+          <State>
+            <id>Memory issues</id>
+          </State>
+          <State>
+            <id>Method MetricsGroovy</id>
+          </State>
+          <State>
+            <id>Method metrics</id>
+          </State>
+          <State>
+            <id>Modularization issues</id>
+          </State>
+          <State>
+            <id>Naming ConventionsGroovy</id>
+          </State>
+          <State>
+            <id>Naming conventions</id>
+          </State>
+          <State>
+            <id>Naming conventionsJavaScript</id>
+          </State>
+          <State>
+            <id>Numeric issues</id>
+          </State>
+          <State>
+            <id>OSGi</id>
+          </State>
+          <State>
+            <id>OtherGroovy</id>
+          </State>
+          <State>
+            <id>PHP</id>
+          </State>
+          <State>
+            <id>Packaging issues</id>
+          </State>
+          <State>
+            <id>Pages Navigation Model</id>
+          </State>
+          <State>
+            <id>Performance issues</id>
+          </State>
+          <State>
+            <id>Plugin DevKit</id>
+          </State>
+          <State>
+            <id>Portability issues</id>
+          </State>
+          <State>
+            <id>Potentially confusing code constructsGroovy</id>
+          </State>
+          <State>
+            <id>Potentially confusing code constructsJavaScript</id>
+          </State>
+          <State>
+            <id>Probable bugs</id>
+          </State>
+          <State>
+            <id>Probable bugsCoffeeScript</id>
+          </State>
+          <State>
+            <id>Probable bugsGroovy</id>
+          </State>
+          <State>
+            <id>Probable bugsJavaScript</id>
+          </State>
+          <State>
+            <id>Probably bugPHP</id>
+          </State>
+          <State>
+            <id>Properties Files</id>
+          </State>
+          <State>
+            <id>RELAX NG</id>
+          </State>
+          <State>
+            <id>RESTful Web Service</id>
+          </State>
+          <State>
+            <id>Rails</id>
+          </State>
+          <State>
+            <id>Resource management issues</id>
+          </State>
+          <State>
+            <id>Ruby</id>
+          </State>
+          <State>
+            <id>SQL</id>
+          </State>
+          <State>
+            <id>Security issues</id>
+          </State>
+          <State>
+            <id>Serialization issues</id>
+          </State>
+          <State>
+            <id>Spelling</id>
+          </State>
+          <State>
+            <id>Spring Model</id>
+          </State>
+          <State>
+            <id>Spring SecuritySpring Model</id>
+          </State>
+          <State>
+            <id>Spring Web FlowSpring Model</id>
+          </State>
+          <State>
+            <id>Spring Web ServicesSpring Model</id>
+          </State>
+          <State>
+            <id>Struts</id>
+          </State>
+          <State>
+            <id>Struts 1Struts</id>
+          </State>
+          <State>
+            <id>Struts 2Struts</id>
+          </State>
+          <State>
+            <id>TestNG</id>
+          </State>
+          <State>
+            <id>Threading issues</id>
+          </State>
+          <State>
+            <id>Threading issuesGroovy</id>
+          </State>
+          <State>
+            <id>UI Form Problems</id>
+          </State>
+          <State>
+            <id>UndefinedPHP</id>
+          </State>
+          <State>
+            <id>UnusedPHP</id>
+          </State>
+          <State>
+            <id>Validity issuesGroovy</id>
+          </State>
+          <State>
+            <id>Velocity inspections</id>
+          </State>
+          <State>
+            <id>Visibility issues</id>
+          </State>
+          <State>
+            <id>Web Services</id>
+          </State>
+          <State>
+            <id>WebSocket issues</id>
+          </State>
+          <State>
+            <id>XML</id>
+          </State>
+          <State>
+            <id>XPath</id>
+          </State>
+          <State>
+            <id>toString() issues</id>
+          </State>
+        </expanded-state>
+      </profile-state>
+    </entry>
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="2" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectReloadState">
+    <option name="STATE" value="0" />
+  </component>
+  <component name="ProjectStructureProblems">
+    <ignored-problems>
+      <problem id="library-invalid-classes-path(library:project:Generated files)" />
+      <problem id="unused-library(library:project:Generated files)" />
+    </ignored-problems>
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sugarRush" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sugarRush" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sugarRush" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sugarRush" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sugarRush" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Scripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sugarRush" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sugarRush" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Scripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="objects" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sugarRush" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sugarRush" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Scripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="managers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sugarRush" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sugarRush" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Scripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="filters" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="72" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="101" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="options.splitter.main.proportions" value="0.3" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="72" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
+    <property name="MemberChooser.sorted" value="false" />
+    <property name="recentsLimit" value="5" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/js" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="107" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="1065" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="1065" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="107" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="101" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
+    <property name="GoToClass.toSaveIncludeLibraries" value="false" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder2" value="2" />
+    <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder3" value="3" />
+    <property name="Repository.Attach.Sources" value="false" />
+    <property name="MemberChooser.showClasses" value="true" />
+    <property name="GoToClass.includeLibraries" value="false" />
+    <property name="Downloaded.Files.Path" value="$PROJECT_DIR$/lib" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder0" value="0" />
+    <property name="GoToFile.includeJavaFiles" value="false" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder1" value="1" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
+    <property name="options.lastSelected" value="vcs.Git" />
+    <property name="ChangesBrowser.SHOW_FLATTEN" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="DefaultHtmlFileTemplate" value="Html5" />
+    <property name="MemberChooser.copyJavadoc" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
+    <property name="restartRequiresConfirmation" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
+    <property name="options.searchVisible" value="true" />
+    <property name="dir.diff.last.used.directory" value="$USER_HOME$/Downloads/sugarRush-todd" />
+  </component>
+  <component name="PublishConfig" serverName="SugarRush2" serverId="1d3f027e-d26d-4032-afef-90d72402dd34">
+    <servers>
+      <server id="04220da7-02cb-42be-9fdd-e96a28ec4f48">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/" local="$PROJECT_DIR$/COMP2068-MailPilot-Builder" />
+          </mappings>
+        </serverdata>
+      </server>
+      <server id="0ded58ae-b16f-4b31-8cb6-49526c1d7e9a">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$/COMP2068-MailPilot-Builder" />
+          </mappings>
+        </serverdata>
+      </server>
+      <server id="1d3f027e-d26d-4032-afef-90d72402dd34">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/" local="$PROJECT_DIR$" />
+          </mappings>
+        </serverdata>
+      </server>
+      <server id="3589af5c-3b48-4c76-b128-4e43ecde9cc8">
+        <serverdata />
+      </server>
+      <server id="3b9d2a65-3db1-4c1c-9d3d-4505ba931197">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$/COMP2068-MailPilot-Builder" />
+          </mappings>
+        </serverdata>
+      </server>
+      <server id="3df4761e-f68a-44d6-b9a4-5354420724ad">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$/COMP2068-MailPilot-Builder" />
+          </mappings>
+        </serverdata>
+      </server>
+      <server id="4da7c128-935a-4a33-a2b0-ee8b70e553d8">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$/COMP2068-MailPilot-Builder" />
+          </mappings>
+        </serverdata>
+      </server>
+      <server id="4fe75f14-3a1f-4e33-8dea-f968168bbff3">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$/COMP2068-MailPilot-Builder" />
+          </mappings>
+        </serverdata>
+      </server>
+      <server id="53411340-3bc6-42a0-ac27-90bf11863a5e">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$/COMP2068-MailPilot-Builder" />
+          </mappings>
+        </serverdata>
+      </server>
+      <server id="615c148f-5ca5-40ce-bde6-02ab7bdd9d5a">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$/COMP2068-MailPilot-Builder" />
+          </mappings>
+        </serverdata>
+      </server>
+      <server id="6c1a5eb5-364d-4382-bf05-019af90cda96">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$/COMP2068-MailPilot-Builder" />
+          </mappings>
+        </serverdata>
+      </server>
+      <server id="6f2c13a0-dd13-4301-91d2-dc26be7cf146">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$/COMP2068-MailPilot-Builder" />
+          </mappings>
+        </serverdata>
+      </server>
+      <server id="76d28b63-6473-46c3-971f-c76fb8d2ad1d">
+        <serverdata />
+      </server>
+      <server id="837fdcc9-b9ef-42f2-9244-c0dab2c6fc1a">
+        <serverdata />
+      </server>
+      <server id="849b5803-a325-4f1e-805e-dfc3441a374e">
+        <serverdata />
+      </server>
+      <server id="a93e3931-33d2-4d28-87a2-ab7a222c1c5e">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$/COMP2068-MailPilot-Builder" />
+          </mappings>
+        </serverdata>
+      </server>
+      <server id="ac524189-e864-4f80-8c4e-50c10c65141d">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$/COMP2068-MailPilot-Builder" />
+          </mappings>
+        </serverdata>
+      </server>
+      <server id="b1cbf721-d5cc-43ed-bbf0-ba67cac8bfc1">
+        <serverdata />
+      </server>
+      <server id="bfbaae62-877a-481b-b424-ee2936ed8575">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/" local="$PROJECT_DIR$/" />
+          </mappings>
+        </serverdata>
+      </server>
+      <server id="d1156a8a-9e88-4046-a0c6-4eb6f6880763">
+        <serverdata />
+      </server>
+      <server id="d196f5d7-8327-4bd2-99c7-36b136e4ae20">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$/COMP2068-MailPilot-Builder" />
+          </mappings>
+        </serverdata>
+      </server>
+      <server id="e0149e63-51f0-4df3-ae01-740bc0b6f6b4">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$/COMP2068-MailPilot-Builder" />
+          </mappings>
+        </serverdata>
+      </server>
+      <server id="fca126fe-6ffc-4348-8a2d-56702d29c625">
+        <serverdata />
+      </server>
+    </servers>
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Scripts/states" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Scripts/filters" />
+      <recent name="$PROJECT_DIR$/js" />
+      <recent name="$PROJECT_DIR$/Scripts/lib" />
+      <recent name="$PROJECT_DIR$/assets" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m" />
+      <option name="PROGRAM_PARAMETERS" />
+      <method />
+    </configuration>
+    <configuration default="true" type="WebSphereRunConfigurationType" factoryName="Local">
+      <option name="PORT" value="9080" />
+      <deployment />
+      <server-settings>
+        <option name="PROFILE_PATH" value="" />
+        <option name="SOAP_PORT" value="8880" />
+        <option name="CELL_NAME" value="DefaultNode" />
+        <option name="NODE_NAME" value="DefaultNode" />
+        <option name="SERVER_NAME" value="server1" />
+        <option name="SECURED" value="false" />
+        <option name="CLIENT_TRUST_FILE_PATH" value="" />
+        <option name="CLIENT_TRUST_PASSWORD" value="WebAS" />
+        <option name="CLIENT_KEY_FILE_PATH" value="" />
+        <option name="CLIENT_KEY_PASSWORD" value="WebAS" />
+        <option name="USERNAME" value="" />
+        <option name="PASSWORD" value="" />
+      </server-settings>
+      <predefined_log_file id="WebSphere" enabled="true" />
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <RunnerSettings RunnerId="Cover" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="50648" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper VM_VAR="DEBUG" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="DEBUG" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="DEBUG" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method />
+    </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+      <method />
+    </configuration>
+    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="/usr/local/bin/node" node-parameters="static" working-dir="$PROJECT_DIR$">
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugSession" factoryName="Remote" singleton="true">
+      <JSRemoteDebuggerConfigurationSettings>
+        <option name="engineId" value="embedded" />
+        <option name="fileUrl" />
+      </JSRemoteDebuggerConfigurationSettings>
+      <method />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugSession" factoryName="Local" singleton="true">
+      <JSDebuggerConfigurationSettings>
+        <option name="engineId" value="embedded" />
+        <option name="fileUrl" />
+      </JSDebuggerConfigurationSettings>
+      <method />
+    </configuration>
+    <list size="0" />
+    <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
+      <Host>localhost</Host>
+      <Port>5050</Port>
+    </configuration>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="false" SSL_PROTOCOLS="sslv3">
+    <option name="USER" value="" />
+    <option name="PASSWORD" value="" />
+    <option name="mySSHConnectionTimeout" value="30000" />
+    <option name="mySSHReadTimeout" value="30000" />
+    <option name="LAST_MERGED_REVISION" />
+    <option name="MERGE_DRY_RUN" value="false" />
+    <option name="MERGE_DIFF_USE_ANCESTRY" value="true" />
+    <option name="UPDATE_LOCK_ON_DEMAND" value="false" />
+    <option name="IGNORE_SPACES_IN_MERGE" value="false" />
+    <option name="CHECK_NESTED_FOR_QUICK_MERGE" value="false" />
+    <option name="IGNORE_SPACES_IN_ANNOTATE" value="true" />
+    <option name="SHOW_MERGE_SOURCES_IN_ANNOTATE" value="true" />
+    <option name="FORCE_UPDATE" value="false" />
+    <option name="IGNORE_EXTERNALS" value="false" />
+    <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7bf6f163-2474-4df3-9125-596297f7400e" name="Default" comment="" />
+      <created>1415241609597</created>
+      <updated>1415241609597</updated>
+    </task>
+    <task id="LOCAL-00001" summary="-added js file instead of typescript">
+      <created>1415242698921</created>
+      <updated>1415242698921</updated>
+    </task>
+    <task id="LOCAL-00002" summary="-added new scrolling background image&#10;-character now follows mouse on the y axis also">
+      <created>1415251361812</created>
+      <updated>1415251361812</updated>
+    </task>
+    <task id="LOCAL-00003" summary="-replaced old code with new object oriented code&#10;-added new assets/images&#10;-seeking out a js version of the createjs-lib.d.ts file so that the game will work again">
+      <created>1415415409030</created>
+      <updated>1415415409030</updated>
+    </task>
+    <task id="LOCAL-00004" summary="-replaced old code with new object oriented code&#10;-added new assets/images&#10;-seeking out a js version of the createjs-lib.d.ts file so that the game will work again">
+      <created>1415415531601</created>
+      <updated>1415415531601</updated>
+    </task>
+    <task id="LOCAL-00005" summary="-got typescript transpiling correctly and added createjs minified version to the project so it should compile properly">
+      <created>1415558263675</created>
+      <updated>1415558263675</updated>
+    </task>
+    <task id="LOCAL-00006" summary="-re-added the typescript files for the objects, states, and managers">
+      <created>1415558409252</created>
+      <updated>1415558409252</updated>
+    </task>
+    <task id="LOCAL-00007" summary="-re-added the typescript files for the objects, states, and managers">
+      <created>1415558433068</created>
+      <updated>1415558433068</updated>
+    </task>
+    <task id="LOCAL-00008" summary="-typescript/javascript organization updates&#10;-background scrolls sideways now&#10;-working on obstacles and point gainers to scroll sideways also">
+      <created>1415572186596</created>
+      <updated>1415572186596</updated>
+    </task>
+    <task id="LOCAL-00009" summary="-got clouds and islands scrolling sideways&#10;-going to start adding new objects and custom images soon">
+      <created>1415580343962</created>
+      <updated>1415580343962</updated>
+    </task>
+    <task id="LOCAL-00010" summary="-refactored collision class and methods to be more DRY making it easier to add collision functionality to objects">
+      <created>1415596459941</created>
+      <updated>1415596459941</updated>
+    </task>
+    <task id="LOCAL-00011" summary="-added spritesheet for vegetables&#10;-attempted at adding functionality to group obstacles together but reverted, will continue to develop this for the first version of sugarRush">
+      <created>1415681043817</created>
+      <updated>1415681043817</updated>
+    </task>
+    <task id="LOCAL-00012" summary="-Created new algorithm to detect collisions (rectangle collisions = slightly more accurate)&#10;-Added all vegetable sprite images&#10;-Tested new collision mechanism using a simple collision test class">
+      <created>1415773549417</created>
+      <updated>1415773549417</updated>
+    </task>
+    <task id="LOCAL-00013" summary="-added an obstacle manager class to control when display objects (veggies) are added to the screen&#10;-within the new class the number of display objects on the screen can be controlled&#10;-added new graphics&#10;-added new sounds&#10;-with the use of this obstacleManager class I will be able to manage more complex display objects/containers in the next version of the game">
+      <created>1415895298956</created>
+      <updated>1415895298956</updated>
+    </task>
+    <task id="LOCAL-00014" summary="-refactored some file names and tweaked the regX and regY of the character">
+      <created>1415899391039</created>
+      <updated>1415899391039</updated>
+    </task>
+    <task id="LOCAL-00015" summary="-edited soundtrack to loop even more effectively&#10;-Added filter method to the collision class to allow for character to get slightly closer to the veggies before colliding.">
+      <created>1415929822131</created>
+      <updated>1415929822131</updated>
+    </task>
+    <task id="LOCAL-00016" summary="-added instructions to the menu screen&#10;-added a candy spritesheet and have them displaying randomly">
+      <created>1416006696221</created>
+      <updated>1416006696221</updated>
+    </task>
+    <task id="LOCAL-00017" summary="-added sugar meter that corresponds with lives underneath the scenes&#10;-Thoroughly commented all important pieces of code&#10;-Added minor css to create better appeal for the game&#10;-tweaked collision class to be even more accurate&#10;-veggies can now only start rotated one way instead of full 180&#10;-added comment headers for each ts file">
+      <created>1416038129526</created>
+      <updated>1416038129526</updated>
+    </task>
+    <task id="LOCAL-00018" summary="-Project clean up: deleted un-needed assets and files">
+      <created>1416071561946</created>
+      <updated>1416071561946</updated>
+    </task>
+    <task id="LOCAL-00019" summary="-added logo to game page">
+      <created>1416072618898</created>
+      <updated>1416072618898</updated>
+    </task>
+    <task id="LOCAL-00020" summary="-added loading image&#10;-added white background behind game screen">
+      <created>1416284071029</created>
+      <updated>1416284071029</updated>
+    </task>
+    <task id="LOCAL-00021" summary="-added imageGroup class which will contain different groups of veggies&#10;-each group of veggies (carrots, peppers, etc..) will move in their own unique way">
+      <created>1417374587970</created>
+      <updated>1417374587970</updated>
+    </task>
+    <task id="LOCAL-00022" summary="-got image group class adding to the stage successfully&#10;-added delay to character when moving the mouse">
+      <created>1417717803137</created>
+      <updated>1417717803137</updated>
+    </task>
+    <task id="LOCAL-00023" summary="-added new object oriented filter scale technique&#10;-added line to trail the character... going to fix this up with fade delay or another solution">
+      <created>1417747870362</created>
+      <updated>1417747870362</updated>
+    </task>
+    <task id="LOCAL-00024" summary="-got one image group to display on the screen and move as expected&#10;-added mute button that can be activated on click by using the up and down arrows">
+      <created>1417998319246</created>
+      <updated>1417998319246</updated>
+    </task>
+    <task id="LOCAL-00025" summary="-started to create rotating group with individual images in it">
+      <created>1418242974389</created>
+      <updated>1418242974390</updated>
+    </task>
+    <task id="LOCAL-00026" summary="-commit for all missing js files">
+      <created>1418244178914</created>
+      <updated>1418244178914</updated>
+    </task>
+    <task id="LOCAL-00027" summary="-added remaining missing js files">
+      <created>1418244473916</created>
+      <updated>1418244473916</updated>
+    </task>
+    <task id="LOCAL-00028" summary="-changed this.width and this.height to this.image to try and fix typescript transpile failure">
+      <created>1418247672091</created>
+      <updated>1418247672091</updated>
+    </task>
+    <task id="LOCAL-00029" summary="-found syntax error within the reset function">
+      <created>1418249596983</created>
+      <updated>1418249596983</updated>
+    </task>
+    <task id="LOCAL-00030" summary="-commit changes to allow merging">
+      <created>1418251089241</created>
+      <updated>1418251089241</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Fixed compile errors...">
+      <created>1418263501815</created>
+      <updated>1418263501815</updated>
+    </task>
+    <task id="LOCAL-00032" summary="-fixed error to do with undefined original in the scale class&#10;-begining to add image instances to the rotating group class to inherit collision detection">
+      <created>1418346001905</created>
+      <updated>1418346001905</updated>
+    </task>
+    <task id="LOCAL-00033" summary="-fixed collision detection for normal images&#10;-added groupManager to control when groups of images are added">
+      <created>1418451077912</created>
+      <updated>1418451077912</updated>
+    </task>
+    <task id="LOCAL-00034" summary="-fixed collision detection for rotatingGroup images&#10;-added ability to disable collisions but need to add functionality for design aspects">
+      <created>1418510175077</created>
+      <updated>1418510175077</updated>
+    </task>
+    <task id="LOCAL-00035" summary="-added collidableSprite class to be used in place of all normal createjs.Sprites so that collision events can be handled">
+      <created>1418517637145</created>
+      <updated>1418517637145</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
+    <servers />
+  </component>
+  <component name="TodoView" selected-index="0">
+    <todo-panel id="selected-file">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="default-changelist">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="false" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="23" width="1440" height="873" extended-state="6" />
+    <editor active="false" />
+    <layout>
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32978722" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32978722" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3299712" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32978722" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32978722" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32978722" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18083574" sideWeight="0.67021275" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.32978722" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Thumbnails" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32978722" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32978722" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="CHECK_NEW_TODO" value="true" />
+    <option name="myTodoPanelSettings">
+      <value>
+        <are-packages-shown value="false" />
+        <are-modules-shown value="false" />
+        <flatten-packages value="false" />
+        <is-autoscroll-to-source value="false" />
+      </value>
+    </option>
+    <option name="PERFORM_UPDATE_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_COMMIT_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_EDIT_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_CHECKOUT_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_ADD_REMOVE_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_ROLLBACK_IN_BACKGROUND" value="false" />
+    <option name="CHECK_LOCALLY_CHANGED_CONFLICTS_IN_BACKGROUND" value="false" />
+    <option name="CHANGED_ON_SERVER_INTERVAL" value="60" />
+    <option name="SHOW_ONLY_CHANGED_IN_SELECTION_DIFF" value="true" />
+    <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
+    <option name="DEFAULT_PATCH_EXTENSION" value="patch" />
+    <option name="SHORT_DIFF_HORIZONTALLY" value="true" />
+    <option name="SHORT_DIFF_EXTRA_LINES" value="2" />
+    <option name="SOFT_WRAPS_IN_SHORT_DIFF" value="true" />
+    <option name="INCLUDE_TEXT_INTO_PATCH" value="false" />
+    <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
+    <option name="SHOW_FILE_HISTORY_DETAILS" value="true" />
+    <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
+    <option name="SHOW_DIRTY_RECURSIVELY" value="false" />
+    <option name="LIMIT_HISTORY" value="true" />
+    <option name="MAXIMUM_HISTORY_ROWS" value="1000" />
+    <option name="UPDATE_FILTER_SCOPE_NAME" />
+    <option name="USE_COMMIT_MESSAGE_MARGIN" value="false" />
+    <option name="COMMIT_MESSAGE_MARGIN_SIZE" value="72" />
+    <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
+    <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
+    <option name="LAST_COMMIT_MESSAGE" value="-added collidableSprite class to be used in place of all normal createjs.Sprites so that collision events can be handled" />
+    <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="REFORMAT_BEFORE_FILE_COMMIT" value="false" />
+    <option name="FILE_HISTORY_DIALOG_COMMENTS_SPLITTER_PROPORTION" value="0.8" />
+    <option name="FILE_HISTORY_DIALOG_SPLITTER_PROPORTION" value="0.5" />
+    <option name="ACTIVE_VCS_NAME" />
+    <option name="UPDATE_GROUP_BY_PACKAGES" value="false" />
+    <option name="UPDATE_GROUP_BY_CHANGELIST" value="false" />
+    <option name="UPDATE_FILTER_BY_SCOPE" value="false" />
+    <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
+    <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
+    <MESSAGE value="-added spritesheet for vegetables&#10;-attempted at adding functionality to group obstacles together but reverted, will continue to develop this for the first version of sugarRush" />
+    <MESSAGE value="-Created new algorithm to detect collisions (rectangle collisions = slightly more accurate)&#10;-Added all vegetable sprite images&#10;-Tested new collision mechanism using a simple collision test class" />
+    <MESSAGE value="-added an obstacle manager class to control when display objects (veggies) are added to the screen&#10;-within the new class the number of display objects on the screen can be controlled&#10;-added new graphics&#10;-added new sounds&#10;-with the use of this obstacleManager class I will be able to manage more complex display objects/containers in the next version of the game" />
+    <MESSAGE value="-refactored some file names and tweaked the regX and regY of the character" />
+    <MESSAGE value="-edited soundtrack to loop even more effectively&#10;-Added filter method to the collision class to allow for character to get slightly closer to the veggies before colliding." />
+    <MESSAGE value="-added instructions to the menu screen&#10;-added a candy spritesheet and have them displaying randomly" />
+    <MESSAGE value="-added sugar meter that corresponds with lives underneath the scenes&#10;-Thoroughly commented all important pieces of code&#10;-Added minor css to create better appeal for the game&#10;-tweaked collision class to be even more accurate&#10;-veggies can now only start rotated one way instead of full 180&#10;-added comment headers for each ts file" />
+    <MESSAGE value="-Project clean up: deleted un-needed assets and files" />
+    <MESSAGE value="-added logo to game page" />
+    <MESSAGE value="-added loading image&#10;-added white background behind game screen" />
+    <MESSAGE value="-added imageGroup class which will contain different groups of veggies&#10;-each group of veggies (carrots, peppers, etc..) will move in their own unique way" />
+    <MESSAGE value="-got image group class adding to the stage successfully&#10;-added delay to character when moving the mouse" />
+    <MESSAGE value="-added new object oriented filter scale technique&#10;-added line to trail the character... going to fix this up with fade delay or another solution" />
+    <MESSAGE value="-got one image group to display on the screen and move as expected&#10;-added mute button that can be activated on click by using the up and down arrows" />
+    <MESSAGE value="-started to create rotating group with individual images in it" />
+    <MESSAGE value="-commit for all missing js files" />
+    <MESSAGE value="-added remaining missing js files" />
+    <MESSAGE value="-changed this.width and this.height to this.image to try and fix typescript transpile failure" />
+    <MESSAGE value="-found syntax error within the reset function" />
+    <MESSAGE value="-commit changes to allow merging" />
+    <MESSAGE value="Fixed compile errors..." />
+    <MESSAGE value="-fixed error to do with undefined original in the scale class&#10;-begining to add image instances to the rotating group class to inherit collision detection" />
+    <MESSAGE value="-fixed collision detection for normal images&#10;-added groupManager to control when groups of images are added" />
+    <MESSAGE value="-fixed collision detection for rotatingGroup images&#10;-added ability to disable collisions but need to add functionality for design aspects" />
+    <MESSAGE value="-added collidableSprite class to be used in place of all normal createjs.Sprites so that collision events can be handled" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="2" />
+    </breakpoint-manager>
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/js/easeljs.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="553" column="0" selection-start="24924" selection-end="25072" vertical-scroll-proportion="-13.074074">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scripts/objects/button.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="32" selection-start="307" selection-end="307" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scripts/managers/ObstacleManager.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="17" selection-start="577" selection-end="577" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scripts/objects/character.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="0" selection-start="593" selection-end="593" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="52" selection-start="1586" selection-end="1586" vertical-scroll-proportion="-15.666667">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scripts/managers/collision.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="62" column="0" selection-start="2982" selection-end="2982" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scripts/objects/image.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="158" column="5" selection-start="5267" selection-end="5267" vertical-scroll-proportion="0.0">
+          <folding>
+            <marker date="1418517408000" expanded="true" signature="624:5267" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scripts/game.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="46" selection-start="1388" selection-end="1388" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scripts/objects/candy.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="58" column="55" selection-start="2180" selection-end="2180" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scripts/objects/collidableSprite.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="28" selection-start="1337" selection-end="1337" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scripts/filters/scale.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="35" selection-start="675" selection-end="675" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scripts/objects/movingImage.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="0" selection-start="563" selection-end="563" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scripts/objects/rotatingGroup.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="45" column="46" selection-start="1619" selection-end="1619" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scripts/managers/groupManager.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="37" selection-start="1173" selection-end="1173" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scripts/states/play.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="89" column="62" selection-start="3614" selection-end="3614" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scripts/managers/asset.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="115" column="29" selection-start="3358" selection-end="3358" vertical-scroll-proportion="0.7186147">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>typescript</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>sugarRush</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.5" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>3rdPartyJavascript</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
+

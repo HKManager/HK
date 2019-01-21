@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Anagram</title>
+  <!-- Fonts -->
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" type="text/css" href="css/game.css">
+</head>
+
+<body>
+  <div class="wrapper">
+    <!-- Countdown timer -->
+    <div id="timer">00:00</div>
+
+    <!-- Player's current score -->
+    <div id="score">Score: 00</div>
+
+    <!-- Current anagram question -->
+    <div id="current_word"></div>
+
+    <!-- Current choices -->
+    <button class="anagram_button"></button>
+    <button class="anagram_button"></button><br>
+    <button class="anagram_button"></button>
+    <button class="anagram_button"></button>
+  </div>
+
+  <!-- Loss screen is hidden until the game is over -->
+  <div id="loss_screen">
+    <h1>You have lost!</h1>
+    <p>Your score: </p>
+    <p id="final_score">25</p>
+    <button id="reset">Play again</button>
+  </div>
+  <script src="js/string-lib.js"></script>
+  <script src="js/anagrams.js"></script>
+</body>
+
+</html>

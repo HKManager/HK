@@ -1,0 +1,52 @@
+<component name="libraryTable">
+  <library name="Generated files" type="javaScript">
+    <properties>
+      <sourceFilesUrls>
+        <item url="file://$PROJECT_DIR$/Scripts/objects/collidableSprite.js" />
+        <item url="file://$PROJECT_DIR$/Scripts/objects/movingImage.js" />
+        <item url="file://$PROJECT_DIR$/Scripts/filters/scale.js" />
+        <item url="file://$PROJECT_DIR$/Scripts/objects/rotatingGroup.js" />
+        <item url="file://$PROJECT_DIR$/Scripts/managers/obstacleManager.js" />
+        <item url="file://$PROJECT_DIR$/Scripts/objects/background.js" />
+        <item url="file://$PROJECT_DIR$/*.js" />
+        <item url="file://$PROJECT_DIR$/Scripts/states/gameover.js" />
+        <item url="file://$PROJECT_DIR$/Scripts/states/play.js" />
+        <item url="file://$PROJECT_DIR$/Scripts/objects/label.js" />
+        <item url="file://$PROJECT_DIR$/Scripts/objects/image.js" />
+        <item url="file://$PROJECT_DIR$/Scripts/objects/scoreboard.js" />
+        <item url="file://$PROJECT_DIR$/Scripts/managers/asset.js" />
+        <item url="file://$PROJECT_DIR$/Scripts/game.js" />
+        <item url="file://$PROJECT_DIR$/Scripts/managers/groupManager.js" />
+        <item url="file://$PROJECT_DIR$/Scripts/objects/candy.js" />
+        <item url="file://$PROJECT_DIR$/Scripts/managers/collision.js" />
+        <item url="file://$PROJECT_DIR$/Scripts/objects/character.js" />
+        <item url="file://$PROJECT_DIR$/Scripts/objects/instructions.js" />
+        <item url="file://$PROJECT_DIR$/Scripts/managers/testCollision.js" />
+      </sourceFilesUrls>
+    </properties>
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/Scripts/objects/collidableSprite.js" />
+      <root url="file://$PROJECT_DIR$/Scripts/objects/rotatingGroup.js" />
+      <root url="file://$PROJECT_DIR$/Scripts/filters/scale.js" />
+      <root url="file://$PROJECT_DIR$/Scripts/objects/movingImage.js" />
+      <root url="file://$PROJECT_DIR$/Scripts/managers/obstacleManager.js" />
+      <root url="file://$PROJECT_DIR$/Scripts/objects/background.js" />
+      <root url="file://$PROJECT_DIR$/*.js" />
+      <root url="file://$PROJECT_DIR$/Scripts/states/gameover.js" />
+      <root url="file://$PROJECT_DIR$/Scripts/states/play.js" />
+      <root url="file://$PROJECT_DIR$/Scripts/objects/image.js" />
+      <root url="file://$PROJECT_DIR$/Scripts/objects/label.js" />
+      <root url="file://$PROJECT_DIR$/Scripts/managers/asset.js" />
+      <root url="file://$PROJECT_DIR$/Scripts/objects/scoreboard.js" />
+      <root url="file://$PROJECT_DIR$/Scripts/game.js" />
+      <root url="file://$PROJECT_DIR$/Scripts/managers/groupManager.js" />
+      <root url="file://$PROJECT_DIR$/Scripts/objects/candy.js" />
+      <root url="file://$PROJECT_DIR$/Scripts/managers/collision.js" />
+      <root url="file://$PROJECT_DIR$/Scripts/objects/character.js" />
+      <root url="file://$PROJECT_DIR$/Scripts/managers/testCollision.js" />
+      <root url="file://$PROJECT_DIR$/Scripts/objects/instructions.js" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -10,118 +10,112 @@
     <link rel="stylesheet" href="../css/menu/style.css"> <!-- Resource style -->
     <script src="../js/menu/modernizr.js"></script> <!-- Modernizr -->
 
-    <title>Rounded Animated Navigation | CodyHouse</title>
+
+
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/main.js"></script> <!-- Modernizr -->
+    <!--
+        This map was created using Pixel Map Generator by amCharts and is licensed under the Creative Commons Attribution 4.0 International License.
+        You may use this map the way you see fit as long as proper attribution to the name of amCharts is given in the form of link to https://pixelmap.amcharts.com/
+        To view a copy of this license, visit http://creativecommons.org/licenses/by/4.0/
+
+        If you would like to use this map without any attribution, you can acquire a commercial license for the JavaScript Maps - a tool that was used to produce this map.
+        To do so, visit amCharts Online Store: https://www.amcharts.com/online-store/
+    -->
+    <!-- amCharts javascript sources -->
+    <script type="text/javascript" src="https://www.amcharts.com/lib/3/ammap.js"></script>
+    <script type="text/javascript" src="https://www.amcharts.com/lib/3/maps/js/southKoreaLow.js"></script>
+
     <style>
-        .currently-loading {
-            border: 0;
-            padding: 0;
-            /*opacity: 0.45;*/
-            background-image: url(img/game_back.gif);
-            background-size: cover;
-        }
-
-        /*button {
-            border: none;
-            font-family: 'Nanum Pen Script';
-            font-size: 35px;
-            background-color:transparent;
-            color: #0053ff;
-        }*/
-
-        .s1 {
-            text-shadow: 2px 2px 2px gray;
-        }
-
-        .s2 {
-            text-shadow: 4px 2px 2px gray;
-        }
-
-        .s3 {
-            text-shadow: 6px 2px 2px gray;
-        }
-
-        .button {
-            border: none;
-            font-family: 'Nanum Gothic', serif;
-            /* font-family: 'Nanum Pen Script', serif; */
-            font-weight: bold;
-            font-size: 35px;
-            background-color: transparent;
-            /* color: #0053ff; */
-            cursor: pointer;
-            
-
-            background: -webkit-linear-gradient(#F29661, #CC723D);
-             -webkit-background-clip: text; 
-            -webkit-text-fill-color: transparent;
-        }
-
-        .button2 {
-            background-color: white;
-            color: black;
-            border: 2px solid #008CBA;
-        }
-
-        .button3 {
-            background-color: white;
-            color: black;
-            border: 2px solid #f44336;
-        }
-
-        .button4 {
-            background-color: white;
-            color: black;
-            border: 2px solid #e7e7e7;
-        }
-
-        .button5 {
-            background-color: white;
-            color: black;
-            border: 2px solid #555555;
-        }
     </style>
 </head>
 
 <body class="currently-loading">
+
+    <audio id="sound" src="./bgm/bgm_1.mp3" autoplay="autoplay" loop="loop" ></audio>
+
     <div>
         <nav>
             <ul class="cd-primary-nav">
                 <li><a href="#0" style="font-weight: bold;" onclick="ShowGame()">게임하기 (두근두근 단어 오락실)</a></li>
-                <li><a href="#0" style="font-weight: bold;">땅따먹기 (알쏭달쏭 단어 학습실)</a></li>
+                <li><a href="#0" style="font-weight: bold;" onclick="ShowStudy()">땅따먹기 (알쏭달쏭 단어 학습실)</a></li>
                 <li><a href="#0" style="font-weight: bold;">관리하기 (이것저것 단어 관리방)</a></li>
                 <li><a href="#0" style="font-weight: bold;">조회하기 (오목조목 정보 조회방)</a></li>
                 <li><a href="#0" style="font-weight: bold;">설정하기 (오밀조밀 어플 설정방)</a></li>
             </ul>
         </nav>
-        <main style="padding-left:30px;">
+        <main>
 
-            <div id="divGame">
+            <!-- 게임패널 -->
+            <div id="divGame" class="horizontalCenter" style="display:none;">
 
-                <br />
-                <br />
+                <div style="width:100%;height:100px;">
 
-                <img id="btnSnake" src="img/btnSnake_off.png" style="width:200px;" onmousedown="downSnake()" onmouseup="upSnake()" onclick="ShowSnake()" />
+                    <img id="btnShooting" src="img/btnShooting_off.png" style="width:200px;" onmousedown="downShooting()"
+                         onmouseup="upShooting()" onclick="ShowShooting()" />
 
-                <br />
-                <br />
-                <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
 
-                <img id="btnShooting" src="img/btnShooting_off.png" style="width:200px;" onmousedown="downShooting()"
-                    onmouseup="upShooting()"/>
+                    <img id="btnWallOut" src="img/btnWallOut_off.png" style="width:200px;" onmousedown="downWallOut()"
+                         onmouseup="upWallOut()" onclick="ShowFlyBird()" />
 
-                <br />
-                <br />
-                <br />
+                </div>
 
-                <img id="btnWallOut" src="img/btnWallOut_off.png" style="width:200px;" onmousedown="downWallOut()"
-                    onmouseup="upWallOut()" onclick="ShowFlyBird()" />
 
-                <br />
-                <br />
-                <br />
 
-                <img id="btnPuyoPuyo" src="img/btnPuyoPuyo_off.png" style="width:200px;" onmousedown="downPuyoPuyo()"
-                    onmouseup="upPuyoPuyo()" onclick="ShowPuyoPuyo()" />
+            </div>
+
+            <!-- 학습 패널 -->
+            <div id="divStudy" style="width: 100%; min-height: 100%;">
+                <div id="map" style="width: 100%;min-height: 100%;"></div>
+
+
+                <div id="login-box" class="login-popup">
+                    <a class="close" onclick="closePopupStudy()"><img src="./img/close_pop.png" class="btn_close" title="Close Window" alt="Close" /></a>
+                    <form method="post" class="signin" action="#">
+                        <!--<fieldset class="textbox">
+                            <label class="username">
+                                <span>username or email</span>
+                                <input id="username" name="username" value="" type="text" autocomplete="on" placeholder="username">
+                            </label>
+
+                            <label class="password">
+                                <span>password</span>
+                                <input id="password" name="password" value="" type="password" placeholder="password">
+                            </label>
+
+                            <button class="submit button" type="button">sign in</button>
+
+                            <p>
+                                <a class="forgot" href="#">forgot your password?</a>
+                            </p>
+
+                        </fieldset>-->
+
+                        <div class="horizontalCenter">
+
+                            <br />
+
+                            <a onclick="ShowWordCard()">학  습  방</a>
+
+                            <br />
+                            <br />
+
+
+                            <a onclick="ShowWordQuiz()">단어퀴즈</a>
+
+                            <br />
+                            <br />
+
+                            <a onclick="ShowWordTest()">단어시험</a>
+
+                        </div>
+
+                    </form>
+                </div>
 
             </div>
 
@@ -134,122 +128,6 @@
         </div> <!-- cd-overlay-content -->
         <a href="#0" class="cd-nav-trigger">Menu<span class="cd-icon"></span></a>
     </div>
-
-    <script type="text/javascript">
-
-
-        function invokeCSCode(data) {
-            try {
-                invokeCSharpAction(data);
-            }
-            catch (err) {
-            }
-        }
-
-        window.onload = function () {
-            $("#btnSnake").bind("touchstart", function (e) {
-                $('#btnSnake').attr("src", "img/btnSnake_on.png");
-            });
-
-            $("#btnSnake").bind("touchend", function (e) {
-                $('#btnSnake').attr("src", "img/btnSnake_off.png");
-            });
-
-            $("#btnShooting").bind("touchstart", function (e) {
-                $('#btnShooting').attr("src", "img/btnShooting_on.png");
-            });
-
-            $("#btnShooting").bind("touchend", function (e) {
-                $('#btnShooting').attr("src", "img/btnShooting_off.png");
-            });
-
-            $("#btnWallOut").bind("touchstart", function (e) {
-                $('#btnWallOut').attr("src", "img/btnWallOut_on.png");
-            });
-
-            $("#btnWallOut").bind("touchend", function (e) {
-                $('#btnWallOut').attr("src", "img/btnWallOut_off.png");
-            });
-
-            $("#btnPuyoPuyo").bind("touchstart", function (e) {
-                $('#btnPuyoPuyo').attr("src", "img/btnPuyoPuyo_on.png");
-            });
-
-            $("#btnPuyoPuyo").bind("touchend", function (e) {
-                $('#btnPuyoPuyo').attr("src", "img/btnPuyoPuyo_off.png");
-            });
-        };
-
-        function downSnake() {
-            $('#btnSnake').attr("src", "img/btnSnake_on.png");
-        }
-
-        function upSnake() {
-            $('#btnSnake').attr("src", "img/btnSnake_off.png");
-        }
-
-        function downShooting() {
-            $('#btnShooting').attr("src", "img/btnShooting_on.png");
-        }
-
-        function upShooting() {
-            $('#btnShooting').attr("src", "img/btnShooting_off.png");
-        }
-
-        function downWallOut() {
-            $('#btnWallOut').attr("src", "img/btnWallOut_on.png");
-        }
-
-        function upWallOut() {
-            $('#btnWallOut').attr("src", "img/btnWallOut_off.png");
-        }
-
-        function downPuyoPuyo() {
-            $('#btnPuyoPuyo').attr("src", "img/btnPuyoPuyo_on.png");
-        }
-
-        function upPuyoPuyo() {
-            $('#btnPuyoPuyo').attr("src", "img/btnPuyoPuyo_off.png");
-        }
-
-        function hideDiv() {
-            $('#divGame').hide();
-        }
-
-        function ShowGame() {
-            this.hideDiv();
-            $('#divGame').show();
-            toggleNavView();
-        }
-
-        function ShowSnake() {
-
-            var obj = { handle: "06", view: "main", data: "snake" };
-
-            var data = JSON.stringify(obj);
-
-            //window.location.href = "../game/Snake/snake.html";
-            invokeCSCode(data);
-        }
-
-        function ShowBlockOut() {
-            window.location.href = "../game/BlockOut/example/game-breakout/index.html";
-        }
-
-        function ShowPuyoPuyo() {
-            window.location.href = "../game/PuyoPuyo/example/game-samegame/index.html";
-        }
-
-        function ShowFlyBird() {
-            var obj = { handle: "06", view: "main", data: "flybird" };
-
-            var data = JSON.stringify(obj);
-
-            //window.location.href = "../game/Snake/snake.html";
-            invokeCSCode(data);
-        }
-
-    </script>
 
     <script src="../js/menu/jquery-2.1.1.js"></script>
     <script src="../js/menu/velocity.min.js"></script>
