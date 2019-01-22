@@ -357,7 +357,6 @@ function selectVisualization( linearData, year, tests, outcomeCategories, missil
 
 	//	build the mesh
 	
-	
 	// - 신인환 주석 좌측 하단 관련 데이터 표출
 	console.time('getVisualizedMesh');
 	
