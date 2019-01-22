@@ -76,7 +76,7 @@ var d3Graphs = {
 		$("#hudHeader .title").text(dict['_title']);
 		$("#hudHeader .subtitle").text(dict['_subtitle']);
 		$("#hudButtons .searchBtn").val(dict['search'].toUpperCase());
-		$("#hudButtons .aboutBtn").val(dict['about'].toUpperCase());
+		$("#hudButtons .aboutBtn").val(dict['search'].toUpperCase());
 		$("#history .graph .labels .outcome").text(dict['test-outcome'].toUpperCase());
 		$("#history .graph .labels .successes").text(dict['success'].toUpperCase());
 		$("#history .graph .labels .failures").text(dict['failure'].toUpperCase());
