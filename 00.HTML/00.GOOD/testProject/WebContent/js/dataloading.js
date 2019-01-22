@@ -2,7 +2,7 @@ function loadFacilityData(callback) {
 	// We're going to ask a file for the JSON data.
 	xhr = new XMLHttpRequest();
 
-	// Where do we get the data?
+	// Where do we get the data?hudHeader
 	xhr.open('GET', facilityFile, true);
 
 	// What do we do when we have it?

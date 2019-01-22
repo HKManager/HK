@@ -76,7 +76,7 @@ var d3Graphs = {
 		$("#hudHeader .title").text(dict['_title']);
 		$("#hudHeader .subtitle").text(dict['_subtitle']);
 		$("#hudButtons .searchBtn").val(dict['search'].toUpperCase());
-		$("#hudButtons .aboutBtn").val(dict['about'].toUpperCase());
+		$("#hudButtons .aboutBtn").val(dict['search'].toUpperCase());
 		$("#history .graph .labels .outcome").text(dict['test-outcome'].toUpperCase());
 		$("#history .graph .labels .successes").text(dict['success'].toUpperCase());
 		$("#history .graph .labels .failures").text(dict['failure'].toUpperCase());
@@ -547,31 +547,31 @@ var d3Graphs = {
 		var successArray = [];
 		var failureArray = [];
 		var unknownArray = [];
-		var successTotal = summary.success.total;
-		var failureTotal = summary.failure.total;
-		var unknownTotal = summary.unknown.total;
+//		var successTotal = summary.success.total;
+//		var failureTotal = summary.failure.total;
+//		var unknownTotal = summary.unknown.total;
 		var minMissileCount = Number.MAX_VALUE;
 		var maxMissileCount = Number.MIN_VALUE;
-		for(var code in missileLookup) {
-			var sCount = summary.success[code];
-			var fCount = summary.failure[code];
-			var uCount = summary.unknown[code];
-			if (sCount > 0) {
-				minMissileCount = Math.min(minMissileCount, sCount);
-				maxMissileCount = Math.max(maxMissileCount, sCount);
-			}
-			if (fCount > 0) {
-				minMissileCount = Math.min(minMissileCount, fCount);
-				maxMissileCount = Math.max(maxMissileCount, fCount);
-			}
-			if (uCount > 0) {
-				minMissileCount = Math.min(minMissileCount, uCount);
-				maxMissileCount = Math.max(maxMissileCount, uCount);
-			}
-			successArray.unshift({"type":code, "count": sCount});
-			failureArray.unshift({"type":code, "count": fCount});
-			unknownArray.unshift({"type":code, "count": uCount});
-		}
+//		for(var code in missileLookup) {
+//			var sCount = summary.success[code];
+//			var fCount = summary.failure[code];
+//			var uCount = summary.unknown[code];
+//			if (sCount > 0) {
+//				minMissileCount = Math.min(minMissileCount, sCount);
+//				maxMissileCount = Math.max(maxMissileCount, sCount);
+//			}
+//			if (fCount > 0) {
+//				minMissileCount = Math.min(minMissileCount, fCount);
+//				maxMissileCount = Math.max(maxMissileCount, fCount);
+//			}
+//			if (uCount > 0) {
+//				minMissileCount = Math.min(minMissileCount, uCount);
+//				maxMissileCount = Math.max(maxMissileCount, uCount);
+//			}
+//			successArray.unshift({"type":code, "count": sCount});
+//			failureArray.unshift({"type":code, "count": fCount});
+//			unknownArray.unshift({"type":code, "count": uCount});
+//		}
 		var max = 19;
 		var yScale = d3.scaleLinear().domain([0,max]).range([0,this.barGraphHeight - this.barGraphBottomPadding - this.barGraphTopPadding]);
 		var midX = this.barGraphWidth / 3;
@@ -769,35 +769,35 @@ var d3Graphs = {
 		var unknownVisible = !$("#outcomeBtns .unknown .label").hasClass('inactive');
 
 		//success total label at bottom
-		var successTotalLabel = this.barGraphSVG.selectAll('text.totalLabel.successTotalLabel').data([1]);
-		successTotalLabel.enter().append('text')
-			.attr('class', 'totalLabel successTotalLabel')
-			.attr('text-anchor', 'end')
-			.attr('x', midX)
-			.merge(successTotalLabel).transition()
-			.attr('y', this.barGraphHeight - this.barGraphBottomPadding + 25)
-			.text(successsesVisible ? successTotal : function() { return this.textContent; })
-			.attr('opacity', successsesVisible ? 1 : 0);
+//		var successTotalLabel = this.barGraphSVG.selectAll('text.totalLabel.successTotalLabel').data([1]);
+//		successTotalLabel.enter().append('text')
+//			.attr('class', 'totalLabel successTotalLabel')
+//			.attr('text-anchor', 'end')
+//			.attr('x', midX)
+//			.merge(successTotalLabel).transition()
+//			.attr('y', this.barGraphHeight - this.barGraphBottomPadding + 25)
+//			.text(successsesVisible ? successTotal : function() { return this.textContent; })
+//			.attr('opacity', successsesVisible ? 1 : 0);
 
 		//failure total label at bottom
-		var failureTotalLabel = this.barGraphSVG.selectAll('text.totalLabel.failureTotalLabel').data([1]);
-		failureTotalLabel.enter().append('text')
-			.attr('class', 'totalLabel failureTotalLabel')
-			.attr('x', midX + 10)
-			.merge(failureTotalLabel).transition()
-			.attr('y', this.barGraphHeight - this.barGraphBottomPadding + 25)
-			.text(failuresVisible ? failureTotal : function() { return this.textContent; })
-			.attr('opacity', failuresVisible ? 1 : 0);
+//		var failureTotalLabel = this.barGraphSVG.selectAll('text.totalLabel.failureTotalLabel').data([1]);
+//		failureTotalLabel.enter().append('text')
+//			.attr('class', 'totalLabel failureTotalLabel')
+//			.attr('x', midX + 10)
+//			.merge(failureTotalLabel).transition()
+//			.attr('y', this.barGraphHeight - this.barGraphBottomPadding + 25)
+//			.text(failuresVisible ? failureTotal : function() { return this.textContent; })
+//			.attr('opacity', failuresVisible ? 1 : 0);
 
 		//unknown total label at bottom
-		var unknownTotalLabel = this.barGraphSVG.selectAll('text.totalLabel.unknownTotalLabel').data([1]);
-		unknownTotalLabel.enter().append('text')
-			.attr('class', 'totalLabel unknownTotalLabel')
-			.attr('x', midX + 112)
-			.merge(unknownTotalLabel).transition()
-			.attr('y', this.barGraphHeight - this.barGraphBottomPadding + 25)
-			.text(unknownVisible ? unknownTotal : function() { return this.textContent; })
-			.attr('opacity', unknownVisible ? 1 : 0);
+//		var unknownTotalLabel = this.barGraphSVG.selectAll('text.totalLabel.unknownTotalLabel').data([1]);
+//		unknownTotalLabel.enter().append('text')
+//			.attr('class', 'totalLabel unknownTotalLabel')
+//			.attr('x', midX + 112)
+//			.merge(unknownTotalLabel).transition()
+//			.attr('y', this.barGraphHeight - this.barGraphBottomPadding + 25)
+//			.text(unknownVisible ? unknownTotal : function() { return this.textContent; })
+//			.attr('opacity', unknownVisible ? 1 : 0);
 	},
 	dragHandleStart: function(event) {
 		console.log('start');
