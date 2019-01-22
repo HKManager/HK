@@ -110,32 +110,27 @@ function loadLangCSS(lang) {
 //	use underscore and ".after" to load these in order
 //	don't look at me I'm ugly
 function start(e) {
-	//	detect for webgl and reject everything else
-	if (!Detector.webgl) {
-		Detector.addGetWebGLMessage();
-	} else {
-		loadLangCSS(lang);
-		//	ensure the map images are loaded first!!
-		mapOutlineImage = new Image();
-		mapOutlineImage.src = 'images/map_outline.png';
-		mapOutlineImage.onload = function() {
-			loadDictData(function() {
-				document.title = dict['_title'];
-				loadFacilityData(function() {
-					loadMissileData(function() {
-						loadTestData(function() {
-							initScene();
-							
-							
-							// -  신인환 주석 지도쪽 애니매이션 파트 
-							//animate();
-						});
+	// detect for webgl and reject everything else
+	loadLangCSS(lang);
+	// ensure the map images are loaded first!!
+	mapOutlineImage = new Image();
+	mapOutlineImage.src = 'images/map_outline.png';
+	mapOutlineImage.onload = function() {
+		loadDictData(function() {
+			document.title = dict['_title'];
+			loadFacilityData(function() {
+				loadMissileData(function() {
+					loadTestData(function() {
+						initScene();
+
+						// - 신인환 주석 지도쪽 애니매이션 파트
+						// animate();
 					});
 				});
 			});
-		};
+		});
 	};
-}
+};
 
 
 

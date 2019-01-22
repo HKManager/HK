@@ -278,9 +278,9 @@ function selectVisualization( linearData, year, tests, outcomeCategories, missil
 	// console.log(selectedTest);
 
 	//	clear markers
-	for( var i in selectableTests ){
-		removeMarkerFromTest( selectableTests[i] );
-	}
+//	for( var i in selectableTests ){
+//		removeMarkerFromTest( selectableTests[i] );
+//	}
 
 	//	build the mesh
 	
