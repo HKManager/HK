@@ -47,9 +47,9 @@ shah.setpos = function(curpos) {
 	
 	var paddingX = 20;
 	var paddingY = 20;
-	
-	var pX = ((54 * parseInt(cellProp.cellIndex)) );
-	var pY = ((53.5 * parseInt(cellProp.parentNode.rowIndex)));
+
+    var pX = ((cellProp.offsetWidth * parseInt(cellProp.cellIndex)));
+    var pY = ((cellProp.offsetHeight * parseInt(cellProp.parentNode.rowIndex)));
 	
 	$('#player').animate({top: pY + 'px', left: pX + 'px'});
 	
