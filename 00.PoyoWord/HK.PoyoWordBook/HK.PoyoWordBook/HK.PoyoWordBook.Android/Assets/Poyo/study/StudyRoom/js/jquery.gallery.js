@@ -14,7 +14,7 @@
 
     var height = window.innerHeight > 0 ? window.innerHeight : screen.height;
     var box = document.getElementById('mainView');
-    var y = ((height - box.style.height) * 0.5) - 220;
+    var y = ((height - box.style.height) * 0.5) - 240;
 
     box.style.top = y + "px";
 

@@ -50,7 +50,27 @@ shah.setpos = function(curpos) {
 
     var pX = ((cellProp.offsetWidth * parseInt(cellProp.cellIndex)));
     var pY = ((cellProp.offsetHeight * parseInt(cellProp.parentNode.rowIndex)));
-	
+
+
+
+    // - ladder2
+    var ladder2Left = ((cellProp.offsetWidth) * 3) - 5;
+    var ladder2Top = ((cellProp.offsetHeight) * 4);
+
+    document.getElementById("ladder2").style.top = ladder2Top + "px";
+    document.getElementById("ladder2").style.left = ladder2Left + "px";
+
+
+    // - ladder3
+    var ladder3Left = ((cellProp.offsetWidth) * 1) + 20;
+    var ladder3Top = ((cellProp.offsetHeight) * 4);
+
+    document.getElementById("ladder3").style.top = ladder3Top + "px";
+    document.getElementById("ladder3").style.left = ladder3Left + "px";
+
+
+
+
 	$('#player').animate({top: pY + 'px', left: pX + 'px'});
 	
 	//document.getElementsByClassName('dice')[0].className = "dice";
