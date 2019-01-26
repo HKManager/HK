@@ -51,23 +51,60 @@ shah.setpos = function(curpos) {
     var pX = ((cellProp.offsetWidth * parseInt(cellProp.cellIndex)));
     var pY = ((cellProp.offsetHeight * parseInt(cellProp.parentNode.rowIndex)));
 
+    var fixX = 46;
+    var fixY = 54;
+
+
+    // - ladder1
+    var ladder1Left = (fixX * 6) - 20;
+    var ladder1Top = (fixY * 6) - 15;
+
+    document.getElementById("ladder1").style.top = ladder1Top  + "px";
+    document.getElementById("ladder1").style.left = ladder1Left + "px";
 
 
     // - ladder2
-    var ladder2Left = ((cellProp.offsetWidth) * 3) - 5;
-    var ladder2Top = ((cellProp.offsetHeight) * 4);
+    var ladder2Left = (fixX * 3) - 5;
+    var ladder2Top = (fixY * 4);
 
     document.getElementById("ladder2").style.top = ladder2Top + "px";
     document.getElementById("ladder2").style.left = ladder2Left + "px";
 
 
     // - ladder3
-    var ladder3Left = ((cellProp.offsetWidth) * 1) + 20;
-    var ladder3Top = ((cellProp.offsetHeight) * 4);
+    var ladder3Left = (fixX * 1) + 20;
+    var ladder3Top = (fixY * 4);
 
     document.getElementById("ladder3").style.top = ladder3Top + "px";
     document.getElementById("ladder3").style.left = ladder3Left + "px";
 
+    // - ladder4
+    var ladder4Left = (fixX * 5) - 10;
+    var ladder4Top = (fixY * 5) - 5;
+
+    document.getElementById("ladder4").style.top = ladder4Top + "px";
+    document.getElementById("ladder4").style.left = ladder4Left + "px";
+
+    // - ladder5
+    var ladder5Left = (fixX * 6) + 5;
+    var ladder5Top = (fixY * 3) - 10;
+
+    document.getElementById("ladder5").style.top = ladder5Top + "px";
+    document.getElementById("ladder5").style.left = ladder5Left + "px";
+
+    // - ladder6
+    var ladder6Left = (fixX * 2) + 10;
+    var ladder6Top = (fixY * 3) - 10;
+
+    document.getElementById("ladder6").style.top = ladder6Top + "px";
+    document.getElementById("ladder6").style.left = ladder6Left + "px";
+
+    // - ladder7
+    var ladder7Left = (fixX * 1) + 20;
+    var ladder7Top = (fixY * 3) - 10;
+
+    document.getElementById("ladder7").style.top = ladder7Top + "px";
+    document.getElementById("ladder7").style.left = ladder7Left + "px";
 
 
 

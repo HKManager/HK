@@ -884,8 +884,9 @@ div#laddersDiv {
 
 #ladder1 {
     width: 51px;
-    height: 86px;
+    height: 51px;
     background: url(../img/ladders/ladder1.png) no-repeat;
+    background-size: 100% 100%;
     top: 402px;
     left: 428px;
 }
@@ -906,8 +907,9 @@ div#laddersDiv {
 
 #ladder4 {
     width: 26px;
-    height: 71px;
+    height: 51px;
     background: url(../img/ladders/ladder4.png) no-repeat;
+    background-size: 100% 100%;
     top: 353px;
     left: 368px;
 }
@@ -930,8 +932,9 @@ div#laddersDiv {
 
 #ladder7 {
     width: 24px;
-    height: 93px;
+    height: 63px;
     background: url(../img/ladders/ladder7.png) no-repeat;
+    background-size: 100% 100%;
     top: 238px;
     left: 92px;
 }

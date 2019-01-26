@@ -12,6 +12,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         WebView lWebView = (WebView)findViewById(R.id.mainView);
+        lWebView.getSettings().setJavaScriptEnabled(true);
+        lWebView.getSettings().setJavaScriptCanOpenWindowsAutomatically(true);
+
         lWebView.loadUrl("file:///android_asset/Poyo/game/AirShooter/index.html");
     }
 }
