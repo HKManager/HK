@@ -227,3 +227,15 @@ function compPokemon() { // continue
     playerMove = 0; // update player move
   }
 }
+
+
+
+
+
+
+var setactiveans = function(ele)
+{
+	if(document.querySelector('.active'))
+		document.querySelector('.active').className = "";
+	ele.className = "active";
+}
