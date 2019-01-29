@@ -27,7 +27,7 @@
     </script>
 </head>
 
-<body>
+<body id="GameMain">
 
     <style>
         .center {
@@ -150,7 +150,8 @@
             // - 신인환 수정 quizMain 가로설정
             var quizMain = document.getElementById('questionViewer');
             var mainGame = document.getElementById('mainGame');
-            var width = screen.width;
+            // var width = screen.width;
+            var width = document.getElementById('GameMain' ).offsetWidth ;  
             width = width - 16;
             quizMain.style.width = width + "px";
             mainGame.style.width = width + "px";
