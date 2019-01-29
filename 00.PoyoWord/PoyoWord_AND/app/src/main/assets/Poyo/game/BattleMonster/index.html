@@ -1,9 +1,5 @@
 <!DOCTYPE html>
-
-
-
 <html>
-
 <head>
     <title>Pokemon</title>
     <script type="text/javascript" src="./battleMonster.js"></script>
@@ -13,14 +9,28 @@
     <link rel="stylesheet" type="text/css" href="battleMonster.css" />
     <script src="js/jquery.countdown360.js" type="text/javascript" charset="utf-8"></script>
 
+    <!-- 네비게이션 메뉴 관련 -->
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/earlyaccess/nanumpenscript.css">
     <link rel="stylesheet" href="../../css/menu/reset.css"> <!-- CSS reset -->
     <link rel="stylesheet" href="../../css/menu/style.css"> <!-- Resource style -->
     <script src="../../js/menu/modernizr.js"></script> <!-- Modernizr -->
+    
+    <!-- <script src="../../js/menu/jquery-2.1.1.js"></script> -->
+    <script src="../../js/menu/velocity.min.js"></script>
+    <script src="../../js/menu/main.js"></script> <!-- Resource jQuery -->
+    <!-- 네비게이션 메뉴 관련 -->
+
+
+    <!-- 게임 관련-->
+    <script src="js/game.js" type="text/javascript" charset="utf-8"></script>
+    <!-- 게임 관련-->
+
+    <!-- 쿼즈 관련 -->
+    <script src="js/quiz.js" type="text/javascript" charset="utf-8"></script>
+    <!-- 쿼즈 관련 -->
 
     <script language="JavaScript">
-        function setMessage(arg) {
-
+        function showData(arg) {
             var music = document.getElementById("submitAns");
             music.innerText = arg;
         }
@@ -43,11 +53,11 @@
     <div style="position:relative;">
         <nav>
             <ul class="cd-primary-nav">
-                <li><a href="#0" style="font-weight: bold;" onclick="ShowGame()">게임하기 (두근두근 단어 오락실)</a></li>
-                <li><a href="#0" style="font-weight: bold;">땅따먹기 (알쏭달쏭 단어 학습실)</a></li>
-                <li><a href="#0" style="font-weight: bold;">관리하기 (이것저것 단어 관리방)</a></li>
-                <li><a href="#0" style="font-weight: bold;">조회하기 (오목조목 정보 조회방)</a></li>
-                <li><a href="#0" style="font-weight: bold;">설정하기 (오밀조밀 어플 설정방)</a></li>
+                <li><a href="#0" style="font-weight: bold;">시작하기</a></li>
+                <li><a href="#0" style="font-weight: bold;">상점가기</a></li>
+                <li><a href="#0" style="font-weight: bold;">관리하기</a></li>
+                <li><a href="#0" style="font-weight: bold;">메인으로</a></li>
+                <li><a href="#0" style="font-weight: bold;">종료하기</a></li>
             </ul>
         </nav>
 
@@ -105,8 +115,6 @@
                 </div>
             </div>
         
-            <!-- <canvas id="puzzle" class="puzzle"></canvas> -->
-        
             <div id="questionViewer">
                 <div id="questionTitle" class="">
                     <p id="questionTitleTxt">사과
@@ -136,10 +144,6 @@
     
     </div>
 
-    <!-- <script src="../../js/menu/jquery-2.1.1.js"></script> -->
-    <script src="../../js/menu/velocity.min.js"></script>
-    <script src="../../js/menu/main.js"></script> <!-- Resource jQuery -->
-
     <script type="text/javascript">
 
         window.onload = function () {
@@ -147,7 +151,7 @@
             var music = document.getElementById("start");
             music.volume = 0.2;
 
-            // - 신인환 수정 quizMain 가로설정
+            // - 신인환 수정 가로설정
             var quizMain = document.getElementById('questionViewer');
             var mainGame = document.getElementById('mainGame');
             // var width = screen.width;
@@ -155,9 +159,9 @@
             width = width - 16;
             quizMain.style.width = width + "px";
             mainGame.style.width = width + "px";
-            // - 신인환 수정 quizMain 가로설정
+            // - 신인환 수정 가로설정
 
-            // window.android.setMessage("abcd");
+            // window.android.setData("abcd");
 
             var isMute = false;
         };
@@ -176,7 +180,8 @@
             fontColor: '#FFFFFF',
             autostart: false,
             onComplete: function () {
-                console.log('done')
+                countdown.start();
+                // countdown.stop();
             }
         });
         countdown.start();

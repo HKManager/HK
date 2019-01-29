@@ -211,7 +211,6 @@ div#questionViewer {
   border-radius: 0px 0px 8px 8px;
   background: url(img/ques-holder.png) no-repeat;
   background-size: 100% 100%;
-  /* bottom: -375px; */
   display: block;
   -webkit-transition: all .5s .3s ease;
 }
