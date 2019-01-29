@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+
+
+
+<html>
+
+<head>
+  <title>Pokemon</title>
+  <script type="text/javascript" src="./battleMonster.js"></script>
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="battleMonster.css" />
+  <script src="js/jquery.countdown360.js" type="text/javascript" charset="utf-8"></script>
+
+    <script language="JavaScript">
+       function setMessage(arg) {
+
+            var music = document.getElementById("submitAns");
+            music.innerText  = arg;
+        }
+    </script>
+</head>
+
+<body>
+    
+    <style>
+        .center {
+            display: block;
+            margin: auto;
+        }
+    </style>
+
+
+
+    <!--<audio controls="controls" autoplay="autoplay" loop="loop" style="height: 40px;width: 200px;">
+
+        <source src="bgm01.mp3" />
+
+    </audio>-->
+
+    <audio id="start" loop>
+        <source src="./bgm/bgm_0.mp3" type="audio/mp3">
+    </audio>
+
+
+    <div class="game center" onclick="playBGM()">
+
+        <div class="player">
+
+            <div id="countdown" style="width:60px;height:60px;"></div>
+
+
+            <!--<div class="stats statsPlayer">
+                <div class="top">
+                    <div class="pokeballs">
+                        <div class="pokeball"></div>
+                        <div class="pokeball"></div>
+                        <div class="pokeball"></div>
+                        <div class="pokeball"></div>
+                        <div class="pokeball"></div>
+                    </div>
+                    <div id="myHP" class="hp-count">100</div>
+                </div>
+                <span class="name">
+                    Blastoise
+                </span>
+                <span class="level">
+                    86
+                </span>
+            </div>
+
+            <div class="stats statsBad">
+                <div class="top">
+                    <div class="pokeballs">
+                        <div class="pokeball"></div>
+                        <div class="pokeball"></div>
+                        <div class="pokeball"></div>
+                        <div class="pokeball"></div>
+                        <div class="pokeball"></div>
+                    </div>
+                    <div id="myHP" class="hp-count">100</div>
+                </div>
+                <span class="name">
+                    Blastoise
+                </span>
+                <span class="level">
+                    86
+                </span>
+            </div>-->
+
+            <img class="pokemonPlayer" src="./img/player/orc_1.gif" alt="A gif from blastoises back sprite" />
+
+            <img class="pokemonBad" src="./img/monster/orc_1.gif" alt="A gif from blastoises back sprite" />
+
+
+        </div>
+    </div>
+
+    <!-- <canvas id="puzzle" class="puzzle"></canvas> -->
+
+    <div id="questionViewer">
+        <div id="questionTitle" class="">
+            <p id="questionTitleTxt">사과<!-- Questions type here --> </p>
+        </div>
+        <div id="userAnswer">
+            <ul>
+                <li onclick="setactiveans(this)">Answer 1</li>
+                <li onclick="setactiveans(this)">Answer 2</li>
+                <li onclick="setactiveans(this)">Answer 3</li>
+                <li onclick="setactiveans(this)">Answer 4</li>
+            </ul>
+        </div>
+        <div><button id="submitAns" onclick="submitAnswer()">Submit</button></div>
+    </div>
+
+    <!-- <script src="../../js/menu/jquery-2.1.1.js"></script> -->
+
+    <script type="text/javascript">
+
+        window.onload = function () {
+
+            var music = document.getElementById("start");
+            music.volume = 0.2;
+
+            var quizMain = document.getElementById('questionViewer');
+
+            var width = screen.width;
+            width = width - 16;
+
+            quizMain.style.width = width + "px";
+
+            window.android.setMessage("abcd");
+
+            var isMute = false;
+
+            // Mute the game if button is clicked
+            $("#mute").click(function () {
+                if (isMute == false) {
+                    $(this).css("backgroundPosition", "0px -40px");
+                    music.volume = 0;
+                    isMute = true;
+                }
+
+                else {
+                    $(this).css("backgroundPosition", "0px 0px");
+                    music.volume = 0.2;
+                    isMute = false;
+                }
+            });
+        };
+
+        function playBGM() {
+            var music = document.getElementById("start");
+            music.play();
+        }
+
+    </script>
+
+    <script type="text/javascript" charset="utf-8">
+
+            var countdown = $("#countdown").countdown360({
+                radius: 35,
+                seconds: 10,
+                fontColor: '#FFFFFF',
+                autostart: false,
+                onComplete: function () { console.log('done') }
+            });
+            countdown.start();
+            console.log('countdown360 ', countdown);
+        //     $(document).on("click", "button",function(e){
+        //     e.preventDefault();
+        //     var type = $(this).attr("data-type");
+        //     if(type === "time-remaining")
+        //     {
+        //         var timeRemaining = countdown.getTimeRemaining();
+        //         alert(timeRemaining);
+        //     }
+        //     else
+        //     {
+        //         var timeElapsed = countdown.getElapsedTime();
+        //         alert(timeElapsed);
+        //     }
+        // });
+     </script>
+    
+
+    <!-- <script src="./js/stage.web.js"></script> -->
+    <script src="./js/example.js"></script>
+    <!-- <script src="./js/app.js"></script> -->
+    <!-- <script src="./js/textures.js"></script> -->
+
+</body>
+
+
+
+</html>
