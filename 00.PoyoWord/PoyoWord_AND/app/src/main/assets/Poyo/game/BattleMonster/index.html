@@ -53,7 +53,7 @@
     <div style="position:relative;">
         <nav>
             <ul class="cd-primary-nav">
-                <li><a href="#0" style="font-weight: bold;">시작하기</a></li>
+                <li><a href="#0" style="font-weight: bold;" onclick="Start()">시작하기</a></li>
                 <li><a href="#0" style="font-weight: bold;">상점가기</a></li>
                 <li><a href="#0" style="font-weight: bold;">관리하기</a></li>
                 <li><a href="#0" style="font-weight: bold;">메인으로</a></li>
@@ -69,43 +69,15 @@
         
                     <div id="countdown" style="width:60px;height:60px;"></div>
         
-                    <!--<div class="stats statsPlayer">
-                        <div class="top">
-                            <div class="pokeballs">
-                                <div class="pokeball"></div>
-                                <div class="pokeball"></div>
-                                <div class="pokeball"></div>
-                                <div class="pokeball"></div>
-                                <div class="pokeball"></div>
-                            </div>
-                            <div id="myHP" class="hp-count">100</div>
-                        </div>
-                        <span class="name">
-                            Blastoise
-                        </span>
-                        <span class="level">
+                    <div class="stats statsPlayer">
+                        <!-- <span class="level">
                             86
-                        </span>
+                        </span> -->
                     </div>
         
                     <div class="stats statsBad">
-                        <div class="top">
-                            <div class="pokeballs">
-                                <div class="pokeball"></div>
-                                <div class="pokeball"></div>
-                                <div class="pokeball"></div>
-                                <div class="pokeball"></div>
-                                <div class="pokeball"></div>
-                            </div>
-                            <div id="myHP" class="hp-count">100</div>
-                        </div>
-                        <span class="name">
-                            Blastoise
-                        </span>
-                        <span class="level">
-                            86
-                        </span>
-                    </div>-->
+                        
+                    </div>
         
                     <img class="pokemonPlayer" src="./img/player/orc_1.gif" alt="A gif from blastoises back sprite" />
         
@@ -151,6 +123,8 @@
             var music = document.getElementById("start");
             music.volume = 0.2;
 
+            toggleNavView();
+
             // - 신인환 수정 가로설정
             var quizMain = document.getElementById('questionViewer');
             var mainGame = document.getElementById('mainGame');
@@ -165,6 +139,12 @@
 
             var isMute = false;
         };
+
+        function Start() {
+
+            toggleNavView();
+            countdown.start();
+        }
 
         function playBGM() {
             var music = document.getElementById("start");
@@ -184,7 +164,6 @@
                 // countdown.stop();
             }
         });
-        countdown.start();
         console.log('countdown360 ', countdown);
     </script>
 </body>

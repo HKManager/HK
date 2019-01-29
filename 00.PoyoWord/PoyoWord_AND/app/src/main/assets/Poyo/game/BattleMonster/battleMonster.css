@@ -53,16 +53,16 @@ body {
 
 .player .statsPlayer {
   position: absolute;
-  top: 18px;
-  left: 10px;
-  width: 140px;
+  top: 90px;
+  left: 45px;
+  width: 80px;
 }
 
 .player .statsBad {
   position: absolute;
-  top: 18px;
-  right: 10px;
-  width: 140px;
+  top: 90px;
+  right: 45px;
+  width: 80px;
 }
 
 .player .pokemonPlayer {
