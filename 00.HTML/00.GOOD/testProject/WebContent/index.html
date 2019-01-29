@@ -86,18 +86,18 @@
 		</script>
 
 		<script type="text/javascript">
-			vw.MapControllerOption = {
-				container : "visualization",
-				mapMode : "2d-map",
-				basemapType : vw.ol3.BasemapType.GRAPHIC_NIGHT,
-				controlDensity : vw.ol3.DensityType.EMPTY,
-				interactionDensity : vw.ol3.DensityType.BASIC,
-				controlsAutoArrange : true,
-				homePosition : vw.ol3.CameraPosition,
-				initPosition : vw.ol3.CameraPosition,
+		vw.ol3.MapOptions  = {			
+	            basemapType : vw.ol3.BasemapType.GRAPHIC_NIGHT,
+	            controlDensity : vw.ol3.DensityType.EMPTY,
+	            interactionDensity : vw.ol3.DensityType.FULL,
+	            controlsAutoArrange : true,
+	            homePosition : vw.ol3.CameraPosition,
+	            initPosition : vw.ol3.CameraPosition
 			};
 
-			mapController = new vw.MapController(vw.MapControllerOption);
+			mapController = new vw.ol3.Map("visualization", vw.ol3.MapOptions);
+			mapController.getView().setCenter([14310231.756076247, 4611822.83153393]); // 위치 이동
+			mapController.getView().setZoom(15);
 		</script>
 
 		<!-- Custom Shader Code for atmospheric glow -->
