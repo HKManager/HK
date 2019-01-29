@@ -138,17 +138,19 @@ function hideDiv() {
 
 function ShowGame() {
 
-    var height = window.innerHeight > 0 ? window.innerHeight : screen.height;
-    var box = document.getElementById('divGame');
-    var y = ((height - box.style.height) * 0.5)-40;
+    // var height = window.innerHeight > 0 ? window.innerHeight : screen.height;
+    // var box = document.getElementById('divGame');
+    // var y = ((height - box.style.height) * 0.5)-40;
 
-    box.style.top = y + "px";
+    // box.style.top = y + "px";
 
-    playBGM();
+    // playBGM();
 
-    this.hideDiv();
-    $('#divStudy').hide();
-    $('#divGame').show();
+    // this.hideDiv();
+    // $('#divStudy').hide();
+    // $('#divGame').show();
+
+    window.location.href = "../game/BattleMonster/index.html";
     toggleNavView();
 }
 
@@ -314,12 +316,12 @@ function ShowShooting() {
     window.location.href = "../game/BattleMonster/pokemon.html";
 }
 
-// - °ÔÀÓ °ü·Ã
+// - ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
 
 
 
-// - ÇÐ½À¹æ °ü·Ã
+// - ï¿½Ð½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 function closePopupStudy() {
             $('#mask , .login-popup').fadeOut(300, function () {
             $('#mask').remove();
