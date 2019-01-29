@@ -5,6 +5,7 @@ body {
 
 
 .game {
+    margin-left: 8px;
     position: relative;
     background-image: url('./img/backgournd/background_4.gif');
     background-size: 100% 100%;
