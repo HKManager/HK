@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport" />
+    <title>Welcome To | Bootstrap Based Admin Template - Material Design</title>
+    <!-- Favicon-->
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css" />
+    <!-- Bootstrap Core Css -->
+    <link href="../../plugins/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <!-- Waves Effect Css -->
+    <link href="../../plugins/node-waves/waves.css" rel="stylesheet" />
+    <!-- Animation Css -->
+    <link href="../../plugins/animate-css/animate.css" rel="stylesheet" />
+    <!-- Morris Chart Css-->
+    <link href="../../plugins/morrisjs/morris.css" rel="stylesheet" />
+    <!-- Custom Css -->
+    <link href="../../css/style.css" rel="stylesheet" />
+    <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
+    <link href="../../css/themes/all-themes.css" rel="stylesheet" />
+
+    <style type="text/css">
+        .row-highlight {
+            background-color: Yellow;
+        }
+
+        .row-click {
+            background-color: #8BBDFF;
+        }
+    </style>
+
+</head>
+
+
+<body class="theme-red" style="margin:0;">
+    <script src="http://code.jquery.com/jquery-2.1.4.min.js">
+    </script>
+
+    <script type='text/javascript' src='../../js/knockout-3.4.2.js'></script>
+
+
+    <!-- Page Loader -->
+    <div class="page-loader-wrapper">
+        <div class="loader">
+            <div class="preloader">
+                <div class="spinner-layer pl-red">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+            </div>
+            <p>Please wait...</p>
+        </div>
+    </div>
+    <!-- #END# Page Loader -->
+    <!-- Overlay For Sidebars -->
+    <div class="overlay"></div>
+    <!-- #END# Overlay For Sidebars -->
+    
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="card" style="min-height:600px">
+                    <div class="header">
+                        <div class="row clearfix">
+                            <div class="col-sm-6">
+                                <h2>
+                                    매입관리
+                                    <small>매입정보를 등록/수정/삭제 하세요.</small>
+                                </h2>
+                            </div>
+
+                            <table style="width:100%;">
+
+                                <tr>
+                                    <td style="width:25%;">
+                                        <div class="form-group" style="margin:5px;width:100%;">
+                                            <button type="button" class="btn btn-primary m-t-15 waves-effect" onclick="QueryAll();" style="width:95%;">재조회</button>
+                                        </div>
+                                    </td>
+
+                                    <td style="width:25%;">
+                                        <div class="form-group" style="margin:5px;width:100%;">
+                                            <button type="button" class="btn btn-primary m-t-15 waves-effect" onclick="Create();" style="width:95%;">등록</button>
+                                        </div>
+
+                                    </td>
+
+                                    <td style="width:25%;">
+                                        <div class="form-group" style="margin:5px;width:100%;">
+                                            <button type="button" class="btn btn-primary m-t-15 waves-effect" onclick="Update();" style="width:95%;">수정</button>
+                                        </div>
+
+                                    </td>
+
+                                    <td style="width:25%;">
+                                        <div class="form-group" style="margin:5px;width:100%;">
+                                            <button type="button" class="btn btn-primary m-t-15 waves-effect" onclick="Delete();" style="width:95%;">삭제</button>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                            </table>
+
+                        </div>
+                    </div>
+                    <div class="body">
+                        <table id="example-table" class="table">
+                            <thead>
+                                <tr>
+                                    <th>매입일시</th>
+                                    <th>매입명</th>
+                                    <th>거래처명</th>
+                                </tr>
+                            </thead>
+                            <tbody data-bind="foreach: list">
+                                <tr data-bind='click: setEditItem'>
+                                    <td data-bind="text: BUY_REGISTER_DT"></td>
+                                    <td data-bind="text: BUY_NAME "></td>
+                                    <td data-bind="text: AC_NAME "></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script type="text/javascript">
+
+        function QueryAll() {
+            var obj = { handle: "01", view: "BUY", data: "" };
+
+            var data = JSON.stringify(obj);
+
+            invokeCSharpAction(data);
+        }
+
+        function Create() {
+            try {
+                var obj = { handle: "06", view: "BUY", data: "" };
+
+                var data = JSON.stringify(obj);
+
+                invokeCSharpAction(data);
+            } catch (excetion) {
+                alert(excetion);
+            }
+        }
+
+        function Update() {
+            var item = JSON.stringify(selectItem);
+
+            var obj = { handle: "06", view: "BUY", data: item };
+
+            var data = JSON.stringify(obj);
+
+            invokeCSharpAction(data);
+        }
+
+        function Delete() {
+            var item = JSON.stringify(selectItem);
+
+            var obj = { handle: "05", view: "BUY", data: item };
+
+            var data = JSON.stringify(obj);
+
+            invokeCSharpAction(data);
+        }
+
+        function logForXamarin(str) {
+            var jsonObj = $.parseJSON(str);
+
+            viewModel.list(jsonObj);
+
+            var tr = $('#example-table').find('tr');
+            tr.bind('mouseover', function (event) {
+                tr.removeClass('row-highlight');
+            });
+            tr.bind('click', function (e) {
+                tr.removeClass('row-click');
+                var tds = $(this).addClass('row-click').find('td');
+            });
+        }
+
+        var viewModel = {
+            list: ko.observableArray([])
+        };
+
+        $(document).ready(function () {
+            ko.applyBindings(viewModel);
+        });
+
+        var selectItem;
+
+        this.setEditItem = function (item) {
+            selectItem = item;
+        }
+    </script>
+
+    <!-- Jquery Core Js -->
+    <script src="../../plugins/jquery/jquery.min.js">
+    </script>
+    <!-- Bootstrap Core Js -->
+    <script src="../../plugins/bootstrap/js/bootstrap.js">
+    </script>
+    <!-- Select Plugin Js -->
+    <script src="../../plugins/bootstrap-select/js/bootstrap-select.js">
+    </script>
+    <!-- Slimscroll Plugin Js -->
+    <script src="../../plugins/jquery-slimscroll/jquery.slimscroll.js">
+    </script>
+    <!-- Waves Effect Plugin Js -->
+    <script src="../../plugins/node-waves/waves.js">
+    </script>
+    <!-- Editable Table Plugin Js -->
+    <script src="../../plugins/editable-table/mindmup-editabletable.js">
+    </script>
+    <!-- Custom Js -->
+    <script src="../../js/admin.js">
+    </script>
+    <script src="../../js/pages/tables/editable-table.js">
+    </script>
+    <!-- Demo Js -->
+    <script src="../../js/demo.js">
+    </script>
+</body>
+</html>
