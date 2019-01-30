@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -22,16 +23,28 @@ public class Manager_Code {
 
     public void Search() {
 
-        Map map = new HashMap();
+        ArrayList<Map> list = new ArrayList<>();
+
+        Map map = null;
 
         db = mHelper.getReadableDatabase();
 
         Cursor cursor;
         cursor = db.rawQuery(Query_Code.GetList, null);
 
-        if(cursor.moveToFirst()) {
+        while(cursor.moveToNext()) {
+
+            map = new HashMap();
+
             map.put("CODE", cursor.getString(cursor.getColumnIndex("CODE")));
+            map.put("CODE_NAME", cursor.getString(cursor.getColumnIndex("CODE_NAME")));
+
+            list.add(map);
         }
+
+        //if(cursor.moveToFirst()) {
+        //    map.put("CODE", cursor.getString(cursor.getColumnIndex("CODE")));
+        //}
 
         int abc = 0;
     }
