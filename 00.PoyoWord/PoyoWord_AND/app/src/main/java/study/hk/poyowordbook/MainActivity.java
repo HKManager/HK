@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             @SuppressLint({ "SetJavaScriptEnabled", "JavascriptInterface" })
             public void onPageFinished(WebView view, String url) {
-                lWebView.loadUrl("javascript:setMessage('" + "abc" + "')");
+                //lWebView.loadUrl("javascript:setMessage('" + "abc" + "')");
             }
 
             public boolean onJsAlert(final WebView view, final String url, final String message, JsResult result) {
@@ -54,7 +54,8 @@ public class MainActivity extends AppCompatActivity {
         //lWebView.getSettings().setJavaScriptCanOpenWindowsAutomatically(true);
 
         //lWebView.loadUrl("http://naver.com");
-        lWebView.loadUrl("file:///android_asset/Poyo/game/BattleMonster/index.html");
+        //lWebView.loadUrl("file:///android_asset/Poyo/game/BattleMonster/index.html");
+        lWebView.loadUrl("file:///android_asset/Poyo/main/index.html");
 
     }
 

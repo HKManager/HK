@@ -61,13 +61,13 @@
             </ul>
         </nav>
 
-        <main>
+        <main id="Main">
 
             <div id="mainGame" class="game" onclick="playBGM()">
 
                 <div class="player">
         
-                    <div id="countdown" style="margin-left:40px;"></div>
+                    <div id="countdown" style="margin-left:10px;margin-top:2px;"></div>
         
                     <div class="stats statsPlayer">
                         <p>100</p>
@@ -126,11 +126,18 @@
             // - 신인환 수정 가로설정
             var quizMain = document.getElementById('questionViewer');
             var mainGame = document.getElementById('mainGame');
+            var Main = document.getElementById('Main');
+
             // var width = screen.width;
-            var width = document.getElementById('GameMain' ).offsetWidth ;  
+            var width = document.getElementById('GameMain' ).offsetWidth ;
+            var height = document.getElementById('GameMain' ).offsetHeight;
             width = width - 16;
             quizMain.style.width = width + "px";
             mainGame.style.width = width + "px";
+
+            var top = (height - Main.offsetHeight)*0.5;
+
+            Main.style.marginTop = top + "px";
             // - 신인환 수정 가로설정
 
             // window.android.setData("abcd");
@@ -153,7 +160,7 @@
 
     <script type="text/javascript" charset="utf-8">
         var countdown = $("#countdown").countdown360({
-            radius: 25,
+            radius: 18,
             seconds: 10,
             fontColor: '#FFFFFF',
             autostart: false,

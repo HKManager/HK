@@ -207,14 +207,10 @@ div#questionViewer {
   height: 365px;
   margin-left: 8px;
   margin-top: -3px;
-  position: absolute;
-  left: 0px;
   border: 3px solid black;
   border-radius: 0px 0px 8px 8px;
   background: url(img/ques-holder.png) no-repeat;
   background-size: 100% 100%;
-  display: block;
-  -webkit-transition: all .5s .3s ease;
 }
 
 div#questionTitle {
@@ -262,7 +258,7 @@ div#userAnswer {
 
 
 #userAnswer li {
-  width: 33%;
+  width: 42%;
   height: 60px;
   display: block;
   background: url(img/options-bg.png) no-repeat center center;
@@ -279,7 +275,7 @@ div#userAnswer {
 }
 
   #userAnswer li.active {
-    width: 33%;
+    width: 42%;
     height: 60px;
     background-size: 100% 100%;
     background: url(img/options-bg_active.png) no-repeat;
