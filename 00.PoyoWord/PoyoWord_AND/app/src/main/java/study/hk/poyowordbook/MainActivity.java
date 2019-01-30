@@ -99,7 +99,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     // DB를 복사하기
-// assets의 /db/xxxx.db 파일을 설치된 프로그램의 내부 DB공간으로 복사하기
+    // assets의 /db/xxxx.db 파일을 설치된 프로그램의 내부 DB공간으로 복사하기
     public void copyDB(Context mContext){
         Log.d("MiniApp", "copyDB");
         AssetManager manager = mContext.getAssets();
