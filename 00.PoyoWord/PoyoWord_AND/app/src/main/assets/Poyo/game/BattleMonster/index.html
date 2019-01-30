@@ -56,7 +56,7 @@
                 <li><a href="#0" style="font-weight: bold;" onclick="Start()">시작하기</a></li>
                 <li><a href="#0" style="font-weight: bold;">상점가기</a></li>
                 <li><a href="#0" style="font-weight: bold;">관리하기</a></li>
-                <li><a href="#0" style="font-weight: bold;">메인으로</a></li>
+                <li><a href="#0" style="font-weight: bold;" onclick="Main()">메인으로</a></li>
                 <li><a href="#0" style="font-weight: bold;">종료하기</a></li>
             </ul>
         </nav>
@@ -145,10 +145,14 @@
             var isMute = false;
         };
 
-        function Start() {
-
+        function Start() 
+        {
             toggleNavView();
             countdown.start();
+        }
+
+        function Main() {
+            window.location.href = "../../main/index.html";
         }
 
         function playBGM() {

@@ -67,8 +67,8 @@ public class MainActivity extends AppCompatActivity {
 
         //lWebView.loadUrl("http://naver.com");
         //lWebView.loadUrl("file:///android_asset/Poyo/game/BattleMonster/index.html");
-        //lWebView.loadUrl("file:///android_asset/Poyo/main/index.html");
-        lWebView.loadUrl("file:///android_asset/Poyo/Content/index.html");
+        lWebView.loadUrl("file:///android_asset/Poyo/main/index.html");
+        //lWebView.loadUrl("file:///android_asset/Poyo/Content/index.html");
 
 
         // onCreate 에서

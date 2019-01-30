@@ -30,103 +30,46 @@
     </style>
 </head>
 
-<body class="currently-loading">
+<body id="Main" class="currently-loading">
 
-    <audio id="sound" src="./bgm/bgm_1.mp3" autoplay="autoplay" loop="loop" ></audio>
-
+    <audio id="sound" src="./bgm/bgm_1.mp3" autoplay="autoplay" loop="loop"></audio>
     <div>
-        <nav>
-            <ul class="cd-primary-nav">
-                <li><a href="#0" style="font-weight: bold;" onclick="ShowGame()">게임하기 (두근두근 단어 오락실)</a></li>
-                <li><a href="#0" style="font-weight: bold;" onclick="ShowStudy()">땅따먹기 (알쏭달쏭 단어 학습실)</a></li>
-                <li><a href="#0" style="font-weight: bold;">관리하기 (이것저것 단어 관리방)</a></li>
-                <li><a href="#0" style="font-weight: bold;">조회하기 (오목조목 정보 조회방)</a></li>
-                <li><a href="#0" style="font-weight: bold;">설정하기 (오밀조밀 어플 설정방)</a></li>
-            </ul>
-        </nav>
-        <main>
+        <div id="divGame" class="horizontalCenter">
 
-            <!-- 게임패널 -->
-            <div id="divGame" class="horizontalCenter" style="display:none;">
+            <div>
 
-                <div style="width:100%;height:100px;">
+                <img id="btnGame" src="img/btnGame_off.png" style="width:250px;" onclick="ShowGame()" />
 
-                    <img id="btnShooting" src="img/btnShooting_off.png" style="width:200px;" onmousedown="downShooting()"
-                         onmouseup="upShooting()" onclick="ShowShooting()" />
+                <br />
+                <br />
+                <br />
+                <br />
 
-                    <br />
-                    <br />
-                    <br />
-                    <br />
+                <img id="btnStudy" src="img/bgnStudy_off.png" style="width:250px;" onclick="ShowStudy()" />
 
-                    <img id="btnWallOut" src="img/btnWallOut_off.png" style="width:200px;" onmousedown="downWallOut()"
-                         onmouseup="upWallOut()" onclick="ShowFlyBird()" />
+                <br />
+                <br />
+                <br />
+                <br />
 
-                </div>
+                <img id="btnManager" src="img/btnManager_off.png" style="width:250px;" onclick="ShowManager()"/>
 
+                <br />
+                <br />
+                <br />
+                <br />
 
+                <img id="btnInfo" src="img/btnInfo_off.png" style="width:250px;" onclick="ShowInfo()"/>
 
-            </div>
+                <br />
+                <br />
+                <br />
+                <br />
 
-            <!-- 학습 패널 -->
-            <div id="divStudy" style="width: 100%; min-height: 100%;">
-                <div id="map" style="width: 100%;min-height: 100%;"></div>
-
-
-                <div id="login-box" class="login-popup">
-                    <a class="close" onclick="closePopupStudy()"><img src="./img/close_pop.png" class="btn_close" title="Close Window" alt="Close" /></a>
-                    <form method="post" class="signin" action="#">
-                        <!--<fieldset class="textbox">
-                            <label class="username">
-                                <span>username or email</span>
-                                <input id="username" name="username" value="" type="text" autocomplete="on" placeholder="username">
-                            </label>
-
-                            <label class="password">
-                                <span>password</span>
-                                <input id="password" name="password" value="" type="password" placeholder="password">
-                            </label>
-
-                            <button class="submit button" type="button">sign in</button>
-
-                            <p>
-                                <a class="forgot" href="#">forgot your password?</a>
-                            </p>
-
-                        </fieldset>-->
-
-                        <div class="horizontalCenter">
-
-                            <br />
-
-                            <a onclick="ShowWordCard()">학  습  방</a>
-
-                            <br />
-                            <br />
-
-
-                            <a onclick="ShowWordQuiz()">단어퀴즈</a>
-
-                            <br />
-                            <br />
-
-                            <a onclick="ShowWordTest()">단어시험</a>
-
-                        </div>
-
-                    </form>
-                </div>
+                <img id="btnSetting" src="img/btnSetting_off.png" style="width:250px;" onclick="ShowSetting()"/>
 
             </div>
-
-        </main> <!-- cd-content -->
-        <div class="cd-overlay-nav">
-            <span></span>
-        </div> <!-- cd-overlay-nav -->
-        <div class="cd-overlay-content">
-            <span></span>
-        </div> <!-- cd-overlay-content -->
-        <a href="#0" class="cd-nav-trigger">Menu<span class="cd-icon"></span></a>
+        </div>
     </div>
 
     <script src="../js/menu/jquery-2.1.1.js"></script>
