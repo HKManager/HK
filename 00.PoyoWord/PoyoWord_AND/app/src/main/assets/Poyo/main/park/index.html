@@ -7,6 +7,83 @@
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
 	<link rel="stylesheet" type="text/css" href="css.css" />
+
+    <script type="text/javascript">
+        function showData(arg) {
+
+        var jsonObj = JSON.parse(arg);
+
+        switch (jsonObj.handle) {
+                    case "resize":
+                        break;
+                    case "move":
+                        movePlayer(jsonObj.data);
+                        break;
+                }
+
+
+        }
+
+        function movePlayer(str) {
+                    switch (str) {
+                case '00':
+                    stop('37');
+                    stop('38');
+                    stop('39');
+                    stop('40');
+                    break;
+                default:
+                    move(str);
+                    break;
+            }
+        }
+
+        function move(code) {
+    switch (code) {
+        case '37':
+            player.move.left = true;
+            break;
+        case '39':
+            player.move.right = true;
+            break;
+        case '38':
+            player.move.up = true;
+            break;
+        case '40':
+            player.move.down = true;
+            break;
+        case '90':
+            if (text.doZ()) {
+
+            } else if (player.doZ()) {
+
+            }
+
+            break;
+        case '88':
+            player.doX();
+            break;
+    }
+}
+
+function stop(code) {
+    switch (code) {
+        case '37':
+            player.move.left = false;
+            break;
+        case '39':
+            player.move.right = false;
+            break;
+        case '38':
+            player.move.up = false;
+            break;
+        case '40':
+            player.move.down = false;
+            break;
+    }
+}
+
+    </script>
 </head>
 <body>
     <style type="text/css">
@@ -53,27 +130,5 @@
     <script src="Model/NpcContainer.js"></script>
     <script src="Control/game.js"></script>
     <!--<script src="main.js"></script>-->
-
-    <script type="text/javascript">
-
-        //window.onload = function () {
-        //    logForXamarin('39');
-        //};
-
-        function logForXamarin(str) {
-
-            switch (str) {
-                case '00':
-                    stop('37');
-                    stop('38');
-                    stop('39');
-                    stop('40');
-                    break;
-                default:
-                    move(str);
-                    break;
-            }
-        }
-    </script>
 </body>
 </html>

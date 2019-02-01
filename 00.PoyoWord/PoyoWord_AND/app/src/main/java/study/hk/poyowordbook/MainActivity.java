@@ -13,6 +13,8 @@ import android.os.Handler;
 import android.widget.Toast;
 import android.annotation.SuppressLint;
 
+import com.google.gson.Gson;
+
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
 import java.io.File;
@@ -20,7 +22,9 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
+import Event.EventData;
 import Query.Manager_Code;
+import io.github.controlwear.virtual.joystick.android.JoystickView;
 import study.hk.data.Data.*;
 
 
@@ -29,7 +33,9 @@ public class MainActivity extends AppCompatActivity {
     private final Handler handler = new Handler();
     private Context context = null;
 
-    private WebView lWebView = null;
+   private WebView lWebView = null;
+   private EventData eventData = new EventData();
+    Gson gson = new Gson();
 
     @SuppressLint({ "SetJavaScriptEnabled", "JavascriptInterface" })
     @Override
@@ -72,6 +78,7 @@ public class MainActivity extends AppCompatActivity {
         lWebView.loadUrl("file:///android_asset/Poyo/main/park/index.html");
 
 
+        // - 신인환 주석 : SQLite DB 관련
         // onCreate 에서
         try {
             boolean bResult = isCheckDB(context);	// DB가 있는지?
@@ -84,10 +91,54 @@ public class MainActivity extends AppCompatActivity {
         }
 
         Manager_Code code = new Manager_Code(context);
-
         code.Search();
+        // - 신인환 주석 : SQLite DB 관련
+
+        eventData.SetHandle("move");
+        eventData.SetView("main");
+
+
+
+        final JoystickView joystick = (JoystickView) findViewById(R.id.joystickView_right);
+        joystick.setOnMoveListener(new JoystickView.OnMoveListener() {
+            @SuppressLint({"DefaultLocale", "SetJavaScriptEnabled", "JavascriptInterface"})
+            @Override
+            public void onMove(int angle, int strength) {
+                //mTextViewAngleRight.setText(angle + "°");
+                //mTextViewStrengthRight.setText(strength + "%");
+                //mTextViewCoordinateRight.setText(
+                //        String.format("x%03d:y%03d",
+                //                joystickRight.getNormalizedX(),
+                //                joystickRight.getNormalizedY())
+                //);
+
+                int x = joystick.getNormalizedX();
+                int y = joystick.getNormalizedY();
+
+                if(x <= 40 && (angle >= 135 && angle <= 225)) { // - LEFT
+                    eventData.SetData("37");
+                } else if(x >= 60 && (angle >= 315 || angle <= 45)) { // - RIGHT
+                    eventData.SetData("39");
+                } else if(y <= 40 && (angle >= 45 && angle <= 135)) { // - UP
+                    eventData.SetData("38");
+                }else if(y >= 60 && (angle >= 225 && angle <= 315)) { // - DOWN
+                    eventData.SetData("40");
+                } else {
+                    eventData.SetData("00");
+                }
+
+                String JsonEventData = gson.toJson(eventData);
+                lWebView.loadUrl("javascript:showData('" + JsonEventData + "')");
+            }
+        });
     }
 
+
+
+
+
+
+    // - 신인환 주석 : SQLite DB 파트
     // DB가 있나 체크하기
     public boolean isCheckDB(Context mContext){
         String filePath = "/data/data/" + getApplicationContext().getPackageName() + "/databases/" + HARDCODE.DataBase;
@@ -144,17 +195,20 @@ public class MainActivity extends AppCompatActivity {
             Log.e("ErrorMessage : ", e.getMessage());
         }
     }
+    // - 신인환 주석 : SQLite DB 파트
 
 
+    // - 신인환 주석 : 자바스크립트 연동 파트
     private class JavaScriptBridge {
         @android.webkit.JavascriptInterface
         public void setMessage(final String arg) {
             handler.post(new Runnable() {
                 public void run() {
                     Toast.makeText(context, arg, Toast.LENGTH_LONG).show();
-                    lWebView.loadUrl("javascript:setMessage('" + "abc" + "')");
+                    //lWebView.loadUrl("javascript:setMessage('" + "abc" + "')");
                 }
             });
         }
     }
+    // - 신인환 주석 : 자바스크립트 연동 파트
 }
