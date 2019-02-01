@@ -1,11 +1,14 @@
 package study.hk.poyowordbook;
 
 import android.content.Context;
+import android.content.res.AssetFileDescriptor;
 import android.content.res.AssetManager;
 import android.graphics.Bitmap;
+import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.webkit.JsResult;
 import android.webkit.WebViewClient;
 import android.webkit.WebView;
@@ -37,15 +40,14 @@ public class MainActivity extends AppCompatActivity {
    private EventData eventData = new EventData();
     private Gson gson = new Gson();
     private String move = "";
+    private MediaPlayer bgmMp3 = new MediaPlayer();
+    private JoystickView joystick = null;
 
     @SuppressLint({ "SetJavaScriptEnabled", "JavascriptInterface" })
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        // 코드상에서 액티비티 화면에 타이틀을 없애줌. 매니페스트에서도 가능.
-        //requestWindowFeature(Window.FEATURE_NO_TITLE);
 
         context = getApplicationContext();
 
@@ -80,6 +82,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         // - 신인환 주석 : SQLite DB 관련
+        // - for SQLite DB
         // onCreate 에서
         try {
             boolean bResult = isCheckDB(context);	// DB가 있는지?
@@ -93,14 +96,17 @@ public class MainActivity extends AppCompatActivity {
 
         Manager_Code code = new Manager_Code(context);
         code.Search();
+        // - for SQLite DB
         // - 신인환 주석 : SQLite DB 관련
 
+        // - 신인환 주석 : 조이스틱 관련
+        // - for JoyStick
         eventData.SetHandle("move");
         eventData.SetView("main");
 
+        this.PlayBGM();
 
-
-        final JoystickView joystick = (JoystickView) findViewById(R.id.joystickView_right);
+        joystick = (JoystickView) findViewById(R.id.joystickView_right);
         joystick.setOnMoveListener(new JoystickView.OnMoveListener() {
             @SuppressLint({"DefaultLocale", "SetJavaScriptEnabled", "JavascriptInterface"})
             @Override
@@ -138,6 +144,8 @@ public class MainActivity extends AppCompatActivity {
                 lWebView.loadUrl("javascript:showData('" + JsonEventData + "')");
             }
         });
+        // - for JoyStick
+        // - 신인환 주석 : 조이스틱 관련
     }
 
 
@@ -147,6 +155,7 @@ public class MainActivity extends AppCompatActivity {
 
     // - 신인환 주석 : SQLite DB 파트
     // DB가 있나 체크하기
+    // - for SQLite Check DB
     public boolean isCheckDB(Context mContext){
         String filePath = "/data/data/" + getApplicationContext().getPackageName() + "/databases/" + HARDCODE.DataBase;
         File file = new File(filePath);
@@ -159,6 +168,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     // DB를 복사하기
+    // - for SQLite Copy DB
     // assets의 /db/xxxx.db 파일을 설치된 프로그램의 내부 DB공간으로 복사하기
     public void copyDB(Context mContext){
         Log.d("MiniApp", "copyDB");
@@ -202,20 +212,66 @@ public class MainActivity extends AppCompatActivity {
             Log.e("ErrorMessage : ", e.getMessage());
         }
     }
+    // -  for SQLite DB
     // - 신인환 주석 : SQLite DB 파트
 
 
     // - 신인환 주석 : 자바스크립트 연동 파트
+    // - for JavaScript Receive Message from JavaScript
     private class JavaScriptBridge {
         @android.webkit.JavascriptInterface
-        public void setMessage(final String arg) {
+        public void setData(final String arg) {
             handler.post(new Runnable() {
                 public void run() {
-                    Toast.makeText(context, arg, Toast.LENGTH_LONG).show();
+                    //Toast.makeText(context, arg, Toast.LENGTH_LONG).show();
                     //lWebView.loadUrl("javascript:setMessage('" + "abc" + "')");
+
+                    EventData parse = gson.fromJson(arg, EventData.class);
+
+                    switch (parse.handle) {
+                        case "joystic" :
+
+                            //Boolean boolean1 = Boolean.valueOf("true");
+                            boolean isVisible = Boolean.parseBoolean(parse.data);
+
+                            if(isVisible) {
+                                joystick.setVisibility(View.VISIBLE);
+                            } else {
+                                joystick.setVisibility(View.GONE);
+                            }
+
+
+                            break;
+                    }
                 }
             });
         }
     }
+    // - for JavaScript Receive Message from JavaScript
     // - 신인환 주석 : 자바스크립트 연동 파트
+
+    // - 신인환 주석 : BGM 플레이
+    // - for MediaPlay
+    public void PlayBGM() {
+        try {
+            if (bgmMp3.isPlaying()) {
+                bgmMp3.stop();
+                bgmMp3.release();
+                bgmMp3 = new MediaPlayer();
+            }
+
+            AssetFileDescriptor descriptor = getAssets().openFd("Poyo/main/bgm/bgm_1.mp3");
+            bgmMp3.setDataSource(descriptor.getFileDescriptor(), descriptor.getStartOffset(), descriptor.getLength());
+            descriptor.close();
+
+            bgmMp3.prepare();
+            bgmMp3.setVolume(1f, 1f);
+            bgmMp3.setLooping(true);
+            bgmMp3.start();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    // - for MediaPlay
+    // - 신인환 주석 : BGM 플레이
 }

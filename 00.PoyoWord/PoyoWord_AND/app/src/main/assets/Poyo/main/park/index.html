@@ -1,31 +1,46 @@
 ﻿<html>
+
 <head>
-	<title>Pokemon Emerald</title>
+    <title>Pokemon Emerald</title>
 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
-	<link rel="stylesheet" type="text/css" href="css.css" />
+    <link rel="stylesheet" type="text/css" href="css.css" />
+
+    <!-- 네비게이션 메뉴 관련 -->
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/earlyaccess/nanumpenscript.css">
+    <link rel="stylesheet" href="../../css/menu/reset.css"> <!-- CSS reset -->
+    <link rel="stylesheet" href="../../css/menu/style.css"> <!-- Resource style -->
+    <script src="../../js/menu/modernizr.js"></script> <!-- Modernizr -->
+
+    <script src="../../js/menu/jquery-2.1.1.js"></script>
+    <script src="../../js/menu/velocity.min.js"></script>
+    <script src="../../js/menu/main.js"></script> <!-- Resource jQuery -->
+    <!-- 네비게이션 메뉴 관련 -->
 
     <script type="text/javascript">
+
+        var isJoyStic = true;
+
         function showData(arg) {
 
-        var jsonObj = JSON.parse(arg);
+            var jsonObj = JSON.parse(arg);
 
-        switch (jsonObj.handle) {
-                    case "resize":
-                        break;
-                    case "move":
-                        movePlayer(jsonObj.data);
-                        break;
-                }
+            switch (jsonObj.handle) {
+                case "resize":
+                    break;
+                case "move":
+                    movePlayer(jsonObj.data);
+                    break;
+            }
 
 
         }
 
         function movePlayer(str) {
-                    switch (str) {
+            switch (str) {
                 case '00':
                     stop('37');
                     stop('38');
@@ -38,66 +53,61 @@
             }
         }
 
-        function move(code) {
-    switch (code) {
-        case '37':
-            player.move.left = true;
-            break;
-        case '39':
-            player.move.right = true;
-            break;
-        case '38':
-            player.move.up = true;
-            break;
-        case '40':
-            player.move.down = true;
-            break;
-        case '90':
-            if (text.doZ()) {
+        function menuClick() {
 
-            } else if (player.doZ()) {
+            isJoyStic = !isJoyStic;
 
-            }
+            var obj = { handle: "joystic", view: "ITEM", data: "" + isJoyStic };
 
-            break;
-        case '88':
-            player.doX();
-            break;
-    }
-}
+            var data = JSON.stringify(obj);
 
-function stop(code) {
-    switch (code) {
-        case '37':
-            player.move.left = false;
-            break;
-        case '39':
-            player.move.right = false;
-            break;
-        case '38':
-            player.move.up = false;
-            break;
-        case '40':
-            player.move.down = false;
-            break;
-    }
-}
+            window.android.setData(data);
+        }
 
     </script>
 </head>
+
 <body>
     <style type="text/css">
-
         canvas {
             border: 1px solid white;
         }
     </style>
-    <img id="fullSheet" src="image/fullSheetAnimation.png" />
-    <img id="player" src="image/player.png" />
-    <img id="text" src="image/text.png" />
-    <img id="npc" src="image/npc.png" />
 
-    <canvas id="game" style="height:97%;width:100%;"></canvas>
+    <div style="position:relative;width:100%;height:100%"">
+        <nav>
+            <ul class="cd-primary-nav">
+                <li><a href="#0" style="font-weight: bold;">단어 관리하기</a></li>
+                <li><a href="#0" style="font-weight: bold;">정보 조회하기</a></li>
+                <li><a href="#0" style="font-weight: bold;">어플 설정하기</a></li>
+                <li><a href="#0" style="font-weight: bold;">어플 종료하기</a></li>
+            </ul>
+        </nav>
+
+        <main id="Main" style="width:100%;height:100%">
+
+            <img id="fullSheet" src="image/fullSheetAnimation.png" />
+            <img id="player" src="image/player.png" />
+            <img id="text" src="image/text.png" />
+            <img id="npc" src="image/npc.png" />
+
+            <canvas id="game" style="height:100%;width:100%;"></canvas>
+
+        </main>
+
+        <div class="cd-overlay-nav">
+            <span></span>
+        </div> <!-- cd-overlay-nav -->
+        <div class="cd-overlay-content">
+            <span></span>
+        </div> <!-- cd-overlay-content -->
+        <a href="#0" class="cd-nav-trigger" style="margin-right:5px;" onclick="menuClick()">Menu<span class="cd-icon"></span></a>
+    </div>
+
+    </div>
+
+
+
 
 
     <!--<input type="button" style="bottom:40px;left:10px;width:80px;height:40px;" value="◀" onmousedown="move('37')" onmouseup="stop('37')" />
@@ -131,4 +141,5 @@ function stop(code) {
     <script src="Control/game.js"></script>
     <!--<script src="main.js"></script>-->
 </body>
+
 </html>
