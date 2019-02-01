@@ -1,8 +1,8 @@
 var Window = {
 	SIZES: [
-		[320, 480],
-		[640, 960],
-		[960, 1440]
+		[320, 520],
+		[640, 1040],
+		[960, 1520]
 	],
 	SELECTEDSIZE : 2,
 	SCALE_WIDTH: function () {

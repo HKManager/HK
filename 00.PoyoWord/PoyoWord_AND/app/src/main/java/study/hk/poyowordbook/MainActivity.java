@@ -35,7 +35,8 @@ public class MainActivity extends AppCompatActivity {
 
    private WebView lWebView = null;
    private EventData eventData = new EventData();
-    Gson gson = new Gson();
+    private Gson gson = new Gson();
+    private String move = "";
 
     @SuppressLint({ "SetJavaScriptEnabled", "JavascriptInterface" })
     @Override
@@ -115,19 +116,25 @@ public class MainActivity extends AppCompatActivity {
                 int x = joystick.getNormalizedX();
                 int y = joystick.getNormalizedY();
 
-                if(x <= 40 && (angle >= 135 && angle <= 225)) { // - LEFT
-                    eventData.SetData("37");
-                } else if(x >= 60 && (angle >= 315 || angle <= 45)) { // - RIGHT
-                    eventData.SetData("39");
-                } else if(y <= 40 && (angle >= 45 && angle <= 135)) { // - UP
-                    eventData.SetData("38");
-                }else if(y >= 60 && (angle >= 225 && angle <= 315)) { // - DOWN
-                    eventData.SetData("40");
+                if(x <= 45 && (angle >= 135 && angle <= 225)) { // - LEFT
+                    move = "37";
+                } else if(x >= 55 && (angle >= 315 || angle <= 45)) { // - RIGHT
+                    move = "39";
+                } else if(y <= 45 && (angle >= 45 && angle <= 135)) { // - UP
+                    move = "38";
+                }else if(y >= 55 && (angle >= 225 && angle <= 315)) { // - DOWN
+                    move = "40";
                 } else {
+                    move="00";
                     eventData.SetData("00");
                 }
 
+                eventData.SetData("00");
                 String JsonEventData = gson.toJson(eventData);
+                lWebView.loadUrl("javascript:showData('" + JsonEventData + "')");
+
+                eventData.SetData(move);
+                JsonEventData = gson.toJson(eventData);
                 lWebView.loadUrl("javascript:showData('" + JsonEventData + "')");
             }
         });
