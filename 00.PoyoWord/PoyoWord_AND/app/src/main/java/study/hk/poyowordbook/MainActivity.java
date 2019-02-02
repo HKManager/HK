@@ -78,7 +78,8 @@ public class MainActivity extends AppCompatActivity {
         //lWebView.loadUrl("file:///android_asset/Poyo/game/BattleMonster/index.html");
         //lWebView.loadUrl("file:///android_asset/Poyo/main/index.html");
         //lWebView.loadUrl("file:///android_asset/Poyo/Content/index.html");
-        lWebView.loadUrl("file:///android_asset/Poyo/main/park/index.html");
+        //lWebView.loadUrl("file:///android_asset/Poyo/main/park/index.html");
+        lWebView.loadUrl("file:///android_asset/Poyo/game/Snake/snake.html");
 
 
         // - 신인환 주석 : SQLite DB 관련

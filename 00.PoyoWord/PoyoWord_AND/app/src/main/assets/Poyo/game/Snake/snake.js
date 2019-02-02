@@ -226,7 +226,7 @@ function SetLevel(countWidth, countHeight) {
     };
 
     // - 신인환주석 : 배경 배열
-    level = new Level(countWidth, countHeight, 32, 32);
+    level = new Level(countWidth, countHeight, 32, 16);
 
     // Call init to start the game
     init();
@@ -534,7 +534,7 @@ function drawLevel() {
                 // Draw apple background
                 context.fillStyle = "#0054FF";
                 //context.fillStyle = "rgba(255, 255, 255, 0)";
-                context.fillText("applereqq", tilex, tiley + 32, level.tilewidth + 32, level.tileheight);
+                context.fillText("applereqq", tilex, tiley + 32, level.tilewidth + 32, 16);
                 //context.fillRect(tilex, tiley, level.tilewidth, level.tileheight);
 
                 // Draw the apple image
@@ -686,7 +686,7 @@ function onKeyDown(e) {
     }
 }
 
-//function onKeyDown(e) {
+// function onKeyDown(e) {
 //    if (gameover) {
 //        tryNewGame();
 //    } else {
@@ -713,7 +713,7 @@ function onKeyDown(e) {
 //            }
 //        }
 //    }
-//}
+// }
 
 // Get the mouse position
 function getMousePos(canvas, e) {
