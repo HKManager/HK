@@ -113,6 +113,8 @@ function Player () {
     		Camera.update(moveX, moveY);
     		console.log("do eventOnBlock warp");
     	}else if (tileData != false && tileData.type == "teleport") {
+
+			// - 신인환 수정 : 플레이어 지도 변경
             console.log("do eventOnBlock tele");
             var map = tileData.data;
             console.log(tileData);
@@ -127,7 +129,8 @@ function Player () {
             }
             Camera.heroXOffset = this.x;
             Camera.heroYOffset = this.y;
-            Camera.load();
+			Camera.load();
+			// - 신인환 주석 : 플레이어 이벤트 확인
         };
     }
     this.moveImage = function (stop) {
@@ -155,6 +158,8 @@ function Player () {
     	return Collision.canWark(this.x+1, this.y);
     }
     this.eventLooking = function(x, y) {
+
+		// - 신인환 주석 : 플레이어 이벤트 확인
     	//console.log("looking" + x + " " + y);
         var isNpc = NpcContainer.isNpc(x, y);
     	if (typeof World.map.events.sign[x+"_"+y] != "undefined") {
@@ -166,7 +171,8 @@ function Player () {
         }else if (isNpc != null) {
             isNpc.activeNpc();
         };
-    	return false;
+		return false;
+		// - 신인환 주석 : 플레이어 이벤트 확인
     }
 }
 
