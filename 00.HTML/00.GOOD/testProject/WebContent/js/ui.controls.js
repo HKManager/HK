@@ -248,7 +248,10 @@ var d3Graphs = {
 	},
 
 	updateViz:function(filterChanged) {
-		var test = $("#hudButtons .testTextInput").val().toUpperCase();
+		var test = $("#hudButtons .testTextInput").val();
+		
+		test = test.toUpperCase();
+		
 		if (typeof testData[test] == 'undefined') {
 			if (!filterChanged) {
 				return;
