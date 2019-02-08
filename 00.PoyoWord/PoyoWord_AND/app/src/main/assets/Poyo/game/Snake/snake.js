@@ -239,7 +239,14 @@ function init() {
     tileimage = images[0];
 
     // Add mouse events
-    //canvas.addEventListener("mousedown", onMouseDown);
+
+    // $('GameMain').show();
+
+    // $("#btnGame").bind("touchstart", function (e) {
+    //     onMouseDown(e);
+    // });
+
+    canvas.addEventListener("mousedown", onMouseDown);
 
     // Add keyboard events
     //document.addEventListener("keydown", onKeyDown);

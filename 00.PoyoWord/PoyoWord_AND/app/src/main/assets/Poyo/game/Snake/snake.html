@@ -27,7 +27,7 @@
             font-family: 'Nanum Pen Script';
             font-weight: bold;
             font-size: 27px;
-            padding-top: 25px;
+            padding-top: 12px;
 
             text-shadow: 1px 2px 2px gray;
         }
@@ -40,9 +40,9 @@
     </style>
 
 </head>
-<body id="GameMain" style="background-image: url(background.jpg);border: 0;padding: 0;background-size: cover;">
+<body id="GameMain" style="background-image: url(background.jpg);border: 0;padding: 0;background-size: cover;overflow-x:scroll ; overflow-y: hidden;">
 
-    <div style="position:relative;">
+    <div style="position:relative;overflow-x:scroll ; overflow-y: hidden;">
         <nav>
             <ul class="cd-primary-nav">
                 <li><a href="#0" style="font-weight: bold;" onclick="ShowGame()">게임하기 (두근두근 단어 오락실)</a></li>
@@ -55,23 +55,23 @@
 
         <main id="divGame">
             <div>
-                <canvas id="viewport" class="center" width="640" height="480" style="padding-top:20px;"></canvas>
+                <canvas id="viewport" class="center" width="640" height="480"></canvas>
 
                 <div class="menu" style="margin-left:30px;">
                     <p class="but">개수 : 5 개</p>
                 </div>
 
-                <div class="menu horizontalCenter">
+                <!-- <div class="menu horizontalCenter">
                     <p class="but">점수 : 2000 점</p>
-                </div>
+                </div> -->
 
-                <div id="overimg" class="center menu" style="padding-top:20px;width:640px;height:480px;">
-                    <!--<img id="effect" style="width:64px;height:32px;position:absolute;" src="impact.gif">-->
-                </div>
+                <!-- <div id="overimg" class="center menu" style="padding-top:20px;width:640px;height:480px;">
+                    <img id="effect" style="width:64px;height:32px;position:absolute;" src="impact.gif">
+                </div> -->
 
                 
 
-                <img id="scream" width="220" height="277" src="snake_02.png" style="display:none;" alt="The Scream">
+                <img id="scream" width="220" height="277" src="snake_05.png" style="display:none;" alt="The Scream">
             </div>
         </main>
 
@@ -98,6 +98,7 @@
         $(document).ready(function () {
             var bodyWidth = document.getElementById('GameMain' ).offsetWidth;
             var bodyHeight = document.getElementById('GameMain' ).offsetHeight;
+            var viewport = document.getElementById('viewport' );
 
             var width = 0;
             var height = 0;
@@ -117,10 +118,11 @@
             $("#viewport").width(width);
             $("#viewport").height(height);
 
-            $("#overimg").width(width);
-            $("#overimg").height(height);
-
             SetLevel(countWidth*2, countHeight-8);
+
+            var top = (bodyHeight - viewport.offsetHeight)*0.5;
+
+            viewport.style.marginTop = top + "px";
         });
 
         function showData(str) {
