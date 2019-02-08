@@ -46,7 +46,7 @@
     </style>
 </head>
 
-<body class="theme-red" style="margin:0;">
+<body id="MainBody" class="theme-red" style="margin:0;height:100%;">
 
     <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script type='text/javascript' src='../../Content/js/knockout-3.4.2.js'></script>
@@ -82,125 +82,115 @@
         </div>
     </div>-->
 
-    <br />
+    <div id="Manager" class="card" style="min-height:300px;margin-left: 5px;margin-right: 5px;">
+        <div class="header">
 
-    <div class="container-fluid">
-        <!-- Input -->
-        <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <div class="card">
-                    <div class="header">
-
-                        <div class="row clearfix">
-                            <div class="col-sm-6">
-                                <h2>
-                                    단어장 상세관리
-                                    <small>단어장 정보를 입력해 주세요.</small>
-                                </h2>
-                            </div>
-                            <div class="col-sm-6 align-right">
+            <div class="row clearfix">
+                <div class="col-sm-6">
+                    <h2>
+                        단어장 상세관리
+                        <small>단어장 정보를 입력해 주세요.</small>
+                    </h2>
+                </div>
+                <div class="col-sm-6 align-right">
 
 
 
 
 
-                                <!-- <div class="switch panel-switch-btn">
-                                    <span class="m-r-10 font-12">REAL TIME</span>
-                                    <label>OFF<input type="checkbox" id="realtime" checked><span class="lever switch-col-cyan"></span>ON</label>
-                                </div> -->
-                            </div>
+                    <!-- <div class="switch panel-switch-btn">
+                        <span class="m-r-10 font-12">REAL TIME</span>
+                        <label>OFF<input type="checkbox" id="realtime" checked><span class="lever switch-col-cyan"></span>ON</label>
+                    </div> -->
+                </div>
+            </div>
+
+        </div>
+        <div class="body">
+            <div class="row clearfix">
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <div class="form-line">
+                            <input id="AC_SN" type="hidden" class="control-detail form-control" placeholder="거래처 SN"
+                                data-bind="value: AC_SN" />
+                            <input id="AC_NAME" type="text" class="control-detail form-control" placeholder="거래처 명"
+                                data-bind="value: AC_NAME" />
                         </div>
-
                     </div>
-                    <div class="body">
-                        <div class="row clearfix">
-                            <div class="col-sm-12">
-                                <div class="form-group">
-                                    <div class="form-line">
-                                        <input id="AC_SN" type="hidden" class="control-detail form-control" placeholder="거래처 SN"
-                                            data-bind="value: AC_SN" />
-                                        <input id="AC_NAME" type="text" class="control-detail form-control" placeholder="거래처 명"
-                                            data-bind="value: AC_NAME" />
-                                    </div>
-                                </div>
 
-                                <div class="form-group">
-                                    <div class="form-line">
-                                        <select id="AC_TYPE_CODE" class="form-control control-detail show-tick"
-                                            data-bind="options: AC_TYPE_CODES,
-                                                                                       optionsCaption: '유형을 선택해 주세요',
-                                                                                       optionsValue: 'CODE',
-                                                                                       value: AC_TYPE_CODE,
-                                                                                       optionsText: 'CODE_NAME',
-                                                                                       valueAllowUnset: true"></select>
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <div class="form-line">
-                                        <input id="AC_ADDRESS" type="text" class="form-control control-detail"
-                                            placeholder="거래처 주소" />
-                                        <!-- <input type="password" class="form-control" placeholder="Password" /> -->
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <div class="form-line">
-                                        <input id="AC_MAN01" type="text" class="form-control control-detail"
-                                            placeholder="담당자 명" />
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <div class="form-line">
-                                        <input id="AC_PHONENUMBER01" type="text" class="form-control control-detail"
-                                            placeholder="담당자 연락처" />
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <div class="form-line">
-                                        <input id="AC_EMAIL01" type="text" class="form-control control-detail"
-                                            placeholder="담당자 메일" />
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <div class="form-line">
-                                        <input id="AC_PAY" type="text" class="form-control control-detail" placeholder="잔금" />
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <div class="form-line">
-                                        <textarea id="AC_DESC" rows="4" class="form-control no-resize control-detail"
-                                            placeholder="비고"></textarea>
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <table style="width:100%;">
-
-                                        <tr>
-                                            <td style="width:50%;">
-                                                <button type="button" class="btn btn-primary m-t-15 waves-effect" style="width:100%;margin-right:10px;"
-                                                    onclick="Create();">저장</button>
-                                            </td>
-
-                                            <td style="width:50%;">
-                                                <button type="button" class="btn btn-primary m-t-15 waves-effect" style="width:100%;margin-left:10px">취소</button>
-                                            </td>
-                                        </tr>
-
-                                    </table>
-                                </div>
-                            </div>
+                    <div class="form-group">
+                        <div class="form-line">
+                            <select id="AC_TYPE_CODE" class="form-control control-detail show-tick"
+                                data-bind="options: AC_TYPE_CODES,
+                                                                           optionsCaption: '유형을 선택해 주세요',
+                                                                           optionsValue: 'CODE',
+                                                                           value: AC_TYPE_CODE,
+                                                                           optionsText: 'CODE_NAME',
+                                                                           valueAllowUnset: true"></select>
                         </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-line">
+                            <input id="AC_ADDRESS" type="text" class="form-control control-detail"
+                                placeholder="거래처 주소" />
+                            <!-- <input type="password" class="form-control" placeholder="Password" /> -->
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-line">
+                            <input id="AC_MAN01" type="text" class="form-control control-detail"
+                                placeholder="담당자 명" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-line">
+                            <input id="AC_PHONENUMBER01" type="text" class="form-control control-detail"
+                                placeholder="담당자 연락처" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-line">
+                            <input id="AC_EMAIL01" type="text" class="form-control control-detail"
+                                placeholder="담당자 메일" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-line">
+                            <input id="AC_PAY" type="text" class="form-control control-detail" placeholder="잔금" />
+                        </div>
+                    </div>
+
+                    <!-- <div class="form-group">
+                        <div class="form-line">
+                            <textarea id="AC_DESC" rows="4" class="form-control no-resize control-detail"
+                                placeholder="비고"></textarea>
+                        </div>
+                    </div> -->
+
+                    <div class="form-group">
+                        <table style="width:100%;">
+
+                            <tr>
+                                <td style="width:50%;">
+                                    <button type="button" class="btn btn-primary m-t-15 waves-effect" style="width:100%;margin-right:10px;"
+                                        onclick="Create();">저장</button>
+                                </td>
+
+                                <td style="width:50%;">
+                                    <button type="button" class="btn btn-primary m-t-15 waves-effect" style="width:100%;margin-left:10px">취소</button>
+                                </td>
+                            </tr>
+
+                        </table>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- #END# Input -->
     </div>
 
     <script type="text/javascript">
@@ -255,6 +245,22 @@
             //        _AC_TYPE_CODES = jsonObj.data;
             //        break;
             //}
+
+            var Main = document.getElementById('Manager');
+            var height = document.getElementById('MainBody').offsetHeight;
+
+            Main.style.height = height - 10 + "px";
+
+            var top = (height - Main.offsetHeight) * 0.5;
+
+            Main.style.marginTop = top + "px";
+
+            $('html, body').css({ 'overflow': 'hidden', 'height': '100%' });
+            $('#element').on('scroll touchmove mousewheel', function (event) {
+                event.preventDefault();
+                event.stopPropagation();
+                return false;
+            });
 
             vm = new ViewModel();
             ko.applyBindings(vm);

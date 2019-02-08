@@ -1,6 +1,7 @@
 package study.hk.poyowordbook;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.AssetFileDescriptor;
 import android.content.res.AssetManager;
 import android.graphics.Bitmap;
@@ -29,6 +30,7 @@ import Event.EventData;
 import Query.Manager_Code;
 import io.github.controlwear.virtual.joystick.android.JoystickView;
 import study.hk.data.Data.*;
+import study.hk.poyowordbook.manager.WordBookActivity;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -78,8 +80,8 @@ public class MainActivity extends AppCompatActivity {
         //lWebView.loadUrl("file:///android_asset/Poyo/game/BattleMonster/index.html");
         //lWebView.loadUrl("file:///android_asset/Poyo/main/index.html");
         //lWebView.loadUrl("file:///android_asset/Poyo/Content/index.html");
-        //lWebView.loadUrl("file:///android_asset/Poyo/main/park/index.html");
-        lWebView.loadUrl("file:///android_asset/Poyo/game/Snake/snake.html");
+        lWebView.loadUrl("file:///android_asset/Poyo/main/park/index.html");
+        //lWebView.loadUrl("file:///android_asset/Poyo/game/Snake/snake.html");
 
 
         // - 신인환 주석 : SQLite DB 관련
@@ -231,17 +233,21 @@ public class MainActivity extends AppCompatActivity {
 
                     switch (parse.handle) {
                         case "joystic" :
-
                             //Boolean boolean1 = Boolean.valueOf("true");
                             boolean isVisible = Boolean.parseBoolean(parse.data);
-
                             if(isVisible) {
                                 joystick.setVisibility(View.VISIBLE);
                             } else {
                                 joystick.setVisibility(View.GONE);
                             }
-
-
+                            break;
+                        case HARDCODE.화면호출 :
+                            switch (parse.data) {
+                                case HARDCODE.단어장관리 :
+                                    Intent intent=new Intent(MainActivity.this,WordBookActivity.class);
+                                    startActivity(intent);
+                                    break;
+                            }
                             break;
                     }
                 }
