@@ -21,7 +21,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".manager.WordBookActivity"></activity>
+        <activity android:name=".manager.WordBookActivity" />
+        <activity android:name=".manager.WordBookDetailActivity"></activity>
     </application>
 
 </manifest>

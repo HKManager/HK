@@ -11,4 +11,5 @@ public class HARDCODE {
     public static final String 화면호출 = "06";
 
     public static final String 단어장관리 = "WORDBOOK";
+    public static final String 단어장상세 = "WORDBOOKDETAIL";
 }

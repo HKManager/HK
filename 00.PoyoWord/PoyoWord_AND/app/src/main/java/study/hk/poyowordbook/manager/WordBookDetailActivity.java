@@ -4,22 +4,20 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.webkit.JsResult;
 import android.webkit.WebView;
-
-import android.os.Handler;
 import android.webkit.WebViewClient;
 
 import com.google.gson.Gson;
 
 import Event.EventData;
 import study.hk.data.Data.HARDCODE;
-import study.hk.poyowordbook.MainActivity;
 import study.hk.poyowordbook.R;
 
-public class WordBookActivity extends AppCompatActivity {
+public class WordBookDetailActivity extends AppCompatActivity {
 
     private final Handler handler = new Handler();
     private Context context = null;
@@ -31,7 +29,7 @@ public class WordBookActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_word_book);
+        setContentView(R.layout.activity_word_book_detail);
 
         context = getApplicationContext();
 
@@ -55,10 +53,10 @@ public class WordBookActivity extends AppCompatActivity {
             }
         });
         lWebView.getSettings().setJavaScriptEnabled(true);
-        lWebView.addJavascriptInterface(new JavaScriptBridge(), "android");
+        lWebView.addJavascriptInterface(new WordBookDetailActivity.JavaScriptBridge(), "android");
         //lWebView.getSettings().setJavaScriptCanOpenWindowsAutomatically(true);
 
-        lWebView.loadUrl("file:///android_asset/Poyo/manager/WordBook/listWordBook.html");
+        lWebView.loadUrl("file:///android_asset/Poyo/manager/WordBook/detailWordBook.html");
     }
 
     private class JavaScriptBridge {
@@ -74,8 +72,8 @@ public class WordBookActivity extends AppCompatActivity {
                     switch (parse.handle) {
                         case HARDCODE.화면호출 :
                             switch (parse.data) {
-                                case HARDCODE.단어장상세 :
-                                    Intent intent=new Intent(WordBookActivity.this,WordBookDetailActivity.class);
+                                case HARDCODE.단어장관리 :
+                                    Intent intent=new Intent(WordBookDetailActivity.this,WordBookActivity.class);
                                     startActivity(intent);
                                     break;
                             }

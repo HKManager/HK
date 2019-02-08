@@ -180,11 +180,11 @@
 
             try {
 
-                var obj = { handle: "06", view: "ACCOUNT", data: "" };
+                var obj = { handle: "06", view: "WordBook", data: "WORDBOOKDETAIL" };
 
                 var data = JSON.stringify(obj);
 
-                invokeCSharpAction(data);
+                window.android.setData(data);
 
             } catch (excetion) {
                 alert(excetion);
