@@ -77,11 +77,10 @@
 
         <nav>
             <ul class="cd-primary-nav">
-                <li><a href="#0" style="font-weight: bold;" onclick="Start()">시작하기</a></li>
-                <li><a href="#0" style="font-weight: bold;">상점가기</a></li>
-                <li><a href="#0" style="font-weight: bold;">관리하기</a></li>
-                <li><a href="#0" style="font-weight: bold;" onclick="Main()">메인으로</a></li>
-                <li><a href="#0" style="font-weight: bold;">종료하기</a></li>
+                <li><a href="#0" style="font-weight: bold;" onclick="GoMain()">메인으로 가기</a></li>
+                <li><a href="#0" style="font-weight: bold;">단어배치관리 하기</a></li>
+                <li><a href="#0" style="font-weight: bold;">단어학습장관리 하기</a></li>
+                <li><a href="#0" style="font-weight: bold;">어플종료하기</a></li>
             </ul>
         </nav>
 
@@ -177,9 +176,7 @@
         }
 
         function Create() {
-
             try {
-
                 var obj = { handle: "06", view: "WordBook", data: "WORDBOOKDETAIL" };
 
                 var data = JSON.stringify(obj);
@@ -189,6 +186,14 @@
             } catch (excetion) {
                 alert(excetion);
             }
+        }
+
+        function GoMain() {
+            var obj = { handle: "06", view: "WordBookDetail", data: "MAIN" };
+
+            var data = JSON.stringify(obj);
+
+            window.android.setData(data);
         }
 
         function Update() {

@@ -27,6 +27,8 @@ public class WordBookActivity extends AppCompatActivity {
 
     private Gson gson = new Gson();
 
+    private Intent intent;
+
     @SuppressLint({ "SetJavaScriptEnabled", "JavascriptInterface" })
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,7 +77,11 @@ public class WordBookActivity extends AppCompatActivity {
                         case HARDCODE.화면호출 :
                             switch (parse.data) {
                                 case HARDCODE.단어장상세 :
-                                    Intent intent=new Intent(WordBookActivity.this,WordBookDetailActivity.class);
+                                    intent =new Intent(WordBookActivity.this,WordBookDetailActivity.class);
+                                    startActivity(intent);
+                                    break;
+                                case HARDCODE.메인화면 :
+                                    intent =new Intent(WordBookActivity.this,MainActivity.class);
                                     startActivity(intent);
                                     break;
                             }

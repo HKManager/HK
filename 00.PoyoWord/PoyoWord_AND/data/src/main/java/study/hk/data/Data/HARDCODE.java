@@ -10,6 +10,7 @@ public class HARDCODE {
     public static final String 삭제 = "05";
     public static final String 화면호출 = "06";
 
+    public static final String 메인화면 = "MAIN";
     public static final String 단어장관리 = "WORDBOOK";
     public static final String 단어장상세 = "WORDBOOKDETAIL";
 }
