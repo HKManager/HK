@@ -39,6 +39,17 @@
     <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
     <link href="../../Content/css/themes/all-themes.css" rel="stylesheet" />
 
+    <!-- 네비게이션 메뉴 관련 -->
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/earlyaccess/nanumpenscript.css">
+    <link rel="stylesheet" href="../../css/menu/reset.css"> <!-- CSS reset -->
+    <link rel="stylesheet" href="../../css/menu/style.css"> <!-- Resource style -->
+    <script src="../../js/menu/modernizr.js"></script> <!-- Modernizr -->
+
+    <script src="../../js/menu/jquery-2.1.1.js"></script>
+    <script src="../../js/menu/velocity.min.js"></script>
+    <script src="../../js/menu/main.js"></script> <!-- Resource jQuery -->
+    <!-- 네비게이션 메뉴 관련 -->
+
     <style>
         .control-detail {
             padding-left: 15px !important;
@@ -69,7 +80,6 @@
     </div>
     <!-- #END# Page Loader -->
     <!-- Overlay For Sidebars -->
-    <div class="overlay"></div>
     <!-- #END# Overlay For Sidebars -->
     <!-- Search Bar -->
     <!--<div class="search-bar">
@@ -82,115 +92,122 @@
         </div>
     </div>-->
 
-    <div id="Manager" class="card" style="min-height:300px;margin-left: 5px;margin-right: 5px;">
-        <div class="header">
+    <div style="position:relative;overflow-x:scroll ; overflow-y: hidden;">
 
-            <div class="row clearfix">
-                <div class="col-sm-6">
-                    <h2>
-                        단어장 상세관리
-                        <small>단어장 정보를 입력해 주세요.</small>
-                    </h2>
+        <main id="Main">
+
+            <div style="margin-left: 5px;margin-right: 5px;">
+
+                <div id="Manager" class="card" style="min-height:300px;">
+                    <div class="header">
+            
+                        <div class="row clearfix">
+                            <div class="col-sm-6">
+                                <h2>
+                                    단어장 상세관리
+                                    <small>단어장 정보를 입력해 주세요.</small>
+                                </h2>
+                            </div>
+                            <div class="col-sm-6 align-right">
+                                <!-- <div class="switch panel-switch-btn">
+                                    <span class="m-r-10 font-12">REAL TIME</span>
+                                    <label>OFF<input type="checkbox" id="realtime" checked><span class="lever switch-col-cyan"></span>ON</label>
+                                </div> -->
+                            </div>
+                        </div>
+            
+                    </div>
+                    <div class="body">
+                        <div class="row clearfix">
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <div class="form-line">
+                                        <input id="AC_SN" type="hidden" class="control-detail form-control" placeholder="거래처 SN"
+                                            data-bind="value: AC_SN" />
+                                        <input id="AC_NAME" type="text" class="control-detail form-control" placeholder="거래처 명"
+                                            data-bind="value: AC_NAME" />
+                                    </div>
+                                </div>
+            
+                                <div class="form-group">
+                                    <div class="form-line">
+                                        <select id="AC_TYPE_CODE" class="form-control control-detail show-tick"
+                                            data-bind="options: AC_TYPE_CODES,
+                                                                                       optionsCaption: '유형을 선택해 주세요',
+                                                                                       optionsValue: 'CODE',
+                                                                                       value: AC_TYPE_CODE,
+                                                                                       optionsText: 'CODE_NAME',
+                                                                                       valueAllowUnset: true"></select>
+                                    </div>
+                                </div>
+            
+                                <div class="form-group">
+                                    <div class="form-line">
+                                        <input id="AC_ADDRESS" type="text" class="form-control control-detail"
+                                            placeholder="거래처 주소" />
+                                        <!-- <input type="password" class="form-control" placeholder="Password" /> -->
+                                    </div>
+                                </div>
+            
+                                <div class="form-group">
+                                    <div class="form-line">
+                                        <input id="AC_MAN01" type="text" class="form-control control-detail"
+                                            placeholder="담당자 명" />
+                                    </div>
+                                </div>
+            
+                                <div class="form-group">
+                                    <div class="form-line">
+                                        <input id="AC_PHONENUMBER01" type="text" class="form-control control-detail"
+                                            placeholder="담당자 연락처" />
+                                    </div>
+                                </div>
+            
+                                <div class="form-group">
+                                    <div class="form-line">
+                                        <input id="AC_EMAIL01" type="text" class="form-control control-detail"
+                                            placeholder="담당자 메일" />
+                                    </div>
+                                </div>
+            
+                                <div class="form-group">
+                                    <div class="form-line">
+                                        <input id="AC_PAY" type="text" class="form-control control-detail" placeholder="잔금" />
+                                    </div>
+                                </div>
+            
+                                <!-- <div class="form-group">
+                                    <div class="form-line">
+                                        <textarea id="AC_DESC" rows="4" class="form-control no-resize control-detail"
+                                            placeholder="비고"></textarea>
+                                    </div>
+                                </div> -->
+            
+                                <div class="form-group">
+                                    <table style="width:100%;">
+            
+                                        <tr>
+                                            <td style="width:50%;">
+                                                <button type="button" class="btn btn-primary m-t-15 waves-effect" style="width:100%;margin-right:10px;"
+                                                    onclick="Create();">저장</button>
+                                            </td>
+            
+                                            <td style="width:50%;">
+                                                <button type="button" class="btn btn-primary m-t-15 waves-effect" style="width:100%;margin-left:10px" onclick="Cancel()">취소</button>
+                                            </td>
+                                        </tr>
+            
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-sm-6 align-right">
-
-
-
-
-
-                    <!-- <div class="switch panel-switch-btn">
-                        <span class="m-r-10 font-12">REAL TIME</span>
-                        <label>OFF<input type="checkbox" id="realtime" checked><span class="lever switch-col-cyan"></span>ON</label>
-                    </div> -->
-                </div>
+        
             </div>
 
-        </div>
-        <div class="body">
-            <div class="row clearfix">
-                <div class="col-sm-12">
-                    <div class="form-group">
-                        <div class="form-line">
-                            <input id="AC_SN" type="hidden" class="control-detail form-control" placeholder="거래처 SN"
-                                data-bind="value: AC_SN" />
-                            <input id="AC_NAME" type="text" class="control-detail form-control" placeholder="거래처 명"
-                                data-bind="value: AC_NAME" />
-                        </div>
-                    </div>
+        </main>
 
-                    <div class="form-group">
-                        <div class="form-line">
-                            <select id="AC_TYPE_CODE" class="form-control control-detail show-tick"
-                                data-bind="options: AC_TYPE_CODES,
-                                                                           optionsCaption: '유형을 선택해 주세요',
-                                                                           optionsValue: 'CODE',
-                                                                           value: AC_TYPE_CODE,
-                                                                           optionsText: 'CODE_NAME',
-                                                                           valueAllowUnset: true"></select>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <div class="form-line">
-                            <input id="AC_ADDRESS" type="text" class="form-control control-detail"
-                                placeholder="거래처 주소" />
-                            <!-- <input type="password" class="form-control" placeholder="Password" /> -->
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <div class="form-line">
-                            <input id="AC_MAN01" type="text" class="form-control control-detail"
-                                placeholder="담당자 명" />
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <div class="form-line">
-                            <input id="AC_PHONENUMBER01" type="text" class="form-control control-detail"
-                                placeholder="담당자 연락처" />
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <div class="form-line">
-                            <input id="AC_EMAIL01" type="text" class="form-control control-detail"
-                                placeholder="담당자 메일" />
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <div class="form-line">
-                            <input id="AC_PAY" type="text" class="form-control control-detail" placeholder="잔금" />
-                        </div>
-                    </div>
-
-                    <!-- <div class="form-group">
-                        <div class="form-line">
-                            <textarea id="AC_DESC" rows="4" class="form-control no-resize control-detail"
-                                placeholder="비고"></textarea>
-                        </div>
-                    </div> -->
-
-                    <div class="form-group">
-                        <table style="width:100%;">
-
-                            <tr>
-                                <td style="width:50%;">
-                                    <button type="button" class="btn btn-primary m-t-15 waves-effect" style="width:100%;margin-right:10px;"
-                                        onclick="Create();">저장</button>
-                                </td>
-
-                                <td style="width:50%;">
-                                    <button type="button" class="btn btn-primary m-t-15 waves-effect" style="width:100%;margin-left:10px">취소</button>
-                                </td>
-                            </tr>
-
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
 
     <script type="text/javascript">
@@ -293,6 +310,14 @@
 
             //log("Sending Data:" + data);
             invokeCSharpAction(data);
+        }
+
+        function Cancel() {
+            var obj = { handle: "06", view: "WordBookDetail", data: "WORDBOOK" };
+
+            var data = JSON.stringify(obj);
+
+            window.android.setData(data);
         }
 
         function logForXamarin(str) {

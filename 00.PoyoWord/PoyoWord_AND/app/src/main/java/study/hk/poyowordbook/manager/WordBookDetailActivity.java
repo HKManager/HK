@@ -56,7 +56,7 @@ public class WordBookDetailActivity extends AppCompatActivity {
         lWebView.addJavascriptInterface(new WordBookDetailActivity.JavaScriptBridge(), "android");
         //lWebView.getSettings().setJavaScriptCanOpenWindowsAutomatically(true);
 
-        lWebView.loadUrl("file:///android_asset/Poyo/manager/WordBook/detailWordBook.html");
+        lWebView.loadUrl("file:///android_asset/Poyo/manager/WordBook/detailWord.html");
     }
 
     private class JavaScriptBridge {
