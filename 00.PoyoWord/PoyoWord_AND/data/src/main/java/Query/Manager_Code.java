@@ -37,7 +37,16 @@ public class Manager_Code {
             map = new HashMap();
 
             map.put("CODE", cursor.getString(cursor.getColumnIndex("CODE")));
+            map.put("CODE_001", cursor.getString(cursor.getColumnIndex("CODE_001")));
+            map.put("CODE_002", cursor.getString(cursor.getColumnIndex("CODE_002")));
+            map.put("CODE_003", cursor.getString(cursor.getColumnIndex("CODE_003")));
             map.put("CODE_NAME", cursor.getString(cursor.getColumnIndex("CODE_NAME")));
+            map.put("CODE_TYPE", cursor.getString(cursor.getColumnIndex("CODE_TYPE")));
+            map.put("CODE_SORT", cursor.getInt(cursor.getColumnIndex("CODE_SORT")));
+            map.put("USEYN", cursor.getString(cursor.getColumnIndex("USEYN")));
+            map.put("CODE_UPDATE_SN", cursor.getInt(cursor.getColumnIndex("CODE_UPDATE_SN")));
+            map.put("CODE_UPDATE_DATE", cursor.getString(cursor.getColumnIndex("CODE_UPDATE_DATE")));
+            map.put("CODE_DESC", cursor.getString(cursor.getColumnIndex("CODE_DESC")));
 
             list.add(map);
         }
