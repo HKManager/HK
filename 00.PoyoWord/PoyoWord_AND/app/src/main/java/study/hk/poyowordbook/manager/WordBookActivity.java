@@ -58,11 +58,11 @@ public class WordBookActivity extends AppCompatActivity {
 
                 data.SetHandle(HARDCODE.전체조회);
                 data.SetView(HARDCODE.단어장관리);
-                data.SetData(jsonResult);
+                data.SetValue(list);
 
-                String jsonData = gson.toJson(data);
+                String JsonEventData = gson.toJson(data);
 
-                lWebView.loadUrl("javascript:setMessage('" + "jsonData" + "')");
+                lWebView.loadUrl("javascript:showData('" + JsonEventData + "')");
             }
 
             public boolean onJsAlert(final WebView view, final String url, final String message, JsResult result) {
