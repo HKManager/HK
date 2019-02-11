@@ -1,7 +1,7 @@
 package study.hk.data.Data;
 
 public class HARDCODE {
-    public static String DataBase = "smarterp_farm.db";
+    public static String DataBase = "poyoword.db";
 
     public static final String 전체조회 = "01";
     public static final String 개별조회 = "02";
