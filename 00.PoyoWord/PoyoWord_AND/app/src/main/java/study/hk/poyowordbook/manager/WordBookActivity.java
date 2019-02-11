@@ -28,6 +28,7 @@ public class WordBookActivity extends AppCompatActivity {
     private final Handler handler = new Handler();
     private Context context = null;
     private WebView lWebView = null;
+    private Manager_WordBook wordBook;
 
     private Gson gson = new Gson();
 
@@ -40,6 +41,7 @@ public class WordBookActivity extends AppCompatActivity {
         setContentView(R.layout.activity_word_book);
 
         context = getApplicationContext();
+        wordBook = new Manager_WordBook(context);
 
         lWebView = (WebView)findViewById(R.id.mainView);
         lWebView.setWebViewClient(new WebViewClient() {
@@ -49,9 +51,7 @@ public class WordBookActivity extends AppCompatActivity {
             @Override
             @SuppressLint({ "SetJavaScriptEnabled", "JavascriptInterface" })
             public void onPageFinished(WebView view, String url) {
-                Manager_WordBook wordBook = new Manager_WordBook(context);
                 ArrayList<Map> list = wordBook.Search();
-
                 String jsonResult = gson.toJson(list);
 
                 EventData data = new EventData();
@@ -98,6 +98,20 @@ public class WordBookActivity extends AppCompatActivity {
                                     startActivity(intent);
                                     break;
                             }
+                            break;
+                        case HARDCODE.전체조회 :
+                            ArrayList<Map> list = wordBook.Search();
+                            String jsonResult = gson.toJson(list);
+
+                            EventData data = new EventData();
+
+                            data.SetHandle(HARDCODE.전체조회);
+                            data.SetView(HARDCODE.단어장관리);
+                            data.SetValue(list);
+
+                            String JsonEventData = gson.toJson(data);
+
+                            lWebView.loadUrl("javascript:showData('" + JsonEventData + "')");
                             break;
                     }
                 }
