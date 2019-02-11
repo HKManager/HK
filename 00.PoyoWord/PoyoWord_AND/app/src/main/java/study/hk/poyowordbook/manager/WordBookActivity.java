@@ -14,7 +14,11 @@ import android.webkit.WebViewClient;
 
 import com.google.gson.Gson;
 
+import java.util.ArrayList;
+import java.util.Map;
+
 import Event.EventData;
+import Query.Manager_WordBook;
 import study.hk.data.Data.HARDCODE;
 import study.hk.poyowordbook.MainActivity;
 import study.hk.poyowordbook.R;
@@ -40,19 +44,28 @@ public class WordBookActivity extends AppCompatActivity {
         lWebView = (WebView)findViewById(R.id.mainView);
         lWebView.setWebViewClient(new WebViewClient() {
             @Override
-            public void onPageStarted(WebView view, String url, Bitmap favicon) {
-
-            }
+            public void onPageStarted(WebView view, String url, Bitmap favicon) { }
 
             @Override
             @SuppressLint({ "SetJavaScriptEnabled", "JavascriptInterface" })
             public void onPageFinished(WebView view, String url) {
-                //lWebView.loadUrl("javascript:setMessage('" + "abc" + "')");
+                Manager_WordBook wordBook = new Manager_WordBook(context);
+                ArrayList<Map> list = wordBook.Search();
+
+                String jsonResult = gson.toJson(list);
+
+                EventData data = new EventData();
+
+                data.SetHandle(HARDCODE.전체조회);
+                data.SetView(HARDCODE.단어장관리);
+                data.SetData(jsonResult);
+
+                String jsonData = gson.toJson(data);
+
+                lWebView.loadUrl("javascript:setMessage('" + "jsonData" + "')");
             }
 
             public boolean onJsAlert(final WebView view, final String url, final String message, JsResult result) {
-                //lWebView.loadUrl("javascript:setMessage('" + message + "')");
-                //result.confirm();
                 return true;
             }
         });
