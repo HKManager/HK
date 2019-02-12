@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <title>Basic Form Elements | Bootstrap Based Admin Template - Material Design</title>
+    <!-- Favicon-->
+    <link rel="icon" href="../Content/favicon.ico" type="image/x-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
+
+    <!-- Bootstrap Core Css -->
+    <link href="../Content/plugins/bootstrap/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Waves Effect Css -->
+    <link href="../Content/plugins/node-waves/waves.css" rel="stylesheet" />
+
+    <!-- Animation Css -->
+    <link href="../Content/plugins/animate-css/animate.css" rel="stylesheet" />
+
+    <!-- Bootstrap Material Datetime Picker Css -->
+    <link href="../Content/plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css" rel="stylesheet" />
+
+    <!-- Bootstrap DatePicker Css -->
+    <link href="../Content/plugins/bootstrap-datepicker/css/bootstrap-datepicker.css" rel="stylesheet" />
+
+    <!-- Wait Me Css -->
+    <link href="../Content/plugins/waitme/waitMe.css" rel="stylesheet" />
+
+    <!-- Bootstrap Select Css -->
+    <link href="../Content/plugins/bootstrap-select/css/bootstrap-select.css" rel="stylesheet" />
+
+    <!-- Custom Css -->
+    <link href="../Content/css/style.css" rel="stylesheet">
+
+    <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
+    <link href="../Content/css/themes/all-themes.css" rel="stylesheet" />
+
+    <!-- 네비게이션 메뉴 관련 -->
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/earlyaccess/nanumpenscript.css">
+    <link rel="stylesheet" href="../css/menu/reset.css"> <!-- CSS reset -->
+    <link rel="stylesheet" href="../css/menu/style.css"> <!-- Resource style -->
+    <script src="../js/menu/modernizr.js"></script> <!-- Modernizr -->
+
+    <script src="../js/menu/jquery-2.1.1.js"></script>
+    <script src="../js/menu/velocity.min.js"></script>
+    <script src="../js/menu/main.js"></script> <!-- Resource jQuery -->
+    <!-- 네비게이션 메뉴 관련 -->
+
+    <style>
+        .control-detail {
+            padding-left: 15px !important;
+        }
+    </style>
+</head>
+
+<body id="MainBody" class="theme-red" style="margin:0;height:100%;">
+
+    <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script type='text/javascript' src='../Content/js/knockout-3.4.2.js'></script>
+
+    <!-- Page Loader -->
+    <div class="page-loader-wrapper">
+        <div class="loader">
+            <div class="preloader">
+                <div class="spinner-layer pl-red">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+            </div>
+            <p>Please wait...</p>
+        </div>
+    </div>
+    <!-- #END# Page Loader -->
+    <!-- Overlay For Sidebars -->
+    <!-- #END# Overlay For Sidebars -->
+    <!-- Search Bar -->
+    <!--<div class="search-bar">
+        <div class="search-icon">
+            <i class="material-icons">search</i>
+        </div>
+        <input type="text" placeholder="START TYPING...">
+        <div class="close-search">
+            <i class="material-icons">close</i>
+        </div>
+    </div>-->
+
+    <div style="position:relative;overflow-x:scroll ; overflow-y: hidden;">
+
+        <main id="Main">
+
+            <div style="margin-left: 5px;margin-right: 5px;">
+
+                <div id="Manager" class="card" style="min-height:300px;">
+                    <div class="header">
+            
+                        <div class="row clearfix">
+                            <div class="col-sm-6">
+                                <h2>
+                                    단어장 상세관리
+                                    <small>단어장 정보를 입력해 주세요.</small>
+                                </h2>
+                            </div>
+                            <div class="col-sm-6 align-right">
+                                <!-- <div class="switch panel-switch-btn">
+                                    <span class="m-r-10 font-12">REAL TIME</span>
+                                    <label>OFF<input type="checkbox" id="realtime" checked><span class="lever switch-col-cyan"></span>ON</label>
+                                </div> -->
+                            </div>
+                        </div>
+            
+                    </div>
+                    <div class="body">
+                        <div class="row clearfix">
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <div class="form-line">
+                                        <input id="AC_SN" type="hidden" class="control-detail form-control" placeholder="거래처 SN"
+                                            data-bind="value: AC_SN" />
+                                        <input id="AC_NAME" type="text" class="control-detail form-control" placeholder="거래처 명"
+                                            data-bind="value: AC_NAME" />
+                                    </div>
+                                </div>
+            
+                                <div class="form-group">
+                                    <div class="form-line">
+                                        <select id="AC_TYPE_CODE" class="form-control control-detail show-tick"
+                                            data-bind="options: AC_TYPE_CODES,
+                                                                                       optionsCaption: '유형을 선택해 주세요',
+                                                                                       optionsValue: 'CODE',
+                                                                                       value: AC_TYPE_CODE,
+                                                                                       optionsText: 'CODE_NAME',
+                                                                                       valueAllowUnset: true"></select>
+                                    </div>
+                                </div>
+            
+                                <div class="form-group">
+                                    <div class="form-line">
+                                        <input id="AC_ADDRESS" type="text" class="form-control control-detail"
+                                            placeholder="거래처 주소" />
+                                        <!-- <input type="password" class="form-control" placeholder="Password" /> -->
+                                    </div>
+                                </div>
+            
+                                <div class="form-group">
+                                    <div class="form-line">
+                                        <input id="AC_MAN01" type="text" class="form-control control-detail"
+                                            placeholder="담당자 명" />
+                                    </div>
+                                </div>
+            
+                                <div class="form-group">
+                                    <div class="form-line">
+                                        <input id="AC_PHONENUMBER01" type="text" class="form-control control-detail"
+                                            placeholder="담당자 연락처" />
+                                    </div>
+                                </div>
+            
+                                <div class="form-group">
+                                    <div class="form-line">
+                                        <input id="AC_EMAIL01" type="text" class="form-control control-detail"
+                                            placeholder="담당자 메일" />
+                                    </div>
+                                </div>
+            
+                                <div class="form-group">
+                                    <div class="form-line">
+                                        <input id="AC_PAY" type="text" class="form-control control-detail" placeholder="잔금" />
+                                    </div>
+                                </div>
+            
+                                <!-- <div class="form-group">
+                                    <div class="form-line">
+                                        <textarea id="AC_DESC" rows="4" class="form-control no-resize control-detail"
+                                            placeholder="비고"></textarea>
+                                    </div>
+                                </div> -->
+            
+                                <div class="form-group">
+                                    <table style="width:100%;">
+            
+                                        <tr>
+                                            <td style="width:50%;">
+                                                <button type="button" class="btn btn-primary m-t-15 waves-effect" style="width:100%;margin-right:10px;"
+                                                    onclick="Create();">저장</button>
+                                            </td>
+            
+                                            <td style="width:50%;">
+                                                <button type="button" class="btn btn-primary m-t-15 waves-effect" style="width:100%;margin-left:10px" onclick="Cancel()">취소</button>
+                                            </td>
+                                        </tr>
+            
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+            </div>
+
+        </main>
+
+    </div>
+
+    <script type="text/javascript">
+        ko.observableArray.fn.find = function (prop, data) {
+            var valueToMatch = data[prop];
+            return ko.utils.arrayFirst(this(), function (item) {
+                return item[prop] === valueToMatch;
+            });
+        };
+
+        function ViewModel() {
+            this.AC_SN = ko.observable("");
+            this.AC_NAME = ko.observable("");
+            this.AC_ADDRESS = ko.observable("");
+            this.AC_MAN01 = ko.observable("");
+            this.AC_PHONENUMBER01 = ko.observable("");
+            this.AC_EMAIL01 = ko.observable("");
+            this.AC_PAY = ko.observable("");
+            this.AC_DESC = ko.observable("");
+            this.AC_TYPE_CODES = ko.observableArray([]);
+            this.AC_TYPE_CODE = ko.observable(this.AC_TYPE_CODES.find("CODE", _AC_TYPE_CODE));
+        };
+
+        //var _AC_NAME = "";
+        //var _AC_ADDRESS = "";
+        //var _AC_MAN01 = "";
+        //var _AC_PHONENUMBER01 = "";
+        //var _AC_EMAIL01 = "";
+        //var _AC_PAY = "";
+        //var _AC_DESC = "";
+        var _AC_TYPE_CODES = [];
+        var _AC_TYPE_CODE = "";
+
+        var vm = null;
+
+        $(document).ready(function () {
+            //_AC_NAME = "asdfasdf";
+            //_AC_TYPE_CODES = [
+            //    { id: 1, name: "one" },
+            //    { id: 2, name: "two" },
+            //    { id: 3, name: "three" }
+            //];
+            //_AC_TYPE_CODE = { id: 2, name: "two" };
+
+
+            //var temp = '{ "handle": "SHOW", "view": "AC_TYPE_CODES", "data": [{"CODE":"001","CODE_001":"015","CODE_002":"001","CODE_003":"---","CODE_NAME":"입고","CODE_TYPE":"","CODE_SORT":0,"CODE_USEYN":false,"CODE_UPDATE_SN":1,"CODE_UPDATE_DATE":"0001 - 01 - 24T08: 18: 12.3081354Z","CODE_DESC":""},{"CODE":"002","CODE_001":"015","CODE_002":"002","CODE_003":"-- - ","CODE_NAME":"출고","CODE_TYPE":"","CODE_SORT":0,"CODE_USEYN":false,"CODE_UPDATE_SN":1,"CODE_UPDATE_DATE":"0001 - 01 - 24T08: 18: 12.3081413Z","CODE_DESC":""}] }';
+
+            //var jsonObj = JSON.parse(temp);
+
+            //switch (jsonObj.view) {
+            //    case "AC_TYPE_CODES":
+            //        _AC_TYPE_CODES = jsonObj.data;
+            //        break;
+            //}
+
+            var Main = document.getElementById('Manager');
+            var height = document.getElementById('MainBody').offsetHeight;
+
+            Main.style.height = height - 10 + "px";
+
+            var top = (height - Main.offsetHeight) * 0.5;
+
+            Main.style.marginTop = top + "px";
+
+            $('html, body').css({ 'overflow': 'hidden', 'height': '100%' });
+            $('#element').on('scroll touchmove mousewheel', function (event) {
+                event.preventDefault();
+                event.stopPropagation();
+                return false;
+            });
+
+            vm = new ViewModel();
+            ko.applyBindings(vm);
+
+
+            //var temp = '{ "handle": "SHOW", "view": "AC_TYPE_CODES", "data": [{"CODE":"001","CODE_001":"015","CODE_002":"001","CODE_003":"---","CODE_NAME":"입1111고","CODE_TYPE":"","CODE_SORT":0,"CODE_USEYN":false,"CODE_UPDATE_SN":1,"CODE_UPDATE_DATE":"0001 - 01 - 24T08: 18: 12.3081354Z","CODE_DESC":""},{"CODE":"002","CODE_001":"015","CODE_002":"002","CODE_003":"-- - ","CODE_NAME":"출고","CODE_TYPE":"","CODE_SORT":0,"CODE_USEYN":false,"CODE_UPDATE_SN":1,"CODE_UPDATE_DATE":"0001 - 01 - 24T08: 18: 12.3081413Z","CODE_DESC":""}] }';
+
+            //var jsonObj = JSON.parse(temp);
+
+            //switch (jsonObj.view) {
+            //    case "AC_TYPE_CODES":
+            //        _AC_TYPE_CODES = jsonObj.data;
+            //        vm.AC_TYPE_CODES(_AC_TYPE_CODES);
+            //        break;
+            //}
+
+
+        });
+
+
+        function Create() {
+            var objectData = ko.toJS(vm);
+
+            var jSonData = JSON.stringify(objectData);
+
+            //var name = ViewModel.AC_NAME;
+            var obj = { handle: "03", view: "ACCOUNT", data: jSonData };
+
+            var data = JSON.stringify(obj);
+
+            //log("Sending Data:" + data);
+            invokeCSharpAction(data);
+        }
+
+        function Cancel() {
+            var obj = { handle: "06", view: "WordBookDetail", data: "WORDBOOK" };
+
+            var data = JSON.stringify(obj);
+
+            window.android.setData(data);
+        }
+
+        function logForXamarin(str) {
+            //alert(str);
+            //$('#result').text($('#result').text() + " " + str);
+
+
+            //var str = '{ "handle": "SHOW", "view": "AC_TYPE_CODES", "data": [{"CODE":"001","CODE_001":"015","CODE_002":"001","CODE_003":"---","CODE_NAME":"입1111고","CODE_TYPE":"","CODE_SORT":0,"CODE_USEYN":false,"CODE_UPDATE_SN":1,"CODE_UPDATE_DATE":"0001 - 01 - 24T08: 18: 12.3081354Z","CODE_DESC":""},{"CODE":"002","CODE_001":"015","CODE_002":"002","CODE_003":"-- - ","CODE_NAME":"출고","CODE_TYPE":"","CODE_SORT":0,"CODE_USEYN":false,"CODE_UPDATE_SN":1,"CODE_UPDATE_DATE":"0001 - 01 - 24T08: 18: 12.3081413Z","CODE_DESC":""}] }';
+
+            //alert(str);
+
+            try {
+                //    var jsonObj = $.parseJSON(str);
+
+                //    switch (jsonObj.view) {
+                //        case "AC_TYPE_CODES":
+                //            alert(str);
+                //            _AC_TYPE_CODES = jsonObj.data;
+                //            vm.AC_TYPE_CODES(_AC_TYPE_CODES);
+                //            vm.AC_NAME("asdfasdfdsaf");
+                //            break;
+                //    }
+
+
+                //var str = '{ "handle": "SHOW", "view": "AC_TYPE_CODES", "data": [{"CODE":"001","CODE_001":"015","CODE_002":"001","CODE_003":"---","CODE_NAME":"입1111고","CODE_TYPE":"","CODE_SORT":0,"CODE_USEYN":false,"CODE_UPDATE_SN":1,"CODE_UPDATE_DATE":"0001 - 01 - 24T08: 18: 12.3081354Z","CODE_DESC":""},{"CODE":"002","CODE_001":"015","CODE_002":"002","CODE_003":"-- - ","CODE_NAME":"출고","CODE_TYPE":"","CODE_SORT":0,"CODE_USEYN":false,"CODE_UPDATE_SN":1,"CODE_UPDATE_DATE":"0001 - 01 - 24T08: 18: 12.3081413Z","CODE_DESC":""}] }';
+
+                var jsonObj = JSON.parse(str);
+
+                switch (jsonObj.view) {
+                    case "AC_TYPE_CODES":
+                        var coces = jsonObj.value;
+                        vm.AC_TYPE_CODES(coces);
+                        break;
+                    case "ALL":
+                        var data = jsonObj.value;
+                        vm.AC_NAME(data.AC_NAME);
+                        vm.AC_SN(data.AC_SN);
+                        vm.AC_TYPE_CODE(data.AC_TYPE_CODE);
+                        break;
+                }
+
+                //vm = new ViewModel();
+                //ko.applyBindings(vm);
+            } catch (excetion) {
+                alert(excetion);
+            }
+        }
+    </script>
+
+
+    <!-- Jquery Core Js -->
+    <script src="../Content/plugins/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core Js -->
+    <script src="../Content/plugins/bootstrap/js/bootstrap.js"></script>
+
+    <!-- Select Plugin Js -->
+    <!--<script src="../../Content/plugins/bootstrap-select/js/bootstrap-select.js"></script>-->
+
+    <!-- Slimscroll Plugin Js -->
+    <script src="../Content/plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
+
+    <!-- Waves Effect Plugin Js -->
+    <script src="../Content/plugins/node-waves/waves.js"></script>
+
+    <!-- Autosize Plugin Js -->
+    <script src="../Content/plugins/autosize/autosize.js"></script>
+
+    <!-- Moment Plugin Js -->
+    <script src="../Content/plugins/momentjs/moment.js"></script>
+
+    <!-- Bootstrap Material Datetime Picker Plugin Js -->
+    <script src="../Content/plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
+
+    <!-- Bootstrap Datepicker Plugin Js -->
+    <script src="../Content/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+
+    <!-- Custom Js -->
+    <script src="../Content/js/admin.js"></script>
+    <script src="../Content/js/pages/forms/basic-form-elements.js"></script>
+
+    <!-- Demo Js -->
+    <script src="../Content/js/demo.js"></script>
+</body>
+
+</html>

@@ -73,7 +73,7 @@ public class WordBookActivity extends AppCompatActivity {
         lWebView.addJavascriptInterface(new JavaScriptBridge(), "android");
         //lWebView.getSettings().setJavaScriptCanOpenWindowsAutomatically(true);
 
-        lWebView.loadUrl("file:///android_asset/Poyo/manager/WordBook/listWordBook.html");
+        lWebView.loadUrl("file:///android_asset/Poyo/manager/WordBookList.html");
     }
 
     private class JavaScriptBridge {
@@ -95,6 +95,10 @@ public class WordBookActivity extends AppCompatActivity {
                                     break;
                                 case HARDCODE.메인화면 :
                                     intent =new Intent(WordBookActivity.this,MainActivity.class);
+                                    startActivity(intent);
+                                    break;
+                                case HARDCODE.단어장배치관리 :
+                                    intent =new Intent(WordBookActivity.this,WordAudLocActivity.class);
                                     startActivity(intent);
                                     break;
                             }

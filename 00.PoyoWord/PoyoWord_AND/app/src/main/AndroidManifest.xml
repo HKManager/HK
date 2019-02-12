@@ -22,7 +22,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".manager.WordBookActivity" />
-        <activity android:name=".manager.WordBookDetailActivity"></activity>
+        <activity android:name=".manager.WordBookDetailActivity" />
+        <activity android:name=".manager.WordAudLocActivity" />
+        <activity android:name=".manager.WordAudLocDetailActivity"></activity>
     </application>
 
 </manifest>

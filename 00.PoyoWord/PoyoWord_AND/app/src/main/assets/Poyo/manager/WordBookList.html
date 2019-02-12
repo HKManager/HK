@@ -12,28 +12,28 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css" />
     <!-- Bootstrap Core Css -->
-    <link href="../../Content/plugins/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="../Content/plugins/bootstrap/css/bootstrap.css" rel="stylesheet" />
     <!-- Waves Effect Css -->
-    <link href="../../Content/plugins/node-waves/waves.css" rel="stylesheet" />
+    <link href="../Content/plugins/node-waves/waves.css" rel="stylesheet" />
     <!-- Animation Css -->
-    <link href="../../Content/plugins/animate-css/animate.css" rel="stylesheet" />
+    <link href="../Content/plugins/animate-css/animate.css" rel="stylesheet" />
     <!-- Morris Chart Css-->
-    <link href="../../Content/plugins/morrisjs/morris.css" rel="stylesheet" />
+    <link href="../Content/plugins/morrisjs/morris.css" rel="stylesheet" />
     <!-- Custom Css -->
-    <link href="../../Content/css/style.css" rel="stylesheet" />
+    <link href="../Content/css/style.css" rel="stylesheet" />
     <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
-    <link href="../../Content/css/themes/all-themes.css" rel="stylesheet" />
+    <link href="../Content/css/themes/all-themes.css" rel="stylesheet" />
 
 
     <!-- 네비게이션 메뉴 관련 -->
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/earlyaccess/nanumpenscript.css">
-    <link rel="stylesheet" href="../../css/menu/reset.css"> <!-- CSS reset -->
-    <link rel="stylesheet" href="../../css/menu/style.css"> <!-- Resource style -->
-    <script src="../../js/menu/modernizr.js"></script> <!-- Modernizr -->
+    <link rel="stylesheet" href="../css/menu/reset.css"> <!-- CSS reset -->
+    <link rel="stylesheet" href="../css/menu/style.css"> <!-- Resource style -->
+    <script src="../js/menu/modernizr.js"></script> <!-- Modernizr -->
 
-    <script src="../../js/menu/jquery-2.1.1.js"></script>
-    <script src="../../js/menu/velocity.min.js"></script>
-    <script src="../../js/menu/main.js"></script> <!-- Resource jQuery -->
+    <script src="../js/menu/jquery-2.1.1.js"></script>
+    <script src="../js/menu/velocity.min.js"></script>
+    <script src="../js/menu/main.js"></script> <!-- Resource jQuery -->
     <!-- 네비게이션 메뉴 관련 -->
 
     <script src="js/wordbook.js"></script> <!-- Resource jQuery -->
@@ -53,7 +53,7 @@
     <!-- <script src="http://code.jquery.com/jquery-2.1.4.min.js"> -->
     </script>
 
-    <script type='text/javascript' src='../../Content/js/knockout-3.4.2.js'></script>
+    <script type='text/javascript' src='../Content/js/knockout-3.4.2.js'></script>
 
 
     <!-- Page Loader -->
@@ -78,7 +78,7 @@
         <nav>
             <ul class="cd-primary-nav">
                 <li><a href="#0" style="font-weight: bold;" onclick="GoMain()">메인으로 가기</a></li>
-                <li><a href="#0" style="font-weight: bold;">단어배치관리 하기</a></li>
+                <li><a href="#0" style="font-weight: bold;" onclick="GoWordAudLoc()">단어배치관리 하기</a></li>
                 <li><a href="#0" style="font-weight: bold;">단어학습장관리 하기</a></li>
                 <li><a href="#0" style="font-weight: bold;">어플종료하기</a></li>
             </ul>
@@ -196,6 +196,14 @@
             window.android.setData(data);
         }
 
+        function GoWordAudLoc() {
+            var obj = { handle: "06", view: "WordBookDetail", data: "WORDAUDLOC" };
+
+            var data = JSON.stringify(obj);
+
+            window.android.setData(data);
+        }
+
         function Update() {
 
             var item = JSON.stringify(selectItem);
@@ -296,30 +304,30 @@
 
 
     <!-- Jquery Core Js -->
-    <script src="../../Content/plugins/jquery/jquery.min.js">
+    <script src="../Content/plugins/jquery/jquery.min.js">
     </script>
     <!-- Bootstrap Core Js -->
-    <script src="../../Content/plugins/bootstrap/js/bootstrap.js">
+    <script src="../Content/plugins/bootstrap/js/bootstrap.js">
     </script>
     <!-- Select Plugin Js -->
-    <script src="../../Content/plugins/bootstrap-select/js/bootstrap-select.js">
+    <script src="../Content/plugins/bootstrap-select/js/bootstrap-select.js">
     </script>
     <!-- Slimscroll Plugin Js -->
-    <script src="../../Content/plugins/jquery-slimscroll/jquery.slimscroll.js">
+    <script src="../Content/plugins/jquery-slimscroll/jquery.slimscroll.js">
     </script>
     <!-- Waves Effect Plugin Js -->
-    <script src="../../Content/plugins/node-waves/waves.js">
+    <script src="../Content/plugins/node-waves/waves.js">
     </script>
     <!-- Editable Table Plugin Js -->
-    <script src="../../Content/plugins/editable-table/mindmup-editabletable.js">
+    <script src="../Content/plugins/editable-table/mindmup-editabletable.js">
     </script>
     <!-- Custom Js -->
-    <script src="../../Content/js/admin.js">
+    <script src="../Content/js/admin.js">
     </script>
-    <script src="../../Content/js/pages/tables/editable-table.js">
+    <script src="../Content/js/pages/tables/editable-table.js">
     </script>
     <!-- Demo Js -->
-    <script src="../../Content/js/demo.js">
+    <script src="../Content/js/demo.js">
     </script>
 </body>
 

@@ -13,4 +13,6 @@ public class HARDCODE {
     public static final String 메인화면 = "MAIN";
     public static final String 단어장관리 = "WORDBOOK";
     public static final String 단어장상세 = "WORDBOOKDETAIL";
+    public static final String 단어장배치관리 = "WORDAUDLOC";
+    public static final String 단어장배치상세 = "WORDAUDDETAIL";
 }
