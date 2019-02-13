@@ -2807,9 +2807,6 @@ section.content {
     -moz-box-shadow: none !important;
     -ms-box-shadow: none !important;
     box-shadow: none !important; }
-  .ms-container .ms-selectable,
-  .ms-container .ms-selection {
-    min-width: 250px !important; }
     .ms-container .ms-selectable li.ms-hover,
     .ms-container .ms-selection li.ms-hover {
       color: #000000 !important;

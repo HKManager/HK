@@ -134,15 +134,13 @@
                     <table id="example-table" class="table">
                         <thead>
                         <tr>
-                            <th>단어장 명</th>
-                            <th>단어장 유형</th>
-                            <th>단어 개수</th>
+                            <th>단어배치 명</th>
                         </tr>
                         </thead>
                         <tbody data-bind="foreach: list">
 
-                        <tr data-bind='click: setEditItem'>
-                            <td data-bind="text: WB_NAME"></td>
+                        <tr data-bind='click: setEditItem' style="height:50px;">
+                            <td data-bind="text: WAL_NAME"></td>
                             <td data-bind="text: AC_TYPE_NAME "></td>
                             <td data-bind="text: WB_CNT_WORD "></td>
                         </tr>
@@ -299,6 +297,10 @@
 
 
     </script>
+
+
+
+
 
 
 

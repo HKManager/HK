@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import java.util.Map;
 
 import Event.EventData;
-import Query.Manager_WordBook;
+import Query.Manager_WordAudLoc;
 import study.hk.data.Data.HARDCODE;
 import study.hk.poyowordbook.MainActivity;
 import study.hk.poyowordbook.R;
@@ -28,7 +28,7 @@ public class WordAudLocActivity extends AppCompatActivity {
     private final Handler handler = new Handler();
     private Context context = null;
     private WebView lWebView = null;
-    private Manager_WordBook wordBook;
+    private Manager_WordAudLoc manager;
 
     private Gson gson = new Gson();
 
@@ -41,7 +41,7 @@ public class WordAudLocActivity extends AppCompatActivity {
         setContentView(R.layout.activity_word_aud_loc);
 
         context = getApplicationContext();
-        wordBook = new Manager_WordBook(context);
+        manager = new Manager_WordAudLoc(context);
 
         lWebView = (WebView)findViewById(R.id.mainView);
         lWebView.setWebViewClient(new WebViewClient() {
@@ -51,7 +51,7 @@ public class WordAudLocActivity extends AppCompatActivity {
             @Override
             @SuppressLint({ "SetJavaScriptEnabled", "JavascriptInterface" })
             public void onPageFinished(WebView view, String url) {
-                ArrayList<Map> list = wordBook.Search();
+                ArrayList<Map> list = manager.Search();
                 String jsonResult = gson.toJson(list);
 
                 EventData data = new EventData();
@@ -104,7 +104,7 @@ public class WordAudLocActivity extends AppCompatActivity {
                             }
                             break;
                         case HARDCODE.전체조회 :
-                            ArrayList<Map> list = wordBook.Search();
+                            ArrayList<Map> list = manager.Search();
                             String jsonResult = gson.toJson(list);
 
                             EventData data = new EventData();
