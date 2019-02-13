@@ -11,19 +11,30 @@ import java.util.Map;
 
 public class Manager_Code {
 
-    SQLiteDatabase db;
-    ContentValues row;
-    Context ctx;
-    DBHelper mHelper;
+    private SQLiteDatabase db;
+    private ContentValues row;
+    private Context ctx;
+    private DBHelper mHelper;
+
+    private ArrayList<Map> list = null;
+
+    private static Manager_Code _instance = null;
+
+    public static Manager_Code GetInstance()
+    {
+        return _instance;
+    }
 
     public Manager_Code(Context ctx){
         this.ctx = ctx;
         mHelper = new DBHelper(ctx);
+
+        list = new ArrayList<>();
+
+        _instance = this;
     }
 
-    public void Search() {
-
-        ArrayList<Map> list = new ArrayList<>();
+    public void Load() {
 
         Map map = null;
 
@@ -50,11 +61,17 @@ public class Manager_Code {
 
             list.add(map);
         }
+    }
 
-        //if(cursor.moveToFirst()) {
-        //    map.put("CODE", cursor.getString(cursor.getColumnIndex("CODE")));
-        //}
+    public ArrayList<Map> GetList_1st(String codeID, String codeName, boolean useYN) {
+        return null;
+    }
 
-        int abc = 0;
+    public ArrayList<Map> GetList_2nd(String CD1, boolean useYN) {
+        return null;
+    }
+
+    public static ArrayList<Map> GetList_3rd(String CD1, String CD2, boolean useYN) {
+        return null;
     }
 }

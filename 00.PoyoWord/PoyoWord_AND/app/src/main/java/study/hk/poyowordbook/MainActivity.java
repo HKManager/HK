@@ -56,6 +56,8 @@ public class MainActivity extends AppCompatActivity {
 
         context = getApplicationContext();
 
+        this.PlayBGM();
+
         lWebView = (WebView)findViewById(R.id.mainView);
         lWebView.setWebViewClient(new WebViewClient() {
             @Override
@@ -101,7 +103,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         Manager_Code code = new Manager_Code(context);
-        code.Search();
+        Manager_Code.GetInstance().Load();
         // - for SQLite DB
         // - 신인환 주석 : SQLite DB 관련
 
@@ -109,8 +111,6 @@ public class MainActivity extends AppCompatActivity {
         // - for JoyStick
         eventData.SetHandle("move");
         eventData.SetView("main");
-
-        this.PlayBGM();
 
         joystick = (JoystickView) findViewById(R.id.joystickView_right);
         joystick.setOnMoveListener(new JoystickView.OnMoveListener() {

@@ -9,7 +9,8 @@
     <link rel="icon" href="../Content/favicon.ico" type="image/x-icon">
 
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet"
+        type="text/css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
 
     <!-- Bootstrap Core Css -->
@@ -22,7 +23,8 @@
     <link href="../Content/plugins/animate-css/animate.css" rel="stylesheet" />
 
     <!-- Bootstrap Material Datetime Picker Css -->
-    <link href="../Content/plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css" rel="stylesheet" />
+    <link href="../Content/plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css"
+        rel="stylesheet" />
 
     <!-- Bootstrap DatePicker Css -->
     <link href="../Content/plugins/bootstrap-datepicker/css/bootstrap-datepicker.css" rel="stylesheet" />
@@ -53,12 +55,14 @@
     <script src="../js/menu/main.js"></script> <!-- Resource jQuery -->
     <!-- 네비게이션 메뉴 관련 -->
 
+    <link rel="stylesheet" href="../css/style/verticalList.css"> <!-- CSS verticalList -->
+
     <style>
         .control-detail {
             padding-left: 15px !important;
         }
 
-        .ms-container .ms-list{
+        .ms-container .ms-list {
             height: 350px !important;
         }
     </style>
@@ -66,30 +70,30 @@
 
 <body id="MainBody" class="theme-red" style="margin:0;height:100%;">
 
-<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
-<script type='text/javascript' src='../Content/js/knockout-3.4.2.js'></script>
+    <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script type='text/javascript' src='../Content/js/knockout-3.4.2.js'></script>
 
-<!-- Page Loader -->
-<div class="page-loader-wrapper">
-    <div class="loader">
-        <div class="preloader">
-            <div class="spinner-layer pl-red">
-                <div class="circle-clipper left">
-                    <div class="circle"></div>
-                </div>
-                <div class="circle-clipper right">
-                    <div class="circle"></div>
+    <!-- Page Loader -->
+    <div class="page-loader-wrapper">
+        <div class="loader">
+            <div class="preloader">
+                <div class="spinner-layer pl-red">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
                 </div>
             </div>
+            <p>Please wait...</p>
         </div>
-        <p>Please wait...</p>
     </div>
-</div>
-<!-- #END# Page Loader -->
-<!-- Overlay For Sidebars -->
-<!-- #END# Overlay For Sidebars -->
-<!-- Search Bar -->
-<!--<div class="search-bar">
+    <!-- #END# Page Loader -->
+    <!-- Overlay For Sidebars -->
+    <!-- #END# Overlay For Sidebars -->
+    <!-- Search Bar -->
+    <!--<div class="search-bar">
     <div class="search-icon">
         <i class="material-icons">search</i>
     </div>
@@ -99,45 +103,45 @@
     </div>
 </div>-->
 
-<div style="position:relative;overflow-x:scroll ; overflow-y: hidden;">
+    <div style="position:relative;overflow-x:scroll ; overflow-y: hidden;">
 
-    <main id="Main">
+        <main id="Main">
 
-        <div style="margin-left: 5px;margin-right: 5px;">
+            <div style="margin-left: 5px;margin-right: 5px;">
 
-            <div id="Manager" class="card" style="min-height:300px;">
-                <div class="header">
+                <div id="Manager" class="card" style="min-height:300px;">
+                    <div class="header">
 
-                    <div class="row clearfix">
-                        <div class="col-sm-6">
-                            <h2>
-                                단어배치 상세관리
-                                <small>단어 배치 정보를 입력해 주세요.</small>
-                            </h2>
-                        </div>
-                        <div class="col-sm-6 align-right">
-                            <!-- <div class="switch panel-switch-btn">
+                        <div class="row clearfix">
+                            <div class="col-sm-6">
+                                <h2>
+                                    단어배치 상세관리
+                                    <small>단어 배치 정보를 입력해 주세요.</small>
+                                </h2>
+                            </div>
+                            <div class="col-sm-6 align-right">
+                                <!-- <div class="switch panel-switch-btn">
                                 <span class="m-r-10 font-12">REAL TIME</span>
                                 <label>OFF<input type="checkbox" id="realtime" checked><span class="lever switch-col-cyan"></span>ON</label>
                             </div> -->
-                        </div>
-                    </div>
-
-                </div>
-                <div class="body">
-                    <div class="row clearfix">
-                        <div class="col-sm-12">
-                            <div class="form-group">
-                                <div class="form-line">
-                                    <input id="AC_SN" type="hidden" class="control-detail form-control" placeholder="거래처 SN"
-                                           data-bind="value: AC_SN" />
-                                    <input id="AC_NAME" type="text" class="control-detail form-control" placeholder="단어배치 명"
-                                           data-bind="value: AC_NAME" />
-                                </div>
                             </div>
+                        </div>
 
-                            <div class="form-group">
-                                <select id="optgroup" class="ms" multiple="multiple">
+                    </div>
+                    <div class="body">
+                        <div class="row clearfix">
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <div class="form-line">
+                                        <input id="AC_SN" type="hidden" class="control-detail form-control"
+                                            placeholder="거래처 SN" data-bind="value: AC_SN" />
+                                        <input id="AC_NAME" type="text" class="control-detail form-control"
+                                            placeholder="단어배치 명" data-bind="value: AC_NAME" />
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <!-- <select id="optgroup" class="ms" multiple="multiple">
                                     <optgroup label="Alaskan/Hawaiian Time Zone">
                                         <option value="AK">Alaska</option>
                                         <option value="HI">Hawaii</option>
@@ -198,37 +202,60 @@
                                         <option value="VA">Virginia</option>
                                         <option value="WV">West Virginia</option>
                                     </optgroup>
-                                </select>
-                            </div>
+                                </select> -->
 
-                            <div class="form-group">
-                                <table style="width:100%;">
-        
-                                    <tr>
-                                        <td style="width:50%;">
-                                            <button type="button" class="btn btn-primary m-t-15 waves-effect" style="width:100%;margin-right:10px;"
-                                                onclick="Create();">저장</button>
-                                        </td>
-        
-                                        <td style="width:50%;">
-                                            <button type="button" class="btn btn-primary m-t-15 waves-effect" style="width:100%;margin-left:10px" onclick="Cancel()">취소</button>
-                                        </td>
-                                    </tr>
-        
-                                </table>
+                                    <div class="widget-container-col" style="width:45%;float: left;">
+
+                                        <h3 class="header smaller lighter red" style="text-align: center;">단어배치 항목</h3>
+
+                                        <div class="vertical-menu" id="image01List" style="height:300px">
+                                            <a href="#" onClick="SelectLocItem($(this))" style="text-align:center;font-size:small;">Link 3 <input style="display:none"
+                                                    value="code"></a>
+                                            <a href="#" onClick="SelectLocItem($(this))" style="text-align:center;font-size:small;">Link 4 <input style="display:none"
+                                                    value="code"></a>
+                                        </div>
+                                    </div>
+
+                                    <div class="widget-container-col" style="width:45%;float: right;">
+
+                                        <h3 class="header smaller lighter red" style="text-align: center;">단어배치 목록</h3>
+
+                                        <div class="vertical-menu" id="locList" style="height:300px">
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="form-group">
+                                    <table style="width:100%;">
+
+                                        <tr>
+                                            <td style="width:50%;">
+                                                <button type="button" class="btn btn-primary m-t-15 waves-effect"
+                                                    style="width:100%;margin-right:10px;"
+                                                    onclick="Create();">저장</button>
+                                            </td>
+
+                                            <td style="width:50%;">
+                                                <button type="button" class="btn btn-primary m-t-15 waves-effect"
+                                                    style="width:100%;margin-left:10px" onclick="Cancel()">취소</button>
+                                            </td>
+                                        </tr>
+
+                                    </table>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
             </div>
 
-        </div>
+        </main>
 
-    </main>
+    </div>
 
-</div>
-
-<script type="text/javascript">
+    <script type="text/javascript">
         ko.observableArray.fn.find = function (prop, data) {
             var valueToMatch = data[prop];
             return ko.utils.arrayFirst(this(), function (item) {
@@ -383,61 +410,67 @@
                 alert(excetion);
             }
         }
+
+        
+
+
     </script>
 
-<!-- Jquery Core Js -->
-<script src="../Content/plugins/jquery/jquery.min.js"></script>
+<script src="./js/wordaudbook.js"></script>
 
-<!-- Bootstrap Core Js -->
-<script src="../Content/plugins/bootstrap/js/bootstrap.js"></script>
+    <!-- Jquery Core Js -->
+    <script src="../Content/plugins/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core Js -->
+    <script src="../Content/plugins/bootstrap/js/bootstrap.js"></script>
 
 
-<!-- Select Plugin Js -->
-<script src="../Content/plugins/bootstrap-select/js/bootstrap-select.js"></script>
+    <!-- Select Plugin Js -->
+    <script src="../Content/plugins/bootstrap-select/js/bootstrap-select.js"></script>
 
-<!-- Slimscroll Plugin Js -->
-<script src="../Content/plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
+    <!-- Slimscroll Plugin Js -->
+    <script src="../Content/plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
 
-<!-- Waves Effect Plugin Js -->
-<script src="../Content/plugins/node-waves/waves.js"></script>
+    <!-- Waves Effect Plugin Js -->
+    <script src="../Content/plugins/node-waves/waves.js"></script>
 
-<!-- Autosize Plugin Js -->
-<script src="../Content/plugins/autosize/autosize.js"></script>
+    <!-- Autosize Plugin Js -->
+    <script src="../Content/plugins/autosize/autosize.js"></script>
 
-<!-- Moment Plugin Js -->
-<script src="../Content/plugins/momentjs/moment.js"></script>
+    <!-- Moment Plugin Js -->
+    <script src="../Content/plugins/momentjs/moment.js"></script>
 
-<!-- Slimscroll Plugin Js -->
-<script src="../Content/plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
+    <!-- Slimscroll Plugin Js -->
+    <script src="../Content/plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
 
-<!-- Bootstrap Material Datetime Picker Plugin Js -->
-<script src="../Content/plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
+    <!-- Bootstrap Material Datetime Picker Plugin Js -->
+    <script src="../Content/plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
 
-<!-- Bootstrap Datepicker Plugin Js -->
-<script src="../Content/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+    <!-- Bootstrap Datepicker Plugin Js -->
+    <script src="../Content/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
 
-<!-- Bootstrap Colorpicker Js -->
-<script src="../Content/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.js"></script>
+    <!-- Bootstrap Colorpicker Js -->
+    <script src="../Content/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.js"></script>
 
-<!-- Dropzone Plugin Js -->
-<script src="../Content/plugins/dropzone/dropzone.js"></script>
+    <!-- Dropzone Plugin Js -->
+    <script src="../Content/plugins/dropzone/dropzone.js"></script>
 
-<!-- Input Mask Plugin Js -->
-<script src="../Content/plugins/jquery-inputmask/jquery.inputmask.bundle.js"></script>
+    <!-- Input Mask Plugin Js -->
+    <script src="../Content/plugins/jquery-inputmask/jquery.inputmask.bundle.js"></script>
 
-<!-- Multi Select Plugin Js -->
-<script src="../Content/plugins/multi-select/js/jquery.multi-select.js"></script>
+    <!-- Multi Select Plugin Js -->
+    <script src="../Content/plugins/multi-select/js/jquery.multi-select.js"></script>
 
-<!-- noUISlider Plugin Js -->
-<script src="../Content/plugins/nouislider/nouislider.js"></script>
+    <!-- noUISlider Plugin Js -->
+    <script src="../Content/plugins/nouislider/nouislider.js"></script>
 
-<!-- Custom Js -->
-<script src="../Content/js/admin.js"></script>
-<script src="../Content/js/pages/forms/basic-form-elements.js"></script>
-<script src="../Content/js/pages/forms/advanced-form-elements.js"></script>
+    <!-- Custom Js -->
+    <script src="../Content/js/admin.js"></script>
+    <script src="../Content/js/pages/forms/basic-form-elements.js"></script>
+    <script src="../Content/js/pages/forms/advanced-form-elements.js"></script>
 
-<!-- Demo Js -->
-<script src="../Content/js/demo.js"></script>
+    <!-- Demo Js -->
+    <script src="../Content/js/demo.js"></script>
 </body>
 
 </html>
