@@ -15,4 +15,38 @@ public class Query_WordAudLoc {
      */
     @Multiline
     public static String GetList;
+
+    /**
+     INSERT INTO
+     word_aud_loc
+     (
+     WAL_NAME
+     , WAL_LOCS
+     , WAL_UPDATE_DT
+     , WAL_USEYN
+     , WAL_DESC
+     )
+     VALUES
+     (
+     '%s'
+     , '%s'
+     , '%s'
+     , '%s'
+     , '%s'
+     )
+     */
+    @Multiline
+    public static String Insert;
+
+    /**
+     UPDATE word_aud_loc
+     SET   WAL_NAME = '%s'
+     , WAL_LOCS = '%s'
+     , WAL_UPDATE_DT = '$s'
+     , WAL_USEYN= '$s'
+     , WAL_DESC = '$s'
+     WHERE  WAL_SN = $s
+     */
+    @Multiline
+    public static String Update;
 }

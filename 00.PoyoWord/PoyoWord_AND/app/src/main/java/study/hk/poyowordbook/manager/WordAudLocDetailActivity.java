@@ -15,9 +15,11 @@ import android.webkit.WebViewClient;
 import com.google.gson.Gson;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 import Event.EventData;
+import Query.Manager_Code;
 import Query.Manager_WordBook;
 import study.hk.data.Data.HARDCODE;
 import study.hk.poyowordbook.MainActivity;
@@ -51,14 +53,14 @@ public class WordAudLocDetailActivity extends AppCompatActivity {
             @Override
             @SuppressLint({ "SetJavaScriptEnabled", "JavascriptInterface" })
             public void onPageFinished(WebView view, String url) {
-                ArrayList<Map> list = wordBook.Search();
-                String jsonResult = gson.toJson(list);
+
+                List<Map> codeList = Manager_Code.GetInstance().GetList_2nd("003", true);
 
                 EventData data = new EventData();
 
                 data.SetHandle(HARDCODE.전체조회);
-                data.SetView(HARDCODE.단어장관리);
-                data.SetValue(list);
+                data.SetView(HARDCODE.단어장배치관리);
+                data.SetValue(codeList);
 
                 String JsonEventData = gson.toJson(data);
 
@@ -102,7 +104,7 @@ public class WordAudLocDetailActivity extends AppCompatActivity {
                             EventData data = new EventData();
 
                             data.SetHandle(HARDCODE.전체조회);
-                            data.SetView(HARDCODE.단어장관리);
+                            data.SetView(HARDCODE.단어장배치관리);
                             data.SetValue(list);
 
                             String JsonEventData = gson.toJson(data);

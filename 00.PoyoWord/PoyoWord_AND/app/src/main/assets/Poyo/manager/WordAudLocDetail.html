@@ -208,11 +208,13 @@
 
                                         <h3 class="header smaller lighter red" style="text-align: center;">단어배치 항목</h3>
 
-                                        <div class="vertical-menu" id="image01List" style="height:300px">
-                                            <a href="#" onClick="SelectLocItem($(this))" style="text-align:center;font-size:small;">Link 3 <input style="display:none"
-                                                    value="code"></a>
-                                            <a href="#" onClick="SelectLocItem($(this))" style="text-align:center;font-size:small;">Link 4 <input style="display:none"
-                                                    value="code"></a>
+                                        <div class="vertical-menu" id="codeList" style="height:300px">
+                                            <!-- <a href="#" onClick="SelectLocItem($(this))"
+                                                style="text-align:center;font-size:small;">Link 3 <input
+                                                    style="display:none" value="code"></a>
+                                            <a href="#" onClick="SelectLocItem($(this))"
+                                                style="text-align:center;font-size:small;">Link 4 <input
+                                                    style="display:none" value="code"></a> -->
                                         </div>
                                     </div>
 
@@ -411,12 +413,51 @@
             }
         }
 
-        
+        function showData(str) {
+
+            //console.log(JSON.stringify({ x: 5, y: 6 }));
+
+            //alert(str);
+            //$('#result').text($('#result').text() + " " + str);
+
+            //var str = '{ "name":"John", "age":30, "city":"New York"}';
+
+            var jsonObj = JSON.parse(str);
+            //var jsonValue = JSON.parse(jsonObj.data);
+
+
+            //console.log(jsonObj);
+
+
+            //viewModel.list(jsonObj.value);
+
+            var codeItems = jsonObj.value;
+
+
+            $('#codeList').empty();
+
+        for (var item = 0; item < codeItems.length; item++) {
+            $('#codeList:last').append(
+                '<a style="text-align:center;font-size:small;" onclick="SelectLocItem($(this));">' + codeItems[item].CODE_NAME
+                + '<input style="display:none" value="' + codeItems[item].CODE_SORT + '>'
+                + '</a>'
+            );
+        }
+
+            var tr = $('#example-table').find('tr');
+            tr.bind('mouseover', function (event) {
+                tr.removeClass('row-highlight');
+            });
+            tr.bind('click', function (e) {
+                tr.removeClass('row-click');
+                var tds = $(this).addClass('row-click').find('td');
+            });
+        }
 
 
     </script>
 
-<script src="./js/wordaudbook.js"></script>
+    <script src="./js/wordaudbook.js"></script>
 
     <!-- Jquery Core Js -->
     <script src="../Content/plugins/jquery/jquery.min.js"></script>

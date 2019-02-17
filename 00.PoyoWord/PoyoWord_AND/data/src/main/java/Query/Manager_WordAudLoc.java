@@ -7,6 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class Manager_WordAudLoc {
@@ -21,7 +22,7 @@ public class Manager_WordAudLoc {
         mHelper = new DBHelper(ctx);
     }
 
-    public ArrayList<Map> Search() {
+    public List<Map> Search() {
 
         ArrayList<Map> list = new ArrayList<>();
 
@@ -45,11 +46,40 @@ public class Manager_WordAudLoc {
 
             list.add(map);
         }
-
-        //if(cursor.moveToFirst()) {
-        //    map.put("CODE", cursor.getString(cursor.getColumnIndex("CODE")));
-        //}
-
         return list;
+    }
+
+    public boolean Insert(Map data) {
+        try {
+            String query = String.format(Query_WordAudLoc.Insert,
+                    data.get("WAL_NAME").toString(),
+                    data.get("WAL_LOCS").toString(),
+                    data.get("WAL_UPDATE_DT".toCharArray()),
+                    data.get("WAL_USEYN").toString(),
+                    data.get("WAL_DESC").toString());
+
+            db.execSQL(query);
+
+            return true;
+        }catch (Exception e) {
+            return  false;
+        }
+    }
+
+    public boolean Update(Map data) {
+        try {
+            String query = String.format(Query_WordAudLoc.Update,
+                    data.get("WAL_NAME").toString(),
+                    data.get("WAL_LOCS").toString(),
+                    data.get("WAL_UPDATE_DT".toCharArray()),
+                    data.get("WAL_USEYN").toString(),
+                    data.get("WAL_DESC").toString(),
+                    data.get("WAL_SN").toString());
+            db.execSQL(query);
+
+            return true;
+        }catch (Exception e) {
+            return  false;
+        }
     }
 }

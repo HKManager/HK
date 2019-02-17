@@ -15,6 +15,7 @@ import android.webkit.WebViewClient;
 import com.google.gson.Gson;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 import Event.EventData;
@@ -51,7 +52,7 @@ public class WordAudLocActivity extends AppCompatActivity {
             @Override
             @SuppressLint({ "SetJavaScriptEnabled", "JavascriptInterface" })
             public void onPageFinished(WebView view, String url) {
-                ArrayList<Map> list = manager.Search();
+                List<Map> list = manager.Search();
                 String jsonResult = gson.toJson(list);
 
                 EventData data = new EventData();
@@ -104,9 +105,7 @@ public class WordAudLocActivity extends AppCompatActivity {
                             }
                             break;
                         case HARDCODE.전체조회 :
-                            ArrayList<Map> list = manager.Search();
-                            String jsonResult = gson.toJson(list);
-
+                            List<Map> list = manager.Search();
                             EventData data = new EventData();
 
                             data.SetHandle(HARDCODE.전체조회);
