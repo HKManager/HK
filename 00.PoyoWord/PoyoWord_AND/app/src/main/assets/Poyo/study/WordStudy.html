@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport" />
+    <title>Welcome To | Bootstrap Based Admin Template - Material Design</title>
+    <!-- Favicon-->
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css" />
+    <!-- Bootstrap Core Css -->
+    <link href="../Content/plugins/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <!-- Waves Effect Css -->
+    <link href="../Content/plugins/node-waves/waves.css" rel="stylesheet" />
+    <!-- Animation Css -->
+    <link href="../Content/plugins/animate-css/animate.css" rel="stylesheet" />
+    <!-- Morris Chart Css-->
+    <link href="../Content/plugins/morrisjs/morris.css" rel="stylesheet" />
+    <!-- Custom Css -->
+    <link href="../Content/css/style.css" rel="stylesheet" />
+    <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
+    <link href="../Content/css/themes/all-themes.css" rel="stylesheet" />
+
+
+    <!-- 네비게이션 메뉴 관련 -->
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/earlyaccess/nanumpenscript.css">
+    <link rel="stylesheet" href="../css/menu/reset.css"> <!-- CSS reset -->
+    <link rel="stylesheet" href="../css/menu/style.css"> <!-- Resource style -->
+    <script src="../js/menu/modernizr.js"></script> <!-- Modernizr -->
+
+    <script src="../js/menu/jquery-2.1.1.js"></script>
+    <script src="../js/menu/velocity.min.js"></script>
+    <script src="../js/menu/main.js"></script> <!-- Resource jQuery -->
+    <!-- 네비게이션 메뉴 관련 -->
+
+    <script src="js/wordbook.js"></script> <!-- Resource jQuery -->
+
+    <style type="text/css">
+        .row-highlight {
+            background-color: Yellow;
+        }
+
+        .row-click {
+            background-color: #8BBDFF;
+        }
+    </style>
+</head>
+
+<body id="MainBody" class="theme-red" style="margin:0;height:100%;overflow-x:scroll ; overflow-y: hidden;">
+    <!-- <script src="http://code.jquery.com/jquery-2.1.4.min.js"> -->
+    </script>
+
+    <script type='text/javascript' src='../Content/js/knockout-3.4.2.js'></script>
+
+
+    <!-- Page Loader -->
+    <div class="page-loader-wrapper">
+        <div class="loader">
+            <div class="preloader">
+                <div class="spinner-layer pl-red">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+            </div>
+            <p>Please wait...</p>
+        </div>
+    </div>
+
+    <div style="position:relative;overflow-x:scroll ; overflow-y: hidden;">
+
+        <nav>
+            <ul class="cd-primary-nav">
+                <li><a href="#0" style="font-weight: bold;" onclick="GoMain()">메인으로 가기</a></li>
+                <li><a href="#0" style="font-weight: bold;" onclick="GoWordAudLoc()">단어배치관리 하기</a></li>
+                <li><a href="#0" style="font-weight: bold;">단어학습장관리 하기</a></li>
+                <li><a href="#0" style="font-weight: bold;">어플종료하기</a></li>
+            </ul>
+        </nav>
+
+        <main id="Main">
+
+            <div style="margin-left: 5px;margin-right: 5px;">
+                <div id="Manager" class="card" style="min-height:300px;">
+                    <div class="header">
+
+                        <div>
+                            <div>
+                                <h2>
+                                    단어장 관리
+                                    <small>단어장을 등록/수정/삭제 하세요.</small>
+                                </h2>
+                            </div>
+
+                            <table style="width:100%;">
+                                <tr>
+                                    <td style="width:50%;">
+                                        <div class="form-group" style="margin:5px;width:100%;">
+                                            <button type="button" class="btn btn-primary m-t-15 waves-effect" onclick="QueryAll();"
+                                                style="width:95%;">재조회</button>
+                                        </div>
+                                    </td>
+
+                                    <td style="width:50%;">
+                                        <div class="form-group" style="margin:5px;width:100%;">
+                                            <button type="button" class="btn btn-primary m-t-15 waves-effect" onclick="Create();"
+                                                style="width:95%;">등록</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <!-- <ul class="header-dropdown m-r--5">
+                                <li class="dropdown">
+                                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                        aria-haspopup="true" aria-expanded="false">
+                                        <i class="material-icons">more_vert</i>
+                                    </a>
+                                    <ul class="dropdown-menu pull-right">
+                                        <li><a href="javascript:void(0);">재조회</a></li>
+                                        <li><a href="javascript:void(0);">등록</a></li>
+                                    </ul>
+                                </li>
+                            </ul> -->
+                    </div>
+                    <div class="body">
+                        <table id="example-table" class="table">
+                            <thead>
+                                <tr>
+                                    <th>단어장 명</th>
+                                    <th>단어 개수</th>
+                                </tr>
+                            </thead>
+                            <tbody data-bind="foreach: list">
+
+                                <tr data-bind='click: setEditItem'>
+                                    <td data-bind="text: WB_NAME"></td>
+                                    <td data-bind="text: WB_CNT_WORD "></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+        <div class="cd-overlay-nav">
+            <span></span>
+        </div> <!-- cd-overlay-nav -->
+        <div class="cd-overlay-content">
+            <span></span>
+        </div> <!-- cd-overlay-content -->
+        <a href="#0" class="cd-nav-trigger" style="margin-right:5px;">Menu<span class="cd-icon"></span></a>
+
+    </div>
+
+
+    <script type="text/javascript">
+
+        function QueryAll() {
+            var obj = { handle: "01", view: "WordBook", data: "" };
+
+            var data = JSON.stringify(obj);
+
+            //log("Sending Data:" + data);
+            window.android.setData(data);
+        }
+
+        function Create() {
+            try {
+                var obj = { handle: "06", view: "WordBook", data: "WORDBOOKDETAIL" };
+
+                var data = JSON.stringify(obj);
+
+                window.android.setData(data);
+
+            } catch (excetion) {
+                alert(excetion);
+            }
+        }
+
+        function GoMain() {
+            var obj = { handle: "06", view: "WordBookDetail", data: "MAIN" };
+
+            var data = JSON.stringify(obj);
+
+            window.android.setData(data);
+        }
+
+        function GoWordAudLoc() {
+            var obj = { handle: "06", view: "WordBookDetail", data: "WORDAUDLOC" };
+
+            var data = JSON.stringify(obj);
+
+            window.android.setData(data);
+        }
+
+        function Update() {
+
+            var item = JSON.stringify(selectItem);
+
+            var obj = { handle: "06", view: "ACCOUNT", data: item };
+
+            var data = JSON.stringify(obj);
+
+            invokeCSharpAction(data);
+        }
+
+        function Delete() {
+            var item = JSON.stringify(selectItem);
+
+            var obj = { handle: "05", view: "ACCOUNT", data: item };
+
+            var data = JSON.stringify(obj);
+
+            invokeCSharpAction(data);
+        }
+
+        function showData(str) {
+
+            //console.log(JSON.stringify({ x: 5, y: 6 }));
+
+            //alert(str);
+            //$('#result').text($('#result').text() + " " + str);
+
+            //var str = '{ "name":"John", "age":30, "city":"New York"}';
+
+            var jsonObj = JSON.parse(str);
+            //var jsonValue = JSON.parse(jsonObj.data);
+
+
+            //console.log(jsonObj);
+            
+
+            viewModel.list(jsonObj.value);
+
+            var tr = $('#example-table').find('tr');
+            tr.bind('mouseover', function (event) {
+                tr.removeClass('row-highlight');
+            });
+            tr.bind('click', function (e) {
+                tr.removeClass('row-click');
+                var tds = $(this).addClass('row-click').find('td');
+            });
+        }
+
+        var viewModel = {
+            list: ko.observableArray([])
+        };
+
+        $(document).ready(function () {
+            var Main = document.getElementById('Manager');
+            var height = document.getElementById('MainBody').offsetHeight;
+
+            Main.style.height = height - 10 + "px";
+
+            var top = (height - Main.offsetHeight) * 0.5;
+
+            Main.style.marginTop = top + "px";
+
+            $('html, body').css({ 'overflow': 'hidden', 'height': '100%' });
+            $('#element').on('scroll touchmove mousewheel', function (event) {
+                event.preventDefault();
+                event.stopPropagation();
+                return false;
+            });
+
+
+            ko.applyBindings(viewModel);
+
+            showData("");
+        });
+
+        var selectItem;
+
+        this.setEditItem = function (item) {
+            selectItem = item;
+        }
+
+            //$(document).ready(function () {
+            //    var json = [{ "name": "name1", "score": "30" }, { "name": "name2", "score": "50" }];
+
+            //    $.getJSON(url, function (json) {
+            //        ko.applyBindings({
+            //            teams: json
+            //        });
+            //    }
+            //});
+
+
+
+    </script>
+
+
+
+
+    <!-- Jquery Core Js -->
+    <script src="../Content/plugins/jquery/jquery.min.js">
+    </script>
+    <!-- Bootstrap Core Js -->
+    <script src="../Content/plugins/bootstrap/js/bootstrap.js">
+    </script>
+    <!-- Select Plugin Js -->
+    <script src="../Content/plugins/bootstrap-select/js/bootstrap-select.js">
+    </script>
+    <!-- Slimscroll Plugin Js -->
+    <script src="../Content/plugins/jquery-slimscroll/jquery.slimscroll.js">
+    </script>
+    <!-- Waves Effect Plugin Js -->
+    <script src="../Content/plugins/node-waves/waves.js">
+    </script>
+    <!-- Editable Table Plugin Js -->
+    <script src="../Content/plugins/editable-table/mindmup-editabletable.js">
+    </script>
+    <!-- Custom Js -->
+    <script src="../Content/js/admin.js">
+    </script>
+    <script src="../Content/js/pages/tables/editable-table.js">
+    </script>
+    <!-- Demo Js -->
+    <script src="../Content/js/demo.js">
+    </script>
+</body>
+
+</html>

@@ -16,4 +16,6 @@ public class HARDCODE {
     public static final String 단어장상세 = "WORDBOOKDETAIL";
     public static final String 단어장배치관리 = "WORDAUDLOC";
     public static final String 단어장배치상세 = "WORDAUDDETAIL";
+
+    public static final String 단어공부방 = "WORDSTUDY";
 }
