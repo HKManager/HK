@@ -53,7 +53,6 @@ public class WordAudLocActivity extends AppCompatActivity {
             @SuppressLint({ "SetJavaScriptEnabled", "JavascriptInterface" })
             public void onPageFinished(WebView view, String url) {
                 List<Map> list = manager.Search();
-                String jsonResult = gson.toJson(list);
 
                 EventData data = new EventData();
 
@@ -100,6 +99,7 @@ public class WordAudLocActivity extends AppCompatActivity {
                                     break;
                                 case HARDCODE.단어장배치상세:
                                     intent =new Intent(WordAudLocActivity.this,WordAudLocDetailActivity.class);
+                                    intent.putExtra("WAL_SN",""); /*송신*/
                                     startActivity(intent);
                                     break;
                             }
@@ -115,6 +115,13 @@ public class WordAudLocActivity extends AppCompatActivity {
                             String JsonEventData = gson.toJson(data);
 
                             lWebView.loadUrl("javascript:showData('" + JsonEventData + "')");
+                            break;
+                        case HARDCODE.수정:
+                            intent = new Intent(WordAudLocActivity.this,WordAudLocDetailActivity.class);
+
+                            intent.putExtra("WAL_SN",parse.data); /*송신*/
+
+                            startActivity(intent);
                             break;
                     }
                 }

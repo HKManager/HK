@@ -1,0 +1,116 @@
+.headerbottom {
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+}
+
+.row:after {
+    width: 100%;
+    height: 100%;
+}
+
+.columnLeft {
+    float: left;
+    width: 50%;
+    padding: 15px;
+}
+
+.columnRight {
+    float: left;
+    width: 50%;
+    padding-bottom:15px;
+    padding-top:15px;
+}
+
+.columnLeft > .divLeft {
+    float: right;
+    text-align:left;
+    margin-right: 30px;
+}
+
+.columnRight > .divRight {
+    text-align: left;
+    margin-left: 30px;
+    height:300px;
+    margin-top: 90px;
+}
+
+.columnRight > .divRight > .wordMean {
+    position:absolute;
+    bottom:57px;
+}
+
+/*.slideContent {
+    height: 400px;
+}*/
+
+/*@media screen and (max-width:600px) {
+    .columnLeft {
+        float: none;
+        width: 100%;
+    }
+
+    .columnRight {
+        float: none;
+        width: 100%;
+    }
+
+    .columnLeft > .divLeft {
+        float: none;
+        text-align:center;
+        margin-right: 0px;
+    }
+
+    .columnRight > .divRight {
+        float: none;
+        margin-left: 0px;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .columnRight > .divRight > .wordMean {
+        float: none;
+        position:initial;
+    }*/
+
+    /*.slideContent {
+        height: 1600px;
+    }
+
+    .imgWord {
+        height:400px;
+    }
+
+    .wordExam {
+        font-size:50px;
+    }
+
+    h4 {
+        font-size:80px;
+    }
+}*/
+
+@media screen and (max-width:800px) {
+    /*.slideContent {
+        height: 1450px;
+    }*/
+
+    /*.columnRight > .divRight {
+        margin-top:-30px;
+    }
+
+    .columnLeft > .divLeft {
+        margin-top:-50px;
+    }*/
+
+    .imgWord {
+        height:400px;
+    }
+
+    p {
+        font-size:50px;
+    }
+
+    h4 {
+        font-size:80px;
+    }
+}

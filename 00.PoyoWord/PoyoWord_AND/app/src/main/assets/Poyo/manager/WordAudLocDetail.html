@@ -340,6 +340,8 @@
             //        vm.AC_TYPE_CODES(_AC_TYPE_CODES);
             //        break;
             //}
+
+            showData("");
         });
 
         function GetData() {
@@ -348,7 +350,7 @@
                 WAL_NAME: $("#WAL_NAME").val(),
                 WAL_LOCS: selectLocItem,
                 // WAL_UPDATE_DT: $("#WAL_UPDATE_DT").val(),
-                // WAL_DESC: $("#WAL_DESC").val(),
+                WAL_DESC: "",
                 WAL_USEYN: true
             };
 
@@ -442,28 +444,49 @@
 
             //viewModel.list(jsonObj.value);
 
-            var codeItems = jsonObj.value;
+            switch(jsonObj.handle) {
+                case "CODES": 
 
-            $('#codeList').empty();
+                var codeItems = jsonObj.value;
 
+                $('#codeList').empty();
+                for (var item = 0; item < codeItems.length; item++) {
+                    $('#codeList:last').append(
+                        '<a style="text-align:center;font-size:small;" onclick="SelectLocItem($(this));">' + codeItems[item].CODE_NAME
+                        + '<input style="display:none" value="' + codeItems[item].CODE + '">'
+                        + '</a>'
+                    );
+                }
 
+                break;
+                case "DETAIL":
+                vm.WAL_NAME(jsonObj.value.WAL_NAME);
+                vm.WAL_SN(jsonObj.value.WAL_SN);
+                var locs = jsonObj.value.WAL_LOCS;
 
-        for (var item = 0; item < codeItems.length; item++) {
-            $('#codeList:last').append(
-                '<a style="text-align:center;font-size:small;" onclick="SelectLocItem($(this));">' + codeItems[item].CODE_NAME
-                + '<input style="display:none" value="' + codeItems[item].CODE + '">'
-                + '</a>'
-            );
-        }
+                for (var item = 0; item < locs.length; item++) {
+                    selectLocItem.push({
+                        CODE_SORT: selectLocIndex,
+                        CODE: locs[item].CODE,
+                        CODE_NAME: locs[item].CODE_NAME
+                    });
 
-            var tr = $('#example-table').find('tr');
-            tr.bind('mouseover', function (event) {
-                tr.removeClass('row-highlight');
-            });
-            tr.bind('click', function (e) {
-                tr.removeClass('row-click');
-                var tds = $(this).addClass('row-click').find('td');
-            });
+                    selectLocIndex++;
+                }
+
+                ShowLocItem();
+
+                break;
+            }
+
+            // var tr = $('#example-table').find('tr');
+            // tr.bind('mouseover', function (event) {
+            //     tr.removeClass('row-highlight');
+            // });
+            // tr.bind('click', function (e) {
+            //     tr.removeClass('row-click');
+            //     var tds = $(this).addClass('row-click').find('td');
+            // });
         }
 
 

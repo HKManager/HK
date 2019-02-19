@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class Manager_WordAudLoc {
 
@@ -49,14 +50,49 @@ public class Manager_WordAudLoc {
         return list;
     }
 
+    public Map SearchData(String WAL_SN) {
+
+        ArrayList<Map> list = new ArrayList<>();
+
+        Map<String, Object> map = null;
+
+        db = mHelper.getReadableDatabase();
+
+        Cursor cursor;
+
+        String query = Query_WordAudLoc.GetList;
+
+        cursor = db.rawQuery(query, null);
+
+        while(cursor.moveToNext()) {
+
+            map = new HashMap();
+
+            map.put("WAL_SN", cursor.getInt(cursor.getColumnIndex("WAL_SN")));
+            map.put("WAL_NAME", cursor.getString(cursor.getColumnIndex("WAL_NAME")));
+            map.put("WAL_LOCS", cursor.getString(cursor.getColumnIndex("WAL_LOCS")));
+            map.put("WAL_UPDATE_DT", cursor.getString(cursor.getColumnIndex("WAL_UPDATE_DT")));
+            map.put("WAL_USEYN", cursor.getInt(cursor.getColumnIndex("WAL_USEYN")));
+            map.put("WAL_DESC", cursor.getString(cursor.getColumnIndex("WAL_DESC")));
+
+            list.add(map);
+        }
+
+        map = list.stream().filter(t -> t.get("WAL_SN").toString().equals(WAL_SN)).collect(Collectors.toList()).get(0);
+
+        return map;
+    }
+
     public boolean Insert(Map data) {
         try {
             String query = String.format(Query_WordAudLoc.Insert,
                     data.get("WAL_NAME").toString(),
-                    data.get("WAL_LOCS").toString(),
-                    data.get("WAL_UPDATE_DT".toCharArray()),
+                    data.get("WAL_LOCS_JSON").toString(),
+                    data.get("WAL_UPDATE_DT").toString(),
                     data.get("WAL_USEYN").toString(),
                     data.get("WAL_DESC").toString());
+
+            db = mHelper.getReadableDatabase();
 
             db.execSQL(query);
 
@@ -70,11 +106,14 @@ public class Manager_WordAudLoc {
         try {
             String query = String.format(Query_WordAudLoc.Update,
                     data.get("WAL_NAME").toString(),
-                    data.get("WAL_LOCS").toString(),
-                    data.get("WAL_UPDATE_DT".toCharArray()),
+                    data.get("WAL_LOCS_JSON").toString(),
+                    data.get("WAL_UPDATE_DT").toString(),
                     data.get("WAL_USEYN").toString(),
                     data.get("WAL_DESC").toString(),
                     data.get("WAL_SN").toString());
+
+            db = mHelper.getReadableDatabase();
+
             db.execSQL(query);
 
             return true;

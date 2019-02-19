@@ -1,0 +1,70 @@
+.spread-header {
+    width:20%;
+}
+
+.spread-header-key {
+    width:30px;
+}
+
+
+.control-center {
+    display: block;
+    margin: auto;
+    width: 50%;
+    height: 50%;
+}
+
+.row-highlight {
+    background-color: Yellow;
+}
+
+.row-click {
+    background-color: #8BBDFF;
+}
+
+#gridControlHead {
+    width:100%;
+}
+
+#gridControlBody {
+    overflow:auto;
+    height:200px;
+}
+
+#gridControlHead th {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    font-size: medium;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: center;
+    background-color: #7A7A7A;
+    color: white;
+    padding-right: 7px;
+}
+
+.tableControl td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.tableControl th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.tableControl tr:hover {
+    background-color: #ddd;
+}
+
+#simple-table td, #simple-table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#simple-table tr:hover {
+    background-color: #ddd;
+}
+
+.fontNormal {
+    font-size:small;
+}

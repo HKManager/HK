@@ -133,15 +133,10 @@
                 <div class="body">
                     <table id="example-table" class="table">
                         <thead>
-                        <tr>
-                            <th>단어배치 명</th>
-                        </tr>
                         </thead>
                         <tbody data-bind="foreach: list">
                             <tr data-bind='click: setEditItem' style="height:50px;">
                                 <td data-bind="text: WAL_NAME"></td>
-                                <td data-bind="text: AC_TYPE_NAME "></td>
-                                <td data-bind="text: WB_CNT_WORD "></td>
                             </tr>
                         </tbody>
                     </table>
@@ -203,13 +198,11 @@
 
         function Update() {
 
-            var item = JSON.stringify(selectItem);
-
-            var obj = { handle: "06", view: "ACCOUNT", data: item };
+            var obj = { handle: "04", view: "WordAudLoc", data: selectItem.WAL_SN };
 
             var data = JSON.stringify(obj);
 
-            invokeCSharpAction(data);
+            window.android.setData(data);
         }
 
         function Delete() {
@@ -231,13 +224,15 @@
 
             //var str = '{ "name":"John", "age":30, "city":"New York"}';
 
-            var jsonObj = JSON.parse(str);
-            //var jsonValue = JSON.parse(jsonObj.data);
+                        //var jsonValue = JSON.parse(jsonObj.data);
 
 
             //console.log(jsonObj);
 
+            // var data = [{"WAL_NAME":"단어/단어스펠링/예문 많이","WAL_SN":5,"WAL_USEYN":0,"WAL_DESC":"","WAL_UPDATE_DT":"20180712224528"},{"WAL_NAME":"단어만","WAL_SN":6,"WAL_USEYN":0,"WAL_DESC":"","WAL_UPDATE_DT":"20180712225317"},{"WAL_NAME":"ㄴㅎㅇ","WAL_SN":7,"WAL_USEYN":0,"WAL_DESC":"","WAL_UPDATE_DT":""},{"WAL_NAME":"1122","WAL_SN":8,"WAL_USEYN":0,"WAL_DESC":"","WAL_UPDATE_DT":""}];
+            // viewModel.list(data);
 
+            var jsonObj = JSON.parse(str);
             viewModel.list(jsonObj.value);
 
             var tr = $('#example-table').find('tr');
@@ -274,13 +269,15 @@
 
             ko.applyBindings(viewModel);
 
-            showData("");
+            //showData("");
         });
 
         var selectItem;
 
         this.setEditItem = function (item) {
             selectItem = item;
+
+            Update();
         }
 
             //$(document).ready(function () {

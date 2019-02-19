@@ -22,6 +22,7 @@ import java.util.Map;
 
 import Event.EventData;
 import Query.Manager_Code;
+import Query.Manager_WordAudLoc;
 import Query.Manager_WordBook;
 import study.hk.data.Data.HARDCODE;
 import study.hk.poyowordbook.MainActivity;
@@ -37,11 +38,14 @@ public class WordAudLocDetailActivity extends AppCompatActivity {
     private final Handler handler = new Handler();
     private Context context = null;
     private WebView lWebView = null;
-    private Manager_WordBook wordBook;
+    private Manager_WordAudLoc manager;
 
     private Gson gson = new Gson();
 
     private Intent intent;
+    private String WAL_SN;
+
+    private ObjectMapper mapper = null;
 
     @SuppressLint({ "SetJavaScriptEnabled", "JavascriptInterface" })
     @Override
@@ -50,7 +54,10 @@ public class WordAudLocDetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_word_aud_loc_detail);
 
         context = getApplicationContext();
-        wordBook = new Manager_WordBook(context);
+        manager = new Manager_WordAudLoc(context);
+
+        WAL_SN = getIntent().getExtras().getString("WAL_SN");
+        mapper = new ObjectMapper();
 
         lWebView = (WebView)findViewById(R.id.mainView);
         lWebView.setWebViewClient(new WebViewClient() {
@@ -60,18 +67,36 @@ public class WordAudLocDetailActivity extends AppCompatActivity {
             @Override
             @SuppressLint({ "SetJavaScriptEnabled", "JavascriptInterface" })
             public void onPageFinished(WebView view, String url) {
-
                 List<Map> codeList = Manager_Code.GetInstance().GetList_2nd("003", true);
-
                 EventData data = new EventData();
-
-                data.SetHandle(HARDCODE.전체조회);
+                data.SetHandle("CODES");
                 data.SetView(HARDCODE.단어장배치관리);
                 data.SetValue(codeList);
-
                 String JsonEventData = gson.toJson(data);
-
                 lWebView.loadUrl("javascript:showData('" + JsonEventData + "')");
+
+                if(!WAL_SN.equals("")) {
+                    Map mapData =  manager.SearchData(WAL_SN);
+
+                    List<Map> locs = null;
+
+                    try {
+                        locs = mapper.readValue(mapData.get("WAL_LOCS").toString(), new TypeReference<List<Map>>(){});
+                        mapData.put("WAL_LOCS", locs);
+
+                        data.SetHandle(HARDCODE.상세조회);
+                        data.SetView(HARDCODE.단어장배치관리);
+                        data.SetValue(mapData);
+                        JsonEventData = gson.toJson(data);
+                        lWebView.loadUrl("javascript:showData('" + JsonEventData + "')");
+                    }catch (JsonGenerationException e) {
+                        e.printStackTrace();
+                    } catch (JsonMappingException e) {
+                        e.printStackTrace();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
             }
 
             public boolean onJsAlert(final WebView view, final String url, final String message, JsResult result) {
@@ -92,24 +117,7 @@ public class WordAudLocDetailActivity extends AppCompatActivity {
                 public void run() {
                     //Toast.makeText(context, arg, Toast.LENGTH_LONG).show();
                     //lWebView.loadUrl("javascript:setMessage('" + "abc" + "')");
-
                     EventData parse = gson.fromJson(arg, EventData.class);
-
-                    ObjectMapper mapper = new ObjectMapper();
-
-                    Map<String, Object> map = new HashMap<String, Object>();
-
-                    try {
-                        map = mapper.readValue(parse.data, new TypeReference<Map<String, Object>>(){});
-                    }catch (JsonGenerationException e) {
-                        e.printStackTrace();
-                    } catch (JsonMappingException e) {
-                        e.printStackTrace();
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-
-
 
                     switch (parse.handle) {
                         case HARDCODE.화면호출 :
@@ -120,23 +128,29 @@ public class WordAudLocDetailActivity extends AppCompatActivity {
                                     break;
                             }
                             break;
-                        case HARDCODE.전체조회 :
-                            ArrayList<Map> list = wordBook.Search();
-                            String jsonResult = gson.toJson(list);
-
-                            EventData data = new EventData();
-
-                            data.SetHandle(HARDCODE.전체조회);
-                            data.SetView(HARDCODE.단어장배치관리);
-                            data.SetValue(list);
-
-                            String JsonEventData = gson.toJson(data);
-
-                            lWebView.loadUrl("javascript:showData('" + JsonEventData + "')");
-                            break;
                         case HARDCODE.등록 :
+                            Map<String, Object> map = new HashMap<String, Object>();
+                            try {
+                                map = mapper.readValue(parse.data, new TypeReference<Map<String, Object>>(){});
+                                List<Map<String, String>> WAL_LOCS_LIST = (List<Map<String, String>>) map.get("WAL_LOCS");
+                                String WAL_LOCS_JSON = gson.toJson(WAL_LOCS_LIST);
+                                map.put("WAL_LOCS_JSON", WAL_LOCS_JSON);
+                                map.put("WAL_UPDATE_DT", "");
+                                map.put("WAL_USEYN", "0");
+                            }catch (JsonGenerationException e) {
+                                e.printStackTrace();
+                            } catch (JsonMappingException e) {
+                                e.printStackTrace();
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
 
-                            Map<String, Object> dataValue =  (Map<String, Object>) parse.value;
+                            if(WAL_SN.equals("")) {
+                                manager.Insert(map);
+                            } else {
+                                map.put("WAL_SN", WAL_SN);
+                                manager.Update(map);
+                            }
 
                             break;
                     }
