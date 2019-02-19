@@ -1,0 +1,410 @@
+﻿<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+
+		<title>Creating Web Audio - Dave Justice</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Dave Justice">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/night.css" id="theme">
+    <link rel="stylesheet" href="css/custom.css">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+	</head>
+
+	<body>
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>Creating Web Audio</h1>
+					<h3>Building useful abstractions over the web audio api</h3>
+          <a href="http://meandavejustice.github.io/creating_web_audio">meandavejustice.github.io/creating_web_audio</a>
+				</section>
+
+				<section>
+					<h2>Nodes</h2>
+          <div class="parallel">
+            <ul>
+              <li>AnalyserNode</li>
+              <li>AudioBufferSourceNode</li>
+              <li>AudioDestinationNode</li>
+              <li>AudioListener</li>
+              <li>AudioNode</li>
+              <li>BiquadFilterNode</li>
+              <li>ChannelMergerNode</li>
+              <li>ChannelSplitterNode</li>
+              <li>ConvolverNode</li>
+            </ul>
+
+            <ul>
+              <li>DelayNode</li>
+              <li>GainNode</li>
+              <li>MediaElementAudioSourceNode</li>
+              <li>MediaStreamAudioDestinationNode</li>
+              <li>MediaStreamAudioSourceNode</li>
+              <li>OscillatorNode</li>
+              <li>PannerNode</li>
+              <li>ScriptProcessorNode</li>
+              <li>WaveShaperNode</li>
+            </ul>
+          </div>
+					<aside class="notes">
+            <ul>
+              <li>analyserNode: get back data</li>
+              <li>audioBufferSourceNode: This is actually where the audio lives, this is what we will connect to other node
+                to add effects and create visualizations.
+              </li>
+              <li>AudioDestinationNode: This is what we will connect our source or analyserNode to. This is usually your speakers</li>
+            </ul>
+					</aside>
+				</section>
+
+				<section>
+					<section>
+						<h2>Loading Sounds</h2>
+						<p>WebAudio vs audio tag
+						</p>
+					</section>
+					<section>
+						<h2>Audio tag</h2>
+            <ul class="">
+              <li>Perfect for simple playback</li>
+              <li>can provide it's own playback (control attr)</li>
+              <li>lacking most of webaudio spec</li>
+            </ul>
+            
+            <audio preload="auto" controls="controls">
+              <source src="real_trap_shit.mp3"></source>
+            </audio>
+
+            <pre><code>
+                <audio src="/path/to/file.ogg" autoplay></audio>
+                <audio controls="controls">
+                  <source src="/path/to/file.mp3"></source>
+                </audio>
+            </code></pre>
+          </section>
+					<section>
+						<h2>WebAudio XHR</h2>
+            <pre><code>
+              var req = new XMLHttpRequest();
+              req.open("GET",url,true);
+              req.responseType = "arraybuffer"; // <&lt&lt&lt&lt
+              req.onload = function() {
+                audioContext.decodeAudioData(req.response, function(buf) {
+                  source = audioContext.createBufferSource(); 
+                  source.buffer = buf;
+                  source.connect(audioContext.destination);
+                  source.start(0);                                    
+                });
+              };
+              req.send();                    
+            </code></pre>
+          </section>
+				</section>
+        <section>
+          <section>
+            <h2>Audio Tags are cool but..</h2>
+
+            <br />
+            <br />
+            <br />
+            <marquee behavior="alternate">...they're not enough!</marquee>
+          </section>
+          <section>
+            <h2>We need more</h2>
+            <ul>
+              <li>visualize audio data</li>
+              <li>effects</li>
+              <li>manipulate, cut and copy</li>
+              <li>portable between devices</li>
+              <li>collaboration</li>
+            </ul>
+          </section>
+        </section>
+				<section>
+					<h2>Controlling Playback</h2>
+          <pre>
+            <code>
+              source.start(0);
+              source.stop();
+            </code>
+          </pre>
+
+          <p>what about pause/replay?</p>
+
+          <pre>
+            <code>
+              var trackTime = 0;
+              function pause () {
+                trackTime = audioContext.currentTime;
+                source.stop();
+              }
+              function play() {
+                source.start(audioContext.currentTime + trackTime);
+              }
+            </code>
+          </pre>
+				</section>
+
+				    <section>
+					      <h2>Effects</h2>
+                <pre>
+                    <code>
+// lowpass filter
+var bufferSize = 4096;
+var effect = (function() {
+    var lastOut = 0.0;
+    var node = audioContext.createScriptProcessor(bufferSize, 1, 1);
+    node.onaudioprocess = function(e) {
+        var input = e.inputBuffer.getChannelData(0);
+        var output = e.outputBuffer.getChannelData(0);
+        for (var i = 0; i  &lt; bufferSize; i++) {
+            output[i] = (input[i] + lastOut) / 2.0;
+            lastOut = output[i];
+        }
+    }
+    return node;
+})();                    
+                    </code>
+                </pre>
+                <a href="http://noisehack.com/custom-audio-effects-javascript-web-audio-api/">http://noisehack.com/custom-audio-effects-javascript-web-audio-api/</a>
+            </section>
+
+				    <section>
+              <section>
+					      <h2>Creating Visualizations</h2>
+                <pre>
+                  <code>
+                    var fft = ctx.createAnalyser();
+                    fft.fftSize = samples;
+                    fft.connect(ctx.destination);
+                    // setup canvas and call update()
+
+                    // in load function
+                    ctx.decodeAudioData(req.response, function(buf) {
+                    var src = ctx.createBufferSource(); 
+                    src.buffer = buf;
+
+                    play(src);
+                    //connect them up into a chain
+                    src.connect(fft);
+                    }
+
+                    // inside update function
+                    var data = new Uint8Array(samples);
+                    fft.getByteFrequencyData(data);
+                  </code>
+                </pre>
+                <a href="http://localhost:8888">fft visual demo</a>
+				      </section>
+
+              <section>
+                <canvas id="fft" width="300px" height="200px"></canvas>
+                <button class="fftPlay">play</button>
+                <button class="fftStop">stop</button>
+              </section>
+            </section>
+        <section>
+            <section>
+                <h2>Making Music</h2>
+                <img src="img/mpc.jpg" class="" alt="" />
+            </section>
+
+            <section>
+                <h2>My Problem</h2>
+                <img src="img/floppy-disk.jpg" class="" alt="" />
+            </section>
+
+            <section>
+                <h2>&ldquo;Solution&rdquo;</h2>
+                <img src="img/audacity.png" class="" alt="" />
+            </section>
+
+            <section>
+                <h2>Simple Sampler</h2>
+                <img src="img/simple-sampler.png" class="" alt="" />
+                <a href="https://meandavejustice.github.io/simple-sampler"></a>
+            </section>
+
+            <section>
+                <h2>Hacking</h2>
+                <img src="img/baudio.png" class="" alt="" />
+                <ul>
+                    <li>paul's extreme sound stretch</li>
+                    <li>baudio/asynth</li>
+                    <li>node webaudio</li>
+                    <li>clojure</li>
+                    <li>4minutesAnd33Seconds</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Web Components</h2>
+                <img src="img/audio-tags.png" class="" alt="" />
+            </section>
+
+            <section>
+                <h2>Polymer</h2>
+                <img src="img/polymer-logo.png" alt="" />
+                <br />
+                <a href="https://meandavejustice.github.io/sampler-polymer">sampler-polymer</a>
+            </section>
+
+            <section>
+                <h2>Components.FM</h2>
+                <img src="img/web-audio-components.png" class="" alt="" />
+                <br />
+                <a href="https://github.com/web-audio-components">Web Audio Components</a>
+            </section>            
+        </section>
+        
+	<section>
+	  <h2>Complimentary Apis</h2>
+	  <ul>
+	    <li>getUserMedia (recorder.js)</li>
+	    <li>
+              webRTC
+              <ul>
+                <li>audio channel-- Real Time Collaboration</li>
+                <li>webRTC data channel-- Real Time Sharing</li>
+              </ul>
+            </li>
+            <li>Web Components</li>
+	  </ul>
+	</section>
+
+        <section>
+          <h2>DAW</h2>
+          <a href="localhost:8080/">DEMO</a>
+	</section>
+
+        <section>
+	        <h1>Get Involved</h1>
+          <ul>
+            <li><a href="https://groups.google.com/forum/#!forum/web-audio-components">web audio components google group</a></li>
+            <li>#webaudio on freenode</li>
+            <li><a href="http://component.fm/">components.fm</a></li>
+            <li><a href="https://github.com/web-audio-components">web-audio-components github</a></li>
+            <li>Follow <a href="https://twitter.com/jsantell">@jsantell</a>, <a href="https://twitter.com/cwilso">@cwilso</a>, and <a href="https://twitter.com/meandavejustice">me</a>.</li>
+          </ul>
+        </section>
+
+        <section>
+	        <h1>Thank You</h1>
+          <br />
+          <br />
+          <p>Twitter: <a href="http://twitter.com/meandave2020">@meandave2020</a></p>
+          <p>IRC: JSON_voorhees</p>
+          <p>GH: <a href="http://github.com/meandavejustice">https://github.com/meandavejustice</a></p>
+        </section>
+
+
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+				  { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+     var samples = 128;
+     var setup = false;
+     var canvasEl = document.querySelector('#fft');
+     var playBtn = document.querySelector('.fftPlay');
+     var stopBtn = document.querySelector('.fftStop');
+     var ctx = new AudioContext();
+     var fft = ctx.createAnalyser();
+     fft.fftSize = 128;
+     fft.connect(ctx.destination);
+     var gfx = canvasEl.getContext('2d');
+     requestAnimationFrame(update);
+
+     loadFile();
+
+     function stop(src) {
+       src.stop(0);
+     }
+
+     function play(src) {
+       src.start(0);
+     }
+
+     function loadFile() {
+       var req = new XMLHttpRequest();
+       req.open("GET","./wizard.mp3",true);
+       //we can't use jquery because we need the arraybuffer type
+       req.responseType = "arraybuffer";
+       req.onload = function() {
+         //decode the loaded data
+         ctx.decodeAudioData(req.response, function(buf) {
+           var src = ctx.createBufferSource(); 
+           src.buffer = buf;
+
+           //connect them up into a chain
+           src.connect(fft);
+           setup = true;
+           playBtn.addEventListener('click', function() {
+             play(src);
+           }, false);
+
+           stopBtn.addEventListener('click', function() {
+             stop(src);
+           }, false);
+         });
+       };
+       req.send();
+       console.log("loading the song");
+     }
+
+     function update() {
+       requestAnimationFrame(update);
+       if(!setup) return;
+       gfx.clearRect(0,0,800,600);
+       gfx.fillStyle = '#333';
+       gfx.fillRect(0,0,800,600);
+       
+       var data = new Uint8Array(samples);
+       fft.getByteFrequencyData(data);
+       gfx.fillStyle = '#08FF6B';
+       for(var i=0; i<data.length; i++) {
+         gfx.fillRect(i*6,canvasEl.height + 50,5,85-data[i]);
+       }
+     }
+		</script>
+	</body>
+</html>
