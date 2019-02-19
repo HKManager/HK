@@ -14,7 +14,9 @@ import android.webkit.WebViewClient;
 
 import com.google.gson.Gson;
 
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -24,6 +26,11 @@ import Query.Manager_WordBook;
 import study.hk.data.Data.HARDCODE;
 import study.hk.poyowordbook.MainActivity;
 import study.hk.poyowordbook.R;
+
+import com.fasterxml.jackson.core.JsonGenerationException;
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class WordAudLocDetailActivity extends AppCompatActivity {
 
@@ -88,6 +95,22 @@ public class WordAudLocDetailActivity extends AppCompatActivity {
 
                     EventData parse = gson.fromJson(arg, EventData.class);
 
+                    ObjectMapper mapper = new ObjectMapper();
+
+                    Map<String, Object> map = new HashMap<String, Object>();
+
+                    try {
+                        map = mapper.readValue(parse.data, new TypeReference<Map<String, Object>>(){});
+                    }catch (JsonGenerationException e) {
+                        e.printStackTrace();
+                    } catch (JsonMappingException e) {
+                        e.printStackTrace();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+
+
+
                     switch (parse.handle) {
                         case HARDCODE.화면호출 :
                             switch (parse.data) {
@@ -110,6 +133,11 @@ public class WordAudLocDetailActivity extends AppCompatActivity {
                             String JsonEventData = gson.toJson(data);
 
                             lWebView.loadUrl("javascript:showData('" + JsonEventData + "')");
+                            break;
+                        case HARDCODE.등록 :
+
+                            Map<String, Object> dataValue =  (Map<String, Object>) parse.value;
+
                             break;
                     }
                 }

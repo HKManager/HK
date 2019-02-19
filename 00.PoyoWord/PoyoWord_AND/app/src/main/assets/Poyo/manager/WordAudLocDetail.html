@@ -133,10 +133,10 @@
                             <div class="col-sm-12">
                                 <div class="form-group">
                                     <div class="form-line">
-                                        <input id="AC_SN" type="hidden" class="control-detail form-control"
-                                            placeholder="거래처 SN" data-bind="value: AC_SN" />
-                                        <input id="AC_NAME" type="text" class="control-detail form-control"
-                                            placeholder="단어배치 명" data-bind="value: AC_NAME" />
+                                        <input id="WAL_SN" type="hidden" class="control-detail form-control"
+                                            placeholder="단어배치 SN" data-bind="value: WAL_SN" />
+                                        <input id="WAL_NAME" type="text" class="control-detail form-control"
+                                            placeholder="단어배치 명" data-bind="value: WAL_NAME" />
                                     </div>
                                 </div>
 
@@ -266,16 +266,16 @@
         };
 
         function ViewModel() {
-            this.AC_SN = ko.observable("");
-            this.AC_NAME = ko.observable("");
-            this.AC_ADDRESS = ko.observable("");
-            this.AC_MAN01 = ko.observable("");
-            this.AC_PHONENUMBER01 = ko.observable("");
-            this.AC_EMAIL01 = ko.observable("");
-            this.AC_PAY = ko.observable("");
-            this.AC_DESC = ko.observable("");
-            this.AC_TYPE_CODES = ko.observableArray([]);
-            this.AC_TYPE_CODE = ko.observable(this.AC_TYPE_CODES.find("CODE", _AC_TYPE_CODE));
+            this.WAL_SN = ko.observable("");
+            this.WAL_NAME = ko.observable("");
+            // this.AC_ADDRESS = ko.observable("");
+            // this.AC_MAN01 = ko.observable("");
+            // this.AC_PHONENUMBER01 = ko.observable("");
+            // this.AC_EMAIL01 = ko.observable("");
+            // this.AC_PAY = ko.observable("");
+            // this.AC_DESC = ko.observable("");
+            // this.AC_TYPE_CODES = ko.observableArray([]);
+            // this.AC_TYPE_CODE = ko.observable(this.AC_TYPE_CODES.find("CODE", _AC_TYPE_CODE));
         };
 
         //var _AC_NAME = "";
@@ -340,23 +340,34 @@
             //        vm.AC_TYPE_CODES(_AC_TYPE_CODES);
             //        break;
             //}
-
-
         });
+
+        function GetData() {
+            var record = {
+                WAL_SN: $("#WAL_SN").val(),
+                WAL_NAME: $("#WAL_NAME").val(),
+                WAL_LOCS: selectLocItem,
+                // WAL_UPDATE_DT: $("#WAL_UPDATE_DT").val(),
+                // WAL_DESC: $("#WAL_DESC").val(),
+                WAL_USEYN: true
+            };
+
+            return record;
+        }
 
 
         function Create() {
-            var objectData = ko.toJS(vm);
+            var objectData = GetData();
 
             var jSonData = JSON.stringify(objectData);
 
+            console.log(jSonData);
+
             //var name = ViewModel.AC_NAME;
-            var obj = { handle: "03", view: "ACCOUNT", data: jSonData };
-
+            var obj = { handle: "03", view: "WORDAUDDETAIL", data: jSonData };
             var data = JSON.stringify(obj);
-
             //log("Sending Data:" + data);
-            invokeCSharpAction(data);
+            window.android.setData(data);
         }
 
         function Cancel() {
@@ -433,13 +444,14 @@
 
             var codeItems = jsonObj.value;
 
-
             $('#codeList').empty();
+
+
 
         for (var item = 0; item < codeItems.length; item++) {
             $('#codeList:last').append(
                 '<a style="text-align:center;font-size:small;" onclick="SelectLocItem($(this));">' + codeItems[item].CODE_NAME
-                + '<input style="display:none" value="' + codeItems[item].CODE_SORT + '>'
+                + '<input style="display:none" value="' + codeItems[item].CODE + '">'
                 + '</a>'
             );
         }

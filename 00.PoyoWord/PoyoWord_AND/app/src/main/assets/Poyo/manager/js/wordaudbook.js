@@ -12,6 +12,9 @@ function SelectLocItem(e) {
 
     selectLocIndex++;
 
+    console.log(code);
+    
+
     $('#locList').empty();
 
     ShowLocItem();
@@ -49,7 +52,7 @@ function ShowLocItem() {
     for (var item = 0; item < selectLocItem.length; item++) {
         $('#locList:last').append(
             '<a style="text-align:center;font-size:small;" onclick="DeleteLocItem($(this));">' + selectLocItem[item].CODE_NAME
-            + '<input style="display:none" value="' + selectLocItem[item].CODE_SORT + '>'
+            + '<input style="display:none" value="' + selectLocItem[item].CODE_SORT + '">'
             + '</a>'
         );
     }
