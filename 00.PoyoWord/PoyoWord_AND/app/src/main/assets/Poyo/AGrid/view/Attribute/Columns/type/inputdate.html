@@ -1,0 +1,123 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1;text/html; charset=utf-8;" />
+
+		<script>
+			var SBpath = "../../../../js/";
+		</script>
+		
+		<script src="../../../../js/SBGrid/SBGrid_Lib.js" type="text/javascript"></script>
+		<script src="../../../../js/SBGrid/SBGrid_min.js" type="text/javascript"></script>
+		<link href="../../../../js/SBGrid/css/SBGrid.css" rel="stylesheet" type="text/css">
+		<link href="../../../../js/SBGrid/css/SBGrid_Default.css" rel="stylesheet" type="text/css">
+		<link href="../../../../css/basic.css" rel="stylesheet" type="text/css">
+		<link href="../../../../css/common.css" rel="stylesheet" type="text/css">
+		<script src="../../../../data/data.js" type="text/javascript"></script>
+		<script src="../../../../js/toggle/toggle_attr.js" type="text/javascript"></script>
+		<script src="../../../../js/common.js" type="text/javascript"></script>
+
+		<title>inputdate</title>
+
+		<script type="text/javascript">
+			var datagrid;
+			var SBGridProperties = {};
+			
+			function createGrid(){
+				
+				SBGridProperties.parentid = 'SBGridArea';
+				SBGridProperties.id = 'datagrid';
+				SBGridProperties.jsonref = 'ct_data.gridData';
+				SBGridProperties.columns = [
+					{caption : ['기본정보','이름'],		ref : 'name',		width : '100px',	style : 'text-align:center',	type : 'output'},
+					{caption : ['기본정보','나이'],		ref : 'age',		width : '50px',	style : 'text-align:center',	type : 'input' , 	typeinfo : {maxlength:3 } },
+					{caption : ['기본정보','생년월일'],	ref : 'birth',		width : '120px',	style : 'text-align:center',	type : 'datepicker',	typeinfo : {locale : 'ko', position : 'top'}, format : {type:'date', rule:'yyyy-mm-dd', origin : 'yyyy-mm-dd' }  },			
+					{caption : ['기본정보','입사일'],			ref : 'hiredate',	width : '120px',	style : 'text-align:center',	type : 'inputdate',	typeinfo : {dateformat : 'yy/mm/dd', oneclickedit : true, locale : 'en',  clearbutton : true , multiple : 2, position : 'right', alias : 'yyyy/mm/dd', yearrange: 100},	format: {type : 'date', rule : 'yyyy/mm/dd', origin : 'yyyy/mm/dd'}},
+					{caption : ['기본정보','팀장여부'],		ref : 'leader',		width : '80px',	style : 'text-align:center',	type : 'radio' },
+					{caption : ['부수정보','주소'],			ref : 'addr',		width : '250px',	style : 'text-align:center',	type : 'textarea'  },
+					{caption : ['부수정보','전화번호'],		ref : 'tel',			width : '130px',	style : 'text-align:center', 	type : 'output'}
+				];
+				datagrid = _SBGrid.create(SBGridProperties);
+
+			};
+		</script>
+	</head>
+
+	<body>
+		<div class="subTitle">
+			<h2 class="title">inputdate</h2>
+		</div>
+
+		<p class="ctext4">Description</p>
+		<ul class="descList">
+			<li> ● 컬럼 type 중 inputdate type을 설정합니다.</li>
+			<li> ● 날짜를 입력받거나 캘린더로 선택할 수 있는 복합 유형입니다.</li>
+		</ul>
+		<p class="ctext4">Value</p>
+		<div class="example_box" style="width:90%;">
+			<pre> 
+			
+	<span style="font-weight: bold;"> * typeinfo : {dateformat : value1, oneclickedit : value2, locale : value3, clearbutton : value4, multiple : value5, position : value6, alias : value7, calendartype : value8, yearrange : value9}</span>
+	   - value1 <span style="font-weight: bold;">(필수)</span> : <span style="font-weight: bold;">[string]</span> 달력에 적용할 원본 데이터 형식
+		  → 'yymmdd' | 'yy.mm.dd' | 'yy-mm-dd' | 'yy/mm/dd'	: 원본 데이터 형식이 연월일 순서
+		  → 'mmddyy' | 'mm.dd.yy' | 'mm-dd-yy' | 'mm/dd/yy'	: 원본 데이터 형식이 월일년 순서
+		  → 'ddmmyy' | 'dd.mm.yy' | 'dd-mm-yy' | 'dd/mm/yy'	: 원본 데이터 형식이 일월년 순서
+	   - value2 <span style="font-weight: bold;">(선택)</span> : <span style="font-weight: bold;">[boolean]</span> 셀에서 마우스 한번 클릭으로 달력 및 편집 모드 활성화 여부
+		  → true			: 마우스 한 번 클릭으로 달력 활성화
+		  → false (default)		: 마우스 더블 클릭으로 달력 활성화
+	   - value3 <span style="font-weight: bold;">(선택)</span> : <span style="font-weight: bold;">[string]</span> 달력의 기본 언어
+		  → 'ko' (default)		: 한국어
+		  → 'en'			: 영어
+	   - value4 <span style="font-weight: bold;">(선택)</span> : <span style="font-weight: bold;">[boolean]</span> 달력에 오늘/지움 버튼 표시 여부
+		  → true			: 오늘/지움 버튼 표시
+		  → false (default)		: 오늘/지움 버튼 미표시
+	   - value5 <span style="font-weight: bold;">(선택)</span> : <span style="font-weight: bold;">[number]</span> 달력의 표시 개수 (default : 1)
+	   - value6 <span style="font-weight: bold;">(선택)</span> : <span style="font-weight: bold;">[string]</span> 달력의 표시 위치
+		  → 'bottom' (default)	: 셀의 아래쪽에 달력 아이콘을 표시
+		  → 'top'		        : 셀의 위쪽에 달력 아이콘을 표시
+		  → 'right'		        : 셀의 오른쪽에 달력 아이콘을 표시
+		  → 'left'		        : 셀의 왼쪽에 달력 아이콘을 표시
+	   - value7 <span style="font-weight: bold;">(선택)</span> : <span style="font-weight: bold;">[string]</span> 셀의 편집 모드에서 데이터 표시 형식 (default : yyyy-mm-dd')
+	   - value8 <span style="font-weight: bold;">(선택)</span> : <span style="font-weight: bold;">[string]</span> inputdate, datepicker 컬럼 타입 달력 종류 선택 하는 속성
+		  → 'date'		        : 년도, 월, 일 선택
+		  → 'year'		        : 년도 선택
+		  → 'month'		        : 월 선택
+		  → 'yearmonth'	        : 년도, 월 선택
+	   - value9 <span style="font-weight: bold;">(선택)</span> : <span style="font-weight: bold;">[number]</span> 해당 년도 기준 선택 상자 표시 범위 (default : 10)
+			</pre>
+		</div>
+		<div class="ctext4">Example
+			<input type="button" id = "clickb" class="buttonStyle" name="bt" value="code View" onclick="codeView()" />
+		</div>			
+		<div class="example_box_e" id="toggle">
+			<pre>
+		<span class="comment"></span>
+	var datagrid;
+	var SBGridProperties = {};
+	
+	function createGrid(){
+		
+		SBGridProperties.parentid = 'SBGridArea';
+		SBGridProperties.id = 'datagrid';
+		SBGridProperties.jsonref = 'ct_data.gridData';
+		SBGridProperties.columns = [
+			{caption : ['기본정보','이름'],		ref : 'name',		width : '100px',	style : 'text-align:center',	type : 'output'},
+			{caption : ['기본정보','나이'],		ref : 'age',		width : '50px',	style : 'text-align:center',	type : 'input' , 	typeinfo : {maxlength:3 } },
+			{caption : ['기본정보','생년월일'],	ref : 'birth',		width : '120px',	style : 'text-align:center',	type : 'datepicker',	typeinfo : {locale : 'ko', position : 'top'}, format : {type:'date', rule:'yyyy-mm-dd', origin : 'yyyy-mm-dd' }  },			
+			{caption : ['기본정보','입사일'],	ref : 'hiredate',	width : '120px',	style : 'text-align:center',	<span class="highlight1">type : 'inputdate',	typeinfo : {dateformat : 'yy/mm/dd', oneclickedit : true, locale : 'en',  clearbutton : true , multiple : 2, position : 'right', alias : 'yyyy/mm/dd', yearrange: 100}</span>,	format: {type : 'date', rule : 'yyyy/mm/dd', origin : 'yyyy/mm/dd'}},
+			{caption : ['기본정보','팀장여부'],	ref : 'leader',		width : '80px',	style : 'text-align:center',	type : 'radio' },
+			{caption : ['부수정보','주소'],		ref : 'addr',		width : '250px',	style : 'text-align:center',	type : 'textarea'  },
+			{caption : ['부수정보','전화번호'],	ref : 'tel',			width : '130px',	style : 'text-align:center', 	type : 'output'}
+		];
+		datagrid = _SBGrid.create(SBGridProperties);
+	};
+			</pre>
+		</div>
+			<p class="ctext4">Sample</p>
+		<div class="gridDiv">
+			입사일 컬럼을 확인해보세요.
+			<div id="SBGridArea" class="gridStyle"></div>
+		</div>
+	</body>
+</html>

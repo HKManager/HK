@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1;text/html; charset=utf-8;" />
+
+		<script>
+			var SBpath = "../../../js/";
+		</script>
+		<script src="../../../js/SBGrid/SBGrid_Lib.js" type="text/javascript"></script>
+		<script src="../../../js/SBGrid/SBGrid_min.js" type="text/javascript"></script>
+		<link href="../../../js/SBGrid/css/SBGrid.css" rel="stylesheet" type="text/css">
+		<link href="../../../js/SBGrid/css/SBGrid_Default.css" rel="stylesheet" type="text/css">
+		<link href="../../../css/basic.css" rel="stylesheet" type="text/css">
+		<link href="../../../css/common.css" rel="stylesheet" type="text/css">
+		<script src="../../../data/data.js" type="text/javascript"></script>
+		<script src="../../../js/toggle/toggle.js" type="text/javascript"></script>
+		<script src="../../../js/common.js" type="text/javascript"></script>
+		
+		<style>
+            .gAjaxParam>tbody>tr>th{
+                background-color:rgb(198,217,241);
+                padding:5px 20px 5px 20px;
+            }
+            .gAjaxParam>tbody>tr>td{
+                background-color:white;
+                padding:5px 20px 5px 20px;
+            }
+        </style>
+		
+		<title>DBpaging</title>
+
+		<script type="text/javascript">
+	    	var datagrid;
+			var SBGridProperties = {};
+
+			function createGrid(){
+				SBGridProperties.parentid = 'SBGridArea';
+				SBGridProperties.id = 'datagrid';
+				SBGridProperties.jsonref = 'ct_data.resources';
+				SBGridProperties.paging = {'type' : 'all' , 'count' : 5 , 'size' : 7};
+				SBGridProperties.columns = [
+					{caption : ['학원명'],		ref : 'academy',		width : '150px',	style : 'text-align:center',	type : 'output'},
+					{caption : ['설립자(성명)'],	ref : 'name',			width : '150px',	style : 'text-align:center',	type : 'input'},
+					{caption : ['전화번호'],		ref : 'phone',			width : '120px',	style : 'text-align:center',	type : 'input'},
+					{caption : ['학원주소'],		ref : 'addr',			width : '450px',	style : 'text-align:center',	type : 'textarea'},
+					{caption : ['교습과정'],		ref : 'curriculum',		width : '100px',	style : 'text-align:center',	type : 'combo', typeinfo :{ ref : 'newComboData', displayui : true, label : 'label', value : 'value'}},
+					{caption : ['교습과목(반)'],	ref : 'class',			width : '200px',	style : 'text-align:center',	type : 'input'},
+					{caption : ['정원'],		 	ref : 'maxstudent',		width : '70px',	style : 'text-align:center',	type : 'input', format : {type:'string', rule:'@ "명"'}},
+					{caption : ['교습기간'],		ref : 'term',			width : '100px',	style : 'text-align:center',	type : 'input'},
+					{caption : ['교육시작일'],		ref : 'startday',		width : '100px',	style : 'text-align:center',	type : 'datepicker', typeinfo : {locale : 'ko' , dateformat :'yymmdd'}, format : {type:'date', rule:'yyyy-mm-dd', origin : 'yyyymmdd' }},
+					{caption : ['총교습시간(분)'],   ref : 'totalminute',		width : '100px',	style : 'text-align:center',	type : 'input'},
+					{caption : ['교습비'],		ref : 'pay',			width : '100px',	style : 'text-align:center',	type : 'input', format : {type:'number', rule:'#,###'}},
+					{caption : ['강사수'],		ref : 'teacher',			width : '70px',	style : 'text-align:center',	type : 'input'}
+				];
+				datagrid = _SBGrid.create(SBGridProperties);
+				
+			};
+		</script>
+	</head>
+
+	<body>
+		<div class="subTitle">
+			<h2 class="title">DBpaging</h2>
+		</div>
+		
+		<p class="ctext4">SBGrid2.5 paging + gridajax 속성을 사용한 DB Paging</p>
+		<ul class="descList">
+			<li> 1. SBGrid 2.5 paging 속성을 설정합니다.
+			    <ul>
+                    <li>&emsp; - paging type을 "page"로 설정합니다.</li>
+                    <li>&emsp; - sorttype을 all로 설정하는 경우 정렬시 데이터 조회를 요청 합니다.</li>
+                    <li>&emsp; - totalcount는 페이징을 하려는 전체 데이터 개수를 적용합니다.(totalcount 적용 필수)</li>
+                    <li>&emsp; - totalcount는 데이터 조회시 특정 파라미터(③ 파라미터표 참고)  기준으로 다시 적용 가능 합니다.</li>
+                    <p>&emsp;ex)</p>
+                    <div class="example_box">
+<pre>
+    <span class="comment"></span>
+    SBGridInfo.paging = {<span style="color:green;font-weight:bold">        // pageing 기능 설정</span>
+        <span style="color:red;font-weight:bold;">type : 'page',</span>              <span style="color:green;font-weight:bold;">// paging기능 type 설정 ['none', 'all', 'page']</span>
+        sorttype : 'all',             <span style="color:green;font-weight:bold;">// pageing 기능 사용시 sort 유형 지정 ['all', 'page']</span>
+        count : 5,                  <span style="color:green;font-weight:bold;">// pageUI 영역에 pageButton 개수 표시</span>
+        size : 5,                   <span style="color:green;font-weight:bold;">// 한 화면에 표시할 행 개수 표시</span>
+        <span style="color:red;font-weight:bold;">totalcount : 30,</span>        <span style="color:green;font-weight:bold;">// 'page' type 사용시 전체 데이터 건수 지정 pageUI 영역 구성을 위해서 필요</span>
+        showgoalpageui : true<span style="color:green;font-weight:bold">// 지정 페이지 이동 UI 사용 여부</span>
+    }
+    
+</pre>
+                    </div>
+			    </ul>
+			</li>
+			
+			<br><br>
+			
+			<li> 2. SBGrid 2.5 gridajax 속성을 설정합니다.
+			    <ul>
+                    <li>&emsp; - gridajax type을 paging로 설정 합니다.</li>
+                    <li>&emsp; - 데이터를 조회 하려는 컨트롤러 URL 설정 합니다.</li>
+                    <li>&emsp; - httptype 설정 합니다.</li>
+                    <li>&emsp; - data 기본 파라미터(③ 파라미터표 참고) 이외에 추가 파라미터 적용 합니다.</li>
+                    <li>&emsp; - callback 데이터 조회 통신 이후 callback function을 설정 합니다.</li>
+                    <p>&emsp;ex)</p>
+                    <div class="example_box">
+<pre>
+    <span class="comment"></span>
+    SBGridInfo.gridajax = {               <span style="color:green;font-weight:bold">// gridajax 기능 설정</span>
+        type : 'page',                       <span style="color:green;font-weight:bold;">// gridajax 기능 type 설정 ['paging', 'scroll(예정)', 'free(예정)']</span>
+        url : './getTestDataPage.do',   <span style="color:green;font-weight:bold;">// gridajax 기능 전송 url 설정</span>
+        httptype : 'Get',                  <span style="color:green;font-weight:bold;">// gridajax 기능 http 전송 type 설정</span>
+        data : param,                    <span style="color:green;font-weight:bold;">// gridajax 기능 추가 파라미터 설정 (String or Object 지원)</span>
+        callback : fnPagingCallback, <span style="color:green;font-weight:bold;">// gridajax 기능 callback function 설정</span>
+    }
+    
+</pre>
+                    </div>
+			    </ul>
+			</li>
+			
+			<br><br>
+			
+			<li> 3. SBGrid 2.5 gridajax 사용 파라미터
+			    <ul>
+                    <li>&emsp; - gridajax 설정시 사용하는 파라미터로 추가 데이터 이외에 그리드 기본 파라미터 입니다.</li>
+			        <table class="gAjaxParam" style="text-align:center;border-collapse:collapse;" border="1">
+			            <tr><th>구분</th><th>이름</th><th>필수여부</th><th>설명</th></tr>
+			            <tr><td rowspan="3">Request</td><td>firstIndexSB</td><td>O</td><td>DB 페이징 적용시 시작이되는 DATA 인덱스</td></tr>
+			            <tr><td>limitCountSB</td><td>O</td><td>DB 페이징 적용시 시작 인덱스부터 가져오려는 DATA 개수</td></tr>
+			            <tr><td>sortSB</td><td>X</td><td>DB 페이징 적용시 sorttype ‘all’ 사용하는 경우 정렬 상태</td></tr>
+			            <tr><td>Response</td><td>totalcountSB</td><td>X</td><td>DB 페이징 적용시 paging totalcount 설정</td></tr>
+			        </table>
+			    </ul>
+			</li>
+			
+			<br><br>
+			
+			<li> 4. gridajax 데이터 조회 요청 상황
+			    <ul>
+                    <li>&emsp; - 그리드 생성 시점, refresh 호출,  rebuild 호출, 페이징 전환 시점, 정렬 시점 입니다.</li>
+			    </ul>
+			</li>
+		</ul>
+		
+		<br>
+		
+		<p class="ctext4">SBGrid2.5 paging 이벤트를 이용한 DB Paging</p>
+		<ul class="descList" style="margin-bottom:50px;">
+			<li> 1. SBGrid 2.5 paging 속성을 설정합니다.
+			    <ul>
+                    <li>&emsp; - paging type을 "page"로 설정합니다.</li>
+                    <li>&emsp; - sorttype 'all'은 지원하지 않습니다.</li>
+                    <li>&emsp; - totalcount는 페이징을 하려는 전체 데이터 개수를 적용합니다.</li>
+                    <p>&emsp;ex)</p>
+                    <div class="example_box">
+<pre>
+    <span class="comment"></span>
+    SBGridInfo.paging = {<span style="color:green;font-weight:bold">        // pageing 기능 설정</span>
+        <span style="color:red;font-weight:bold;">type : 'page',</span>              <span style="color:green;font-weight:bold;">// paging기능 type 설정 ['none', 'all', 'page']</span>
+        sorttype : 'all',             <span style="color:green;font-weight:bold;">// pageing 기능 사용시 sort 유형 지정 ['all', 'page']</span>
+        count : 5,                  <span style="color:green;font-weight:bold;">// pageUI 영역에 pageButton 개수 표시</span>
+        size : 5,                   <span style="color:green;font-weight:bold;">// 한 화면에 표시할 행 개수 표시</span>
+        <span style="color:red;font-weight:bold;">totalcount : 30,</span>        <span style="color:green;font-weight:bold;">// 'page' type 사용시 전체 데이터 건수 지정 pageUI 영역 구성을 위해서 필요</span>
+        showgoalpageui : true<span style="color:green;font-weight:bold">// 지정 페이지 이동 UI 사용 여부</span>
+    }
+    
+</pre>
+                    </div>
+			    </ul>
+			</li>
+			
+			<br><br>
+			
+			<li> 2. SBGrid 2.5 beforepagechanged 이벤트 적용
+			    <ul>
+                    <li>&emsp; - beforepagechanged 이벤트를 bind 합니다.</li>
+                    <li>&emsp; - 해당 이벤트 시점에 paging을 위한 조회 요청을 진행합니다.</li>
+                    <li>&emsp; - async : false 상태로만 적용 가능합니다.</li>
+			        <div class="example_box">
+<pre>
+    <span class="comment"></span>
+    datagrid1.bind('beforepagechanged', fnPaging);    <span style="color:green;font-weight:bold">// pageing 기능 사용시 페이징 전환될때 발생되는 이벤트를 적용 합니다.</span>
+    
+    function fnPaging(e){
+        var nLimitCount = datagrid1.getPageSize();                                      <span style="color:green;font-weight:bold">// 몇개에 데이터를 가져올지 설정에 따로 적용 &gt; this.getPageSize()</span>
+        var nIndexStart = (datagrid1.getSelectPageIndex() - 1) * nLimitCount;    <span style="color:green;font-weight:bold">// 몇번째 데이터 인덱스부터 데이터를 가져올지 적용</span>
+        var objData = {'firstIndexSB':nIndexStart, 'limitCountSB':nLimitCount};
+        $.ajax({
+            url : './getTestDataPage.do',
+            type : 'post',
+            data : objData,
+            dataType : 'json',
+            async : false,
+            success : function(data){
+                console.log("-------------------------success-------------------------");
+                gridData = data;    <span style="color:green;font-weight:bold">// 조회 데이터 그리드에 바인딩된 데이터에 적용</span>
+            },
+            error : function(req, stat, error){
+                console.log("-------------------------error-------------------------");
+                console.log(error);
+            }
+        });
+    }
+    
+</pre>
+                    </div>
+			    </ul>
+			</li>
+		</ul>
+	</body>
+</html>

@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1;text/html; charset=utf-8;" />
+
+		<link href="../../css/common.css" rel="stylesheet" type="text/css">
+		<link href="../../css/basic.css" rel="stylesheet" type="text/css">
+		<title>Version History</title>
+	</head>
+
+	<body>
+		<div class="subTitle">
+            <h2 class="title">SBGrid 2.5.1649 </h2>
+        </div>
+        <div class="example_box" style="width:90%;">
+            <pre>
+
+    <span class="historyTitle"><img src="../../images/fix_icon.png" alt="" class="historyIcon"> 기능 개선</span>
+        -  showselectedcellsinfo 영역 맨 뒤 '/' 제거
+            </pre>
+        </div>
+
+
+		<div class="subTitle">
+            <h2 class="title">SBGrid 2.5.1647 </h2>
+        </div>
+        <div class="example_box" style="width:90%;">
+			<pre>
+
+    <span class="historyTitle"><img src="../../images/add_icon.png" alt="" class="historyIcon"> 기능 추가</span>
+        -  [Attribute] showtotalrows = [true | false] : 그리드 하단에 전체 행의 개수 표시 여부를 설정하는 속성입니다.
+        -  [Attribute] emptycellonpaste = [true | false] : date format 셀에 데이터 붙여넣기시 format에 맞지 않는 데이터를 빈값으로 표시할지 여부를 설정하는 속성입니다.
+        -  [Method] getShowTotalRows() : 그리드 하단에 전체 행의 개수를 표시할지 여부를 반환합니다.
+    	-  [Method] setShowTotalRows(param1) : 그리드 하단에 전체 행의 개수를 표시할지 여부를 설정합니다.(그리드 하단 영역이 잡혀있는 경우에만 true 가능)
+            * param1 : [Boolean] 그리드 하단에 전체 행의 개수 표시 여부
+        -  [Method] getEmptyCellOnPaste() : date format 셀에 데이터 붙여넣기시 format에 맞지 않는 데이터를 빈값으로 표시할지 여부를 반환합니다.
+    	-  [Method] setEmptyCellOnPaste(param1) : date format 셀에 데이터 붙여넣기시 format에 맞지 않는 데이터를 빈값으로 표시할지 여부를 설정합니다.
+            * param1 : [Boolean] 맞지 않는 데이터를 빈값으로 표시할지 여부
+            </pre>
+        </div>
+
+
+	    <div class="subTitle">
+            <h2 class="title">SBGrid 2.5.1638 </h2>
+        </div>
+        <div class="example_box" style="width:90%;">
+            <pre>
+
+    <span class="historyTitle"><img src="../../images/add_icon.png" alt="" class="historyIcon"> 기능 추가</span>
+        -  [Attribute] showselectedcellsinfo = ["count", "sum", "avg"] : 그리드 하단에 보여줄 선택된 셀의 count, sum, avg 정보를 설정합니다.
+        -  [Method] setShowSelectedCellsInfo(param1) : 그리드 하단에 보여줄 선택된 셀의 count/sum/avg 를 설정합니다.
+            * param1 : [Array] 그리드 하단에 보여줄 선택된 셀의 count/sum/avg
+        -  [Method] getShowSelectedCellsInfo() : 그리드 하단에 보여주는 선택된 셀의 count/sum/avg 설정 값을 반환합니다.
+        -  [Method] getSelectedCellsInfo() : 선택된 셀의 count/sum/avg 값을 반환합니다.
+            </pre>
+        </div>
+
+
+		<div class="subTitle">
+            <h2 class="title">SBGrid 2.5.1630 </h2>
+        </div>
+        <div class="example_box" style="width:90%;">
+            <pre>
+
+    <span class="historyTitle"><img src="../../images/fix_icon.png" alt="" class="historyIcon"> 기능 개선</span>
+        -  datepicker/inputdate 일때 locale 설정에 따라 지움/적용 버튼도 해당언어도 표시되게 수정(ja,zh,en 적용)
+            </pre>
+        </div>
+
+
+        <div class="subTitle">
+            <h2 class="title">SBGrid 2.5.1626 </h2>
+        </div>
+        <div class="example_box" style="width:90%;">
+            <pre>
+
+    <span class="historyTitle"><img src="../../images/fix_icon.png" alt="" class="historyIcon"> 기능 개선</span>
+        -  combo/inputcombo 타입일때 itemcount를 설정해도 하단일때 위로 열리게 변경
+            </pre>
+        </div>
+
+
+        <div class="subTitle">
+            <h2 class="title">SBGrid 2.5.1620 </h2>
+        </div>
+        <div class="example_box" style="width:90%;">
+            <pre>
+
+    <span class="historyTitle"><img src="../../images/add_icon.png" alt="" class="historyIcon"> 기능 추가</span>
+        -  [Method] getColumnFormat(param1) : 특정 열의 컬럼 포멧 정보를 반환하는 기능입니다.
+            * param1 : [Number] 열 인덱스
+            </pre>
+        </div>
+
+
+        <div class="subTitle">
+            <h2 class="title">SBGrid 2.5.1614 </h2>
+        </div>
+        <div class="example_box" style="width:90%;">
+            <pre>
+
+    <span class="historyTitle"><img src="../../images/fix_icon.png" alt="" class="historyIcon"> 기능 개선</span>
+        -  rowheadercaption/width 정보를 excel정보에 포함
+            </pre>
+        </div>
+
+
+        <div class="subTitle">
+            <h2 class="title">SBGrid 2.5.1612 </h2>
+        </div>
+        <div class="example_box" style="width:90%;">
+            <pre>
+
+    <span class="historyTitle"><img src="../../images/add_icon.png" alt="" class="historyIcon"> 기능 추가</span>
+        -  [Attribute] hiddencopynpaste = [true | false] : copy/paste시 hidden 컬럼을 포함시킬지 여부를 설정하는 기능입니다.
+        -  [Method] setHiddenCopyNPaste(param1) : copy/paste시 hidden 컬럼의 포함여부를 설정하는 기능입니다.
+            * param1 : [Boolean] 포함여부를 설정
+        -  [Method] getHiddenCopyNPaste() : copy/paste시 hidden 컬럼의 포함를 확인하는 기능입니다.
+            </pre>
+        </div>
+
+
+        <div class="subTitle">
+            <h2 class="title">SBGrid 2.5.1605 </h2>
+        </div>
+        <div class="example_box" style="width:90%;">
+            <pre>
+
+    <span class="historyTitle"><img src="../../images/fix_icon.png" alt="" class="historyIcon"> 기능 개선</span>
+        -  sortColumn() explorerbar sort 설정되어 있지 않아도 사용 가능하도록 개선
+        -  컬럼 이동 로직 변경 (기존 해당 이동 컬럼 색상 지정 -&gt; 이동될 컬럼 사이에 선으로 색상 표시)
+        -  allowcopy시 개행문자 처리
+    <span class="historyTitle"><img src="../../images/add_icon.png" alt="" class="historyIcon"> 기능 추가</span>
+        -  [Method] sortingIcon() : sortColumn() 동적으로 수행후 헤더(캡션) 영역에 아이콘을 표기 하는 기능 입니다.
+        -  [Method] removeSorting() : single sorting 정보 및 아이콘을 삭제합니다.
+        -  [Method] getPrevCellDataInfo() : valuechanged이벤트 발생 시점에 데이터가 바뀌기 전 셀 정보를 반환합니다.
+            </pre>
+        </div>
+
+
+        <div class="subTitle">
+            <h2 class="title">SBGrid 2.5.1591 </h2>
+        </div>
+        <div class="example_box" style="width:90%;">
+            <pre>
+
+    <span class="historyTitle"><img src="../../images/fix_icon.png" alt="" class="historyIcon"> 기능 개선</span>
+        -  locale 기능 사용시 format data type locale도 동기화 되도록 개선
+    <span class="historyTitle"><img src="../../images/add_icon.png" alt="" class="historyIcon"> 기능 추가</span>
+        -  [Attribute] allowpaste 시 상태정보 업데이트 여부 updatepastestatus 속성 추가(default : false)
+        -  [Method] removeColumn() : 마지막 컬럼을 삭제합니다. (고정된 열은 삭제가 불가능 합니다.)
+        -  [Method] setPageTotalCount(param1, param2) : 페이징 기능 사용시 'page' type totalcount 속성 설정 합니다.
+            * param1 : [Number] 전체데이터 개수 설정
+            * param2 : [Boolean] 전체데이터 개수를 변경하고 화면 갱신 여부 설정 default[false]
+        -  [Method] getPageTotalCount() : 페이징 기능 사용시 'page' type totalcount 반환 합니다.
+            </pre>
+        </div>
+
+
+        <div class="subTitle">
+            <h2 class="title">SBGrid 2.5.1569 </h2>
+        </div>
+        <div class="example_box" style="width:90%;">
+            <pre>
+
+    <span class="historyTitle"><img src="../../images/fix_icon.png" alt="" class="historyIcon"> 디자인 개선</span>
+        -  pagingUI의 showgoalpageui 부분 border 추가 및 input 클릭시 select처리
+
+    <span class="historyTitle"><img src="../../images/fix_icon.png" alt="" class="historyIcon"> 기능 개선</span>
+        -  rowheadercaption 사용시 그리드 ellipsis 처리 되도록 개선
+        -  컬럼타입 inputdate 입력할수 있는 년도 범위(1000~9999) 개선
+            </pre>
+        </div>
+
+
+       <div class="subTitle">
+            <h2 class="title">SBGrid 2.5.1558 </h2>
+        </div>
+        <div class="example_box" style="width:90%;">
+            <pre>
+
+    <span class="historyTitle"><img src="../../images/fix_icon.png" alt="" class="historyIcon"> 디자인 개선</span>
+        -  IE8에서 border-radius 지원하지 않아 pagingUI의 border-radius 제거
+
+    <span class="historyTitle"><img src="../../images/fix_icon.png" alt="" class="historyIcon"> 기능 개선</span>
+        -  rowheaderwidth 속성이 초기데이터가 없을 때는 넓이값이 설정되지 않는 현상 개선
+
+    <span class="historyTitle"><img src="../../images/add_icon.png" alt="" class="historyIcon"> 기능 추가</span>
+        -  [Attribute] gridajax (paging type) 기능 추가
+        -  [Attribute] paging 기능 'page' type 기능 추가 (gridajax 사용, 이벤트 사용)
+        -  [Column] datepicker, inputdate 해당 년도 기준 선택 상자 표시 범위 지정 속성( yearrange ) 추가
+        -  컬럼 타입 spinner 추가
+            </pre>
+        </div>
+
+
+        <div class="subTitle">
+            <h2 class="title">SBGrid 2.5.1548 </h2>
+        </div>
+        <div class="example_box" style="width:90%;">
+            <pre>
+
+    <span class="historyTitle"><img src="../../images/fix_icon.png" alt="" class="historyIcon"> 디자인 개선</span>
+        -  paging 영역 및 테마와 아이콘 색상이 겹쳐지는등 내용 개선
+            </pre>
+        </div>
+
+
+        <div class="subTitle">
+            <h2 class="title">SBGrid 2.5.1543 </h2>
+        </div>
+        <div class="example_box" style="width:90%;">
+            <pre>
+
+    <span class="historyTitle"><img src="../../images/fix_icon.png" alt="" class="historyIcon"> 디자인 개선</span>
+        -  그리드 Default 테마 개선 및 Navy, Gray 테마 추가
+
+    <span class="historyTitle"><img src="../../images/fix_icon.png" alt="" class="historyIcon"> 기능 개선</span>
+        -  paste 시에 col을 선택한경우 그 col기반으로 붙여넣기가 되도록 개선
+            </pre>
+        </div>
+
+
+        <div class="subTitle">
+            <h2 class="title">SBGrid 2.5.1526 </h2>
+        </div>
+        <div class="example_box" style="width:90%;">
+            <pre>
+
+    <span class="historyTitle"><img src="../../images/fix_icon.png" alt="" class="historyIcon"> 기능 개선</span>
+        -  편집모드일 때 findingUI를 호출시 편집모드를 닫도록 개선
+        -  그리드에 데이터가 한건도 없을 경우에도 paste 이벤트가 발생하게 수정(데이터 한줄 생성후 붙여넣기)
+        -  refresh할 때 object param 추가 (해당 속성들 초기화 또는 반영할지 여부)
+        -  array, string prototype override 구조 개선
+        -  컬럼 타입 combo 데이터값이 없을때 아이템 리스트 포커스를 첫번째 아이템으로 지정
+        -  paging 사용시 refresh() 네비게이터 영역 초기화
+            </pre>
+        </div>
+
+
+		<div class="subTitle">
+			<h2 class="title">SBGrid 2.5.1501 </h2>
+		</div>
+		<div class="example_box" style="width:90%;">
+			<pre>
+
+	<span class="historyTitle"><img src="../../images/fix_icon.png" alt="" class="historyIcon"> 기능 개선</span>
+		-  filtering 기능 사용하지 않고 setFilters(), setMultiFilters() 사용 가능 하도록 개선
+		-  컬럼 타입 input mask numeric 사용시 maxlength 적용 되도록 개선
+			</pre>
+		</div>
+
+
+		<div class="subTitle">
+			<h2 class="title">SBGrid 2.5.1491 </h2>
+		</div>
+		<div class="example_box" style="width:90%;">
+			<pre>
+
+	<span class="historyTitle"><img src="../../images/add_icon.png" alt="" class="historyIcon"> 기능 추가</span>
+		-  컬럼 타입 button 추가
+
+	<span class="historyTitle"><img src="../../images/fix_icon.png" alt="" class="historyIcon"> 기능 개선</span>
+		-  컬럼 타입별 스타일을 바로 추가할 수 있도록 SBGrid_Default.css에 css class 추가
+		-  explorerbar/ usemultisorting 속성을 설정하지 않아도 multiSorting 함수 사용가능하게 변경
+		-  finddata 사용시 enter 키를 이용해  검색 가능하도록 개선
+			</pre>
+		</div>
+
+
+		<div class="subTitle">
+			<h2 class="title">SBGrid 2.5.1475 </h2>
+		</div>
+		<div class="example_box" style="width:90%;">
+			<pre>
+
+	<span class="historyTitle"><img src="../../images/add_icon.png" alt="" class="historyIcon"> 기능 추가</span>
+		-  [Method] getMergeCol(param1) : 입력한 인덱스 번호에 해당하는 컬럼의 merge 설정 여부를 반환
+			* param1 : [Number] merge 설정 여부를 반환할 컬럼 인덱스
+		-  [Method] setFrozenCols(param1) : 틀고정 열의 수를 설정
+			* param1 : [Number] 고정할 열의 갯수
+		-  [Method] findCell(param1, param2, param3, param4, param5) : 입력받은 검색값을 가지고 있는 행과 열 인덱스 번호를 반환
+			* param1 : [mixed] 검색할 값
+			* param2 : [Number] 검색 범위의 첫 번째 행 인덱스
+			* param3 : [Number] 검색 범위의 첫 번째 열 인덱스
+			* param4 : [Boolean] 대소문자 구분 여부
+			* param5 : [Boolean] 전체일치/부분일치 구분 여부
+			* param6 : [String] label을 비교할 것인지 value를 비교할 것인지 설정
+		-  [Attribute] finddata = {casesense : false, fullmatch : false, label : 'label'} : Ctrl + F 를 이용하여 그리드 데이터 찾기 기능 UI 설정
+			* casesense : [boolean] 그리드 찾기 기능 사용시 대소문자 구분 여부 설정
+			* fullmatch : [boolean] 그리드 찾기 기능 사용시 전체 일치 여부 설정
+			* label         : [Stirng] 그리드 찾기 기능 사용시 label을 비교할 것인지 value를 비교할 것인지 설정
+
+	<span class="historyTitle"><img src="../../images/fix_icon.png" alt="" class="historyIcon"> 기능 개선</span>
+		-  clearMerge시 header 영역도 never 상태로 적용 되도록 개선
+			</pre>
+		</div>
+
+
+		<div class="subTitle">
+			<h2 class="title">SBGrid 2.5.1463 </h2>
+		</div>
+		<div class="example_box" style="width:90%;">
+			<pre>
+
+	<span class="historyTitle"><img src="../../images/add_icon.png" alt="" class="historyIcon"> 기능 추가</span>
+		-  [Attribute] scrollbubbling = false : 그리드 scroll이 scrollMin/scrollMax까지 갔을때 mousewheel 이벤트 발생시 브라우저스크롤을 이동시킬지 여부 (default : true)
+
+	<span class="historyTitle"><img src="../../images/fix_icon.png" alt="" class="historyIcon"> 기능 개선</span>
+		-  multirowheader 중복으로 추가시 하나만 추가 되도록 개선
+			</pre>
+		</div>
+
+
+		<div class="subTitle">
+			<h2 class="title">SBGrid 2.5.1459 </h2>
+		</div>
+		<div class="example_box" style="width:90%;">
+			<pre>
+
+	<span class="historyTitle"><img src="../../images/add_icon.png" alt="" class="historyIcon"> 기능 추가</span>
+		-  [Attribute] headermark = true : selectmode free일 때 셀 클릭시 fixedrow, rowheader 영역의 해당 index에 하이라이트 여부 설정 (default : false)
+		-  [Attribute] rowheader = ['seq', 'select'] : multirowheader 기능 추가 (rowheader array type 설정시 사용 가능)
+
+	<span class="historyTitle"><img src="../../images/fix_icon.png" alt="" class="historyIcon"> 기능 개선</span>
+		-  컬럼이동시 이동되는 컬럼의 위치를 명확하게 보여주기 위해서 UI변경
+			</pre>
+		</div>
+
+
+		<div class="subTitle">
+			<h2 class="title">SBGrid 2.5.1437 </h2>
+		</div>
+		<div class="example_box" style="width:90%;">
+			<pre>
+
+	<span class="historyTitle"><img src="../../images/add_icon.png" alt="" class="historyIcon"> 기능 추가</span>
+		-  [Attribute] rowheaderwidth = {seq:'100'} : rowheader가 설정되어 있을때 해당 rowheader 컬럼의 넓이값을 설정
+		-  [Attribute] rowheadercaption = {seq :'순번'} : rowheader가 설정되어 있을때 해당 rowheader 컬럼의 caption명 설정
+		-  [Method] setExtendLastcol(param1) : extendlastcol의 타입을 설정
+			* param1 : [String] extendlastcol 설정 값
+		-  [Method] getExtendLastCol() : extendlastcol 속성의 설정 타입을 반환
+			</pre>
+		</div>
+
+
+		<div class="subTitle">
+			<h2 class="title">SBGrid 2.5.1416 </h2>
+		</div>
+		<div class="example_box" style="width:90%;">
+			<pre>
+
+	<span class="historyTitle"><img src="../../images/add_icon.png" alt="" class="historyIcon"> 기능 추가</span>
+		-  [Method] initFiltering() : 필터링 인덱스 정보 및 UI 영역을 다시 생성하는 기능 추가
+
+	<span class="historyTitle"><img src="../../images/fix_icon.png" alt="" class="historyIcon"> 기능 개선</span>
+		-  addRow(), addRows(), insertRow() 사용시 필터링을 초기화 하도록 기능 개선
+			</pre>
+		</div>
+
+
+		<div class="subTitle">
+			<h2 class="title">SBGrid 2.5.1411 </h2>
+		</div>
+		<div class="example_box" style="width:90%;">
+			<pre>
+
+	<span class="historyTitle"><img src="../../images/fix_icon.png" alt="" class="historyIcon"> 기능 개선</span>
+		-  IE에서 renderer로 넣은 textarea/input등등 입력가능한 컬럼들 마우스드래그 안되는 현상 개선
+			</pre>
+		</div>
+
+
+		<div class="subTitle">
+			<h2 class="title">SBGrid 2.5.1392 </h2>
+		</div>
+		<div class="example_box" style="width:90%;">
+			<pre>
+
+	<span class="historyTitle"><img src="../../images/fix_icon.png" alt="" class="historyIcon"> 기능 개선</span>
+		-  rowheaderbackcoloralternate 사용시 rowheader영역의 기본 배경색 흰색으로 변경되도록 개선
+		-  setFilters(), setMultiFilters(), clearFilters() 사용시 포커스가 되는 현상 개선
+			</pre>
+		</div>
+
+
+	  <div class="subTitle">
+			<h2 class="title">SBGrid 2.5.1388 </h2>
+		</div>
+		<div class="example_box" style="width:90%;">
+			<pre>
+
+	<span class="historyTitle"><img src="../../images/add_icon.png" alt="" class="historyIcon"> 기능 추가</span>
+		-  [Method] setFrozenBottomRows(param1) : 동적으로 frozenbottomrows를 설정하는 기능 추가
+			* param1 : [Number] frozen을 생성할 개수
+		-  [Attribute] rowheaderbackcoloralternate = '#FFFF00' : 반복 주기에 해당하는 rowheader 행에 지정할 배경색 설정
+		-  [Method] getRowHeaderBackColorAlternate() : "rowheaderbackcoloralternate" 속성의 설정 값을 반환
+		-  [Method] setRowHeaderBackColorAlternate(param1) : rowheader 영역에서 반복주기에 해당하는 행에 "rowheaderbackcoloralternate" 속성을 적용할 배경색을 설정
+			* param1 : [String] 반복주기에 해당하는 행에 적용할 배경색
+			</pre>
+		</div>
+
+
+		<div class="subTitle">
+			<h2 class="title">SBGrid 2.5.1376 </h2>
+		</div>
+		<div class="example_box" style="width:90%;">
+			<pre>
+
+	<span class="historyTitle"><img src="../../images/add_icon.png" alt="" class="historyIcon"> 기능 추가</span>
+		-  [Column] 필터링 기능 사용시 컬럼 별 UI 사용 여부 속성 filtering : { displayui : true or false }  추가
+
+	<span class="historyTitle"><img src="../../images/fix_icon.png" alt="" class="historyIcon"> 기능 개선</span>
+		-  setFilterOfColumns() 로직 개선 및 속성 업데이트 추가
+			</pre>
+		</div>
+
+
+		<div class="subTitle">
+			<h2 class="title">SBGrid 2.5.1367 </h2>
+		</div>
+		<div class="example_box" style="width:90%;">
+			<pre>
+
+	<span class="historyTitle"><img src="../../images/add_icon.png" alt="" class="historyIcon"> 기능 추가</span>
+		-  엑셀 다운로드 arrNumberFormatCols 숫자 서식 기능 추가
+			</pre>
+		</div>
+
+
+		<div class="subTitle">
+			<h2 class="title">SBGrid 2.5.1365 </h2>
+		</div>
+		<div class="example_box" style="width:90%;">
+			<pre>
+
+	<span class="historyTitle"><img src="../../images/fix_icon.png" alt="" class="historyIcon"> 기능 개선</span>
+		-  inputdate, datepicker 에 날짜 paste시 dateformat과 형식을 맞추도록 원본 데이터 변경하도록 개선
+			</pre>
+		</div>
+
+
+		<div class="subTitle">
+			<h2 class="title">SBGrid 2.5.1360 </h2>
+		</div>
+		<div class="example_box" style="width:90%;">
+			<pre>
+
+	<span class="historyTitle"><img src="../../images/fix_icon.png" alt="" class="historyIcon"> 기능 개선</span>
+		-  컬럼 타입 inputcombo 구조 개선 적용
+			</pre>
+		</div>
+
+
+		<div class="subTitle">
+			<h2 class="title">SBGrid 2.5.1349 </h2>
+		</div>
+		<div class="example_box" style="width:90%;">
+			<pre>
+
+	<span class="historyTitle"><img src="../../images/fix_icon.png" alt="" class="historyIcon"> 기능 개선</span>
+		-  그리드 속성 removewhitespace 사용시 tooltip에도 적용되도록 개선
+			</pre>
+		</div>
+
+
+		<div class="subTitle">
+			<h2 class="title">SBGrid 2.5.1346 </h2>
+		</div>
+		<div class="example_box" style="width:90%;">
+			<pre>
+
+	<span class="historyTitle"><img src="../../images/fix_icon.png" alt="" class="historyIcon"> 기능 개선</span>
+		-  컬럼 타입 combo 아이템 리스트가 그리드 영역을 벗어나는 경우 위치 및 개수 조정 하도록 개선
+		-  frozen/frozenbottom 영역에 insert시 frozen이외의 영역에서 스크롤이 이동하지 않도록 개선
+
+	<span class="historyTitle"><img src="../../images/add_icon.png" alt="" class="historyIcon"> 기능 추가</span>
+		-  [Attribute] removewhitespace = true : 데이터의 문자 맨앞 띄어쓰기를 제거/유지 하는 설정(format이 있으면 format 먼저 적용 후 적용)
+			* output,input,textarea,outputbutton,inputbutton type에서만 적용
+			</pre>
+		</div>
+
+
+		<div class="subTitle">
+			<h2 class="title">SBGrid 2.5.1336 </h2>
+		</div>
+		<div class="example_box" style="width:90%;">
+			<pre>
+
+	<span class="historyTitle"><img src="../../images/fix_icon.png" alt="" class="historyIcon"> 기능 개선</span>
+		-  컨텍스트 메뉴 사용시 마우스 오른쪽 버튼 클릭하는 경우에 기존 처럼 row,col 인덱스 변경 및 선택되도록 개선
+			</pre>
+		</div>
+
+
+		<div class="subTitle">
+			<h2 class="title">SBGrid 2.5.1334 </h2>
+		</div>
+		<div class="example_box" style="width:90%;">
+			<pre>
+
+	<span class="historyTitle"><img src="../../images/fix_icon.png" alt="" class="historyIcon"> 기능 개선</span>
+		-  colwidth 조절하는 영역을 선택하기 어려워서 필터링icon 위치를 3px만큼 앞으로 이동
+		-  output 타입 temp 구조 구현 및 적용
+		-  컬럼 타입 combo temp 구조 적용 및 로직 개선
+		-  컬럼 타입별 class 추가
+			</pre>
+		</div>
+
+
+		<div class="subTitle">
+			<h2 class="title">SBGrid 2.5.1324 </h2>
+		</div>
+		<div class="example_box" style="width:90%;">
+			<pre>
+
+	<span class="historyTitle"><img src="../../images/fix_icon.png" alt="" class="historyIcon"> 기능 개선</span>
+		-  merge-rowindex가 시작row가 아닌 마지막 row로 세팅되는 현상 개선
+			</pre>
+		</div>
+
+
+		<div class="subTitle">
+			<h2 class="title">SBGrid 2.5.1319 </h2>
+		</div>
+		<div class="example_box" style="width:90%;">
+			<pre>
+
+	<span class="historyTitle"><img src="../../images/add_icon.png" alt="" class="historyIcon"> 기능 추가</span>
+		-  [Method] getCheckedRowData(param1) : 컬럼타입 checkbox, radio 선택된 데이터를 가져오는 기능
+			* param1 : [Number] 체크박스 열 인덱스
+		-  [Column] {userattr:{key : value}} : 원하는대로 사용 가능한 object값을 설정
+		-  [Method] getColUserAttr(param1) : userattr에서 설정한 object를 반환
+			* param1 : [Number] 열 인덱스
+		-  [Method] setColUserAttr(param1, param2) : param1의 열에 userattr을 설정
+			* param1 : [Number] 열 인덱스
+			* param2 : [Object] userattr 형식의 objcet값
+			</pre>
+		</div>
+
+
+		<div class="subTitle">
+			<h2 class="title">SBGrid 2.5.1316 </h2>
+		</div>
+		<div class="example_box" style="width:90%;">
+			<pre>
+
+	<span class="historyTitle"><img src="../../images/fix_icon.png" alt="" class="historyIcon"> 기능 개선</span>
+		-  header클릭해서 컬럼넓이 조정 후에 row/col index를 기존 row/col 로 세팅 해주도록 개선
+			</pre>
+		</div>
+
+
+		<div class="subTitle">
+			<h2 class="title">SBGrid 2.5.1312 </h2>
+		</div>
+		<div class="example_box" style="width:90%;">
+			<pre>
+
+	<span class="historyTitle"><img src="../../images/fix_icon.png" alt="" class="historyIcon"> 기능 개선</span>
+		-  rowheader 영역의 width도 조절할 수 있게 setColWidth()에 rowheader 영역도 포함 시킴
+
+	<span class="historyTitle"><img src="../../images/add_icon.png" alt="" class="historyIcon"> 기능 추가</span>
+		-  [Method] isEditing() : 그리드의 edit 여부를 반환
+			</pre>
+		</div>
+
+
+		<div class="subTitle">
+			<h2 class="title">SBGrid 2.5.1304 </h2>
+		</div>
+
+		<div class="example_box" style="width:90%;">
+			<pre>
+
+	<span class="historyTitle"><img src="../../images/fix_icon.png" alt="" class="historyIcon"> 기능 개선</span>
+		-  컬럼타입 input 생성 방식 및 표시 방식 전반적인 구조 변경
+		-  컬럼타입 textarea 생성 방식 및 표시 방식 전반적인 구조 변경
+
+	<span class="historyTitle"><img src="../../images/add_icon.png" alt="" class="historyIcon"> 기능 추가</span>
+		-  [Method] addColumn(param1) : 컬럼을 동적으로 생성
+			* param1 : [Object] 기존 컬럼 생성시 사용되는 object형태의 컬럼 정보
+			</pre>
+		</div>
+
+
+		<div class="subTitle">
+			<h2 class="title">SBGrid 2.5.1296 </h2>
+		</div>
+		<div class="example_box" style="width:90%;">
+			<pre>
+
+	<span class="historyTitle"><img src="../../images/add_icon.png" alt="" class="historyIcon"> 기능 추가</span>
+		-  [Method] setFixedCellCheckbox(param1,param2,param3,param4) : 전체체크박스 설정시 캡션명 숨기지 않도록 하는 기능 추가 (4번째 파라미터 추가)
+			* param4 : [Boolean] 캡션명 숨김 여부
+			</pre>
+		</div>
+
+
+		<div class="subTitle">
+			<h2 class="title">SBGrid 2.5.1286 </h2>
+		</div>
+		<div class="example_box" style="width:90%;">
+			<pre>
+
+	<span class="historyTitle"><img src="../../images/fix_icon.png" alt="" class="historyIcon"> 기능 개선</span>
+		-  insertRow/addRow 후 셀을 edit할 경우 status : 3으로 출력되도록 개선
+		-  status : 3일 경우 getUpdateData(false,'i') 를 이용해 출력 가능
+		-  status : 6일 경우 getUpdateData(false,'d') 를 이용해 출력 가능
+
+	<span class="historyTitle"><img src="../../images/add_icon.png" alt="" class="historyIcon"> 기능 추가</span>
+		-  [Attribute] limitscrollrow=true : 세로스크롤 버튼 클릭시 브라우저에 따라 1~2행씩 이동하게 하는 속성
+		-  [Column] {typeinfo : {calendartype : 'year'|'month'|'yearmonth'}} : 연/월/연월 달력 추가
+			</pre>
+		</div>
+
+
+		<div class="subTitle">
+			<h2 class="title">SBGrid 2.5.1271 </h2>
+		</div>
+		<div class="example_box" style="width:90%;">
+			<pre>
+
+	<span class="historyTitle"><img src="../../images/add_icon.png" alt="" class="historyIcon"> 기능 추가</span>
+		-  skipkeyfocus 컬럼 속성 추가 : tab 키로 셀 이동시 특정 컬럼을 건너뛰게 하는 속성 추가
+		-  [Column] skipkeyfocus : true
+			</pre>
+		</div>
+
+
+		<div class="subTitle">
+			<h2 class="title">SBGrid 2.5.1262 </h2>
+		</div>
+		<div class="example_box" style="width:90%;">
+			<pre>
+
+	<span class="historyTitle"><img src="../../images/fix_icon.png" alt="" class="historyIcon"> 기능 개선</span>
+		-  getCheckedRows : 기존 checkbox type 컬럼 및 radio type 에서도 체크된 row 반환되도록 개선
+		-  [Method] datagrid.getCheckedRows(param1);
+			* param1 : [Number] 열 인덱스
+		- tab 키 이동시 inputdate 및 inputbutton 도 edit 모드로 열리도록 개선
+		- textarea 컬럼의 개행문자를 tooltip으로 확인할 수 있도록 개선
+			</pre>
+		</div>
+
+
+		<div class="subTitle">
+			<h2 class="title">SBGrid 2.5.1253 </h2>
+		</div>
+		<div class="example_box" style="width:90%;">
+			<pre>
+
+	<span class="historyTitle"><img src="../../images/add_icon.png" alt="" class="historyIcon"> 기능 추가</span>
+		-  setCellHide : 렌더러 및 이미지 컬럼을 제외한 컬럼을 숨김
+		-  [Method] datagrid.setCellHide(param1,param2,param3);
+			* param1 : [Number] 행 인덱스
+			* param2 : [Number] 열 인덱스
+			* param3 : [Boolean] 숨길 것인지 여부 설정
+		-  getGridDataAll : 그리드 전체 데이터 반환
+		-  [Method] datagrid.getGridDataAll(param1);
+			* param1 : [Boolean] 그리드 전체 데이터 객체의 복제본 반환 여부, false 설정시 'call by reference' 동작
+			</pre>
+		</div>
+
+
+		<div class="subTitle">
+			<h2 class="title">SBGrid 2.5.1244 </h2>
+		</div>
+		<div class="example_box" style="width:90%;">
+			<pre>
+
+	<span class="historyTitle"><img src="../../images/add_icon.png" alt="" class="historyIcon"> 기능 추가</span>
+		-  outputbutton  추가 : 데이터 출력과 버튼 사용이 가능한 복합 유형
+			</pre>
+		</div>
+
+
+		<div class="subTitle">
+			<h2 class="title">SBGrid 2.5.1234 </h2>
+		</div>
+		<div class="example_box" style="width:90%;">
+			<pre>
+
+	<span class="historyTitle"><img src="../../images/add_icon.png" alt="" class="historyIcon"> 기능 추가</span>
+		-  개인화 기능 추가 : 방법은 속성을 이용한 방법 및 메소드를 이용한 방법 2가지
+		-  아래의 속성 값 2개를 필수로 설정. refresh 하면 자동으로 개인화 저장
+		- [Attribute] autosavepsnldata = true;
+		- [Attribute] psnldataid = '개인 id';
+		- 아래의 2개의 메소드를 이용하면 개인화를 동적으로 변경 / 호출 할 수 있습니다.
+		- [Method] datagrid.savePersonalInfo(strUserId);
+		- [Method] datagrid.loadPersonalInfo(strUserId);
+
+	<span class="historyTitle"><img src="../../images/fix_icon.png" alt="" class="historyIcon"> 기능 개선</span>
+		-  refresh시 파라미터 추가하여 해당 그리드로 화면 포커스되는 현상 개선
+		-  [Method] datagrid.refresh(param1);
+			* param1 : [Boolean] 화면 포커스 여부
+			</pre>
+		</div>
+
+
+		<div class="subTitle">
+			<h2 class="title">SBGrid 2.5.1227 </h2>
+		</div>
+		<div class="example_box" style="width:90%;">
+			<pre>
+
+	<span class="historyTitle"><img src="../../images/add_icon.png" alt="" class="historyIcon"> 기능 추가</span>
+		-  datamergefalseskip 속성 추가 : 병합타입 : byrestriccol 일때 merge:false 가 설정되어있을 경우 그 열을 건너뛰는 속성 추가
+		-  [Attribute] datamergefalseskip = true
+		-  datareplace 속성 추가 : 특정 데이터가 있으면 화면에 보여지는 데이터를 변경하는 속성 추가
+		-  [Attribute] datareplace = 'null?★'
+		-  datareplacevaluechanged 속성 추가 : 특정 데이터를 원하는 값으로 변경하는 속성 추가(원본 데이터)
+		-  [Attribute] datareplacevaluechanged = 'null?★'
+			</pre>
+		</div>
+
+
+		<div class="subTitle">
+			<h2 class="title">SBGrid 2.5.1224 </h2>
+		</div>
+		<div class="example_box" style="width:90%;">
+			<pre>
+
+	<span class="historyTitle"><img src="../../images/add_icon.png" alt="" class="historyIcon"> 기능 추가</span>
+		-  getLastFocusGrid : 한 개의 페이지에 여러 개의 그리드 사용시 선택된 그리드의 id를 반환
+		-  [Method] _SBGrid.getLastFocusGrid();
+			* param : 없음.
+			</pre>
+		</div>
+
+		<div class="subTitle">
+			<h2 class="title">SBGrid 2.5.1220 </h2>
+		</div>
+		<div class="example_box" style="width:90%;">
+			<pre>
+
+	<span class="historyTitle"><img src="../../images/add_icon.png" alt="" class="historyIcon"> 기능 추가</span>
+		-  paging 속성 사용시 전체 sort 기능 추가
+		- sorttype : 'all' -&gt; 전체 데이터 정렬
+		- showgoalpageui : true -&gt; 페이지 정보 및 이동 ui 생성
+		- SBGridProperties.paging = {'type' : 'all' , 'count' : 5 , 'size' : 7, 'sorttype' : 'all', 'showgoalpageui' : true};
+		-  movePaging 기능 추가 : paging 기능 사용시 특정 페이지로 이동
+		-  [Method] datagrid.movePaging(param);
+			* param : [Number] 이동할 페이징의 번호
+			</pre>
+		</div>
+
+
+		<div class="subTitle">
+			<h2 class="title">SBGrid 2.5.1218 </h2>
+		</div>
+		<div class="example_box" style="width:90%;">
+			<pre>
+
+	<span class="historyTitle"><img src="../../images/add_icon.png" alt="" class="historyIcon"> 기능 추가</span>
+		- rowheader select 기능 추가
+		- [Attribute] rowheader : "select"
+			</pre>
+		</div>
+
+
+		<div class="subTitle">
+			<h2 class="title">SBGrid 2.5.1215 </h2>
+		</div>
+		<div class="example_box" style="width:90%;">
+			<pre>
+
+	<span class="historyTitle"><img src="../../images/add_icon.png" alt="" class="historyIcon"> 기능 추가</span>
+		-  getLastFocusRow 기능 추가 : 마지막으로 foucs된 행을 반환
+		-  [Method] datagrid.getLastFocusRow();
+			* param : 없음.
+		-  getCellTooltip 기능 추가 : 특정 cell에 tooltip 값을 반환
+		-  [Method] datagrid.getCellTooltip(param1,param2);
+			* param1 : [Number] 행 인덱스
+			* param2 : [Number] 열 인덱스
+		-  getColList 기능 추가 : 전체 컬럼에서 특정 ref or caption 해당하는 컬럼 인덱스 반환
+		-  [Method] datagrid.getColList(param1,param2);
+			* param1 : [String] 검색 조건(ref,caption)
+			* param2 : [String] 조건에 따른 ref명 혹은 caption명
+			</pre>
+		</div>
+
+
+		<div class="subTitle">
+			<h2 class="title">SBGrid 2.5.1210 </h2>
+		</div>
+		<div class="example_box" style="width:90%;">
+			<pre>
+
+	<span class="historyTitle"><img src="../../images/add_icon.png" alt="" class="historyIcon"> 기능 추가</span>
+		-  getCheckedRows 기능 추가 : 체크박스가 체크된 행의 인덱스 번호를 배열로 반환
+		-  [Method] datagrid.getCheckedRows(param1);
+			* param1 : [Number] 체크박스 열의 인덱스
+			</pre>
+		</div>
+
+
+		<div class="subTitle">
+			<h2 class="title">SBGrid 2.5.1208 </h2>
+		</div>
+		<div class="example_box" style="width:90%;">
+			<pre>
+
+	<span class="historyTitle"><img src="../../images/fix_icon.png" alt="" class="historyIcon"> 기능 개선</span>
+		-  키입력으로 그리드 input type edit모드 진입시 F2키는 기존데이터를 삭제하지 않게 변경
+			</pre>
+		</div>
+
+
+		<div class="subTitle">
+			<h2 class="title">SBGrid 2.5.1192 </h2>
+		</div>
+		<div class="example_box" style="width:90%;">
+			<pre>
+
+	<span class="historyTitle"><img src="../../images/add_icon.png" alt="" class="historyIcon"> 기능 추가</span>
+		- 기간제한 trial 버전 가능하도록 추가
+			</pre>
+		</div>
+
+
+		<div class="subTitle">
+			<h2 class="title">SBGrid 2.5.1187 </h2>
+		</div>
+		<div class="example_box" style="width:90%;">
+			<pre>
+
+	<span class="historyTitle"><img src="../../images/fix_icon.png" alt="" class="historyIcon"> 기능 개선</span>
+		-  group 설정되어 있을때  inputtype 사용시 edit후 그룹형태 유지하도록 수정
+		-  colchanged 이벤트 tab 키 이동시 마지막 및 첫번째 셀에서 처리 개선
+
+	<span class="historyTitle"><img src="../../images/add_icon.png" alt="" class="historyIcon"> 기능 추가</span>
+		- rowheader update 기능 추가
+		-  [Attribute] rowheader : "update"
+			</pre>
+		</div>
+
+
+		<div class="subTitle">
+			<h2 class="title">SBGrid 2.5.1167 </h2>
+		</div>
+		<div class="example_box" style="width:90%;">
+			<pre>
+
+	<span class="historyTitle"><img src="../../images/fix_icon.png" alt="" class="historyIcon"> 기능 개선</span>
+		- backcoloralternate 의 스타일 정보를 초기화 시켜주는 로직 추가
+		- IE8 프로파일링 결과에 따른 로직 개선으로 인한 성능 향상
+
+	<span class="historyTitle"><img src="../../images/add_icon.png" alt="" class="historyIcon"> 기능 추가</span>
+		- 그리드 이벤트 colchanged(oncolchanged) 추가
+		-  [Attribute] rowheader : "update"
+		-  validate 기능 추가 : 컬럼 속성으로 입력받은 데이터의 validation 체크를 할 수 있다.
+		-  validate : "callBackFunction명"
+			</pre>
+		</div>
+
+
+		<div class="subTitle">
+			<h2 class="title">SBGrid 2.5.1159 </h2>
+		</div>
+		<div class="example_box" style="width:90%;">
+			<pre>
+
+	<span class="historyTitle"><img src="../../images/add_icon.png" alt="" class="historyIcon"> 기능 추가</span>
+		- 병합해제하는 clearMerge API 추가
+		- [Method] datagrid.clearMerge();
+			* default : 없음
+			* param : 없음
+			</pre>
+		</div>
+
+
+		<div class="subTitle">
+			<h2 class="title">SBGrid 2.5.1150 </h2>
+		</div>
+		<div class="example_box" style="width:90%;">
+			<pre>
+
+	<span class="historyTitle"><img src="../../images/fix_icon.png" alt="" class="historyIcon"> 기능 개선</span>
+		- frozenrows의 개수를 생성된 화면상의 Row의 갯수보다 많게 설정하지 못하게 수정
+			</pre>
+		</div>
+
+
+		<div class="subTitle">
+			<h2 class="title">SBGrid 2.5.1147</h2>
+		</div>
+		<div class="example_box" style="width:90%;">
+			<pre>
+
+	<span class="historyTitle"><img src="../../images/fix_icon.png" alt="" class="historyIcon"> 기능 개선</span>
+		- POI에서 제공하는 메모리 관련 속성 추가
+			</pre>
+		</div>
+
+
+		<div class="subTitle">
+			<h2 class="title">SBGrid 2.5.1143</h2>
+		</div>
+		<div class="example_box" style="width:90%;">
+			<pre>
+
+	<span class="historyTitle"><img src="../../images/fix_icon.png" alt="" class="historyIcon"> 기능 개선</span>
+		- 컬럼 타입 combo 사용시 oneclickedit true 설정 경우 리스트 표시 형태로 수정
+
+	<span class="historyTitle"><img src="../../images/add_icon.png" alt="" class="historyIcon"> 기능 추가</span>
+		- exportExcel 시 캡션영역을 제외하고 다운로드하는 bExceptCaption 속성 추가
+			</pre>
+		</div>
+
+
+		<div class="subTitle">
+			<h2 class="title">SBGrid 2.5.1140</h2>
+		</div>
+		<div class="example_box" style="width:90%;">
+			<pre>
+
+	<span class="historyTitle"><img src="../../images/fix_icon.png" alt="" class="historyIcon"> 기능 개선</span>
+		- 로고이미지 표시 경우 변경
+			</pre>
+		</div>
+		<br>
+	</body>
+</html>

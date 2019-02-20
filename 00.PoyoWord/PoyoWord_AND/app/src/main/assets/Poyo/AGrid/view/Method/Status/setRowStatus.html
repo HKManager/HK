@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1;text/html; charset=utf-8;" />
+
+		<script>
+			var SBpath = "../../../js/";
+		</script>
+		<script src="../../../js/SBGrid/SBGrid_Lib.js" type="text/javascript"></script>
+		<script src="../../../js/SBGrid/SBGrid_min.js" type="text/javascript"></script>
+		<link href="../../../js/SBGrid/css/SBGrid.css" rel="stylesheet" type="text/css">
+		<link href="../../../js/SBGrid/css/SBGrid_Default.css" rel="stylesheet" type="text/css">
+		<link href="../../../css/basic.css" rel="stylesheet" type="text/css">
+		<link href="../../../css/common.css" rel="stylesheet" type="text/css">
+		<script src="../../../data/data.js" type="text/javascript"></script>
+		<script src="../../../js/toggle/toggle.js" type="text/javascript"></script>
+		<script src="../../../js/common.js" type="text/javascript"></script>
+		
+		<title>setRowStatus</title>
+
+		<script type="text/javascript">
+			var datagrid;
+			var SBGridProperties = {};
+			
+			function createGrid(){
+				SBGridProperties.parentid = 'SBGridArea';
+				SBGridProperties.id = 'datagrid';
+				SBGridProperties.jsonref = 'ct_data.resources';
+				SBGridProperties.selectmode = 'byrows';
+				SBGridProperties.rowheader = 'update';
+				SBGridProperties.columns = [
+					{caption : ['학원명'],		ref : 'academy',		width : '150px',	style : 'text-align:center',	type : 'output'},
+					{caption : ['설립자(성명)'],	ref : 'name',			width : '150px',	style : 'text-align:center',	type : 'input'},
+					{caption : ['전화번호'],		ref : 'phone',			width : '120px',	style : 'text-align:center',	type : 'input'},
+					{caption : ['학원주소'],		ref : 'addr',			width : '450px',	style : 'text-align:center',	type : 'textarea'},
+					{caption : ['교습과정'],		ref : 'curriculum',		width : '100px',	style : 'text-align:center',	type : 'combo', typeinfo :{ ref : 'newComboData', displayui : true, label : 'label', value : 'value'}},
+					{caption : ['교습과목(반)'],	ref : 'class',			width : '200px',	style : 'text-align:center',	type : 'input'},
+					{caption : ['정원'],		 	ref : 'maxstudent',		width : '70px',	style : 'text-align:center',	type : 'input', format : {type:'string', rule:'@ "명"'}},
+					{caption : ['교습기간'],		ref : 'term',			width : '100px',	style : 'text-align:center',	type : 'input'},
+					{caption : ['교육시작일'],		ref : 'startday',		width : '100px',	style : 'text-align:center',	type : 'datepicker', typeinfo : {locale : 'ko' , dateformat :'yymmdd'}, format : {type:'date', rule:'yyyy-mm-dd', origin : 'yyyymmdd' }},
+					{caption : ['총교습시간(분)'],   ref : 'totalminute',		width : '100px',	style : 'text-align:center',	type : 'input'},
+					{caption : ['교습비'],		ref : 'pay',			width : '100px',	style : 'text-align:center',	type : 'input', format : {type:'number', rule:'#,###'}},
+					{caption : ['강사수'],		ref : 'teacher',			width : '70px',	style : 'text-align:center',	type : 'input'}
+				];
+				datagrid = _SBGrid.create(SBGridProperties);
+				datagrid.bind('click', 'gridClick');
+			};
+		
+			function rowStatus(){
+				var nRow = datagrid.getRow();
+
+				if(datagrid.getRow()<0){
+					alert('status를 추가할 행을 선택해주세요.');
+				}else{
+					if($('#idx').val()=='insert'){
+						datagrid.setRowStatus(nRow,'insert');
+					}else if($('#idx').val()=='update'){
+						datagrid.setRowStatus(nRow,'update');
+					}else if($('#idx').val()=='delete'){
+						datagrid.setRowStatus(nRow,'delete');
+					}
+				}
+				gridClick();
+			};
+
+			function gridClick(){
+				var nRow = datagrid.getRow();
+				var status = datagrid.getRowStatus(nRow);
+
+				if(status==1){
+					status+=' (Insert)';
+				}else if(status==2){
+					status+=' (Update)';
+				}else if(status==4){
+					status+=' (Delete)';
+				}else{
+					status='0 (New)';
+				}
+
+				$('.rowIndex').text(nRow);
+				$('.rowStatusVal').text(status);
+			}
+		</script>
+	</head>
+
+	<body>
+		<div class="subTitle">
+			<h2 class="title">setRowStatus</h2>
+		</div>
+		
+		<p class="ctext4">Description</p>
+		<ul class="descList">
+			<li> ● 지정한 행의 상태정보(추가/갱신/삭제)를 설정합니다.</li>
+		</ul>
+		<p class="ctext4">Parameter</p>
+		<div class="example_box">
+<pre >
+	
+	 <span style="font-weight: bold;">* 메소드 : datagrid.setRowStatus(param1, param2);</span>
+	   - param1 <span style="font-weight: bold;">(필수)</span> : <span style="font-weight: bold;">[number]</span> 행 인덱스
+	   - param2 <span style="font-weight: bold;">(필수)</span> : <span style="font-weight: bold;">[number | string]</span> 설정할 상태값
+		  → 0 | 'new'		: new 상태 설정
+		  → 1 | 'insert'		: insert 상태 설정
+		  → 2 | 'update'	: update 상태 설정
+		  → 4 | 'delete'	: delete 상태 설정
+			</pre>
+		</div>		
+		
+		<div class="ctext4">Example
+			<input type="button" id = "clickb" class="buttonStyle" name="bt" value="code View" onclick="codeView()" />
+		</div>
+			
+		<div class="example_box_a" id="toggle2">
+		<pre>
+			<span class="comment"></span>
+	var datagrid;	
+	var SBGridProperties = {};	
+	
+	function createGrid(){
+		SBGridProperties.parentid = 'SBGridArea';
+		SBGridProperties.id = 'datagrid';
+		SBGridProperties.jsonref = 'ct_data.resources';
+		SBGridProperties.selectmode = 'byrows';
+		SBGridProperties.rowheader = 'update';
+		SBGridProperties.columns = [
+			{caption : ['학원명'],		ref : 'academy',		width : '150px',	style : 'text-align:center',	type : 'output'},
+			{caption : ['설립자(성명)'],	ref : 'name',			width : '150px',	style : 'text-align:center',	type : 'input'},
+			{caption : ['전화번호'],		ref : 'phone',			width : '120px',	style : 'text-align:center',	type : 'input'},
+			{caption : ['학원주소'],		ref : 'addr',			width : '450px',	style : 'text-align:center',	type : 'textarea'},
+			{caption : ['교습과정'],		ref : 'curriculum',		width : '100px',	style : 'text-align:center',	type : 'combo', typeinfo :{ ref : 'newComboData', displayui : true, label : 'label', value : 'value'}},
+			{caption : ['교습과목(반)'],	ref : 'class',			width : '200px',	style : 'text-align:center',	type : 'input'},
+			{caption : ['정원'],		 	ref : 'maxstudent',		width : '70px',	style : 'text-align:center',	type : 'input', format : {type:'string', rule:'@ "명"'}},
+			{caption : ['교습기간'],		ref : 'term',			width : '100px',	style : 'text-align:center',	type : 'input'},
+			{caption : ['교육시작일'],		ref : 'startday',		width : '100px',	style : 'text-align:center',	type : 'datepicker', typeinfo : {locale : 'ko' , dateformat :'yymmdd'}, format : {type:'date', rule:'yyyy-mm-dd', origin : 'yyyymmdd' }},
+			{caption : ['총교습시간(분)'],   ref : 'totalminute',		width : '100px',	style : 'text-align:center',	type : 'input'},
+			{caption : ['교습비'],		ref : 'pay',			width : '100px',	style : 'text-align:center',	type : 'input', format : {type:'number', rule:'#,###'}},
+			{caption : ['강사수'],		ref : 'teacher',			width : '70px',	style : 'text-align:center',	type : 'input'}
+		];
+		datagrid = _SBGrid.create(SBGridProperties);
+	};
+			</pre>
+		</div>
+		<div class="example_box_m">
+			<pre>
+
+	function rowStatus(){
+		var nRow = datagrid.getRow();
+		if(datagrid.getRow()&lt;0){
+			alert('status를 추가할 행을 선택해주세요.');
+		}else{
+			if($('#idx').val()=='insert'){
+				<span class="highlight1">datagrid.setRowStatus(nRow,'insert');</span>
+			}else if($('#idx').val()=='update'){
+				<span class="highlight1">datagrid.setRowStatus(nRow,'update');</span>
+			}else if($('#idx').val()=='delete'){
+				<span class="highlight1">datagrid.setRowStatus(nRow,'delete');</span>
+			}
+		}
+	};
+			</pre>
+		</div>
+		<p class="ctext4">Sample</p>	
+		
+		<div class="gridDiv">
+			행 선택 후 원하는 상태를 추가해보세요.  <br>
+			<select id="idx" class="selectStyle">
+            	<option value="insert">1 : insert</option>
+            	<option value="update">2 : update</option>
+            	<option value="delete">4 : delete</option>
+			</select>
+			<input type="button" class="buttonStyle" value="setRowStatus" onclick="rowStatus()">&nbsp;<br>
+			* <span class="rowIndex">0</span> 행의 상태값 : <span class="rowStatusVal">0 (New)</span>
+			<div id="SBGridArea" class="gridStyle"></div>	
+		</div>
+	</body>
+</html>

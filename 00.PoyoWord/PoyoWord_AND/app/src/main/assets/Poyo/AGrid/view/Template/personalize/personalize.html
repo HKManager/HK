@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1;text/html; charset=utf-8;" />
+
+		<script>
+			var SBpath = "../../../js/";
+		</script>
+		<script src="../../../js/SBGrid/SBGrid_Lib.js" type="text/javascript"></script>
+		<script src="../../../js/SBGrid/SBGrid_min.js" type="text/javascript"></script>
+		<link href="../../../js/SBGrid/css/SBGrid.css" rel="stylesheet" type="text/css">
+		<link href="../../../js/SBGrid/css/SBGrid_Default.css" rel="stylesheet" type="text/css">
+		<link href="../../../css/basic.css" rel="stylesheet" type="text/css">
+		<link href="../../../css/common.css" rel="stylesheet" type="text/css">
+		<script src="../../../data/data.js" type="text/javascript"></script>
+		<script src="../../../js/toggle/toggle.js" type="text/javascript"></script>
+		<script src="../../../js/common.js" type="text/javascript"></script>
+
+		<title>personalize</title>
+
+		<script type="text/javascript">
+	    	var datagrid;
+			var SBGridProperties = {};
+
+			function createGrid(){
+				SBGridProperties.parentid = 'SBGridArea';
+				SBGridProperties.id = 'datagrid';
+				SBGridProperties.jsonref = 'ct_data.resources';
+				SBGridProperties.selectmode = 'free';
+				SBGridProperties.autosavepsnldata = true;
+				SBGridProperties.psnldataid = 'softbowl';
+				SBGridProperties.columns = [
+					{caption : ['학원명'],		ref : 'academy',		width : '150px',	style : 'text-align:center',	type : 'output'},
+					{caption : ['설립자(성명)'],	ref : 'name',			width : '150px',	style : 'text-align:center',	type : 'input'},
+					{caption : ['전화번호'],		ref : 'phone',			width : '120px',	style : 'text-align:center',	type : 'input'},
+					{caption : ['학원주소'],		ref : 'addr',			width : '450px',	style : 'text-align:center',	type : 'textarea'},
+					{caption : ['교습과정'],		ref : 'curriculum',		width : '100px',	style : 'text-align:center',	type : 'combo', typeinfo :{ ref : 'newComboData', displayui : true, label : 'label', value : 'value'}},
+					{caption : ['교습과목(반)'],	ref : 'class',			width : '200px',	style : 'text-align:center',	type : 'input'},
+					{caption : ['정원'],		 	ref : 'maxstudent',		width : '70px',	style : 'text-align:center',	type : 'input', format : {type:'string', rule:'@ "명"'}},
+					{caption : ['교습기간'],		ref : 'term',			width : '100px',	style : 'text-align:center',	type : 'input'},
+					{caption : ['교육시작일'],		ref : 'startday',		width : '100px',	style : 'text-align:center',	type : 'datepicker', typeinfo : {locale : 'ko' , dateformat :'yymmdd'}, format : {type:'date', rule:'yyyy-mm-dd', origin : 'yyyymmdd' }},
+					{caption : ['총교습시간(분)'],   ref : 'totalminute',		width : '100px',	style : 'text-align:center',	type : 'input'},
+					{caption : ['교습비'],		ref : 'pay',			width : '100px',	style : 'text-align:center',	type : 'input', format : {type:'number', rule:'#,###'}},
+					{caption : ['강사수'],		ref : 'teacher',			width : '70px',	style : 'text-align:center',	type : 'input'}
+				];
+				datagrid = _SBGrid.create(SBGridProperties);
+
+			};
+
+			function hideColumns(){
+				if (_.size(datagrid.getSelectedCols()) < 1 ) {
+					alert('그리드의 셀을 선택하셔야 합니다.');
+					return;
+				}
+
+				// 그리드 컬럼의 뒤쪽부터 숨겨서 index 의 변동을 막는다.
+				$.each(datagrid.getSelectedCols().reverse(), function(key,index){
+					datagrid.setColHidden(index, true);
+				});
+			}
+
+			function showColumns(){
+				for (var i=0 ; i < datagrid.getCols(); i++){
+					if (datagrid.getColHidden(i)){
+						datagrid.setColHidden(i, false);
+					}
+				}
+			}
+
+			function loClear() {
+				localStorage.clear();
+				datagrid.rebuild();
+			}
+		</script>
+	</head>
+
+	<body>
+		<div class="subTitle">
+			<h2 class="title">personalize (attribute)</h2>
+		</div>
+
+		<p class="ctext4">Description</p>
+		<ul class="descList">
+			<li> ● 그리드의 너비, 컬럼 위치, 숨김 등 그리드의 개인화를 설정할 수 있습니다.</li>
+			<li> ● 주의사항 : ie의 경우는 server에 올려서 테스트 하셔야 합니다. chrome은 html 파일로도 테스트 및 확인이 가능합니다.</li>
+		</ul>
+		<p class="ctext4">Value</p>
+		<div class="example_box" style="width:90%;">
+			<pre >
+
+	 <span style="font-weight: bold;"> * 속   성 : SBGridProperties.autosavepsnldata = value1;</span>
+	   - value1 : <span style="font-weight: bold;">[boolean]</span> 그리드 refresh로 개인화 정보를 자동 저장할지 여부
+		  → true			: 자동 저장
+		  → false	(default)	: 자동 저장하지 않음
+		  
+	 <span style="font-weight: bold;"> * 속   성 : SBGridProperties.psnldataid = value1;</span>
+	   - value1 : <span style="font-weight: bold;">[string]</span> 개인화를 저장할 ID
+			</pre>
+		</div>
+			<div class="ctext4">Example
+				<input type="button" id = "clickb" class="buttonStyle" name="bt" value="code View" onclick="codeView()" />
+			</div>
+			
+			<div class="example_box_e" id="toggle2">
+			<pre>
+			<span class="comment"></span>
+	var datagrid;
+	var SBGridProperties = {};
+	
+	function createGrid(){
+		SBGridProperties.parentid = 'SBGridArea';
+		SBGridProperties.id = 'datagrid';
+		SBGridProperties.jsonref = 'ct_data.resources';
+		SBGridProperties.selectmode = 'free';
+		<span class="highlight1">SBGridProperties.autosavepsnldata = true;</span>
+		<span class="highlight1">SBGridProperties.psnldataid = 'softbowl';</span>
+		SBGridProperties.columns = [
+			{caption : ['학원명'],		ref : 'academy',		width : '150px',	style : 'text-align:center',	type : 'output'},
+			{caption : ['설립자(성명)'],	ref : 'name',			width : '150px',	style : 'text-align:center',	type : 'input'},
+			{caption : ['전화번호'],		ref : 'phone',			width : '120px',	style : 'text-align:center',	type : 'input'},
+			{caption : ['학원주소'],		ref : 'addr',			width : '450px',	style : 'text-align:center',	type : 'textarea'},
+			{caption : ['교습과정'],		ref : 'curriculum',		width : '100px',	style : 'text-align:center',	type : 'combo', typeinfo :{ ref : 'newComboData', displayui : true, label : 'label', value : 'value'}},
+			{caption : ['교습과목(반)'],	ref : 'class',			width : '200px',	style : 'text-align:center',	type : 'input'},
+			{caption : ['정원'],		 	ref : 'maxstudent',		width : '70px',	style : 'text-align:center',	type : 'input', format : {type:'string', rule:'@ "명"'}},
+			{caption : ['교습기간'],		ref : 'term',			width : '100px',	style : 'text-align:center',	type : 'input'},
+			{caption : ['교육시작일'],		ref : 'startday',		width : '100px',	style : 'text-align:center',	type : 'datepicker', typeinfo : {locale : 'ko' , dateformat :'yymmdd'}, format : {type:'date', rule:'yyyy-mm-dd', origin : 'yyyymmdd' }},
+			{caption : ['총교습시간(분)'],   ref : 'totalminute',		width : '100px',	style : 'text-align:center',	type : 'input'},
+			{caption : ['교습비'],		ref : 'pay',			width : '100px',	style : 'text-align:center',	type : 'input', format : {type:'number', rule:'#,###'}},
+			{caption : ['강사수'],		ref : 'teacher',			width : '70px',	style : 'text-align:center',	type : 'input'}
+		];
+		datagrid = _SBGrid.create(SBGridProperties);
+	};
+		function loClear() 
+		function hideColumns(){
+			if (_.size(datagrid.getSelectedCols()) < 1 ) {
+				alert('그리드의 셀을 선택하셔야 합니다.');
+				return;
+			}
+
+			// 그리드 컬럼의 뒤쪽부터 숨겨서 index 의 변동을 막는다.
+			$.each(datagrid.getSelectedCols().reverse(), function(key,index){
+				datagrid.setColHidden(index, true);
+			});
+		}
+
+		function showColumns(){
+			for (var i=0 ; i < datagrid.getCols(); i++){
+				if (datagrid.getColHidden(i)){
+					datagrid.setColHidden(i, false);
+				}
+			}
+		}
+
+		function loClear() {
+			localStorage.clear();
+			datagrid.rebuild();
+		}
+	</pre>
+</div>
+
+
+
+		<p class="ctext4">Sample</p>
+		<div class="gridDiv">
+			<span>Ctrl + 마우스엔터로 여러컬럼을 선택한 후 버튼을 클릭해 보세요.</span>&nbsp;&nbsp;
+			<input type="button" class="buttonStyle" value="포커싱 된 셀들의 컬럼 숨기기" onclick="hideColumns()">&nbsp;&nbsp;
+			<input type="button" class="buttonStyle" value="개인화 저장" onclick="datagrid.refresh()">&nbsp;&nbsp;
+			<input type="button" class="buttonStyle" value="개인화 삭제" onclick="loClear()">&nbsp;&nbsp;
+			<div id="SBGridArea" class="gridStyle"></div>
+		</div>
+	</body>
+</html>

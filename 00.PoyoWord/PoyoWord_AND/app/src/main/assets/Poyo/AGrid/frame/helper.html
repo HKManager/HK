@@ -1,0 +1,869 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1;text/html; charset=utf-8;" />
+
+    <link href="../css/common.css" rel="stylesheet" type="text/css">
+    <link href="../css/helper.css" rel="stylesheet" type="text/css">
+    <link href="../css/tooltip.css" rel="stylesheet" type="text/css">
+
+    <script language="javascript">
+        var SBpath = "../js/"; //SBGrid v2.5 Library인 'SBGrid'폴더 상대경로
+    </script>
+
+    <link href="../js/SBGrid/css/SBGrid.css" rel="stylesheet" type="text/css">
+    <link href="../js/SBGrid/css/SBGrid_Default.css" rel="stylesheet" type="text/css">
+
+    <script id="" src="../data/commonData.js" type="text/javascript"></script>
+    <script id="" src="../data/comboBoxData.js" type="text/javascript"></script>
+    <!-- comp Library 사용 시 -->
+    <script src="../js/SBGrid/SBGrid_Lib.js" type="text/javascript"></script>
+    <script src="../js/SBGrid/SBGrid_min.js" type="text/javascript"></script>
+
+    <!-- 	colData : 컬럼 속성 및 설명
+		modalPData : 모달에 들어갈 설명 및 상세 설정
+		attr : SBGridProperties를 넘겨주고, 모달 및 값 입력하는 function 모음
+		작성자 : 윤태관																	-->
+    <script src="../js/designer/colData.js" type="text/javascript"></script>
+    <script src="../js/designer/modalPData.js" type="text/javascript"></script>
+    <script src="../js/designer/attr.js" type="text/javascript"></script>
+
+    <!-- hightlight css 적용 -->
+    <link rel="stylesheet" href="../js/highlight/styles/dracula.css">
+    <script src="../js/highlight/highlight.pack.js"></script>
+
+
+    <script>
+        hljs.initHighlightingOnLoad();
+    </script>
+    <script src="../js/dist/clipboard.min.js"></script>
+    <!-- 
+	createGrid : 생성 및 컬럼속성 수정 시 사용하는 function
+	작성자 : 김승진, 이희연																-->
+    <script src="../js/designer/creategrid.js" type="text/javascript"></script>
+    <!--
+	partColumns : Colum Attribute 영역 부분
+	작성자 : 이희연																		-->
+    <script src="../js/designer/partColumns.js" type="text/javascript"></script>
+
+    <title>SBGrid 2.5 Code Generator</title>
+    <script type="text/javascript">
+        function inputEvent() {
+            $('.inputSelect, .selectInput, .commonInput, .commonSelect').on('focus', function() {
+                var id = $(this).attr('id');
+                if ($(this).attr('class') == 'colwidth selectInput width' || $(this).attr('class') == 'widthtype inputSelect colmargin width') {
+                    id = id.split('_')[1];
+                    $("#widthtype_" + id).css('border-color', '#304dac').css('color', '#304dac');
+                    $("#colwidth_" + id).css('border-color', '#304dac').css('color', '#304dac');
+
+                } else if ($(this).prop('id') == 'minorBtn') {} else {
+                    $(this).css('border-color', '#304dac').css('color', '#304dac');
+                }
+            });
+            $('.inputSelect, .selectInput, .commonInput, .commonSelect').blur(function() {
+                var id = $(this).attr('id');
+                if ($(this).attr('class') == 'colwidth selectInput width' || $(this).attr('class') == 'widthtype inputSelect colmargin width') {
+                    id = id.split('_')[1];
+                    $("#widthtype_" + id).css('border-color', '#a6b8ca').css('color', '#a6b8ca');
+                    $("#colwidth_" + id).css('border-color', '#a6b8ca').css('color', '#a6b8ca');
+                } else if ($(this).prop('id') == 'minorBtn') {} else {
+                    $(this).css('border-color', '#a6b8ca').css('color', '#a6b8ca');
+                }
+            });
+            $('.inputSelect, .commonSelect').change(function() {
+                $(this).blur();
+            });
+            $('.selectInput').keydown(function(event) {
+                var keyID = event.keyCode;
+                if ((keyID >= 48 && keyID <= 57) || (keyID >= 96 && keyID <= 105) || keyID == 8 || keyID == 37 || keyID == 38 || keyID == 39 || keyID == 40 || keyID == 46 || keyID == 36 || keyID == 35 || keyID == 190 || keyID == 110)
+                    return;
+                else
+                    return false;
+            });
+
+            $('input[type=button]').mousedown(function() {
+                $(this).css('background', '#eee').css('font-weight', 'normal');
+            });
+            $('input[type=button]').mouseup(function() {
+                $(this).css('background', '#fff').css('font-weight', 'bold');;
+            });
+        }
+        var SBGridProperties = {};
+        var datagrid1;
+        var SBGridProperties1 = {};
+        $(document).ready(function() {
+
+           initColumns(ct_data.resources);
+            openModalEvent();
+            bar = JSON.parse(JSON.stringify(col_data.addCol));
+            inputEvent();
+
+            //////////////columns만들기1 끝////////////////
+            SBGridProperties1.parentid = 'SBGridArea1';
+            SBGridProperties1.id = 'datagrid1';
+            SBGridProperties1.jsonref = 'bar';
+            SBGridProperties1.selectmode = 'byrow';
+            SBGridProperties1.allowselection = true;
+            SBGridProperties1.tooltip = true;
+            SBGridProperties1.columns = [
+				{caption: ['선택'],         ref: 'check',          width: '12%',           style: 'text-align:center',            		type: 'checkbox'}, 
+				{caption: ['속성명'],       ref: 'colName',        width: '43%',           style: 'text-align:left;padding-left:2px;',  type: 'output'}, 
+				{caption: ['속성값'],       ref: 'prop',		   width: '45%',           style: 'text-align:left;padding-left:2px;',  type: 'output'}
+			];
+            datagrid1 = _SBGrid.create(SBGridProperties1);
+            datagrid1.setCellDisabled(2, 0, 2, 2, true);
+            datagrid1.bind('click', 'clickEvn');
+            setTool();
+			
+            var obj = {
+                title: '설정 값을 입력 하지 않으면 미사용 처리됩니다.',
+                modal: true,
+                autoOpen: false,
+                width: '350',
+                height: '250',
+                position: {
+                    my: "left+270 top+200",
+                    at: "left+30 top+30",
+                    of: document
+                },
+                show: {
+                    effect: "blind",
+                    duration: 50
+                },
+                buttons: [{
+                    //버튼텍스트
+                    text: "OK",
+                    //클릭이벤트발생시 동작
+                    click: function() {
+                        if ($(this).context.id == "inputModal") {
+                            inputData();
+                        } else if ($(this).context.id == "bModal") {
+                            booData();
+                        } else if ($(this).context.id == "multiInput") {
+                            mInputData();
+                        } else {
+                            mInputData1();
+                        }
+                        $(this).dialog("close");
+                    }
+                }, {
+                    //버튼텍스트
+                    text: "Close",
+                    //클릭이벤트발생시 동작
+                    click: function() {
+                        $(this).dialog("close");
+                    }
+                }]
+            };
+			
+			var obj1 = {
+                title: '설정 값을 입력 하지 않으면 미사용 처리됩니다.',
+                modal: true,
+                autoOpen: false,
+                width: '800',
+                height: '450',
+                position: {
+                    my: "left+270 top+200",
+                    at: "left+30 top+30",
+                    of: document
+                },
+                show: {
+                    effect: "blind",
+                    duration: 50
+                },
+                buttons: [{
+                    //버튼텍스트
+                    text: "OK",
+                    //클릭이벤트발생시 동작
+                    click: function() {
+                        textAreaInput();
+                        $(this).dialog("close");
+                    }
+                }, {
+                    //버튼텍스트
+                    text: "Close",
+                    //클릭이벤트발생시 동작
+                    click: function() {
+                        $(this).dialog("close");
+                    }
+                }]
+            };
+
+            $("#inputModal").dialog(obj);
+            $("#bModal").dialog(obj);
+            $("#multiInput").dialog(obj);
+            $("#multiInput1").dialog(obj);
+            $("#textareaModal").dialog(obj1);
+			resetBtn();
+	    });
+
+        function modalss() {
+            if (datagrid != null && datagrid != undefined) {
+                $('#view2').dialog({
+                    title: 'Code View',
+                    modal: true,
+                    width: '850',
+                    height: '600'
+                });
+            } else {
+                $('#alert').dialog({
+                    title: 'Message',
+                    modal: true,
+                    width: '850',
+                    height: '600',
+                    buttons: [{
+                        //버튼텍스트
+                        text: "Close",
+                        //클릭이벤트발생시 동작
+                        click: function() {
+                            $(this).dialog("close");
+                        }
+                    }]
+                });
+            }
+        }
+
+        //Attr Reset 부분
+        function resetBtn() {
+            bar = JSON.parse(JSON.stringify(col_data.addCol));
+            datagrid1.rebuild();
+            datagrid1.setCellDisabled(2, 0, 2, 2, true);
+            setTool();
+        }
+		
+        function getSelectHtml(jsonObj) {
+            var strReturn = "<select id='bUse1'  style='width : 80%; height : 30px; padding-left : 5px;'>";
+            for (var i = 0; i < jsonObj.length; i++) {
+                strReturn += "<option value='" + jsonObj[i]['value'] + "' >" + jsonObj[i]['text'] + "</option>";
+            }
+            strReturn += "";
+            return strReturn;
+        }
+
+        function code_copy() {
+            var agent = navigator.userAgent.toLowerCase();
+            if (agent.indexOf("chrome") != -1) {
+                var clipboard = new Clipboard('.clipboard');
+                alert("복사되었습니다.");
+            } else if ((navigator.appName == 'Netscape' && navigator.userAgent.search('Trident') != -1) || (agent.indexOf("msie") != -1)) {
+                var str = $('pre').text();
+                window.clipboardData.setData("Text", str);
+                alert("복사되었습니다.");
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="leftContent">
+            <div class="helper_title">
+                SBGrid 2.5 Code Generator
+            </div>
+            <div class="attrGrid">
+                <div class="leftHeader">
+                    <span class="titleText">1.Attributes</span>
+                    <input type="button" class="resetBtn" value="Attr Reset" onclick="resetBtn()" />
+                </div>
+                <div id="SBGridArea1"></div>
+            </div>
+        </div>
+        <div class="centerContent">
+            <div class="title2">
+                <div style="width : 100%; height : 25%;"></div>
+                <div>2.Columns</div>
+            </div>
+            <div class="title1">
+                <div style="width : 100%; height : 10%;"></div>
+                <div>3.View</div>
+            </div>
+        </div>
+        <div class="rightContent">
+            <div class="right_content3">
+                <div id="col_attr_title">
+                    <input type="text" readonly class="col" style="width : 15vw; float : left; margin-left:0.5vw;" value="name">
+                    <input type="text" readonly class="col" style="width : 11vw; float : left; margin-left:-0.208vw;" value="ref">
+                    <input type="text" readonly class="col" style="width : 11vw; float : left; margin-left:-0.208vw;" value="width">
+                    <input type="text" readonly class="col" style="width : 7vw; float : left; margin-left:-0.208vw;" value="type">
+                    <input type="button" class="colbt" style="width : 7.5vw; margin-left : -2.5vw; height : 2.778vh;" value="컬럼추가" onclick="addColumn()" />
+                    <div class="colset fieldAdd">
+                        <div id="field"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="rightContent_2">
+                <div id="attr_preview">
+					<b  class="attrDiv"> * TRY 버튼을 누르면 사용된 속성이 나옵니다.</b>
+                </div>
+                <div id="btns">
+                    <input type="button" id="hiddenBtn" class="right_content_button codebtn" value="CODE" onclick="modalss()" />
+                    <input type="button" id="createBtn" class="right_content_button createbtn" value="TRY" onclick="reCreateGrid()" />
+                </div>
+            </div>
+            <div class="rightContent_1">
+                <div id="SBGridArea" class="SBgrid"></div>
+            </div>
+        </div>
+    </div>
+    <div id="alert" style="display:none; font-size:20pt; text-align:center;">
+        <div style="margin-top:200px">
+            TRY 버튼 클릭 후 CODE 버튼을 눌러주세요.
+        </div>
+    </div>
+
+    <div id="view2" style="display:none;">
+        <button class="clipboard " data-clipboard-target="#code_view" style="float:right;" onclick="code_copy();"> Code Copy </button>
+        <div id="code_view">
+            <pre style="width:95%; height:95%; overflow-x: hidden;">
+					<code>
+		var datagrid;
+		
+		function createGrid(){
+		var SBGridProperties = {};
+		<span class="attrCode"></span>
+
+		SBGridProperties.columns = [
+		<span class="codeAdd"><span class="columnCode"></span></span>
+		];
+		datagrid = _SBGrid.create(SBGridProperties);
+		}
+					</code>
+				</pre>
+        </div>
+    </div>
+    <!-- OutPut Modal -->
+    <div id="outModal">
+        <input type='hidden' id="tmpOutModalId" name="tmpOutModalNm">
+        <table class="modalTable">
+            <tr>
+                <td colspan="2" class="modalTdTop">
+                    <p id='outP' class="modalp"></p>
+                </td>
+            </tr>
+            <tr>
+                <td class="modalTDMiddle" >
+                    <label for="outputAlias">alias</label>
+                </td>
+                <td class="modalTDMiddle2">
+                    <input type='text' name='outputNm' class='colInput modalinForm' id='outputAlias' placeholder='ex) (999)999-9999' />
+                </td>
+            </tr>
+            <tr>
+                <td class="modalTDBottomL">
+                    <label for="outputUnmask">unmaskvalue</label>
+                </td>
+                <td class="modalTDBottomR">
+                    <select id='outputUnmask' class='modalSelForm' name='outputNm'>
+                        <option value='2' selected>미지정</option>
+                        <option value='0'>false</option>
+                        <option value='1'>true</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+
+    <!-- input Modal -->
+    <div id="inModal" width="1000">
+
+        <input type='hidden' id="tmpInModalId" name="tmpInModalNm">
+
+        <table class="modalTable">
+            <tr>
+                <td colspan="2" class="modalTdTop">
+                    <p id='inP' class="modalp"></p>
+                </td>
+            </tr>
+            <tr>
+                <td class="modalTDMiddle">
+                    <label for="inputMaxLength">maxlength</label>
+                </td>
+                <td class="modalTDMiddle2">
+                    <input type='text' class='colInput modalinForm' name='inputNm' id='inputMaxLength' placeholder='ex) 3' onkeyup="this.value=this.value.replace(/[^0-9]/g,'')" />
+                </td>
+            </tr>
+            <tr>
+                <td class="modalTDMiddle">
+                    <label for="inputRoundMode">roundMode</label>
+                </td>
+                <td class='modalTDMiddle2'>
+                    <select id='inputRoundMode' name='inputNm' class='colInput modalSelForm'>
+                        <option value='2' selected>미지정</option>
+                        <option value='ceil'>올림</option>
+                        <option value='floor'>내림</option>
+                        <option value='round'>반올림</option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="modalTDMiddle">
+                    <label for="inputRoundPosition">roundPosition</label>
+                </td>
+                <td class='modalTDMiddle2'>
+                    <input type='text' name='inputNm' id='inputRoundPosition' class="modalinForm" placeholder='ex) 1' />
+                </td>
+            </tr>
+            <tr>
+                <td class="modalTDMiddle">
+                    <label for="inputAutoNext">autonext</label>
+                </td>
+                <td class="modalTDMiddle2">
+                    <select id='inputAutoNext'  name='inputNm' class='colInput modalSelForm'>
+                        <option value='2' selected>미지정</option>
+                        <option value='0'>false</option>
+                        <option value='1'>true</option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="modalTDMiddle">
+                    <label for="inputMaskAlias">mask-alias</label>
+                </td>
+                <td class="modalTDMiddle2">
+                    <input type='text' class='colInput modalinForm' name='inputNm' id='inputMaskAlias' placeholder='ex) (999)999-9999' />
+                </td>
+            </tr>
+            <tr>
+                <td class="modalTDBottomL">
+                    <label for="inputUnmask">mask - unmaskvalue</label>
+                </td>
+                <td class='modalTDBottomR'>
+                    <select id='inputUnmask' class="modalSelForm" name='inputNm'>
+                        <option value='2' selected>미지정</option>
+                        <option value='0'>false</option>
+                        <option value='1'>true</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+    </div>
+	
+    <!-- combo Modal -->
+    <div id="comboModal">
+        <input type='hidden' id="tmpCmbModalId" name="tmpCmbModalNm" />
+
+        <table class="modalTable">
+            <tr>
+                <td colspan="2" class="modalTdTop">
+                    <p id='comboP' class="modalp"></p>
+                </td>
+            </tr>
+            <tr>
+                <td class="modalTDMiddle">
+                    <label for="comboRef">ref</label>
+                </td>
+                <td class="modalTDMiddle2">
+                    <input type='text' class='colInput modalinForm' name='comboNm' id='comboRef' value='comboData' readonly/>
+                </td>
+            </tr>
+            <tr>
+                <td class="modalTDMiddle">
+                    <label for="comboLabel">label</label>
+                </td>
+                <td class="modalTDMiddle2">
+                    <input type='text' class='colInput modalinForm' name='comboNm' id='comboLabel' value='name' readonly/>
+                </td>
+            </tr>
+            <tr>
+                <td class="modalTDMiddle">
+                    <label for="comboValue">value</label>
+                </td>
+                <td class="modalTDMiddle2">
+                    <input type='text' class='colInput modalinForm' name='comboNm' id='comboValue' value='code' readonly/>
+                </td>
+            </tr>
+            <tr>
+                <td class="modalTDMiddle">
+                    <label for="comboItem">itemcount</label>
+                </td>
+                <td class="modalTDMiddle2">
+                    <input type='text' class='colInput modalinForm' name='comboNm' id='comboItem' value='4' />
+                </td>
+            </tr>
+            <tr>
+                <td class="modalTDBottomL">
+                    <label for="comboDisplay">displayui</label>
+                </td>
+                <td class="modalTDBottomR">
+                    <select id='comboDisplay' class="modalSelForm" name='comboNm'>
+                        <option value='2' selected>미지정</option>
+                        <option value='1'>true</option>
+                        <option value='0'>false</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- checkbox Modal-->
+    <div id="checkModal">
+        <input type='hidden' id="tmpChkModalId" name="tmpChkModalNm">
+        <table class="modalTable">
+           <tr>
+               <td colspan="2" class="modalTdTop">
+                   <p id='checkP' class="modalp"></p>
+               </td>
+           </tr>
+            <tr>
+                <td class="modalTDBottomL">
+                    <label for="checkedValue">checkedvalue</label>
+                </td>
+                <td class="modalTDBottomR">
+                    <select id='checkedValue' class="modalSelForm" name='checkNm'>
+                        <option value='2' selected>미지정</option>
+                        <option value='1'>true</option>
+                        <option value='0'>false</option>
+                        </select>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- Datepicker Modal-->
+    <div id="dateModal">
+        <input type='hidden' id="tmpDateModalId" name="tmpDateModalNm">
+        <table class="modalTable">
+           <tr>
+               <td colspan="2" class="modalTdTop">
+                   <p id='dateP' class="modalp"></p>   
+               </td>
+           </tr>
+            <tr>
+                <td class="modalTDMiddle">
+                    <label for="dateLocale">locale</label>
+                </td>
+                <td class="modalTDMiddle2">
+                    <input type='text' class='colInput modalinForm' name='dateNm' id='dateLocale' placeholder='ex) ko' />
+                </td>
+            </tr>
+            <tr>
+                <td class="modalTDMiddle">
+                    <label for="dateFormat">dateformat</label>
+                </td>
+                <td class="modalTDMiddle2">
+                    <input type='text' class='colInput modalinForm' name='dateNm' id='dateFormat' placeholder='ex) yymmdd' />
+                </td>
+            </tr>
+            <tr>
+                <td class="modalTDMiddle">
+                    <label for="dateClear">clearbutton</label>
+                </td>
+                <td class="modalTDMiddle2">
+                    <select id='dateClear' class="colInput modalSelForm" name='dateNm'>
+                        <option value='2' selected>미지정</option>
+                        <option value='1'>true</option>
+                        <option value='0'>false</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td class="modalTDBottomL">
+                    <label for="dateMultiple">multiple</label>
+                </td>
+                <td class="modalTDBottomR">
+                    <input type="text" name='dateNm' id="dateMultiple" class="colInput modalinForm" placeholder='ex) 2'>
+                </td>
+            </tr>
+
+        </table>
+    </div>
+
+    <!-- Image Modal -->
+    <div id="imageModal">
+        <input type='hidden' id="tmpImgModalId" name="tmpImgModalNm">
+        <table class="modalTable">
+           <tr>
+               <td colspan="2" class="modalTdTop">
+                   <p id='imageP' class="modalp"></p>
+               </td>
+           </tr>
+            <tr>
+                <td class="modalTDMiddle">
+                    <label for="imageAlt">imagealt</label>
+                </td>
+                <td class="modalTDMiddle2">
+                    <input type='text' class='colInput modalinForm' name='imageNm' id='imageAlt' placeholder='ex) 이미지 파일입니다' />
+                </td>
+            </tr>
+            <tr>
+                <td class="modalTDMiddle">
+                    <label for="imageHeight">imageheight</label>
+                </td>
+                <td class="modalTDMiddle2">
+                    <input type='text' class='colInput modalinForm' name='imageNm' id='imageHeight' placeholder='ex) 50' />
+                </td>
+            </tr>
+            <tr>
+                <td class="modalTDMiddle">
+                    <label for="imageWidth">imagewidth</label>
+                </td>
+                <td class="modalTDMiddle2">
+                    <input type='text' class='colInput modalinForm' name='imageNm' id='imageWidth' placeholder='ex) 50' />
+                </td>
+            </tr>
+            <tr>
+                <td class="modalTDMiddle">
+                    <label for="imageStyle">imagestyle</label>
+                </td>
+                <td class="modalTDMiddle2">
+                    <input type='text' class='colInput modalinForm' name='imageNm' id='imageStyle' placeholder='ex) cursor : pointer' />
+                </td>
+            </tr>
+            <tr>
+                <td class="modalTDMiddle">
+                    <label for="imageClick">imageclick</label>
+                </td>
+                <td class="modalTDMiddle2">
+                    <input type='text' class='colInput modalinForm' name='imageNm' id='imageClick' placeholder='ex) fnImageClick' />
+                </td>
+            </tr>
+            <tr>
+                <td class="modalTDMiddle">
+                    <label for="imageUri">imageuri</label>
+                </td>
+                <td class="modalTDMiddle2">
+                    <input type='text' name='imageNm' class='colInput modalinForm' id='imageUri' placeholder='ex) ./image1.jpg' />
+                </td>
+            </tr>
+            <tr>
+                <td class="modalTDBottomL">
+                    <label for="errorUri">imageerroruri</label>
+                </td>
+                <td class="modalTDBottomR">
+                    <input type='text' class='colInput modalinForm' name='imageNm' id='errorUri' placeholder='ex) ./image2.jpg' />
+                </td>
+            </tr>
+        </table>
+    </div>
+	
+	<!-- 그리드 영역에서 사용하는 모달-->
+    <div id="inputModal">
+        <table class="modalTable">
+            <tr>
+                <td class="modalTdTop modalheight">
+                    <p id='inputP' class="modalp"></p>
+                </td>
+            </tr>
+            <tr>
+                <td class="modalTdBottom">
+                    <input type='text' id='inputM' placeholder='' class="modalinForm" />
+                </td>
+            </tr>
+        </table>
+    </div>
+    
+    <div id="textareaModal">
+        <table class="modalTable">
+            <tr>
+                <td class="modalTdTop modalheight">
+                    <p id='textP' class="modalp"></p>
+                </td>
+            </tr>
+            <tr>
+                <td class="modalTdBottom">
+                    <textarea id='textM' style='width:100%;height:100%;' class="modaltextForm"></textarea>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div id="bModal">
+        <table class="modalTable">
+            <tr>
+                <td class="modalTdTop modalheight">
+                    <p id='booPut' class="modalp"></p>
+                </td>
+            </tr>
+            <tr>
+                <td class="modalTdBottom">
+                    <select id='tSel' class="modalSelForm">
+                        <option value='true' selected>true</option>
+                        <option value='false'>false</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+
+    <div id="multiInput">
+        <table class="modalTable">
+            <tr>
+                <td colspan="2" class="modalTdTop modalheight">
+                    <p id='mInputP' class="modalp"></p>
+                </td>
+            </tr>
+            <tr>
+                <td class="modalTDMiddle">
+                    <p class="modalpDis">페이징 사용 여부</p>
+                </td>
+                <td class="modalTDMiddle2">
+                    <select id='bUse' class="modalSelForm">
+                        <option value='all' selected>페이징 사용</option>
+                        <option value='none'>미사용</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td class="modalTDMiddle">
+                    <p class="modalp">하단에 표시할 페이지 수</p>
+                </td>
+                <td class="modalTDMiddle2">
+                    <input type='text' id='mInput1' placeholder="ex) 5" class="modalinForm">
+                </td>
+            </tr>
+            <tr>
+                <td class="modalTDBottomL">
+                    <p class="modalp">한 화면에 표시할 데이터 수</p>
+                </td>
+                <td class="modalTDBottomR">
+                    <input type='text' id='mInput2' placeholder="ex) 10" class="modalinForm">
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div id="multiInput1">
+        <!-- table에 id를 준 이유는 append시 테이블에 append를 해야 하기 때문입니다.-->
+        <table id="multiTable" class="modalTable">
+            <tr>
+                <td class="modalTdTop modalheight">
+                    <p id='mInputP1' class="modalp"></p>
+                </td>
+            </tr>
+            <tr>
+                <td id="multiselect" class="modalTdBottom">
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- 20170315 이희연 추가-->
+    <div id="additionalModal">
+        <input type='hidden' id="tmpAdditionalModalId" name="tmpStyleModalNm">
+        <table class="modalTable">
+            <tr>
+                <td colspan="2" class="modalTdTop modalheight">
+                    <p class="modalp">style 설정</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="modalTDBottomL">
+                    <label for="style">style</label>
+                </td>
+                <td class="modalTDBottomR">
+                    <input type='text' class='colInput modalinForm' id='style' placeholder='ex) text-align:center; font-size:12pt;' />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" class="modalTdTop">
+                    <p class="modalp">fixedstyle 설정</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="modalTDBottomL">
+                    <label for="fixedstyle">fixedstyle</label>
+                </td>
+                <td class="modalTDBottomR">
+                    <input type='text' class='colInput modalinForm' id='fixedstyle' placeholder='ex) text-align:center; font-size:12pt;' />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" class="modalTdTop modalheight">
+                    <p class="modalp">filtering 설정</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="modalTDMiddle">
+                    <label for="usemode">usemode</label>
+                </td>
+                <td class="modalTDMiddle2">
+                    <select id='usemode' class='modalSelForm'>
+                        <option value='2' selected>미지정</option>
+                        <option value=1>true</option>
+                        <option value=0>false</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td class="modalTDBottomL">
+                    <label for="uitype">uitype</label>
+                </td>
+                <td class="modalTDBottomR">
+                    <select id='uitype' class='modalSelForm'>
+                        <option value='2' selected>미지정</option>
+                        <option value='checklist'>checklist</option>
+                        <option value='number'>number</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" class="modalTdTop modalheight">
+                    <p class="modalp">format 설정</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="modalTDMiddle">
+                    <label for="formatType">type</label>
+                </td>
+                <td class="modalTDMiddle2">
+                    <select id='formatType' class='modalSelForm'>
+                        <option value='2' selected>미지정</option>
+                        <option value='date'>date</option>
+                        <option value='number'>number</option>
+                        <option value='string'>string</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td class="modalTDBottomL">
+                    <label for="formatRule">rule</label>
+                </td>
+                <td class="modalTDBottomR">
+                    <input type='text' class='colInput modalinForm' id='formatRule' placeholder='ex) yyyy-mm-dd | #,### | "소프트보울" @"님"' />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" class="modalTdTop modalheight">
+                    <p class="modalp">hidden 설정</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="modalTDMiddle">
+                    <label for="hidden">hidden</label>
+                </td>
+                <td class="modalTDMiddle2">
+                    <select id='hidden' class='modalSelForm'>
+                        <option value='2' selected>미지정</option>
+                        <option value=1>true</option>
+                        <option value=0>false</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" class="modalTdTop modalheight">
+                    <p class="modalp">merge 설정</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="modalTDBottomL">
+                    <label for="merge">merge</label>
+                </td>
+                <td class="modalTDBottomR">
+                    <select id='merge' class='modalSelForm'>
+                        <option value='2' selected>미지정</option>
+                        <option value=1>true</option>
+                        <option value=0>false</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>

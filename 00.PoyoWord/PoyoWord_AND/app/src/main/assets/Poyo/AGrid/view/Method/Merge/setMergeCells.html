@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1;text/html; charset=utf-8;" />
+
+		<script>
+			var SBpath = "../../../js/";
+		</script>
+		<script src="../../../js/SBGrid/SBGrid_Lib.js" type="text/javascript"></script>
+		<script src="../../../js/SBGrid/SBGrid_min.js" type="text/javascript"></script>
+		<link href="../../../js/SBGrid/css/SBGrid.css" rel="stylesheet" type="text/css">
+		<link href="../../../js/SBGrid/css/SBGrid_Default.css" rel="stylesheet" type="text/css">
+		<link href="../../../css/basic.css" rel="stylesheet" type="text/css">
+		<link href="../../../css/common.css" rel="stylesheet" type="text/css">
+		<script src="../../../data/data.js" type="text/javascript"></script>
+		<script src="../../../js/toggle/toggle.js" type="text/javascript"></script>
+		<script src="../../../js/common.js" type="text/javascript"></script>
+		
+		<title>setMergeCells</title>
+
+		<script type="text/javascript">
+	    	var datagrid;
+			var SBGridProperties = {};
+			
+			function createGrid(){
+				
+				SBGridProperties.parentid = 'SBGridArea';
+				SBGridProperties.id = 'datagrid';
+				SBGridProperties.jsonref = 'ct_data.resources';
+				SBGridProperties.selectmode = 'free';
+				SBGridProperties.columns = [
+					{caption : ['학원명'],		ref : 'academy',		width : '150px',	style : 'text-align:center',	type : 'output'},
+					{caption : ['설립자(성명)'],	ref : 'name',			width : '150px',	style : 'text-align:center',	type : 'input'},
+					{caption : ['전화번호'],		ref : 'phone',			width : '120px',	style : 'text-align:center',	type : 'input'},
+					{caption : ['학원주소'],		ref : 'addr',			width : '450px',	style : 'text-align:center',	type : 'textarea'},
+					{caption : ['교습과정'],		ref : 'curriculum',		width : '100px',	style : 'text-align:center',	type : 'combo', typeinfo :{ ref : 'newComboData', displayui : true, label : 'label', value : 'value'}},
+					{caption : ['교습과목(반)'],	ref : 'class',			width : '200px',	style : 'text-align:center',	type : 'input'},
+					{caption : ['정원'],		 	ref : 'maxstudent',		width : '70px',	style : 'text-align:center',	type : 'input', format : {type:'string', rule:'@ "명"'}},
+					{caption : ['교습기간'],		ref : 'term',			width : '100px',	style : 'text-align:center',	type : 'input'},
+					{caption : ['교육시작일'],		ref : 'startday',		width : '100px',	style : 'text-align:center',	type : 'datepicker', typeinfo : {locale : 'ko' , dateformat :'yymmdd'}, format : {type:'date', rule:'yyyy-mm-dd', origin : 'yyyymmdd' }},
+					{caption : ['총교습시간(분)'],   ref : 'totalminute',		width : '100px',	style : 'text-align:center',	type : 'input'},
+					{caption : ['교습비'],		ref : 'pay',			width : '100px',	style : 'text-align:center',	type : 'input', format : {type:'number', rule:'#,###'}},
+					{caption : ['강사수'],		ref : 'teacher',			width : '70px',	style : 'text-align:center',	type : 'input'}
+				];
+				datagrid = _SBGrid.create(SBGridProperties);
+			};
+			
+			function fnMergeCells(){	
+				datagrid.setMergeCells('bycol');
+			};
+		</script>
+	</head>
+
+	<body>
+		<div class="subTitle">
+			<h2 class="title">setMergeCells</h2>
+		</div>
+		
+		<p class="ctext4">Description</p>
+		<ul class="descList">
+			<li> ● 그리드의 데이터 영역을 입력한 병합 타입으로 병합합니다.</li>
+		</ul>
+		<p class="ctext4">Parameter</p>
+		<div class="example_box">
+<pre >
+	
+	 <span style="font-weight: bold;">* 메소드 : datagrid.setMergeCells(param1);</span>
+	   - param1 <span style="font-weight: bold;">(필수)</span> : <span style="font-weight: bold;">[string]</span> 병합 설정 여부
+		  → 'none'		: 병합 없음
+		  → 'bycol'		: 동일한 데이터 값을 갖는 이웃한 셀들을 열 단위로 병합
+	          → 'byrow'		: 동일한 데이터 값을 갖는 이웃한 셀들을 행 단위로 병합
+	          → 'bycolrec'		: 동일한 데이터 값을 갖는 경우 열단위 병합후, 수행이후 병합된 결과에 따라 행단위로 병합
+		  → 'byrestriccol'	: 첫번째 열부터 순서대로 행병합 후 병합 속성을 적용한 바로 앞 열의 병합 결과에 따라 병합
+			</pre>
+		</div>		
+		
+		<div class="ctext4">Example
+			<input type="button" id = "clickb" class="buttonStyle" name="bt" value="code View" onclick="codeView()" />
+		</div>
+			
+		<div class="example_box_a" id="toggle2">
+		<pre>
+			<span class="comment"></span>
+	var datagrid;	
+	var SBGridProperties = {};
+	
+	function createGrid(){
+		
+		SBGridProperties.parentid = 'SBGridArea';
+		SBGridProperties.id = 'datagrid';
+		SBGridProperties.jsonref = 'ct_data.resources';
+		SBGridProperties.selectmode = 'free';
+		
+		SBGridProperties.columns = [
+			{caption : ['학원명'],		ref : 'academy',		width : '150px',	style : 'text-align:center',	type : 'output'},
+			{caption : ['설립자(성명)'],	ref : 'name',			width : '150px',	style : 'text-align:center',	type : 'input'},
+			{caption : ['전화번호'],		ref : 'phone',			width : '120px',	style : 'text-align:center',	type : 'input'},
+			{caption : ['학원주소'],		ref : 'addr',			width : '450px',	style : 'text-align:center',	type : 'textarea'},
+			{caption : ['교습과정'],		ref : 'curriculum',		width : '100px',	style : 'text-align:center',	type : 'combo', typeinfo :{ ref : 'newComboData', displayui : true, label : 'label', value : 'value'}},
+			{caption : ['교습과목(반)'],	ref : 'class',			width : '200px',	style : 'text-align:center',	type : 'input'},
+			{caption : ['정원'],		 	ref : 'maxstudent',		width : '70px',	style : 'text-align:center',	type : 'input', format : {type:'string', rule:'@ "명"'}},
+			{caption : ['교습기간'],		ref : 'term',			width : '100px',	style : 'text-align:center',	type : 'input'},
+			{caption : ['교육시작일'],		ref : 'startday',		width : '100px',	style : 'text-align:center',	type : 'datepicker', typeinfo : {locale : 'ko' , dateformat :'yymmdd'}, format : {type:'date', rule:'yyyy-mm-dd', origin : 'yyyymmdd' }},
+			{caption : ['총교습시간(분)'],   ref : 'totalminute',		width : '100px',	style : 'text-align:center',	type : 'input'},
+			{caption : ['교습비'],		ref : 'pay',			width : '100px',	style : 'text-align:center',	type : 'input', format : {type:'number', rule:'#,###'}},
+			{caption : ['강사수'],		ref : 'teacher',			width : '70px',	style : 'text-align:center',	type : 'input'}
+		];
+		datagrid = _SBGrid.create(SBGridProperties);
+	};
+		</pre>
+	</div>
+	<div class="example_box_m">
+	<pre>	
+	function fnMergeCells(){	
+		<span class = "highlight1">datagrid.setMergeCells('bycol');</span>
+	};
+			</pre>
+		</div>
+		<p class="ctext4">Sample</p>	
+		
+		<div class="gridDiv">
+			<input type="button" class="buttonStyle" value="setMergeCells" onclick="fnMergeCells()">&nbsp;
+			<div id="SBGridArea" class="gridStyle"></div>	
+		</div>
+	</body>
+</html>

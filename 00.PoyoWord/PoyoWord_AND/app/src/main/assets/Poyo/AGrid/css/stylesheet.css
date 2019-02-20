@@ -1,0 +1,106 @@
+
+body {
+	background-color:#ffffff;
+	color:#000000;
+	/*font-family:Helvetica, Arial ;*/
+	font-family:Malgun Gothic,dotum, Arial, Helvetica, sans-serif;
+	font-size:81%;
+	margin:0;
+}
+
+h1 {
+    font-size:1.8em;
+}
+h2 {
+    font-size:1.5em;
+}
+h3 {
+    font-size:1.4em;
+}
+h4 {
+    font-size:1.3em;
+}
+h5 {
+    font-size:1.2em;
+}
+h6 {
+    font-size:1.1em;
+}
+ul {
+    list-style-type:disc;
+}
+
+
+.header, .footer {
+	clear:both;
+	margin:0 15px;
+	padding:15px 0 0 0;
+}
+
+.title { /*color:#2c4557;*/ color:#FF5E00; margin:5px 0; }
+
+
+/*
+Page layout container styles
+*/
+/***/
+.contentContainer, .sourceContainer, .classUseContainer, .serializedFormContainer, .constantValuesContainer {
+    clear:both;
+    padding:10px 20px;
+    position:relative;
+}
+
+
+
+/*
+List styles
+*/
+
+
+ul.blockList, ul.blockListLast {
+    margin:10px 0 10px 0;
+    padding:0;
+}
+ul.blockList li.blockList, ul.blockListLast li.blockList {
+    list-style:none;
+    margin-bottom:25px;
+}
+ul.blockList ul.blockList li.blockList, ul.blockList ul.blockListLast li.blockList {
+    padding:0px 20px 5px 10px;
+    border:1px solid #9eadc0;
+    background-color:#f9f9f9;
+	/*background-color:#EDEDED;*/
+}
+ul.blockList ul.blockList ul.blockList li.blockList, ul.blockList ul.blockList ul.blockListLast li.blockList {
+    padding:0 0 5px 8px;
+    background-color:#ffffff;
+    border:1px solid #9eadc0;
+    border-top:none;
+}
+
+table tr td dl, table tr td dl dt, table tr td dl dd {
+    margin-top:0;
+    margin-bottom:1px;
+}
+
+caption a:link, caption a:hover, caption a:active, caption a:visited {
+    color:#FFFFFF;
+}
+
+table.overviewSummary td.colFirst, table.overviewSummary th.colFirst,
+table.overviewSummary td.colOne, table.overviewSummary th.colOne {
+    width:25%;
+    vertical-align:middle;
+}
+
+table.packageSummary td.colFirst, table.overviewSummary th.colFirst {
+    width:25%;
+    vertical-align:middle;
+}
+
+.page_title{
+	width:100%;
+	border-bottom:1px solid #c8cbd1; 
+	height:50px;_height:50px; 
+	
+}

@@ -65,6 +65,7 @@ public class WordStudyActivity extends AppCompatActivity {
                 data.SetView(HARDCODE.단어장관리);
                 data.SetValue(list);
 
+
                 String JsonEventData = gson.toJson(data);
 
                 lWebView.loadUrl("javascript:showData('" + JsonEventData + "')");
@@ -79,7 +80,7 @@ public class WordStudyActivity extends AppCompatActivity {
         //lWebView.getSettings().setJavaScriptCanOpenWindowsAutomatically(true);
 
         //lWebView.loadUrl("file:///android_asset/Poyo/manager/WordBookList.html");
-        lWebView.loadUrl("file:///android_asset/Poyo/ASlide/index.html");
+        lWebView.loadUrl("file:///android_asset/Poyo/AGrid/index.html");
     }
 
     private class JavaScriptBridge {

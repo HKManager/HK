@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1;text/html; charset=utf-8;" />
+
+		<script>
+			var SBpath = "../../../js/";
+		</script>
+		<script src="../../../js/SBGrid/SBGrid_Lib.js" type="text/javascript"></script>
+		<script src="../../../js/SBGrid/SBGrid_min.js" type="text/javascript"></script>
+		<link href="../../../js/SBGrid/css/SBGrid.css" rel="stylesheet" type="text/css">
+		<link href="../../../js/SBGrid/css/SBGrid_Default.css" rel="stylesheet" type="text/css">
+		<link href="../../../css/basic.css" rel="stylesheet" type="text/css">
+		<link href="../../../css/common.css" rel="stylesheet" type="text/css">
+		<script src="../../../data/data.js" type="text/javascript"></script>
+		<script src="../../../js/toggle/toggle.js" type="text/javascript"></script>
+		<script src="../../../js/common.js" type="text/javascript"></script>
+		
+		<title>getPrevCellDataInfo</title>
+
+		<script type="text/javascript">
+	    	var datagrid;
+			var SBGridProperties = {};
+			
+			function createGrid(){
+				SBGridProperties.parentid = 'SBGridArea';
+				SBGridProperties.id = 'datagrid';
+				SBGridProperties.jsonref = 'ct_data.resources';
+				SBGridProperties.selectmode = 'free';
+				SBGridProperties.columns = [
+					{caption : ['학원명'],		ref : 'academy',		width : '150px',	style : 'text-align:center',	type : 'output'},
+					{caption : ['설립자(성명)'],	ref : 'name',			width : '150px',	style : 'text-align:center',	type : 'input'},
+					{caption : ['전화번호'],		ref : 'phone',			width : '120px',	style : 'text-align:center',	type : 'input'},
+					{caption : ['학원주소'],		ref : 'addr',			width : '450px',	style : 'text-align:center',	type : 'textarea'},
+					{caption : ['교습과정'],		ref : 'curriculum',		width : '100px',	style : 'text-align:center',	type : 'combo', typeinfo :{ ref : 'newComboData', displayui : true, label : 'label', value : 'value'}},
+					{caption : ['교습과목(반)'],	ref : 'class',			width : '200px',	style : 'text-align:center',	type : 'input'},
+					{caption : ['정원'],		 	ref : 'maxstudent',		width : '70px',	style : 'text-align:center',	type : 'input', format : {type:'string', rule:'@ "명"'}},
+					{caption : ['교습기간'],		ref : 'term',			width : '100px',	style : 'text-align:center',	type : 'input'},
+					{caption : ['교육시작일'],		ref : 'startday',		width : '100px',	style : 'text-align:center',	type : 'datepicker', typeinfo : {locale : 'ko' , dateformat :'yymmdd'}, format : {type:'date', rule:'yyyy-mm-dd', origin : 'yyyymmdd' }},
+					{caption : ['총교습시간(분)'],   ref : 'totalminute',		width : '100px',	style : 'text-align:center',	type : 'input'},
+					{caption : ['교습비'],		ref : 'pay',			width : '100px',	style : 'text-align:center',	type : 'input', format : {type:'number', rule:'#,###'}},
+					{caption : ['강사수'],		ref : 'teacher',			width : '70px',	style : 'text-align:center',	type : 'input'}
+				];
+				datagrid = _SBGrid.create(SBGridProperties);
+			};
+			
+			function  fnGetPrevCellDataInfo(){
+				var cellData = datagrid.getPrevCellDataInfo();
+                $(".rowIndex").text(cellData.row);
+                $(".colIndex").text(cellData.col);
+                $(".cellData").text(cellData.data);
+			};			
+
+		</script>
+	</head>
+
+	<body>
+		<div class="subTitle">
+			<h2 class="title">getPrevCellDataInfo</h2>
+		</div>
+		
+		<p class="ctext4">Description</p>
+		<ul class="descList">
+			<li> ● valuechanged이벤트 발생 시점에 데이터가 바뀌기 전 셀 정보를 반환합니다.</li>
+		</ul>
+		
+		<p class="ctext4">Parameter</p>
+		<div class="example_box" >
+			<pre>
+			
+	<span style="font-weight: bold;">* 메소드 : datagrid.getPrevCellDataInfo();</span>
+			</pre>
+		</div>		
+		
+		<div class="ctext4">Example
+			<input type="button" id = "clickb" class="buttonStyle" name="bt" value="code View" onclick="codeView()" />
+		</div>
+			
+		<div class="example_box_a" id="toggle2">
+			<pre>
+			<span class="comment"></span>
+	var datagrid;	
+	var SBGridProperties = {};
+	
+	function createGrid(){
+		
+		SBGridProperties.parentid = 'SBGridArea';
+		SBGridProperties.id = 'datagrid';
+		SBGridProperties.jsonref = 'ct_data.resources';
+		SBGridProperties.selectmode = 'free';
+
+		SBGridProperties.columns = [
+			{caption : ['학원명'],		ref : 'academy',		width : '150px',	style : 'text-align:center',	type : 'output'},
+			{caption : ['설립자(성명)'],	ref : 'name',			width : '150px',	style : 'text-align:center',	type : 'input'},
+			{caption : ['전화번호'],		ref : 'phone',			width : '120px',	style : 'text-align:center',	type : 'input'},
+			{caption : ['학원주소'],		ref : 'addr',			width : '450px',	style : 'text-align:center',	type : 'textarea'},
+			{caption : ['교습과정'],		ref : 'curriculum',		width : '100px',	style : 'text-align:center',	type : 'combo', typeinfo :{ ref : 'newComboData', displayui : true, label : 'label', value : 'value'}},
+			{caption : ['교습과목(반)'],	ref : 'class',			width : '200px',	style : 'text-align:center',	type : 'input'},
+			{caption : ['정원'],		 	ref : 'maxstudent',		width : '70px',	style : 'text-align:center',	type : 'input', format : {type:'string', rule:'@ "명"'}},
+			{caption : ['교습기간'],		ref : 'term',			width : '100px',	style : 'text-align:center',	type : 'input'},
+			{caption : ['교육시작일'],		ref : 'startday',		width : '100px',	style : 'text-align:center',	type : 'datepicker', typeinfo : {locale : 'ko' , dateformat :'yymmdd'}, format : {type:'date', rule:'yyyy-mm-dd', origin : 'yyyymmdd' }},
+			{caption : ['총교습시간(분)'],   ref : 'totalminute',		width : '100px',	style : 'text-align:center',	type : 'input'},
+			{caption : ['교습비'],		ref : 'pay',			width : '100px',	style : 'text-align:center',	type : 'input', format : {type:'number', rule:'#,###'}},
+			{caption : ['강사수'],		ref : 'teacher',			width : '70px',	style : 'text-align:center',	type : 'input'}
+		];
+		datagrid = _SBGrid.create(SBGridProperties);
+	};		
+			</pre>
+		</div>
+		<div class="example_box_m">
+			<pre>	
+    function  fnGetPrevCellDataInfo(){
+        var cellData = <span class="highlight1">datagrid.getPrevCellDataInfo()</span>;
+        $(".rowIndex").text(cellData.row);
+        $(".colIndex").text(cellData.col);
+        $(".cellData").text(cellData.data);
+    };
+			</pre>
+		</div>
+		<p class="ctext4">Sample</p>	
+		<div class="gridDiv">
+			cell을 더블 클릭해 해당 셀의 데이터를 변경 후 버튼을 클릭하여 변경 전 데이터 정보를 확인해보세요.<br>
+			*  변경된 데이터의 행 : <span class="rowIndex">-1</span>, 변경된 데이터의 열 : <span class="colIndex">-1</span>, 변경 전 데이터 : <span class="cellData"></span>
+			<input type="button" class="buttonStyle" value="getPrevCellDataInfo" onclick="fnGetPrevCellDataInfo()">
+			<div id="SBGridArea" class="gridStyle"></div>
+		</div>
+	</body>
+</html>

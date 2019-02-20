@@ -1,0 +1,146 @@
+@charset "utf-8";
+
+
+
+/* Reset */
+h1, h2, h3, h4, h5, h6,
+div, p, blockquote, pre, address,
+ul, ol, li, dl, dt, dd,
+table, caption, th, td,
+form, fieldset, legend,
+hr {
+	margin:0;
+	padding:0;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-size:100%;
+}
+ul, ol {
+	list-style:none;
+}
+table {
+	margin:0;
+	padding:0;
+	border-spacing:0;
+	border:0;
+	_border-collapse:collapse;
+}
+*+html table {border-collapse:collapse;}
+img, fieldset, abbr, acronym {
+	border:0;
+}
+address, caption, cite, code, dfn, em, var {
+	font-style:normal;
+	font-weight:normal;
+}
+q:before, q:after {
+	content: '';
+}
+input, select, button, textarea {
+	margin:0;
+	color:#757575;
+	font-size:100%;
+	font-family:'dotum';
+}
+
+/* Base */
+html {
+	height:100%;
+}
+body {
+	margin:0;
+	padding:0;
+	color:#555;
+	font:12px/18px Dotum, '돋움', sans-serif;
+	width:100%;
+	height:100%;
+	overflow: auto;
+}
+hr {display:none}
+caption, legend, 
+#skipNavi {
+	width:0;
+	height:0;
+	line-height:0;
+	overflow:hidden;
+	visibility:hidden;
+	font-size:0;
+}
+a {
+	color:#6e6e6e;
+	text-decoration:none;
+}
+a:focus, a:hover, a:active {
+	text-decoration:underline;
+}
+input.text,
+textarea.textarea {
+	padding:2px 0;
+	border:1px solid #d9d9d9;
+}
+
+input.button, input.submit , input.image,
+button {
+	cursor:pointer;
+}
+textarea, pre {
+	overflow:auto;
+}
+.clearfix:after  {
+	content:".";
+	display:block;
+	height:0;
+	clear:both;
+	visibility:hidden;
+}
+.clearfix {display: inline-block;}
+/* Hides from IE-mac \*/
+* html .clearfix {height: 1%;}
+.clearfix   {display: block;}
+/* End hide from IE-mac */
+
+.cboth {
+	clear:both;
+}
+.invisible {
+	overflow:hidden;
+	visibility:hidden;
+	position:absolute;
+	width:0;
+	height:0;
+	font-size:0;
+	line-height:0;
+}
+.accessibility01 {
+	display: block;
+	font-size: 1.3em;
+	left: 0;
+	position: absolute;
+	text-align: center;
+	top: -10000px;
+	width: 100%;
+	z-index: 5000;
+}
+.accessibility01:hover, .accessibility01:active, .accessibility01:focus {
+	background: none repeat scroll 0 0 #1D60A7;
+	color: #FFFFFF;
+	font-weight: bold;
+	padding: 15px 0;
+	position: absolute;
+	top: 0;
+	z-index: 5000;
+}
+
+
+input,
+select { outline-style:none;}
+
+input.text {height:15px; margin:0;padding:3px 0 3px 5px;border:1px solid #ccc;vertical-align:middle;font-size:12px;line-height:13px; outline-style:none; }
+input.text:focus { border:1px solid #0067af;}
+img { vertical-align:middle;}
+
+/* input type */
+input[type="checkbox"]{width:13px; height:13px; margin:0 4px 0 0; padding:0; vertical-align:middle;}
+input[type="radio"]{ width:13px; height:13px; margin:0 4px 0 0; padding:0; vertical-align:middle;}
+
+

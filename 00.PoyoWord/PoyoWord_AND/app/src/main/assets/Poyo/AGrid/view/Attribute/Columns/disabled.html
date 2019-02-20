@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1;text/html; charset=utf-8;" />
+
+		<script>
+			var SBpath = "../../../js/";
+		</script>
+		
+		<script src="../../../js/SBGrid/SBGrid_Lib.js" type="text/javascript"></script>
+		<script src="../../../js/SBGrid/SBGrid_min.js" type="text/javascript"></script>
+		<link href="../../../js/SBGrid/css/SBGrid.css" rel="stylesheet" type="text/css">
+		<link href="../../../js/SBGrid/css/SBGrid_Default.css" rel="stylesheet" type="text/css">
+		<link href="../../../css/basic.css" rel="stylesheet" type="text/css">
+		<link href="../../../css/common.css" rel="stylesheet" type="text/css">
+		<script src="../../../data/data.js" type="text/javascript"></script>
+		<script src="../../../js/toggle/toggle_attr.js" type="text/javascript"></script>
+		<script src="../../../js/common.js" type="text/javascript"></script>
+
+		<title>disabled</title>
+
+		<script type="text/javascript">
+			var datagrid;
+			var SBGridProperties = {};
+			
+			function createGrid(){
+				
+				SBGridProperties.parentid = 'SBGridArea';
+				SBGridProperties.id = 'datagrid';
+				SBGridProperties.jsonref = 'ct_data.gridData';
+				SBGridProperties.filtering = true;
+				SBGridProperties.selectmode = 'free';
+				SBGridProperties.columns = [
+					{caption : ['기본정보','나이'],		ref : 'age',		width : '80px',	style : 'text-align:center',	type : 'input' , 	typeinfo :{maxlength : 5}, round : {type : 'floor', position : -2},disabled : true },
+					{caption : ['기본정보','국적'],			ref : 'nation',		width : '100px',	style : 'text-align:center',	type : 'combo' , 	typeinfo : {ref:'comboData', label:'label', value:'value' , itemcount : 4, 'displayui':true},disabled : true },
+					{caption : ['기본정보','도시'],		ref : 'nation2',	width : '100px',	style : 'text-align:center',	type : 'inputcombo' , 	typeinfo : {ref:'combofilteringData', label:'label', value:'value' , itemcount : 4},disabled : true },
+					{caption : ['기본정보','결혼여부'],		ref : 'married',	width : '80px',		style : 'text-align:center',	type : 'checkbox', 	typeinfo : {checkedvalue : 'T', uncheckedvalue : 'F'},disabled : true },
+					{caption : ['기본정보','생년월일'],		ref : 'birth',		width : '90px',		style : 'text-align:center',	type : 'datepicker',typeinfo : {locale : 'en' , dateformat :'yymmdd'}, format : {type:'date', rule:'yyyy-mm-dd', origin : 'yyyymmdd' },disabled : true},
+					{caption : ['기본정보','입사일'],		ref : 'hiredate',	width : '120px',	style : 'text-align:center',	type : 'inputdate', typeinfo : {locale : 'ko', dateformat :'yymmdd' },disabled : true },
+					{caption : ['기본정보','팀장여부'],		ref : 'leader',		width : '80px',		style : 'text-align:center',	type : 'radio' ,skipkeyfocus : true,disabled : true},
+					{caption : ['부수정보','주소'],			ref : 'addr',		width : '250px',	style : 'text-align:center',	type : 'textarea',disabled : true },
+					{caption : ['부수정보','전화번호'],		ref : 'tel',		width : '130px',	style : 'text-align:center', 	type : 'inputbutton',disabled : true}
+				];
+				datagrid = _SBGrid.create(SBGridProperties);
+			};
+		</script>
+	</head>
+
+	<body>
+		<div class="subTitle">
+			<h2 class="title">disabled</h2>
+		</div>
+
+		<p class="ctext4">Description</p>
+		<ul class="descList">
+			<li> ● 열을 disabled 상태로 설정합니다.</li>
+		</ul>
+		<p class="ctext4">Value</p>
+		<div class="example_box" style="width:90%;">
+			<pre>
+			
+	<span style="font-weight: bold;"> * 컬럼속성 : disabled : value1</span>
+	   - value1 <span style="font-weight: bold;">(필수)</span> : <span style="font-weight: bold;">[boolean]</span> disabled 여부
+		  → true			: disabled 설정
+		  → false (default)	: disabled 해제
+			</pre>
+		</div>
+			<div class="ctext4">Example
+				<input type="button" id = "clickb" class="buttonStyle" name="bt" value="code View" onclick="codeView()" />
+
+			</div>
+			
+			<div class="example_box_e" id="toggle">
+			<pre>
+			<span class="comment"></span>
+	var datagrid;
+	var SBGridProperties = {};
+
+	function createGrid(){
+	
+		SBGridProperties.parentid = 'SBGridArea';
+		SBGridProperties.id = 'datagrid';
+		SBGridProperties.jsonref = 'ct_data.gridData';
+		SBGridProperties.filtering = true;
+		SBGridProperties.selectmode = 'free';
+		SBGridProperties.columns = [
+			{caption : ['기본정보','나이'],		ref : 'age',		width : '80px',	style : 'text-align:center',	type : 'input' , 		typeinfo :{maxlength : 5}, round : {type : 'floor', position : -2},	<span class="highlight1">disabled : true</span> },
+			{caption : ['기본정보','국적'],		ref : 'nation',		width : '100px',	style : 'text-align:center',	type : 'combo' , 		typeinfo : {ref:'comboData', label:'label', value:'value' , itemcount : 4, 'displayui':true},	<span class="highlight1">disabled : true</span> },
+			{caption : ['기본정보','도시'],		ref : 'nation2',	width : '100px',	style : 'text-align:center',	type : 'inputcombo' , 	typeinfo : {ref:'combofilteringData', label:'label', value:'value' , itemcount : 4},	<span class="highlight1">disabled : true</span> },
+			{caption : ['기본정보','결혼여부'],	ref : 'married',	width : '80px',	style : 'text-align:center',	type : 'checkbox', 		typeinfo : {checkedvalue : 'T', uncheckedvalue : 'F'},	<span class="highlight1">disabled : true</span> },
+			{caption : ['기본정보','생년월일'],	ref : 'birth',		width : '90px',	style : 'text-align:center',	type : 'datepicker',		typeinfo : {locale : 'en' , dateformat :'yymmdd'}, format : {type:'date', rule:'yyyy-mm-dd', origin : 'yyyymmdd' },	<span class="highlight1">disabled : true</span>},
+			{caption : ['기본정보','입사일'],	ref : 'hiredate',	width : '120px',	style : 'text-align:center',	type : 'inputdate', 		typeinfo : {locale : 'ko', dateformat :'yymmdd' },	<span class="highlight1">disabled : true</span> },
+			{caption : ['기본정보','팀장여부'],	ref : 'leader',		width : '80px',	style : 'text-align:center',	type : 'radio' ,skipkeyfocus : true,	<span class="highlight1">disabled : true</span>},
+			{caption : ['부수정보','주소'],		ref : 'addr',		width : '250px',	style : 'text-align:center',	type : 'textarea',	<span class="highlight1">disabled : true</span> },
+			{caption : ['부수정보','전화번호'],	ref : 'tel',			width : '130px',	style : 'text-align:center', 	type : 'inputbutton', <span class="highlight1">disabled : true</span>}
+		];
+		datagrid = _SBGrid.create(SBGridProperties);		
+	};
+			</pre>
+		</div>
+		<p class="ctext4">Sample</p>
+		<div class="gridDiv">
+			셀을 클릭하여 비활성화 상태를 확인해보세요.
+			<div id="SBGridArea" class="gridStyle"></div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1;text/html; charset=utf-8;" />
+
+		<script>
+			var SBpath = "../../js/";
+		</script>
+		
+		<script src="../../js/SBGrid/SBGrid_Lib.js" type="text/javascript"></script>
+		<script src="../../js/SBGrid/SBGrid_min.js" type="text/javascript"></script>
+		<link href="../../js/SBGrid/css/SBGrid.css" rel="stylesheet" type="text/css">
+		<link href="../../js/SBGrid/css/SBGrid_Default.css" rel="stylesheet" type="text/css">
+		<link href="../../css/basic.css" rel="stylesheet" type="text/css">
+		<link href="../../css/common.css" rel="stylesheet" type="text/css">
+		<script src="../../data/data.js" type="text/javascript"></script>
+		<script src="../../js/toggle/toggle_attr.js" type="text/javascript"></script>
+		<script src="../../js/common.js" type="text/javascript"></script>
+		
+		<title>events</title>
+		<script type="text/javascript">
+			var datagrid1,datagrid2;			
+			var SBGridProperties1 = {};
+			var SBGridProperties2 = {};
+			
+			function createGrid(){
+				
+				SBGridProperties1.parentid = 'SBGridArea1';
+				SBGridProperties1.id = 'datagrid1';
+				SBGridProperties1.jsonref = 'gridData1';
+				SBGridProperties1.extendlastcol = 'scroll'
+				SBGridProperties1.mergecells = 'byrestriccol';
+				SBGridProperties1.datamergefalseskip = true;
+				SBGridProperties1.columns = [
+					{caption : ['이벤트명'],	ref : 'name',	width : '150px',	style : 'text-align:center',	type : 'output'},
+					{caption : ['이벤트 설명'],	ref : 'desc',	width : '555px',	style : 'text-align:left',	type : 'output'},
+					{caption : ['관련 속성'],	ref : 'attribute',	width : '110px',	style : 'text-align:left',	type : 'output', merge:false},
+					{caption : ['관련 메소드'],	ref : 'method',	width : '130px',	style : 'text-align:left',	type : 'output', merge:false},
+					{caption : ['비고'],		ref : 'note',	width : '500px',	style : 'text-align:left',	type : 'output'}
+				];
+				datagrid1 = _SBGrid.create(SBGridProperties1);
+				
+				SBGridProperties2.parentid = 'SBGridArea2';
+				SBGridProperties2.id = 'datagrid2';
+				SBGridProperties2.jsonref = 'gridData2';
+				SBGridProperties2.extendlastcol = 'scroll'
+				SBGridProperties2.mergecells = 'byrestriccol';
+				SBGridProperties2.datamergefalseskip = true;
+				SBGridProperties2.columns = [
+					{caption : ['이벤트명'],	ref : 'name',	width : '150px',	style : 'text-align:center',	type : 'output'},
+					{caption : ['이벤트 설명'],	ref : 'desc',	width : '555px',	style : 'text-align:left',	type : 'output'},
+					{caption : ['관련 속성'],	ref : 'attribute',	width : '110px',	style : 'text-align:left',	type : 'output',merge:false},
+					{caption : ['관련 메소드'],	ref : 'method',	width : '130px',	style : 'text-align:left',	type : 'output', merge:false},
+					{caption : ['비고'],		ref : 'note',	width : '500px',	style : 'text-align:left',	type : 'output'}
+				];
+				datagrid2 = _SBGrid.create(SBGridProperties2);
+				datagrid1.bind('dblclick','fnDblclick');
+				datagrid2.bind('dblclick','fnDblclick');
+			};
+			
+			function fnDblclick(){
+				var gridId = _SBGrid.getLastFocusGrid();
+				var nRow = eval(gridId).getRow();
+				if(gridId=="datagrid1"){
+					window.open("./HTML/"+datagrid1.getCellData(nRow,0)+".html", "content");
+				} else{
+					window.open("./Custom/"+datagrid2.getCellData(nRow,0)+".html", "content");
+				}
+			}
+		</script>
+	</head>
+
+	<body>
+		<div class="subTitle">
+			<h2 class="title">all events</h2>			
+		</div>
+		더블클릭시 해당 event의 상세한 설명으로 넘어갑니다.
+		<p class="ctext4">HTML</p>
+		<div id="SBGridArea1" class="eventGridStyle"></div>
+		<br>
+		<p class="ctext4">Custom</p>
+		<div id="SBGridArea2" class="eventGridStyle"></div>	
+		<br>
+	</body>
+</html>

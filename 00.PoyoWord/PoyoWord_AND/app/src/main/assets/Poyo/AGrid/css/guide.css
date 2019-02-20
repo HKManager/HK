@@ -1,0 +1,40 @@
+@charset "utf-8";
+
+.btn_basics { font-size:12px; line-height:12px;}
+.btn_basics input { vertical-align:top;}
+.btn_basics a { display:inline-block;}
+
+
+.btn_basics .bg_blue { display:inline-block; padding:0 0 0 4px; background:url('../images/btnCmLeft.gif') no-repeat left top; color:#525252;}
+.btn_basics .bg_blue .cont{ display:inline-block; padding:5px 13px 5px 8px; background:url('../images/btnCmRight.gif') repeat-x right top; font-size:12px; color:#fff; font-weight:bold;}
+
+.btn_basics .bg_default { display:inline-block; padding:0 0 0 4px; background:url('../images/btn/btn_guide_button_left_nomal.gif') no-repeat left top; color:#525252;}
+.btn_basics .bg_default .cont{ display:inline-block; padding:5px 13px 6px 8px; background:url('../images/btn/btn_guide_button_right_nomal.gif') repeat-x right top; font-size:12px; color:#333;}
+
+.btn_basics .bg_Idefault { display:inline-block; padding:0 0 0 4px; background:url('../images/btn/btn_guide_button_left_Inomal.gif') no-repeat left top; color:#525252;}
+.btn_basics .bg_Idefault .cont{ display:inline-block; padding:5px 13px 5px 8px; background:url('../images/btn/btn_guide_button_right_Inomal.gif') repeat-x right top; font-size:12px; color:#333;}
+
+.btn_basics .bg_11default { display:inline-block; padding:0 0 0 4px; background:url('../images/btn/btn_guide_button_left_11nomal.gif') no-repeat left top; color:#525252;}
+.btn_basics .bg_11default .cont{ display:inline-block; padding:2px 7px 2px 7px; background:url('../images/btn/btn_guide_button_right_11nomal.gif') repeat-x right top; font-size:11px; color:#7b7b7b;}
+
+.btn_basics .bg_purchase { display:inline-block; padding:0 0 0 4px; background:url('../images/btn/btn_guide_button_left_purchase.gif') no-repeat left top; color:#525252;}
+.btn_basics .bg_purchase .cont{ display:inline-block; padding:5px 13px 6px 8px; background:url('../images/btn/btn_guide_button_right_purchase.gif') repeat-x right top; font-size:12px; color:#333;}
+
+.btn_basics .bg_down { display:inline-block; padding:0 0 0 4px; background:url('../images/btn/btn_guide_button_left_down.gif') no-repeat left top; color:#525252;}
+.btn_basics .bg_down .cont{ display:inline-block; padding:5px 13px 6px 8px; background:url('../images/btn/btn_guide_button_right_down.gif') repeat-x right top; font-size:12px; color:#333;}
+
+.btn_basics .bg_use { display:inline-block; padding:0 0 0 4px; background:url('../images/btn/btn_guide_button_left_use.gif') no-repeat left top; color:#525252;}
+.btn_basics .bg_use .cont{ display:inline-block; padding:5px 13px 6px 8px; background:url('../images/btn/btn_guide_button_right_use.gif') repeat-x right top; font-size:12px; color:#333;}
+
+.btn_basics .bg_trade { display:inline-block; padding:0 0 0 4px; background:url('../images/btn/btn_guide_button_left_trade.gif') no-repeat left top; color:#525252;}
+.btn_basics .bg_trade .cont{ display:inline-block; padding:5px 13px 6px 8px; background:url('../images/btn/btn_guide_button_right_trade.gif') repeat-x right top; font-size:12px; color:#333;}
+
+.btn_basics .bg_view { display:inline-block; padding:0 0 0 4px; background:url('../images/btn/btn_guide_button_left_view.gif') no-repeat left top; color:#525252;}
+.btn_basics .bg_view .cont{ display:inline-block; padding:5px 13px 6px 8px; background:url('../images/btn/btn_guide_button_right_view.gif') repeat-x right top; font-size:12px; color:#333;}
+
+.btn_basics .bg_link { display:inline-block; padding:0 0 0 4px; background:url('../images/btn/btn_guide_button_left_link.gif') no-repeat left top; color:#525252;}
+.btn_basics .bg_link .cont{ display:inline-block; padding:5px 13px 6px 8px; background:url('../images/btn/btn_guide_button_right_link.gif') repeat-x right top; font-size:12px; color:#333;}
+
+.btn_basics .w60 { width:60px; text-align:center;}
+.btn_basics .w72 { width:72px; text-align:center;}
+.btn_basics .w160 { width:160px; text-align:center;}

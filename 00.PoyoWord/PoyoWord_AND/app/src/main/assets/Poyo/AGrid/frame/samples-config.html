@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<title>SBGrid Edu.</title>
+
+	<link href="../css/common.css" rel="stylesheet" type="text/css">
+	<link href="../css/sample.css" rel="stylesheet" type="text/css">
+	
+	<script src="../js/jquery/jquery.js" type="text/javascript"></script>	
+</head>
+
+<body>
+    <div class="subTitle">
+        <h2 class="title">구성</h2>
+    </div>
+
+    <p class="ctext4">Description</p>
+    <ul class="descList">
+        그리드를 구성하기 위해서 아래와 같이 기본 구성을 합니다.<br>
+        (* resources 폴더 하위에 제품이 위치하였다고 가정합니다.)
+    </ul>
+    <pre style="font-size:13px;font-famaily:'나눔고딕','맑은고딕'; background : #fff;border : 1px solid #4486ff; width : 98%;">
+&nbsp;	
+
+	&lt;head&gt;	
+
+	&lt;!-- 제품위치 설정을 하는 제품 상대경로입니다. SBGrid 폴더의 상위까지 설정합니다. --&gt;
+	&lt;script type="text/javascript"&gt;			
+		var SBpath = "../../resources/";
+	&lt;/script&gt;
+
+	&lt;!-- 그리드를 표시하기 위한 CSS --&gt;
+	&lt;link type="text/css" rel="stylesheet" href="/resources/SBGrid/css/SBGrid.css"&gt;
+	&lt;link type="text/css" rel="stylesheet" href="/resources/SBGrid/css/SBGrid_Default.css"&gt;
+	&lt;style type="text/css"&gt&lt;/style&gt;
+
+	&lt;!-- SBGrid 제품 설정 --&gt;
+	&lt;script src="/resources/SBGrid/SBGrid_Lib.js" type="text/javascript"&gt&lt;/script&gt; 
+	&lt;script src="/resources/SBGrid/SBGrid_min.js" type="text/javascript"&gt&lt;/script&gt; 
+	
+	&lt;script type="text/javascript"&gt;
+		var datagrid; // 그리드를 담기위한 객체를 선언합니다.
+
+		$(document).ready(function(){
+			createElements();
+		});
+	
+		function createElements(){
+			var SBGridProperties = {};                
+			SBGridProperties.parentid = 'sbGridArea';  // [필수] 그리드 영역의 div id 입니다.            
+			SBGridProperties.id = 'datagrid';          // [필수] 그리드를 담기위한 객체명과 동일하게 입력합니다.                
+			SBGridProperties.jsonref = 'attr_list';    // [필수] 그리드의 데이터를 나타내기 위한 json data 객체명을 입력합니다.
+                
+			SBGridProperties.width = '300px';     // 위의 div id 영역(sbGridArea)에 그리드의 너비와 폭을 입력하지 않았을때 width 와 height 를 입력합니다.
+			SBGridProperties.height = '300px';    // [그리드의 너비와 폭은 반드시 설정되어야 합니다]
+
+			// 그리드의 여러 속성들을 입력합니다.
+			SBGridProperties.extendlastcol = 'scroll';
+			SBGridProperties.tooltip = true;
+			SBGridProperties.ellipsis = true;
+			SBGridProperties.backcoloralternate = '#FFF2FF';
+
+			// [필수] 그리드의 컬럼을 입력합니다.  
+			SBGridProperties.columns = [
+				{caption : ['Category'],	ref : 'list',		width : '80px',	  style : 'text-align:center',	type : 'output'},
+				{caption : ['Descrption'],	ref : 'description',width : '130px',  style : 'text-align:center',	type : 'output'}	
+			];			
+			datagrid = _SBGrid.create(SBGridProperties); // 만들어진 SBGridProperties 객체를 파라메터로 전달합니다.
+			
+			datagrid.bind('onclick','function명');  // 그리드 내 이벤트에 대한 설정입니다.
+		}
+	&lt;/script&gt;	
+
+	&lt;/head&gt;	
+
+	&lt;body&gt;	
+        ... 중략
+		&lt;div id="sbGridArea"&gt&lt;/div&gt
+		... 중략
+	&lt;/body&gt;	
+&nbsp;
+		</pre>
+<br>
+		<br>
+	</p>	
+	<table style="width:100%">
+		<tr style="text-align:center;font-size:13px;">
+			<td>Copyright© by 2015 Softbowl. Co. Ltd., All Rights Reserved.
+			</td>
+		</tr>
+	</table>
+	<br>
+</body>
+</html>

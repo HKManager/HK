@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1;text/html; charset=utf-8;" />
+
+		<script>
+			var SBpath = "../../../js/";
+		</script>
+		<script src="../../../js/SBGrid/SBGrid_Lib.js" type="text/javascript"></script>
+		<script src="../../../js/SBGrid/SBGrid_min.js" type="text/javascript"></script>
+		<link href="../../../js/SBGrid/css/SBGrid.css" rel="stylesheet" type="text/css">
+		<link href="../../../js/SBGrid/css/SBGrid_Default.css" rel="stylesheet" type="text/css">
+		<link href="../../../css/basic.css" rel="stylesheet" type="text/css">
+		<link href="../../../css/common.css" rel="stylesheet" type="text/css">
+		<script src="../../../data/data.js" type="text/javascript"></script>
+		<script src="../../../js/toggle/toggle.js" type="text/javascript"></script>
+		<script src="../../../js/common.js" type="text/javascript"></script>
+		
+		<title>setRowData</title>
+
+		<script type="text/javascript">
+	    	var datagrid;
+			var SBGridProperties = {};
+			
+			function createGrid(){
+				SBGridProperties.parentid = 'SBGridArea';
+				SBGridProperties.id = 'datagrid';
+				SBGridProperties.jsonref = 'ct_data.resources';
+				
+				SBGridProperties.columns = [
+					{caption : ['학원명'],		ref : 'academy',		width : '150px',	style : 'text-align:center',	type : 'output'},
+					{caption : ['설립자(성명)'],	ref : 'name',			width : '150px',	style : 'text-align:center',	type : 'input'},
+					{caption : ['전화번호'],		ref : 'phone',			width : '120px',	style : 'text-align:center',	type : 'input'},
+					{caption : ['학원주소'],		ref : 'addr',			width : '450px',	style : 'text-align:center',	type : 'textarea'},
+					{caption : ['교습과정'],		ref : 'curriculum',		width : '100px',	style : 'text-align:center',	type : 'combo', typeinfo :{ ref : 'newComboData', displayui : true, label : 'label', value : 'value'}},
+					{caption : ['교습과목(반)'],	ref : 'class',			width : '200px',	style : 'text-align:center',	type : 'input'},
+					{caption : ['정원'],		 	ref : 'maxstudent',		width : '70px',	style : 'text-align:center',	type : 'input', format : {type:'string', rule:'@ "명"'}},
+					{caption : ['교습기간'],		ref : 'term',			width : '100px',	style : 'text-align:center',	type : 'input'},
+					{caption : ['교육시작일'],		ref : 'startday',		width : '100px',	style : 'text-align:center',	type : 'datepicker', typeinfo : {locale : 'ko' , dateformat :'yymmdd'}, format : {type:'date', rule:'yyyy-mm-dd', origin : 'yyyymmdd' }},
+					{caption : ['총교습시간(분)'],   ref : 'totalminute',		width : '100px',	style : 'text-align:center',	type : 'input'},
+					{caption : ['교습비'],		ref : 'pay',			width : '100px',	style : 'text-align:center',	type : 'input', format : {type:'number', rule:'#,###'}},
+					{caption : ['강사수'],		ref : 'teacher',			width : '70px',	style : 'text-align:center',	type : 'input'}
+				];
+				datagrid = _SBGrid.create(SBGridProperties);
+			};
+			
+			function fnSetRowData(){
+				var nRow 	= datagrid.getRow();
+				var data={academy : $('.input1').val(), addr : $('.input4').val(),  name : $('.input2').val(), phone : $('.input3').val(), curriculum : $('.input5').val(), class : $('.input6').val(), maxstudent : $('.input7').val(), term : $('.input8').val(), startday : $('.input9').val(), totalminute : $('.input10').val(),pay : $('.input11').val(), teacher : $('.input12').val()};
+				
+				datagrid.setRowData(nRow, data);
+			};				
+
+		</script>
+	</head>
+
+	<body>
+		<div class="subTitle">
+			<h2 class="title">setRowData</h2>
+		</div>
+		
+		<p class="ctext4">Description</p>
+		<ul class="descList">
+			<li> ● 선택한 행에 데이터를 입력하거나 변경합니다.</li>
+		</ul>
+		<p class="ctext4">Parameter</p>
+		<div class="example_box">
+<pre >
+	
+	 <span style="font-weight: bold;">* 메소드 : datagrid.setRowData(param1, param2, param3);</span>
+	   - param1 <span style="font-weight: bold;">(필수)</span> : <span style="font-weight: bold;">[number]</span> 행 인덱스
+	   - param2 <span style="font-weight: bold;">(필수)</span> : <span style="font-weight: bold;">[json string]</span> 입력할 데이터의 값({ref1:"value1",ref2 : "value2", ...} 의 형식으로 작성)
+	   - param3 <span style="font-weight: bold;">(선택)</span> : <span style="font-weight: bold;">[boolean]</span> 데이터 갱신 후 그리드의 refresh 여부
+		  → true (default)	: refresh 실행 
+		  → false			: refresh 미실행
+			</pre>
+		</div>		
+		
+		<div class="ctext4">Example
+			<input type="button" id = "clickb" class="buttonStyle" name="bt" value="code View" onclick="codeView()" />
+		</div>
+			
+		<div class="example_box_a" id="toggle2">
+		<pre>
+			<span class="comment"></span>
+	var datagrid;	
+	var SBGridProperties = {};
+	
+	function createGrid(){
+		
+		SBGridProperties.parentid = 'SBGridArea';
+		SBGridProperties.id = 'datagrid';
+		SBGridProperties.jsonref = 'ct_data.resources';
+
+		SBGridProperties.columns = [
+			{caption : ['학원명'],		ref : 'academy',		width : '150px',	style : 'text-align:center',	type : 'output'},
+			{caption : ['설립자(성명)'],	ref : 'name',			width : '150px',	style : 'text-align:center',	type : 'input'},
+			{caption : ['전화번호'],		ref : 'phone',			width : '120px',	style : 'text-align:center',	type : 'input'},
+			{caption : ['학원주소'],		ref : 'addr',			width : '450px',	style : 'text-align:center',	type : 'textarea'},
+			{caption : ['교습과정'],		ref : 'curriculum',		width : '100px',	style : 'text-align:center',	type : 'combo', typeinfo :{ ref : 'newComboData', displayui : true, label : 'label', value : 'value'}},
+			{caption : ['교습과목(반)'],	ref : 'class',			width : '200px',	style : 'text-align:center',	type : 'input'},
+			{caption : ['정원'],		 	ref : 'maxstudent',		width : '70px',	style : 'text-align:center',	type : 'input', format : {type:'string', rule:'@ "명"'}},
+			{caption : ['교습기간'],		ref : 'term',			width : '100px',	style : 'text-align:center',	type : 'input'},
+			{caption : ['교육시작일'],		ref : 'startday',		width : '100px',	style : 'text-align:center',	type : 'datepicker', typeinfo : {locale : 'ko' , dateformat :'yymmdd'}, format : {type:'date', rule:'yyyy-mm-dd', origin : 'yyyymmdd' }},
+			{caption : ['총교습시간(분)'],   ref : 'totalminute',		width : '100px',	style : 'text-align:center',	type : 'input'},
+			{caption : ['교습비'],		ref : 'pay',			width : '100px',	style : 'text-align:center',	type : 'input', format : {type:'number', rule:'#,###'}},
+			{caption : ['강사수'],		ref : 'teacher',			width : '70px',	style : 'text-align:center',	type : 'input'}
+		];
+		datagrid = _SBGrid.create(SBGridProperties);
+	};		
+		</pre>
+	</div>
+	<div class="example_box_m">
+	<pre>	
+	function fnSetRowData(){							
+		var nRow = datagrid.getRow();
+		var data={academy : $('.input1').val(), addr : $('.input4').val(),  name : $('.input2').val(),
+				phone : $('.input3').val(), curriculum : $('.input5').val(), class : $('.input6').val(),
+				maxstudent : $('.input7').val(), term : $('.input8').val(), startday : $('.input9').val(),
+				totalminute : $('.input10').val(),pay : $('.input11').val(), teacher : $('.input12').val()};
+
+		<span class="highlight1">datagrid.setRowData(nRow, data);</span>
+	};	
+			</pre>
+		</div>
+		<p class="ctext4">Sample</p>	
+		
+		<div class="gridDiv">
+			행을 선택하고 변경할 값을 입력한 후 버튼을 눌러 확인해보세요.<br>
+			학원명 : <input type="text" class="inputStyle input1">
+			설립자 &nbsp;&nbsp;: <input type="text" class="inputStyle input2">
+			전화번호 : <input type="text" class="inputStyle input3">
+			학원주소 : <input type="text" class="inputStyle input4">
+			교습과정 : <input type="text" class="inputStyle input5">
+			교습과목 : <input type="text" class="inputStyle input6"><br>
+			정&nbsp;&nbsp;원 : <input type="text" class="inputStyle input7">
+			교습기간 : <input type="text" class="inputStyle input8">
+			시작일 &nbsp;&nbsp;: <input type="text" class="inputStyle input9">
+			총시간 &nbsp;&nbsp;: <input type="text" class="inputStyle input10">
+			교습비 &nbsp;&nbsp;: <input type="text" class="inputStyle input11">
+			강사수 &nbsp;&nbsp;: <input type="text" class="inputStyle input12"><br>
+		
+			<input type="button" class="buttonStyle" value="setRowData" onclick="fnSetRowData()">&nbsp;
+			<div id="SBGridArea" class="gridStyle"></div>	
+		</div>
+	</body>
+</html>

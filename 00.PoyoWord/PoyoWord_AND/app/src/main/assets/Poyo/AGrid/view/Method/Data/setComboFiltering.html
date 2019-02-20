@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1;text/html; charset=utf-8;" />
+
+		<script>
+			var SBpath = "../../../js/";
+		</script>
+		<script src="../../../js/SBGrid/SBGrid_Lib.js" type="text/javascript"></script>
+		<script src="../../../js/SBGrid/SBGrid_min.js" type="text/javascript"></script>
+		<link href="../../../js/SBGrid/css/SBGrid.css" rel="stylesheet" type="text/css">
+		<link href="../../../js/SBGrid/css/SBGrid_Default.css" rel="stylesheet" type="text/css">
+		<link href="../../../css/basic.css" rel="stylesheet" type="text/css">
+		<link href="../../../css/common.css" rel="stylesheet" type="text/css">
+		<script src="../../../data/data.js" type="text/javascript"></script>
+		<script src="../../../js/toggle/toggle.js" type="text/javascript"></script>
+		<script src="../../../js/common.js" type="text/javascript"></script>
+
+		<title>setComboFiltering</title>
+
+		<script type="text/javascript">
+			var datagrid;
+			var SBGridProperties = {};
+
+			function createGrid(){
+				SBGridProperties.parentid = 'SBGridArea';
+				SBGridProperties.id = 'datagrid';
+				SBGridProperties.jsonref = 'ct_data.gridData';
+				SBGridProperties.columns = [
+					{caption : ['기본정보','이름'],			ref : 'name',		width : '100px',	style : 'text-align:center',	type : 'output'},
+					{caption : ['기본정보','나이'],			ref : 'age',		width : '50px',		style : 'text-align:center',	type : 'input' ,		typeinfo : {maxlength:3 } },
+					{caption : ['기본정보','국적'],			ref : 'nation',		width : '100px',	style : 'text-align:center',	type : 'combo' ,		typeinfo : {ref:'comboData', label:'label', value:'value' , itemcount : 4, 'displayui':true} },
+					{caption : ['기본정보','도시'],		ref : 'nation2',	width : '120px',	style : 'text-align:center',	type : 'combo' ,		typeinfo : {ref:'combofilteringData', label:'label', value:'value', 'displayui':true}},
+					{caption : ['기본정보','결혼여부'],		ref : 'married',	width : '80px',		style : 'text-align:center',	type : 'checkbox',		typeinfo : {checkedvalue : 'T', uncheckedvalue : 'F'} },
+					{caption : ['기본정보','생년월일'],		ref : 'birth',		width : '90px',		style : 'text-align:center',	type : 'datepicker',	typeinfo : {locale : 'en' , dateformat :'yymmdd'}, format : {type:'date', rule:'yyyy-mm-dd', origin : 'yyyymmdd' }  },
+					{caption : ['기본정보','입사일'],		ref : 'hiredate',	width : '120px',	style : 'text-align:center',	type : 'inputdate',	typeinfo : {locale : 'ko', dateformat :'yymmdd' } },
+					{caption : ['기본정보','팀장여부'],		ref : 'leader',		width : '80px',		style : 'text-align:center',	type : 'radio' }
+				];
+				datagrid = _SBGrid.create(SBGridProperties);
+			};
+
+			function comboFiltering(){
+				datagrid.setComboFiltering(3,[{attrname : 'code', attrvalue : 'korea'}]);
+			};
+		</script>
+	</head>
+
+	<body>
+		<div class="subTitle">
+			<h2 class="title">setComboFiltering</h2>
+		</div>
+
+		<p class="ctext4">Description</p>
+		<ul class="descList">
+			<li> ● 입력한 인덱스번호에 해당하는 컬럼에 콤보 메뉴를 입력받은 필터링리스트에 값으로 적용합니다.</li>
+		</ul>
+		<p class="ctext4">Parameter</p>
+		<div class="example_box">
+			<pre >
+
+	 <span style="font-weight: bold;">* 메소드 : datagrid.setComboFiltering(param1,[{attrname : value1, attrvalue : value2}]);</span>
+	 - param1 <span style="font-weight: bold;">(필수)</span> : <span style="font-weight: bold;">[number]</span> 열 인덱스
+	 - value1 <span style="font-weight: bold;">(필수)</span> : <span style="font-weight: bold;">[string]</span> 필터링하려는 데이터의 속성명
+	 - value2 <span style="font-weight: bold;">(필수)</span> : <span style="font-weight: bold;">[string]</span> 필터링하려는 데이터 값
+			</pre>
+		</div>		
+
+		<div class="ctext4">Example
+			<input type="button" id = "clickb" class="buttonStyle" name="bt" value="code View" onclick="codeView()" />
+		</div>
+
+		<div class="example_box_a" id="toggle2">
+			<pre>
+			<span class="comment"></span>
+	var datagrid;	
+	var SBGridProperties = {};
+
+	function createGrid(){
+
+		SBGridProperties.parentid = 'SBGridArea';
+		SBGridProperties.id = 'datagrid';
+		SBGridProperties.jsonref = 'ct_data.gridData';
+		SBGridProperties.columns = [
+			{caption : ['기본정보','이름'],			ref : 'name',		width : '100px',	style : 'text-align:center',	type : 'output'},
+			{caption : ['기본정보','나이'],			ref : 'age',		width : '50px',		style : 'text-align:center',	type : 'input' ,		typeinfo : {maxlength:3 } },
+			{caption : ['기본정보','국적'],			ref : 'nation',		width : '100px',	style : 'text-align:center',	type : 'combo' ,		typeinfo : {ref:'comboData', label:'label', value:'value' , itemcount : 4, 'displayui':true} },
+			{caption : ['기본정보','도시'],		ref : 'nation2',	width : '120px',	style : 'text-align:center',	type : 'combo' ,		typeinfo : {ref:'combofilteringData', label:'label', value:'value', 'displayui':true}},
+			{caption : ['기본정보','결혼여부'],		ref : 'married',	width : '80px',		style : 'text-align:center',	type : 'checkbox',		typeinfo : {checkedvalue : 'T', uncheckedvalue : 'F'} },
+			{caption : ['기본정보','생년월일'],		ref : 'birth',		width : '90px',		style : 'text-align:center',	type : 'datepicker',	typeinfo : {locale : 'en' , dateformat :'yymmdd'}, format : {type:'date', rule:'yyyy-mm-dd', origin : 'yyyymmdd' }  },
+			{caption : ['기본정보','입사일'],		ref : 'hiredate',	width : '120px',	style : 'text-align:center',	type : 'inputdate',	typeinfo : {locale : 'ko', dateformat :'yymmdd' } },
+			{caption : ['기본정보','팀장여부'],		ref : 'leader',		width : '80px',		style : 'text-align:center',	type : 'radio' }
+		];
+		datagrid = _SBGrid.create(SBGridProperties);
+	};
+	
+		</pre>
+		</div>
+		<div class="example_box_m">
+			<pre>
+
+	function comboFiltering(){
+		<span class="highlight1">datagrid.setComboFiltering(3,[{attrname : 'code', attrvalue : 'Korea'}]);</span>
+	};
+			</pre>
+		</div>
+		<p class="ctext4">Sample</p>	
+
+		<div class="gridDiv">
+			버튼을 눌러 도시 컬럼을 확인해보세요.<br>
+			<input type="button" class="buttonStyle" value="setComboFiltering" onclick="comboFiltering()">&nbsp;
+			<div id="SBGridArea" class="gridStyle"></div>	
+		</div>
+	</body>
+</html>

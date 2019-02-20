@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1;text/html; charset=utf-8;" />
+		
+		<link href="../../css/basic.css" rel="stylesheet" type="text/css">
+		<link href="../../css/common.css" rel="stylesheet" type="text/css">
+		
+		<title>all themes</title>
+	</head>
+
+	<body>
+		<div class="subTitle">
+			<h2 class="title">all themes</h2>
+		</div>
+
+		<p class="ctext4">SBGrid 2.5 테마 구성</p>
+		<ul class="descList">
+			<li> ● 기존 테마에 Navy, Gray 테마가 추가되었습니다.</li>
+			<li> ● Default : SBGrid.css, SBGrid_Default.css</li>
+			<li> ● Navy : SBGrid_Navy.css, SBGrid_Navy_Default.css</li>
+			<li> ● Gray : SBGrid_Gray.css, SBGrid_Gray_Default.css</li>
+            <li> <span style="color:red;font-weight: bold;">※ SBGrid2.5.1543 버전부터 스타일 테마를 적용하실 수 있습니다.</span></li>
+		</ul>
+		<p class="ctext4">SBGrid 2.5 테마 적용 방법</p>
+		<ul class="descList">
+			<li> 1. 적용할 테마에 맞는 변수를 SBpath 아래에 선언합니다.
+                <ul style="margin-left:30px;">
+                    <li><span style="color:red;font-weight: bold;">Ex) SBtheme = “gray”;</span></li>
+                    <li><span style="color:red;font-weight: bold;">※ 테마 스타일 적용 시 SBtheme 는 반드시 소문자로 기재해 주셔야 합니다.</span></li>
+                </ul>
+			</li>
+			<li> 2. Default : SBGrid.css, SBGrid_Default.css
+			    <ul style="margin-left:30px;">
+                    <li>Ex)</li>
+                    <li><span style="color:red;font-weight: bold;">&lt;link href="../SBGrid/css/SBGrid_Gray.css" rel="stylesheet" type="text/css"&gt;</span></li>
+                    <li><span style="color:red;font-weight: bold;">&lt;link href="../SBGrid/css/SBGrid_Gray_Default.css" rel="stylesheet" type="text/css"&gt;</span></li>
+                </ul>
+			</li>
+		</ul>
+		<p class="ctext4">Example</p>
+		<div class="example_box">
+			<pre>
+			<span class="comment"></span>
+    &lt;!DOCTYPE html&gt;
+    &lt;html&gt;
+        &lt;head&gt;
+            &lt;title&gt;Style Sample&lt;/title&gt;
+
+            &lt;META http-equiv="Content-Type" content="text/html; charset=UTF-8"&gt;
+            &lt;meta content="initial-scale=1.0" name="viewport"&gt;
+            &lt;meta content="IE=edge, chrome=1" http-equiv="X-UA-Compatible"&gt;
+
+            &lt;script language="javascript"&gt;
+                var SBpath = "./";
+                <span class="highlight1">var SBtheme = "gray";</span>
+            &lt;script&gt;
+
+            &lt;!-- SBGrid CSS --&gt;
+            <span class="highlight1">&lt;link href="./SBGrid/css/SBGrid_Gray.css" rel="stylesheet" type="text/css"&gt;</span>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;// SBGrid v2.5 Library인 'SBGrid'폴더 상대경로
+            <span class="highlight1">&lt;link href="./SBGrid/css/SBGrid_Gray_Default.css" rel="stylesheet" type="text/css"&gt;</span>&emsp;&emsp;// CSS 스타일 적용 시 필수항목 입니다.
+			</pre>
+		</div>
+			<p class="ctext4">Sample</p>
+		<div class="gridDiv">
+            버튼을 클릭하여 변경된 테마를 확인해보세요.<br>
+            <input type="button" class="buttonStyle" onclick="openDefault()" value="Default Theme">
+            <input type="button" class="buttonStyle" onclick="openGray()" value="Gray Theme">
+            <input type="button" class="buttonStyle" onclick="openNavy()" value="Navy Theme">
+            <br><br>
+            <iframe id="gridFrm" class="iframeStyle" src="./default.html" frameborder="0"></iframe>
+		</div>
+		
+		<script>
+            function openDefault() {
+                var gridFrm = document.getElementById("gridFrm");
+                gridFrm.src="./default.html";
+            }
+            
+            function openGray() {
+                var gridFrm = document.getElementById("gridFrm");
+                gridFrm.src="./gray.html";
+            }
+            
+            function openNavy() {
+                var gridFrm = document.getElementById("gridFrm");
+                gridFrm.src="./navy.html";
+            }
+        </script>
+	</body>
+</html>
