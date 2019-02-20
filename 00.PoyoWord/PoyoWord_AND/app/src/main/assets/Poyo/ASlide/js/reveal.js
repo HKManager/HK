@@ -1029,51 +1029,53 @@ var Reveal = (function(){
 
 		if( dom.wrapper && !isPrintingPDF() ) {
 
+			// - 신인환 수정 화면 설정
 			// Available space to scale within
-			var availableWidth = dom.wrapper.offsetWidth,
-				availableHeight = dom.wrapper.offsetHeight;
+			// var availableWidth = dom.wrapper.offsetWidth,
+			// 	availableHeight = dom.wrapper.offsetHeight;
 
-			// Reduce available space by margin
-			availableWidth -= ( availableHeight * config.margin );
-			availableHeight -= ( availableHeight * config.margin );
+			// // Reduce available space by margin
+			// availableWidth -= ( availableHeight * config.margin );
+			// availableHeight -= ( availableHeight * config.margin );
 
-			// Dimensions of the content
-			var slideWidth = config.width,
-				slideHeight = config.height,
-				slidePadding = 20; // TODO Dig this out of DOM
+			// // Dimensions of the content
+			// var slideWidth = config.width,
+			// 	slideHeight = config.height,
+			// 	slidePadding = 20; // TODO Dig this out of DOM
 
-			// Layout the contents of the slides
-			layoutSlideContents( config.width, config.height, slidePadding );
+			// // Layout the contents of the slides
+			// layoutSlideContents( config.width, config.height, slidePadding );
 
-			// Slide width may be a percentage of available width
-			if( typeof slideWidth === 'string' && /%$/.test( slideWidth ) ) {
-				slideWidth = parseInt( slideWidth, 10 ) / 100 * availableWidth;
-			}
+			// // Slide width may be a percentage of available width
+			// if( typeof slideWidth === 'string' && /%$/.test( slideWidth ) ) {
+			// 	slideWidth = parseInt( slideWidth, 10 ) / 100 * availableWidth;
+			// }
 
-			// Slide height may be a percentage of available height
-			if( typeof slideHeight === 'string' && /%$/.test( slideHeight ) ) {
-				slideHeight = parseInt( slideHeight, 10 ) / 100 * availableHeight;
-			}
+			// // Slide height may be a percentage of available height
+			// if( typeof slideHeight === 'string' && /%$/.test( slideHeight ) ) {
+			// 	slideHeight = parseInt( slideHeight, 10 ) / 100 * availableHeight;
+			// }
 
-			dom.slides.style.width = slideWidth + 'px';
-			dom.slides.style.height = slideHeight + 'px';
+			// dom.slides.style.width = slideWidth + 'px';
+			// dom.slides.style.height = slideHeight + 'px';
 
 			// Determine scale of content to fit within available space
-			scale = Math.min( availableWidth / slideWidth, availableHeight / slideHeight );
+			// scale = Math.min( availableWidth / slideWidth, availableHeight / slideHeight );
 
-			// Respect max/min scale settings
-			scale = Math.max( scale, config.minScale );
-			scale = Math.min( scale, config.maxScale );
+			// // Respect max/min scale settings
+			// scale = Math.max( scale, config.minScale );
+			// scale = Math.min( scale, config.maxScale );
 
 			// Prefer applying scale via zoom since Chrome blurs scaled content
 			// with nested transforms
-			if( typeof dom.slides.style.zoom !== 'undefined' && !navigator.userAgent.match( /(iphone|ipod|ipad|android)/gi ) ) {
-				dom.slides.style.zoom = scale;
-			}
-			// Apply scale transform as a fallback
-			else {
-				transformElement( dom.slides, 'translate(-50%, -50%) scale('+ scale +') translate(50%, 50%)' );
-			}
+			// if( typeof dom.slides.style.zoom !== 'undefined' && !navigator.userAgent.match( /(iphone|ipod|ipad|android)/gi ) ) {
+			// 	dom.slides.style.zoom = scale;
+			// }
+			// // Apply scale transform as a fallback
+			// else {
+			// 	transformElement( dom.slides, 'translate(-50%, -50%) scale('+ scale +') translate(50%, 50%)' );
+			// }
+			// - 신인환 수정 화면 설정
 
 			// Select all slides, vertical and horizontal
 			var slides = toArray( document.querySelectorAll( SLIDES_SELECTOR ) );
@@ -1093,7 +1095,7 @@ var Reveal = (function(){
 						slide.style.top = 0;
 					}
 					else {
-						slide.style.top = Math.max( - ( getAbsoluteHeight( slide ) / 2 ) - slidePadding, -slideHeight / 2 ) + 'px';
+						//slide.style.top = Math.max( - ( getAbsoluteHeight( slide ) / 2 ) - slidePadding, -slideHeight / 2 ) + 'px';
 					}
 				}
 				else {
