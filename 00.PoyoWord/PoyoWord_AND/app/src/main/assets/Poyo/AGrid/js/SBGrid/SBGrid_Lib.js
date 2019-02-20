@@ -19,7 +19,7 @@ this.strScript +=
 /* third-party */
 '<script src="' + this.strSBGridPATH + 'js/lib/' 		+ 'json2.js' 											+ '" type="text/javascript"></script>' +
 '<script src="' + this.strSBGridPATH + 'js/lib/' 		+ 'underscore-min.js'									+ '" type="text/javascript"></script>' +
-'<script src="' + this.strSBGridPATH + 'js/lib/' 		+ 'jquery-1.11.3.min.js' 								+ '" type="text/javascript"></script>' +
+'<script src="' + this.strSBGridPATH + 'js/lib/' 		+ 'jquery-sbgrid.min.js' 								+ '" type="text/javascript"></script>' +
 
 /* data-structure */
 '<script src="' + this.strSBGridPATH + 'js/lib/ds/' 	+ 'hashtable.js' 										+ '" type="text/javascript"></script>' +
