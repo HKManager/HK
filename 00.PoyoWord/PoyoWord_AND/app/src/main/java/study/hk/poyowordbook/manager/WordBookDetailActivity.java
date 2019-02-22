@@ -11,9 +11,11 @@ import android.webkit.JsResult;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.Gson;
 
 import Event.EventData;
+import Query.Manager_WordBook;
 import study.hk.data.Data.HARDCODE;
 import study.hk.poyowordbook.R;
 
@@ -24,6 +26,9 @@ public class WordBookDetailActivity extends AppCompatActivity {
     private WebView lWebView = null;
 
     private Gson gson = new Gson();
+    private String WB_SN;
+    private ObjectMapper mapper = null;
+    private Manager_WordBook manager;
 
     @SuppressLint({ "SetJavaScriptEnabled", "JavascriptInterface" })
     @Override
@@ -32,6 +37,10 @@ public class WordBookDetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_word_book_detail);
 
         context = getApplicationContext();
+
+        WB_SN = getIntent().getExtras().getString("WB_SN");
+        mapper = new ObjectMapper();
+        manager = new Manager_WordBook(context);
 
         lWebView = (WebView)findViewById(R.id.mainView);
         lWebView.setWebViewClient(new WebViewClient() {

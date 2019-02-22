@@ -38,6 +38,7 @@ public class Manager_WordBook {
 
             map.put("WB_SN", cursor.getInt(cursor.getColumnIndex("WB_SN")));
             map.put("WB_NAME", cursor.getString(cursor.getColumnIndex("WB_NAME")));
+            map.put("WB_LEVEL_CD", cursor.getString(cursor.getColumnIndex("WB_LEVEL_CD")));
             map.put("WB_CNT_UNIT", cursor.getInt(cursor.getColumnIndex("WB_CNT_UNIT")));
             map.put("WB_CNT_WORD_UNIT", cursor.getInt(cursor.getColumnIndex("WB_CNT_WORD_UNIT")));
             map.put("WB_CNT_WORD", cursor.getInt(cursor.getColumnIndex("WB_CNT_WORD")));
@@ -66,7 +67,7 @@ public class Manager_WordBook {
 
         db = mHelper.getReadableDatabase();
 
-        String query = String.format(Query_WordAudLoc.GetData, WB_sN);
+        String query = String.format(Query_WordAudLoc.GetData, WB_SN);
 
         Cursor cursor;
         cursor = db.rawQuery(query, null);
@@ -77,6 +78,7 @@ public class Manager_WordBook {
 
             map.put("WB_SN", cursor.getInt(cursor.getColumnIndex("WB_SN")));
             map.put("WB_NAME", cursor.getString(cursor.getColumnIndex("WB_NAME")));
+            map.put("WB_LEVEL_CD", cursor.getString(cursor.getColumnIndex("WB_LEVEL_CD")));
             map.put("WB_CNT_UNIT", cursor.getInt(cursor.getColumnIndex("WB_CNT_UNIT")));
             map.put("WB_CNT_WORD_UNIT", cursor.getInt(cursor.getColumnIndex("WB_CNT_WORD_UNIT")));
             map.put("WB_CNT_WORD", cursor.getInt(cursor.getColumnIndex("WB_CNT_WORD")));
@@ -86,6 +88,23 @@ public class Manager_WordBook {
             map.put("WB_USEYN", cursor.getString(cursor.getColumnIndex("WB_USEYN")));
             map.put("WB_REGISTERDT", cursor.getString(cursor.getColumnIndex("WB_REGISTERDT")));
             map.put("WB_DESC", cursor.getString(cursor.getColumnIndex("WB_DESC")));
+
+            map.put("WORD_SN", cursor.getString(cursor.getColumnIndex("WORD_SN")));
+            map.put("WORD_UNIT_SN", cursor.getString(cursor.getColumnIndex("WORD_UNIT_SN")));
+            map.put("WORD_WORD", cursor.getString(cursor.getColumnIndex("WORD_WORD")));
+            map.put("WORD_MEAN", cursor.getString(cursor.getColumnIndex("WORD_MEAN")));
+            map.put("WORD_SPELLING", cursor.getString(cursor.getColumnIndex("WORD_SPELLING")));
+            map.put("WORD_SOUND", cursor.getString(cursor.getColumnIndex("WORD_SOUND")));
+            map.put("WORD_SOUND_FILE", cursor.getString(cursor.getColumnIndex("WORD_SOUND_FILE")));
+            map.put("WORD_EXAM", cursor.getString(cursor.getColumnIndex("WORD_EXAM")));
+            map.put("WORD_EXAM_MEAN", cursor.getString(cursor.getColumnIndex("WORD_EXAM_MEAN")));
+            map.put("WORD_TYPE_CD", cursor.getString(cursor.getColumnIndex("WORD_TYPE_CD")));
+            map.put("WORD_LEVEL_CD", cursor.getString(cursor.getColumnIndex("WB_DESC")));
+            map.put("WORD_IMPORTANT", cursor.getString(cursor.getColumnIndex("WORD_IMPORTANT")));
+            map.put("WORD_LEARNYN", cursor.getString(cursor.getColumnIndex("WORD_LEARNYN")));
+            map.put("WORD_IMAGE", cursor.getString(cursor.getColumnIndex("WORD_IMAGE")));
+            map.put("WORD_LIKE", cursor.getString(cursor.getColumnIndex("WORD_LIKE")));
+            map.put("WORD_USEYN", cursor.getString(cursor.getColumnIndex("WORD_USEYN")));
 
             list.add(map);
         }
@@ -103,6 +122,7 @@ public class Manager_WordBook {
         try {
             String query = String.format(Query_WordAudLoc.Insert,
                     data.get("WB_NAME").toString(),
+                    data.get("WB_LEVEL_CD").toString(),
                     data.get("WB_CNT_UNIT").toString(),
                     data.get("WB_CNT_WORD_UNIT").toString(),
                     data.get("WB_CNT_WORD").toString(),
@@ -128,6 +148,7 @@ public class Manager_WordBook {
         try {
             String query = String.format(Query_WordAudLoc.Update,
                     data.get("WB_NAME").toString(),
+                    data.get("WB_LEVEL_CD").toString(),
                     data.get("WB_CNT_UNIT").toString(),
                     data.get("WB_CNT_WORD_UNIT").toString(),
                     data.get("WB_CNT_WORD").toString(),
@@ -136,8 +157,9 @@ public class Manager_WordBook {
                     data.get("WB_INTERVAL").toString(),
                     data.get("WB_USEYN").toString(),
                     data.get("WB_REGISTERDT").toString(),
-                    data.get("WB_DESC").toString()
-                    data.get("WB_SN").toString());
+                    data.get("WB_DESC").toString(),
+                    data.get("WB_SN").toString()
+            );
 
             db = mHelper.getReadableDatabase();
 

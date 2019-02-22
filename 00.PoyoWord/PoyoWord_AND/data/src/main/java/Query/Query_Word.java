@@ -15,7 +15,8 @@ public class Query_Word {
      , WORD_SOUND_FILE
      , WORD_EXAM
      , WORD_EXAM_MEAN
-     , WORD_LEVEL
+     , WORD_TYPE_CD
+     , WORD_LEVEL_CD
      , WORD_IMPORTANT
      , CASE WORD_LEARNYN WHEN 'Y' THEN 'TRUE' ELSE 'FALSE' END WORD_LEARNYN
      , WORD_IMAGE
@@ -40,7 +41,8 @@ public class Query_Word {
      , WORD_SOUND_FILE
      , WORD_EXAM
      , WORD_EXAM_MEAN
-     , WORD_LEVEL
+     , WORD_TYPE_CD
+     , WORD_LEVEL_CD
      , WORD_IMPORTANT
      , CASE WORD_LEARNYN WHEN 'Y' THEN 'TRUE' ELSE 'FALSE' END WORD_LEARNYN
      , WORD_IMAGE
@@ -66,7 +68,8 @@ public class Query_Word {
      , WORD_SOUND_FILE
      , WORD_EXAM
      , WORD_EXAM_MEAN
-     , WORD_LEVEL
+     , WORD_TYPE_CD
+     , WORD_LEVEL_CD
      , WORD_IMPORTANT
      , WORD_LEARNYN
      , WORD_IMAGE
