@@ -24,6 +24,7 @@ import java.util.Map;
 
 import Event.EventData;
 import Query.Manager_Code;
+import Query.Manager_Word;
 import Query.Manager_WordBook;
 import study.hk.data.Data.HARDCODE;
 import study.hk.poyowordbook.R;
@@ -38,7 +39,7 @@ public class WordBookDetailActivity extends AppCompatActivity {
     private String WB_SN;
     private ObjectMapper mapper = null;
     private Manager_WordBook manager;
-    //private Manager_Word manager;
+    private Manager_Word wordManager;
 
     @SuppressLint({ "SetJavaScriptEnabled", "JavascriptInterface" })
     @Override
@@ -51,6 +52,7 @@ public class WordBookDetailActivity extends AppCompatActivity {
         WB_SN = getIntent().getExtras().getString("WB_SN");
         mapper = new ObjectMapper();
         manager = new Manager_WordBook(context);
+        wordManager = new Manager_Word(context);
 
         lWebView = (WebView)findViewById(R.id.mainView);
         lWebView.setWebViewClient(new WebViewClient() {
@@ -142,6 +144,12 @@ public class WordBookDetailActivity extends AppCompatActivity {
 
                             if(WB_SN.equals("")) {
                                 manager.Insert(map);
+
+                                List<Map<String, Object>> WordList = (List<Map<String, Object>>) map.get("WORD_LIST");
+
+                                WordList.forEach(t -> {
+                                    wordManager.Insert(t);
+                                });
                             } else {
                                 map.put("WB_SN", WB_SN);
                                 manager.Update(map);
@@ -150,7 +158,9 @@ public class WordBookDetailActivity extends AppCompatActivity {
 
                                 WordList.forEach(t -> {
                                     if(t.get("WORD_SN") != null) {
-
+                                        wordManager.Update(t);
+                                    } else {
+                                        wordManager.Insert(t);
                                     }
                                 });
                             }

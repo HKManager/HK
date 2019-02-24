@@ -59,8 +59,7 @@ public class Query_Word {
      INSERT INTO
      word
      (
-     WB_SN
-     , WORD_UNIT_SN
+     WORD_UNIT_SN
      , WORD_WORD
      , WORD_MEAN
      , WORD_SPELLING
@@ -100,9 +99,8 @@ public class Query_Word {
 
     /**
      UPDATE word
-     SET   
-     WB_SN = '%s'
-     , WORD_UNIT_SN = '%s'
+     SET
+     WORD_UNIT_SN = '%s'
      , WORD_WORD = '%s'
      , WORD_MEAN= '%s'
      , WORD_SPELLING = '%s'
@@ -110,7 +108,8 @@ public class Query_Word {
      , WORD_SOUND_FILE = '%s'
      , WORD_EXAM = '%s'
      , WORD_EXAM_MEAN = '%s'
-     , WORD_LEVEL = '%s'
+     , WORD_TYPE_CD = '%s'
+     , WORD_LEVEL_CD = '%s'
      , WORD_IMPORTANT = '%s'
      , WORD_LEARNYN= '%s'
      , WORD_IMAGE = '%s'
