@@ -148,7 +148,7 @@ public class WordBookDetailActivity extends AppCompatActivity {
                                 List<Map<String, Object>> WordList = (List<Map<String, Object>>) map.get("WORD_LIST");
 
                                 WordList.forEach(t -> {
-                                    wordManager.Insert(t);
+                                    wordManager.Insert("", t);
                                 });
                             } else {
                                 map.put("WB_SN", WB_SN);
@@ -157,10 +157,10 @@ public class WordBookDetailActivity extends AppCompatActivity {
                                 List<Map<String, Object>> WordList = (List<Map<String, Object>>) map.get("WORD_LIST");
 
                                 WordList.forEach(t -> {
-                                    if(t.get("WORD_SN") != null) {
+                                    if(!t.get("WORD_SN").toString().equals("")) {
                                         wordManager.Update(t);
                                     } else {
-                                        wordManager.Insert(t);
+                                        wordManager.Insert(WB_SN, t);
                                     }
                                 });
                             }

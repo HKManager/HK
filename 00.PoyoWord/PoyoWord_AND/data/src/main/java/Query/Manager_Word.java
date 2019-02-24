@@ -18,9 +18,14 @@ public class Manager_Word {
         mHelper = new DBHelper(ctx);
     }
 
-    public boolean Insert(Map data) {
+    public boolean Insert(String WB_SN, Map data) {
         try {
-            String query = String.format(Query_Word.Insert,
+
+            db = mHelper.getReadableDatabase();
+
+            String query = "";
+
+            query = String.format(Query_Word.Insert,
                     data.get("WORD_UNIT_SN").toString(),
                     data.get("WORD_WORD").toString(),
                     data.get("WORD_MEAN").toString(),
@@ -38,7 +43,13 @@ public class Manager_Word {
                     data.get("WORD_USEYN").toString()
             );
 
-            db = mHelper.getReadableDatabase();
+            db.execSQL(query);
+
+            if(WB_SN.equals("")) {
+                query = Query_Mapping_WB_W.Insert;
+            } else {
+                query = String.format(Query_Mapping_WB_W.InsertWB_SN, WB_SN);
+            }
 
             db.execSQL(query);
 
