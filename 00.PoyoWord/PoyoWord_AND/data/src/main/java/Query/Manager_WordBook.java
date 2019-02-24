@@ -126,7 +126,7 @@ public class Manager_WordBook {
 
     public boolean Insert(Map data) {
         try {
-            String query = String.format(Query_WordAudLoc.Insert,
+            String query = String.format(Query_WordBook.Insert,
                     data.get("WB_NAME").toString(),
                     data.get("WB_LEVEL_CD").toString(),
                     data.get("WB_CNT_UNIT").toString(),
@@ -152,7 +152,7 @@ public class Manager_WordBook {
 
     public boolean Update(Map data) {
         try {
-            String query = String.format(Query_WordAudLoc.Update,
+            String query = String.format(Query_WordBook.Update,
                     data.get("WB_NAME").toString(),
                     data.get("WB_LEVEL_CD").toString(),
                     data.get("WB_CNT_UNIT").toString(),

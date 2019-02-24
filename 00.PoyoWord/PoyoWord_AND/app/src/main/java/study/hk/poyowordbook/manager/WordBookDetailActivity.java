@@ -38,6 +38,7 @@ public class WordBookDetailActivity extends AppCompatActivity {
     private String WB_SN;
     private ObjectMapper mapper = null;
     private Manager_WordBook manager;
+    //private Manager_Word manager;
 
     @SuppressLint({ "SetJavaScriptEnabled", "JavascriptInterface" })
     @Override
@@ -121,14 +122,37 @@ public class WordBookDetailActivity extends AppCompatActivity {
 
                             try {
                                 map = mapper.readValue(parse.data, new TypeReference<Map<String, Object>>(){});
-                                map.put("WAL_UPDATE_DT", "");
-                                map.put("WAL_USEYN", "0");
+
+                                map.put("WB_CNT_UNIT", "0");
+                                map.put("WB_CNT_WORD_UNIT", "0");
+                                map.put("WB_CNT_WORD", "0");
+                                map.put("WAL_SN", "0");
+                                map.put("WB_LOOPCNT", "0");
+                                map.put("WB_INTERVAL", "0");
+                                map.put("WB_DESC", "");
+                                map.put("WB_REGISTERDT", "");
+                                map.put("WB_USEYN", "0");
                             }catch (JsonGenerationException e) {
                                 e.printStackTrace();
                             } catch (JsonMappingException e) {
                                 e.printStackTrace();
                             } catch (IOException e) {
                                 e.printStackTrace();
+                            }
+
+                            if(WB_SN.equals("")) {
+                                manager.Insert(map);
+                            } else {
+                                map.put("WB_SN", WB_SN);
+                                manager.Update(map);
+
+                                List<Map<String, Object>> WordList = (List<Map<String, Object>>) map.get("WORD_LIST");
+
+                                WordList.forEach(t -> {
+                                    if(t.get("WORD_SN") != null) {
+
+                                    }
+                                });
                             }
 
                             break;
