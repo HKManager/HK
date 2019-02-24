@@ -92,6 +92,7 @@ public class WordBookActivity extends AppCompatActivity {
                             switch (parse.data) {
                                 case HARDCODE.단어장상세 :
                                     intent =new Intent(WordBookActivity.this,WordBookDetailActivity.class);
+                                    intent.putExtra("WB_SN",""); /*송신*/
                                     startActivity(intent);
                                     break;
                                 case HARDCODE.메인화면 :
@@ -117,6 +118,12 @@ public class WordBookActivity extends AppCompatActivity {
                             String JsonEventData = gson.toJson(data);
 
                             lWebView.loadUrl("javascript:showData('" + JsonEventData + "')");
+                            break;
+                        case HARDCODE.수정 :
+                            intent = new Intent(WordBookActivity.this,WordBookDetailActivity.class);
+
+                            intent.putExtra("WB_SN",parse.data); /*송신*/
+                            startActivity(intent);
                             break;
                     }
                 }

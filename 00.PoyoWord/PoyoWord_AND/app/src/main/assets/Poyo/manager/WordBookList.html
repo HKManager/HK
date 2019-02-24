@@ -204,13 +204,11 @@
 
         function Update() {
 
-            var item = JSON.stringify(selectItem);
-
-            var obj = { handle: "06", view: "ACCOUNT", data: item };
+            var obj = { handle: "04", view: "WordBook", data: selectItem.WB_SN };
 
             var data = JSON.stringify(obj);
 
-            invokeCSharpAction(data);
+            window.android.setData(data);
         }
 
         function Delete() {
@@ -282,6 +280,8 @@
 
         this.setEditItem = function (item) {
             selectItem = item;
+
+            Update();
         }
 
             //$(document).ready(function () {

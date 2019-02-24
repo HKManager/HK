@@ -11,10 +11,19 @@ import android.webkit.JsResult;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
+import com.fasterxml.jackson.core.JsonGenerationException;
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.Gson;
 
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import Event.EventData;
+import Query.Manager_Code;
 import Query.Manager_WordBook;
 import study.hk.data.Data.HARDCODE;
 import study.hk.poyowordbook.R;
@@ -53,6 +62,26 @@ public class WordBookDetailActivity extends AppCompatActivity {
             @SuppressLint({ "SetJavaScriptEnabled", "JavascriptInterface" })
             public void onPageFinished(WebView view, String url) {
                 //lWebView.loadUrl("javascript:setMessage('" + "abc" + "')");
+
+                EventData data = new EventData();
+                List<Map> codeList = Manager_Code.GetInstance().GetList_2nd("100", true);
+                data.SetHandle(HARDCODE.코드리스트);
+                data.SetView(HARDCODE.단어장상세);
+                data.SetValue(codeList);
+                String JsonEventData = gson.toJson(data);
+                lWebView.loadUrl("javascript:showData('" + JsonEventData + "')");
+
+                if(!WB_SN.equals("")) {
+                    Map mapData =  manager.Search(WB_SN);
+
+                    //mapData.put("WAL_LOCS", locs);
+
+                    data.SetHandle(HARDCODE.상세조회);
+                    data.SetView(HARDCODE.단어장상세);
+                    data.SetValue(mapData);
+                    JsonEventData = gson.toJson(data);
+                    lWebView.loadUrl("javascript:showData('" + JsonEventData + "')");
+                }
             }
 
             public boolean onJsAlert(final WebView view, final String url, final String message, JsResult result) {
@@ -86,6 +115,22 @@ public class WordBookDetailActivity extends AppCompatActivity {
                                     startActivity(intent);
                                     break;
                             }
+                            break;
+                        case HARDCODE.등록 :
+                            Map<String, Object> map = new HashMap<String, Object>();
+
+                            try {
+                                map = mapper.readValue(parse.data, new TypeReference<Map<String, Object>>(){});
+                                map.put("WAL_UPDATE_DT", "");
+                                map.put("WAL_USEYN", "0");
+                            }catch (JsonGenerationException e) {
+                                e.printStackTrace();
+                            } catch (JsonMappingException e) {
+                                e.printStackTrace();
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+
                             break;
                     }
                 }

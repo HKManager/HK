@@ -22,7 +22,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".manager.WordBookActivity" />
-        <activity android:name=".manager.WordBookDetailActivity" />
+        <activity android:name=".manager.WordBookDetailActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:windowSoftInputMode="adjustResize"
+        />
         <activity android:name=".manager.WordAudLocActivity" />
         <activity android:name=".manager.WordAudLocDetailActivity" />
         <activity

@@ -52,6 +52,7 @@ public class Query_WordBook {
      , w.WORD_IMAGE
      , w.WORD_LIKE
      , w.WORD_USEYN
+     , mwbw.MWW_SN
      FROM wordbook wb, mapping_wb_w mwbw, word w
      WHERE wb.wb_sn = mwbw.wb_sn
      AND w.word_sn = mwbw.word_sn

@@ -99,6 +99,7 @@ public class MainActivity extends AppCompatActivity {
             if(!bResult){	// DB가 없으면 복사
                 copyDB(context);
             }else{
+                copyDB(context);
             }
         } catch (Exception e) {
         }

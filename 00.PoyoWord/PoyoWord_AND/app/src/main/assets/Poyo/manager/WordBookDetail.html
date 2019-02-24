@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html id="htmlMain" style="display: block;">
 
 <head>
     <meta charset="UTF-8">
@@ -81,11 +81,17 @@
             background-color: white;
             padding: 5px 20px 5px 20px;
         }
+
+        .body {
+            height:100%;
+        }
     </style>
 
     <script type="text/javascript">
         var datagrid;
         var SBGridProperties = {};
+
+        var gridData = []; // 그리드를 그리기 위한 데이터를 담기위한 객체를 선언합니다.
 
         function createGrid() {
             // SBGridProperties.parentid = 'SBGridArea';
@@ -108,14 +114,15 @@
 
             SBGridProperties.parentid = 'SBGridArea';
             SBGridProperties.id = 'datagrid';
-            SBGridProperties.jsonref = 'ct_data.resources';	
+            SBGridProperties.jsonref = 'gridData';
             SBGridProperties.selectmode = 'free';
-            SBGridProperties.rowheader = ['seq','update'];
-            SBGridProperties.rowheadercaption = {'seq':'순번', 'update':'상태정보'};
-            SBGridProperties.rowheaderwidth = {'seq':'50', 'update':'80'};
+            SBGridProperties.rowheader = ['seq', 'update'];
+            SBGridProperties.rowheadercaption = { 'seq': '순번', 'update': '상태정보' };
+            SBGridProperties.rowheaderwidth = { 'seq': '50', 'update': '80' };
             SBGridProperties.allowpaste = true;
-            SBGridProperties.allowcopy=true;
-            SBGridProperties.updatepastestatus = true;
+            SBGridProperties.allowcopy = true;
+            // SBGridProperties.updatepastestatus = true;
+            SBGridProperties.oneclickedit = true;
 
             SBGridProperties.paging = {
                 'type': 'all',
@@ -126,19 +133,20 @@
             };
 
             SBGridProperties.columns = [
-                { caption: [''], ref: 'check', width: '30px', style: 'text-align:center', type: 'checkbox' },
-                { caption: ['학원명'], ref: 'academy', width: '150px', style: 'text-align:center', type: 'output' },
-                { caption: ['설립자(성명)'], ref: 'name', width: '150px', style: 'text-align:center', type: 'input' },
-                { caption: ['전화번호'], ref: 'phone', width: '120px', style: 'text-align:center', type: 'input' },
-                { caption: ['학원주소'], ref: 'addr', width: '450px', style: 'text-align:center', type: 'textarea' },
-                { caption: ['교습과정'], ref: 'curriculum', width: '100px', style: 'text-align:center', type: 'combo', typeinfo: { ref: 'newComboData', displayui: true, label: 'label', value: 'value' } },
-                { caption: ['교습과목(반)'], ref: 'class', width: '200px', style: 'text-align:center', type: 'input' },
-                { caption: ['정원'], ref: 'maxstudent', width: '70px', style: 'text-align:center', type: 'input', format: { type: 'string', rule: '@ "명"' } },
-                { caption: ['교습기간'], ref: 'term', width: '100px', style: 'text-align:center', type: 'input' },
-                { caption: ['교육시작일'], ref: 'startday', width: '100px', style: 'text-align:center', type: 'datepicker', typeinfo: { locale: 'ko', dateformat: 'yymmdd' }, format: { type: 'date', rule: 'yyyy-mm-dd', origin: 'yyyymmdd' } },
-                { caption: ['총교습시간(분)'], ref: 'totalminute', width: '100px', style: 'text-align:center', type: 'input' },
-                { caption: ['교습비'], ref: 'pay', width: '100px', style: 'text-align:center', type: 'input', format: { type: 'number', rule: '#,###' } },
-                { caption: ['강사수'], ref: 'teacher', width: '70px', style: 'text-align:center', type: 'input' }
+                // { caption: [''], ref: 'check', width: '30px', style: 'text-align:center', type: 'checkbox' },
+                { caption: ['단어명'], ref: 'WORD_WORD', width: '150px', style: 'text-align:center', type: 'input' },
+                { caption: ['단어뜻'], ref: 'WORD_MEAN', width: '150px', style: 'text-align:center', type: 'input' },
+                { caption: ['예문'], ref: 'WORD_EXAM', width: '120px', style: 'text-align:center', type: 'input' },
+                { caption: ['예문뜻'], ref: 'WORD_EXAM_MEAN', width: '450px', style: 'text-align:center', type: 'textarea' },
+                // { caption: ['교습과정'], ref: 'curriculum', width: '100px', style: 'text-align:center', type: 'combo', typeinfo: { ref: 'newComboData', displayui: true, label: 'label', value: 'value' } },
+                // { caption: ['교습과목(반)'], ref: 'class', width: '200px', style: 'text-align:center', type: 'input' },
+                // { caption: ['정원'], ref: 'maxstudent', width: '70px', style: 'text-align:center', type: 'input', format: { type: 'string', rule: '@ "명"' } },
+                // { caption: ['교습기간'], ref: 'term', width: '100px', style: 'text-align:center', type: 'input' },
+                // { caption: ['교육시작일'], ref: 'startday', width: '100px', style: 'text-align:center', type: 'datepicker', typeinfo: { locale: 'ko', dateformat: 'yymmdd' }, format: { type: 'date', rule: 'yyyy-mm-dd', origin: 'yyyymmdd' } },
+                // { caption: ['총교습시간(분)'], ref: 'totalminute', width: '100px', style: 'text-align:center', type: 'input' },
+                // { caption: ['교습비'], ref: 'pay', width: '100px', style: 'text-align:center', type: 'input', format: { type: 'number', rule: '#,###' } },
+                { caption: ['단어유형'], ref: 'WORD_TYPE_CD', width: '70px', style: 'text-align:center', type: 'input' },
+                { caption: ['단어레벨'], ref: 'WORD_LEVEL_CD', width: '70px', style: 'text-align:center', type: 'input' }
             ];
             datagrid = _SBGrid.create(SBGridProperties);
 
@@ -196,6 +204,7 @@
 
     <!-- 처리 관련 -->
     <script type="text/javascript">
+
         ko.observableArray.fn.find = function (prop, data) {
             var valueToMatch = data[prop];
             return ko.utils.arrayFirst(this(), function (item) {
@@ -204,16 +213,10 @@
         };
 
         function ViewModel() {
-            this.AC_SN = ko.observable("");
-            this.AC_NAME = ko.observable("");
-            this.AC_ADDRESS = ko.observable("");
-            this.AC_MAN01 = ko.observable("");
-            this.AC_PHONENUMBER01 = ko.observable("");
-            this.AC_EMAIL01 = ko.observable("");
-            this.AC_PAY = ko.observable("");
-            this.AC_DESC = ko.observable("");
-            this.AC_TYPE_CODES = ko.observableArray([]);
-            this.AC_TYPE_CODE = ko.observable(this.AC_TYPE_CODES.find("CODE", _AC_TYPE_CODE));
+            this.WB_SN = ko.observable("");
+            this.WB_NAME = ko.observable("");
+            this.WB_LEVEL_CDS = ko.observableArray([]);
+            this.WB_LEVEL_CD = ko.observable(this.WB_LEVEL_CDS.find("CODE", _WB_TYPE_CODE));
         };
 
         //var _AC_NAME = "";
@@ -223,8 +226,7 @@
         //var _AC_EMAIL01 = "";
         //var _AC_PAY = "";
         //var _AC_DESC = "";
-        var _AC_TYPE_CODES = [];
-        var _AC_TYPE_CODE = "";
+        var _WB_TYPE_CODE = "";
 
         var vm = null;
 
@@ -248,14 +250,13 @@
             //        break;
             //}
 
-            var Main = document.getElementById('Manager');
-            var height = document.getElementById('MainBody').offsetHeight;
+            // var Main = document.getElementById('Manager');
+            // var MainBody = document.getElementById('MainBody');
+            // MainBody.style.height = screen.height + "px";
+            
+            // var top = (MainBody.offsetHeight - Main.offsetHeight) * 0.5;
 
-            Main.style.height = height - 10 + "px";
-
-            var top = (height - Main.offsetHeight) * 0.5;
-
-            Main.style.marginTop = top + "px";
+            // MainBody.style.paddingTop = top + "px";
 
             $('html, body').css({ 'overflow': 'hidden', 'height': '100%' });
             $('#element').on('scroll touchmove mousewheel', function (event) {
@@ -263,6 +264,9 @@
                 event.stopPropagation();
                 return false;
             });
+
+
+            var htmlMain = document.getElementById('htmlMain');
 
             vm = new ViewModel();
             ko.applyBindings(vm);
@@ -284,17 +288,33 @@
 
 
         function Create() {
-            var objectData = ko.toJS(vm);
+            // var objectData = ko.toJS(vm);
+
+            // var jSonData = JSON.stringify(objectData);
+
+            var objectData = GetData();
 
             var jSonData = JSON.stringify(objectData);
 
             //var name = ViewModel.AC_NAME;
-            var obj = { handle: "03", view: "ACCOUNT", data: jSonData };
+            var obj = { handle: "03", view: "WORDBOOKDETAIL", data: jSonData };
 
             var data = JSON.stringify(obj);
 
             //log("Sending Data:" + data);
-            invokeCSharpAction(data);
+            window.android.setData(data);
+        }
+
+        function GetData() {
+            var record = {
+                WB_SN: $("#WB_SN").val(),
+                WB_NAME: $("#WB_NAME").val(),
+                WB_LEVEL_CD: $("#WB_LEVEL").val(),
+                WORD_LIST: gridData,
+                WAL_USEYN: true
+            };
+            
+            return record;
         }
 
         function Cancel() {
@@ -350,12 +370,45 @@
                 alert(excetion);
             }
         }
+
+        function showData(str) {
+
+            //console.log(JSON.stringify({ x: 5, y: 6 }));
+
+            //alert(str);
+            //$('#result').text($('#result').text() + " " + str);
+
+            //var str = '{ "name":"John", "age":30, "city":"New York"}';
+
+            var jsonObj = JSON.parse(str);
+            //var jsonValue = JSON.parse(jsonObj.data);
+
+
+            switch(jsonObj.handle) {
+                case "CODES": 
+                vm.WB_LEVEL_CDS(jsonObj.value);        
+                break;
+                case "DETAIL":
+                vm.WB_SN(jsonObj.value.WB_SN);
+                vm.WB_NAME(jsonObj.value.WB_NAME);
+                vm.WB_LEVEL_CD(jsonObj.value.WB_LEVEL_CD);
+                gridData = jsonObj.value.WORD_LIST;
+
+                datagrid.refresh(); //데이터 초기화
+                break;
+            }
+
+            //console.log(jsonObj);
+
+
+            //viewModel.list(jsonObj.value);
+        }
     </script>
     <!-- 처리 관련 -->
 
 </head>
 
-<body id="MainBody" class="theme-red" style="margin:0;height:100%;">
+<body id="MainBody" class="theme-red" style="margin:0;">
     <!-- Page Loader -->
     <div class="page-loader-wrapper">
         <div class="loader">
@@ -373,11 +426,11 @@
         </div>
     </div>
 
-    <div style="position:relative;overflow-x:scroll ; overflow-y: hidden;">
+    <div style="position:relative;">
 
         <main id="Main">
 
-            <div style="margin-left: 5px;margin-right: 5px;">
+            <div style="padding-left: 2px;padding-right: 2px;">
 
                 <div id="Manager" class="card" style="min-height:300px;">
                     <div class="header">
@@ -422,20 +475,20 @@
                             <div class="col-sm-12">
                                 <div class="form-group">
                                     <div class="form-line">
-                                        <input id="AC_SN" type="hidden" class="control-detail form-control"
-                                            placeholder="거래처 SN" data-bind="value: AC_SN" />
-                                        <input id="AC_NAME" type="text" class="control-detail form-control"
-                                            placeholder="단어장 명" data-bind="value: AC_NAME" />
+                                        <input id="WB_SN" type="hidden" class="control-detail form-control"
+                                            placeholder="거래처 SN" data-bind="value: WB_SN" />
+                                        <input id="WB_NAME" type="text" class="control-detail form-control"
+                                            placeholder="단어장 명" data-bind="value: WB_NAME" />
                                     </div>
                                 </div>
 
                                 <div class="form-group">
                                     <div class="form-line">
-                                        <select id="AC_TYPE_CODE" class="form-control control-detail show-tick"
-                                            data-bind="options: AC_TYPE_CODES,
+                                        <select id="WB_LEVEL" class="form-control control-detail show-tick"
+                                            data-bind="options: WB_LEVEL_CDS,
                                                                                        optionsCaption: '유형을 선택해 주세요',
                                                                                        optionsValue: 'CODE',
-                                                                                       value: AC_TYPE_CODE,
+                                                                                       value: WB_LEVEL_CD,
                                                                                        optionsText: 'CODE_NAME',
                                                                                        valueAllowUnset: true"></select>
                                     </div>

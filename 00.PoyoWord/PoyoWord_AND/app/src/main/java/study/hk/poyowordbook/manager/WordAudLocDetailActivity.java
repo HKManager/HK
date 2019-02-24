@@ -69,7 +69,7 @@ public class WordAudLocDetailActivity extends AppCompatActivity {
             public void onPageFinished(WebView view, String url) {
                 List<Map> codeList = Manager_Code.GetInstance().GetList_2nd("003", true);
                 EventData data = new EventData();
-                data.SetHandle("CODES");
+                data.SetHandle(HARDCODE.코드리스트);
                 data.SetView(HARDCODE.단어장배치관리);
                 data.SetValue(codeList);
                 String JsonEventData = gson.toJson(data);
