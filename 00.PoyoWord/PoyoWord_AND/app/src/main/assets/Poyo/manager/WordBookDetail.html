@@ -35,6 +35,9 @@
     <!-- Bootstrap Select Css -->
     <link href="../Content/plugins/bootstrap-select/css/bootstrap-select.css" rel="stylesheet" />
 
+    <!-- Dropzone Css -->
+    <link href="../Content/plugins/dropzone/dropzone.css" rel="stylesheet">
+
     <!-- Custom Css -->
     <link href="../Content/css/style.css" rel="stylesheet">
 
@@ -83,7 +86,7 @@
         }
 
         .body {
-            height:100%;
+            height: 100%;
         }
     </style>
 
@@ -117,8 +120,8 @@
             SBGridProperties.jsonref = 'gridData';
             // SBGridProperties.selectmode = 'free';
             SBGridProperties.rowheader = ['seq', 'update'];
-            SBGridProperties.rowheadercaption = { 'seq': '순번'};
-            SBGridProperties.rowheaderwidth = { 'seq': '50'};
+            SBGridProperties.rowheadercaption = { 'seq': '순번' };
+            SBGridProperties.rowheaderwidth = { 'seq': '50' };
             // SBGridProperties.allowpaste = true;
             // SBGridProperties.allowcopy = true;
             // SBGridProperties.updatepastestatus = true;
@@ -159,6 +162,12 @@
         .control-detail {
             padding-left: 15px !important;
         }
+
+        .modal {
+            width: 100%;
+            height: 100%;
+            margin: auto;
+        }
     </style>
 
     <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
@@ -193,6 +202,9 @@
     <!-- Bootstrap Datepicker Plugin Js -->
     <script src="../Content/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
 
+    <!-- Dropzone Plugin Js -->
+    <script src="../Content/plugins/dropzone/dropzone.js"></script>
+
     <!-- Custom Js -->
     <script src="../Content/js/admin.js"></script>
     <script src="../Content/js/pages/forms/basic-form-elements.js"></script>
@@ -219,6 +231,13 @@
             this.WB_NAME = ko.observable("");
             this.WB_LEVEL_CDS = ko.observableArray([]);
             this.WB_LEVEL_CD = ko.observable(this.WB_LEVEL_CDS.find("CODE", _WB_TYPE_CODE));
+
+
+            this.WORD_SN = ko.observable("");
+            this.WORD_WORD = ko.observable("");
+            this.WORD_MEAN = ko.observable("");
+            this.WORD_EXAM = ko.observable("");
+            this.WORD_EXAM_MEAN = ko.observable("");
         };
 
         //var _AC_NAME = "";
@@ -255,7 +274,7 @@
             // var Main = document.getElementById('Manager');
             // var MainBody = document.getElementById('MainBody');
             // MainBody.style.height = screen.height + "px";
-            
+
             // var top = (MainBody.offsetHeight - Main.offsetHeight) * 0.5;
 
             // MainBody.style.paddingTop = top + "px";
@@ -311,16 +330,15 @@
 
             datagrid.refresh(); //데이터 초기화
 
-var abc =  datagrid.getRows();
-
             var record = {
                 WB_SN: $("#WB_SN").val(),
                 WB_NAME: $("#WB_NAME").val(),
                 WB_LEVEL_CD: $("#WB_LEVEL").val(),
+
                 WORD_LIST: gridData,
                 WAL_USEYN: true
             };
-            
+
             return record;
         }
 
@@ -391,18 +409,18 @@ var abc =  datagrid.getRows();
             //var jsonValue = JSON.parse(jsonObj.data);
 
 
-            switch(jsonObj.handle) {
-                case "CODES": 
-                vm.WB_LEVEL_CDS(jsonObj.value);        
-                break;
+            switch (jsonObj.handle) {
+                case "CODES":
+                    vm.WB_LEVEL_CDS(jsonObj.value);
+                    break;
                 case "DETAIL":
-                vm.WB_SN(jsonObj.value.WB_SN);
-                vm.WB_NAME(jsonObj.value.WB_NAME);
-                vm.WB_LEVEL_CD(jsonObj.value.WB_LEVEL_CD);
-                gridData = jsonObj.value.WORD_LIST;
+                    vm.WB_SN(jsonObj.value.WB_SN);
+                    vm.WB_NAME(jsonObj.value.WB_NAME);
+                    vm.WB_LEVEL_CD(jsonObj.value.WB_LEVEL_CD);
+                    gridData = jsonObj.value.WORD_LIST;
 
-                datagrid.refresh(); //데이터 초기화
-                break;
+                    datagrid.refresh(); //데이터 초기화
+                    break;
             }
 
             //console.log(jsonObj);
@@ -433,6 +451,82 @@ var abc =  datagrid.getRows();
         </div>
     </div>
 
+    <!-- Small Size -->
+    <div class="modal fade" id="smallModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="smallModalLabel">추가 할 단어를 입력 해 주세요.</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <div class="form-line">
+                            <input id="WORD_SN" type="hidden" class="control-detail form-control" placeholder="거래처 SN"
+                                data-bind="value: WORD_SN" />
+                            <input id="WB_NAME" type="text" class="control-detail form-control" placeholder="단어"
+                                data-bind="value: WORD_WORD" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-line">
+                            <input id="WB_NAME" type="text" class="control-detail form-control" placeholder="단어 뜻"
+                                data-bind="value: WORD_MEAN" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-line">
+                            <input id="WB_NAME" type="text" class="control-detail form-control" placeholder="단어 예문"
+                                data-bind="value: WORD_EXAM" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-line">
+                            <input id="WB_NAME" type="text" class="control-detail form-control" placeholder="단어 예문 뜻"
+                                data-bind="value: WORD_EXAM_MEAN" />
+                        </div>
+
+                        <div class="form-line">
+                                <ul class="nav nav-tabs tab-nav-right" role="tablist">
+                                        <li role="presentation" class="active"><a href="#home" data-toggle="tab">이미지찾기</a></li>
+                                        <li role="presentation"><a href="#profile" data-toggle="tab">이미지선택하기</a></li>
+                                    </ul>
+            
+                                    <div class="tab-content">
+                                        <div role="tabpanel" class="tab-pane fade in active" id="home">
+                                                <form action="/" id="frmFileUpload" class="dropzone" method="post" style="height:100px;"
+                                                enctype="multipart/form-data">
+                                                <div class="dz-message">
+                                                    <div class="drag-icon-cph">
+                                                        <i class="material-icons">touch_app</i>
+                                                    </div>
+                                                    <h3>클릭하여 이미지를 추가하여 주세요.</h3>
+                                                </div>
+                                                <div class="fallback">
+                                                    <input name="file" type="file" multiple />
+                                                </div>
+                                            </form>
+                                        </div>
+            
+                                        <div role="tabpanel" class="tab-pane fade" id="profile">
+                                        
+                                        </div>
+                                    </div>  
+
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-link waves-effect">추가</button>
+                    <button type="button" class="btn btn-link waves-effect" data-dismiss="modal">취소</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div style="position:relative;">
 
         <main id="Main">
@@ -457,7 +551,8 @@ var abc =  datagrid.getRows();
                                         <i class="material-icons">more_vert</i>
                                     </a>
                                     <ul class="dropdown-menu pull-right">
-                                        <li><a href="javascript:void(0);" onclick="AddWord()">단어추가하기</a></li>
+                                        <li><a type="button" data-toggle="modal" data-target="#smallModal">단어추가하기</a>
+                                        </li>
                                         <li><a href="javascript:void(0);">단어삭제하기</a></li>
                                         <li><a href="javascript:void(0);">번역하기</a></li>
                                         <li><a href="javascript:void(0);">엑셀파일업로드</a></li>
@@ -491,8 +586,7 @@ var abc =  datagrid.getRows();
 
                                 <div class="form-group">
                                     <div class="form-line">
-                                        <select id="WB_LEVEL" class="form-control control-detail show-tick"
-                                            data-bind="options: WB_LEVEL_CDS,
+                                        <select id="WB_LEVEL" class="form-control control-detail show-tick" data-bind="options: WB_LEVEL_CDS,
                                                                                        optionsCaption: '유형을 선택해 주세요',
                                                                                        optionsValue: 'CODE',
                                                                                        value: WB_LEVEL_CD,
