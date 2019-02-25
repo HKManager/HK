@@ -115,12 +115,12 @@
             SBGridProperties.parentid = 'SBGridArea';
             SBGridProperties.id = 'datagrid';
             SBGridProperties.jsonref = 'gridData';
-            SBGridProperties.selectmode = 'free';
+            // SBGridProperties.selectmode = 'free';
             SBGridProperties.rowheader = ['seq', 'update'];
-            SBGridProperties.rowheadercaption = { 'seq': '순번', 'update': '상태정보' };
-            SBGridProperties.rowheaderwidth = { 'seq': '50', 'update': '80' };
-            SBGridProperties.allowpaste = true;
-            SBGridProperties.allowcopy = true;
+            SBGridProperties.rowheadercaption = { 'seq': '순번'};
+            SBGridProperties.rowheaderwidth = { 'seq': '50'};
+            // SBGridProperties.allowpaste = true;
+            // SBGridProperties.allowcopy = true;
             // SBGridProperties.updatepastestatus = true;
             SBGridProperties.oneclickedit = true;
 
@@ -308,6 +308,11 @@
         }
 
         function GetData() {
+
+            datagrid.refresh(); //데이터 초기화
+
+var abc =  datagrid.getRows();
+
             var record = {
                 WB_SN: $("#WB_SN").val(),
                 WB_NAME: $("#WB_NAME").val(),
