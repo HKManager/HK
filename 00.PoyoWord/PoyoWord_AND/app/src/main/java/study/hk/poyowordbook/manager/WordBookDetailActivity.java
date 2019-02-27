@@ -1,13 +1,22 @@
 package study.hk.poyowordbook.manager;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.net.Uri;
+import android.os.Build;
+import android.os.Environment;
 import android.os.Handler;
+import android.provider.MediaStore;
+import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.webkit.JsResult;
+import android.webkit.ValueCallback;
+import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
@@ -17,7 +26,10 @@ import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.Gson;
 
+import java.io.File;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -40,6 +52,16 @@ public class WordBookDetailActivity extends AppCompatActivity {
     private ObjectMapper mapper = null;
     private Manager_WordBook manager;
     private Manager_Word wordManager;
+
+
+    private ValueCallback<Uri[]> mFilePathCallback;
+    private String mCameraPhotoPath;
+    public static final int INPUT_FILE_REQUEST_CODE = 1;
+    private static final String TAG = WordAudLocDetailActivity.class.getSimpleName();
+
+    private static final int RC_FILE_CHOOSE = 2833;
+
+    private ValueCallback<Uri> mUploadMsg = null;
 
     @SuppressLint({ "SetJavaScriptEnabled", "JavascriptInterface" })
     @Override
@@ -92,6 +114,73 @@ public class WordBookDetailActivity extends AppCompatActivity {
                 //result.confirm();
                 return true;
             }
+
+            public void openFileChooser(ValueCallback<Uri> uploadFile, String acceptType) {
+
+                openFileChooser(uploadFile);
+
+            }
+
+            public void openFileChooser(ValueCallback<Uri> uploadMsg) {
+
+                mUploadMsg = uploadMsg;
+                Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+                intent.addCategory(Intent.CATEGORY_OPENABLE);
+                intent.setType("*/*");
+                startActivityForResult(Intent.createChooser(intent, "File Chooser"), RC_FILE_CHOOSE );
+
+            }
+
+            public boolean onShowFileChooser(
+                    WebView webView, ValueCallback<Uri[]> filePathCallback,
+                    WebChromeClient.FileChooserParams fileChooserParams) {
+                if(mFilePathCallback != null) {
+                    mFilePathCallback.onReceiveValue(null);
+                }
+                mFilePathCallback = filePathCallback;
+
+                Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                if (takePictureIntent.resolveActivity(context.getPackageManager()) != null) {
+                    // Create the File where the photo should go
+                    File photoFile = null;
+                    try {
+                        photoFile = createImageFile();
+                        takePictureIntent.putExtra("PhotoPath", mCameraPhotoPath);
+                    } catch (IOException ex) {
+                        // Error occurred while creating the File
+                        Log.e(TAG, "Unable to create Image File", ex);
+                    }
+
+                    // Continue only if the File was successfully created
+                    if (photoFile != null) {
+                        mCameraPhotoPath = "file:" + photoFile.getAbsolutePath();
+                        takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT,
+                                Uri.fromFile(photoFile));
+                    } else {
+                        takePictureIntent = null;
+                    }
+                }
+
+                Intent contentSelectionIntent = new Intent(Intent.ACTION_GET_CONTENT);
+                contentSelectionIntent.addCategory(Intent.CATEGORY_OPENABLE);
+                contentSelectionIntent.setType("image/*");
+
+                Intent[] intentArray;
+                if(takePictureIntent != null) {
+                    intentArray = new Intent[]{takePictureIntent};
+                } else {
+                    intentArray = new Intent[0];
+                }
+
+                Intent chooserIntent = new Intent(Intent.ACTION_CHOOSER);
+                chooserIntent.putExtra(Intent.EXTRA_INTENT, contentSelectionIntent);
+                chooserIntent.putExtra(Intent.EXTRA_TITLE, "Image Chooser");
+                chooserIntent.putExtra(Intent.EXTRA_INITIAL_INTENTS, intentArray);
+
+                startActivityForResult(chooserIntent, INPUT_FILE_REQUEST_CODE);
+
+                return true;
+            }
         });
         lWebView.getSettings().setJavaScriptEnabled(true);
         lWebView.addJavascriptInterface(new WordBookDetailActivity.JavaScriptBridge(), "android");
@@ -116,6 +205,47 @@ public class WordBookDetailActivity extends AppCompatActivity {
                                 case HARDCODE.단어장관리 :
                                     Intent intent=new Intent(WordBookDetailActivity.this,WordBookActivity.class);
                                     startActivity(intent);
+                                    break;
+                                case "IMAGEVIEW":
+                                    Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                                    if (takePictureIntent.resolveActivity(context.getPackageManager()) != null) {
+                                        // Create the File where the photo should go
+                                        File photoFile = null;
+                                        try {
+                                            photoFile = createImageFile();
+                                            takePictureIntent.putExtra("PhotoPath", mCameraPhotoPath);
+                                        } catch (IOException ex) {
+                                            // Error occurred while creating the File
+                                            Log.e(TAG, "Unable to create Image File", ex);
+                                        }
+
+                                        // Continue only if the File was successfully created
+                                        if (photoFile != null) {
+                                            mCameraPhotoPath = "file:" + photoFile.getAbsolutePath();
+                                            takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT,
+                                                    Uri.fromFile(photoFile));
+                                        } else {
+                                            takePictureIntent = null;
+                                        }
+                                    }
+
+                                    Intent contentSelectionIntent = new Intent(Intent.ACTION_GET_CONTENT);
+                                    contentSelectionIntent.addCategory(Intent.CATEGORY_OPENABLE);
+                                    contentSelectionIntent.setType("image/*");
+
+                                    Intent[] intentArray;
+                                    if(takePictureIntent != null) {
+                                        intentArray = new Intent[]{takePictureIntent};
+                                    } else {
+                                        intentArray = new Intent[0];
+                                    }
+
+                                    Intent chooserIntent = new Intent(Intent.ACTION_CHOOSER);
+                                    chooserIntent.putExtra(Intent.EXTRA_INTENT, contentSelectionIntent);
+                                    chooserIntent.putExtra(Intent.EXTRA_TITLE, "Image Chooser");
+                                    chooserIntent.putExtra(Intent.EXTRA_INITIAL_INTENTS, intentArray);
+
+                                    startActivityForResult(chooserIntent, INPUT_FILE_REQUEST_CODE);
                                     break;
                             }
                             break;
@@ -169,6 +299,39 @@ public class WordBookDetailActivity extends AppCompatActivity {
                     }
                 }
             });
+        }
+    }
+
+    /**
+     * More info this method can be found at
+     * http://developer.android.com/training/camera/photobasics.html
+     *
+     * @return
+     * @throws IOException
+     */
+    private File createImageFile() throws IOException {
+        // Create an image file name
+        String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
+        String imageFileName = "JPEG_" + timeStamp + "_";
+        File storageDir = Environment.getExternalStoragePublicDirectory(
+                Environment.DIRECTORY_PICTURES);
+        File imageFile = File.createTempFile(
+                imageFileName,  /* prefix */
+                ".jpg",         /* suffix */
+                storageDir      /* directory */
+        );
+        return imageFile;
+    }
+
+    @Override
+    public void onActivityResult (int requestCode, int resultCode, Intent data) {
+        if (requestCode == INPUT_FILE_REQUEST_CODE) {
+            Uri result = null;
+            if ( data != null || resultCode == RESULT_OK ){
+                result = data.getData();
+            }
+
+            int abc = 0;
         }
     }
 }
