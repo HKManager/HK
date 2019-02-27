@@ -2,46 +2,48 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
+  <meta charset="utf-8">
 
-    <title>Creating Web Audio - Dave Justice</title>
+  <title>Creating Web Audio - Dave Justice</title>
 
-    <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
-    <meta name="author" content="Dave Justice">
+  <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+  <meta name="author" content="Dave Justice">
 
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-    <link rel="stylesheet" href="../ASlide/css/reveal.min.css">
-    <link rel="stylesheet" href="../ASlide/css/theme/night.css" id="theme">
-    <link rel="stylesheet" href="../ASlide/css/custom.css">
+  <link rel="stylesheet" href="../ASlide/css/reveal.min.css">
+  <link rel="stylesheet" href="../ASlide/css/theme/night.css" id="theme">
+  <link rel="stylesheet" href="../ASlide/css/custom.css">
 
-    <!-- For syntax highlighting -->
-    <link rel="stylesheet" href="../ASlide/lib/css/zenburn.css">
+  <!-- For syntax highlighting -->
+  <link rel="stylesheet" href="../ASlide/lib/css/zenburn.css">
 </head>
 
 <script src="../ASlide/lib/js/head.min.js"></script>
 <script src="../ASlide/js/reveal.js"></script>
 
 <body>
-    <div class="reveal">
+  <div class="reveal">
 
-        <!-- Any section element inside of this container is displayed as a slide -->
-        <div class="slides">
-            <section>
-                <h2>Controlling Playback</h2>
-                <pre>
+    <!-- Any section element inside of this container is displayed as a slide -->
+    <div class="slides">
+
+      
+      <section>
+        <h2>Controlling Playback</h2>
+        <pre>
             <code>
               source.start(0);
               source.stop();
             </code>
           </pre>
 
-                <p>what about pause/replay?</p>
+        <p>what about pause/replay?</p>
 
-                <pre>
+        <pre>
             <code>
               var trackTime = 0;
               function pause () {
@@ -53,20 +55,22 @@
               }
             </code>
           </pre>
-            </section>
+      </section>
 
-            <section>
-                <h2>Controlling Playback</h2>
-                <pre>
+
+
+      <section>
+        <h2>Controlling Playback</h2>
+        <pre>
             <code>
               source.start(0);
               source.stop();
             </code>
           </pre>
 
-                <p>what about pause/replay?</p>
+        <p>what about pause/replay?</p>
 
-                <pre>
+        <pre>
             <code>
               var trackTime = 0;
               function pause () {
@@ -78,20 +82,22 @@
               }
             </code>
           </pre>
-            </section>
+      </section>
 
-            <section>
-                <h2>Controlling Playback</h2>
-                <pre>
+
+
+      <section>
+        <h2>Controlling Playback</h2>
+        <pre>
             <code>
               source.start(0);
               source.stop();
             </code>
           </pre>
 
-                <p>what about pause/replay?</p>
+        <p>what about pause/replay?</p>
 
-                <pre>
+        <pre>
             <code>
               var trackTime = 0;
               function pause () {
@@ -103,99 +109,99 @@
               }
             </code>
           </pre>
-            </section>
-        </div>
+      </section>
     </div>
+  </div>
 
-    <script>
+  <script>
 
-        // Full list of configuration options available here:
-        // https://github.com/hakimel/reveal.js#configuration
-        Reveal.initialize({
-            controls: true,
-            progress: true,
-            history: true,
-            center: true,
+    // Full list of configuration options available here:
+    // https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+      controls: true,
+      progress: true,
+      history: true,
+      center: true,
 
-            theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-            transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+      theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+      transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
 
-            // Parallax scrolling
-            // parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
-            // parallaxBackgroundSize: '2100px 900px',
+      // Parallax scrolling
+      // parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+      // parallaxBackgroundSize: '2100px 900px',
 
-            // Optional libraries used to extend on reveal.js
-            dependencies: [
-                { src: 'lib/js/classList.js', condition: function () { return !document.body.classList; } },
-                { src: 'plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } },
-                { src: 'plugin/zoom-js/zoom.js', async: true, condition: function () { return !!document.body.classList; } },
-                { src: 'plugin/notes/notes.js', async: true, condition: function () { return !!document.body.classList; } }
-            ]
+      // Optional libraries used to extend on reveal.js
+      dependencies: [
+        { src: '../ASlide/lib/js/classList.js', condition: function () { return !document.body.classList; } },
+        { src: '../ASlide/plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } },
+        { src: '../ASlide/plugin/zoom-js/zoom.js', async: true, condition: function () { return !!document.body.classList; } },
+        { src: '../ASlide/plugin/notes/notes.js', async: true, condition: function () { return !!document.body.classList; } }
+      ]
+    });
+    var samples = 128;
+    var setup = false;
+    var canvasEl = document.querySelector('#fft');
+    var playBtn = document.querySelector('.fftPlay');
+    var stopBtn = document.querySelector('.fftStop');
+    var ctx = new AudioContext();
+    var fft = ctx.createAnalyser();
+    fft.fftSize = 128;
+    fft.connect(ctx.destination);
+    var gfx = canvasEl.getContext('2d');
+    requestAnimationFrame(update);
+
+    loadFile();
+
+    function stop(src) {
+      src.stop(0);
+    }
+
+    function play(src) {
+      src.start(0);
+    }
+
+    function loadFile() {
+      var req = new XMLHttpRequest();
+      req.open("GET", "./wizard.mp3", true);
+      //we can't use jquery because we need the arraybuffer type
+      req.responseType = "arraybuffer";
+      req.onload = function () {
+        //decode the loaded data
+        ctx.decodeAudioData(req.response, function (buf) {
+          var src = ctx.createBufferSource();
+          src.buffer = buf;
+
+          //connect them up into a chain
+          src.connect(fft);
+          setup = true;
+          playBtn.addEventListener('click', function () {
+            play(src);
+          }, false);
+
+          stopBtn.addEventListener('click', function () {
+            stop(src);
+          }, false);
         });
-        var samples = 128;
-        var setup = false;
-        var canvasEl = document.querySelector('#fft');
-        var playBtn = document.querySelector('.fftPlay');
-        var stopBtn = document.querySelector('.fftStop');
-        var ctx = new AudioContext();
-        var fft = ctx.createAnalyser();
-        fft.fftSize = 128;
-        fft.connect(ctx.destination);
-        var gfx = canvasEl.getContext('2d');
-        requestAnimationFrame(update);
+      };
+      req.send();
+      console.log("loading the song");
+    }
 
-        loadFile();
+    function update() {
+      requestAnimationFrame(update);
+      if (!setup) return;
+      gfx.clearRect(0, 0, 800, 600);
+      gfx.fillStyle = '#333';
+      gfx.fillRect(0, 0, 800, 600);
 
-        function stop(src) {
-            src.stop(0);
-        }
-
-        function play(src) {
-            src.start(0);
-        }
-
-        function loadFile() {
-            var req = new XMLHttpRequest();
-            req.open("GET", "./wizard.mp3", true);
-            //we can't use jquery because we need the arraybuffer type
-            req.responseType = "arraybuffer";
-            req.onload = function () {
-                //decode the loaded data
-                ctx.decodeAudioData(req.response, function (buf) {
-                    var src = ctx.createBufferSource();
-                    src.buffer = buf;
-
-                    //connect them up into a chain
-                    src.connect(fft);
-                    setup = true;
-                    playBtn.addEventListener('click', function () {
-                        play(src);
-                    }, false);
-
-                    stopBtn.addEventListener('click', function () {
-                        stop(src);
-                    }, false);
-                });
-            };
-            req.send();
-            console.log("loading the song");
-        }
-
-        function update() {
-            requestAnimationFrame(update);
-            if (!setup) return;
-            gfx.clearRect(0, 0, 800, 600);
-            gfx.fillStyle = '#333';
-            gfx.fillRect(0, 0, 800, 600);
-
-            var data = new Uint8Array(samples);
-            fft.getByteFrequencyData(data);
-            gfx.fillStyle = '#08FF6B';
-            for (var i = 0; i < data.length; i++) {
-                gfx.fillRect(i * 6, canvasEl.height + 50, 5, 85 - data[i]);
-            }
-        }
-    </script>
+      var data = new Uint8Array(samples);
+      fft.getByteFrequencyData(data);
+      gfx.fillStyle = '#08FF6B';
+      for (var i = 0; i < data.length; i++) {
+        gfx.fillRect(i * 6, canvasEl.height + 50, 5, 85 - data[i]);
+      }
+    }
+  </script>
 </body>
 
 </html>
