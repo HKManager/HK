@@ -359,7 +359,22 @@
         }
 
         function AddGrid() {
-            
+            var WORD_SN = $("#WORD_SN").val();
+            var WORD_WORD = $("#WORD_WORD").val();
+            var WORD_MEAN = $("#WORD_MEAN").val();
+            var WORD_EXAM = $("#WORD_EXAM").val();
+            var WORD_EXAM_MEAN = $("#WORD_EXAM_MEAN").val();
+
+            var emptyWord = { WB_SN: WORD_SN, WB_NAME: '', WB_LEVEL_CD: '', WB_CNT_UNIT: '', WB_CNT_WORD_UNIT: '', WB_CNT_WORD: ''
+                , WAL_SN: '', WB_LOOPCNT: '', WB_INTERVAL: '', WB_USEYN: '', WB_REGISTERDT: '', WB_DESC: '' 
+                , MWW_SN: ''
+                , WORD_SN: '', WORD_UNIT_SN: '', WORD_WORD: WORD_WORD, WORD_MEAN: WORD_MEAN, WORD_SPELLING: '', WORD_SOUND: '', WORD_SOUND_FILE: ''
+                , WORD_EXAM: WORD_EXAM, WORD_EXAM_MEAN: WORD_EXAM_MEAN, WORD_TYPE_CD: '001', WORD_LEVEL_CD: '001', WORD_IMPORTANT: ''
+                , WORD_LEARNYN: '', WORD_IMAGE: '', WORD_LIKE: '', WORD_USEYN: ''};
+
+            gridData.push(emptyWord);
+
+            datagrid.refresh(); //데이터 초기화
         }
 
         function logForXamarin(str) {
@@ -475,28 +490,28 @@
                         <div class="form-line">
                             <input id="WORD_SN" type="hidden" class="control-detail form-control" placeholder="거래처 SN"
                                 data-bind="value: WORD_SN" />
-                            <input id="WB_NAME" type="text" class="control-detail form-control" placeholder="단어"
+                            <input id="WORD_WORD" type="text" class="control-detail form-control" placeholder="단어"
                                 data-bind="value: WORD_WORD" />
                         </div>
                     </div>
 
                     <div class="form-group">
                         <div class="form-line">
-                            <input id="WB_NAME" type="text" class="control-detail form-control" placeholder="단어 뜻"
+                            <input id="WORD_MEAN" type="text" class="control-detail form-control" placeholder="단어 뜻"
                                 data-bind="value: WORD_MEAN" />
                         </div>
                     </div>
 
                     <div class="form-group">
                         <div class="form-line">
-                            <input id="WB_NAME" type="text" class="control-detail form-control" placeholder="단어 예문"
+                            <input id="WORD_EXAM" type="text" class="control-detail form-control" placeholder="단어 예문"
                                 data-bind="value: WORD_EXAM" />
                         </div>
                     </div>
 
                     <div class="form-group">
                         <div class="form-line">
-                            <input id="WB_NAME" type="text" class="control-detail form-control" placeholder="단어 예문 뜻"
+                            <input id="WORD_EXAM_MEAN" type="text" class="control-detail form-control" placeholder="단어 예문 뜻"
                                 data-bind="value: WORD_EXAM_MEAN" />
                         </div>
 
@@ -508,7 +523,7 @@
             
                                     <div class="tab-content">
                                         <div role="tabpanel" class="tab-pane fade in active" id="home">
-                                                <form action="/" id="frmFileUpload" class="dropzone" method="post" style="height:100px;"
+                                                <!-- <form action="/" id="frmFileUpload" class="dropzone" method="post" style="height:100px;"
                                                 enctype="multipart/form-data" onclick="AddImage()">
                                                 <div class="dz-message">
                                                     <div class="drag-icon-cph">
@@ -516,10 +531,10 @@
                                                     </div>
                                                     <h3>클릭하여 이미지를 추가하여 주세요.</h3>
                                                 </div>
-                                                <!-- <div class="fallback">
+                                                <div class="fallback">
                                                     <input name="file" type="file" onclick="AddImage()" />
-                                                </div> -->
-                                            </form>
+                                                </div>
+                                            </form> -->
                                         </div>
             
                                         <div role="tabpanel" class="tab-pane fade" id="profile">
@@ -532,7 +547,7 @@
 
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-link waves-effect" onclick="AddGrid()">추가</button>
+                    <button type="button" class="btn btn-link waves-effect" onclick="AddGrid()" data-dismiss="modal">추가</button>
                     <button type="button" class="btn btn-link waves-effect" data-dismiss="modal">취소</button>
                 </div>
             </div>
