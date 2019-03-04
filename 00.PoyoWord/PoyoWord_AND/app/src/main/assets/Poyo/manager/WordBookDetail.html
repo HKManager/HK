@@ -95,6 +95,7 @@
         var SBGridProperties = {};
 
         var gridData = []; // 그리드를 그리기 위한 데이터를 담기위한 객체를 선언합니다.
+        var removeData = []; // 그리드를 그리기 위한 데이터를 담기위한 객체를 선언합니다.
 
         function createGrid() {
             // SBGridProperties.parentid = 'SBGridArea';
@@ -378,6 +379,7 @@
                 WB_LEVEL_CD: $("#WB_LEVEL").val(),
 
                 WORD_LIST: gridData,
+                REMOVE_LIST: removeData,
                 WAL_USEYN: true
             };
 
@@ -413,8 +415,6 @@
             vm.WORD_EXAM('');
             vm.WORD_EXAM_MEAN('');
 
-            
-
             if (nRow != '') {
                 var emptyWord = gridData[nRow - 1];
 
@@ -437,6 +437,20 @@
 
                 gridData.push(emptyWord);
             }
+
+            nRow = '';
+
+            datagrid.refresh(); //데이터 초기화
+        }
+
+        function RemoveGrid() {
+            var emptyWord = gridData[nRow - 1];
+
+            if(emptyWord.WORD_SN != '') {
+                removeData.push(emptyWord);
+            }
+
+            gridData.splice(nRow-1, 1);
 
             nRow = '';
 
@@ -613,8 +627,8 @@
 
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-link waves-effect" onclick="SaveGrid()"
-                        data-dismiss="modal">추가</button>
+                    <button type="button" class="btn btn-link waves-effect" onclick="SaveGrid()" data-dismiss="modal">저장</button>
+                    <button type="button" class="btn btn-link waves-effect" onclick="RemoveGrid()" data-dismiss="modal">삭제</button>
                     <button type="button" class="btn btn-link waves-effect" data-dismiss="modal">취소</button>
                 </div>
             </div>

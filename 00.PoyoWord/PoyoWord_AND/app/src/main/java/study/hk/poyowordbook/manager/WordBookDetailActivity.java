@@ -285,6 +285,13 @@ public class WordBookDetailActivity extends AppCompatActivity {
                                 manager.Update(map);
 
                                 List<Map<String, Object>> WordList = (List<Map<String, Object>>) map.get("WORD_LIST");
+                                List<Map<String, Object>> RemoveList = (List<Map<String, Object>>) map.get("REMOVE_LIST");
+
+                                RemoveList.forEach(t -> {
+                                    if(!t.get("WORD_SN").toString().equals("")) {
+                                        wordManager.Delete(t);
+                                    }
+                                });
 
                                 WordList.forEach(t -> {
                                     if(!t.get("WORD_SN").toString().equals("")) {

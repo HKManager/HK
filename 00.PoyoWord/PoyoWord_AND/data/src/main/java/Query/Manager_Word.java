@@ -91,4 +91,20 @@ public class Manager_Word {
         }
     }
 
+    public boolean Delete(Map data) {
+        try {
+            String query = String.format(Query_Word.Delete,
+                    data.get("WORD_SN").toString()
+            );
+
+            db = mHelper.getReadableDatabase();
+
+            db.execSQL(query);
+
+            return true;
+        }catch (Exception e) {
+            return  false;
+        }
+    }
+
 }

@@ -119,4 +119,12 @@ public class Query_Word {
      */
     @Multiline
     public static String Update;
+
+    /**
+     Delete
+     FROM word
+     WHERE  WORD_SN = %s
+     */
+    @Multiline
+    public static String Delete;
 }
