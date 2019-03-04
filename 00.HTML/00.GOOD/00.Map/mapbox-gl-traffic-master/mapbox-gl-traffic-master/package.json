@@ -1,0 +1,53 @@
+{
+  "name": "@mapbox/mapbox-gl-traffic",
+  "version": "1.0.2",
+  "description": "Mapbox GL JS plugin for enabling/disabling traffic",
+  "main": "mapbox-gl-traffic.js",
+  "scripts": {
+    "test": "eslint *.js",
+    "docs": "documentation readme mapbox-gl-traffic.js --section API"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mapbox/mapbox-gl-traffic.git"
+  },
+  "keywords": [
+    "mapbox",
+    "gis",
+    "vector",
+    "leaflet",
+    "gl"
+  ],
+  "author": "Lukas Martinelli",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/mapbox/mapbox-gl-traffic/issues"
+  },
+  "homepage": "https://github.com/mapbox/mapbox-gl-traffic#readme",
+  "devDependencies": {
+    "browserify": "^11.2.0",
+    "documentation": "^4.0.0-beta.18",
+    "eslint": "^2.8.0",
+    "eslint-config-mourner": "^2.0.1",
+    "uglify-js": "^2.4.24",
+    "watchify": "^3.8.0"
+  },
+  "peerDependencies": {
+    "mapbox-gl": "^0.29.0"
+  },
+  "eslintConfig": {
+    "parserOptions": {
+      "sourceType": "module"
+    },
+    "env": {
+      "browser": true
+    },
+    "extends": "mourner",
+    "rules": {
+      "indent": [
+        2,
+        2
+      ]
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "name": "plot",
+  "version": "0.0.0",
+  "license": "MIT",
+  "scripts": {
+    "start": "webpack-dev-server --progress --hot --open",
+    "start-local": "webpack-dev-server --env.local --progress --hot --open",
+    "start-es6": "webpack-dev-server --env.es6 --progress --hot --open"
+  },
+  "dependencies": {
+    "d3-scale": "^1.0.6",
+    "deck.gl": "^6.2.0",
+    "react": "^16.3.0",
+    "react-dom": "^16.3.0"
+  },
+  "devDependencies": {
+    "buble": "^0.19.3",
+    "buble-loader": "^0.5.0",
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.1"
+  }
+}

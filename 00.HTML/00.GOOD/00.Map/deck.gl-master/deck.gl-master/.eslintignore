@@ -1,0 +1,6 @@
+dist/
+dist-es6/
+node_modules/
+workers/
+*.min.js
+mapbox-gl-dev.js

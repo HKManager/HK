@@ -1,0 +1,244 @@
+@import "~react-vis/dist/main.scss";
+@import "variables.scss";
+@import "typography.scss";
+body {
+  font-size: 12px !important;
+  line-height: 1.833;
+}
+.title {
+  height: 300px;
+  width: 100%;
+  margin: 6em auto 1em;
+  max-width: 72rem;
+  img {
+    position: absolute;
+    z-index: -1;
+  }
+  h1, p {
+    margin-left: 213px;
+  }
+  h1 {
+    font-size: 2em;
+    line-height: 1.8333;
+    font-weight: 600;
+  }
+  p {
+    font-size: 4em;
+    line-height: 1.8333;    
+    font-weight: 400;
+  }
+}
+
+.badges {
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+}
+
+.badge {
+  border: 1px solid #979797;
+  border-radius: 4px;
+  display: inline-block;
+  font-size: calc(5em / 9);
+  padding: 0 5px;
+  margin: 0 5px 0 0;
+  line-height: 2em;
+  text-transform: uppercase;
+  transition: color 0.5s, border-color 0.5s, background 0.5s;
+  &:hover {
+    background: white;
+    color: $primary !important;
+  }
+}
+
+.lessons {
+  max-width: 72rem;
+  margin: 0 auto;
+}
+
+.lesson-card {
+  background-color: white;
+  color: #494949;
+  font-size: 1.5em;
+  width: 20rem;
+  max-width: 80vw;
+  height: 30rem;
+  margin: 2rem;
+  padding: 1.5rem 1rem 1rem;
+  position: relative;
+  box-shadow: 0 0 5px rgba(black, 0.2);
+  transition: background-color 250ms, box-shadow 0.3s, color 250ms, transform 250ms;
+
+  p {
+    line-height: 1.8333;            
+  }
+  h3 {
+    font-size: 1.2em;
+    font-weight: 500;
+    line-height: 1.8333;        
+  }
+
+  .btn {
+    transition: color 250ms ease-in;
+    padding: 0.5rem 2rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+  }
+
+  &:hover {
+    background-color: $primary;
+    color: white;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12), 0 2px 5px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+
+    .lesson-card__image {
+      box-shadow: 0 0 0 4px white;
+    }
+    .btn {
+      color: white;
+    }
+    .badge {
+      color: white;
+      border-color: white;
+    }
+  }
+}
+
+img.lesson-card__image {
+  border: 0px solid white;
+  border-radius: 50%;
+  transition: box-shadow 0.8s;
+  width: 70%;
+}
+
+.lesson-card__name {
+  font-size: 1.5em;
+  text-align: center;
+  width: 100%;
+  margin: 12px 0 8px;
+  padding-top: 12px;
+}
+
+footer {
+  position: relative !important;
+  bottom: 0 !important;
+  margin-top: 4rem;
+}
+
+ul.insert {
+  background-color: #e5e5e4;
+  color: #3A3A48;
+  line-height: 1.5;
+  list-style-type: none;
+  margin: 1rem 0 1rem -1rem !important;
+  overflow: auto;
+  padding: 72px 16px 16px !important;
+  position: relative;
+
+  &:before {
+    font-size: 2em;
+    font-weight: 600;
+    position: absolute;
+    top: 14px;
+  }
+
+  &.further-readings, &.takeaways {
+    margin: 2.5rem 0 2.5rem -1rem !important;
+  }
+
+  li {
+    font-size: 1.5em;
+  }
+}
+
+
+
+.learning-objectives:before {
+  content: 'Learning Objectives';
+}
+
+.takeaways:before {
+  content: 'Takeaways';
+}
+
+.further-readings {
+  background-color: #FDFFDF;
+  color: #333;
+  &:before {
+    content: 'To go further';
+  }
+}
+
+.demo:hover {
+  /*height: 35vh !important;*/
+}
+
+
+
+.markdown-body {
+  h1, h2, h3 {
+    font-weight: 400 !important;
+    margin-top: 2rem;
+  }
+  h1 {
+    font-size: 36px !important;
+    line-height: 48px !important;
+  }
+  h2 {
+    font-size: 28px !important;
+    line-height: 36px !important;
+  }
+  h3 {
+    font-size: 24px !important;
+    line-height: 32px !important;
+  }
+  code {
+    font-size: inherit !important;
+  }
+  p {
+    font-size: 17px;
+    line-height: 1.7;
+    margin-top: 2.5rem !important;
+    max-width: 42em;
+  }
+  &.p2 {
+    padding: 2rem 2rem 2rem 4rem;
+  }
+  pre {
+    padding: 1rem 2rem;
+    margin-top: 2.5rem !important;
+    margin-left: -1rem;
+  }
+}
+
+.center {
+  text-align: center;
+}
+
+@media screen and (max-width: $mobile) {
+  .Home {
+    .title {
+      margin: 2rem auto;
+      h1 {
+        margin: 1rem 1rem 1rem 2rem ;
+      }
+      img {
+        height: 100px;
+      }
+      p {
+        margin: 1rem 1rem 1rem 2rem ;
+        font-size: 1em;
+        max-width: 80%;
+      }
+      height: 100px;
+    }
+    .lesson-card {
+      margin: 1rem 2rem;
+      max-width: none;
+      img {
+        width: 50%;
+      }
+    }
+  }
+}
+
