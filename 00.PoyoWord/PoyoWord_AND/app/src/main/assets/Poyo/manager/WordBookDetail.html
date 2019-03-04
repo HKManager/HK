@@ -106,7 +106,7 @@
             // SBGridProperties.tooltip = true;
             // SBGridProperties.ellipsis = true;
             // SBGridProperties.backcoloralternate = '#FFF2FF';
-            // SBGridProperties.emptyrecords = "데이터가 존재하지 않습니다.";	//empty 문구 설정
+            SBGridProperties.emptyrecords = "데이터가 존재하지 않습니다.";	//empty 문구 설정
             // SBGridProperties.showtotalrows = true;											//그리드 하단 전체 행 표시
 
             // SBGridProperties.rowheader = 'seq';
@@ -125,7 +125,14 @@
             // SBGridProperties.allowpaste = true;
             // SBGridProperties.allowcopy = true;
             // SBGridProperties.updatepastestatus = true;
-            SBGridProperties.oneclickedit = true;
+            // SBGridProperties.oneclickedit = true;
+
+            //     SBGridProperties.showscrollinfo = {
+            // 	type		:	'vertical',
+            // 	callback	:	function(nDataCount, nTopRow, nBottomRow){
+            // 		return '전체 건 수: ' + nDataCount + '<br>' + '상단 행: ' + nTopRow + ', 하단 행: ' + nBottomRow;
+            // 	}
+            // };
 
             SBGridProperties.paging = {
                 'type': 'all',
@@ -154,6 +161,41 @@
             datagrid = _SBGrid.create(SBGridProperties);
 
             datagrid.setBackColorAlternate('#cccc');
+
+            datagrid.bind('click', 'gridClick');
+        };
+
+        var nRow = '';
+
+        function gridClick() {
+
+            isUpdate = true;
+
+            nRow = datagrid.getRow();
+            var nCol = datagrid.getCol();
+            if (nRow == '-1') {
+                var valueData = "그리드 내부가 아닙니다.";
+
+                alert(valueData);
+            } else {
+                // var valueData = datagrid.getCellData(nRow, nCol);
+
+                var valueData = datagrid.getRowData(nRow, false);
+
+                vm.WORD_SN(valueData.WORD_SN);
+                vm.WORD_WORD(valueData.WORD_WORD);
+                vm.WORD_MEAN(valueData.WORD_MEAN);
+                vm.WORD_EXAM(valueData.WORD_EXAM);
+                vm.WORD_EXAM_MEAN(valueData.WORD_EXAM_MEAN);
+
+                // $('#WORD_WORD').val(valueData[13]);
+
+
+                // alert(valueData);
+                $('#smallModal').modal({
+                    show: 'true'
+                });
+            }
         };
     </script>
     <!-- SBGrid 관련 -->
@@ -358,21 +400,45 @@
             window.android.setData(data);
         }
 
-        function AddGrid() {
+        function SaveGrid() {
             var WORD_SN = $("#WORD_SN").val();
             var WORD_WORD = $("#WORD_WORD").val();
             var WORD_MEAN = $("#WORD_MEAN").val();
             var WORD_EXAM = $("#WORD_EXAM").val();
             var WORD_EXAM_MEAN = $("#WORD_EXAM_MEAN").val();
 
-            var emptyWord = { WB_SN: WORD_SN, WB_NAME: '', WB_LEVEL_CD: '', WB_CNT_UNIT: '', WB_CNT_WORD_UNIT: '', WB_CNT_WORD: ''
-                , WAL_SN: '', WB_LOOPCNT: '', WB_INTERVAL: '', WB_USEYN: '', WB_REGISTERDT: '', WB_DESC: '' 
-                , MWW_SN: ''
-                , WORD_SN: '', WORD_UNIT_SN: '', WORD_WORD: WORD_WORD, WORD_MEAN: WORD_MEAN, WORD_SPELLING: '', WORD_SOUND: '', WORD_SOUND_FILE: ''
-                , WORD_EXAM: WORD_EXAM, WORD_EXAM_MEAN: WORD_EXAM_MEAN, WORD_TYPE_CD: '001', WORD_LEVEL_CD: '001', WORD_IMPORTANT: ''
-                , WORD_LEARNYN: '', WORD_IMAGE: '', WORD_LIKE: '', WORD_USEYN: ''};
+            vm.WORD_SN('');
+            vm.WORD_WORD('');
+            vm.WORD_MEAN('');
+            vm.WORD_EXAM('');
+            vm.WORD_EXAM_MEAN('');
 
-            gridData.push(emptyWord);
+            
+
+            if (nRow != '') {
+                var emptyWord = gridData[nRow - 1];
+
+                emptyWord.WORD_WORD = WORD_WORD;
+                emptyWord.WORD_MEAN = WORD_MEAN;
+                emptyWord.WORD_EXAM = WORD_EXAM;
+                emptyWord.WORD_EXAM_MEAN = WORD_EXAM_MEAN;
+
+                //datagrid.setRowData(nRow, emptyWord);
+                gridData[nRow - 1] = emptyWord;
+            } else {
+                var emptyWord = {
+                    WB_SN: '', WB_NAME: '', WB_LEVEL_CD: '', WB_CNT_UNIT: '', WB_CNT_WORD_UNIT: '', WB_CNT_WORD: ''
+                    , WAL_SN: '', WB_LOOPCNT: '', WB_INTERVAL: '', WB_USEYN: '', WB_REGISTERDT: '', WB_DESC: ''
+                    , MWW_SN: ''
+                    , WORD_SN: WORD_SN, WORD_UNIT_SN: '', WORD_WORD: WORD_WORD, WORD_MEAN: WORD_MEAN, WORD_SPELLING: '', WORD_SOUND: '', WORD_SOUND_FILE: ''
+                    , WORD_EXAM: WORD_EXAM, WORD_EXAM_MEAN: WORD_EXAM_MEAN, WORD_TYPE_CD: '001', WORD_LEVEL_CD: '001', WORD_IMPORTANT: ''
+                    , WORD_LEARNYN: '', WORD_IMAGE: '', WORD_LIKE: '', WORD_USEYN: ''
+                };
+
+                gridData.push(emptyWord);
+            }
+
+            nRow = '';
 
             datagrid.refresh(); //데이터 초기화
         }
@@ -511,19 +577,19 @@
 
                     <div class="form-group">
                         <div class="form-line">
-                            <input id="WORD_EXAM_MEAN" type="text" class="control-detail form-control" placeholder="단어 예문 뜻"
-                                data-bind="value: WORD_EXAM_MEAN" />
+                            <input id="WORD_EXAM_MEAN" type="text" class="control-detail form-control"
+                                placeholder="단어 예문 뜻" data-bind="value: WORD_EXAM_MEAN" />
                         </div>
 
                         <div class="form-line">
-                                <ul class="nav nav-tabs tab-nav-right" role="tablist">
-                                        <li role="presentation" class="active"><a href="#home" data-toggle="tab">이미지찾기</a></li>
-                                        <li role="presentation"><a href="#profile" data-toggle="tab">이미지선택하기</a></li>
-                                    </ul>
-            
-                                    <div class="tab-content">
-                                        <div role="tabpanel" class="tab-pane fade in active" id="home">
-                                                <!-- <form action="/" id="frmFileUpload" class="dropzone" method="post" style="height:100px;"
+                            <ul class="nav nav-tabs tab-nav-right" role="tablist">
+                                <li role="presentation" class="active"><a href="#home" data-toggle="tab">이미지찾기</a></li>
+                                <li role="presentation"><a href="#profile" data-toggle="tab">이미지선택하기</a></li>
+                            </ul>
+
+                            <div class="tab-content">
+                                <div role="tabpanel" class="tab-pane fade in active" id="home">
+                                    <!-- <form action="/" id="frmFileUpload" class="dropzone" method="post" style="height:100px;"
                                                 enctype="multipart/form-data" onclick="AddImage()">
                                                 <div class="dz-message">
                                                     <div class="drag-icon-cph">
@@ -535,19 +601,20 @@
                                                     <input name="file" type="file" onclick="AddImage()" />
                                                 </div>
                                             </form> -->
-                                        </div>
-            
-                                        <div role="tabpanel" class="tab-pane fade" id="profile">
-                                        
-                                        </div>
-                                    </div>  
+                                </div>
+
+                                <div role="tabpanel" class="tab-pane fade" id="profile">
+
+                                </div>
+                            </div>
 
                         </div>
                     </div>
 
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-link waves-effect" onclick="AddGrid()" data-dismiss="modal">추가</button>
+                    <button type="button" class="btn btn-link waves-effect" onclick="SaveGrid()"
+                        data-dismiss="modal">추가</button>
                     <button type="button" class="btn btn-link waves-effect" data-dismiss="modal">취소</button>
                 </div>
             </div>

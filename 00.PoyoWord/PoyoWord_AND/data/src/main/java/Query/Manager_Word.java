@@ -46,6 +46,7 @@ public class Manager_Word {
             db.execSQL(query);
 
             if(WB_SN.equals("")) {
+
                 query = Query_Mapping_WB_W.Insert;
             } else {
                 query = String.format(Query_Mapping_WB_W.InsertWB_SN, WB_SN);
