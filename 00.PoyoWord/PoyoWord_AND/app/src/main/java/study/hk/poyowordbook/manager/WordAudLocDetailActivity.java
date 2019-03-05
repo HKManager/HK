@@ -123,7 +123,7 @@ public class WordAudLocDetailActivity extends AppCompatActivity {
                         case HARDCODE.화면호출 :
                             switch (parse.data) {
                                 case HARDCODE.단어장배치관리 :
-                                    intent =new Intent(WordAudLocDetailActivity.this,WordAudLocActivity.class);
+                                    intent =new Intent(WordAudLocDetailActivity.this,WordManagerActivity.class);
                                     startActivity(intent);
                                     break;
                             }

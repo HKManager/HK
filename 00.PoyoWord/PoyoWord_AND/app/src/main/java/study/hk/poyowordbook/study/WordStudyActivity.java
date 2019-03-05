@@ -79,8 +79,8 @@ public class WordStudyActivity extends AppCompatActivity {
         lWebView.addJavascriptInterface(new study.hk.poyowordbook.study.WordStudyActivity.JavaScriptBridge(), "android");
         //lWebView.getSettings().setJavaScriptCanOpenWindowsAutomatically(true);
 
-        //lWebView.loadUrl("file:///android_asset/Poyo/manager/WordBookList.html");
-        lWebView.loadUrl("file:///android_asset/Poyo/AGrid/index.html");
+        lWebView.loadUrl("file:///android_asset/Poyo/study/WordStudyRoom.html");
+        //lWebView.loadUrl("file:///android_asset/Poyo/AGrid/index.html");
     }
 
     private class JavaScriptBridge {

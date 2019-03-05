@@ -254,6 +254,11 @@ public class WordManagerActivity extends AppCompatActivity {
                                     intent.putExtra("WB_SN",""); /*송신*/
                                     context.startActivity(intent);
                                     break;
+                                case HARDCODE.단어장배치상세 :
+                                    intent = new Intent(context,WordAudLocDetailActivity.class);
+                                    intent.putExtra("WAL_SN",""); /*송신*/
+                                    context.startActivity(intent);
+                                    break;
                                 case HARDCODE.메인화면 :
                                     intent =new Intent(context,MainActivity.class);
                                     context.startActivity(intent);
