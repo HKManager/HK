@@ -68,6 +68,8 @@
 
     <!-- UI 관련 -->
 
+    <script type='text/javascript' src='../Content/js/knockout-3.4.2.js'></script>
+
     <style type="text/css">
         .row-highlight {
             background-color: Yellow;
@@ -105,7 +107,7 @@
         }
 
         function GoMain() {
-            var obj = { handle: "06", view: "WordStudyBookDetail", data: "MAIN" };
+            var obj = { handle: "06", view: "WORDSTUDYBOOK", data: "MAIN" };
 
             var data = JSON.stringify(obj);
 
@@ -113,7 +115,7 @@
         }
 
         function GoWordAudLoc() {
-            var obj = { handle: "06", view: "WordStudyBookDetail", data: "WORDAUDLOC" };
+            var obj = { handle: "06", view: "WORDSTUDYBOOK", data: "WORDAUDLOC" };
 
             var data = JSON.stringify(obj);
 
@@ -122,7 +124,7 @@
 
         function Update() {
 
-            var obj = { handle: "04", view: "WordStudyBook", data: selectItem.WB_SN };
+            var obj = { handle: "04", view: "WORDSTUDYBOOK", data: selectItem.WB_SN };
 
             var data = JSON.stringify(obj);
 
@@ -132,7 +134,7 @@
         function Delete() {
             var item = JSON.stringify(selectItem);
 
-            var obj = { handle: "05", view: "ACCOUNT", data: item };
+            var obj = { handle: "05", view: "WORDSTUDYBOOK", data: item };
 
             var data = JSON.stringify(obj);
 
@@ -177,8 +179,6 @@
 
 
             ko.applyBindings(viewModel);
-
-            showData("");
         });
 
         var selectItem;
@@ -194,9 +194,6 @@
 
 <body id="MainBody" class="theme-red" style="margin:0;height:100%;overflow-x:scroll ; overflow-y: hidden;">
     </script>
-
-    <script type='text/javascript' src='../Content/js/knockout-3.4.2.js'></script>
-
 
     <!-- Page Loader -->
     <div class="page-loader-wrapper">
@@ -233,25 +230,25 @@
                     <div class="header">
 
                         <div>
-                            <div>
+                            <!-- <div>
                                 <h2>
                                     단어 학습장 관리
                                     <small>단어 학습장을 등록/수정/삭제 하세요.</small>
                                 </h2>
-                            </div>
+                            </div> -->
 
                             <table style="width:100%;">
                                 <tr>
                                     <td style="width:50%;">
                                         <div class="form-group" style="margin:5px;width:100%;">
-                                            <button type="button" class="btn btn-primary m-t-15 waves-effect"
+                                            <button type="button" class="btn btn-primary waves-effect"
                                                 onclick="QueryAll();" style="width:95%;">재조회</button>
                                         </div>
                                     </td>
 
                                     <td style="width:50%;">
                                         <div class="form-group" style="margin:5px;width:100%;">
-                                            <button type="button" class="btn btn-primary m-t-15 waves-effect"
+                                            <button type="button" class="btn btn-primary waves-effect"
                                                 onclick="Create();" style="width:95%;">등록</button>
                                         </div>
                                     </td>
@@ -280,13 +277,6 @@
             </div>
 
         </main>
-        <div class="cd-overlay-nav">
-            <span></span>
-        </div> <!-- cd-overlay-nav -->
-        <div class="cd-overlay-content">
-            <span></span>
-        </div> <!-- cd-overlay-content -->
-        <a href="#0" class="cd-nav-trigger" style="margin-right:5px;">Menu<span class="cd-icon"></span></a>
 
     </div>
 </body>

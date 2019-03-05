@@ -91,25 +91,25 @@
                     <div class="header">
 
                         <div>
-                            <div>
+                            <!-- <div>
                                 <h2>
                                     단어장 관리
                                     <small>단어장을 등록/수정/삭제 하세요.</small>
                                 </h2>
-                            </div>
+                            </div> -->
 
                             <table style="width:100%;">
                                 <tr>
                                     <td style="width:50%;">
                                         <div class="form-group" style="margin:5px;width:100%;">
-                                            <button type="button" class="btn btn-primary m-t-15 waves-effect" onclick="QueryAll();"
+                                            <button type="button" class="btn btn-primary waves-effect" onclick="QueryAll();"
                                                 style="width:95%;">재조회</button>
                                         </div>
                                     </td>
 
                                     <td style="width:50%;">
                                         <div class="form-group" style="margin:5px;width:100%;">
-                                            <button type="button" class="btn btn-primary m-t-15 waves-effect" onclick="Create();"
+                                            <button type="button" class="btn btn-primary waves-effect" onclick="Create();"
                                                 style="width:95%;">등록</button>
                                         </div>
                                     </td>
@@ -151,14 +151,6 @@
             </div>
 
         </main>
-        <div class="cd-overlay-nav">
-            <span></span>
-        </div> <!-- cd-overlay-nav -->
-        <div class="cd-overlay-content">
-            <span></span>
-        </div> <!-- cd-overlay-content -->
-        <a href="#0" class="cd-nav-trigger" style="margin-right:5px;">Menu<span class="cd-icon"></span></a>
-
     </div>
 
 
@@ -187,7 +179,7 @@
         }
 
         function GoMain() {
-            var obj = { handle: "06", view: "WordBookDetail", data: "MAIN" };
+            var obj = { handle: "06", view: "WORDBOOK", data: "MAIN" };
 
             var data = JSON.stringify(obj);
 
@@ -195,7 +187,7 @@
         }
 
         function GoWordAudLoc() {
-            var obj = { handle: "06", view: "WordBookDetail", data: "WORDAUDLOC" };
+            var obj = { handle: "06", view: "WORDBOOK", data: "WORDAUDLOC" };
 
             var data = JSON.stringify(obj);
 
@@ -204,7 +196,7 @@
 
         function Update() {
 
-            var obj = { handle: "04", view: "WordBook", data: selectItem.WB_SN };
+            var obj = { handle: "04", view: "WORDBOOK", data: selectItem.WB_SN };
 
             var data = JSON.stringify(obj);
 
@@ -214,7 +206,7 @@
         function Delete() {
             var item = JSON.stringify(selectItem);
 
-            var obj = { handle: "05", view: "ACCOUNT", data: item };
+            var obj = { handle: "05", view: "WORDBOOK", data: item };
 
             var data = JSON.stringify(obj);
 
@@ -273,7 +265,7 @@
 
             ko.applyBindings(viewModel);
 
-            showData("");
+            // showData("");
         });
 
         var selectItem;

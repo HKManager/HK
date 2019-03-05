@@ -34,6 +34,7 @@ import Query.Manager_WordBook;
 import io.github.controlwear.virtual.joystick.android.JoystickView;
 import study.hk.data.Data.*;
 import study.hk.poyowordbook.manager.WordBookActivity;
+import study.hk.poyowordbook.manager.WordManagerActivity;
 import study.hk.poyowordbook.study.WordStudyActivity;
 
 
@@ -249,7 +250,7 @@ public class MainActivity extends AppCompatActivity {
                         case HARDCODE.화면호출 :
                             switch (parse.data) {
                                 case HARDCODE.단어장관리 :
-                                    Intent intent=new Intent(MainActivity.this,WordBookActivity.class);
+                                    Intent intent=new Intent(MainActivity.this,WordManagerActivity.class);
                                     startActivity(intent);
                                     break;
                                 case HARDCODE.단어공부방 :

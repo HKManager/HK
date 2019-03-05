@@ -9,7 +9,8 @@
     <!-- Favicon-->
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet"
+        type="text/css" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css" />
     <!-- Bootstrap Core Css -->
     <link href="../Content/plugins/bootstrap/css/bootstrap.css" rel="stylesheet" />
@@ -36,6 +37,40 @@
     <script src="../js/menu/main.js"></script> <!-- Resource jQuery -->
     <!-- 네비게이션 메뉴 관련 -->
 
+    <!-- UI 관련 -->
+
+    <!-- Jquery Core Js -->
+    <script src="../Content/plugins/jquery/jquery.min.js">
+    </script>
+    <!-- Bootstrap Core Js -->
+    <script src="../Content/plugins/bootstrap/js/bootstrap.js">
+    </script>
+    <!-- Select Plugin Js -->
+    <script src="../Content/plugins/bootstrap-select/js/bootstrap-select.js">
+    </script>
+    <!-- Slimscroll Plugin Js -->
+    <script src="../Content/plugins/jquery-slimscroll/jquery.slimscroll.js">
+    </script>
+    <!-- Waves Effect Plugin Js -->
+    <script src="../Content/plugins/node-waves/waves.js">
+    </script>
+    <!-- Editable Table Plugin Js -->
+    <script src="../Content/plugins/editable-table/mindmup-editabletable.js">
+    </script>
+    <!-- Custom Js -->
+    <script src="../Content/js/admin.js">
+    </script>
+    <script src="../Content/js/pages/tables/editable-table.js">
+    </script>
+    <!-- Demo Js -->
+    <script src="../Content/js/demo.js">
+    </script>
+
+    <!-- UI 관련 -->
+
+    <script type='text/javascript' src='../Content/js/knockout-3.4.2.js'></script>
+
+
     <script src="js/wordbook.js"></script> <!-- Resource jQuery -->
 
     <style type="text/css">
@@ -47,116 +82,8 @@
             background-color: #8BBDFF;
         }
     </style>
-</head>
 
-<body id="MainBody" class="theme-red" style="margin:0;height:100%;overflow-x:scroll ; overflow-y: hidden;">
-<!-- <script src="http://code.jquery.com/jquery-2.1.4.min.js"> -->
-</script>
-
-    <script type='text/javascript' src='../Content/js/knockout-3.4.2.js'></script>
-
-
-<!-- Page Loader -->
-<div class="page-loader-wrapper">
-    <div class="loader">
-        <div class="preloader">
-            <div class="spinner-layer pl-red">
-                <div class="circle-clipper left">
-                    <div class="circle"></div>
-                </div>
-                <div class="circle-clipper right">
-                    <div class="circle"></div>
-                </div>
-            </div>
-        </div>
-        <p>Please wait...</p>
-    </div>
-</div>
-
-<div style="position:relative;overflow-x:scroll ; overflow-y: hidden;">
-
-    <nav>
-        <ul class="cd-primary-nav">
-            <li><a href="#0" style="font-weight: bold;" onclick="GoMain()">메인으로 가기</a></li>
-            <li><a href="#0" style="font-weight: bold;" onclick="GoWordBook()">단어장관리 하기</a></li>
-            <li><a href="#0" style="font-weight: bold;">단어학습장관리 하기</a></li>
-            <li><a href="#0" style="font-weight: bold;">어플종료하기</a></li>
-        </ul>
-    </nav>
-
-    <main id="Main">
-
-        <div style="margin-left: 5px;margin-right: 5px;">
-            <div id="Manager" class="card" style="min-height:300px;">
-                <div class="header">
-
-                    <div>
-                        <div>
-                            <h2>
-                                단어 배치 관리
-                                <small>단어학습 시 배치 항목을 등록/수정/삭제 하세요.</small>
-                            </h2>
-                        </div>
-
-                        <table style="width:100%;">
-                            <tr>
-                                <td style="width:50%;">
-                                    <div class="form-group" style="margin:5px;width:100%;">
-                                        <button type="button" class="btn btn-primary m-t-15 waves-effect" onclick="QueryAll();"
-                                                style="width:95%;">재조회</button>
-                                    </div>
-                                </td>
-
-                                <td style="width:50%;">
-                                    <div class="form-group" style="margin:5px;width:100%;">
-                                        <button type="button" class="btn btn-primary m-t-15 waves-effect" onclick="Create();"
-                                                style="width:95%;">등록</button>
-                                    </div>
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-
-                    <!-- <ul class="header-dropdown m-r--5">
-                            <li class="dropdown">
-                                <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                                    aria-haspopup="true" aria-expanded="false">
-                                    <i class="material-icons">more_vert</i>
-                                </a>
-                                <ul class="dropdown-menu pull-right">
-                                    <li><a href="javascript:void(0);">재조회</a></li>
-                                    <li><a href="javascript:void(0);">등록</a></li>
-                                </ul>
-                            </li>
-                        </ul> -->
-                </div>
-                <div class="body">
-                    <table id="example-table" class="table">
-                        <thead>
-                        </thead>
-                        <tbody data-bind="foreach: list">
-                            <tr data-bind='click: setEditItem' style="height:50px;">
-                                <td data-bind="text: WAL_NAME"></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-
-    </main>
-    <div class="cd-overlay-nav">
-        <span></span>
-    </div> <!-- cd-overlay-nav -->
-    <div class="cd-overlay-content">
-        <span></span>
-    </div> <!-- cd-overlay-content -->
-    <a href="#0" class="cd-nav-trigger" style="margin-right:5px;">Menu<span class="cd-icon"></span></a>
-
-</div>
-
-
-<script type="text/javascript">
+    <script type="text/javascript">
 
         function QueryAll() {
             var obj = { handle: "01", view: "WordBook", data: "" };
@@ -181,7 +108,7 @@
         }
 
         function GoMain() {
-            var obj = { handle: "06", view: "WordBookDetail", data: "MAIN" };
+            var obj = { handle: "06", view: "WORDAUDLOC", data: "MAIN" };
 
             var data = JSON.stringify(obj);
 
@@ -189,7 +116,7 @@
         }
 
         function GoWordBook() {
-            var obj = { handle: "06", view: "WordAudLoc", data: "WORDBOOK" };
+            var obj = { handle: "06", view: "WORDAUDLOC", data: "WORDBOOK" };
 
             var data = JSON.stringify(obj);
 
@@ -198,7 +125,7 @@
 
         function Update() {
 
-            var obj = { handle: "04", view: "WordAudLoc", data: selectItem.WAL_SN };
+            var obj = { handle: "04", view: "WORDAUDLOC", data: selectItem.WAL_SN };
 
             var data = JSON.stringify(obj);
 
@@ -208,7 +135,7 @@
         function Delete() {
             var item = JSON.stringify(selectItem);
 
-            var obj = { handle: "05", view: "ACCOUNT", data: item };
+            var obj = { handle: "05", view: "WORDAUDLOC", data: item };
 
             var data = JSON.stringify(obj);
 
@@ -224,7 +151,7 @@
 
             //var str = '{ "name":"John", "age":30, "city":"New York"}';
 
-                        //var jsonValue = JSON.parse(jsonObj.data);
+            //var jsonValue = JSON.parse(jsonObj.data);
 
 
             //console.log(jsonObj);
@@ -280,53 +207,113 @@
             Update();
         }
 
-            //$(document).ready(function () {
-            //    var json = [{ "name": "name1", "score": "30" }, { "name": "name2", "score": "50" }];
+        //$(document).ready(function () {
+        //    var json = [{ "name": "name1", "score": "30" }, { "name": "name2", "score": "50" }];
 
-            //    $.getJSON(url, function (json) {
-            //        ko.applyBindings({
-            //            teams: json
-            //        });
-            //    }
-            //});
+        //    $.getJSON(url, function (json) {
+        //        ko.applyBindings({
+        //            teams: json
+        //        });
+        //    }
+        //});
 
 
 
     </script>
+</head>
 
+<body id="MainBody" class="theme-red" style="margin:0;height:100%;overflow-x:scroll ; overflow-y: hidden;">
 
+    <!-- Page Loader -->
+    <div class="page-loader-wrapper">
+        <div class="loader">
+            <div class="preloader">
+                <div class="spinner-layer pl-red">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+            </div>
+            <p>Please wait...</p>
+        </div>
+    </div>
 
+    <div style="position:relative;overflow-x:scroll ; overflow-y: hidden;">
 
+        <nav>
+            <ul class="cd-primary-nav">
+                <li><a href="#0" style="font-weight: bold;" onclick="GoMain()">메인으로 가기</a></li>
+                <li><a href="#0" style="font-weight: bold;" onclick="GoWordBook()">단어장관리 하기</a></li>
+                <li><a href="#0" style="font-weight: bold;">단어학습장관리 하기</a></li>
+                <li><a href="#0" style="font-weight: bold;">어플종료하기</a></li>
+            </ul>
+        </nav>
 
+        <main id="Main">
 
+            <div style="margin-left: 5px;margin-right: 5px;">
+                <div id="Manager" class="card" style="min-height:300px;">
+                    <div class="header">
 
+                        <div>
+                            <!-- <div>
+                                <h2>
+                                    단어 배치 관리
+                                    <small>단어학습 시 배치 항목을 등록/수정/삭제 하세요.</small>
+                                </h2>
+                            </div> -->
 
-<!-- Jquery Core Js -->
-<script src="../Content/plugins/jquery/jquery.min.js">
-</script>
-<!-- Bootstrap Core Js -->
-<script src="../Content/plugins/bootstrap/js/bootstrap.js">
-</script>
-<!-- Select Plugin Js -->
-<script src="../Content/plugins/bootstrap-select/js/bootstrap-select.js">
-</script>
-<!-- Slimscroll Plugin Js -->
-<script src="../Content/plugins/jquery-slimscroll/jquery.slimscroll.js">
-</script>
-<!-- Waves Effect Plugin Js -->
-<script src="../Content/plugins/node-waves/waves.js">
-</script>
-<!-- Editable Table Plugin Js -->
-<script src="../Content/plugins/editable-table/mindmup-editabletable.js">
-</script>
-<!-- Custom Js -->
-<script src="../Content/js/admin.js">
-</script>
-<script src="../Content/js/pages/tables/editable-table.js">
-</script>
-<!-- Demo Js -->
-<script src="../Content/js/demo.js">
-</script>
+                            <table style="width:100%;">
+                                <tr>
+                                    <td style="width:50%;">
+                                        <div class="form-group" style="margin:5px;width:100%;">
+                                            <button type="button" class="btn btn-primary waves-effect"
+                                                onclick="QueryAll();" style="width:95%;">재조회</button>
+                                        </div>
+                                    </td>
+
+                                    <td style="width:50%;">
+                                        <div class="form-group" style="margin:5px;width:100%;">
+                                            <button type="button" class="btn btn-primary waves-effect"
+                                                onclick="Create();" style="width:95%;">등록</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <!-- <ul class="header-dropdown m-r--5">
+                            <li class="dropdown">
+                                <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                    aria-haspopup="true" aria-expanded="false">
+                                    <i class="material-icons">more_vert</i>
+                                </a>
+                                <ul class="dropdown-menu pull-right">
+                                    <li><a href="javascript:void(0);">재조회</a></li>
+                                    <li><a href="javascript:void(0);">등록</a></li>
+                                </ul>
+                            </li>
+                        </ul> -->
+                    </div>
+                    <div class="body">
+                        <table id="example-table" class="table">
+                            <thead>
+                            </thead>
+                            <tbody data-bind="foreach: list">
+                                <tr data-bind='click: setEditItem' style="height:50px;">
+                                    <td data-bind="text: WAL_NAME"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
 </body>
 
 </html>

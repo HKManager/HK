@@ -7,6 +7,7 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.CAMERA" />
+
     <uses-feature android:name="android.hardware.camera" />
 
     <application
@@ -27,16 +28,20 @@
             </intent-filter>
         </activity>
         <activity android:name=".manager.WordBookActivity" />
-        <activity android:name=".manager.WordBookDetailActivity"
+        <activity
+            android:name=".manager.WordBookDetailActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
-            android:windowSoftInputMode="adjustResize"
-        />
+            android:windowSoftInputMode="adjustResize" />
         <activity android:name=".manager.WordAudLocActivity" />
         <activity android:name=".manager.WordAudLocDetailActivity" />
         <activity
             android:name=".study.WordStudyActivity"
             android:label="@string/title_activity_word_study"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".manager.WordManagerActivity"
+            android:label="@string/title_activity_word_manager"
+            android:theme="@style/AppTheme" />
     </application>
 
 </manifest>
