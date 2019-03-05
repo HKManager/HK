@@ -113,15 +113,15 @@ public class WordManagerActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public static class PlaceholderFragment extends Fragment {
+    public static class WordBookFragment extends Fragment {
 
         private static final String ARG_SECTION_NUMBER = "section_number";
 
-        public PlaceholderFragment() {
+        public WordBookFragment() {
         }
 
-        public static PlaceholderFragment newInstance(int sectionNumber) {
-            PlaceholderFragment fragment = new PlaceholderFragment();
+        public static WordBookFragment newInstance(int sectionNumber) {
+            WordBookFragment fragment = new WordBookFragment();
             Bundle args = new Bundle();
             args.putInt(ARG_SECTION_NUMBER, sectionNumber);
             fragment.setArguments(args);
@@ -133,105 +133,142 @@ public class WordManagerActivity extends AppCompatActivity {
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
 
-            View rootView = inflater.inflate(R.layout.fragment_word_manager, container, false);
+            View rootView = inflater.inflate(R.layout.fragment_word_book, container, false);
 
-            int pageNum = getArguments().getInt(ARG_SECTION_NUMBER);
             webViewWordBook = (WebView)rootView.findViewById(R.id.WordBook);
             webViewWordBook.getSettings().setJavaScriptEnabled(true);
             webViewWordBook.addJavascriptInterface(new JavaScriptBridge(), "android");
+
+            webViewWordBook.setWebViewClient(new WebViewClient() {
+                @Override
+                public void onPageStarted(WebView view, String url, Bitmap favicon) { }
+
+                @Override
+                @SuppressLint({ "SetJavaScriptEnabled", "JavascriptInterface" })
+                public void onPageFinished(WebView view, String url) {
+                    EventData data = new EventData();
+
+                    ArrayList<Map> list = wordBook.Search();
+                    String jsonResult = gson.toJson(list);
+                    data.SetHandle(HARDCODE.전체조회);
+                    data.SetView(HARDCODE.단어장관리);
+                    data.SetValue(list);
+
+                    String JsonEventData = gson.toJson(data);
+
+                    webViewWordBook.loadUrl("javascript:showData('" + JsonEventData + "')");
+                }
+
+                public boolean onJsAlert(final WebView view, final String url, final String message, JsResult result) {
+                    return true;
+                }
+            });
+
+            webViewWordBook.loadUrl("file:///android_asset/Poyo/manager/WordBookList.html");
+
+            return rootView;
+        }
+    }
+
+    public static class WordStudyBookFragment extends Fragment {
+
+        private static final String ARG_SECTION_NUMBER = "section_number";
+
+        public WordStudyBookFragment() {
+        }
+
+        public static WordStudyBookFragment newInstance(int sectionNumber) {
+            WordStudyBookFragment fragment = new WordStudyBookFragment();
+            Bundle args = new Bundle();
+            args.putInt(ARG_SECTION_NUMBER, sectionNumber);
+            fragment.setArguments(args);
+            return fragment;
+        }
+
+        @SuppressLint({ "SetJavaScriptEnabled", "JavascriptInterface" })
+        @Override
+        public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                                 Bundle savedInstanceState) {
+
+            View rootView = inflater.inflate(R.layout.fragment_word_study_book, container, false);
+
             webViewWordStudyBook = (WebView)rootView.findViewById(R.id.WordStudyBook);
             webViewWordStudyBook.getSettings().setJavaScriptEnabled(true);
             webViewWordStudyBook.addJavascriptInterface(new JavaScriptBridge(), "android");
+
+            webViewWordStudyBook.setWebViewClient(new WebViewClient() {
+                @Override
+                public void onPageStarted(WebView view, String url, Bitmap favicon) { }
+
+                @Override
+                @SuppressLint({ "SetJavaScriptEnabled", "JavascriptInterface" })
+                public void onPageFinished(WebView view, String url) {
+                }
+
+                public boolean onJsAlert(final WebView view, final String url, final String message, JsResult result) {
+                    return true;
+                }
+            });
+
+            webViewWordStudyBook.loadUrl("file:///android_asset/Poyo/manager/WordStudyBookList.html");
+
+            return rootView;
+        }
+    }
+
+    public static class WordAudLocFragment extends Fragment {
+
+        private static final String ARG_SECTION_NUMBER = "section_number";
+
+        public WordAudLocFragment() {
+        }
+
+        public static WordAudLocFragment newInstance(int sectionNumber) {
+            WordAudLocFragment fragment = new WordAudLocFragment();
+            Bundle args = new Bundle();
+            args.putInt(ARG_SECTION_NUMBER, sectionNumber);
+            fragment.setArguments(args);
+            return fragment;
+        }
+
+        @SuppressLint({ "SetJavaScriptEnabled", "JavascriptInterface" })
+        @Override
+        public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                                 Bundle savedInstanceState) {
+
+            View rootView = inflater.inflate(R.layout.fragment_word_aud_loc, container, false);
+
             webViewWordAudBook = (WebView)rootView.findViewById(R.id.WordAudLoc);
             webViewWordAudBook.getSettings().setJavaScriptEnabled(true);
             webViewWordAudBook.addJavascriptInterface(new JavaScriptBridge(), "android");
 
-            switch (pageNum) {
-                case 0:
-                    webViewWordBook.setWebViewClient(new WebViewClient() {
-                        @Override
-                        public void onPageStarted(WebView view, String url, Bitmap favicon) { }
+            webViewWordAudBook.setWebViewClient(new WebViewClient() {
+                @Override
+                public void onPageStarted(WebView view, String url, Bitmap favicon) { }
 
-                        @Override
-                        @SuppressLint({ "SetJavaScriptEnabled", "JavascriptInterface" })
-                        public void onPageFinished(WebView view, String url) {
-                            EventData data = new EventData();
+                @Override
+                @SuppressLint({ "SetJavaScriptEnabled", "JavascriptInterface" })
+                public void onPageFinished(WebView view, String url) {
+                    List<Map> list = wordAudBook.Search();
 
-                            ArrayList<Map> list = wordBook.Search();
-                            String jsonResult = gson.toJson(list);
-                            data.SetHandle(HARDCODE.전체조회);
-                            data.SetView(HARDCODE.단어장관리);
-                            data.SetValue(list);
+                    EventData data = new EventData();
 
-                            String JsonEventData = gson.toJson(data);
+                    data.SetHandle(HARDCODE.전체조회);
+                    data.SetView(HARDCODE.단어장관리);
+                    data.SetValue(list);
 
-                            webViewWordBook.loadUrl("javascript:showData('" + JsonEventData + "')");
-                        }
+                    String JsonEventData = gson.toJson(data);
 
-                        public boolean onJsAlert(final WebView view, final String url, final String message, JsResult result) {
-                            return true;
-                        }
-                    });
+                    webViewWordAudBook.loadUrl("javascript:showData('" + JsonEventData + "')");
+                }
 
-                    webViewWordBook.setVisibility(View.VISIBLE);
-                    webViewWordStudyBook.setVisibility(View.GONE);
-                    webViewWordAudBook.setVisibility(View.GONE);
-                    break;
-                case 1:
-                    webViewWordStudyBook.setWebViewClient(new WebViewClient() {
-                        @Override
-                        public void onPageStarted(WebView view, String url, Bitmap favicon) { }
+                public boolean onJsAlert(final WebView view, final String url, final String message, JsResult result) {
+                    return true;
+                }
+            });
 
-                        @Override
-                        @SuppressLint({ "SetJavaScriptEnabled", "JavascriptInterface" })
-                        public void onPageFinished(WebView view, String url) {
-                        }
-
-                        public boolean onJsAlert(final WebView view, final String url, final String message, JsResult result) {
-                            return true;
-                        }
-                    });
-
-                    webViewWordBook.setVisibility(View.GONE);
-                    webViewWordStudyBook.setVisibility(View.VISIBLE);
-                    webViewWordAudBook.setVisibility(View.GONE);
-                    break;
-                case 2:
-                    webViewWordAudBook.setWebViewClient(new WebViewClient() {
-                        @Override
-                        public void onPageStarted(WebView view, String url, Bitmap favicon) { }
-
-                        @Override
-                        @SuppressLint({ "SetJavaScriptEnabled", "JavascriptInterface" })
-                        public void onPageFinished(WebView view, String url) {
-
-                            List<Map> list = wordAudBook.Search();
-
-                            EventData data = new EventData();
-
-                            data.SetHandle(HARDCODE.전체조회);
-                            data.SetView(HARDCODE.단어장관리);
-                            data.SetValue(list);
-
-                            String JsonEventData = gson.toJson(data);
-
-                            webViewWordAudBook.loadUrl("javascript:showData('" + JsonEventData + "')");
-
-                        }
-
-                        public boolean onJsAlert(final WebView view, final String url, final String message, JsResult result) {
-                            return true;
-                        }
-                    });
-                    webViewWordBook.setVisibility(View.GONE);
-                    webViewWordStudyBook.setVisibility(View.GONE);
-                    webViewWordAudBook.setVisibility(View.VISIBLE);
-                    break;
-            }
-
-            webViewWordBook.loadUrl("file:///android_asset/Poyo/manager/WordBookList.html");
-            webViewWordStudyBook.loadUrl("file:///android_asset/Poyo/manager/WordStudyBookList.html");
             webViewWordAudBook.loadUrl("file:///android_asset/Poyo/manager/WordAudLocList.html");
+
             return rootView;
         }
     }
@@ -313,9 +350,20 @@ public class WordManagerActivity extends AppCompatActivity {
 
         @Override
         public Fragment getItem(int position) {
-            // getItem is called to instantiate the fragment for the given page.
-            // Return a PlaceholderFragment (defined as a static inner class below).
-            return PlaceholderFragment.newInstance(position);
+            switch (position){
+                case 0:
+                    WordBookFragment mainTabFragment1 = new WordBookFragment();
+                    return mainTabFragment1;
+                case 1:
+                    WordStudyBookFragment mainTabFragment2 = new WordStudyBookFragment();
+                    return mainTabFragment2;
+                case 2:
+                    WordAudLocFragment mainTabFragment3 = new WordAudLocFragment();
+                    return mainTabFragment3;
+
+                default:
+                    return null;
+            }
         }
 
         @Override

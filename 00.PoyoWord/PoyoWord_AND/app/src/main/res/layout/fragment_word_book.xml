@@ -5,23 +5,11 @@
     android:id="@+id/constraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".manager.WordManagerActivity$PlaceholderFragment">
+    tools:context=".manager.WordManagerActivity$WordBookFragment">
 
     <WebView
         android:id="@+id/WordBook"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
-
-    <WebView
-        android:id="@+id/WordStudyBook"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:visibility="gone"/>
-
-    <WebView
-        android:id="@+id/WordAudLoc"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:visibility="gone"/>
 
 </android.support.constraint.ConstraintLayout>
