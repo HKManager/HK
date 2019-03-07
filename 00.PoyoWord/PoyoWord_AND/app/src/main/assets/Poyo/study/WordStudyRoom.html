@@ -45,62 +45,120 @@
 <script src="../ASlide/lib/js/head.min.js"></script>
 <script src="../ASlide/js/reveal.js"></script>
 
+<script type='text/javascript' src='../Content/js/knockout-3.4.2.js'></script>
+
+<!-- UI 관련 -->
+
+<!-- Jquery Core Js -->
+<script src="../Content/plugins/jquery/jquery.min.js">
+</script>
+<!-- Bootstrap Core Js -->
+<script src="../Content/plugins/bootstrap/js/bootstrap.js">
+</script>
+<!-- Select Plugin Js -->
+<script src="../Content/plugins/bootstrap-select/js/bootstrap-select.js">
+</script>
+<!-- Slimscroll Plugin Js -->
+<script src="../Content/plugins/jquery-slimscroll/jquery.slimscroll.js">
+</script>
+<!-- Waves Effect Plugin Js -->
+<script src="../Content/plugins/node-waves/waves.js">
+</script>
+<!-- Editable Table Plugin Js -->
+<script src="../Content/plugins/editable-table/mindmup-editabletable.js">
+</script>
+<!-- Custom Js -->
+<script src="../Content/js/admin.js">
+</script>
+<script src="../Content/js/pages/tables/editable-table.js">
+</script>
+<!-- Demo Js -->
+<script src="../Content/js/demo.js">
+</script>
+
+<!-- UI 관련 -->
+
+<script type="text/javascript">
+
+  var wordList = [];
+
+  var viewModel = {
+    words: ko.observableArray([])
+  };
+
+  $(document).ready(function () {
+    ko.applyBindings(viewModel);
+
+
+    var record = {
+      WORD_WORD: 'mountain',
+      WORD_SPELLING: 'm-o-u-n-t-a-i-n',
+      WORD_MEAN: '산',
+
+      WORD_EXAM: 'I add apple.',
+      WORD_EXAM_MEAN: '나는 사과를 추가 하였습니다.'
+    };
+
+    wordList.push(record);
+    wordList.push(record);
+    wordList.push(record);
+    wordList.push(record);
+
+    viewModel.words(wordList);
+  });
+
+</script>
+
 <body>
   <div class="reveal">
 
     <!-- Any section element inside of this container is displayed as a slide -->
-    <div class="slides">
-
+    <div class="slides" data-bind="foreach: words">
 
       <section>
 
-          <div class="card" style="min-height:200px;margin-left: 15px;margin-right: 15px;">
-              <div class="header">
+        <div class="card" style="min-height:200px;margin-left: 15px;margin-right: 15px;">
+          <div class="header">
 
-                  <div>
-                      <div>
-                          <h2 style="font-size: 40px;">
-                              mountain
-                          </h2>
-                      </div>
-                  </div>
+            <div>
+              <div>
+                <h2 style="font-size: 40px;" data-bind="text: WORD_WORD">
+                </h2>
               </div>
-              <div class="body">
-                  
-                <div class="row">
-                    <h1 style="font-size: 200%;">
-                        m-o-u-n-t-a-i-n
-                    </h1>
-
-                    <h2>
-                      산
-                    </h2>
-                </div>
-
-              </div>
+            </div>
           </div>
+          <div class="body">
 
-          <div class="card" style="min-height:100px;margin-top:20px;margin-left: 15px;margin-right: 15px;">
-              <div class="body">
-                  
-                <div class="row">
-                    <h3>
-                        I add apple.
-                    </h3>
+            <div class="row">
+              <h1 style="font-size: 200%;" data-bind="text: WORD_SPELLING">
+              </h1>
 
-                    <h3>
-                      나는 사과를 추가 하였습니다.
-                    </h3>
-                </div>
+              <h2 data-bind="text: WORD_MEAN">
+              </h2>
+            </div>
 
-              </div>
           </div>
+        </div>
+
+        <div class="card" style="min-height:100px;margin-top:20px;margin-left: 15px;margin-right: 15px;">
+          <div class="body">
+
+            <div class="row">
+              <h3 data-bind="text: WORD_EXAM">
+              </h3>
+
+              <h3 data-bind="text: WORD_EXAM_MEAN">
+              </h3>
+            </div>
+
+          </div>
+        </div>
 
       </section>
 
 
 
-      <section>
+      <!-- <section>
         <h2>Controlling Playback</h2>
         <pre>
             <code>
@@ -150,7 +208,7 @@
               }
             </code>
           </pre>
-      </section>
+      </section> -->
     </div>
   </div>
 
@@ -181,13 +239,13 @@
     });
   </script>
 
-<div class="cd-overlay-nav">
+  <div class="cd-overlay-nav">
     <span></span>
-</div> <!-- cd-overlay-nav -->
-<div class="cd-overlay-content">
+  </div> <!-- cd-overlay-nav -->
+  <div class="cd-overlay-content">
     <span></span>
-</div> <!-- cd-overlay-content -->
-<a href="#0" class="cd-nav-trigger" style="margin-right:5px;margin-top: 18px;">Menu<span class="cd-icon"></span></a>
+  </div> <!-- cd-overlay-content -->
+  <a href="#0" class="cd-nav-trigger" style="margin-right:5px;margin-top: 18px;">Menu<span class="cd-icon"></span></a>
 </body>
 
 </html>
