@@ -273,13 +273,6 @@
             this.WORD_EXAM_MEAN = ko.observable("");
         };
 
-        //var _AC_NAME = "";
-        //var _AC_ADDRESS = "";
-        //var _AC_MAN01 = "";
-        //var _AC_PHONENUMBER01 = "";
-        //var _AC_EMAIL01 = "";
-        //var _AC_PAY = "";
-        //var _AC_DESC = "";
         var _WB_TYPE_CODE = "";
 
         var vm = null;
@@ -547,13 +540,13 @@
                                         <i class="material-icons">more_vert</i>
                                     </a>
                                     <ul class="dropdown-menu pull-right">
-                                        <li><a type="button" data-toggle="modal" data-target="#smallModal">기간선택</a>
-                                        </li>
-                                        <li><a href="javascript:void(0);">단어삭제하기</a></li>
-                                        <li><a href="javascript:void(0);">번역하기</a></li>
-                                        <li><a href="javascript:void(0);">엑셀파일업로드</a></li>
-                                        <li><a href="javascript:void(0);">엑셀파일다운로드</a></li>
-                                        <li><a href="javascript:void(0);">이미지자동생성</a></li>
+                                        <!-- <li><a type="button" data-toggle="modal" data-target="#smallModal">기간선택</a>
+                                        </li> -->
+                                        <li><a href="javascript:void(0);">일자 별</a></li>
+                                        <li><a href="javascript:void(0);">주간 별</a></li>
+                                        <li><a href="javascript:void(0);">월간 별</a></li>
+                                        <!-- <li><a href="javascript:void(0);">엑셀파일다운로드</a></li>
+                                        <li><a href="javascript:void(0);">이미지자동생성</a></li> -->
                                         <!-- <li><a href="javascript:void(0);">이미지만들기</a></li>
                                         <li><a href="javascript:void(0);">오디오만들기</a></li>
                                         <li><a href="javascript:void(0);">오디오 듣기
@@ -580,7 +573,7 @@
                                     </div>
                                 </div>
 
-                                <div class="form-group">
+                                <!-- <div class="form-group">
                                     <div class="form-line">
                                         <select id="WB_LEVEL" class="form-control control-detail show-tick" data-bind="options: WB_LEVEL_CDS,
                                                                                        optionsValue: 'CODE',
@@ -588,21 +581,23 @@
                                                                                        optionsText: 'CODE_NAME',
                                                                                        valueAllowUnset: true"></select>
                                     </div>
-                                </div>
+                                </div> -->
 
-                                <div class="form-group">
+                                <div class="form-group" style="margin-top:0px;">
 
-                                    <select id="WB_LEVEL" class="form-control control-detail show-tick" data-bind="options: WB_LEVEL_CDS,
-                                        optionsValue: 'CODE',
-                                        value: WB_LEVEL_CD,
-                                        optionsText: 'CODE_NAME',
-                                        valueAllowUnset: true"></select>
+                                    <div class="form-line" style="margin-bottom: 10px;">
+                                        <select id="WB_LEVEL" class="form-control control-detail show-tick" data-bind="options: WB_LEVEL_CDS,
+                                                                                       optionsValue: 'CODE',
+                                                                                       value: WB_LEVEL_CD,
+                                                                                       optionsText: 'CODE_NAME',
+                                                                                       valueAllowUnset: true"></select>
+                                    </div>
 
-                                    <div id="SBGridArea_WB_WordList" style="width:100%;height: 150px;"></div>
+                                    <div id="SBGridArea_WB_WordList" style="width:100%;height: 170px;"></div>
 
                                     </br>
 
-                                    <div id="SBGridArea_WSB_WordList" style="width:100%;height: 150px;"></div>
+                                    <div id="SBGridArea_WSB_WordList" style="width:100%;height: 170px;"></div>
                                 </div>
 
                                 <div class="form-group">

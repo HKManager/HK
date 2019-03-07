@@ -203,8 +203,7 @@ public class WordBookDetailActivity extends AppCompatActivity {
                         case HARDCODE.화면호출 :
                             switch (parse.data) {
                                 case HARDCODE.단어장관리 :
-                                    Intent intent=new Intent(WordBookDetailActivity.this,WordManagerActivity.class);
-                                    startActivity(intent);
+                                    finish();
                                     break;
                                 case "IMAGEVIEW":
                                     Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);

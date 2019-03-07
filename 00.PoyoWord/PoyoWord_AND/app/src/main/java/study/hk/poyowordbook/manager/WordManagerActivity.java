@@ -82,8 +82,10 @@ public class WordManagerActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                intent = new Intent(context,MainActivity.class);
-                startActivity(intent);
+                //intent = new Intent(context,MainActivity.class);
+                //startActivity(intent);
+
+                finish();
 
                 //Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         //.setAction("Action", null).show();
@@ -296,12 +298,9 @@ public class WordManagerActivity extends AppCompatActivity {
                                     intent.putExtra("WAL_SN",""); /*송신*/
                                     context.startActivity(intent);
                                     break;
-                                case HARDCODE.메인화면 :
-                                    intent =new Intent(context,MainActivity.class);
-                                    context.startActivity(intent);
-                                    break;
-                                case HARDCODE.단어장배치관리 :
-                                    intent =new Intent(context,WordAudLocActivity.class);
+                                case HARDCODE.단어학습장상세 :
+                                    intent = new Intent(context,WordAudLocDetailActivity.class);
+                                    intent.putExtra("WAL_SN",""); /*송신*/
                                     context.startActivity(intent);
                                     break;
                             }

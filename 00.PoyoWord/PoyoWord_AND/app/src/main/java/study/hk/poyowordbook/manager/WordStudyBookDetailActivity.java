@@ -4,18 +4,20 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.webkit.JsResult;
 import android.webkit.WebView;
-
-import android.os.Handler;
 import android.webkit.WebViewClient;
 
+import com.fasterxml.jackson.core.JsonGenerationException;
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.Gson;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -23,27 +25,21 @@ import java.util.Map;
 import Event.EventData;
 import Query.Manager_Code;
 import Query.Manager_WordAudLoc;
-import Query.Manager_WordBook;
+import Query.Manager_WordStudyBook;
 import study.hk.data.Data.HARDCODE;
-import study.hk.poyowordbook.MainActivity;
 import study.hk.poyowordbook.R;
 
-import com.fasterxml.jackson.core.JsonGenerationException;
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.JsonMappingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-
-public class WordAudLocDetailActivity extends AppCompatActivity {
+public class WordStudyBookDetailActivity extends AppCompatActivity {
 
     private final Handler handler = new Handler();
     private Context context = null;
     private WebView lWebView = null;
-    private Manager_WordAudLoc manager;
+    private Manager_WordStudyBook manager;
 
     private Gson gson = new Gson();
 
     private Intent intent;
-    private String WAL_SN;
+    private String WSB_SN;
 
     private ObjectMapper mapper = null;
 
@@ -51,15 +47,16 @@ public class WordAudLocDetailActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_word_aud_loc_detail);
+        setContentView(R.layout.activity_word_study_book_detail);
 
         context = getApplicationContext();
-        manager = new Manager_WordAudLoc(context);
+        //manager = new Manager_WordStudyBook(context);
 
-        WAL_SN = getIntent().getExtras().getString("WAL_SN");
+        WSB_SN = getIntent().getExtras().getString("WAL_SN");
         mapper = new ObjectMapper();
 
         lWebView = (WebView)findViewById(R.id.mainView);
+
         lWebView.setWebViewClient(new WebViewClient() {
             @Override
             public void onPageStarted(WebView view, String url, Bitmap favicon) { }
@@ -75,8 +72,8 @@ public class WordAudLocDetailActivity extends AppCompatActivity {
                 String JsonEventData = gson.toJson(data);
                 lWebView.loadUrl("javascript:showData('" + JsonEventData + "')");
 
-                if(!WAL_SN.equals("")) {
-                    Map mapData =  manager.SearchData(WAL_SN);
+                /*if(!WSB_SN.equals("")) {
+                    Map mapData =  manager.SearchData(WSB_SN);
 
                     List<Map> locs = null;
 
@@ -96,18 +93,19 @@ public class WordAudLocDetailActivity extends AppCompatActivity {
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
-                }
+                }*/
             }
 
             public boolean onJsAlert(final WebView view, final String url, final String message, JsResult result) {
                 return true;
             }
         });
+
         lWebView.getSettings().setJavaScriptEnabled(true);
         lWebView.addJavascriptInterface(new JavaScriptBridge(), "android");
         //lWebView.getSettings().setJavaScriptCanOpenWindowsAutomatically(true);
 
-        lWebView.loadUrl("file:///android_asset/Poyo/manager/WordAudLocDetail.html");
+        lWebView.loadUrl("file:///android_asset/Poyo/manager/WordStudyBookDetail.html");
     }
 
     private class JavaScriptBridge {
@@ -144,11 +142,11 @@ public class WordAudLocDetailActivity extends AppCompatActivity {
                                 e.printStackTrace();
                             }
 
-                            if(WAL_SN.equals("")) {
-                                manager.Insert(map);
+                            if(WSB_SN.equals("")) {
+//                                manager.Insert(map);
                             } else {
-                                map.put("WAL_SN", WAL_SN);
-                                manager.Update(map);
+                                map.put("WAL_SN", WSB_SN);
+//                                manager.Update(map);
                             }
 
                             break;
@@ -156,5 +154,4 @@ public class WordAudLocDetailActivity extends AppCompatActivity {
                 }
             });
         }
-    }
 }

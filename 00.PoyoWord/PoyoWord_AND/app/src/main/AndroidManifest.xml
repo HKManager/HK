@@ -42,6 +42,7 @@
             android:name=".manager.WordManagerActivity"
             android:label="@string/title_activity_word_manager"
             android:theme="@style/AppTheme" />
+        <activity android:name=".manager.WordStudyBookDetailActivity"></activity>
     </application>
 
 </manifest>
