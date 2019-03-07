@@ -83,7 +83,7 @@
   var wordList = [];
 
   var viewModel = {
-    words: ko.observableArray([])
+    words: ko.observableArray([]),
   };
 
   $(document).ready(function () {
@@ -94,17 +94,49 @@
       WORD_SPELLING: 'm-o-u-n-t-a-i-n',
       WORD_MEAN: '산',
 
+      WORD_QUIZ: 'abc',
+      WORD_QUIZ1: 'apple',
+      WORD_QUIZ2: 'mountain',
+      WORD_QUIZ3: 'file',
+
+      WORD_EXAM: 'I add apple.',
+      WORD_EXAM_MEAN: '나는 사과를 추가 하였습니다.'
+    };
+
+        var record1 = {
+      WORD_WORD: 'apple',
+      WORD_SPELLING: 'm-o-u-n-t-a-i-n',
+      WORD_MEAN: '산',
+
+      WORD_QUIZ: 'eeee',
+      WORD_QUIZ1: 'banana',
+      WORD_QUIZ2: 'mountain',
+      WORD_QUIZ3: 'file',
+
       WORD_EXAM: 'I add apple.',
       WORD_EXAM_MEAN: '나는 사과를 추가 하였습니다.'
     };
 
     wordList.push(record);
-    wordList.push(record);
+    wordList.push(record1);
     wordList.push(record);
     wordList.push(record);
 
     viewModel.words(wordList);
   });
+
+  var selectItem;
+
+this.setEditItem = function (item) {
+
+  var temp = $('#WordQuiz_01').text();
+  var index = wordList.indexOf(item);
+
+  if (index !== -1) {
+    wordList[index].WORD_QUIZ = temp;
+    viewModel.words(wordList);
+  }
+}
 
 </script>
 
@@ -121,7 +153,7 @@
 
             <div>
               <div>
-                <h2 style="font-size: 40px;" data-bind="text: WORD_WORD">
+                <h2 style="font-size: 30px;" data-bind="text: WORD_MEAN">
                 </h2>
               </div>
             </div>
@@ -129,85 +161,27 @@
           <div class="body">
 
             <div class="row">
-              <h1 style="font-size: 200%;" data-bind="text: WORD_SPELLING">
-              </h1>
-
-              <h2 data-bind="text: WORD_MEAN">
-              </h2>
+              <input type="text" class="form-control" style="width:100%;text-align: center;" placeholder="단어를 맞추어 주세요!" data-bind="value: WORD_QUIZ" />
             </div>
 
           </div>
         </div>
 
-        <div class="card" style="min-height:100px;margin-top:20px;margin-left: 15px;margin-right: 15px;">
+        <div class="card" style="min-height:300px;margin-top:20px;margin-left: 15px;margin-right: 15px;">
           <div class="body">
 
-            <div class="row">
-              <h3 data-bind="text: WORD_EXAM">
-              </h3>
+            <div class="row" style="bottom:15px;margin-top: 100px;">
+                <button id="WordQuiz_01" type="button" class="btn bg-teal col-xs-12 btn-lg waves-effect" style="margin-bottom: 15px;width: 100%;" data-bind="text: WORD_QUIZ1, click: setEditItem"></button>
+                <button id="WordQuiz_02" type="button" class="btn bg-teal col-xs-12 btn-lg waves-effect" style="margin-bottom: 15px;width: 100%;" data-bind="text: WORD_QUIZ2, click: setEditItem"></button>
+                <button id="WordQuiz_03" type="button" class="btn bg-teal col-xs-12 btn-lg waves-effect" style="margin-bottom: 15px;width: 100%;" data-bind="text: WORD_QUIZ3, click: setEditItem"></button>
 
-              <h3 data-bind="text: WORD_EXAM_MEAN">
-              </h3>
+                <button type="button" class="btn bg-pink col-xs-12 btn-lg waves-effect" style="margin-bottom: 15px;width: 100%;">확인</button>
             </div>
 
           </div>
         </div>
 
       </section>
-
-
-
-      <!-- <section>
-        <h2>Controlling Playback</h2>
-        <pre>
-            <code>
-              source.start(0);
-              source.stop();
-            </code>
-          </pre>
-
-        <p>what about pause/replay?</p>
-
-        <pre>
-            <code>
-              var trackTime = 0;
-              function pause () {
-                trackTime = audioContext.currentTime;
-                source.stop();
-              }
-              function play() {
-                source.start(audioContext.currentTime + trackTime);
-              }
-            </code>
-          </pre>
-      </section>
-
-
-
-      <section>
-        <h2>Controlling Playback</h2>
-        <pre>
-            <code>
-              source.start(0);
-              source.stop();
-            </code>
-          </pre>
-
-        <p>what about pause/replay?</p>
-
-        <pre>
-            <code>
-              var trackTime = 0;
-              function pause () {
-                trackTime = audioContext.currentTime;
-                source.stop();
-              }
-              function play() {
-                source.start(audioContext.currentTime + trackTime);
-              }
-            </code>
-          </pre>
-      </section> -->
     </div>
   </div>
 
@@ -237,14 +211,6 @@
       ]
     });
   </script>
-
-  <div class="cd-overlay-nav">
-    <span></span>
-  </div> <!-- cd-overlay-nav -->
-  <div class="cd-overlay-content">
-    <span></span>
-  </div> <!-- cd-overlay-content -->
-  <a href="#0" class="cd-nav-trigger" style="margin-right:5px;margin-top: 18px;">Menu<span class="cd-icon"></span></a>
 </body>
 
 </html>
