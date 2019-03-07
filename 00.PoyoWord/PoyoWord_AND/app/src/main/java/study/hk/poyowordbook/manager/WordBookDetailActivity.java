@@ -26,6 +26,15 @@ import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.Gson;
 
+import org.apache.poi.hssf.usermodel.HSSFCellStyle;
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.hssf.util.HSSFColor;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.CellStyle;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -75,6 +84,8 @@ public class WordBookDetailActivity extends AppCompatActivity {
         mapper = new ObjectMapper();
         manager = new Manager_WordBook(context);
         wordManager = new Manager_Word(context);
+
+//        HSSFWorkbook
 
         lWebView = (WebView)findViewById(R.id.mainView);
         lWebView.setWebViewClient(new WebViewClient() {
@@ -339,5 +350,57 @@ public class WordBookDetailActivity extends AppCompatActivity {
 
             int abc = 0;
         }
+    }
+
+    private boolean SaveExcelFile(Context context, String fileName) {
+
+        if(isExternalStorageAvailable() || isExternalStorageReadOnly()) {
+            Log.e(TAG, "Storage not available or read only");
+
+            return false;
+        }
+
+        boolean success = false;
+
+        // - New Workbook
+        Workbook wb = new HSSFWorkbook();
+
+        Cell c = null;
+
+        // - Cell style for header row
+        CellStyle cs = wb.createCellStyle();
+
+        // - New Sheet
+        Sheet sheet1 = null;
+        sheet1 = wb.createSheet("myOrder");
+
+        // - Generate column headings
+        Row row = sheet1.createRow(0);
+
+        c = row.createCell(0);
+        c.setCellValue("");
+        c.setCellStyle(cs);
+
+        return true;
+    }
+
+    private boolean isExternalStorageReadOnly() {
+        String extStorageState = Environment.getExternalStorageState();
+
+        if(Environment.MEDIA_MOUNTED_READ_ONLY.equals(extStorageState)) {
+            return true;
+        }
+
+        return false;
+    }
+
+    private boolean isExternalStorageAvailable() {
+        String extStorageState = Environment.getExternalStorageState();
+
+        if(Environment.MEDIA_MOUNTED.equals(extStorageState)) {
+            return true;
+        }
+
+        return false;
     }
 }
