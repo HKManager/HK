@@ -2461,6 +2461,8 @@ var Reveal = (function(){
 	 */
 	function nextFragment() {
 
+		nextPage();
+
 		return navigateFragment( null, 1 );
 
 	}
@@ -2472,6 +2474,8 @@ var Reveal = (function(){
 	 * false otherwise
 	 */
 	function previousFragment() {
+
+		prevPage();
 
 		return navigateFragment( null, -1 );
 
