@@ -440,82 +440,6 @@
         </div>
     </div>
 
-    <!-- Small Size -->
-    <div class="modal fade" id="smallModal" tabindex="-1" role="dialog">
-        <div class="modal-dialog modal-sm" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title" id="smallModalLabel">추가 할 단어를 입력 해 주세요.</h4>
-                </div>
-                <div class="modal-body">
-                    <div class="form-group">
-                        <div class="form-line">
-                            <input id="WORD_SN" type="hidden" class="control-detail form-control" placeholder="거래처 SN"
-                                data-bind="value: WORD_SN" />
-                            <input id="WORD_WORD" type="text" class="control-detail form-control" placeholder="단어"
-                                data-bind="value: WORD_WORD" />
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <div class="form-line">
-                            <input id="WORD_MEAN" type="text" class="control-detail form-control" placeholder="단어 뜻"
-                                data-bind="value: WORD_MEAN" />
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <div class="form-line">
-                            <input id="WORD_EXAM" type="text" class="control-detail form-control" placeholder="단어 예문"
-                                data-bind="value: WORD_EXAM" />
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <div class="form-line">
-                            <input id="WORD_EXAM_MEAN" type="text" class="control-detail form-control"
-                                placeholder="단어 예문 뜻" data-bind="value: WORD_EXAM_MEAN" />
-                        </div>
-
-                        <div class="form-line">
-                            <ul class="nav nav-tabs tab-nav-right" role="tablist">
-                                <li role="presentation" class="active"><a href="#home" data-toggle="tab">이미지찾기</a></li>
-                                <li role="presentation"><a href="#profile" data-toggle="tab">이미지선택하기</a></li>
-                            </ul>
-
-                            <div class="tab-content">
-                                <div role="tabpanel" class="tab-pane fade in active" id="home">
-                                    <!-- <form action="/" id="frmFileUpload" class="dropzone" method="post" style="height:100px;"
-                                                enctype="multipart/form-data" onclick="AddImage()">
-                                                <div class="dz-message">
-                                                    <div class="drag-icon-cph">
-                                                        <i class="material-icons">touch_app</i>
-                                                    </div>
-                                                    <h3>클릭하여 이미지를 추가하여 주세요.</h3>
-                                                </div>
-                                                <div class="fallback">
-                                                    <input name="file" type="file" onclick="AddImage()" />
-                                                </div>
-                                            </form> -->
-                                </div>
-
-                                <div role="tabpanel" class="tab-pane fade" id="profile">
-
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-link waves-effect" onclick="SaveGrid()"
-                        data-dismiss="modal">확인</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <div style="position:relative;">
 
         <main id="Main">
@@ -545,16 +469,6 @@
                                         <li><a href="javascript:void(0);">일자 별</a></li>
                                         <li><a href="javascript:void(0);">주간 별</a></li>
                                         <li><a href="javascript:void(0);">월간 별</a></li>
-                                        <!-- <li><a href="javascript:void(0);">엑셀파일다운로드</a></li>
-                                        <li><a href="javascript:void(0);">이미지자동생성</a></li> -->
-                                        <!-- <li><a href="javascript:void(0);">이미지만들기</a></li>
-                                        <li><a href="javascript:void(0);">오디오만들기</a></li>
-                                        <li><a href="javascript:void(0);">오디오 듣기
-                                            <audio id="myAudio">
-                                                <source id="src" type="audio/mpeg">
-                                            </audio>
-                                        </a></li>
-                                        <li><a href="javascript:void(0);">오디오다운받기</a></li> -->
                                     </ul>
                                 </li>
                             </ul>
@@ -565,11 +479,17 @@
                         <div class="row clearfix">
                             <div class="col-sm-12">
                                 <div class="form-group">
-                                    <div class="form-line">
-                                        <input id="WB_SN" type="hidden" class="control-detail form-control"
-                                            placeholder="거래처 SN" data-bind="value: WB_SN" />
-                                        <input id="WB_NAME" type="text" class="control-detail form-control"
-                                            data-bind="value: WB_NAME" />
+                                    <input id="WB_SN" type="hidden" class="control-detail form-control"
+                                        placeholder="거래처 SN" data-bind="value: WB_SN" />
+
+                                    <div class="input-daterange input-group" id="bs_datepicker_range_container">
+                                        <div class="form-line">
+                                            <input style="text-align: center;" type="text" class="form-control" placeholder="Date start...">
+                                        </div>
+                                        <span class="input-group-addon">~ </span>
+                                        <div class="form-line">
+                                            <input style="text-align: center;" type="text" class="form-control" placeholder="Date end...">
+                                        </div>
                                     </div>
                                 </div>
 
@@ -593,11 +513,11 @@
                                                                                        valueAllowUnset: true"></select>
                                     </div>
 
-                                    <div id="SBGridArea_WB_WordList" style="width:100%;height: 170px;"></div>
+                                    <div id="SBGridArea_WB_WordList" style="width:100%;height: 160px;"></div>
 
                                     </br>
 
-                                    <div id="SBGridArea_WSB_WordList" style="width:100%;height: 170px;"></div>
+                                    <div id="SBGridArea_WSB_WordList" style="width:100%;height: 160px;"></div>
                                 </div>
 
                                 <div class="form-group">

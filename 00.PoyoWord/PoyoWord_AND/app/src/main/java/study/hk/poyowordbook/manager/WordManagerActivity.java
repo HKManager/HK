@@ -299,8 +299,8 @@ public class WordManagerActivity extends AppCompatActivity {
                                     context.startActivity(intent);
                                     break;
                                 case HARDCODE.단어학습장상세 :
-                                    intent = new Intent(context,WordAudLocDetailActivity.class);
-                                    intent.putExtra("WAL_SN",""); /*송신*/
+                                    intent = new Intent(context,WordStudyBookDetailActivity.class);
+                                    intent.putExtra("WSB_SN",""); /*송신*/
                                     context.startActivity(intent);
                                     break;
                             }
@@ -327,6 +327,9 @@ public class WordManagerActivity extends AppCompatActivity {
                                     context.startActivity(intent);
                                     break;
                                 case HARDCODE.단어학습장관리:
+                                    intent = new Intent(context,WordStudyBookDetailActivity.class);
+                                    intent.putExtra("WAL_SN",parse.data); /*송신*/
+                                    context.startActivity(intent);
                                     break;
                                 case HARDCODE.단어장배치관리:
                                     intent = new Intent(context,WordAudLocDetailActivity.class);

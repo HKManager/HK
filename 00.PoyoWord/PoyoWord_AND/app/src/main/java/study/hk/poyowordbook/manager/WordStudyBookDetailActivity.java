@@ -52,7 +52,7 @@ public class WordStudyBookDetailActivity extends AppCompatActivity {
         context = getApplicationContext();
         //manager = new Manager_WordStudyBook(context);
 
-        WSB_SN = getIntent().getExtras().getString("WAL_SN");
+        WSB_SN = getIntent().getExtras().getString("WSB_SN");
         mapper = new ObjectMapper();
 
         lWebView = (WebView)findViewById(R.id.mainView);
@@ -118,23 +118,24 @@ public class WordStudyBookDetailActivity extends AppCompatActivity {
                     EventData parse = gson.fromJson(arg, EventData.class);
 
                     switch (parse.handle) {
-                        case HARDCODE.화면호출 :
+                        case HARDCODE.화면호출:
                             switch (parse.data) {
-                                case HARDCODE.단어장배치관리 :
+                                case HARDCODE.단어장배치관리:
                                     finish();
                                     break;
                             }
                             break;
-                        case HARDCODE.등록 :
+                        case HARDCODE.등록:
                             Map<String, Object> map = new HashMap<String, Object>();
                             try {
-                                map = mapper.readValue(parse.data, new TypeReference<Map<String, Object>>(){});
+                                map = mapper.readValue(parse.data, new TypeReference<Map<String, Object>>() {
+                                });
                                 List<Map<String, String>> WAL_LOCS_LIST = (List<Map<String, String>>) map.get("WAL_LOCS");
                                 String WAL_LOCS_JSON = gson.toJson(WAL_LOCS_LIST);
                                 map.put("WAL_LOCS_JSON", WAL_LOCS_JSON);
                                 map.put("WAL_UPDATE_DT", "");
                                 map.put("WAL_USEYN", "0");
-                            }catch (JsonGenerationException e) {
+                            } catch (JsonGenerationException e) {
                                 e.printStackTrace();
                             } catch (JsonMappingException e) {
                                 e.printStackTrace();
@@ -142,7 +143,7 @@ public class WordStudyBookDetailActivity extends AppCompatActivity {
                                 e.printStackTrace();
                             }
 
-                            if(WSB_SN.equals("")) {
+                            if (WSB_SN.equals("")) {
 //                                manager.Insert(map);
                             } else {
                                 map.put("WAL_SN", WSB_SN);
@@ -154,4 +155,5 @@ public class WordStudyBookDetailActivity extends AppCompatActivity {
                 }
             });
         }
+    }
 }
