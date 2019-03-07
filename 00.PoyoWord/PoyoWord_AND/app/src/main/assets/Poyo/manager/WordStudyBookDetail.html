@@ -260,20 +260,20 @@
         };
 
         function ViewModel() {
-            this.WB_SN = ko.observable("");
+            this.WSB_SN = ko.observable("");
             this.WB_NAME = ko.observable("");
-            this.WB_LEVEL_CDS = ko.observableArray([]);
-            this.WB_LEVEL_CD = ko.observable(this.WB_LEVEL_CDS.find("CODE", _WB_TYPE_CODE));
+            this.WORD_BOOKS = ko.observableArray([]);
+            this.WB_SN = ko.observable(this.WORD_BOOKS.find("WB_SN", _WB_SN));
 
 
-            this.WORD_SN = ko.observable("");
-            this.WORD_WORD = ko.observable("");
-            this.WORD_MEAN = ko.observable("");
-            this.WORD_EXAM = ko.observable("");
-            this.WORD_EXAM_MEAN = ko.observable("");
+            // this.WORD_SN = ko.observable("");
+            // this.WORD_WORD = ko.observable("");
+            // this.WORD_MEAN = ko.observable("");
+            // this.WORD_EXAM = ko.observable("");
+            // this.WORD_EXAM_MEAN = ko.observable("");
         };
 
-        var _WB_TYPE_CODE = "";
+        var _WB_SN = "";
 
         var vm = null;
 
@@ -329,7 +329,7 @@
         }
 
         function Cancel() {
-            var obj = { handle: "06", view: "WordStudyBookDetail", data: "WordStudyBook" };
+            var obj = { handle: "06", view: "WORDSTUDYBOOKDETAIL", data: "WORDSTUDYBOOK" };
 
             var data = JSON.stringify(obj);
 
@@ -337,7 +337,7 @@
         }
 
         function AddImage() {
-            var obj = { handle: "06", view: "WordStudyBookDetail", data: "IMAGEVIEW" };
+            var obj = { handle: "06", view: "WORDSTUDYBOOKDETAIL", data: "IMAGEVIEW" };
 
             var data = JSON.stringify(obj);
 
@@ -405,7 +405,7 @@
 
             switch (jsonObj.handle) {
                 case "CODES":
-                    vm.WB_LEVEL_CDS(jsonObj.value);
+                    vm.WORD_BOOKS(jsonObj.value);
                     break;
                 case "DETAIL":
                     vm.WB_SN(jsonObj.value.WB_SN);
@@ -506,10 +506,10 @@
                                 <div class="form-group" style="margin-top:0px;">
 
                                     <div class="form-line" style="margin-bottom: 10px;">
-                                        <select id="WB_LEVEL" class="form-control control-detail show-tick" data-bind="options: WB_LEVEL_CDS,
-                                                                                       optionsValue: 'CODE',
-                                                                                       value: WB_LEVEL_CD,
-                                                                                       optionsText: 'CODE_NAME',
+                                        <select id="WB_LEVEL" class="form-control control-detail show-tick" data-bind="options: WORD_BOOKS,
+                                                                                       optionsValue: 'WB_SN',
+                                                                                       value: WB_SN,
+                                                                                       optionsText: 'WB_NAME',
                                                                                        valueAllowUnset: true"></select>
                                     </div>
 

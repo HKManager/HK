@@ -25,6 +25,7 @@ import java.util.Map;
 import Event.EventData;
 import Query.Manager_Code;
 import Query.Manager_WordAudLoc;
+import Query.Manager_WordBook;
 import Query.Manager_WordStudyBook;
 import study.hk.data.Data.HARDCODE;
 import study.hk.poyowordbook.R;
@@ -34,6 +35,8 @@ public class WordStudyBookDetailActivity extends AppCompatActivity {
     private final Handler handler = new Handler();
     private Context context = null;
     private WebView lWebView = null;
+
+    private Manager_WordBook manager_wordBook;
     private Manager_WordStudyBook manager;
 
     private Gson gson = new Gson();
@@ -51,6 +54,7 @@ public class WordStudyBookDetailActivity extends AppCompatActivity {
 
         context = getApplicationContext();
         //manager = new Manager_WordStudyBook(context);
+        manager_wordBook = new Manager_WordBook(context);
 
         WSB_SN = getIntent().getExtras().getString("WSB_SN");
         mapper = new ObjectMapper();
@@ -64,11 +68,11 @@ public class WordStudyBookDetailActivity extends AppCompatActivity {
             @Override
             @SuppressLint({ "SetJavaScriptEnabled", "JavascriptInterface" })
             public void onPageFinished(WebView view, String url) {
-                List<Map> codeList = Manager_Code.GetInstance().GetList_2nd("003", true);
+                List<Map> wordbookList = manager_wordBook.Search();
                 EventData data = new EventData();
                 data.SetHandle(HARDCODE.코드리스트);
-                data.SetView(HARDCODE.단어장배치관리);
-                data.SetValue(codeList);
+                data.SetView(HARDCODE.단어학습장상세);
+                data.SetValue(wordbookList);
                 String JsonEventData = gson.toJson(data);
                 lWebView.loadUrl("javascript:showData('" + JsonEventData + "')");
 
@@ -120,7 +124,7 @@ public class WordStudyBookDetailActivity extends AppCompatActivity {
                     switch (parse.handle) {
                         case HARDCODE.화면호출:
                             switch (parse.data) {
-                                case HARDCODE.단어장배치관리:
+                                case HARDCODE.단어학습장관리:
                                     finish();
                                     break;
                             }

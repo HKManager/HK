@@ -40,6 +40,6 @@ public class Query_WordStudyBook {
      AND w.word_sn = mwbw.word_sn
      */
     @Multiline
-    public static String GetWordBookData;
+    public static String GetWordBookList;
 
 }
