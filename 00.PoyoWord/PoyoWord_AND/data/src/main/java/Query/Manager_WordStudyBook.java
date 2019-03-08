@@ -112,7 +112,52 @@ public class Manager_WordStudyBook {
 
         map.put("WORD_LIST", list);
 
+
         return map;
     }
 
+    public boolean Insert(Map data) {
+        try {
+            String query = String.format(Query_WordStudyBook.Insert,
+                    data.get("WSB_NAME").toString(),
+                    data.get("WAL_SN").toString(),
+                    data.get("WSB_CNT_UNIT").toString(),
+                    data.get("WSB_CNT_UNIT_WORD").toString(),
+                    data.get("WSB_REGISTERDT").toString(),
+                    data.get("WSB_FROMDT").toString(),
+                    data.get("WSB_TODT").toString()
+            );
+
+            db = mHelper.getReadableDatabase();
+
+            db.execSQL(query);
+
+            return true;
+        }catch (Exception e) {
+            return  false;
+        }
+    }
+
+    public boolean Update(Map data) {
+        try {
+            String query = String.format(Query_WordStudyBook.Update,
+                    data.get("WSB_NAME").toString(),
+                    data.get("WAL_SN").toString(),
+                    data.get("WSB_CNT_UNIT").toString(),
+                    data.get("WSB_CNT_UNIT_WORD").toString(),
+                    data.get("WSB_REGISTERDT").toString(),
+                    data.get("WSB_FROMDT").toString(),
+                    data.get("WSB_TODT").toString(),
+                    data.get("WSB_SN").toString()
+            );
+
+            db = mHelper.getReadableDatabase();
+
+            db.execSQL(query);
+
+            return true;
+        }catch (Exception e) {
+            return  false;
+        }
+    }
 }
