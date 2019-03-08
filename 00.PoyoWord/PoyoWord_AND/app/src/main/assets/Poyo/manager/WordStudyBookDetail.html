@@ -164,30 +164,15 @@
 
         function gridClick() {
 
-            isUpdate = true;
-
             nRow = datagrid.getRow();
             var nCol = datagrid.getCol();
             if (nRow == 0) {
                 return;
             } else {
-                // var valueData = datagrid.getCellData(nRow, nCol);
+                var word = gridData[nRow - 1];
 
-                var valueData = datagrid.getRowData(nRow, false);
-
-                vm.WORD_SN(valueData.WORD_SN);
-                vm.WORD_WORD(valueData.WORD_WORD);
-                vm.WORD_MEAN(valueData.WORD_MEAN);
-                vm.WORD_EXAM(valueData.WORD_EXAM);
-                vm.WORD_EXAM_MEAN(valueData.WORD_EXAM_MEAN);
-
-                // $('#WORD_WORD').val(valueData[13]);
-
-
-                // alert(valueData);
-                $('#smallModal').modal({
-                    show: 'true'
-                });
+                newData.push(word);
+                datagrid2.refresh();
             }
         };
     </script>
@@ -412,6 +397,7 @@
             switch (jsonObj.handle) {
                 case "CODES":
                     vm.WORD_BOOKS(jsonObj.value);
+                    vm.WB_SN(jsonObj.value[0].WB_SN);
                     break;
                 case "WORDLIST":
                     gridData = jsonObj.value.WORD_LIST;
@@ -419,6 +405,7 @@
                     break;
                 case "WordAudioLoc" :
                     vm.WORD_AUD_LOCS(jsonObj.value);
+                    vm.WAL_SN(jsonObj.value[0].WAL_SN);
                     break;    
                 case "DETAIL":
                     vm.WB_SN(jsonObj.value.WB_SN);
