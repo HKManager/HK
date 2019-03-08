@@ -60,18 +60,14 @@ public class Query_WordStudyBook {
 
     /**
      SELECT
-     wsb.WB_SN
-     , wsb.WB_NAME
-     , wsb.WB_LEVEL_CD
-     , wsb.WB_CNT_UNIT
-     , wsb.WB_CNT_WORD_UNIT
-     , wsb.WB_CNT_WORD
+     wsb.WSB_SN
      , wsb.WAL_SN
-     , wsb.WB_LOOPCNT
-     , wsb.WB_INTERVAL
-     , wsb.WB_REGISTERDT
-     , wsb.WB_USEYN
-     , wsb.WB_DESC
+     , wsb.WSB_NAME
+     , wsb.WSB_CNT_UNIT
+     , wsb.WSB_CNT_UNIT_WORD
+     , wsb.WSB_REGISTERDT
+     , wsb.WSB_FROMDT
+     , wsb.WSB_TODT
      , w.WORD_SN
      , w.WORD_UNIT_SN
      , w.WORD_WORD
@@ -88,12 +84,54 @@ public class Query_WordStudyBook {
      , w.WORD_IMAGE
      , w.WORD_LIKE
      , w.WORD_USEYN
-     , mwbw.MWW_SN
-     FROM wordbook wsb, mapping_wsb_w mwbw, word w
+     , mwbw.MSWW_SN
+     , mwbw.WORD_UNIT_SN
+     FROM wordstudybook wsb, mapping_wsb_w mwbw, word w
      WHERE wb.wsb_sn = mwbw.wsb_sn
      AND w.word_sn = mwbw.word_sn
      AND wsb.wsb_sn = %s
      */
     @Multiline
     public static String GetData;
+
+    /**
+     INSERT INTO
+     wordstudybook
+     (
+     WSB_NAME
+     , WAL_SN
+     , WSB_CNT_UNIT
+     , WSB_CNT_UNIT_WORD
+     , WSB_REGISTERDT
+     , WSB_FROMDT
+     , WSB_TODT
+     )
+     VALUES
+     (
+     '%s'
+     , '%s'
+     , '%s'
+     , '%s'
+     , '%s'
+     , '%s'
+     , '%s'
+     )
+     */
+    @Multiline
+    public static String Insert;
+
+    /**
+     UPDATE wordstudybook
+     SET   
+     WSB_NAME = '%s'
+     , WAL_SN = '%s'
+     , WSB_CNT_UNIT = '%s'
+     , WSB_CNT_UNIT_WORD = '%s'
+     , WSB_REGISTERDT = '%s'
+     , WSB_FROMDT = '%s'
+     , WSB_TODT = '%s'
+     WHERE  WSB_SN = %s
+     */
+    @Multiline
+    public static String Update;
 }
