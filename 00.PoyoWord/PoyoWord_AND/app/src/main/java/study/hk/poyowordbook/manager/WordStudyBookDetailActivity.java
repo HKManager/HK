@@ -166,9 +166,9 @@ public class WordStudyBookDetailActivity extends AppCompatActivity {
                         List<Map<String, Object>> RemoveList = (List<Map<String, Object>>) map.get("REMOVE_LIST");
 
                         RemoveList.forEach(t -> {
-                            // if(!t.get("WORD_SN").toString().equals("")) {
-                            //     wordManager.Delete(t);
-                            // }
+                            if(!t.get("WORD_SN").toString().equals("")) {
+                                manager.Delete(t);
+                            }
 
                             // - 매핑 테이블 단어 삭제
                         });
@@ -178,7 +178,7 @@ public class WordStudyBookDetailActivity extends AppCompatActivity {
                                 // wordManager.Update(t);
                                 // - 매핑테이블에 단어 수정
                             } else {
-                                wordManager.Insert(WB_SN, t);
+                                //wordManager.Insert(WB_SN, t);
                                 // - 매핑테이블에 단어 등록
                             }
                         });

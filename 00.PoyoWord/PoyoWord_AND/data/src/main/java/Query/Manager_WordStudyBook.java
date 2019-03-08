@@ -160,4 +160,71 @@ public class Manager_WordStudyBook {
             return  false;
         }
     }
+
+
+    public boolean InsertMapping(Map data) {
+
+        try {
+            String query = "";
+
+            String UNIT_SN = data.get("UNIT_SN").toString();
+            String WSB_SN = data.get("WSB_SN").toString();
+
+            if(WSB_SN.equals("")) {
+
+                query = String.format(Query_Mapping_WSB_W.Insert, UNIT_SN);
+            } else {
+                query = String.format(Query_Mapping_WSB_W.InsertWSB_SN, WSB_SN, UNIT_SN);
+            }
+
+            db = mHelper.getReadableDatabase();
+
+            db.execSQL(query);
+
+            return true;
+        }catch (Exception e) {
+            return  false;
+        }
+    }
+
+    public boolean UpdateMapping(Map data) {
+
+        try {
+            String query = "";
+
+            String WSB_SN = data.get("WSB_SN").toString();
+            String UNIT_SN = data.get("UNIT_SN").toString();
+            String WORD_SN = data.get("WORD_SN").toString();
+
+            query = String.format(Query_Mapping_WSB_W.Update, WSB_SN, UNIT_SN, WORD_SN);
+
+            db = mHelper.getReadableDatabase();
+
+            db.execSQL(query);
+
+            return true;
+        }catch (Exception e) {
+            return  false;
+        }
+    }
+
+    public boolean DeleteMapping(Map data) {
+
+        try {
+            String query = "";
+
+            String WSB_SN = data.get("WSB_SN").toString();
+            String WORD_SN = data.get("WORD_SN").toString();
+
+            query = String.format(Query_Mapping_WSB_W.Delete, WSB_SN, WORD_SN);
+
+            db = mHelper.getReadableDatabase();
+
+            db.execSQL(query);
+
+            return true;
+        }catch (Exception e) {
+            return  false;
+        }
+    }
 }
