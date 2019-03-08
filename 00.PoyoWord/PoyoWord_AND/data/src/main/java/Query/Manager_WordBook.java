@@ -67,7 +67,13 @@ public class Manager_WordBook {
 
         db = mHelper.getReadableDatabase();
 
-        String query = String.format(Query_WordBook.GetData, WB_SN);
+        String query = "";
+
+        if(WB_SN.equals("")) {
+            query = Query_WordBook.GetDataList;
+        } else {
+            query = String.format(Query_WordBook.GetData, WB_SN);
+        }
 
         Cursor cursor;
         cursor = db.rawQuery(query, null);
