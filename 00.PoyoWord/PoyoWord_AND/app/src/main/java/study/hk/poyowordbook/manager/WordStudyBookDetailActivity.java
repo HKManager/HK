@@ -53,7 +53,7 @@ public class WordStudyBookDetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_word_study_book_detail);
 
         context = getApplicationContext();
-        //manager = new Manager_WordStudyBook(context);
+        manager = new Manager_WordStudyBook(context);
         manager_wordBook = new Manager_WordBook(context);
 
         WSB_SN = getIntent().getExtras().getString("WSB_SN");
@@ -68,6 +68,11 @@ public class WordStudyBookDetailActivity extends AppCompatActivity {
             @Override
             @SuppressLint({ "SetJavaScriptEnabled", "JavascriptInterface" })
             public void onPageFinished(WebView view, String url) {
+
+                // - 1. 단어 오디오배치 조회
+                // List<Map> wordaudiobookList = 
+
+                // - 2. 단어장 콤보박스 조회
                 List<Map> wordbookList = manager_wordBook.Search();
                 EventData data = new EventData();
                 data.SetHandle(HARDCODE.코드리스트);
@@ -76,28 +81,23 @@ public class WordStudyBookDetailActivity extends AppCompatActivity {
                 String JsonEventData = gson.toJson(data);
                 lWebView.loadUrl("javascript:showData('" + JsonEventData + "')");
 
-                /*if(!WSB_SN.equals("")) {
-                    Map mapData =  manager.SearchData(WSB_SN);
+                // - 3. 단어장 단어 리스트 조회
+                List<Map> wordList = manager_wordBook.Search("");
+                data.SetHandle("WORDLIST");
+                data.SetView(HARDCODE.단어학습장상세);
+                data.SetValue(wordList);
+                String JsonEventData = gson.toJson(data);
+                lWebView.loadUrl("javascript:showData('" + JsonEventData + "')");
 
-                    List<Map> locs = null;
+                if(!WSB_SN.equals("")) {
+                    Map mapData =  manager.Search(WSB_SN);
 
-                    try {
-                        locs = mapper.readValue(mapData.get("WAL_LOCS").toString(), new TypeReference<List<Map>>(){});
-                        mapData.put("WAL_LOCS", locs);
-
-                        data.SetHandle(HARDCODE.상세조회);
-                        data.SetView(HARDCODE.단어장배치관리);
-                        data.SetValue(mapData);
-                        JsonEventData = gson.toJson(data);
-                        lWebView.loadUrl("javascript:showData('" + JsonEventData + "')");
-                    }catch (JsonGenerationException e) {
-                        e.printStackTrace();
-                    } catch (JsonMappingException e) {
-                        e.printStackTrace();
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                }*/
+                    data.SetHandle(HARDCODE.상세조회);
+                    data.SetView(HARDCODE.단어학습장상세);
+                    data.SetValue(mapData);
+                    JsonEventData = gson.toJson(data);
+                    lWebView.loadUrl("javascript:showData('" + JsonEventData + "')");
+                }
             }
 
             public boolean onJsAlert(final WebView view, final String url, final String message, JsResult result) {
@@ -131,15 +131,14 @@ public class WordStudyBookDetailActivity extends AppCompatActivity {
                             break;
                         case HARDCODE.등록:
                             Map<String, Object> map = new HashMap<String, Object>();
+
                             try {
-                                map = mapper.readValue(parse.data, new TypeReference<Map<String, Object>>() {
-                                });
-                                List<Map<String, String>> WAL_LOCS_LIST = (List<Map<String, String>>) map.get("WAL_LOCS");
-                                String WAL_LOCS_JSON = gson.toJson(WAL_LOCS_LIST);
-                                map.put("WAL_LOCS_JSON", WAL_LOCS_JSON);
-                                map.put("WAL_UPDATE_DT", "");
-                                map.put("WAL_USEYN", "0");
-                            } catch (JsonGenerationException e) {
+                                map = mapper.readValue(parse.data, new TypeReference<Map<String, Object>>(){});
+
+                                map.put("WSB_CNT_UNIT", "0");
+                                map.put("WSB_CNT_UNIT_WORD", "0");
+                                map.put("WSB_REGISTERDT", "");
+                            }catch (JsonGenerationException e) {
                                 e.printStackTrace();
                             } catch (JsonMappingException e) {
                                 e.printStackTrace();
@@ -147,14 +146,42 @@ public class WordStudyBookDetailActivity extends AppCompatActivity {
                                 e.printStackTrace();
                             }
 
-                            if (WSB_SN.equals("")) {
-//                                manager.Insert(map);
-                            } else {
-                                map.put("WAL_SN", WSB_SN);
-//                                manager.Update(map);
-                            }
-
                             break;
+                    }
+
+                    if(WSB_SN.equals("")) {
+                        manager.Insert(map);
+
+                        List<Map<String, Object>> WordList = (List<Map<String, Object>>) map.get("WORD_LIST");
+
+                        WordList.forEach(t -> {
+                            // wordManager.Insert("", t);
+                            // - 매핑테이블에 단어 등록
+                        });
+                    } else {
+                        map.put("WSB_SN", WSB_SN);
+                        manager.Update(map);
+
+                        List<Map<String, Object>> WordList = (List<Map<String, Object>>) map.get("WORD_LIST");
+                        List<Map<String, Object>> RemoveList = (List<Map<String, Object>>) map.get("REMOVE_LIST");
+
+                        RemoveList.forEach(t -> {
+                            // if(!t.get("WORD_SN").toString().equals("")) {
+                            //     wordManager.Delete(t);
+                            // }
+
+                            // - 매핑 테이블 단어 삭제
+                        });
+
+                        WordList.forEach(t -> {
+                            if(!t.get("WORD_SN").toString().equals("")) {
+                                // wordManager.Update(t);
+                                // - 매핑테이블에 단어 수정
+                            } else {
+                                wordManager.Insert(WB_SN, t);
+                                // - 매핑테이블에 단어 등록
+                            }
+                        });
                     }
                 }
             });
