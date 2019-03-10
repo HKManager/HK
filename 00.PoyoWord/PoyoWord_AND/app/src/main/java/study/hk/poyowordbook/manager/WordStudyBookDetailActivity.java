@@ -103,6 +103,20 @@ public class WordStudyBookDetailActivity extends AppCompatActivity {
                     String FromDT = mapData.get("WSB_FROMDT").toString();
                     String ToDT = mapData.get("WSB_TODT").toString();
 
+                    String FromYear = FromDT.substring(0, 4);
+                    String FromMonth = FromDT.substring(4, 6);
+                    String FromDay = FromDT.substring(6, 8);
+
+                    String ToYear = ToDT.substring(0, 4);
+                    String ToMonth = ToDT.substring(4, 6);
+                    String ToDay = ToDT.substring(6, 8);
+
+                    String WSB_FROMDT = String.format("%s년 %s월 %s일", FromYear, FromMonth, FromDay);
+                    String WSB_TODT = String.format("%s년 %s월 %s일", ToYear, ToMonth, ToDay);
+
+                    mapData.put("WSB_FROMDT", WSB_FROMDT);
+                    mapData.put("WSB_TODT", WSB_TODT);
+
                     data.SetHandle(HARDCODE.상세조회);
                     data.SetView(HARDCODE.단어학습장상세);
                     data.SetValue(mapData);
@@ -146,6 +160,25 @@ public class WordStudyBookDetailActivity extends AppCompatActivity {
                             try {
                                 map = mapper.readValue(parse.data, new TypeReference<Map<String, Object>>(){});
 
+                                String FromDT = map.get("WSB_FROMDT").toString();
+                                String ToDT = map.get("WSB_TODT").toString();
+
+                                String[] FromDTArray = FromDT.split(" ");
+                                String[] ToDTArray = ToDT.split(" ");
+
+                                String From_YEAR = FromDTArray[0].toString().substring(0, 4);
+                                String From_Month = FromDTArray[1].toString().substring(0, 2);
+                                String From_Day = FromDTArray[2].toString().substring(0, 2);
+
+                                String To_YEAR = ToDTArray[0].toString().substring(0, 4);
+                                String To_Month = ToDTArray[1].toString().substring(0, 2);
+                                String To_Day = ToDTArray[2].toString().substring(0, 2);
+
+                                String WSB_FROMDT = String.format("%s%s%s", From_YEAR, From_Month, From_Day);
+                                String WSB_TODT = String.format("%s%s%s", To_YEAR, To_Month, To_Day);
+
+                                map.put("WSB_FROMDT", WSB_FROMDT);
+                                map.put("WSB_TODT", WSB_TODT);
                                 map.put("WSB_CNT_UNIT", "0");
                                 map.put("WSB_CNT_UNIT_WORD", "0");
                                 map.put("WSB_REGISTERDT", "");
