@@ -160,7 +160,7 @@ public class WordStudyBookDetailActivity extends AppCompatActivity {
                                 List<Map<String, Object>> WordList = (List<Map<String, Object>>) map.get("WORD_LIST");
 
                                 WordList.forEach(t -> {
-                                    // wordManager.Insert("", t);
+                                    manager.InsertMapping(WSB_SN, t);
                                     // - 매핑테이블에 단어 등록
                                 });
                             } else {
@@ -172,19 +172,15 @@ public class WordStudyBookDetailActivity extends AppCompatActivity {
 
                                 RemoveList.forEach(t -> {
                                     if(!t.get("WORD_SN").toString().equals("")) {
-                                        //manager.Delete(t);
+                                        manager.DeleteMapping(WSB_SN, t);
                                     }
-
-                                    // - 매핑 테이블 단어 삭제
                                 });
 
                                 WordList.forEach(t -> {
                                     if(!t.get("WORD_SN").toString().equals("")) {
-                                        // wordManager.Update(t);
-                                        // - 매핑테이블에 단어 수정
+                                        manager.UpdateMapping(WSB_SN, t);
                                     } else {
-                                        //wordManager.Insert(WB_SN, t);
-                                        // - 매핑테이블에 단어 등록
+                                        manager.InsertMapping(WSB_SN, t);
                                     }
                                 });
                             }

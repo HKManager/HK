@@ -97,6 +97,10 @@ public class Manager_WordBook {
 
             mapData.put("MWW_SN", cursor.getString(cursor.getColumnIndex("MWW_SN")));
 
+            if(WB_SN.equals("")) {
+                mapData.put("MWSW_SN", cursor.getString(cursor.getColumnIndex("MWSW_SN")));
+            }
+
             mapData.put("WORD_SN", cursor.getString(cursor.getColumnIndex("WORD_SN")));
             mapData.put("WORD_UNIT_SN", cursor.getString(cursor.getColumnIndex("WORD_UNIT_SN")));
             mapData.put("WORD_WORD", cursor.getString(cursor.getColumnIndex("WORD_WORD")));

@@ -14,15 +14,12 @@ public class Query_Mapping_WSB_W {
      )
      values
      (
-     %s,
-     (
-     SELECT MAX(WSB_SN) AS MAX_SN
-     FROM wordstudybook
-     ),
-     (
-     SELECT MAX(WORD_SN) MAX_SN
-     FROM word
-     )
+         (
+             SELECT MAX(WSB_SN) AS MAX_SN
+             FROM wordstudybook
+         ),
+         %s,
+         %s
      )
      */
     @Multiline
@@ -38,12 +35,9 @@ public class Query_Mapping_WSB_W {
      )
      values
      (
-     %s,
-     %s,
-     (
-     SELECT MAX(WORD_SN) MAX_SN
-     FROM word
-     )
+         %s,
+         %s,
+         %s,
      )
      */
     @Multiline

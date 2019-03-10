@@ -47,7 +47,6 @@ public class Query_WordStudyBook {
      WSB_SN
      , WSB_NAME
      , WAL_SN
-     , WSB_LEVEL_CD
      , WSB_CNT_UNIT
      , WSB_CNT_UNIT_WORD
      , WSB_REGISTERDT
@@ -84,10 +83,10 @@ public class Query_WordStudyBook {
      , w.WORD_IMAGE
      , w.WORD_LIKE
      , w.WORD_USEYN
-     , mwbw.MSWW_SN
+     , mwbw.MWSW_SN
      , mwbw.WORD_UNIT_SN
      FROM wordstudybook wsb, mapping_wsb_w mwbw, word w
-     WHERE wb.wsb_sn = mwbw.wsb_sn
+     WHERE wsb.wsb_sn = mwbw.wsb_sn
      AND w.word_sn = mwbw.word_sn
      AND wsb.wsb_sn = %s
      */

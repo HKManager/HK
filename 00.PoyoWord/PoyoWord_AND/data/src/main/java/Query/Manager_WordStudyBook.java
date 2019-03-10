@@ -68,17 +68,16 @@ public class Manager_WordStudyBook {
 
             Map<String, Object> mapData = new HashMap<String, Object>();
 
-            map.put("WSB_SN", cursor.getInt(cursor.getColumnIndex("WSB_SN")));
-            map.put("WSB_NAME", cursor.getString(cursor.getColumnIndex("WSB_NAME")));
-            map.put("WAL_SN", cursor.getInt(cursor.getColumnIndex("WAL_SN")));
-            map.put("WSB_CNT_UNIT", cursor.getInt(cursor.getColumnIndex("WSB_CNT_UNIT")));
-            map.put("WSB_CNT_UNIT_WORD", cursor.getInt(cursor.getColumnIndex("WSB_CNT_UNIT_WORD")));
-            map.put("WSB_REGISTERDT", cursor.getString(cursor.getColumnIndex("WSB_REGISTERDT")));
-            map.put("WSB_FROMDT", cursor.getString(cursor.getColumnIndex("WSB_FROMDT")));
-            map.put("WSB_TODT", cursor.getString(cursor.getColumnIndex("WSB_TODT")));
+            mapData.put("WSB_SN", cursor.getInt(cursor.getColumnIndex("WSB_SN")));
+            mapData.put("WSB_NAME", cursor.getString(cursor.getColumnIndex("WSB_NAME")));
+            mapData.put("WAL_SN", cursor.getInt(cursor.getColumnIndex("WAL_SN")));
+            mapData.put("WSB_CNT_UNIT", cursor.getInt(cursor.getColumnIndex("WSB_CNT_UNIT")));
+            mapData.put("WSB_CNT_UNIT_WORD", cursor.getInt(cursor.getColumnIndex("WSB_CNT_UNIT_WORD")));
+            mapData.put("WSB_REGISTERDT", cursor.getString(cursor.getColumnIndex("WSB_REGISTERDT")));
+            mapData.put("WSB_FROMDT", cursor.getString(cursor.getColumnIndex("WSB_FROMDT")));
+            mapData.put("WSB_TODT", cursor.getString(cursor.getColumnIndex("WSB_TODT")));
 
             mapData.put("MWSW_SN", cursor.getString(cursor.getColumnIndex("MWSW_SN")));
-            mapData.put("WORD_UNIT_SN", cursor.getString(cursor.getColumnIndex("WORD_UNIT_SN")));
 
             mapData.put("WORD_SN", cursor.getString(cursor.getColumnIndex("WORD_SN")));
             mapData.put("WORD_UNIT_SN", cursor.getString(cursor.getColumnIndex("WORD_UNIT_SN")));
@@ -90,7 +89,7 @@ public class Manager_WordStudyBook {
             mapData.put("WORD_EXAM", cursor.getString(cursor.getColumnIndex("WORD_EXAM")));
             mapData.put("WORD_EXAM_MEAN", cursor.getString(cursor.getColumnIndex("WORD_EXAM_MEAN")));
             mapData.put("WORD_TYPE_CD", cursor.getString(cursor.getColumnIndex("WORD_TYPE_CD")));
-            mapData.put("WORD_LEVEL_CD", cursor.getString(cursor.getColumnIndex("WB_DESC")));
+            mapData.put("WORD_LEVEL_CD", cursor.getString(cursor.getColumnIndex("WORD_LEVEL_CD")));
             mapData.put("WORD_IMPORTANT", cursor.getString(cursor.getColumnIndex("WORD_IMPORTANT")));
             mapData.put("WORD_LEARNYN", cursor.getString(cursor.getColumnIndex("WORD_LEARNYN")));
             mapData.put("WORD_IMAGE", cursor.getString(cursor.getColumnIndex("WORD_IMAGE")));
@@ -162,19 +161,18 @@ public class Manager_WordStudyBook {
     }
 
 
-    public boolean InsertMapping(Map data) {
+    public boolean InsertMapping(String WSB_SN, Map data) {
 
         try {
             String query = "";
 
             String UNIT_SN = data.get("UNIT_SN").toString();
-            String WSB_SN = data.get("WSB_SN").toString();
+            String WORD_SN = data.get("WORD_SN").toString();
 
             if(WSB_SN.equals("")) {
-
-                query = String.format(Query_Mapping_WSB_W.Insert, UNIT_SN);
+                query = String.format(Query_Mapping_WSB_W.Insert, UNIT_SN, WORD_SN);
             } else {
-                query = String.format(Query_Mapping_WSB_W.InsertWSB_SN, WSB_SN, UNIT_SN);
+                query = String.format(Query_Mapping_WSB_W.InsertWSB_SN, WSB_SN, UNIT_SN, WORD_SN);
             }
 
             db = mHelper.getReadableDatabase();
@@ -187,12 +185,11 @@ public class Manager_WordStudyBook {
         }
     }
 
-    public boolean UpdateMapping(Map data) {
+    public boolean UpdateMapping(String WSB_SN, Map data) {
 
         try {
             String query = "";
 
-            String WSB_SN = data.get("WSB_SN").toString();
             String UNIT_SN = data.get("UNIT_SN").toString();
             String WORD_SN = data.get("WORD_SN").toString();
 
@@ -208,12 +205,11 @@ public class Manager_WordStudyBook {
         }
     }
 
-    public boolean DeleteMapping(Map data) {
+    public boolean DeleteMapping(String WSB_SN, Map data) {
 
         try {
             String query = "";
 
-            String WSB_SN = data.get("WSB_SN").toString();
             String WORD_SN = data.get("WORD_SN").toString();
 
             query = String.format(Query_Mapping_WSB_W.Delete, WSB_SN, WORD_SN);

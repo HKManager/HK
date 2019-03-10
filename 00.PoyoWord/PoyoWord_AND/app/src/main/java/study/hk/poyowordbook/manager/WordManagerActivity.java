@@ -36,6 +36,7 @@ import java.util.Map;
 import Event.EventData;
 import Query.Manager_WordAudLoc;
 import Query.Manager_WordBook;
+import Query.Manager_WordStudyBook;
 import study.hk.data.Data.HARDCODE;
 import study.hk.poyowordbook.MainActivity;
 import study.hk.poyowordbook.R;
@@ -47,8 +48,11 @@ public class WordManagerActivity extends AppCompatActivity {
     private static WebView webViewWordBook = null;
     private static WebView webViewWordStudyBook = null;
     private static WebView webViewWordAudBook = null;
+
     private static Manager_WordBook wordBook;
     private static Manager_WordAudLoc wordAudBook;
+    private static Manager_WordStudyBook wordStudyBook;
+
     private static Gson gson = new Gson();
     private static Intent intent;
 
@@ -65,6 +69,7 @@ public class WordManagerActivity extends AppCompatActivity {
         context = getApplicationContext();
         wordBook = new Manager_WordBook(context);
         wordAudBook = new Manager_WordAudLoc(context);
+        wordStudyBook = new Manager_WordStudyBook(context);
 
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
 
@@ -205,6 +210,18 @@ public class WordManagerActivity extends AppCompatActivity {
                 @Override
                 @SuppressLint({ "SetJavaScriptEnabled", "JavascriptInterface" })
                 public void onPageFinished(WebView view, String url) {
+
+                    List<Map> list = wordStudyBook.Search();
+
+                    EventData data = new EventData();
+
+                    data.SetHandle(HARDCODE.전체조회);
+                    data.SetView(HARDCODE.단어학습장관리);
+                    data.SetValue(list);
+
+                    String JsonEventData = gson.toJson(data);
+
+                    webViewWordStudyBook.loadUrl("javascript:showData('" + JsonEventData + "')");
                 }
 
                 public boolean onJsAlert(final WebView view, final String url, final String message, JsResult result) {
@@ -256,7 +273,7 @@ public class WordManagerActivity extends AppCompatActivity {
                     EventData data = new EventData();
 
                     data.SetHandle(HARDCODE.전체조회);
-                    data.SetView(HARDCODE.단어장관리);
+                    data.SetView(HARDCODE.단어장배치관리);
                     data.SetValue(list);
 
                     String JsonEventData = gson.toJson(data);
@@ -284,6 +301,10 @@ public class WordManagerActivity extends AppCompatActivity {
                     //lWebView.loadUrl("javascript:setMessage('" + "abc" + "')");
 
                     EventData parse = gson.fromJson(arg, EventData.class);
+                    List<Map> list = null;
+                    String jsonResult = "";
+                    EventData data = null;
+                    String JsonEventData = "";
 
                     switch (parse.handle) {
                         case HARDCODE.화면호출 :
@@ -306,18 +327,50 @@ public class WordManagerActivity extends AppCompatActivity {
                             }
                             break;
                         case HARDCODE.전체조회 :
-                            ArrayList<Map> list = wordBook.Search();
-                            String jsonResult = gson.toJson(list);
+                            switch (parse.view) {
+                                case HARDCODE.단어장관리 :
+                                    list = wordBook.Search();
+                                    jsonResult = gson.toJson(list);
 
-                            EventData data = new EventData();
+                                    data = new EventData();
 
-                            data.SetHandle(HARDCODE.전체조회);
-                            data.SetView(HARDCODE.단어장관리);
-                            data.SetValue(list);
+                                    data.SetHandle(HARDCODE.전체조회);
+                                    data.SetView(HARDCODE.단어장관리);
+                                    data.SetValue(list);
 
-                            String JsonEventData = gson.toJson(data);
+                                    JsonEventData = gson.toJson(data);
 
-                            webViewWordBook.loadUrl("javascript:showData('" + JsonEventData + "')");
+                                    webViewWordBook.loadUrl("javascript:showData('" + JsonEventData + "')");
+                                    break;
+                                case HARDCODE.단어장배치관리 :
+                                    list = wordAudBook.Search();
+                                    jsonResult = gson.toJson(list);
+
+                                    data = new EventData();
+
+                                    data.SetHandle(HARDCODE.전체조회);
+                                    data.SetView(HARDCODE.단어장배치관리);
+                                    data.SetValue(list);
+
+                                    JsonEventData = gson.toJson(data);
+
+                                    webViewWordAudBook.loadUrl("javascript:showData('" + JsonEventData + "')");
+                                    break;
+                                case  HARDCODE.단어학습장관리 :
+                                    list = wordStudyBook.Search();
+                                    jsonResult = gson.toJson(list);
+
+                                    data = new EventData();
+
+                                    data.SetHandle(HARDCODE.전체조회);
+                                    data.SetView(HARDCODE.단어학습장관리);
+                                    data.SetValue(list);
+
+                                    JsonEventData = gson.toJson(data);
+
+                                    webViewWordStudyBook.loadUrl("javascript:showData('" + JsonEventData + "')");
+                                    break;
+                            }
                             break;
                         case HARDCODE.수정 :
                             switch (parse.view) {
@@ -328,7 +381,7 @@ public class WordManagerActivity extends AppCompatActivity {
                                     break;
                                 case HARDCODE.단어학습장관리:
                                     intent = new Intent(context,WordStudyBookDetailActivity.class);
-                                    intent.putExtra("WAL_SN",parse.data); /*송신*/
+                                    intent.putExtra("WSB_SN",parse.data); /*송신*/
                                     context.startActivity(intent);
                                     break;
                                 case HARDCODE.단어장배치관리:

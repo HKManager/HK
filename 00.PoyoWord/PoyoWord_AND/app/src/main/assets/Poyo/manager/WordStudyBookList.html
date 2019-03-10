@@ -124,7 +124,7 @@
 
         function Update() {
 
-            var obj = { handle: "04", view: "WORDSTUDYBOOK", data: selectItem.WB_SN };
+            var obj = { handle: "04", view: "WORDSTUDYBOOK", data: selectItem.WSB_SN };
 
             var data = JSON.stringify(obj);
 
@@ -268,7 +268,7 @@
 
                                 <tr data-bind='click: setEditItem'>
                                     <td data-bind="text: WSB_NAME"></td>
-                                    <td data-bind="text: WSB_CNT_WORD "></td>
+                                    <!-- <td data-bind="text: WSB_CNT_WORD "></td> -->
                                 </tr>
                             </tbody>
                         </table>

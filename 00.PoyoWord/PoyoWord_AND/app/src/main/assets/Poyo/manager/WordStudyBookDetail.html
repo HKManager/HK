@@ -145,7 +145,6 @@
             SBGridProperties_WSB_WordList.jsonref = 'newData';
 
             SBGridProperties_WSB_WordList.columns = [
-                { caption: ['단어장명'], ref: 'WB_NAME', width: '150px', style: 'text-align:center', type: 'output' },
                 { caption: ['단어명'], ref: 'WORD_WORD', width: '150px', style: 'text-align:center', type: 'output' },
                 { caption: ['단어뜻'], ref: 'WORD_MEAN', width: '150px', style: 'text-align:center', type: 'output' },
                 { caption: ['예문'], ref: 'WORD_EXAM', width: '120px', style: 'text-align:center', type: 'output' },
@@ -157,6 +156,7 @@
             datagrid.bind('click', 'gridClick');
 
             datagrid2 = _SBGrid.create(SBGridProperties_WSB_WordList);
+            datagrid2.bind('click', 'RemoveGrid');
             datagrid2.setBackColorAlternate('#cccc');
         };
 
@@ -170,11 +170,27 @@
                 return;
             } else {
                 var word = gridData[nRow - 1];
+                word.UNIT_SN = '0';
 
                 newData.push(word);
                 datagrid2.refresh();
             }
         };
+
+        function RemoveGrid() {
+
+            var row = datagrid2.getRow();
+
+            var emptyWord = newData[row - 1];
+
+            if(emptyWord.MWSW_SN != null || emptyWord.MWSW_SN != '') {
+                removeData.push(emptyWord);
+            }
+
+            newData.splice(row-1, 1);
+
+            datagrid2.refresh(); //데이터 초기화
+        }
     </script>
     <!-- SBGrid 관련 -->
 
@@ -304,90 +320,28 @@
 
         function GetData() {
 
-            datagrid.refresh(); //데이터 초기화
-
             var record = {
-                WB_SN: $("#WB_SN").val(),
-                WB_NAME: $("#WB_NAME").val(),
-                WB_LEVEL_CD: $("#WB_LEVEL").val(),
-
-                WORD_LIST: gridData,
-                REMOVE_LIST: removeData,
-                WAL_USEYN: true
+                WSB_SN: $("#WSB_SN").val(),
+                WSB_NAME: $("#From_DT").val() + '~' + $("#To_DT").val(),
+                WAL_SN: _WAL_SN,
+                WSB_CNT_UNIT: '',
+                WSB_CNT_UNIT_WORD: '',
+                WSB_FROMDT: $("#From_DT").val(),
+                WSB_TODT : $("#To_DT").val(),
+                
+                WORD_LIST: newData,
+                REMOVE_LIST: removeData
             };
 
             return record;
         }
 
         function Cancel() {
-            var obj = { handle: "06", view: "WORDSTUDYBOOKDETAIL", data: "WORDSTUDYBOOK" };
+            var obj = { handle: "06", view: "WordStudyBookDETAIL", data: "WORDSTUDYBOOK" };
 
             var data = JSON.stringify(obj);
 
             window.android.setData(data);
-        }
-
-        function AddImage() {
-            var obj = { handle: "06", view: "WORDSTUDYBOOKDETAIL", data: "IMAGEVIEW" };
-
-            var data = JSON.stringify(obj);
-
-            window.android.setData(data);
-        }
-
-        function SaveGrid() {
-            var WORD_SN = $("#WORD_SN").val();
-            var WORD_WORD = $("#WORD_WORD").val();
-            var WORD_MEAN = $("#WORD_MEAN").val();
-            var WORD_EXAM = $("#WORD_EXAM").val();
-            var WORD_EXAM_MEAN = $("#WORD_EXAM_MEAN").val();
-
-            vm.WORD_SN('');
-            vm.WORD_WORD('');
-            vm.WORD_MEAN('');
-            vm.WORD_EXAM('');
-            vm.WORD_EXAM_MEAN('');
-
-            if (nRow != '') {
-                var emptyWord = gridData[nRow - 1];
-
-                emptyWord.WORD_WORD = WORD_WORD;
-                emptyWord.WORD_MEAN = WORD_MEAN;
-                emptyWord.WORD_EXAM = WORD_EXAM;
-                emptyWord.WORD_EXAM_MEAN = WORD_EXAM_MEAN;
-
-                //datagrid.setRowData(nRow, emptyWord);
-                gridData[nRow - 1] = emptyWord;
-            } else {
-                var emptyWord = {
-                    WB_SN: '', WB_NAME: '', WB_LEVEL_CD: '', WB_CNT_UNIT: '', WB_CNT_WORD_UNIT: '', WB_CNT_WORD: ''
-                    , WAL_SN: '', WB_LOOPCNT: '', WB_INTERVAL: '', WB_USEYN: '', WB_REGISTERDT: '', WB_DESC: ''
-                    , MWW_SN: ''
-                    , WORD_SN: WORD_SN, WORD_UNIT_SN: '', WORD_WORD: WORD_WORD, WORD_MEAN: WORD_MEAN, WORD_SPELLING: '', WORD_SOUND: '', WORD_SOUND_FILE: ''
-                    , WORD_EXAM: WORD_EXAM, WORD_EXAM_MEAN: WORD_EXAM_MEAN, WORD_TYPE_CD: '001', WORD_LEVEL_CD: '001', WORD_IMPORTANT: ''
-                    , WORD_LEARNYN: '', WORD_IMAGE: '', WORD_LIKE: '', WORD_USEYN: ''
-                };
-
-                gridData.push(emptyWord);
-            }
-
-            nRow = '';
-
-            datagrid.refresh(); //데이터 초기화
-        }
-
-        function RemoveGrid() {
-            var emptyWord = gridData[nRow - 1];
-
-            if (emptyWord.WORD_SN != '') {
-                removeData.push(emptyWord);
-            }
-
-            gridData.splice(nRow - 1, 1);
-
-            nRow = '';
-
-            datagrid.refresh(); //데이터 초기화
         }
 
         function showData(str) {
@@ -405,15 +359,30 @@
                     break;
                 case "WordAudioLoc" :
                     vm.WORD_AUD_LOCS(jsonObj.value);
-                    vm.WAL_SN(jsonObj.value[0].WAL_SN);
+                    //vm.WAL_SN(jsonObj.value[0].WAL_SN);
                     break;    
                 case "DETAIL":
-                    vm.WB_SN(jsonObj.value.WB_SN);
-                    vm.WB_NAME(jsonObj.value.WB_NAME);
-                    vm.WB_LEVEL_CD(jsonObj.value.WB_LEVEL_CD);
-                    gridData = jsonObj.value.WORD_LIST;
+                     vm.WSB_SN(jsonObj.value.WSB_SN);
+                     vm.WAL_SN(jsonObj.value.WAL_SN);
 
-                    datagrid.refresh(); //데이터 초기화
+                     _WAL_SN = jsonObj.value.WAL_SN;
+
+                     console.log("WAL_SN : " + jsonObj.value.WAL_SN);
+
+                     //$("#WORD_AUD").val(jsonObj.value.WAL_SN);
+                     
+
+                     $("#From_DT").val(jsonObj.value.WSB_FROMDT);
+                     $("#To_DT").val(jsonObj.value.WSB_TODT);
+                     
+                    // vm.WB_NAME(jsonObj.value.WB_NAME);
+                    // vm.WB_LEVEL_CD(jsonObj.value.WB_LEVEL_CD);
+
+
+
+                    newData = jsonObj.value.WORD_LIST;
+
+                    datagrid2.refresh(); //데이터 초기화
                     break;
             }
         }
@@ -479,16 +448,16 @@
                         <div class="row clearfix">
                             <div class="col-sm-12">
                                 <div class="form-group" style="margin-bottom: 10px;">
-                                    <input id="WB_SN" type="hidden" class="control-detail form-control"
-                                        placeholder="거래처 SN" data-bind="value: WB_SN" />
+                                    <input id="WSB_SN" type="hidden" class="control-detail form-control"
+                                        placeholder="거래처 SN" data-bind="value: WSB_SN" />
 
                                     <div class="input-daterange input-group" id="bs_datepicker_range_container">
                                         <div class="form-line">
-                                            <input style="text-align: center;" type="text" class="form-control" placeholder="Date start...">
+                                            <input id="From_DT" style="text-align: center;" type="text" class="form-control" placeholder="Date start...">
                                         </div>
                                         <span class="input-group-addon">~ </span>
                                         <div class="form-line">
-                                            <input style="text-align: center;" type="text" class="form-control" placeholder="Date end...">
+                                            <input id="To_DT" style="text-align: center;" type="text" class="form-control" placeholder="Date end...">
                                         </div>
                                     </div>
                                 </div>
