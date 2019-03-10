@@ -8,9 +8,9 @@ public class Query_Mapping_WSB_W {
      INSERT INTO
      mapping_wsb_w
      (
-     WSB_SN
-     , WORD_UNIT_SN
-     , WORD_SN
+         WSB_SN
+         , WORD_UNIT_SN
+         , WORD_SN
      )
      values
      (
@@ -29,15 +29,15 @@ public class Query_Mapping_WSB_W {
      INSERT INTO
      mapping_wsb_w
      (
-     WSB_SN
-     , WORD_UNIT_SN
-     , WORD_SN
+         WSB_SN
+         , WORD_UNIT_SN
+         , WORD_SN
      )
      values
      (
          %s,
          %s,
-         %s,
+         %s
      )
      */
     @Multiline
@@ -57,8 +57,7 @@ public class Query_Mapping_WSB_W {
     /**
      Delete
      FROM mapping_wsb_w
-     WHERE  WSB_SN = %s
-     AND    WORD_SN = %s
+     WHERE  MWSW_SN = %s
      */
     @Multiline
     public static String Delete;

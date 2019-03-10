@@ -166,7 +166,7 @@ public class Manager_WordStudyBook {
         try {
             String query = "";
 
-            String UNIT_SN = data.get("UNIT_SN").toString();
+            String UNIT_SN = data.get("WORD_UNIT_SN").toString();
             String WORD_SN = data.get("WORD_SN").toString();
 
             if(WSB_SN.equals("")) {
@@ -190,7 +190,7 @@ public class Manager_WordStudyBook {
         try {
             String query = "";
 
-            String UNIT_SN = data.get("UNIT_SN").toString();
+            String UNIT_SN = data.get("WORD_UNIT_SN").toString();
             String WORD_SN = data.get("WORD_SN").toString();
 
             query = String.format(Query_Mapping_WSB_W.Update, WSB_SN, UNIT_SN, WORD_SN);
@@ -210,9 +210,9 @@ public class Manager_WordStudyBook {
         try {
             String query = "";
 
-            String WORD_SN = data.get("WORD_SN").toString();
+            String MWSW_SN = data.get("MWSW_SN").toString();
 
-            query = String.format(Query_Mapping_WSB_W.Delete, WSB_SN, WORD_SN);
+            query = String.format(Query_Mapping_WSB_W.Delete, MWSW_SN);
 
             db = mHelper.getReadableDatabase();
 

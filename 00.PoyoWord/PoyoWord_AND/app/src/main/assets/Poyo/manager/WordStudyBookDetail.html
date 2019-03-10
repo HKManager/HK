@@ -323,7 +323,7 @@
             var record = {
                 WSB_SN: $("#WSB_SN").val(),
                 WSB_NAME: $("#From_DT").val() + '~' + $("#To_DT").val(),
-                WAL_SN: _WAL_SN,
+                WAL_SN: $("#WORD_AUD").val(),
                 WSB_CNT_UNIT: '',
                 WSB_CNT_UNIT_WORD: '',
                 WSB_FROMDT: $("#From_DT").val(),
@@ -359,7 +359,7 @@
                     break;
                 case "WordAudioLoc" :
                     vm.WORD_AUD_LOCS(jsonObj.value);
-                    //vm.WAL_SN(jsonObj.value[0].WAL_SN);
+                    vm.WAL_SN(jsonObj.value[0].WAL_SN);
                     break;    
                 case "DETAIL":
                      vm.WSB_SN(jsonObj.value.WSB_SN);

@@ -100,6 +100,9 @@ public class WordStudyBookDetailActivity extends AppCompatActivity {
                 if(!WSB_SN.equals("")) {
                     Map mapData =  manager.Search(WSB_SN);
 
+                    String FromDT = mapData.get("WSB_FROMDT").toString();
+                    String ToDT = mapData.get("WSB_TODT").toString();
+
                     data.SetHandle(HARDCODE.상세조회);
                     data.SetView(HARDCODE.단어학습장상세);
                     data.SetValue(mapData);
@@ -171,13 +174,13 @@ public class WordStudyBookDetailActivity extends AppCompatActivity {
                                 List<Map<String, Object>> RemoveList = (List<Map<String, Object>>) map.get("REMOVE_LIST");
 
                                 RemoveList.forEach(t -> {
-                                    if(!t.get("WORD_SN").toString().equals("")) {
+                                    if(!t.get("MWSW_SN").toString().equals("")) {
                                         manager.DeleteMapping(WSB_SN, t);
                                     }
                                 });
 
                                 WordList.forEach(t -> {
-                                    if(!t.get("WORD_SN").toString().equals("")) {
+                                    if(!t.get("MWSW_SN").toString().equals("")) {
                                         manager.UpdateMapping(WSB_SN, t);
                                     } else {
                                         manager.InsertMapping(WSB_SN, t);

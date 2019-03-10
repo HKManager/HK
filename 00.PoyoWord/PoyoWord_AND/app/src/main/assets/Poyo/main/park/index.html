@@ -65,23 +65,26 @@
         }
 
         function ShowWordBook() {
-            toggleNavView();
-
             var obj = { handle: "06", view: "MAIN", data: "WORDBOOK" };
 
             var data = JSON.stringify(obj);
 
             window.android.setData(data);
+
+            toggleNavView();
+            menuClick();
         }
 
         function ShowWordStudy() {
-            toggleNavView();
 
             var obj = { handle: "06", view: "MAIN", data: "WORDSTUDY" };
 
             var data = JSON.stringify(obj);
 
             window.android.setData(data);
+
+            toggleNavView();
+            menuClick();
         }
 
     </script>
