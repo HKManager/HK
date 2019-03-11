@@ -82,6 +82,7 @@
 
   var wordList = [];
   var pageIndex = 0;
+  var wordIndex = 0;
 
   var viewModel = {
     words: ko.observableArray([]),
@@ -102,7 +103,12 @@
       WORD_QUIZ3: 'file',
 
       WORD_EXAM: 'I add apple.',
-      WORD_EXAM_MEAN: '나는 사과를 추가 하였습니다.'
+      WORD_EXAM_MEAN: '나는 사과를 추가 하였습니다.',
+
+      EXAM_QUIZ: '',
+      EXAM_QUIZ1: 'I',
+      EXAM_QUIZ2: 'apple',
+      EXAM_QUIZ3: 'add'
     };
 
     var record1 = {
@@ -117,7 +123,12 @@
       WORD_QUIZ3: 'file',
 
       WORD_EXAM: 'I add apple.',
-      WORD_EXAM_MEAN: '나는 사과를 추가 하였습니다.'
+      WORD_EXAM_MEAN: '나는 사과를 추가 하였습니다.',
+
+      EXAM_QUIZ: '',
+      EXAM_QUIZ1: 'add',
+      EXAM_QUIZ2: 'I',
+      EXAM_QUIZ3: 'apple'
     };
 
     wordList.push(record);
@@ -149,27 +160,67 @@ this.setEditItem = function (item) {
 }
 
 function ClickQuiz_01(item) {
-  var temp = item.outerText;
-
-  $('#prefix_'+pageIndex).val(temp);
+  SetWord(item);
 }
 
 function ClickQuiz_02(item) {
-  var temp = item.outerText;
-  $('#prefix_'+pageIndex).val(temp);
+  SetWord(item);
 }
 
 function ClickQuiz_03(item) {
+  SetWord(item);
+}
+
+function ClickExam_01(item) {
+  SetExam(item);
+}
+
+function ClickExam_02(item) {
+  SetExam(item);
+}
+
+function ClickExam_03(item) {
+  SetExam(item);
+}
+
+function SetWord(item) {
   var temp = item.outerText;
-  $('#prefix_'+pageIndex).val(temp);
+  $('#prefix_'+wordIndex).val(temp);
+}
+
+function SetExam(item) {
+  var temp = item.outerText;
+  
+  var text = $('#exam_'+wordIndex).val();
+
+  if(text.includes(temp)) {
+    text = text.replace(' '+temp, '');
+  } else {
+    text = text + ' ' + temp;
+  }
+
+  $('#exam_'+wordIndex).val(text);
 }
 
 function nextPage() {
   pageIndex++;
+
+  wordIndex = Math.floor(pageIndex / 2);
 }
 
 function prevPage() {
+  if(pageIndex == 0) {
+    return;
+  }
+
   pageIndex--;
+
+  if(pageIndex == 0) {
+    wordIndex = 0;
+    return;
+  }
+
+  wordIndex = Math.floor(pageIndex / 2);
 }
 
 function InitReavel() {
@@ -235,6 +286,44 @@ function InitReavel() {
                 <button id="WordQuiz_01" type="button" class="btn bg-teal col-xs-12 btn-lg waves-effect" style="margin-bottom: 15px;width: 100%;" data-bind="text: WORD_QUIZ1" onclick="ClickQuiz_01(this)"></button>
                 <button id="WordQuiz_02" type="button" class="btn bg-teal col-xs-12 btn-lg waves-effect" style="margin-bottom: 15px;width: 100%;" data-bind="text: WORD_QUIZ2" onclick="ClickQuiz_02(this)"></button>
                 <button id="WordQuiz_03" type="button" class="btn bg-teal col-xs-12 btn-lg waves-effect" style="margin-bottom: 15px;width: 100%;" data-bind="text: WORD_QUIZ3" onclick="ClickQuiz_03(this)"></button>
+
+                <button type="button" class="btn bg-pink col-xs-12 btn-lg waves-effect" style="margin-bottom: 15px;width: 100%;">확인</button>
+            </div>
+
+          </div>
+        </div>
+
+      </section>
+
+
+      <section>
+
+        <div class="card" style="min-height:200px;margin-left: 15px;margin-right: 15px;">
+          <div class="header">
+
+            <div>
+              <div>
+                <h2 style="font-size: 30px;" data-bind="text: WORD_EXAM_MEAN">
+                </h2>
+              </div>
+            </div>
+          </div>
+          <div class="body">
+
+            <div class="row">
+              <input type="text" class="form-control" style="width:100%;text-align: center;" placeholder="예문을 맞추어 주세요!" data-bind="attr: { id: 'exam_' + $index() }" />
+            </div>
+
+          </div>
+        </div>
+
+        <div class="card" style="min-height:300px;margin-top:20px;margin-left: 15px;margin-right: 15px;">
+          <div class="body">
+
+            <div class="row" style="bottom:15px;margin-top: 100px;">
+                <button id="ExamQuiz_01" type="button" class="btn bg-teal col-xs-12 btn-lg waves-effect" style="margin-bottom: 15px;width: 100%;" data-bind="text: EXAM_QUIZ1" onclick="ClickExam_01(this)"></button>
+                <button id="ExamQuiz_02" type="button" class="btn bg-teal col-xs-12 btn-lg waves-effect" style="margin-bottom: 15px;width: 100%;" data-bind="text: EXAM_QUIZ2" onclick="ClickExam_02(this)"></button>
+                <button id="ExamQuiz_03" type="button" class="btn bg-teal col-xs-12 btn-lg waves-effect" style="margin-bottom: 15px;width: 100%;" data-bind="text: EXAM_QUIZ3" onclick="ClickExam_03(this)"></button>
 
                 <button type="button" class="btn bg-pink col-xs-12 btn-lg waves-effect" style="margin-bottom: 15px;width: 100%;">확인</button>
             </div>
