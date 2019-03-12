@@ -33,6 +33,9 @@
   <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
   <link href="../Content/css/themes/all-themes.css" rel="stylesheet" />
 
+  <!-- Sweetalert Css -->
+  <link href="../Content/plugins/sweetalert/sweetalert.css" rel="stylesheet" />
+
   <!-- UI 관련 CSS -->
 
   <link rel="stylesheet" href="../css/menu/reset.css"> <!-- CSS reset -->
@@ -67,10 +70,15 @@
 <!-- Editable Table Plugin Js -->
 <script src="../Content/plugins/editable-table/mindmup-editabletable.js">
 </script>
+
+<!-- SweetAlert Plugin Js -->
+<script src="../Content/plugins/sweetalert/sweetalert.min.js"></script>
+
 <!-- Custom Js -->
 <script src="../Content/js/admin.js">
 </script>
-<script src="../Content/js/pages/tables/editable-table.js">
+<script src="../Content/js/pages/tables/editable-table.js"></script>
+<script src="../Content/js/pages/ui/dialogs.js"></script>
 </script>
 <!-- Demo Js -->
 <script src="../Content/js/demo.js">
@@ -80,7 +88,7 @@
 
 <script type="text/javascript">
 
-  var wordList = [];
+  var QuizList = [];
   var pageIndex = 0;
   var wordIndex = 0;
 
@@ -102,7 +110,7 @@
       WORD_QUIZ2: 'mountain',
       WORD_QUIZ3: 'file',
 
-      WORD_EXAM: 'I add apple.',
+      WORD_EXAM: 'I add apple',
       WORD_EXAM_MEAN: '나는 사과를 추가 하였습니다.',
 
       EXAM_QUIZ: '',
@@ -118,11 +126,11 @@
       WORD_MEAN: '산',
 
       WORD_QUIZ: 'eeee',
-      WORD_QUIZ1: 'banana',
+      WORD_QUIZ1: 'apple',
       WORD_QUIZ2: 'mountain',
       WORD_QUIZ3: 'file',
 
-      WORD_EXAM: 'I add apple.',
+      WORD_EXAM: 'I add apple',
       WORD_EXAM_MEAN: '나는 사과를 추가 하였습니다.',
 
       EXAM_QUIZ: '',
@@ -131,12 +139,12 @@
       EXAM_QUIZ3: 'apple'
     };
 
-    wordList.push(record);
-    wordList.push(record1);
-    wordList.push(record);
-    wordList.push(record);
+    QuizList.push(record);
+    QuizList.push(record1);
+    QuizList.push(record);
+    QuizList.push(record);
 
-    viewModel.words(wordList);
+    viewModel.words(QuizList);
 
     InitReavel();
   });
@@ -226,21 +234,48 @@ function NextQuiz() {
   wordIndex = Math.floor(pageIndex / 2);
 }
 
-function ClickSubmitWord() {
+function Check_Word() {
+  var word = $('#prefix_'+wordIndex).val();
 
-  NextQuiz();
+  var AWord = QuizList[wordIndex].WORD_WORD;
 
-  Reveal.next();
-  // nextPage();
+  if(AWord == word) {
+    swal("정답 입니다!", "", "success");
+  }else {
+    swal("오답 입니다!", QuizList[wordIndex].WORD_MEAN + ' : ' + AWord, "error");
+  }
 }
 
-function ClickSubmitExam() {
+function Check_Exam() {
+  var exam = $('#exam_'+wordIndex).val();
+
+  exam = exam.trim();
+  
+  var AExam = QuizList[wordIndex].WORD_EXAM;
+
+  if(AExam == exam) {
+    swal("정답 입니다!", "", "success");
+  }else {
+    swal("오답 입니다!", QuizList[wordIndex].WORD_EXAM_MEAN + ' : ' + AExam, "error");
+  }
+}
+
+function ClickSubmitWord() {
+
+  Check_Word();
+
   NextQuiz();
 
   Reveal.next();
+}
 
+function ClickSubmitExam() {  
 
-  // nextPage();
+  Check_Exam();
+
+  NextQuiz();
+
+  Reveal.next();
 }
 
 function InitReavel() {
