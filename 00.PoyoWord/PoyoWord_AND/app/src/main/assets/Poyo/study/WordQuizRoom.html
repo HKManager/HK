@@ -203,9 +203,6 @@ function SetExam(item) {
 }
 
 function nextPage() {
-  pageIndex++;
-
-  wordIndex = Math.floor(pageIndex / 2);
 }
 
 function prevPage() {
@@ -223,14 +220,25 @@ function prevPage() {
   wordIndex = Math.floor(pageIndex / 2);
 }
 
-function ClickSubmitWord() {
-  Reveal.next();
+function NextQuiz() {
+  pageIndex++;
 
+  wordIndex = Math.floor(pageIndex / 2);
+}
+
+function ClickSubmitWord() {
+
+  NextQuiz();
+
+  Reveal.next();
   // nextPage();
 }
 
 function ClickSubmitExam() {
+  NextQuiz();
+
   Reveal.next();
+
 
   // nextPage();
 }
@@ -244,6 +252,10 @@ function InitReavel() {
       progress: true,
       history: false,
       center: false,
+
+      loop: false,
+
+      touch: false,
 
       theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
       transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
