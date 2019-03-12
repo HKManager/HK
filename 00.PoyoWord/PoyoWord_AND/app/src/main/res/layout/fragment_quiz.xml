@@ -8,7 +8,7 @@
     tools:context=".manager.WordManagerActivity$WordAudLocFragment">
 
     <WebView
-        android:id="@+id/WordStudy"
+        android:id="@+id/WordQuiz"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
