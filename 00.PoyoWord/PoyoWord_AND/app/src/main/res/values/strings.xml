@@ -5,8 +5,14 @@
     <string name="tab_text_1">단어장관리</string>
     <string name="tab_text_2">단어학습장관리</string>
     <string name="tab_text_3">단어배치관리</string>
+
+    <string name="tab_study_text_1">학습하기</string>
+    <string name="tab_study_text_2">퀴즈풀기</string>
+    <string name="tab_study_text_3">시험치기</string>
+
     <string name="action_settings">Settings</string>
     <string name="section_format">Hello World from section: %1$d</string>
 
     <string name="kakao_app_key">63e41604d206eea8c6286b8c77781ee1</string>
+    <string name="title_activity_study">StudyActivity</string>
 </resources>

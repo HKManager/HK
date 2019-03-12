@@ -14,7 +14,6 @@ import android.webkit.JsResult;
 import android.webkit.WebViewClient;
 import android.webkit.WebView;
 import android.os.Handler;
-import android.widget.Toast;
 import android.annotation.SuppressLint;
 
 import com.google.gson.Gson;
@@ -25,17 +24,13 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.ArrayList;
-import java.util.Map;
 
 import Event.EventData;
 import Query.Manager_Code;
-import Query.Manager_WordBook;
 import io.github.controlwear.virtual.joystick.android.JoystickView;
 import study.hk.data.Data.*;
-import study.hk.poyowordbook.manager.WordBookActivity;
 import study.hk.poyowordbook.manager.WordManagerActivity;
-import study.hk.poyowordbook.study.WordStudyActivity;
+import study.hk.poyowordbook.study.StudyActivity;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -254,7 +249,7 @@ public class MainActivity extends AppCompatActivity {
                                     startActivity(intent);
                                     break;
                                 case HARDCODE.단어공부방 :
-                                    intent=new Intent(MainActivity.this,WordStudyActivity.class);
+                                    intent=new Intent(MainActivity.this,StudyActivity.class);
                                     startActivity(intent);
                                     break;
                             }

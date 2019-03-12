@@ -6,8 +6,6 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.CAMERA" />
-
-
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.BLUETOOTH" />
@@ -46,12 +44,16 @@
             android:name=".manager.WordManagerActivity"
             android:label="@string/title_activity_word_manager"
             android:theme="@style/AppTheme" />
-        <activity android:name=".manager.WordStudyBookDetailActivity"></activity>
+        <activity android:name=".manager.WordStudyBookDetailActivity" />
 
         <meta-data
             android:name="com.kakao.sdk.AppKey"
             android:value="@string/kakao_app_key" />
 
+        <activity
+            android:name=".study.StudyActivity"
+            android:label="@string/title_activity_study"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>
