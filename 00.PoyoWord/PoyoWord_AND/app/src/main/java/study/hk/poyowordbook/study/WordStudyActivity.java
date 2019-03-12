@@ -1,7 +1,10 @@
 package study.hk.poyowordbook.study;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
@@ -10,6 +13,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.webkit.JsResult;
 import android.webkit.WebView;
@@ -34,7 +38,7 @@ import com.kakao.sdk.newtoneapi.SpeechRecognizerClient;
 import com.kakao.sdk.newtoneapi.SpeechRecognizerManager;
 import com.kakao.sdk.newtoneapi.impl.util.PermissionUtils;
 
-public class WordStudyActivity extends AppCompatActivity {
+public class WordStudyActivity extends AppCompatActivity  implements  SpeechRecognizeListener{
 
     private final Handler handler = new Handler();
     private Context context = null;
@@ -45,11 +49,16 @@ public class WordStudyActivity extends AppCompatActivity {
 
     private Intent intent;
 
+    String serviceType = SpeechRecognizerClient.SERVICE_TYPE_WEB;
+    private SpeechRecognizerClient client;
+
     @SuppressLint({ "SetJavaScriptEnabled", "JavascriptInterface" })
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_word_study);
+
+        SpeechRecognizerManager.getInstance().initializeLibrary(this);
 
         context = getApplicationContext();
         wordBook = new Manager_WordBook(context);
@@ -89,6 +98,111 @@ public class WordStudyActivity extends AppCompatActivity {
         //lWebView.loadUrl("file:///android_asset/Poyo/AGrid/index.html");
     }
 
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+
+        // API를 더이상 사용하지 않을 때 finalizeLibrary()를 호출한다.
+        SpeechRecognizerManager.getInstance().finalizeLibrary();
+    }
+
+    private void SpeechToText() {
+        if(PermissionUtils.checkAudioRecordPermission(this)) {
+
+            SpeechRecognizerClient.Builder builder = new SpeechRecognizerClient.Builder().
+                    setServiceType(serviceType);
+
+            if (serviceType.equals(SpeechRecognizerClient.SERVICE_TYPE_WORD)) {
+            }
+
+            client = builder.build();
+
+            client.setSpeechRecognizeListener(this);
+            client.startRecording(true);
+        }
+    }
+
+    @Override
+    public void onReady() {
+
+    }
+
+    @Override
+    public void onBeginningOfSpeech() {
+
+    }
+
+    @Override
+    public void onEndOfSpeech() {
+
+    }
+
+    @Override
+    public void onError(int errorCode, String errorMsg) {
+        //TODO implement interface DaumSpeechRecognizeListener method
+        Log.e("SpeechSampleActivity", "onError");
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+            }
+        });
+
+        client = null;
+    }
+
+    @Override
+    public void onPartialResult(String partialResult) {
+
+    }
+
+    @Override
+    public void onResults(Bundle results) {
+        final StringBuilder builder = new StringBuilder();
+        Log.i("SpeechSampleActivity", "onResults");
+
+        ArrayList<String> texts = results.getStringArrayList(SpeechRecognizerClient.KEY_RECOGNITION_RESULTS);
+        ArrayList<Integer> confs = results.getIntegerArrayList(SpeechRecognizerClient.KEY_CONFIDENCE_VALUES);
+
+        for (int i = 0; i < texts.size(); i++) {
+            builder.append(texts.get(i));
+            builder.append(" (");
+            builder.append(confs.get(i).intValue());
+            builder.append(")\n");
+        }
+
+        final Activity activity = this;
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                // finishing일때는 처리하지 않는다.
+                if (activity.isFinishing()) return;
+
+                AlertDialog.Builder dialog = new AlertDialog.Builder(activity).
+                        setMessage(builder.toString()).
+                        setPositiveButton("확인", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        });
+                dialog.show();
+
+            }
+        });
+
+        client = null;
+    }
+
+    @Override
+    public void onAudioLevel(float audioLevel) {
+
+    }
+
+    @Override
+    public void onFinished() {
+
+    }
+
     private class JavaScriptBridge {
         @android.webkit.JavascriptInterface
         public void setData(final String arg) {
@@ -103,8 +217,11 @@ public class WordStudyActivity extends AppCompatActivity {
                         case HARDCODE.화면호출 :
                             switch (parse.data) {
                                 case HARDCODE.단어장상세 :
-                                    intent =new Intent(study.hk.poyowordbook.study.WordStudyActivity.this,WordBookDetailActivity.class);
-                                    startActivity(intent);
+/*                                    intent =new Intent(study.hk.poyowordbook.study.WordStudyActivity.this,WordBookDetailActivity.class);
+                                    startActivity(intent);*/
+
+                                    SpeechToText();
+
                                     break;
                                 case HARDCODE.메인화면 :
                                     intent =new Intent(study.hk.poyowordbook.study.WordStudyActivity.this,MainActivity.class);

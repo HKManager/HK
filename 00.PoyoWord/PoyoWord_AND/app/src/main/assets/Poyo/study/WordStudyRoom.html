@@ -143,6 +143,19 @@
     pageIndex--;
   }
 
+    function PlayStudy() {
+      try {
+        var obj = { handle: "06", view: "WordBook", data: "WORDBOOKDETAIL" };
+
+        var data = JSON.stringify(obj);
+
+        window.android.setData(data);
+
+      } catch (excetion) {
+        alert(excetion);
+      }
+    }
+
 </script>
 
 <body>
@@ -254,7 +267,7 @@
   <div class="cd-overlay-content">
     <span></span>
   </div> <!-- cd-overlay-content -->
-  <a href="#0" class="cd-nav-trigger" style="margin-right:5px;margin-top: 18px;">Menu<span class="cd-icon"></span></a>
+  <a href="#0" class="cd-nav-trigger" style="margin-right:5px;margin-top: 18px;" onclick="PlayStudy()">Menu<span class="cd-icon"></span></a>
 </body>
 
 </html>
