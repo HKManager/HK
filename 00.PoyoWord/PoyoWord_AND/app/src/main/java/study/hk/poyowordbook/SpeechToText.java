@@ -21,27 +21,24 @@ public class SpeechToText  implements SpeechRecognizeListener {
     private Activity activity = null;
     private Context context = null;
 
-    SpeechToText(Context context, Activity activity) {
+    public SpeechToText(Context context, Activity activity) {
 
         context = context;
         activity = activity;
         SpeechRecognizerManager.getInstance().initializeLibrary(context);
     }
 
-    private void SpeechToText() {
-        if(PermissionUtils.checkAudioRecordPermission(activity)) {
+    public void SpeechToText() {
+        SpeechRecognizerClient.Builder builder = new SpeechRecognizerClient.Builder().
+                setServiceType(serviceType);
 
-            SpeechRecognizerClient.Builder builder = new SpeechRecognizerClient.Builder().
-                    setServiceType(serviceType);
-
-            if (serviceType.equals(SpeechRecognizerClient.SERVICE_TYPE_WORD)) {
-            }
-
-            client = builder.build();
-
-            client.setSpeechRecognizeListener(this);
-            client.startRecording(true);
+        if (serviceType.equals(SpeechRecognizerClient.SERVICE_TYPE_WORD)) {
         }
+
+        client = builder.build();
+
+        client.setSpeechRecognizeListener(this);
+        client.startRecording(true);
     }
 
     public void Release() {
@@ -91,6 +88,8 @@ public class SpeechToText  implements SpeechRecognizeListener {
             builder.append(confs.get(i).intValue());
             builder.append(")\n");
         }
+
+        String temp = builder.toString();
     }
 
     @Override

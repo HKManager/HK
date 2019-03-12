@@ -39,6 +39,7 @@ import Query.Manager_WordBook;
 import Query.Manager_WordStudyBook;
 import study.hk.data.Data.HARDCODE;
 import study.hk.poyowordbook.R;
+import study.hk.poyowordbook.SpeechToText;
 import study.hk.poyowordbook.manager.WordAudLocDetailActivity;
 import study.hk.poyowordbook.manager.WordBookDetailActivity;
 import study.hk.poyowordbook.manager.WordManagerActivity;
@@ -63,6 +64,8 @@ public class StudyActivity extends AppCompatActivity {
 
     private ViewPager mViewPager;
 
+    private static SpeechToText stt;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -81,6 +84,8 @@ public class StudyActivity extends AppCompatActivity {
         mViewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
         tabLayout.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(mViewPager));
 
+        stt = new SpeechToText(context, this);
+
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -88,6 +93,10 @@ public class StudyActivity extends AppCompatActivity {
                 finish();
             }
         });
+    }
+
+    private static void SpeechToText() {
+        stt.SpeechToText();
     }
 
     public static class StudyFragment extends Fragment {
@@ -280,9 +289,11 @@ public class StudyActivity extends AppCompatActivity {
                         case HARDCODE.화면호출 :
                             switch (parse.data) {
                                 case HARDCODE.단어장상세 :
-                                    intent = new Intent(context,WordBookDetailActivity.class);
-                                    intent.putExtra("WB_SN",""); /*송신*/
-                                    context.startActivity(intent);
+/*                                    intent = new Intent(context,WordBookDetailActivity.class);
+                                    intent.putExtra("WB_SN",""); *//*송신*//*
+                                    context.startActivity(intent);*/
+
+                                    SpeechToText();
                                     break;
                                 case HARDCODE.단어장배치상세 :
                                     intent = new Intent(context,WordAudLocDetailActivity.class);
