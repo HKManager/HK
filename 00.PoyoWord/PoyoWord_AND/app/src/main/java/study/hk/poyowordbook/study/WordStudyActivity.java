@@ -28,6 +28,12 @@ import study.hk.poyowordbook.R;
 import study.hk.poyowordbook.manager.WordAudLocActivity;
 import study.hk.poyowordbook.manager.WordBookDetailActivity;
 
+import com.kakao.sdk.newtoneapi.SpeechRecognizeListener;
+import com.kakao.sdk.newtoneapi.SpeechRecognizerActivity;
+import com.kakao.sdk.newtoneapi.SpeechRecognizerClient;
+import com.kakao.sdk.newtoneapi.SpeechRecognizerManager;
+import com.kakao.sdk.newtoneapi.impl.util.PermissionUtils;
+
 public class WordStudyActivity extends AppCompatActivity {
 
     private final Handler handler = new Handler();
