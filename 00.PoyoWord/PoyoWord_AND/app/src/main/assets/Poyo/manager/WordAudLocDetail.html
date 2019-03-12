@@ -13,6 +13,8 @@
         type="text/css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
 
+    <!-- UI 관련 CSS -->
+
     <!-- Bootstrap Core Css -->
     <link href="../Content/plugins/bootstrap/css/bootstrap.css" rel="stylesheet">
 
@@ -53,7 +55,12 @@
     <script src="../js/menu/jquery-2.1.1.js"></script>
     <script src="../js/menu/velocity.min.js"></script>
     <script src="../js/menu/main.js"></script> <!-- Resource jQuery -->
+
+    <!-- Sweetalert Css -->
+    <link href="../Content/plugins/sweetalert/sweetalert.css" rel="stylesheet" />
     <!-- 네비게이션 메뉴 관련 -->
+
+    <!-- UI 관련 CSS -->
 
     <link rel="stylesheet" href="../css/style/verticalList.css"> <!-- CSS verticalList -->
 
@@ -66,12 +73,317 @@
             height: 350px !important;
         }
     </style>
+
+
+    <!-- UI 관련 JS -->
+
+    <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="./js/wordaudbook.js"></script>
+
+    <!-- Jquery Core Js -->
+    <script src="../Content/plugins/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core Js -->
+    <script src="../Content/plugins/bootstrap/js/bootstrap.js"></script>
+
+
+    <!-- Select Plugin Js -->
+    <script src="../Content/plugins/bootstrap-select/js/bootstrap-select.js"></script>
+
+    <!-- Slimscroll Plugin Js -->
+    <script src="../Content/plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
+
+    <!-- Waves Effect Plugin Js -->
+    <script src="../Content/plugins/node-waves/waves.js"></script>
+
+    <!-- Autosize Plugin Js -->
+    <script src="../Content/plugins/autosize/autosize.js"></script>
+
+    <!-- Moment Plugin Js -->
+    <script src="../Content/plugins/momentjs/moment.js"></script>
+
+    <!-- Slimscroll Plugin Js -->
+    <script src="../Content/plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
+
+    <!-- Bootstrap Material Datetime Picker Plugin Js -->
+    <script src="../Content/plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
+
+    <!-- Bootstrap Datepicker Plugin Js -->
+    <script src="../Content/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+
+    <!-- Bootstrap Colorpicker Js -->
+    <script src="../Content/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.js"></script>
+
+    <!-- Dropzone Plugin Js -->
+    <script src="../Content/plugins/dropzone/dropzone.js"></script>
+
+    <!-- Input Mask Plugin Js -->
+    <script src="../Content/plugins/jquery-inputmask/jquery.inputmask.bundle.js"></script>
+
+    <!-- Multi Select Plugin Js -->
+    <script src="../Content/plugins/multi-select/js/jquery.multi-select.js"></script>
+
+    <!-- noUISlider Plugin Js -->
+    <script src="../Content/plugins/nouislider/nouislider.js"></script>
+
+    <!-- SweetAlert Plugin Js -->
+    <script src="../Content/plugins/sweetalert/sweetalert.min.js"></script>
+
+    <!-- Custom Js -->
+    <script src="../Content/js/admin.js"></script>
+    <script src="../Content/js/pages/forms/basic-form-elements.js"></script>
+    <script src="../Content/js/pages/ui/dialogs.js"></script>
+    <!-- <script src="../Content/js/pages/forms/advanced-form-elements.js"></script> -->
+
+    <!-- Demo Js -->
+    <script src="../Content/js/demo.js"></script>
+
+    <!-- UI 관련 JS -->
+
+    <script type='text/javascript' src='../Content/js/knockout-3.4.2.js'></script>
+
+
+    <!-- 처리 관련 -->
+    <script type="text/javascript">
+        ko.observableArray.fn.find = function (prop, data) {
+            var valueToMatch = data[prop];
+            return ko.utils.arrayFirst(this(), function (item) {
+                return item[prop] === valueToMatch;
+            });
+        };
+
+        function ViewModel() {
+            this.WAL_SN = ko.observable("");
+            this.WAL_NAME = ko.observable("");
+            // this.AC_ADDRESS = ko.observable("");
+            // this.AC_MAN01 = ko.observable("");
+            // this.AC_PHONENUMBER01 = ko.observable("");
+            // this.AC_EMAIL01 = ko.observable("");
+            // this.AC_PAY = ko.observable("");
+            // this.AC_DESC = ko.observable("");
+            // this.AC_TYPE_CODES = ko.observableArray([]);
+            // this.AC_TYPE_CODE = ko.observable(this.AC_TYPE_CODES.find("CODE", _AC_TYPE_CODE));
+        };
+
+        //var _AC_NAME = "";
+        //var _AC_ADDRESS = "";
+        //var _AC_MAN01 = "";
+        //var _AC_PHONENUMBER01 = "";
+        //var _AC_EMAIL01 = "";
+        //var _AC_PAY = "";
+        //var _AC_DESC = "";
+        var _AC_TYPE_CODES = [];
+        var _AC_TYPE_CODE = "";
+
+        var vm = null;
+
+        $(document).ready(function () {
+            //_AC_NAME = "asdfasdf";
+            //_AC_TYPE_CODES = [
+            //    { id: 1, name: "one" },
+            //    { id: 2, name: "two" },
+            //    { id: 3, name: "three" }
+            //];
+            //_AC_TYPE_CODE = { id: 2, name: "two" };
+
+
+            //var temp = '{ "handle": "SHOW", "view": "AC_TYPE_CODES", "data": [{"CODE":"001","CODE_001":"015","CODE_002":"001","CODE_003":"---","CODE_NAME":"입고","CODE_TYPE":"","CODE_SORT":0,"CODE_USEYN":false,"CODE_UPDATE_SN":1,"CODE_UPDATE_DATE":"0001 - 01 - 24T08: 18: 12.3081354Z","CODE_DESC":""},{"CODE":"002","CODE_001":"015","CODE_002":"002","CODE_003":"-- - ","CODE_NAME":"출고","CODE_TYPE":"","CODE_SORT":0,"CODE_USEYN":false,"CODE_UPDATE_SN":1,"CODE_UPDATE_DATE":"0001 - 01 - 24T08: 18: 12.3081413Z","CODE_DESC":""}] }';
+
+            //var jsonObj = JSON.parse(temp);
+
+            //switch (jsonObj.view) {
+            //    case "AC_TYPE_CODES":
+            //        _AC_TYPE_CODES = jsonObj.data;
+            //        break;
+            //}
+
+            var Main = document.getElementById('Manager');
+            var height = document.getElementById('MainBody').offsetHeight;
+
+            Main.style.height = height - 10 + "px";
+
+            var top = (height - Main.offsetHeight) * 0.5;
+
+            Main.style.marginTop = top + "px";
+
+            // $('html, body').css({ 'overflow': 'hidden', 'height': '100%' });
+            // $('#element').on('scroll touchmove mousewheel', function (event) {
+            //     event.preventDefault();
+            //     event.stopPropagation();
+            //     return false;
+            // });
+
+            vm = new ViewModel();
+            ko.applyBindings(vm);
+
+
+            //var temp = '{ "handle": "SHOW", "view": "AC_TYPE_CODES", "data": [{"CODE":"001","CODE_001":"015","CODE_002":"001","CODE_003":"---","CODE_NAME":"입1111고","CODE_TYPE":"","CODE_SORT":0,"CODE_USEYN":false,"CODE_UPDATE_SN":1,"CODE_UPDATE_DATE":"0001 - 01 - 24T08: 18: 12.3081354Z","CODE_DESC":""},{"CODE":"002","CODE_001":"015","CODE_002":"002","CODE_003":"-- - ","CODE_NAME":"출고","CODE_TYPE":"","CODE_SORT":0,"CODE_USEYN":false,"CODE_UPDATE_SN":1,"CODE_UPDATE_DATE":"0001 - 01 - 24T08: 18: 12.3081413Z","CODE_DESC":""}] }';
+
+            //var jsonObj = JSON.parse(temp);
+
+            //switch (jsonObj.view) {
+            //    case "AC_TYPE_CODES":
+            //        _AC_TYPE_CODES = jsonObj.data;
+            //        vm.AC_TYPE_CODES(_AC_TYPE_CODES);
+            //        break;
+            //}
+
+            // showData("");
+        });
+
+        function GetData() {
+            var record = {
+                WAL_SN: $("#WAL_SN").val(),
+                WAL_NAME: $("#WAL_NAME").val(),
+                WAL_LOCS: selectLocItem,
+                // WAL_UPDATE_DT: $("#WAL_UPDATE_DT").val(),
+                WAL_DESC: "",
+                WAL_USEYN: true
+            };
+
+            return record;
+        }
+
+
+        function Create() {
+            swal("저장 되었습니다!", "", "success");
+
+            var objectData = GetData();
+
+            var jSonData = JSON.stringify(objectData);
+
+            console.log(jSonData);
+
+            //var name = ViewModel.AC_NAME;
+            var obj = { handle: "03", view: "WORDAUDDETAIL", data: jSonData };
+            var data = JSON.stringify(obj);
+            //log("Sending Data:" + data);
+            window.android.setData(data);
+
+            swal("저장 되었습니다!", "", "success");
+        }
+
+        function Cancel() {
+            var obj = { handle: "06", view: "WordBookDetail", data: "WORDAUDLOC" };
+
+            var data = JSON.stringify(obj);
+
+            window.android.setData(data);
+        }
+
+        function logForXamarin(str) {
+            //alert(str);
+            //$('#result').text($('#result').text() + " " + str);
+
+
+            //var str = '{ "handle": "SHOW", "view": "AC_TYPE_CODES", "data": [{"CODE":"001","CODE_001":"015","CODE_002":"001","CODE_003":"---","CODE_NAME":"입1111고","CODE_TYPE":"","CODE_SORT":0,"CODE_USEYN":false,"CODE_UPDATE_SN":1,"CODE_UPDATE_DATE":"0001 - 01 - 24T08: 18: 12.3081354Z","CODE_DESC":""},{"CODE":"002","CODE_001":"015","CODE_002":"002","CODE_003":"-- - ","CODE_NAME":"출고","CODE_TYPE":"","CODE_SORT":0,"CODE_USEYN":false,"CODE_UPDATE_SN":1,"CODE_UPDATE_DATE":"0001 - 01 - 24T08: 18: 12.3081413Z","CODE_DESC":""}] }';
+
+            //alert(str);
+
+            try {
+                //    var jsonObj = $.parseJSON(str);
+
+                //    switch (jsonObj.view) {
+                //        case "AC_TYPE_CODES":
+                //            alert(str);
+                //            _AC_TYPE_CODES = jsonObj.data;
+                //            vm.AC_TYPE_CODES(_AC_TYPE_CODES);
+                //            vm.AC_NAME("asdfasdfdsaf");
+                //            break;
+                //    }
+
+
+                //var str = '{ "handle": "SHOW", "view": "AC_TYPE_CODES", "data": [{"CODE":"001","CODE_001":"015","CODE_002":"001","CODE_003":"---","CODE_NAME":"입1111고","CODE_TYPE":"","CODE_SORT":0,"CODE_USEYN":false,"CODE_UPDATE_SN":1,"CODE_UPDATE_DATE":"0001 - 01 - 24T08: 18: 12.3081354Z","CODE_DESC":""},{"CODE":"002","CODE_001":"015","CODE_002":"002","CODE_003":"-- - ","CODE_NAME":"출고","CODE_TYPE":"","CODE_SORT":0,"CODE_USEYN":false,"CODE_UPDATE_SN":1,"CODE_UPDATE_DATE":"0001 - 01 - 24T08: 18: 12.3081413Z","CODE_DESC":""}] }';
+
+                var jsonObj = JSON.parse(str);
+
+                switch (jsonObj.view) {
+                    case "AC_TYPE_CODES":
+                        var coces = jsonObj.value;
+                        vm.AC_TYPE_CODES(coces);
+                        break;
+                    case "ALL":
+                        var data = jsonObj.value;
+                        vm.AC_NAME(data.AC_NAME);
+                        vm.AC_SN(data.AC_SN);
+                        vm.AC_TYPE_CODE(data.AC_TYPE_CODE);
+                        break;
+                }
+
+                //vm = new ViewModel();
+                //ko.applyBindings(vm);
+            } catch (excetion) {
+                alert(excetion);
+            }
+        }
+
+        function showData(str) {
+
+            //console.log(JSON.stringify({ x: 5, y: 6 }));
+
+            //alert(str);
+            //$('#result').text($('#result').text() + " " + str);
+
+            //var str = '{ "name":"John", "age":30, "city":"New York"}';
+
+            var jsonObj = JSON.parse(str);
+            //var jsonValue = JSON.parse(jsonObj.data);
+
+
+            //console.log(jsonObj);
+
+
+            //viewModel.list(jsonObj.value);
+
+            switch(jsonObj.handle) {
+                case "CODES": 
+
+                var codeItems = jsonObj.value;
+
+                $('#codeList').empty();
+                for (var item = 0; item < codeItems.length; item++) {
+                    $('#codeList:last').append(
+                        '<a style="text-align:center;font-size:small;" onclick="SelectLocItem($(this));">' + codeItems[item].CODE_NAME
+                        + '<input style="display:none" value="' + codeItems[item].CODE + '">'
+                        + '</a>'
+                    );
+                }
+
+                break;
+                case "DETAIL":
+                vm.WAL_NAME(jsonObj.value.WAL_NAME);
+                vm.WAL_SN(jsonObj.value.WAL_SN);
+                var locs = jsonObj.value.WAL_LOCS;
+
+                for (var item = 0; item < locs.length; item++) {
+                    selectLocItem.push({
+                        CODE_SORT: selectLocIndex,
+                        CODE: locs[item].CODE,
+                        CODE_NAME: locs[item].CODE_NAME
+                    });
+
+                    selectLocIndex++;
+                }
+
+                ShowLocItem();
+
+                break;
+            }
+
+            // var tr = $('#example-table').find('tr');
+            // tr.bind('mouseover', function (event) {
+            //     tr.removeClass('row-highlight');
+            // });
+            // tr.bind('click', function (e) {
+            //     tr.removeClass('row-click');
+            //     var tds = $(this).addClass('row-click').find('td');
+            // });
+        }
+    </script>
+
 </head>
 
 <body id="MainBody" class="theme-red" style="margin:0;height:100%;">
-
-    <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script type='text/javascript' src='../Content/js/knockout-3.4.2.js'></script>
 
     <!-- Page Loader -->
     <div class="page-loader-wrapper">
@@ -256,297 +568,6 @@
         </main>
 
     </div>
-
-    <script type="text/javascript">
-        ko.observableArray.fn.find = function (prop, data) {
-            var valueToMatch = data[prop];
-            return ko.utils.arrayFirst(this(), function (item) {
-                return item[prop] === valueToMatch;
-            });
-        };
-
-        function ViewModel() {
-            this.WAL_SN = ko.observable("");
-            this.WAL_NAME = ko.observable("");
-            // this.AC_ADDRESS = ko.observable("");
-            // this.AC_MAN01 = ko.observable("");
-            // this.AC_PHONENUMBER01 = ko.observable("");
-            // this.AC_EMAIL01 = ko.observable("");
-            // this.AC_PAY = ko.observable("");
-            // this.AC_DESC = ko.observable("");
-            // this.AC_TYPE_CODES = ko.observableArray([]);
-            // this.AC_TYPE_CODE = ko.observable(this.AC_TYPE_CODES.find("CODE", _AC_TYPE_CODE));
-        };
-
-        //var _AC_NAME = "";
-        //var _AC_ADDRESS = "";
-        //var _AC_MAN01 = "";
-        //var _AC_PHONENUMBER01 = "";
-        //var _AC_EMAIL01 = "";
-        //var _AC_PAY = "";
-        //var _AC_DESC = "";
-        var _AC_TYPE_CODES = [];
-        var _AC_TYPE_CODE = "";
-
-        var vm = null;
-
-        $(document).ready(function () {
-            //_AC_NAME = "asdfasdf";
-            //_AC_TYPE_CODES = [
-            //    { id: 1, name: "one" },
-            //    { id: 2, name: "two" },
-            //    { id: 3, name: "three" }
-            //];
-            //_AC_TYPE_CODE = { id: 2, name: "two" };
-
-
-            //var temp = '{ "handle": "SHOW", "view": "AC_TYPE_CODES", "data": [{"CODE":"001","CODE_001":"015","CODE_002":"001","CODE_003":"---","CODE_NAME":"입고","CODE_TYPE":"","CODE_SORT":0,"CODE_USEYN":false,"CODE_UPDATE_SN":1,"CODE_UPDATE_DATE":"0001 - 01 - 24T08: 18: 12.3081354Z","CODE_DESC":""},{"CODE":"002","CODE_001":"015","CODE_002":"002","CODE_003":"-- - ","CODE_NAME":"출고","CODE_TYPE":"","CODE_SORT":0,"CODE_USEYN":false,"CODE_UPDATE_SN":1,"CODE_UPDATE_DATE":"0001 - 01 - 24T08: 18: 12.3081413Z","CODE_DESC":""}] }';
-
-            //var jsonObj = JSON.parse(temp);
-
-            //switch (jsonObj.view) {
-            //    case "AC_TYPE_CODES":
-            //        _AC_TYPE_CODES = jsonObj.data;
-            //        break;
-            //}
-
-            var Main = document.getElementById('Manager');
-            var height = document.getElementById('MainBody').offsetHeight;
-
-            Main.style.height = height - 10 + "px";
-
-            var top = (height - Main.offsetHeight) * 0.5;
-
-            Main.style.marginTop = top + "px";
-
-            // $('html, body').css({ 'overflow': 'hidden', 'height': '100%' });
-            // $('#element').on('scroll touchmove mousewheel', function (event) {
-            //     event.preventDefault();
-            //     event.stopPropagation();
-            //     return false;
-            // });
-
-            vm = new ViewModel();
-            ko.applyBindings(vm);
-
-
-            //var temp = '{ "handle": "SHOW", "view": "AC_TYPE_CODES", "data": [{"CODE":"001","CODE_001":"015","CODE_002":"001","CODE_003":"---","CODE_NAME":"입1111고","CODE_TYPE":"","CODE_SORT":0,"CODE_USEYN":false,"CODE_UPDATE_SN":1,"CODE_UPDATE_DATE":"0001 - 01 - 24T08: 18: 12.3081354Z","CODE_DESC":""},{"CODE":"002","CODE_001":"015","CODE_002":"002","CODE_003":"-- - ","CODE_NAME":"출고","CODE_TYPE":"","CODE_SORT":0,"CODE_USEYN":false,"CODE_UPDATE_SN":1,"CODE_UPDATE_DATE":"0001 - 01 - 24T08: 18: 12.3081413Z","CODE_DESC":""}] }';
-
-            //var jsonObj = JSON.parse(temp);
-
-            //switch (jsonObj.view) {
-            //    case "AC_TYPE_CODES":
-            //        _AC_TYPE_CODES = jsonObj.data;
-            //        vm.AC_TYPE_CODES(_AC_TYPE_CODES);
-            //        break;
-            //}
-
-            showData("");
-        });
-
-        function GetData() {
-            var record = {
-                WAL_SN: $("#WAL_SN").val(),
-                WAL_NAME: $("#WAL_NAME").val(),
-                WAL_LOCS: selectLocItem,
-                // WAL_UPDATE_DT: $("#WAL_UPDATE_DT").val(),
-                WAL_DESC: "",
-                WAL_USEYN: true
-            };
-
-            return record;
-        }
-
-
-        function Create() {
-            var objectData = GetData();
-
-            var jSonData = JSON.stringify(objectData);
-
-            console.log(jSonData);
-
-            //var name = ViewModel.AC_NAME;
-            var obj = { handle: "03", view: "WORDAUDDETAIL", data: jSonData };
-            var data = JSON.stringify(obj);
-            //log("Sending Data:" + data);
-            window.android.setData(data);
-        }
-
-        function Cancel() {
-            var obj = { handle: "06", view: "WordBookDetail", data: "WORDAUDLOC" };
-
-            var data = JSON.stringify(obj);
-
-            window.android.setData(data);
-        }
-
-        function logForXamarin(str) {
-            //alert(str);
-            //$('#result').text($('#result').text() + " " + str);
-
-
-            //var str = '{ "handle": "SHOW", "view": "AC_TYPE_CODES", "data": [{"CODE":"001","CODE_001":"015","CODE_002":"001","CODE_003":"---","CODE_NAME":"입1111고","CODE_TYPE":"","CODE_SORT":0,"CODE_USEYN":false,"CODE_UPDATE_SN":1,"CODE_UPDATE_DATE":"0001 - 01 - 24T08: 18: 12.3081354Z","CODE_DESC":""},{"CODE":"002","CODE_001":"015","CODE_002":"002","CODE_003":"-- - ","CODE_NAME":"출고","CODE_TYPE":"","CODE_SORT":0,"CODE_USEYN":false,"CODE_UPDATE_SN":1,"CODE_UPDATE_DATE":"0001 - 01 - 24T08: 18: 12.3081413Z","CODE_DESC":""}] }';
-
-            //alert(str);
-
-            try {
-                //    var jsonObj = $.parseJSON(str);
-
-                //    switch (jsonObj.view) {
-                //        case "AC_TYPE_CODES":
-                //            alert(str);
-                //            _AC_TYPE_CODES = jsonObj.data;
-                //            vm.AC_TYPE_CODES(_AC_TYPE_CODES);
-                //            vm.AC_NAME("asdfasdfdsaf");
-                //            break;
-                //    }
-
-
-                //var str = '{ "handle": "SHOW", "view": "AC_TYPE_CODES", "data": [{"CODE":"001","CODE_001":"015","CODE_002":"001","CODE_003":"---","CODE_NAME":"입1111고","CODE_TYPE":"","CODE_SORT":0,"CODE_USEYN":false,"CODE_UPDATE_SN":1,"CODE_UPDATE_DATE":"0001 - 01 - 24T08: 18: 12.3081354Z","CODE_DESC":""},{"CODE":"002","CODE_001":"015","CODE_002":"002","CODE_003":"-- - ","CODE_NAME":"출고","CODE_TYPE":"","CODE_SORT":0,"CODE_USEYN":false,"CODE_UPDATE_SN":1,"CODE_UPDATE_DATE":"0001 - 01 - 24T08: 18: 12.3081413Z","CODE_DESC":""}] }';
-
-                var jsonObj = JSON.parse(str);
-
-                switch (jsonObj.view) {
-                    case "AC_TYPE_CODES":
-                        var coces = jsonObj.value;
-                        vm.AC_TYPE_CODES(coces);
-                        break;
-                    case "ALL":
-                        var data = jsonObj.value;
-                        vm.AC_NAME(data.AC_NAME);
-                        vm.AC_SN(data.AC_SN);
-                        vm.AC_TYPE_CODE(data.AC_TYPE_CODE);
-                        break;
-                }
-
-                //vm = new ViewModel();
-                //ko.applyBindings(vm);
-            } catch (excetion) {
-                alert(excetion);
-            }
-        }
-
-        function showData(str) {
-
-            //console.log(JSON.stringify({ x: 5, y: 6 }));
-
-            //alert(str);
-            //$('#result').text($('#result').text() + " " + str);
-
-            //var str = '{ "name":"John", "age":30, "city":"New York"}';
-
-            var jsonObj = JSON.parse(str);
-            //var jsonValue = JSON.parse(jsonObj.data);
-
-
-            //console.log(jsonObj);
-
-
-            //viewModel.list(jsonObj.value);
-
-            switch(jsonObj.handle) {
-                case "CODES": 
-
-                var codeItems = jsonObj.value;
-
-                $('#codeList').empty();
-                for (var item = 0; item < codeItems.length; item++) {
-                    $('#codeList:last').append(
-                        '<a style="text-align:center;font-size:small;" onclick="SelectLocItem($(this));">' + codeItems[item].CODE_NAME
-                        + '<input style="display:none" value="' + codeItems[item].CODE + '">'
-                        + '</a>'
-                    );
-                }
-
-                break;
-                case "DETAIL":
-                vm.WAL_NAME(jsonObj.value.WAL_NAME);
-                vm.WAL_SN(jsonObj.value.WAL_SN);
-                var locs = jsonObj.value.WAL_LOCS;
-
-                for (var item = 0; item < locs.length; item++) {
-                    selectLocItem.push({
-                        CODE_SORT: selectLocIndex,
-                        CODE: locs[item].CODE,
-                        CODE_NAME: locs[item].CODE_NAME
-                    });
-
-                    selectLocIndex++;
-                }
-
-                ShowLocItem();
-
-                break;
-            }
-
-            // var tr = $('#example-table').find('tr');
-            // tr.bind('mouseover', function (event) {
-            //     tr.removeClass('row-highlight');
-            // });
-            // tr.bind('click', function (e) {
-            //     tr.removeClass('row-click');
-            //     var tds = $(this).addClass('row-click').find('td');
-            // });
-        }
-
-
-    </script>
-
-    <script src="./js/wordaudbook.js"></script>
-
-    <!-- Jquery Core Js -->
-    <script src="../Content/plugins/jquery/jquery.min.js"></script>
-
-    <!-- Bootstrap Core Js -->
-    <script src="../Content/plugins/bootstrap/js/bootstrap.js"></script>
-
-
-    <!-- Select Plugin Js -->
-    <script src="../Content/plugins/bootstrap-select/js/bootstrap-select.js"></script>
-
-    <!-- Slimscroll Plugin Js -->
-    <script src="../Content/plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
-
-    <!-- Waves Effect Plugin Js -->
-    <script src="../Content/plugins/node-waves/waves.js"></script>
-
-    <!-- Autosize Plugin Js -->
-    <script src="../Content/plugins/autosize/autosize.js"></script>
-
-    <!-- Moment Plugin Js -->
-    <script src="../Content/plugins/momentjs/moment.js"></script>
-
-    <!-- Slimscroll Plugin Js -->
-    <script src="../Content/plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
-
-    <!-- Bootstrap Material Datetime Picker Plugin Js -->
-    <script src="../Content/plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
-
-    <!-- Bootstrap Datepicker Plugin Js -->
-    <script src="../Content/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
-
-    <!-- Bootstrap Colorpicker Js -->
-    <script src="../Content/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.js"></script>
-
-    <!-- Dropzone Plugin Js -->
-    <script src="../Content/plugins/dropzone/dropzone.js"></script>
-
-    <!-- Input Mask Plugin Js -->
-    <script src="../Content/plugins/jquery-inputmask/jquery.inputmask.bundle.js"></script>
-
-    <!-- Multi Select Plugin Js -->
-    <script src="../Content/plugins/multi-select/js/jquery.multi-select.js"></script>
-
-    <!-- noUISlider Plugin Js -->
-    <script src="../Content/plugins/nouislider/nouislider.js"></script>
-
-    <!-- Custom Js -->
-    <script src="../Content/js/admin.js"></script>
-    <script src="../Content/js/pages/forms/basic-form-elements.js"></script>
-    <script src="../Content/js/pages/forms/advanced-form-elements.js"></script>
-
-    <!-- Demo Js -->
-    <script src="../Content/js/demo.js"></script>
 </body>
 
 </html>

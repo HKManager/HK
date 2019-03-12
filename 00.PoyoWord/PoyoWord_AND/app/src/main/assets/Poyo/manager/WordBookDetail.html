@@ -41,13 +41,15 @@
     <!-- Custom Css -->
     <link href="../Content/css/style.css" rel="stylesheet">
 
+    <!-- Sweetalert Css -->
+    <link href="../Content/plugins/sweetalert/sweetalert.css" rel="stylesheet" />
+
     <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
     <link href="../Content/css/themes/all-themes.css" rel="stylesheet" />
 
     <!-- 네비게이션 메뉴 관련 -->
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/earlyaccess/nanumpenscript.css">
     <link rel="stylesheet" href="../css/menu/reset.css"> <!-- CSS reset -->
-
 
     <!-- 신인환 수정 SBGrid 짤림 -->
     <!-- <link rel="stylesheet" href="../css/menu/style.css"> -->
@@ -245,12 +247,16 @@
     <!-- Bootstrap Datepicker Plugin Js -->
     <script src="../Content/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
 
+    <!-- SweetAlert Plugin Js -->
+    <script src="../Content/plugins/sweetalert/sweetalert.min.js"></script>
+
     <!-- Dropzone Plugin Js -->
     <script src="../Content/plugins/dropzone/dropzone.js"></script>
 
     <!-- Custom Js -->
     <script src="../Content/js/admin.js"></script>
     <script src="../Content/js/pages/forms/basic-form-elements.js"></script>
+    <script src="../Content/js/pages/ui/dialogs.js"></script>
 
     <!-- Demo Js -->
     <script src="../Content/js/demo.js"></script>
@@ -367,6 +373,8 @@
 
             //log("Sending Data:" + data);
             window.android.setData(data);
+
+            swal("저장 되었습니다!", "", "success");
         }
 
         function GetData() {
