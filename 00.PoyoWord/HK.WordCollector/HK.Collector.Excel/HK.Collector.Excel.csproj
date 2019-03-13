@@ -89,6 +89,10 @@
       <Project>{3dfdde1e-1fe9-406e-a2c0-60e7f45003f0}</Project>
       <Name>HK.Collector.DataType</Name>
     </ProjectReference>
+    <ProjectReference Include="..\HK.Collector.DB\HK.Collector.DB.csproj">
+      <Project>{dbb98153-68bb-48b4-8c9f-61249a846dc9}</Project>
+      <Name>HK.Collector.DB</Name>
+    </ProjectReference>
     <ProjectReference Include="..\HK.Collector.Web\HK.Collector.Web.csproj">
       <Project>{8e4adc54-7227-46bf-a6be-f6e127141707}</Project>
       <Name>HK.Collector.Web</Name>

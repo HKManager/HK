@@ -41,6 +41,8 @@ namespace HK.WordCollector
             }
 
             다음단어장수집기.GetInstance().단어수집시작(txt폴더주소.Text);
+
+            list완료여부.DataSource = new List<string>();
         }
     }
 }

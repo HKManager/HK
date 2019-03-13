@@ -1,4 +1,5 @@
 ﻿using HK.Collector.DataType;
+using HK.Collector.DB.SQLite;
 using HK.Collector.Web;
 using System;
 using System.Collections.Generic;
@@ -40,6 +41,13 @@ namespace HK.Collector.Excel
             var name = filePath.Split('\\').LastOrDefault();
 
             name = name.Replace(".xls", "");
+
+            단어장쿼리.단어장등록(new 단어장데이터
+            {
+                WB_NAME = name,
+                WB_REGISTERDT = DateTime.Now,
+                
+            });
 
             var excel = new LinqToExcel.ExcelQueryFactory(filePath);
             aliData = (from t in excel.Worksheet<다음단어장>(0) select t).ToList();

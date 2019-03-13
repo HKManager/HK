@@ -9,7 +9,7 @@ namespace HK.Collector.DB.SQLite
 {
     public class Connection
     {
-        public static string strConn = @"Data Source=E:\00.MyFolder\00.2017\01.ATMS\00.Project\00.ATMS\1711_DG_ATMS_3th\dg.atms.cop\COP\lib\ATMS.db";
+        public static string strConn = @"Data Source={0}";
 
         public static SQLiteConnection GetConn()
         {

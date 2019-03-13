@@ -21,7 +21,7 @@ namespace HK.Collector.Query
                 , WB_REGISTERDT
                 , CASE WB_USEYN WHEN 'Y' THEN 'TRUE' ELSE 'FALSE' END WB_USEYN
                 , WB_DESC
-            FROM word_book
+            FROM wordbook
         ";
 
         public const string GetInfo = @"
@@ -30,19 +30,19 @@ namespace HK.Collector.Query
                     , WAL_SN
 	                , WB_INTERVAL
                     , WB_LOOPCNT
-                FROM word_book
+                FROM wordbook
                 WHERE WB_SN={0}
         ";
 
         public const string GetMaxKey = @"
             SELECT 
 	            MAX(WB_SN) MaxKey
-            FROM word_book;
+            FROM wordbook;
         ";
 
         public const string Insert = @"
             INSERT INTO
-                word_book
+                wordbook
                 (
                     WB_NAME
                     , WB_CNT_UNIT
@@ -72,7 +72,7 @@ namespace HK.Collector.Query
 
 
         public const string Update = @"
-            UPDATE word_book
+            UPDATE wordbook
             SET   WB_NAME = '{0}'
                    , WB_CNT_UNIT = '{1}'
                    , WB_CNT_WORD_UNIT = '{2}'

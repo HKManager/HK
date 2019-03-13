@@ -62,6 +62,9 @@
     <Compile Include="SQLite\단어장쿼리.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="LIB\SQLite.Interop.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="LIB\System.ComponentModel.DataAnnotations.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -83,6 +86,20 @@
     <Content Include="LIB\System.Data.SQLite.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HK.Collector.DataType\HK.Collector.DataType.csproj">
+      <Project>{3dfdde1e-1fe9-406e-a2c0-60e7f45003f0}</Project>
+      <Name>HK.Collector.DataType</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HK.Collector.Data\HK.Collector.Data.csproj">
+      <Project>{3a80921d-89ca-46a4-b1d2-2b1bb00277a0}</Project>
+      <Name>HK.Collector.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HK.Collector.Query\HK.Collector.Query.csproj">
+      <Project>{9be087e5-17ec-406c-88a3-e1bf3128a80e}</Project>
+      <Name>HK.Collector.Query</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

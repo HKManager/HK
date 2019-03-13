@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HK.Collector.DB.SQLite;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,6 +17,9 @@ namespace HK.WordCollector
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+            Connection.strConn = string.Format(Connection.strConn, Properties.Settings.Default.DBAddress);
+
             Application.Run(new frmMain());
         }
     }
