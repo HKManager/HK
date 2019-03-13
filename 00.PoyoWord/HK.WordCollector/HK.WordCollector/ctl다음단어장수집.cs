@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using HK.Collector.Excel;
+using HK.Collector.Web;
 
 namespace HK.WordCollector
 {
@@ -71,6 +72,9 @@ namespace HK.WordCollector
         private void ctl다음단어장수집_Load(object sender, EventArgs e)
         {
             다음단어장수집기.GetInstance().Finished += Finish;
+
+            //var word = 구글수집기.GetInstance().구글번역("word", "ko");
+            var wordMean = 구글수집기.GetInstance().구글번역("과일", "en");
         }
     }
 }
