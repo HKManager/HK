@@ -28,7 +28,8 @@ namespace HK.Collector.DataType
         public string WORD_SOUND_FILE { set; get; }
         public string WORD_EXAM { set; get; }
         public string WORD_EXAM_MEAN { set; get; }
-        public string WORD_LEVEL { set; get; }
+        public string WORD_TYPE_CD { set; get; }
+        public string WORD_LEVEL_CD { set; get; }
         public string WORD_IMPORTANT { set; get; }
         public bool WORD_LEARNYN { set; get; }
         public string WORD_IMAGE { set; get; }

@@ -35,8 +35,7 @@ namespace HK.Collector.Query
             INSERT INTO
                 word
                 (
-                  WB_SN
-                , WORD_UNIT_SN
+                WORD_UNIT_SN
                 , WORD_WORD
                 , WORD_MEAN
                 , WORD_SPELLING
@@ -44,7 +43,8 @@ namespace HK.Collector.Query
                 , WORD_SOUND_FILE
                 , WORD_EXAM
 	            , WORD_EXAM_MEAN
-                , WORD_LEVEL
+                , WORD_TYPE_CD
+                , WORD_LEVEL_CD
                 , WORD_IMPORTANT
                 , WORD_LEARNYN
                 , WORD_IMAGE
@@ -54,7 +54,7 @@ namespace HK.Collector.Query
                 VALUES
                 (
                     {0}
-                    , {1}
+                    , '{1}'
                     , '{2}'
                     , '{3}'
                     , '{4}'

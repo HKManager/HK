@@ -58,26 +58,27 @@ namespace HK.Collector.Excel
                     var excel = new LinqToExcel.ExcelQueryFactory(filePath);
                     aliData = (from t in excel.Worksheet<다음단어장>(0) select t).ToList();
 
+                    foreach (var item in aliData)
+                    {
+                        // - 예제만들기
+                        var examList = 네이버수집기.GetInstance().예문수집기(item.단어);
+                        var exam = examList.FirstOrDefault();
+
+                        if (exam == null)
+                            continue;
+
+                        item.WORD_EXAM = exam.WORD_EXAM;
+                        item.WORD_EXAM_MEAN = exam.WORD_EXAM_MEAN;
+
+                        // - 스팰링 만들기
+                        var spelling = Get스팰링(item.단어);
+                        item.WORD_SPELLING = spelling;
+
+                        단어쿼리.단어등록(item);
+                        매핑_단어장_단어쿼리.매핑_단어장_단어등록();
+                    }
+
                     Finished?.Invoke(name, result);
-
-                    //foreach (var item in aliData)
-                    //{
-                    //    // - 예제만들기
-                    //    var examList = 네이버수집기.GetInstance().예문수집기(item.단어);
-                    //    var exam = examList.FirstOrDefault();
-
-                    //    if (exam == null)
-                    //        continue;
-
-                    //    item.WORD_EXAM = exam.WORD_EXAM;
-                    //    item.WORD_EXAM_MEAN = exam.WORD_EXAM_MEAN;
-
-                    //    // - 스팰링 만들기
-                    //    var spelling = Get스팰링(item.단어);
-                    //    item.WORD_SPELLING = spelling;
-
-                    //    단어리스트.Add(item);
-                    //}
                 });
             }catch(Exception ex)
             {

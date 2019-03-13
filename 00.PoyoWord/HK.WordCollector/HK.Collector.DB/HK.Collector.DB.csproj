@@ -60,7 +60,7 @@
     <Compile Include="SQLite\Connection.cs" />
     <Compile Include="SQLite\단어쿼리.cs" />
     <Compile Include="SQLite\단어장쿼리.cs" />
-    <Compile Include="SQLite\매핑단어장_단어쿼리.cs" />
+    <Compile Include="SQLite\매핑_단어장_단어쿼리.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="LIB\SQLite.Interop.dll">
