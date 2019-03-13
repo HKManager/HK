@@ -28,50 +28,50 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.ctl다음단어장수집1 = new HK.WordCollector.ctl다음단어장수집();
-            this.tableLayoutPanel1.SuspendLayout();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.다음단어장수집ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tableLayoutPanel1
+            // menuStrip1
             // 
-            this.tableLayoutPanel1.ColumnCount = 1;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Controls.Add(this.ctl다음단어장수집1, 0, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(800, 450);
-            this.tableLayoutPanel1.TabIndex = 0;
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.다음단어장수집ToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip1.TabIndex = 2;
+            this.menuStrip1.Text = "menuStrip1";
             // 
-            // ctl다음단어장수집1
+            // 다음단어장수집ToolStripMenuItem
             // 
-            this.ctl다음단어장수집1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ctl다음단어장수집1.Location = new System.Drawing.Point(3, 3);
-            this.ctl다음단어장수집1.Name = "ctl다음단어장수집1";
-            this.ctl다음단어장수집1.Size = new System.Drawing.Size(794, 444);
-            this.ctl다음단어장수집1.TabIndex = 0;
+            this.다음단어장수집ToolStripMenuItem.Name = "다음단어장수집ToolStripMenuItem";
+            this.다음단어장수집ToolStripMenuItem.Size = new System.Drawing.Size(103, 20);
+            this.다음단어장수집ToolStripMenuItem.Text = "다음단어장수집";
+            this.다음단어장수집ToolStripMenuItem.Click += new System.EventHandler(this.다음단어장수집ToolStripMenuItem_Click);
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.tableLayoutPanel1);
+            this.Controls.Add(this.menuStrip1);
+            this.IsMdiContainer = true;
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmMain";
-            this.Text = "frmMain";
-            this.tableLayoutPanel1.ResumeLayout(false);
+            this.ShowIcon = false;
+            this.Text = "단어 수집기";
+            this.Load += new System.EventHandler(this.frmMain_Load);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private ctl다음단어장수집 ctl다음단어장수집1;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem 다음단어장수집ToolStripMenuItem;
     }
 }

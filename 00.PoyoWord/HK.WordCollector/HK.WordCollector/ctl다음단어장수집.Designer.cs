@@ -34,6 +34,7 @@
             this.txt폴더주소 = new System.Windows.Forms.TextBox();
             this.btn수집시작 = new System.Windows.Forms.Button();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.list완료여부 = new System.Windows.Forms.ListBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -46,6 +47,7 @@
             this.tableLayoutPanel1.Controls.Add(this.btn폴더선택, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.txt폴더주소, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.btn수집시작, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.list완료여부, 0, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -62,7 +64,7 @@
             this.btn폴더선택.Name = "btn폴더선택";
             this.btn폴더선택.Size = new System.Drawing.Size(84, 26);
             this.btn폴더선택.TabIndex = 0;
-            this.btn폴더선택.Text = "선택";
+            this.btn폴더선택.Text = "폴더선택";
             this.btn폴더선택.UseVisualStyleBackColor = true;
             this.btn폴더선택.Click += new System.EventHandler(this.btn폴더선택_Click);
             // 
@@ -92,6 +94,22 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
+            // list완료여부
+            // 
+            this.tableLayoutPanel1.SetColumnSpan(this.list완료여부, 3);
+            this.list완료여부.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.list완료여부.FormattingEnabled = true;
+            this.list완료여부.ItemHeight = 12;
+            this.list완료여부.Items.AddRange(new object[] {
+            "sadfasdf",
+            "sdaf",
+            "sadf",
+            "sdaf"});
+            this.list완료여부.Location = new System.Drawing.Point(3, 35);
+            this.list완료여부.Name = "list완료여부";
+            this.list완료여부.Size = new System.Drawing.Size(692, 373);
+            this.list완료여부.TabIndex = 3;
+            // 
             // ctl다음단어장수집
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -112,5 +130,6 @@
         private System.Windows.Forms.TextBox txt폴더주소;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.Button btn수집시작;
+        private System.Windows.Forms.ListBox list완료여부;
     }
 }
