@@ -15,7 +15,8 @@ namespace HK.Collector.DataType
         public string 암기여부 { set; get; }
         public string 저장날짜 { set; get; }
         public string 저장횟수 { set; get; }
-        public string 사고내용 { set; get; }
+
+        public long 예문길이 { set; get; }
 
         public long WORD_SN { set; get; }
         public long WB_SN { set; get; }

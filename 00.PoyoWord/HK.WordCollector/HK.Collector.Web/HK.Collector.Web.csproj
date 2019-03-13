@@ -46,9 +46,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="네이버수집기.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HK.Collector.DataType\HK.Collector.DataType.csproj">
+      <Project>{3dfdde1e-1fe9-406e-a2c0-60e7f45003f0}</Project>
+      <Name>HK.Collector.DataType</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

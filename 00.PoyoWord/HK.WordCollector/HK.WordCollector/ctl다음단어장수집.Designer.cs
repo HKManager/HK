@@ -32,8 +32,8 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.btn폴더선택 = new System.Windows.Forms.Button();
             this.txt폴더주소 = new System.Windows.Forms.TextBox();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.btn수집시작 = new System.Windows.Forms.Button();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -74,11 +74,7 @@
             this.txt폴더주소.Name = "txt폴더주소";
             this.txt폴더주소.Size = new System.Drawing.Size(512, 26);
             this.txt폴더주소.TabIndex = 1;
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            this.txt폴더주소.Text = "E:\\00.MyFolder\\00.GITHUB\\HK\\00.PoyoWord\\00.Docs";
             // 
             // btn수집시작
             // 
@@ -90,6 +86,11 @@
             this.btn수집시작.Text = "수집시작";
             this.btn수집시작.UseVisualStyleBackColor = true;
             this.btn수집시작.Click += new System.EventHandler(this.btn수집시작_Click);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
             // ctl다음단어장수집
             // 
