@@ -21,7 +21,11 @@ public class SpeechToText  implements SpeechRecognizeListener {
     private Activity activity = null;
     private Context context = null;
 
-    public SpeechToText(Context context, Activity activity) {
+    private CustomCallback mCallback;
+
+    public SpeechToText(Context context, Activity activity, CustomCallback callback) {
+
+        mCallback = callback;
 
         context = context;
         activity = activity;
@@ -90,6 +94,8 @@ public class SpeechToText  implements SpeechRecognizeListener {
         }
 
         String temp = builder.toString();
+
+        mCallback.onCall(temp);
     }
 
     @Override

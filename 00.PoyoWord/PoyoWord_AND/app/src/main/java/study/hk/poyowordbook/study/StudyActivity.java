@@ -32,6 +32,7 @@ import Query.Manager_WordAudLoc;
 import Query.Manager_WordBook;
 import Query.Manager_WordStudyBook;
 import study.hk.data.Data.HARDCODE;
+import study.hk.poyowordbook.CustomCallback;
 import study.hk.poyowordbook.R;
 import study.hk.poyowordbook.SpeechToText;
 import study.hk.poyowordbook.TextToSpeech_Locale;
@@ -79,8 +80,23 @@ public class StudyActivity extends AppCompatActivity {
         mViewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
         tabLayout.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(mViewPager));
 
-        stt = new SpeechToText(context, this);
-        tts = new TextToSpeech_Locale(context, this);
+        stt = new SpeechToText(context, this, new CustomCallback() {
+
+            @Override
+            public void onCall(String s) {
+                // 여기에서 콜백으로 넘어온 데이터 핸들링을 하게 됩니다. interface에서는 String을 넘겨주니깐 이 친구가 넘어오겠지요.
+                int abc = 0;
+            }
+        });
+
+        tts = new TextToSpeech_Locale(context, this, new CustomCallback() {
+
+            @Override
+            public void onCall(String s) {
+                // 여기에서 콜백으로 넘어온 데이터 핸들링을 하게 됩니다. interface에서는 String을 넘겨주니깐 이 친구가 넘어오겠지요.
+                int abc = 0;
+            }
+        });
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -300,8 +316,8 @@ public class StudyActivity extends AppCompatActivity {
                                     intent.putExtra("WB_SN",""); *//*송신*//*
                                     context.startActivity(intent);*/
 
-                                    //SpeechToText();
-                                    TextToSpeech();
+                                    SpeechToText();
+                                    //TextToSpeech();
                                     break;
                                 case HARDCODE.단어장배치상세 :
                                     intent = new Intent(context,WordAudLocDetailActivity.class);

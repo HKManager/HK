@@ -8,10 +8,14 @@ import android.speech.tts.TextToSpeech;
 import java.util.HashMap;
 import java.util.Locale;
 
-public class TextToSpeech_Locale  implements TextToSpeech.OnUtteranceCompletedListener {
+public class TextToSpeech_Locale implements TextToSpeech.OnUtteranceCompletedListener {
     private TextToSpeech tts;              // TTS 변수 선언
+    private CustomCallback mCallback;
 
-    public TextToSpeech_Locale(Context context, Activity activity) {
+    public TextToSpeech_Locale(Context context, Activity activity, CustomCallback callback) {
+
+        mCallback = callback;
+
         // TTS를 생성하고 OnInitListener로 초기화 한다.
         tts = new TextToSpeech(context, new TextToSpeech.OnInitListener() {
             @Override
@@ -48,7 +52,7 @@ public class TextToSpeech_Locale  implements TextToSpeech.OnUtteranceCompletedLi
     @Override
     public void onUtteranceCompleted(String utteranceId) {
         if(utteranceId.equals("TTSEND")) {
-
+            mCallback.onCall(utteranceId);
         }
     }
 }
