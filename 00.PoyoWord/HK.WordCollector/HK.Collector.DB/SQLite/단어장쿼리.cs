@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HK.Collector.DB.SQLite
 {
-    public class 단어장등록
+    public class 단어장쿼리
     {
     }
 }
