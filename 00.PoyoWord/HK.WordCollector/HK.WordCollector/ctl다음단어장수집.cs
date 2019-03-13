@@ -17,6 +17,8 @@ namespace HK.WordCollector
         {
             InitializeComponent();
         }
+        private string temp = string.Empty;
+        private int index = 0;
 
         private void btn폴더선택_Click(object sender, EventArgs e)
         {
@@ -42,7 +44,33 @@ namespace HK.WordCollector
 
             다음단어장수집기.GetInstance().단어수집시작(txt폴더주소.Text);
 
-            list완료여부.DataSource = new List<string>();
+            //list완료여부.DataSource = finishList;
+        }
+
+        private void Finish(string name, bool result)
+        {
+            index ++;
+            temp = string.Format("{0}. 단어장 - {1} : {2}", index, name, result ? "완료" : "실패");
+            ShowListBox();
+        }
+
+        private void ShowListBox()
+        {
+            if (this.InvokeRequired)
+            {
+                this.Invoke(new Action(ShowListBox));
+            }
+            else
+            {
+                list완료여부.Items.Add(temp);
+                list완료여부.Refresh();
+            }
+
+        }
+
+        private void ctl다음단어장수집_Load(object sender, EventArgs e)
+        {
+            다음단어장수집기.GetInstance().Finished += Finish;
         }
     }
 }

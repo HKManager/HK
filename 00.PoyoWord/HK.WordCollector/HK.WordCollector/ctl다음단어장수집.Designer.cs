@@ -100,11 +100,6 @@
             this.list완료여부.Dock = System.Windows.Forms.DockStyle.Fill;
             this.list완료여부.FormattingEnabled = true;
             this.list완료여부.ItemHeight = 12;
-            this.list완료여부.Items.AddRange(new object[] {
-            "sadfasdf",
-            "sdaf",
-            "sadf",
-            "sdaf"});
             this.list완료여부.Location = new System.Drawing.Point(3, 35);
             this.list완료여부.Name = "list완료여부";
             this.list완료여부.Size = new System.Drawing.Size(692, 373);
@@ -117,6 +112,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "ctl다음단어장수집";
             this.Size = new System.Drawing.Size(698, 411);
+            this.Load += new System.EventHandler(this.ctl다음단어장수집_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);

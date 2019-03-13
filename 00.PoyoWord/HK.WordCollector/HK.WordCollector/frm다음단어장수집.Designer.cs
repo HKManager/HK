@@ -44,8 +44,8 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 261F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(974, 502);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 502F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(629, 449);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // ctl다음단어장수집1
@@ -53,14 +53,14 @@
             this.ctl다음단어장수집1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ctl다음단어장수집1.Location = new System.Drawing.Point(3, 3);
             this.ctl다음단어장수집1.Name = "ctl다음단어장수집1";
-            this.ctl다음단어장수집1.Size = new System.Drawing.Size(968, 496);
+            this.ctl다음단어장수집1.Size = new System.Drawing.Size(623, 443);
             this.ctl다음단어장수집1.TabIndex = 0;
             // 
             // frm다음단어장수집
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(974, 502);
+            this.ClientSize = new System.Drawing.Size(629, 449);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "frm다음단어장수집";
             this.ShowIcon = false;

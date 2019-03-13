@@ -18,6 +18,8 @@ namespace HK.Collector.Excel
 
         private static 다음단어장수집기 _instance;
 
+        public event Action<string, bool> Finished;
+
         public static 다음단어장수집기 GetInstance()
         {
             if (_instance == null)
@@ -26,50 +28,61 @@ namespace HK.Collector.Excel
             return _instance;
         }
 
-        public void 단어수집시작(string folderPath)
+        public async void 단어수집시작(string folderPath)
         {
             string[] array = Directory.GetFiles(folderPath, "*.xls");
 
             foreach(var item in array)
             {
-                단어수집(item);
+                await 단어수집(item);
             }
         }
 
-        public void 단어수집(string filePath)
+        public async Task 단어수집(string filePath)
         {
-            var name = filePath.Split('\\').LastOrDefault();
-
-            name = name.Replace(".xls", "");
-
-            단어장쿼리.단어장등록(new 단어장데이터
+            try
             {
-                WB_NAME = name,
-                WB_REGISTERDT = DateTime.Now,
-                
-            });
+                await Task.Run(() =>
+                {
+                    var name = filePath.Split('\\').LastOrDefault();
 
-            var excel = new LinqToExcel.ExcelQueryFactory(filePath);
-            aliData = (from t in excel.Worksheet<다음단어장>(0) select t).ToList();
+                    name = name.Replace(".xls", "");
 
-            //foreach (var item in aliData)
-            //{
-            //    // - 예제만들기
-            //    var examList = 네이버수집기.GetInstance().예문수집기(item.단어);
-            //    var exam = examList.FirstOrDefault();
+                    var result = 단어장쿼리.단어장등록(new 단어장데이터
+                    {
+                        WB_NAME = name,
+                        WB_REGISTERDT = DateTime.Now,
 
-            //    if (exam == null)
-            //        continue;
+                    });
 
-            //    item.WORD_EXAM = exam.WORD_EXAM;
-            //    item.WORD_EXAM_MEAN = exam.WORD_EXAM_MEAN;
+                    var excel = new LinqToExcel.ExcelQueryFactory(filePath);
+                    aliData = (from t in excel.Worksheet<다음단어장>(0) select t).ToList();
 
-            //    // - 스팰링 만들기
-            //    var spelling = Get스팰링(item.단어);
-            //    item.WORD_SPELLING = spelling;
+                    Finished?.Invoke(name, result);
 
-            //    단어리스트.Add(item);
-            //}
+                    //foreach (var item in aliData)
+                    //{
+                    //    // - 예제만들기
+                    //    var examList = 네이버수집기.GetInstance().예문수집기(item.단어);
+                    //    var exam = examList.FirstOrDefault();
+
+                    //    if (exam == null)
+                    //        continue;
+
+                    //    item.WORD_EXAM = exam.WORD_EXAM;
+                    //    item.WORD_EXAM_MEAN = exam.WORD_EXAM_MEAN;
+
+                    //    // - 스팰링 만들기
+                    //    var spelling = Get스팰링(item.단어);
+                    //    item.WORD_SPELLING = spelling;
+
+                    //    단어리스트.Add(item);
+                    //}
+                });
+            }catch(Exception ex)
+            {
+
+            }
         }
 
         private string Get스팰링(string 단어)
