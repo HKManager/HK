@@ -7,9 +7,7 @@ import android.graphics.Bitmap;
 import android.os.Handler;
 import android.support.design.widget.TabLayout;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -17,19 +15,15 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
 import android.webkit.JsResult;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import android.widget.TextView;
 
 import com.google.gson.Gson;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -40,9 +34,9 @@ import Query.Manager_WordStudyBook;
 import study.hk.data.Data.HARDCODE;
 import study.hk.poyowordbook.R;
 import study.hk.poyowordbook.SpeechToText;
+import study.hk.poyowordbook.TextToSpeech_Locale;
 import study.hk.poyowordbook.manager.WordAudLocDetailActivity;
 import study.hk.poyowordbook.manager.WordBookDetailActivity;
-import study.hk.poyowordbook.manager.WordManagerActivity;
 import study.hk.poyowordbook.manager.WordStudyBookDetailActivity;
 
 public class StudyActivity extends AppCompatActivity {
@@ -65,6 +59,7 @@ public class StudyActivity extends AppCompatActivity {
     private ViewPager mViewPager;
 
     private static SpeechToText stt;
+    private static TextToSpeech_Locale tts;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,6 +80,7 @@ public class StudyActivity extends AppCompatActivity {
         tabLayout.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(mViewPager));
 
         stt = new SpeechToText(context, this);
+        tts = new TextToSpeech_Locale(context, this);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -95,8 +91,19 @@ public class StudyActivity extends AppCompatActivity {
         });
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        tts.Close();
+        stt.Release();
+    }
+
     private static void SpeechToText() {
         stt.SpeechToText();
+    }
+
+    private static void TextToSpeech() {
+        tts.TextToSpeech("a,p,p,l,e");
     }
 
     public static class StudyFragment extends Fragment {
@@ -293,7 +300,8 @@ public class StudyActivity extends AppCompatActivity {
                                     intent.putExtra("WB_SN",""); *//*송신*//*
                                     context.startActivity(intent);*/
 
-                                    SpeechToText();
+                                    //SpeechToText();
+                                    TextToSpeech();
                                     break;
                                 case HARDCODE.단어장배치상세 :
                                     intent = new Intent(context,WordAudLocDetailActivity.class);
