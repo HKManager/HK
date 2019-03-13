@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HK.Collector.DB
+namespace HK.Collector.DB.SQLite
 {
-    public class Class1
+    public class 단어등록
     {
     }
 }

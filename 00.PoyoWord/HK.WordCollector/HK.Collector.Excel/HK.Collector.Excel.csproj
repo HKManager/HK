@@ -71,7 +71,9 @@
     <Content Include="LIB\LinqToExcel.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="LIB\log4net.dll" />
+    <Content Include="LIB\log4net.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="LIB\Remotion.Data.Linq.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
