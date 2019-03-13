@@ -44,7 +44,7 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 502F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 449F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(629, 449);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
@@ -65,7 +65,6 @@
             this.Name = "frm다음단어장수집";
             this.ShowIcon = false;
             this.Text = "다음단어장수집";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 

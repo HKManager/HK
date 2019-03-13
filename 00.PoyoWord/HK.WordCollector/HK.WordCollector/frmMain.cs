@@ -19,19 +19,23 @@ namespace HK.WordCollector
 
         private frm다음단어장수집 다음단어장수집 = new frm다음단어장수집();
 
-        private void 다음단어장수집ToolStripMenuItem_Click(object sender, EventArgs e)
+        private void Show다음단어장수집()
         {
-            
+            다음단어장수집.Width = this.Width;
+            다음단어장수집.Height = this.Height;
             다음단어장수집.WindowState = FormWindowState.Maximized;
             다음단어장수집.MdiParent = this;
             다음단어장수집.Show();
         }
 
+        private void 다음단어장수집ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Show다음단어장수집();
+        }
+
         private void frmMain_Load(object sender, EventArgs e)
         {
-            다음단어장수집.WindowState = FormWindowState.Maximized;
-            다음단어장수집.MdiParent = this;
-            다음단어장수집.Show();
+            Show다음단어장수집();
         }
     }
 }
