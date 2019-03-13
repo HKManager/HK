@@ -37,27 +37,31 @@ namespace HK.Collector.Excel
 
         public void 단어수집(string filePath)
         {
+            var name = filePath.Split('\\').LastOrDefault();
+
+            name = name.Replace(".xls", "");
+
             var excel = new LinqToExcel.ExcelQueryFactory(filePath);
             aliData = (from t in excel.Worksheet<다음단어장>(0) select t).ToList();
 
-            foreach (var item in aliData)
-            {
-                // - 예제만들기
-                var examList = 네이버수집기.GetInstance().예문수집기(item.단어);
-                var exam = examList.FirstOrDefault();
+            //foreach (var item in aliData)
+            //{
+            //    // - 예제만들기
+            //    var examList = 네이버수집기.GetInstance().예문수집기(item.단어);
+            //    var exam = examList.FirstOrDefault();
 
-                if (exam == null)
-                    continue;
+            //    if (exam == null)
+            //        continue;
 
-                item.WORD_EXAM = exam.WORD_EXAM;
-                item.WORD_EXAM_MEAN = exam.WORD_EXAM_MEAN;
+            //    item.WORD_EXAM = exam.WORD_EXAM;
+            //    item.WORD_EXAM_MEAN = exam.WORD_EXAM_MEAN;
 
-                // - 스팰링 만들기
-                var spelling = Get스팰링(item.단어);
-                item.WORD_SPELLING = spelling;
+            //    // - 스팰링 만들기
+            //    var spelling = Get스팰링(item.단어);
+            //    item.WORD_SPELLING = spelling;
 
-                단어리스트.Add(item);
-            }
+            //    단어리스트.Add(item);
+            //}
         }
 
         private string Get스팰링(string 단어)

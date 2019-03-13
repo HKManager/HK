@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HK.Collector.DB", "HK.Colle
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HK.Collector.DataType", "HK.Collector.DataType\HK.Collector.DataType.csproj", "{3DFDDE1E-1FE9-406E-A2C0-60E7F45003F0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HK.Collector.Query", "HK.Collector.Query\HK.Collector.Query.csproj", "{9BE087E5-17EC-406C-88A3-E1BF3128A80E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HK.Collector.Data", "HK.Collector.Data\HK.Collector.Data.csproj", "{3A80921D-89CA-46A4-B1D2-2B1BB00277A0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +43,14 @@ Global
 		{3DFDDE1E-1FE9-406E-A2C0-60E7F45003F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3DFDDE1E-1FE9-406E-A2C0-60E7F45003F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3DFDDE1E-1FE9-406E-A2C0-60E7F45003F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9BE087E5-17EC-406C-88A3-E1BF3128A80E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9BE087E5-17EC-406C-88A3-E1BF3128A80E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9BE087E5-17EC-406C-88A3-E1BF3128A80E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9BE087E5-17EC-406C-88A3-E1BF3128A80E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A80921D-89CA-46A4-B1D2-2B1BB00277A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A80921D-89CA-46A4-B1D2-2B1BB00277A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A80921D-89CA-46A4-B1D2-2B1BB00277A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A80921D-89CA-46A4-B1D2-2B1BB00277A0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

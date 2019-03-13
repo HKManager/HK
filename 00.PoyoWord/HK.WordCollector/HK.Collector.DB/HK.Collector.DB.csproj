@@ -57,7 +57,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SQLite\Connection.cs" />
     <Compile Include="SQLite\단어등록.cs" />
+    <Compile Include="SQLite\단어장등록.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="LIB\System.ComponentModel.DataAnnotations.dll">
