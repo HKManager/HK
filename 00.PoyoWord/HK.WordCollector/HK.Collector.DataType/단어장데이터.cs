@@ -10,6 +10,7 @@ namespace HK.Collector.DataType
     {
         public long WB_SN { set; get; }
         public string WB_NAME { set; get; }
+        public string WB_LEVEL_CD { set; get; }
         public long WB_CNT_UNIT { set; get; }
         public long WB_CNT_WORD_UNIT { set; get; }
         public long WB_CNT_WORD { set; get; }

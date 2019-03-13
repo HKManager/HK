@@ -45,6 +45,7 @@ namespace HK.Collector.Query
                 wordbook
                 (
                     WB_NAME
+                    , WB_LEVEL_CD
                     , WB_CNT_UNIT
                     , WB_CNT_WORD_UNIT
                     , WB_CNT_WORD
@@ -67,6 +68,7 @@ namespace HK.Collector.Query
                     , '{7}'
                     , '{8}'
                     , '{9}'
+                    , '{10}'
                 )
         ";
 

@@ -52,7 +52,7 @@ namespace HK.Collector.Excel
                     {
                         WB_NAME = name,
                         WB_REGISTERDT = DateTime.Now,
-
+                        WB_LEVEL_CD = "001"
                     });
 
                     var excel = new LinqToExcel.ExcelQueryFactory(filePath);
