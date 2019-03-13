@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HK.Collector.Web", "HK.Coll
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HK.Collector.DB", "HK.Collector.DB\HK.Collector.DB.csproj", "{DBB98153-68BB-48B4-8C9F-61249A846DC9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HK.Collector.DataType", "HK.Collector.DataType\HK.Collector.DataType.csproj", "{3DFDDE1E-1FE9-406E-A2C0-60E7F45003F0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{DBB98153-68BB-48B4-8C9F-61249A846DC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DBB98153-68BB-48B4-8C9F-61249A846DC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DBB98153-68BB-48B4-8C9F-61249A846DC9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3DFDDE1E-1FE9-406E-A2C0-60E7F45003F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DFDDE1E-1FE9-406E-A2C0-60E7F45003F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3DFDDE1E-1FE9-406E-A2C0-60E7F45003F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3DFDDE1E-1FE9-406E-A2C0-60E7F45003F0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
