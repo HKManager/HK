@@ -151,170 +151,170 @@
 
   var selectItem;
 
-this.setEditItem = function (item) {
+  this.setEditItem = function (item) {
 
-  var abc = $(this);
+    var abc = $(this);
 
-  var temp = $('#WordQuiz_01').text();
-  var index = wordList.indexOf(item);
+    var temp = $('#WordQuiz_01').text();
+    var index = wordList.indexOf(item);
 
-  $('#WORD_QUIZ').val(temp);
-  
+    $('#WORD_QUIZ').val(temp);
 
-  // if (index !== -1) {
-  //   wordList[index].WORD_QUIZ = temp;
-  //   viewModel.words(wordList);
-  // }
-}
 
-function ClickQuiz_01(item) {
-  SetWord(item);
-}
-
-function ClickQuiz_02(item) {
-  SetWord(item);
-}
-
-function ClickQuiz_03(item) {
-  SetWord(item);
-}
-
-function ClickExam_01(item) {
-  SetExam(item);
-}
-
-function ClickExam_02(item) {
-  SetExam(item);
-}
-
-function ClickExam_03(item) {
-  SetExam(item);
-}
-
-function ClickVoice(item) {
-  SetVoice(item);
-}
-
-function SetWord(item) {
-  var temp = item.outerText;
-  $('#prefix_'+wordIndex).val(temp);
-}
-
-function SetExam(item) {
-  var temp = item.outerText;
-  
-  var text = $('#exam_'+wordIndex).val();
-
-  if(text.includes(temp)) {
-    text = text.replace(' '+temp, '');
-  } else {
-    text = text + ' ' + temp;
+    // if (index !== -1) {
+    //   wordList[index].WORD_QUIZ = temp;
+    //   viewModel.words(wordList);
+    // }
   }
 
-  $('#exam_'+wordIndex).val(text);
-}
-
-function SetVoice(item) {
-  var temp = item.outerText;
-  $('#voice_'+wordIndex).val(temp);
-}
-
-
-function nextPage() {
-}
-
-function prevPage() {
-  if(pageIndex == 0) {
-    return;
+  function ClickQuiz_01(item) {
+    SetWord(item);
   }
 
-  pageIndex--;
-
-  if(pageIndex == 0) {
-    wordIndex = 0;
-    return;
+  function ClickQuiz_02(item) {
+    SetWord(item);
   }
 
-  wordIndex = Math.floor(pageIndex / 3);
-}
-
-function NextQuiz() {
-  pageIndex++;
-
-  wordIndex = Math.floor(pageIndex / 3);
-}
-
-function Check_Word() {
-  var word = $('#prefix_'+wordIndex).val();
-
-  var AWord = QuizList[wordIndex].WORD_WORD;
-
-  if(AWord == word) {
-    swal("정답 입니다!", "[ 100 ] 금화가 정립 되었습니다.", "success");
-  }else {
-    swal("오답 입니다!", QuizList[wordIndex].WORD_MEAN + ' : ' + AWord, "error");
+  function ClickQuiz_03(item) {
+    SetWord(item);
   }
-}
 
-function Check_Exam() {
-  var exam = $('#exam_'+wordIndex).val();
-
-  exam = exam.trim();
-  
-  var AExam = QuizList[wordIndex].WORD_EXAM;
-
-  if(AExam == exam) {
-    swal("정답 입니다!", "[ 100 ] 금화가 정립 되었습니다.", "success");
-  }else {
-    swal("오답 입니다!", QuizList[wordIndex].WORD_EXAM_MEAN + ' : ' + AExam, "error");
+  function ClickExam_01(item) {
+    SetExam(item);
   }
-}
 
-function Check_Voice() {
-  var word = $('#voice_'+wordIndex).val();
-
-  word = word.trim();
-
-  var AWord = QuizList[wordIndex].WORD_WORD;
-
-  if(AWord == word) {
-    swal("정답 입니다!", "[ 100 ] 금화가 정립 되었습니다.", "success");
-  }else {
-    swal("오답 입니다!", QuizList[wordIndex].WORD_MEAN + ' : ' + AWord, "error");
+  function ClickExam_02(item) {
+    SetExam(item);
   }
-}
 
-function ClickSubmitWord() {
+  function ClickExam_03(item) {
+    SetExam(item);
+  }
 
-  Check_Word();
+  function ClickVoice(item) {
+    SetVoice(item);
+  }
 
-  NextQuiz();
+  function SetWord(item) {
+    var temp = item.outerText;
+    $('#prefix_' + wordIndex).val(temp);
+  }
 
-  Reveal.next();
-}
+  function SetExam(item) {
+    var temp = item.outerText;
 
-function ClickSubmitExam() {  
+    var text = $('#exam_' + wordIndex).val();
 
-  Check_Exam();
+    if (text.includes(temp)) {
+      text = text.replace(' ' + temp, '');
+    } else {
+      text = text + ' ' + temp;
+    }
 
-  NextQuiz();
+    $('#exam_' + wordIndex).val(text);
+  }
 
-  Reveal.next();
-}
+  function SetVoice(item) {
+    var temp = item.outerText;
+    $('#voice_' + wordIndex).val(temp);
+  }
 
-function ClickSubmitVoice() {
-  Check_Voice();
 
-  NextQuiz();
+  function nextPage() {
+  }
 
-  Reveal.next();
-}
+  function prevPage() {
+    if (pageIndex == 0) {
+      return;
+    }
 
-function InitReavel() {
+    pageIndex--;
+
+    if (pageIndex == 0) {
+      wordIndex = 0;
+      return;
+    }
+
+    wordIndex = Math.floor(pageIndex / 3);
+  }
+
+  function NextQuiz() {
+    pageIndex++;
+
+    wordIndex = Math.floor(pageIndex / 3);
+  }
+
+  function Check_Word() {
+    var word = $('#prefix_' + wordIndex).val();
+
+    var AWord = QuizList[wordIndex].WORD_WORD;
+
+    if (AWord == word) {
+      swal("정답 입니다!", "[ 100 ] 금화가 정립 되었습니다.", "success");
+    } else {
+      swal("오답 입니다!", QuizList[wordIndex].WORD_MEAN + ' : ' + AWord, "error");
+    }
+  }
+
+  function Check_Exam() {
+    var exam = $('#exam_' + wordIndex).val();
+
+    exam = exam.trim();
+
+    var AExam = QuizList[wordIndex].WORD_EXAM;
+
+    if (AExam == exam) {
+      swal("정답 입니다!", "[ 100 ] 금화가 정립 되었습니다.", "success");
+    } else {
+      swal("오답 입니다!", QuizList[wordIndex].WORD_EXAM_MEAN + ' : ' + AExam, "error");
+    }
+  }
+
+  function Check_Voice() {
+    var word = $('#voice_' + wordIndex).val();
+
+    word = word.trim();
+
+    var AWord = QuizList[wordIndex].WORD_WORD;
+
+    if (AWord == word) {
+      swal("정답 입니다!", "[ 100 ] 금화가 정립 되었습니다.", "success");
+    } else {
+      swal("오답 입니다!", QuizList[wordIndex].WORD_MEAN + ' : ' + AWord, "error");
+    }
+  }
+
+  function ClickSubmitWord() {
+
+    Check_Word();
+
+    NextQuiz();
+
+    Reveal.next();
+  }
+
+  function ClickSubmitExam() {
+
+    Check_Exam();
+
+    NextQuiz();
+
+    Reveal.next();
+  }
+
+  function ClickSubmitVoice() {
+    Check_Voice();
+
+    NextQuiz();
+
+    Reveal.next();
+  }
+
+  function InitReavel() {
 
     // Full list of configuration options available here:
     // https://github.com/hakimel/reveal.js#configuration
-  Reveal.initialize({
+    Reveal.initialize({
       controls: false,
       progress: true,
       history: false,
@@ -339,7 +339,7 @@ function InitReavel() {
         { src: '../ASlide/plugin/notes/notes.js', async: true, condition: function () { return !!document.body.classList; } }
       ]
     });
-}
+  }
 
 </script>
 
@@ -364,7 +364,8 @@ function InitReavel() {
           <div class="body">
 
             <div class="row">
-              <input type="text" class="form-control" style="width:100%;text-align: center;" placeholder="단어를 맞추어 주세요!" data-bind="attr: { id: 'prefix_' + $index() }" />
+              <input type="text" class="form-control" style="width:100%;text-align: center;" placeholder="단어를 맞추어 주세요!"
+                data-bind="attr: { id: 'prefix_' + $index() }" />
             </div>
 
           </div>
@@ -374,11 +375,18 @@ function InitReavel() {
           <div class="body">
 
             <div class="row" style="bottom:15px;margin-top: 15px;">
-                <button id="WordQuiz_01" type="button" class="btn bg-teal col-xs-12 btn-lg waves-effect" style="margin-bottom: 15px;width: 100%;" data-bind="text: WORD_QUIZ1" onclick="ClickQuiz_01(this)"></button>
-                <button id="WordQuiz_02" type="button" class="btn bg-teal col-xs-12 btn-lg waves-effect" style="margin-bottom: 15px;width: 100%;" data-bind="text: WORD_QUIZ2" onclick="ClickQuiz_02(this)"></button>
-                <button id="WordQuiz_03" type="button" class="btn bg-teal col-xs-12 btn-lg waves-effect" style="margin-bottom: 15px;width: 100%;" data-bind="text: WORD_QUIZ3" onclick="ClickQuiz_03(this)"></button>
+              <button id="WordQuiz_01" type="button" class="btn bg-teal col-xs-12 btn-lg waves-effect"
+                style="margin-bottom: 15px;width: 100%;" data-bind="text: WORD_QUIZ1"
+                onclick="ClickQuiz_01(this)"></button>
+              <button id="WordQuiz_02" type="button" class="btn bg-teal col-xs-12 btn-lg waves-effect"
+                style="margin-bottom: 15px;width: 100%;" data-bind="text: WORD_QUIZ2"
+                onclick="ClickQuiz_02(this)"></button>
+              <button id="WordQuiz_03" type="button" class="btn bg-teal col-xs-12 btn-lg waves-effect"
+                style="margin-bottom: 15px;width: 100%;" data-bind="text: WORD_QUIZ3"
+                onclick="ClickQuiz_03(this)"></button>
 
-                <button type="button" class="btn bg-pink col-xs-12 btn-lg waves-effect" style="margin-bottom: 15px;width: 100%;" onclick="ClickSubmitWord()">확인</button>
+              <button type="button" class="btn bg-pink col-xs-12 btn-lg waves-effect"
+                style="margin-bottom: 15px;width: 100%;" onclick="ClickSubmitWord()">확인</button>
             </div>
 
           </div>
@@ -402,7 +410,8 @@ function InitReavel() {
           <div class="body">
 
             <div class="row">
-              <input type="text" class="form-control" style="width:100%;text-align: center;" placeholder="예문을 맞추어 주세요!" data-bind="attr: { id: 'exam_' + $index() }" />
+              <input type="text" class="form-control" style="width:100%;text-align: center;" placeholder="예문을 맞추어 주세요!"
+                data-bind="attr: { id: 'exam_' + $index() }" />
             </div>
 
           </div>
@@ -412,11 +421,18 @@ function InitReavel() {
           <div class="body">
 
             <div class="row" style="bottom:15px;margin-top: 15px;">
-                <button id="ExamQuiz_01" type="button" class="btn bg-teal col-xs-12 btn-lg waves-effect" style="margin-bottom: 15px;width: 100%;" data-bind="text: EXAM_QUIZ1" onclick="ClickExam_01(this)"></button>
-                <button id="ExamQuiz_02" type="button" class="btn bg-teal col-xs-12 btn-lg waves-effect" style="margin-bottom: 15px;width: 100%;" data-bind="text: EXAM_QUIZ2" onclick="ClickExam_02(this)"></button>
-                <button id="ExamQuiz_03" type="button" class="btn bg-teal col-xs-12 btn-lg waves-effect" style="margin-bottom: 15px;width: 100%;" data-bind="text: EXAM_QUIZ3" onclick="ClickExam_03(this)"></button>
+              <button id="ExamQuiz_01" type="button" class="btn bg-teal col-xs-12 btn-lg waves-effect"
+                style="margin-bottom: 15px;width: 100%;" data-bind="text: EXAM_QUIZ1"
+                onclick="ClickExam_01(this)"></button>
+              <button id="ExamQuiz_02" type="button" class="btn bg-teal col-xs-12 btn-lg waves-effect"
+                style="margin-bottom: 15px;width: 100%;" data-bind="text: EXAM_QUIZ2"
+                onclick="ClickExam_02(this)"></button>
+              <button id="ExamQuiz_03" type="button" class="btn bg-teal col-xs-12 btn-lg waves-effect"
+                style="margin-bottom: 15px;width: 100%;" data-bind="text: EXAM_QUIZ3"
+                onclick="ClickExam_03(this)"></button>
 
-                <button type="button" class="btn bg-pink col-xs-12 btn-lg waves-effect" style="margin-bottom: 15px;width: 100%;" onclick="ClickSubmitExam()">확인</button>
+              <button type="button" class="btn bg-pink col-xs-12 btn-lg waves-effect"
+                style="margin-bottom: 15px;width: 100%;" onclick="ClickSubmitExam()">확인</button>
             </div>
 
           </div>
@@ -439,7 +455,8 @@ function InitReavel() {
           <div class="body">
 
             <div class="row">
-              <input type="text" class="form-control" style="width:100%;text-align: center;" placeholder="마이크 버튼을 눌러서 단어를 얘기해 주세요!" data-bind="attr: { id: 'voice_' + $index() }" />
+              <input type="text" class="form-control" style="width:100%;text-align: center;"
+                placeholder="마이크 버튼을 눌러서 단어를 얘기해 주세요!" data-bind="attr: { id: 'voice_' + $index() }" />
             </div>
 
           </div>
@@ -449,19 +466,18 @@ function InitReavel() {
           <div class="body">
 
             <div class="row" style="bottom:15px;margin-top: 15px;">
-              <button id="WordQuiz_01" type="button" class="btn bg-teal col-xs-12 btn-lg waves-effect" style="margin-bottom: 15px;width: 100%;height:150px;" data-bind="text: WORD_QUIZ1" onclick="ClickVoice(this)"></button>
+              <button id="WordQuiz_01" type="button" class="btn bg-teal col-xs-12 btn-lg waves-effect"
+                style="margin-bottom: 15px;width: 100%;height:140px;background-image: url(../img/voice.png);background-size: 100% 100%;"
+                onclick="ClickVoice(this)"></button>
 
-                <button type="button" class="btn bg-pink col-xs-12 btn-lg waves-effect" style="margin-bottom: 15px;width: 100%;" onclick="ClickSubmitVoice()">확인</button>
+              <button type="button" class="btn bg-pink col-xs-12 btn-lg waves-effect"
+                style="margin-bottom: 15px;width: 100%;" onclick="ClickSubmitVoice()">확인 또는 넘어가기</button>
             </div>
 
           </div>
         </div>
 
       </section>
-
-
-
-
     </div>
   </div>
 </body>
