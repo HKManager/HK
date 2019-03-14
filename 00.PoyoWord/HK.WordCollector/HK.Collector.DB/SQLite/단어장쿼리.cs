@@ -19,7 +19,7 @@ namespace HK.Collector.DB.SQLite
 
                 var query = Query.단어장.Insert;
 
-                query = string.Format(query, data.WB_NAME, data.WB_LEVEL_CD, data.WB_CNT_UNIT, data.WB_CNT_WORD_UNIT, data.WB_CNT_WORD,
+                query = string.Format(query, data.WB_NAME, data.WB_TYPE_CD, data.WB_LEVEL_CD, data.WB_CNT_UNIT, data.WB_CNT_WORD_UNIT, data.WB_CNT_WORD,
                     data.WAL_SN, data.WB_LOOPCNT, data.WB_INTERVAL, data.WB_REGISTERDT.ToString("yyyyMMddHHmmss"), data.WB_USEYN ? 0 : 1, data.WB_DESC);
 
                 SQLiteCommand cmd = new SQLiteCommand(query, conn);

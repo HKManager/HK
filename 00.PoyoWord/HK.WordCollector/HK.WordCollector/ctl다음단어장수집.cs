@@ -43,7 +43,8 @@ namespace HK.WordCollector
                 return;
             }
 
-            temp = string.Format("다음 단어장 수집 시작 : {0}", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+            temp = string.Format("{0} : 다음 단어장 수집 시작", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+            ShowListBox();
 
             다음단어장수집기.GetInstance().단어수집시작(txt폴더주소.Text);
 
@@ -53,7 +54,7 @@ namespace HK.WordCollector
         private void Finish(string name, bool result)
         {
             index ++;
-            temp = string.Format("{0}. 단어장 - {1} : {2} : {3}", index, name, result ? "완료" : "실패", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+            temp = string.Format("{0} : {1}. 단어장 - {2} : {3}", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"), index, name, result ? "완료" : "실패");
             ShowListBox();
         }
 
@@ -76,7 +77,7 @@ namespace HK.WordCollector
             다음단어장수집기.GetInstance().Finished += Finish;
 
             //var word = 구글수집기.GetInstance().구글번역("word", "ko");
-            var wordMean = 구글수집기.GetInstance().구글번역("과일", "en");
+            //var wordMean = 구글수집기.GetInstance().구글번역("과일", "en");
         }
     }
 }

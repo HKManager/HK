@@ -20,6 +20,9 @@ namespace HK.Collector.Excel
 
         public event Action<string, bool> Finished;
 
+        private string wb_type_cd = string.Empty;
+        private string destinationFolder = string.Empty;
+
         public static 다음단어장수집기 GetInstance()
         {
             if (_instance == null)
@@ -32,7 +35,11 @@ namespace HK.Collector.Excel
         {
             string[] array = Directory.GetFiles(folderPath, "*.xls");
 
-            foreach(var item in array)
+            wb_type_cd = folderPath.Split('_')[1];
+
+            destinationFolder = string.Format(@"{0}\00.Finish", folderPath);
+
+            foreach (var item in array)
             {
                 await 단어수집(item);
             }
@@ -46,11 +53,14 @@ namespace HK.Collector.Excel
                 {
                     var name = filePath.Split('\\').LastOrDefault();
 
+                    var destinationFile = string.Format(@"{0}\{1}", destinationFolder, name);
+
                     name = name.Replace(".xls", "");
 
                     var result = 단어장쿼리.단어장등록(new 단어장데이터
                     {
                         WB_NAME = name,
+                        WB_TYPE_CD = wb_type_cd,
                         WB_REGISTERDT = DateTime.Now,
                         WB_LEVEL_CD = "001"
                     });
@@ -76,10 +86,12 @@ namespace HK.Collector.Excel
                         item.WORD_SPELLING = spelling;
 
                         단어쿼리.단어등록(item);
-                        //매핑_단어장_단어쿼리.매핑_단어장_단어등록();
                     }
 
                     Finished?.Invoke(name, result);
+
+                    // To move a file or folder to a new location:
+                    System.IO.File.Move(filePath, destinationFile);
                 });
 
                 Finished?.Invoke("다음단어장 수집", true);

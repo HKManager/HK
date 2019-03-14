@@ -35,7 +35,8 @@ namespace HK.Collector.Query
             INSERT INTO
                 word
                 (
-                WORD_UNIT_SN
+                WB_SN
+                , WORD_UNIT_SN
                 , WORD_WORD
                 , WORD_MEAN
                 , WORD_SPELLING
@@ -53,7 +54,8 @@ namespace HK.Collector.Query
                 )     
                 VALUES
                 (
-                    {0}
+                    (SELECT MAX( WB_SN ) FROM wordbook)
+                    , {0}
                     , '{1}'
                     , '{2}'
                     , '{3}'
