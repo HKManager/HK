@@ -43,6 +43,8 @@ namespace HK.Collector.Excel
             {
                 await 단어수집(item);
             }
+
+            //Finished?.Invoke("다음단어장 수집", true);
         }
 
         public async Task 단어수집(string filePath)
@@ -78,6 +80,7 @@ namespace HK.Collector.Excel
                             continue;
 
                         item.WORD_WORD = item.단어;
+                        item.WORD_MEAN = item.주요뜻;
                         item.WORD_EXAM = exam.WORD_EXAM;
                         item.WORD_EXAM_MEAN = exam.WORD_EXAM_MEAN;
 
@@ -93,8 +96,6 @@ namespace HK.Collector.Excel
                     // To move a file or folder to a new location:
                     System.IO.File.Move(filePath, destinationFile);
                 });
-
-                Finished?.Invoke("다음단어장 수집", true);
             }
             catch(Exception ex)
             {

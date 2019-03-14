@@ -191,10 +191,6 @@ function ClickExam_03(item) {
   SetExam(item);
 }
 
-function ClickVoice(item) {
-  SetVoice(item);
-}
-
 function SetWord(item) {
   var temp = item.outerText;
   $('#prefix_'+wordIndex).val(temp);
@@ -214,12 +210,6 @@ function SetExam(item) {
   $('#exam_'+wordIndex).val(text);
 }
 
-function SetVoice(item) {
-  var temp = item.outerText;
-  $('#voice_'+wordIndex).val(temp);
-}
-
-
 function nextPage() {
 }
 
@@ -235,13 +225,13 @@ function prevPage() {
     return;
   }
 
-  wordIndex = Math.floor(pageIndex / 3);
+  wordIndex = Math.floor(pageIndex / 2);
 }
 
 function NextQuiz() {
   pageIndex++;
 
-  wordIndex = Math.floor(pageIndex / 3);
+  wordIndex = Math.floor(pageIndex / 2);
 }
 
 function Check_Word() {
@@ -250,7 +240,7 @@ function Check_Word() {
   var AWord = QuizList[wordIndex].WORD_WORD;
 
   if(AWord == word) {
-    swal("정답 입니다!", "[ 100 ] 금화가 정립 되었습니다.", "success");
+    swal("정답 입니다!", "", "success");
   }else {
     swal("오답 입니다!", QuizList[wordIndex].WORD_MEAN + ' : ' + AWord, "error");
   }
@@ -264,23 +254,9 @@ function Check_Exam() {
   var AExam = QuizList[wordIndex].WORD_EXAM;
 
   if(AExam == exam) {
-    swal("정답 입니다!", "[ 100 ] 금화가 정립 되었습니다.", "success");
+    swal("정답 입니다!", "", "success");
   }else {
     swal("오답 입니다!", QuizList[wordIndex].WORD_EXAM_MEAN + ' : ' + AExam, "error");
-  }
-}
-
-function Check_Voice() {
-  var word = $('#voice_'+wordIndex).val();
-
-  word = word.trim();
-
-  var AWord = QuizList[wordIndex].WORD_WORD;
-
-  if(AWord == word) {
-    swal("정답 입니다!", "[ 100 ] 금화가 정립 되었습니다.", "success");
-  }else {
-    swal("오답 입니다!", QuizList[wordIndex].WORD_MEAN + ' : ' + AWord, "error");
   }
 }
 
@@ -296,14 +272,6 @@ function ClickSubmitWord() {
 function ClickSubmitExam() {  
 
   Check_Exam();
-
-  NextQuiz();
-
-  Reveal.next();
-}
-
-function ClickSubmitVoice() {
-  Check_Voice();
 
   NextQuiz();
 
@@ -423,45 +391,6 @@ function InitReavel() {
         </div>
 
       </section>
-
-      <section>
-
-        <div class="card" style="min-height:100px;margin-left: 15px;margin-right: 15px;">
-          <div class="header">
-
-            <div>
-              <div>
-                <h2 style="font-size: 15px;" data-bind="text: WORD_MEAN">
-                </h2>
-              </div>
-            </div>
-          </div>
-          <div class="body">
-
-            <div class="row">
-              <input type="text" class="form-control" style="width:100%;text-align: center;" placeholder="마이크 버튼을 눌러서 단어를 얘기해 주세요!" data-bind="attr: { id: 'voice_' + $index() }" />
-            </div>
-
-          </div>
-        </div>
-
-        <div class="card" style="min-height:150px;margin-top:60px;margin-left: 15px;margin-right: 15px;">
-          <div class="body">
-
-            <div class="row" style="bottom:15px;margin-top: 15px;">
-              <button id="WordQuiz_01" type="button" class="btn bg-teal col-xs-12 btn-lg waves-effect" style="margin-bottom: 15px;width: 100%;" data-bind="text: WORD_QUIZ1" onclick="ClickVoice(this)"></button>
-
-                <button type="button" class="btn bg-pink col-xs-12 btn-lg waves-effect" style="margin-bottom: 15px;width: 100%;" onclick="ClickSubmitVoice()">확인</button>
-            </div>
-
-          </div>
-        </div>
-
-      </section>
-
-
-
-
     </div>
   </div>
 </body>
