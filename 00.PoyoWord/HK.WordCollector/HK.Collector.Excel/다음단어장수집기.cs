@@ -81,6 +81,7 @@ namespace HK.Collector.Excel
 
                         item.WORD_WORD = item.단어;
                         item.WORD_MEAN = item.주요뜻;
+                        item.WORD_SOUND = item.발음;
                         item.WORD_EXAM = exam.WORD_EXAM;
                         item.WORD_EXAM_MEAN = exam.WORD_EXAM_MEAN;
 
