@@ -1,0 +1,2772 @@
+<!DOCTYPE html>
+<!-- saved from url=(0021)http://kepler.gl/demo -->
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Kepler.gl is a data agnostic, WebGL empowered, high-performance web application for geospatial analytic visualizations.">
+  <title>kepler.gl</title>
+  <link rel="shortcut icon" href="http://kepler.gl/favicon.png">
+  <link rel="stylesheet" id="font-link" href="./kepler.gl_files/refresh.css">
+  <link href="./kepler.gl_files/mapbox-gl.css" rel="stylesheet">
+
+  <!---— facebook open graph tags ---->
+  <meta property="og:url" content="https://uber.github.io/kepler.gl/">
+  <meta property="og:title" content="Large-scale WebGL-powered Geospatial Data Visualization Tool">
+  <meta property="og:description"
+    content="Kepler.gl is a powerful web-based geospatial data analysis tool. Built on a high performance rendering engine and designed for large-scale data sets.">
+  <meta property="og:site_name" content="kepler.gl">
+  <meta property="og:image" content="https://d1a3f4spazzrp4.cloudfront.net/kepler.gl/kepler.gl-meta-tag.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="800">
+  <meta property="og:image:height" content="800">
+
+  <!---— twitter card tags ---->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@uber">
+  <meta name="twitter:creator" content="@uber">
+  <meta name="twitter:title" content="Large-scale WebGL-powered Geospatial Data Visualization Tool">
+  <meta name="twitter:description"
+    content="Kepler.gl is a powerful web-based geospatial data analysis tool. Built on a high performance rendering engine and designed for large-scale data sets.">
+  <meta name="twitter:image" content="https://d1a3f4spazzrp4.cloudfront.net/kepler.gl/kepler.gl-meta-tag.png">
+
+  <!-- Google Analytics -->
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script type="text/javascript" async="" src="./kepler.gl_files/analytics.js.다운로드"></script>
+  <script async="" src="./kepler.gl_files/js"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag("js", new Date());
+    gtag("config", "UA-64694404-19", {
+      page_path: location.pathname + location.search + location.hash
+    });
+  </script>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+  </style>
+  <style type="text/css"
+    data-styled-components="ildwQA dqdvtm fWnEmu kuCmmO jZwXjI dKmtDD dBeuyz ijxCJd htilAB gxZIYQ jxgkiL iFbvVG fuCwcf jSHmyP itmuiC ijZrGH fFHCiu cKNlcE"
+    data-styled-components-is-local="true">
+    /* sc-component-id: sc-bdVaJa */
+
+    .fFHCiu {
+      background-color: currentColor;
+      border-radius: 1px;
+      display: inline-block;
+      padding: 0 4px;
+      position: absolute;
+      top: 45%;
+      left: 10%;
+    }
+
+    .fFHCiu .text {
+      color: white;
+      font-size: 9px;
+    }
+
+    /* sc-component-id: sc-bwzfXH */
+
+    .ijZrGH {
+      display: inline-block;
+      position: relative;
+      color: currentColor;
+      height: 50px;
+    }
+
+    /* sc-component-id: sc-bZQynM */
+
+    .itmuiC {
+      color: #6A7485;
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 400;
+      margin-bottom: 4px;
+      text-transform: capitalize;
+    }
+
+    /* sc-component-id: sc-gqjmRU */
+
+    .jSHmyP {
+      margin-bottom: 12px;
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    /* sc-component-id: sc-VigVT */
+
+    .fuCwcf {
+      border-bottom: 1px solid #3A414C;
+      height: 12px;
+      margin-bottom: 12px;
+    }
+
+    /* sc-component-id: sc-jTzLTM */
+
+    .jxgkiL.__react_component_tooltip {
+      font-size: 9.5px;
+      font-weight: 500;
+      padding: 7px 18px;
+    }
+
+    .jxgkiL.__react_component_tooltip.type-dark {
+      background-color: #F8F8F9;
+      color: #333334;
+    }
+
+    .jxgkiL.__react_component_tooltip.type-dark.place-bottom:after {
+      border-bottom-color: #F8F8F9;
+    }
+
+    .jxgkiL.__react_component_tooltip.type-dark.place-top:after {
+      border-top-color: #F8F8F9;
+    }
+
+    .jxgkiL.__react_component_tooltip.type-dark.place-right:after {
+      border-right-color: #F8F8F9;
+    }
+
+    .jxgkiL.__react_component_tooltip.type-dark.place-left:after {
+      border-left-color: #F8F8F9;
+    }
+
+    /* sc-component-id: sc-fjdhpX */
+
+    .iFbvVG {
+      -webkit-align-items: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      background-color: #6A7485;
+      border-radius: 2px;
+      color: #FFFFFF;
+      cursor: pointer;
+      display: -webkit-inline-box;
+      display: -webkit-inline-flex;
+      display: -ms-inline-flexbox;
+      display: inline-flex;
+      font-size: 11px;
+      font-weight: 500;
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-letter-spacing: 0.3px;
+      -moz-letter-spacing: 0.3px;
+      -ms-letter-spacing: 0.3px;
+      letter-spacing: 0.3px;
+      line-height: 14px;
+      outline: 0;
+      padding: 9px 12px;
+      text-align: center;
+      -webkit-transition: all .4s ease;
+      transition: all .4s ease;
+      vertical-align: middle;
+      width: 105px;
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .iFbvVG:hover,
+    .iFbvVG:focus,
+    .iFbvVG:active,
+    .iFbvVG.active {
+      background-color: #A0A7B4;
+      color: #FFFFFF;
+    }
+
+    .iFbvVG svg {
+      margin-right: 8px;
+    }
+
+    /* sc-component-id: sc-kgoBCf */
+
+    .gxZIYQ {
+      background-color: #29323C;
+      overflow-y: auto;
+      box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.16);
+      border-radius: 2px;
+      margin-top: 2px;
+      max-height: 500px;
+      position: relative;
+      z-index: 999;
+    }
+
+    .gxZIYQ::-webkit-scrollbar {
+      height: 10px;
+      width: 10px;
+    }
+
+    .gxZIYQ::-webkit-scrollbar-corner {
+      background: #29323C;
+    }
+
+    .gxZIYQ::-webkit-scrollbar-track {
+      background: #29323C;
+    }
+
+    .gxZIYQ::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+      background: #3A4552;
+      border: 3px solid #29323C;
+    }
+
+    .gxZIYQ::-webkit-scrollbar-thumb:hover {
+      background: #6A7485;
+      cursor: pointer;
+    }
+
+    /* sc-component-id: sc-eNQAEJ */
+
+    .cKNlcE .mapboxgl-map .mapboxgl-missing-css {
+      display: none;
+    }
+
+    /* sc-component-id: sc-hSdWYo */
+
+    .ildwQA {
+      z-index: 99;
+      height: 100%;
+      width: 340px;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-transition: width 250ms;
+      transition: width 250ms;
+      position: absolute;
+      padding-top: 20px;
+      padding-right: 20px;
+      padding-bottom: 30px;
+      padding-left: 20px;
+    }
+
+    /* sc-component-id: sc-eHgmQL */
+
+    .dqdvtm {
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+      -webkit-transition: left 250ms, right 250ms;
+      transition: left 250ms, right 250ms;
+      left: 0px;
+      -webkit-align-items: stretch;
+      -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+      align-items: stretch;
+      -webkit-box-flex: 1;
+      -webkit-flex-grow: 1;
+      -ms-flex-positive: 1;
+      flex-grow: 1;
+    }
+
+    /* sc-component-id: sc-cvbbAY */
+
+    .fWnEmu {
+      background-color: #242730;
+      border-radius: 1px;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    /* sc-component-id: sc-jWBwVP */
+
+    .dBeuyz {
+      display: inline-block;
+      margin-left: 6px;
+    }
+
+    /* sc-component-id: sc-brqgnP */
+
+    .ijxCJd .logo__link {
+      color: #1FBAD6;
+      font-size: 14px;
+      font-weight: 600;
+      -webkit-letter-spacing: 1.17px;
+      -moz-letter-spacing: 1.17px;
+      -ms-letter-spacing: 1.17px;
+      letter-spacing: 1.17px;
+    }
+
+    /* sc-component-id: sc-cMljjf */
+
+    .htilAB {
+      font-size: 10px;
+      color: #6A7485;
+      -webkit-letter-spacing: 0.83px;
+      -moz-letter-spacing: 0.83px;
+      -ms-letter-spacing: 0.83px;
+      letter-spacing: 0.83px;
+      line-height: 14px;
+    }
+
+    /* sc-component-id: sc-jAaTju */
+
+    .jZwXjI {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-align-items: flex-start;
+      -webkit-box-align: flex-start;
+      -ms-flex-align: flex-start;
+      align-items: flex-start;
+    }
+
+    /* sc-component-id: sc-jDwBTQ */
+
+    .dKmtDD {
+      margin-top: 3px;
+    }
+
+    /* sc-component-id: sc-gPEVay */
+
+    .kuCmmO {
+      background-color: #29323C;
+      padding: 12px 16px 0 16px;
+    }
+  </style>
+  <style type="text/css" data-styled-components="hnMWCF hZYYwk cYISrO byWLxc jfakxS jxcqbQ"
+    data-styled-components-is-local="true">
+    /* sc-component-id: sc-iRbamj */
+
+    .hnMWCF {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: justify;
+      -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+      margin-bottom: 16px;
+      width: 100%;
+    }
+
+    /* sc-component-id: sc-jlyJG */
+
+    .hZYYwk {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+    }
+
+    /* sc-component-id: sc-gipzik */
+
+    .cYISrO {
+      -webkit-align-items: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      border-radius: 2px;
+      color: #6A7485;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      height: 26px;
+      -webkit-box-pack: justify;
+      -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+      margin-left: 4px;
+      width: 70px;
+      padding: 5px;
+      font-weight: bold;
+    }
+
+    .cYISrO a {
+      height: 20px;
+    }
+
+    .cYISrO:hover {
+      cursor: pointer;
+      background-color: #A0A7B4;
+      color: #D3D8E0;
+    }
+
+    .cYISrO:hover a {
+      color: #D3D8E0;
+    }
+
+    /* sc-component-id: sc-csuQGl */
+
+    .byWLxc {
+      background-color: #3A414C;
+      box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.16);
+      font-size: 11px;
+      padding: 16px 0;
+      position: absolute;
+      -webkit-transition: all .8s ease;
+      transition: all .8s ease;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      margin-top: 20px;
+      opacity: 0;
+      -webkit-transform: translateX(calc(-50% + 20px));
+      -ms-transform: translateX(calc(-50% + 20px));
+      transform: translateX(calc(-50% + 20px));
+      pointer-events: none;
+      z-index: 1000;
+    }
+
+    .byWLxc .save-export-dropdown__inner {
+      box-shadow: none;
+      background-color: transparent;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+    }
+
+    .byWLxc .save-export-dropdown__item {
+      -webkit-align-items: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      border-right: 1px solid #6A7485;
+      color: #A0A7B4;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      padding: 0 22px;
+    }
+
+    .byWLxc .save-export-dropdown__item:hover {
+      cursor: pointer;
+      color: #D3D8E0;
+    }
+
+    .byWLxc .save-export-dropdown__item:last-child {
+      border-right: 0;
+    }
+
+    .byWLxc .save-export-dropdown__title {
+      white-space: nowrap;
+      margin-top: 4px;
+    }
+
+    /* sc-component-id: sc-fAjcbJ */
+
+    .jfakxS {
+      -webkit-align-items: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      background-color: #29323C;
+      border: 1px solid #29323C;
+      border-radius: 2px;
+      caret-color: #D3D8E0;
+      color: #A0A7B4;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      font-size: 11px;
+      font-weight: 500;
+      height: 34px;
+      -webkit-box-pack: justify;
+      -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+      outline: none;
+      overflow: hidden;
+      padding: 4px 10px;
+      text-overflow: ellipsis;
+      -webkit-transition: all .4s ease;
+      transition: all .4s ease;
+      white-space: nowrap;
+      width: 100%;
+      word-wrap: normal;
+      pointer-events: all;
+      opacity: 1;
+    }
+
+    .jfakxS:hover {
+      cursor: pointer;
+      background-color: #3A414C;
+      border-color: #3A414C;
+    }
+
+    .jfakxS:active,
+    .jfakxS:focus,
+    .jfakxS.focus,
+    .jfakxS.active {
+      background-color: #3A414C;
+      border-color: #D3D8E0;
+    }
+
+    .jfakxS::-webkit-input-placeholder {
+      color: #6A7485;
+      font-weight: 400;
+    }
+
+    .jfakxS::-moz-placeholder {
+      color: #6A7485;
+      font-weight: 400;
+    }
+
+    .jfakxS:-ms-input-placeholder {
+      color: #6A7485;
+      font-weight: 400;
+    }
+
+    .jfakxS::placeholder {
+      color: #6A7485;
+      font-weight: 400;
+    }
+
+    .jfakxS::-webkit-inner-spin-button,
+    .jfakxS::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    .jfakxS .list__item__anchor {
+      color: #A0A7B4;
+      padding-left: 3px;
+    }
+
+    /* sc-component-id: sc-caSCKo */
+
+    .jxcqbQ {
+      color: #A0A7B4;
+      overflow: hidden;
+    }
+  </style>
+  <style type="text/css" data-styled-components="bOYiNV OFXdf" data-styled-components-is-local="true">
+    /* sc-component-id: sc-hwwEjo */
+
+    .OFXdf {
+      -webkit-transition: all .4s ease;
+      transition: all .4s ease;
+    }
+
+    /* sc-component-id: sc-hMFtBS */
+
+    .bOYiNV .ui-sortable {
+      display: block;
+      position: relative;
+      overflow: visible;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    .bOYiNV .ui-sortable:before {
+      content: ' ';
+      display: table;
+    }
+
+    .bOYiNV .ui-sortable:after {
+      content: ' ';
+      display: table;
+    }
+
+    .bOYiNV .ui-sortable-item.ui-sortable-dragging {
+      position: absolute;
+      z-index: 1688;
+      cursor: move;
+    }
+
+    .bOYiNV .ui-sortable-item.ui-sortable-dragging:hover {
+      cursor: move;
+      opacity: 0.5;
+    }
+
+    .bOYiNV .ui-sortable-placeholder {
+      display: none;
+    }
+
+    .bOYiNV .ui-sortable-placeholder.visible {
+      display: block;
+      opacity: 0;
+      z-index: -1;
+    }
+  </style>
+  <style type="text/css"
+    data-styled-components="ckCetH iICOfk kMwwCD drbizB gSyyiq cDBysw jIFiQz jrQqfL kJmcgz juMUze cYHGaX dlsKwp bIBAME"
+    data-styled-components-is-local="true">
+    /* sc-component-id: sc-cbkKFq */
+
+    .ckCetH {
+      background-color: #29323C;
+      padding: 0 16px;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      min-height: 30px;
+    }
+
+    /* sc-component-id: sc-krvtoX */
+
+    .iICOfk {
+      -webkit-align-items: flex-end;
+      -webkit-box-align: flex-end;
+      -ms-flex-align: flex-end;
+      align-items: flex-end;
+      border-bottom-style: solid;
+      border-bottom-width: 2px;
+      border-bottom-color: #FFFFFF;
+      color: #FFFFFF;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      margin-right: 12px;
+      padding-bottom: 6px;
+      width: 30px;
+    }
+
+    .iICOfk:hover {
+      cursor: pointer;
+      color: #D3D8E0;
+    }
+
+    .kMwwCD {
+      -webkit-align-items: flex-end;
+      -webkit-box-align: flex-end;
+      -ms-flex-align: flex-end;
+      align-items: flex-end;
+      border-bottom-style: solid;
+      border-bottom-width: 2px;
+      border-bottom-color: transparent;
+      color: #6A7485;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      margin-right: 12px;
+      padding-bottom: 6px;
+      width: 30px;
+    }
+
+    .kMwwCD:hover {
+      cursor: pointer;
+      color: #D3D8E0;
+    }
+
+    /* sc-component-id: sc-fYiAbW */
+
+    .drbizB {
+      -webkit-box-flex: 1;
+      -webkit-flex-grow: 1;
+      -ms-flex-positive: 1;
+      flex-grow: 1;
+      padding: 16px;
+      overflow-y: scroll;
+      overflow-x: hidden;
+    }
+
+    .drbizB::-webkit-scrollbar {
+      height: 10px;
+      width: 10px;
+    }
+
+    .drbizB::-webkit-scrollbar-corner {
+      background: #242730;
+    }
+
+    .drbizB::-webkit-scrollbar-track {
+      background: #242730;
+    }
+
+    .drbizB::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+      background: #3A4552;
+      border: 3px solid #242730;
+    }
+
+    .drbizB::-webkit-scrollbar-thumb:hover {
+      background: #6A7485;
+      cursor: pointer;
+    }
+
+    /* sc-component-id: sc-cpmLhU */
+
+    .juMUze {
+      right: 0;
+      width: 204px;
+      padding: 12px;
+      z-index: 1;
+      top: px;
+      position: absolute;
+    }
+
+    /* sc-component-id: sc-dymIpo */
+
+    .cYHGaX {
+      padding: 4px 0;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: end;
+      -webkit-justify-content: flex-end;
+      -ms-flex-pack: end;
+      justify-content: flex-end;
+    }
+
+    /* sc-component-id: sc-bnXvFD */
+
+    .dlsKwp {
+      -webkit-align-items: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      background-color: #6A7485;
+      border-radius: 18px;
+      border: 0;
+      box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.16);
+      color: #FFFFFF;
+      cursor: pointer;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      height: 36px;
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      margin: 0;
+      outline: none;
+      padding: 0;
+      -webkit-transition: all .4s ease;
+      transition: all .4s ease;
+      width: 36px;
+    }
+
+    .dlsKwp:focus {
+      outline: none;
+    }
+
+    .dlsKwp:hover {
+      cursor: pointer;
+      background-color: #A0A7B4;
+      color: #FFFFFF;
+    }
+
+    /* sc-component-id: sc-hGoxap */
+
+    .cDBysw {
+      width: 60%;
+      max-width: 960px;
+      padding: 24px 24px 40px;
+      position: absolute;
+      top: 92px;
+      left: 0;
+      right: 0;
+      margin-left: auto;
+      background-color: #ffffff;
+      border-radius: 4px;
+      -webkit-transition: all .4s ease;
+      transition: all .4s ease;
+      min-width: 600px;
+      overflow: hidden;
+      box-sizing: border-box;
+      margin-right: auto;
+      font-size: 12px;
+      color: #6A7485;
+      top: 60px;
+    }
+
+    .bIBAME {
+      width: 60%;
+      max-width: 960px;
+      padding: 24px 24px 40px;
+      position: absolute;
+      top: 92px;
+      left: 0;
+      right: 0;
+      margin-left: auto;
+      background-color: #ffffff;
+      border-radius: 4px;
+      -webkit-transition: all .4s ease;
+      transition: all .4s ease;
+      min-width: 600px;
+      overflow: hidden;
+      box-sizing: border-box;
+      margin-right: auto;
+      font-size: 12px;
+      color: #6A7485;
+    }
+
+    /* sc-component-id: sc-fjmCvl */
+
+    .jIFiQz {
+      color: #29323C;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: end;
+      -webkit-justify-content: flex-end;
+      -ms-flex-pack: end;
+      justify-content: flex-end;
+      z-index: 10005;
+    }
+
+    .jIFiQz:hover {
+      cursor: pointer;
+    }
+
+    /* sc-component-id: sc-TFwJa */
+
+    .jrQqfL {
+      font-size: 24px;
+      color: #3A414C;
+      margin-bottom: 10px;
+      position: relative;
+      z-index: 10003;
+    }
+
+    /* sc-component-id: sc-krDsej */
+
+    .kJmcgz {
+      position: relative;
+      z-index: 10002;
+    }
+
+    /* sc-component-id: sc-itybZL */
+
+    .gSyyiq {
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 10000;
+      -webkit-transition: all .4s ease;
+      transition: all .4s ease;
+    }
+
+    .gSyyiq:focus {
+      outline: 0;
+    }
+  </style>
+  <style type="text/css">
+    .react-grid-Header {
+      box-shadow: 0 0 4px 0 #ddd;
+      background: #f9f9f9
+    }
+
+    .react-grid-Header--resizing {
+      cursor: ew-resize
+    }
+
+    .react-grid-HeaderCell,
+    .react-grid-HeaderRow {
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none
+    }
+
+    .react-grid-HeaderCell {
+      background: #f9f9f9;
+      padding: 8px;
+      font-weight: 700;
+      border-right: 1px solid #ddd;
+      border-bottom: 1px solid #ddd
+    }
+
+    .react-grid-HeaderCell__value {
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%)
+    }
+
+    .react-grid-HeaderCell__resizeHandle:hover {
+      cursor: ew-resize;
+      background: #ddd
+    }
+
+    .react-grid-HeaderCell--locked:last-of-type {
+      box-shadow: none
+    }
+
+    .react-grid-HeaderCell--resizing .react-grid-HeaderCell__resizeHandle {
+      background: #ddd
+    }
+
+    .react-grid-HeaderCell__draggable {
+      cursor: col-resize
+    }
+
+    .rdg-can-drop>.react-grid-HeaderCell {
+      background: #ececec
+    }
+
+    .react-grid-HeaderCell .Select {
+      max-height: 30px;
+      font-size: 12px;
+      font-weight: 400
+    }
+
+    .react-grid-HeaderCell .Select-control {
+      max-height: 30px;
+      border: 1px solid #ccc;
+      color: #555;
+      border-radius: 3px
+    }
+
+    .react-grid-HeaderCell .is-focused:not(.is-open)>.Select-control {
+      border-color: #66afe9;
+      outline: 0;
+      -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, .6);
+      box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, .6)
+    }
+
+    .react-grid-HeaderCell .Select-control .Select-placeholder {
+      line-height: 20px;
+      color: #999;
+      padding: 4px
+    }
+
+    .react-grid-HeaderCell .Select-control .Select-input {
+      max-height: 28px;
+      padding: 4px;
+      margin-left: 0
+    }
+
+    .react-grid-HeaderCell .Select-control .Select-input input {
+      padding: 0;
+      height: 100%
+    }
+
+    .react-grid-HeaderCell .Select-control .Select-arrow-zone .Select-arrow {
+      border-color: gray transparent transparent;
+      border-width: 4px 4px 2.5px
+    }
+
+    .react-grid-HeaderCell .Select-control .Select-value {
+      padding: 4px;
+      line-height: 20px !important
+    }
+
+    .react-grid-HeaderCell .Select--multi .Select-control .Select-value {
+      padding: 0;
+      line-height: 16px !important;
+      max-height: 20px
+    }
+
+    .react-grid-HeaderCell .Select--multi .Select-control .Select-value .Select-value-icon,
+    .react-grid-HeaderCell .Select--multi .Select-control .Select-value .Select-value-label {
+      max-height: 20px
+    }
+
+    .react-grid-HeaderCell .Select-control .Select-value .Select-value-label {
+      color: #555 !important
+    }
+
+    .react-grid-HeaderCell .Select-menu-outer .Select-option {
+      padding: 4px;
+      line-height: 20px
+    }
+
+    .react-grid-HeaderCell .Select-menu-outer .Select-menu .Select-option.is-focused,
+    .react-grid-HeaderCell .Select-menu-outer .Select-menu .Select-option.is-selected {
+      color: #555
+    }
+  </style>
+  <style type="text/css">
+    .react-grid-Row.row-context-menu .react-grid-Cell,
+    .react-grid-Row:hover .react-grid-Cell {
+      background-color: #f9f9f9
+    }
+
+    .react-grid-Row:hover .rdg-row-index {
+      display: none
+    }
+
+    .react-grid-Row:hover .rdg-actions-checkbox {
+      display: block
+    }
+
+    .react-grid-Row:hover .rdg-drag-row-handle {
+      cursor: move;
+      cursor: grab;
+      cursor: -moz-grab;
+      cursor: -webkit-grab;
+      width: 12px;
+      height: 30px;
+      margin-left: 0;
+      background-image: url("data:image/svg+xml;base64, PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+Cjxzdmcgd2lkdGg9IjlweCIgaGVpZ2h0PSIyOXB4IiB2aWV3Qm94PSIwIDAgOSAyOSIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj4KICAgIDwhLS0gR2VuZXJhdG9yOiBTa2V0Y2ggMzkgKDMxNjY3KSAtIGh0dHA6Ly93d3cuYm9oZW1pYW5jb2RpbmcuY29tL3NrZXRjaCAtLT4KICAgIDx0aXRsZT5kcmFnIGljb248L3RpdGxlPgogICAgPGRlc2M+Q3JlYXRlZCB3aXRoIFNrZXRjaC48L2Rlc2M+CiAgICA8ZGVmcz48L2RlZnM+CiAgICA8ZyBpZD0iQWN0dWFsaXNhdGlvbi12MiIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPGcgaWQ9IkRlc2t0b3AiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0xNS4wMDAwMDAsIC0yNjIuMDAwMDAwKSIgZmlsbD0iI0Q4RDhEOCI+CiAgICAgICAgICAgIDxnIGlkPSJJbnRlcmFjdGlvbnMiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDE1LjAwMDAwMCwgMjU4LjAwMDAwMCkiPgogICAgICAgICAgICAgICAgPGcgaWQ9IlJvdy1Db250cm9scyIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMC4wMDAwMDAsIDIuMDAwMDAwKSI+CiAgICAgICAgICAgICAgICAgICAgPGcgaWQ9ImRyYWctaWNvbiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMC4wMDAwMDAsIDIuMDAwMDAwKSI+CiAgICAgICAgICAgICAgICAgICAgICAgIDxjaXJjbGUgaWQ9Ik92YWwtMzAiIGN4PSIyIiBjeT0iMiIgcj0iMiI+PC9jaXJjbGU+CiAgICAgICAgICAgICAgICAgICAgICAgIDxjaXJjbGUgaWQ9Ik92YWwtMzAiIGN4PSI3IiBjeT0iMiIgcj0iMiI+PC9jaXJjbGU+CiAgICAgICAgICAgICAgICAgICAgICAgIDxjaXJjbGUgaWQ9Ik92YWwtMzAiIGN4PSIyIiBjeT0iNyIgcj0iMiI+PC9jaXJjbGU+CiAgICAgICAgICAgICAgICAgICAgICAgIDxjaXJjbGUgaWQ9Ik92YWwtMzAiIGN4PSI3IiBjeT0iNyIgcj0iMiI+PC9jaXJjbGU+CiAgICAgICAgICAgICAgICAgICAgICAgIDxjaXJjbGUgaWQ9Ik92YWwtMzAiIGN4PSIyIiBjeT0iMTIiIHI9IjIiPjwvY2lyY2xlPgogICAgICAgICAgICAgICAgICAgICAgICA8Y2lyY2xlIGlkPSJPdmFsLTMwIiBjeD0iNyIgY3k9IjEyIiByPSIyIj48L2NpcmNsZT4KICAgICAgICAgICAgICAgICAgICAgICAgPGNpcmNsZSBpZD0iT3ZhbC0zMCIgY3g9IjIiIGN5PSIxNyIgcj0iMiI+PC9jaXJjbGU+CiAgICAgICAgICAgICAgICAgICAgICAgIDxjaXJjbGUgaWQ9Ik92YWwtMzAiIGN4PSI3IiBjeT0iMTciIHI9IjIiPjwvY2lyY2xlPgogICAgICAgICAgICAgICAgICAgICAgICA8Y2lyY2xlIGlkPSJPdmFsLTMwIiBjeD0iMiIgY3k9IjIyIiByPSIyIj48L2NpcmNsZT4KICAgICAgICAgICAgICAgICAgICAgICAgPGNpcmNsZSBpZD0iT3ZhbC0zMCIgY3g9IjciIGN5PSIyMiIgcj0iMiI+PC9jaXJjbGU+CiAgICAgICAgICAgICAgICAgICAgICAgIDxjaXJjbGUgaWQ9Ik92YWwtMzAiIGN4PSIyIiBjeT0iMjciIHI9IjIiPjwvY2lyY2xlPgogICAgICAgICAgICAgICAgICAgICAgICA8Y2lyY2xlIGlkPSJPdmFsLTMwIiBjeD0iNyIgY3k9IjI3IiByPSIyIj48L2NpcmNsZT4KICAgICAgICAgICAgICAgICAgICA8L2c+CiAgICAgICAgICAgICAgICA8L2c+CiAgICAgICAgICAgIDwvZz4KICAgICAgICA8L2c+CiAgICA8L2c+Cjwvc3ZnPg==");
+      background-repeat: no-repeat
+    }
+
+    .react-grid-Row.row-selected,
+    .react-grid-Row .row-selected {
+      background-color: #dbecfa
+    }
+
+    .react-grid-row-group .row-expand-icon:hover {
+      color: #777
+    }
+
+    .react-grid-row-index {
+      padding: 0 18px
+    }
+
+    .rdg-row-index {
+      display: block;
+      text-align: center
+    }
+
+    .rdg-row-actions-cell {
+      padding: 0
+    }
+
+    .rdg-actions-checkbox {
+      display: none;
+      text-align: center
+    }
+
+    .rdg-actions-checkbox.selected {
+      display: block
+    }
+
+    .rdg-dragging {
+      cursor: -webkit-grabbing;
+      cursor: -moz-grabbing;
+      cursor: grabbing
+    }
+
+    .rdg-dragged-row {
+      border-bottom: 1px solid #000
+    }
+  </style>
+  <style type="text/css">
+    .react-grid-Cell {
+      background-color: #fff;
+      padding-left: 8px;
+      padding-right: 8px;
+      border-right: 1px solid #eee;
+      border-bottom: 1px solid #ddd
+    }
+
+    .react-grid-Cell:focus {
+      outline: 2px solid #66afe9;
+      outline-offset: -2px
+    }
+
+    .react-grid-Cell--locked:focus {
+      z-index: 100
+    }
+
+    .react-grid-Cell:focus .drag-handle {
+      position: absolute;
+      bottom: -5px;
+      right: -4px;
+      background: #66afe9;
+      width: 8px;
+      height: 8px;
+      border: 1px solid #fff;
+      border-right: 0;
+      border-bottom: 0;
+      z-index: 8;
+      cursor: crosshair;
+      cursor: -webkit-grab
+    }
+
+    .react-grid-Cell:not(.editing) .react-grid-Cell__value {
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden
+    }
+
+    .react-grid-Cell:not(.editing):not(.rdg-child-cell) .react-grid-Cell__value {
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%)
+    }
+
+    .rdg-child-cell .react-grid-Cell__value {
+      line-height: 35px
+    }
+
+    .react-grid-Cell.readonly {
+      background-color: #000
+    }
+
+    .react-grid-Cell.copied {
+      background: rgba(0, 0, 255, .2) !important
+    }
+
+    .react-grid-Cell--locked:last-of-type {
+      border-right: 1px solid #ddd;
+      box-shadow: none
+    }
+
+    .react-grid-Cell:hover:focus .drag-handle .glyphicon-arrow-down {
+      display: "block"
+    }
+
+    .react-grid-Cell.is-dragged-over-down {
+      border-right: 1px dashed #000;
+      border-left: 1px dashed #000;
+      border-bottom: 1px dashed #000
+    }
+
+    .react-grid-Cell.is-dragged-over-up {
+      border-right: 1px dashed #000;
+      border-left: 1px dashed #000;
+      border-top: 1px dashed #000
+    }
+
+    .react-grid-Cell.is-dragged-over-up .drag-handle {
+      top: -5px
+    }
+
+    .react-grid-Cell:hover {
+      background: #eee
+    }
+
+    .react-grid-cell .form-control-feedback {
+      color: #a94442;
+      position: absolute;
+      top: 0;
+      right: 10px;
+      z-index: 1000000;
+      display: block;
+      width: 34px;
+      height: 34px
+    }
+
+    .react-grid-Cell.was-dragged-over {
+      border-right: 1px dashed #000;
+      border-left: 1px dashed #000
+    }
+
+    .react-grid-Cell:hover:focus .drag-handle {
+      position: absolute;
+      bottom: -8px;
+      right: -7px;
+      background: #fff;
+      width: 16px;
+      height: 16px;
+      border: 1px solid #66afe9;
+      z-index: 8;
+      cursor: crosshair;
+      cursor: -webkit-grab
+    }
+
+    .react-grid-Row.row-selected .react-grid-Cell {
+      background-color: #dbecfa
+    }
+
+    .react-grid-Cell.editing {
+      padding: 0;
+      overflow: visible !important
+    }
+
+    .react-grid-Cell--locked.editing {
+      z-index: 100
+    }
+
+    .react-grid-Cell.editing .has-error input {
+      border: 2px solid red !important;
+      border-radius: 2px !important
+    }
+
+    .react-grid-Cell__value ul {
+      margin-top: 0;
+      margin-bottom: 0;
+      display: inline-block
+    }
+
+    .react-grid-Cell__value .btn-sm {
+      padding: 0
+    }
+
+    .cell-tooltip {
+      position: relative;
+      display: inline-block
+    }
+
+    .cell-tooltip .cell-tooltip-text {
+      visibility: hidden;
+      width: 150px;
+      background-color: #000;
+      color: #fff;
+      text-align: center;
+      border-radius: 6px;
+      padding: 5px 0;
+      position: absolute;
+      z-index: 1;
+      bottom: -150%;
+      left: 50%;
+      margin-left: -60px;
+      opacity: 1s
+    }
+
+    .cell-tooltip:hover .cell-tooltip-text {
+      visibility: visible;
+      opacity: .8
+    }
+
+    .cell-tooltip .cell-tooltip-text:after {
+      content: " ";
+      position: absolute;
+      bottom: 100%;
+      left: 50%;
+      margin-left: -5px;
+      border-width: 5px;
+      border-style: solid;
+      border-color: transparent transparent #000
+    }
+
+    .react-grid-Canvas.opaque .react-grid-Cell.cell-tooltip:hover .cell-tooltip-text {
+      visibility: hidden
+    }
+
+    .rdg-cell-expand {
+      top: 0;
+      right: 20px;
+      position: absolute;
+      cursor: pointer
+    }
+
+    .rdg-child-row-action-cross-last:before,
+    .rdg-child-row-action-cross:before,
+    rdg-child-row-action-cross-last:after,
+    rdg-child-row-action-cross:after {
+      content: "";
+      position: absolute;
+      background: grey;
+      height: 50%
+    }
+
+    .rdg-child-row-action-cross:before {
+      left: 21px;
+      width: 1px;
+      height: 35px
+    }
+
+    .rdg-child-row-action-cross-last:before {
+      left: 21px;
+      width: 1px
+    }
+
+    .rdg-child-row-action-cross-last:after,
+    .rdg-child-row-action-cross:after {
+      top: 50%;
+      left: 20px;
+      height: 1px;
+      width: 15px;
+      content: "";
+      position: absolute;
+      background: grey
+    }
+
+    .rdg-child-row-action-cross:hover {
+      background: red
+    }
+
+    .rdg-child-row-btn {
+      position: absolute;
+      cursor: pointer;
+      border: 1px solid grey;
+      border-radius: 14px;
+      z-index: 3;
+      background: #fff
+    }
+
+    .rdg-child-row-btn div {
+      font-size: 12px;
+      text-align: center;
+      line-height: 19px;
+      color: grey;
+      height: 20px;
+      width: 20px;
+      position: absolute;
+      top: 60%;
+      left: 53%;
+      margin-top: -10px;
+      margin-left: -10px
+    }
+
+    .rdg-empty-child-row:hover .glyphicon-plus-sign,
+    .rdg-empty-child-row:hover a {
+      color: green
+    }
+
+    .rdg-child-row-btn .glyphicon-remove-sign:hover {
+      color: red
+    }
+
+    .last-column .cell-tooltip-text {
+      right: 100%;
+      left: 0 !important
+    }
+
+    .rdg-cell-action {
+      float: right;
+      height: 100%
+    }
+
+    .rdg-cell-action-last {
+      margin-right: -8px
+    }
+
+    .rdg-cell-action-button {
+      width: 35px;
+      height: 100%;
+      text-align: center;
+      position: relative;
+      display: table
+    }
+
+    .rdg-cell-action-button>span {
+      display: table-cell;
+      vertical-align: middle
+    }
+
+    .rdg-cell-action-button:hover {
+      background-color: #fff
+    }
+
+    .rdg-cell-action-button-toggled {
+      background-color: #fff;
+      border-right: 1px solid #ccc;
+      border-left: 1px solid #ccc
+    }
+
+    .rdg-cell-action-button-toggled:after {
+      content: "";
+      height: 1px;
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      right: 0;
+      background: inherit;
+      z-index: 10001
+    }
+
+    .rdg-cell-action-menu {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      z-index: 1000;
+      float: left;
+      min-width: 160px;
+      padding: 5px 0;
+      font-size: 14px;
+      text-align: left;
+      list-style: none;
+      background-color: #fff;
+      -webkit-background-clip: padding-box;
+      background-clip: padding-box;
+      border: 1px solid #ccc
+    }
+
+    .rdg-cell-action-menu>span {
+      display: block;
+      padding: 3px 20px;
+      clear: both;
+      font-weight: 400;
+      line-height: 1.42857143;
+      color: #333;
+      white-space: nowrap
+    }
+
+    .rdg-cell-action-menu>span:hover {
+      color: #262626;
+      text-decoration: none;
+      background-color: #f5f5f5
+    }
+  </style>
+  <style type="text/css">
+    .react-grid-Container {
+      clear: both;
+      margin-top: 0;
+      padding: 0
+    }
+
+    .react-grid-Main {
+      background-color: #fff;
+      color: inherit;
+      padding: 0;
+      outline: 1px solid #e7eaec;
+      clear: both
+    }
+
+    .react-grid-Grid {
+      border: 1px solid #ddd
+    }
+
+    .react-grid-Canvas,
+    .react-grid-Grid {
+      background-color: #fff
+    }
+
+    .react-grid-Cell input.editor-main,
+    select.editor-main {
+      display: block;
+      width: 100%;
+      height: 34px;
+      padding: 6px 12px;
+      font-size: 14px;
+      line-height: 1.42857143;
+      color: #555;
+      background-color: #fff;
+      background-image: none;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+      box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075)
+    }
+
+    input.editor-main:focus,
+    select.editor-main:focus {
+      border-color: #66afe9;
+      border: 2px solid #66afe9;
+      background: #eee;
+      border-radius: 4px
+    }
+
+    .react-grid-Cell input.editor-main::-moz-placeholder,
+    select.editor-main::-moz-placeholder {
+      color: #999;
+      opacity: 1
+    }
+
+    .react-grid-Cell input.editor-main:-ms-input-placeholder,
+    select.editor-main:-ms-input-placeholder {
+      color: #999
+    }
+
+    .react-grid-Cell input.editor-main::-webkit-input-placeholder,
+    select.editor-main::-webkit-input-placeholder {
+      color: #999
+    }
+
+    .react-grid-Cell input.editor-main[disabled],
+    .react-grid-Cell input.editor-main[readonly],
+    fieldset[disabled] .react-grid-Cell input.editor-main,
+    fieldset[disabled] select.editor-main,
+    select.editor-main[disabled],
+    select.editor-main[readonly] {
+      cursor: not-allowed;
+      background-color: #eee;
+      opacity: 1
+    }
+
+    textarea.react-grid-Cell input.editor-main,
+    textareaselect.editor-main {
+      height: auto
+    }
+
+    .react-grid-ScrollShim {
+      z-index: 10002
+    }
+  </style>
+  <style type="text/css">
+    .radio-custom,
+    .react-grid-checkbox {
+      opacity: 0;
+      position: absolute
+    }
+
+    .radio-custom,
+    .radio-custom-label,
+    .react-grid-checkbox,
+    .react-grid-checkbox-label {
+      display: inline-block;
+      vertical-align: middle;
+      cursor: pointer
+    }
+
+    .radio-custom-label,
+    .react-grid-checkbox-label {
+      position: relative
+    }
+
+    .radio-custom+.radio-custom-label:before,
+    .react-grid-checkbox+.react-grid-checkbox-label:before {
+      content: "";
+      background: #fff;
+      border: 2px solid #ddd;
+      display: inline-block;
+      vertical-align: middle;
+      width: 20px;
+      height: 20px;
+      text-align: center
+    }
+
+    .react-grid-checkbox:checked+.react-grid-checkbox-label:before {
+      background: #005295;
+      box-shadow: inset 0 0 0 4px #fff
+    }
+
+    .radio-custom:focus+.radio-custom-label,
+    .react-grid-checkbox:focus+.react-grid-checkbox-label {
+      outline: 1px solid #ddd
+    }
+
+    .react-grid-HeaderCell input[type=checkbox] {
+      z-index: 99999
+    }
+
+    .react-grid-HeaderCell>.react-grid-checkbox-container {
+      padding: 0 10px;
+      height: 100%
+    }
+
+    .react-grid-HeaderCell>.react-grid-checkbox-container>.react-grid-checkbox-label {
+      margin: 0;
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%)
+    }
+
+    .radio-custom+.radio-custom-label:before {
+      border-radius: 50%
+    }
+
+    .radio-custom:checked+.radio-custom-label:before {
+      background: #ccc;
+      box-shadow: inset 0 0 0 4px #fff
+    }
+
+    .checkbox-align {
+      text-align: center
+    }
+  </style>
+  <style type="text/css"
+    data-styled-components="iECmZH lPZsh jjGqPy bxwasH cCUetb biiTCL hWamvV dxiyUe hUAEVL kfRWvh dYjsDT"
+    data-styled-components-is-local="true">
+    /* sc-component-id: sc-giadOv */
+
+    .hUAEVL {
+      display: inline-block;
+      color: #3A414C;
+      font-size: 12px;
+      -webkit-text-decoration: underline;
+      text-decoration: underline;
+    }
+
+    .hUAEVL:hover {
+      cursor: pointer;
+      font-weight: 500;
+    }
+
+    /* sc-component-id: sc-keyframes-iECmZH */
+    @-webkit-keyframes iECmZH {
+      0% {
+        -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        transform: rotate(0deg);
+      }
+
+      100% {
+        -webkit-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes iECmZH {
+      0% {
+        -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        transform: rotate(0deg);
+      }
+
+      100% {
+        -webkit-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        transform: rotate(360deg);
+      }
+    }
+
+    /* sc-component-id: sc-VJcYb */
+
+    .dYjsDT {
+      margin-top: 10px;
+      color: #F9042C;
+    }
+
+    /* sc-component-id: sc-hmXxxW */
+
+    .biiTCL {
+      background-color: white;
+      border-radius: 4px;
+      border-style: dashed;
+      border-width: 1px;
+      border-color: #A0A7B4;
+      height: 414px;
+      padding-top: 60px;
+      text-align: center;
+      width: 100%;
+    }
+
+    .biiTCL .file-upload-or {
+      color: #A0A7B4;
+      padding-right: 4px;
+    }
+
+    /* sc-component-id: sc-cqCuEk */
+
+    .dxiyUe {
+      color: #3A414C;
+      font-size: 20px;
+      height: 36px;
+    }
+
+    /* sc-component-id: sc-dliRfk */
+
+    .hWamvV {
+      color: #D3D8E0;
+      margin-bottom: 60px;
+    }
+
+    .hWamvV .file-type-row {
+      margin-bottom: 26px;
+    }
+
+    /* sc-component-id: sc-kLIISr */
+
+    .cCUetb .filter-upload__input {
+      visibility: hidden;
+      height: 0;
+      position: absolute;
+    }
+
+    .cCUetb .file-drop {
+      position: relative;
+    }
+
+    .cCUetb .file-upload__message {
+      color: #3A414C;
+      font-size: 14px;
+      margin-bottom: 12px;
+    }
+
+    /* sc-component-id: sc-iqzUVk */
+
+    .kfRWvh {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-align-items: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      position: absolute;
+      bottom: 0;
+      padding: 10px 30px;
+    }
+
+    /* sc-component-id: sc-kZmsYB */
+
+    .bxwasH {
+      background: transparent;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -webkit-align-items: flex-end;
+      -webkit-box-align: flex-end;
+      -ms-flex-align: flex-end;
+      align-items: flex-end;
+      padding: 4px;
+      overflow-y: scroll;
+      overflow-x: hidden;
+      position: absolute;
+      top: 1em;
+      right: 1em;
+      z-index: 10000;
+      box-sizing: border-box;
+    }
+
+    /* sc-component-id: sc-RcBXQ */
+
+    .jjGqPy {
+      font-family: ff-clan-web-pro, 'Helvetica Neue', Helvetica, sans-serif;
+      font-weight: 400;
+      font-size: 0.875em;
+      line-height: 1.71429;
+    }
+
+    .jjGqPy *,
+    .jjGqPy *:before,
+    .jjGqPy *:after {
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+    }
+
+    .jjGqPy ul {
+      margin: 0;
+      padding: 0;
+    }
+
+    .jjGqPy li {
+      margin: 0;
+    }
+
+    .jjGqPy a {
+      -webkit-text-decoration: none;
+      text-decoration: none;
+      color: #6A7485;
+    }
+
+    /* sc-component-id: sc-keyframes-lPZsh */
+    @-webkit-keyframes lPZsh {
+      0% {
+        opacity: 0;
+        -webkit-transform: translate(0, 20px);
+        -ms-transform: translate(0, 20px);
+        transform: translate(0, 20px);
+      }
+
+      100% {
+        opacity: 1.0;
+      }
+    }
+
+    @keyframes lPZsh {
+      0% {
+        opacity: 0;
+        -webkit-transform: translate(0, 20px);
+        -ms-transform: translate(0, 20px);
+        transform: translate(0, 20px);
+      }
+
+      100% {
+        opacity: 1.0;
+      }
+    }
+  </style>
+  <style type="text/css" data-styled-components="" data-styled-components-is-local="true"></style>
+  <style type="text/css" data-styled-components="iWMXxB cOpaJT jjJhFn eBbPw hwhdmf jGbBVC cPNXHC hcFShA"
+    data-styled-components-is-local="true">
+    /* sc-component-id: sc-bfYoXt */
+
+    .cOpaJT {
+      -webkit-align-items: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      background-color: #82368c;
+      color: #FFFFFF;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      height: 30px;
+      -webkit-box-pack: justify;
+      -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+      padding: 0 40px;
+      position: absolute;
+      -webkit-transition: top 1s;
+      transition: top 1s;
+      width: 100%;
+      z-index: 9999;
+    }
+
+    .cOpaJT svg:hover {
+      cursor: pointer;
+    }
+
+    /* sc-component-id: sc-gbOuXE */
+
+    .jjJhFn {
+      font-size: 12px;
+    }
+
+    /* sc-component-id: sc-dRFtgE */
+
+    .eBbPw {
+      -webkit-text-decoration: underline !important;
+      text-decoration: underline !important;
+      color: white;
+      font-weight: 500;
+    }
+
+    .eBbPw:hover {
+      cursor: pointer;
+    }
+
+    /* sc-component-id: sc-gkFcWv */
+
+    .hwhdmf {
+      display: inline-block;
+      margin-left: 20px;
+    }
+
+    /* sc-component-id: sc-hUfwpO */
+
+    .iWMXxB {
+      font-family: ff-clan-web-pro, 'Helvetica Neue', Helvetica, sans-serif;
+      font-weight: 400;
+      font-size: 0.875em;
+      line-height: 1.71429;
+    }
+
+    .iWMXxB *,
+    .iWMXxB *:before,
+    .iWMXxB *:after {
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+    }
+
+    .iWMXxB ul {
+      margin: 0;
+      padding: 0;
+    }
+
+    .iWMXxB li {
+      margin: 0;
+    }
+
+    .iWMXxB a {
+      -webkit-text-decoration: none;
+      text-decoration: none;
+    }
+
+    /* sc-component-id: sc-gldTML */
+
+    .jGbBVC {
+      -webkit-align-items: flex-end;
+      -webkit-box-align: flex-end;
+      -ms-flex-align: flex-end;
+      align-items: flex-end;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      border-bottom: 1px solid #d8d8d8;
+      margin-bottom: 32px;
+      -webkit-box-pack: justify;
+      -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+    }
+
+    .jGbBVC .load-data-modal__tab__inner {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+    }
+
+    .jGbBVC .load-data-modal__tab__item {
+      border-bottom: 3px solid transparent;
+      cursor: pointer;
+      margin-left: 32px;
+      padding: 16px 0;
+      font-size: 14px;
+      font-weight: 400;
+      color: #A0A7B4;
+    }
+
+    .jGbBVC .load-data-modal__tab__item:first-child {
+      margin-left: 0;
+      padding-left: 0;
+    }
+
+    .jGbBVC .load-data-modal__tab__item:hover {
+      color: #3A414C;
+    }
+
+    .jGbBVC .load-data-modal__tab__item.active {
+      color: #3A414C;
+      border-bottom: 3px solid #3A414C;
+      font-weight: 500;
+    }
+
+    /* sc-component-id: sc-feryYK */
+
+    .hcFShA {
+      background-image: url("https://d1a3f4spazzrp4.cloudfront.net/kepler.gl/icon-demo-map.jpg");
+      background-repeat: no-repeat;
+      background-size: 64px 48px;
+      width: 64px;
+      height: 48px;
+      border-radius: 2px;
+    }
+
+    /* sc-component-id: sc-cJOK */
+
+    .cPNXHC {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      margin-bottom: 12px;
+    }
+
+    .cPNXHC .demo-map-title {
+      margin-left: 16px;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -webkit-box-pack: end;
+      -webkit-justify-content: flex-end;
+      -ms-flex-pack: end;
+      justify-content: flex-end;
+    }
+
+    .cPNXHC .demo-map-label {
+      font-size: 11px;
+      color: #6A7485;
+    }
+
+    .cPNXHC .demo-map-action {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      font-size: 14px;
+      -webkit-align-items: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      color: #29323C;
+      cursor: pointer;
+    }
+
+    .cPNXHC .demo-map-action:hover {
+      font-weight: 500;
+    }
+
+    .cPNXHC .demo-map-action span {
+      white-space: nowrap;
+    }
+
+    .cPNXHC .demo-map-action svg {
+      margin-left: 10px;
+    }
+  </style>
+  <style type="text/css" data-styled-components="ifYetW lnPKht grpJq" data-styled-components-is-local="true">
+    /* sc-component-id: sc-jGxEUC */
+
+    .grpJq {
+      -webkit-align-items: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      background-color: #6A7485;
+      border-radius: 1px;
+      color: #29323C;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      height: 20px;
+      position: absolute;
+      right: -8px;
+      top: 20px;
+      width: 20px;
+    }
+
+    .grpJq:hover {
+      cursor: pointer;
+      box-shadow: none;
+      background-color: #A0A7B4;
+    }
+
+    /* sc-component-id: sc-jdeSqf */
+
+    .lnPKht {
+      color: #FFFFFF;
+      font-size: 20px;
+      font-weight: 400;
+      -webkit-letter-spacing: 1.25px;
+      -moz-letter-spacing: 1.25px;
+      -ms-letter-spacing: 1.25px;
+      letter-spacing: 1.25px;
+      margin-bottom: 14px;
+    }
+
+    /* sc-component-id: sc-cBrjTV */
+
+    .ifYetW {
+      font-family: ff-clan-web-pro, 'Helvetica Neue', Helvetica, sans-serif;
+      font-weight: 400;
+      font-size: 0.875em;
+      line-height: 1.71429;
+    }
+
+    .ifYetW *,
+    .ifYetW *:before,
+    .ifYetW *:after {
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+    }
+
+    .ifYetW ul {
+      margin: 0;
+      padding: 0;
+    }
+
+    .ifYetW li {
+      margin: 0;
+    }
+
+    .ifYetW a {
+      -webkit-text-decoration: none;
+      text-decoration: none;
+      color: #6A7485;
+    }
+  </style>
+  <style id="react-tooltip">
+    .__react_component_tooltip {
+      border-radius: 3px;
+      display: inline-block;
+      font-size: 13px;
+      left: -999em;
+      opacity: 0;
+      padding: 8px 21px;
+      position: fixed;
+      pointer-events: none;
+      transition: opacity 0.3s ease-out;
+      top: -999em;
+      visibility: hidden;
+      z-index: 999
+    }
+
+    .__react_component_tooltip:before,
+    .__react_component_tooltip:after {
+      content: "";
+      width: 0;
+      height: 0;
+      position: absolute
+    }
+
+    .__react_component_tooltip.show {
+      opacity: 0.9;
+      margin-top: 0px;
+      margin-left: 0px;
+      visibility: visible
+    }
+
+    .__react_component_tooltip.type-dark {
+      color: #fff;
+      background-color: #222
+    }
+
+    .__react_component_tooltip.type-dark.place-top:after {
+      border-top-color: #222;
+      border-top-style: solid;
+      border-top-width: 6px
+    }
+
+    .__react_component_tooltip.type-dark.place-bottom:after {
+      border-bottom-color: #222;
+      border-bottom-style: solid;
+      border-bottom-width: 6px
+    }
+
+    .__react_component_tooltip.type-dark.place-left:after {
+      border-left-color: #222;
+      border-left-style: solid;
+      border-left-width: 6px
+    }
+
+    .__react_component_tooltip.type-dark.place-right:after {
+      border-right-color: #222;
+      border-right-style: solid;
+      border-right-width: 6px
+    }
+
+    .__react_component_tooltip.type-dark.border {
+      border: 1px solid #fff
+    }
+
+    .__react_component_tooltip.type-dark.border.place-top:before {
+      border-top: 8px solid #fff
+    }
+
+    .__react_component_tooltip.type-dark.border.place-bottom:before {
+      border-bottom: 8px solid #fff
+    }
+
+    .__react_component_tooltip.type-dark.border.place-left:before {
+      border-left: 8px solid #fff
+    }
+
+    .__react_component_tooltip.type-dark.border.place-right:before {
+      border-right: 8px solid #fff
+    }
+
+    .__react_component_tooltip.type-success {
+      color: #fff;
+      background-color: #8DC572
+    }
+
+    .__react_component_tooltip.type-success.place-top:after {
+      border-top-color: #8DC572;
+      border-top-style: solid;
+      border-top-width: 6px
+    }
+
+    .__react_component_tooltip.type-success.place-bottom:after {
+      border-bottom-color: #8DC572;
+      border-bottom-style: solid;
+      border-bottom-width: 6px
+    }
+
+    .__react_component_tooltip.type-success.place-left:after {
+      border-left-color: #8DC572;
+      border-left-style: solid;
+      border-left-width: 6px
+    }
+
+    .__react_component_tooltip.type-success.place-right:after {
+      border-right-color: #8DC572;
+      border-right-style: solid;
+      border-right-width: 6px
+    }
+
+    .__react_component_tooltip.type-success.border {
+      border: 1px solid #fff
+    }
+
+    .__react_component_tooltip.type-success.border.place-top:before {
+      border-top: 8px solid #fff
+    }
+
+    .__react_component_tooltip.type-success.border.place-bottom:before {
+      border-bottom: 8px solid #fff
+    }
+
+    .__react_component_tooltip.type-success.border.place-left:before {
+      border-left: 8px solid #fff
+    }
+
+    .__react_component_tooltip.type-success.border.place-right:before {
+      border-right: 8px solid #fff
+    }
+
+    .__react_component_tooltip.type-warning {
+      color: #fff;
+      background-color: #F0AD4E
+    }
+
+    .__react_component_tooltip.type-warning.place-top:after {
+      border-top-color: #F0AD4E;
+      border-top-style: solid;
+      border-top-width: 6px
+    }
+
+    .__react_component_tooltip.type-warning.place-bottom:after {
+      border-bottom-color: #F0AD4E;
+      border-bottom-style: solid;
+      border-bottom-width: 6px
+    }
+
+    .__react_component_tooltip.type-warning.place-left:after {
+      border-left-color: #F0AD4E;
+      border-left-style: solid;
+      border-left-width: 6px
+    }
+
+    .__react_component_tooltip.type-warning.place-right:after {
+      border-right-color: #F0AD4E;
+      border-right-style: solid;
+      border-right-width: 6px
+    }
+
+    .__react_component_tooltip.type-warning.border {
+      border: 1px solid #fff
+    }
+
+    .__react_component_tooltip.type-warning.border.place-top:before {
+      border-top: 8px solid #fff
+    }
+
+    .__react_component_tooltip.type-warning.border.place-bottom:before {
+      border-bottom: 8px solid #fff
+    }
+
+    .__react_component_tooltip.type-warning.border.place-left:before {
+      border-left: 8px solid #fff
+    }
+
+    .__react_component_tooltip.type-warning.border.place-right:before {
+      border-right: 8px solid #fff
+    }
+
+    .__react_component_tooltip.type-error {
+      color: #fff;
+      background-color: #BE6464
+    }
+
+    .__react_component_tooltip.type-error.place-top:after {
+      border-top-color: #BE6464;
+      border-top-style: solid;
+      border-top-width: 6px
+    }
+
+    .__react_component_tooltip.type-error.place-bottom:after {
+      border-bottom-color: #BE6464;
+      border-bottom-style: solid;
+      border-bottom-width: 6px
+    }
+
+    .__react_component_tooltip.type-error.place-left:after {
+      border-left-color: #BE6464;
+      border-left-style: solid;
+      border-left-width: 6px
+    }
+
+    .__react_component_tooltip.type-error.place-right:after {
+      border-right-color: #BE6464;
+      border-right-style: solid;
+      border-right-width: 6px
+    }
+
+    .__react_component_tooltip.type-error.border {
+      border: 1px solid #fff
+    }
+
+    .__react_component_tooltip.type-error.border.place-top:before {
+      border-top: 8px solid #fff
+    }
+
+    .__react_component_tooltip.type-error.border.place-bottom:before {
+      border-bottom: 8px solid #fff
+    }
+
+    .__react_component_tooltip.type-error.border.place-left:before {
+      border-left: 8px solid #fff
+    }
+
+    .__react_component_tooltip.type-error.border.place-right:before {
+      border-right: 8px solid #fff
+    }
+
+    .__react_component_tooltip.type-info {
+      color: #fff;
+      background-color: #337AB7
+    }
+
+    .__react_component_tooltip.type-info.place-top:after {
+      border-top-color: #337AB7;
+      border-top-style: solid;
+      border-top-width: 6px
+    }
+
+    .__react_component_tooltip.type-info.place-bottom:after {
+      border-bottom-color: #337AB7;
+      border-bottom-style: solid;
+      border-bottom-width: 6px
+    }
+
+    .__react_component_tooltip.type-info.place-left:after {
+      border-left-color: #337AB7;
+      border-left-style: solid;
+      border-left-width: 6px
+    }
+
+    .__react_component_tooltip.type-info.place-right:after {
+      border-right-color: #337AB7;
+      border-right-style: solid;
+      border-right-width: 6px
+    }
+
+    .__react_component_tooltip.type-info.border {
+      border: 1px solid #fff
+    }
+
+    .__react_component_tooltip.type-info.border.place-top:before {
+      border-top: 8px solid #fff
+    }
+
+    .__react_component_tooltip.type-info.border.place-bottom:before {
+      border-bottom: 8px solid #fff
+    }
+
+    .__react_component_tooltip.type-info.border.place-left:before {
+      border-left: 8px solid #fff
+    }
+
+    .__react_component_tooltip.type-info.border.place-right:before {
+      border-right: 8px solid #fff
+    }
+
+    .__react_component_tooltip.type-light {
+      color: #222;
+      background-color: #fff
+    }
+
+    .__react_component_tooltip.type-light.place-top:after {
+      border-top-color: #fff;
+      border-top-style: solid;
+      border-top-width: 6px
+    }
+
+    .__react_component_tooltip.type-light.place-bottom:after {
+      border-bottom-color: #fff;
+      border-bottom-style: solid;
+      border-bottom-width: 6px
+    }
+
+    .__react_component_tooltip.type-light.place-left:after {
+      border-left-color: #fff;
+      border-left-style: solid;
+      border-left-width: 6px
+    }
+
+    .__react_component_tooltip.type-light.place-right:after {
+      border-right-color: #fff;
+      border-right-style: solid;
+      border-right-width: 6px
+    }
+
+    .__react_component_tooltip.type-light.border {
+      border: 1px solid #222
+    }
+
+    .__react_component_tooltip.type-light.border.place-top:before {
+      border-top: 8px solid #222
+    }
+
+    .__react_component_tooltip.type-light.border.place-bottom:before {
+      border-bottom: 8px solid #222
+    }
+
+    .__react_component_tooltip.type-light.border.place-left:before {
+      border-left: 8px solid #222
+    }
+
+    .__react_component_tooltip.type-light.border.place-right:before {
+      border-right: 8px solid #222
+    }
+
+    .__react_component_tooltip.place-top {
+      margin-top: -10px
+    }
+
+    .__react_component_tooltip.place-top:before {
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      bottom: -8px;
+      left: 50%;
+      margin-left: -10px
+    }
+
+    .__react_component_tooltip.place-top:after {
+      border-left: 8px solid transparent;
+      border-right: 8px solid transparent;
+      bottom: -6px;
+      left: 50%;
+      margin-left: -8px
+    }
+
+    .__react_component_tooltip.place-bottom {
+      margin-top: 10px
+    }
+
+    .__react_component_tooltip.place-bottom:before {
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      top: -8px;
+      left: 50%;
+      margin-left: -10px
+    }
+
+    .__react_component_tooltip.place-bottom:after {
+      border-left: 8px solid transparent;
+      border-right: 8px solid transparent;
+      top: -6px;
+      left: 50%;
+      margin-left: -8px
+    }
+
+    .__react_component_tooltip.place-left {
+      margin-left: -10px
+    }
+
+    .__react_component_tooltip.place-left:before {
+      border-top: 6px solid transparent;
+      border-bottom: 6px solid transparent;
+      right: -8px;
+      top: 50%;
+      margin-top: -5px
+    }
+
+    .__react_component_tooltip.place-left:after {
+      border-top: 5px solid transparent;
+      border-bottom: 5px solid transparent;
+      right: -6px;
+      top: 50%;
+      margin-top: -4px
+    }
+
+    .__react_component_tooltip.place-right {
+      margin-left: 10px
+    }
+
+    .__react_component_tooltip.place-right:before {
+      border-top: 6px solid transparent;
+      border-bottom: 6px solid transparent;
+      left: -8px;
+      top: 50%;
+      margin-top: -5px
+    }
+
+    .__react_component_tooltip.place-right:after {
+      border-top: 5px solid transparent;
+      border-bottom: 5px solid transparent;
+      left: -6px;
+      top: 50%;
+      margin-top: -4px
+    }
+
+    .__react_component_tooltip .multi-line {
+      display: block;
+      padding: 2px 0px;
+      text-align: center
+    }
+  </style>
+</head>
+
+<body class="">
+  <script src="./kepler.gl_files/bundle.js.다운로드"></script>
+  <div>
+    <div data-reactroot="" class="kg-web-content sc-hUfwpO iWMXxB">
+      <div class="sc-cBrjTV ifYetW">
+        <div class="top-banner sc-bfYoXt cOpaJT" height="30" style="top: -100px;">
+          <div>
+            <div class="sc-gbOuXE jjJhFn"><span>Kepler.gl is shortlisted in the Information is Beautiful Award.
+              </span><a class="sc-dRFtgE eBbPw" target="_blank"
+                href="https://www.informationisbeautifulawards.com/showcase/3082-kepler-gl">Vote for us</a><span> before
+                Fri 19th Oct!</span>
+              <div class="sc-gkFcWv hwhdmf"><a class="sc-dRFtgE eBbPw">Already Voted!</a></div>
+            </div>
+          </div><svg viewBox="0 0 64 64" width="14px" height="14px" class="data-ex-icons-delete "
+            style="fill: currentcolor;">
+            <g transform="translate(8, 8)">
+              <path
+                d="M31.5059707,24 L47.5987718,7.90719891 C48.1337427,7.37222791 48.1337427,6.50972364 47.5987718,5.97475264 L42.0252474,0.40122825 C41.4902764,-0.13374275 40.6277721,-0.13374275 40.0928011,0.40122825 L24,16.4940293 L7.90719891,0.40122825 C7.37222791,-0.13374275 6.50972364,-0.13374275 5.97475264,0.40122825 L0.40122825,5.97475264 C-0.13374275,6.50972364 -0.13374275,7.37222791 0.40122825,7.90719891 L16.4940293,24 L0.40122825,40.0928011 C-0.13374275,40.6277721 -0.13374275,41.4902764 0.40122825,42.0252474 L5.97475264,47.5987718 C6.50972364,48.1337427 7.37222791,48.1337427 7.90719891,47.5987718 L24,31.5059707 L40.0928011,47.5987718 C40.6277721,48.1337427 41.4902764,48.1337427 42.0252474,47.5987718 L47.5987718,42.0252474 C48.1337427,41.4902764 48.1337427,40.6277721 47.5987718,40.0928011 L31.5059707,24 Z">
+              </path>
+            </g>
+          </svg>
+        </div>
+        <div
+          style="transition: margin 1s ease 0s, height 1s ease 0s; position: absolute; width: 100%; height: 100%; min-height: calc(100% - 30px); margin-top: 0px;">
+          <div class="kepler-gl sc-RcBXQ jjGqPy" id="kepler-gl__map"
+            style="position: relative; width: 1920px; height: 928px;">
+            <div class="notification-panel sc-kZmsYB bxwasH"></div>
+            <div>
+              <div class="side-panel--container sc-hSdWYo ildwQA" width="300">
+                <div class="side-bar sc-eHgmQL dqdvtm" style="width: 300px;">
+                  <div class="side-bar__inner sc-cvbbAY fWnEmu">
+                    <div class="side-panel__panel-header sc-gPEVay side-side-panel__header kuCmmO">
+                      <div class="side-panel__panel-header__top sc-iRbamj side-panel__header__top hnMWCF">
+                        <div class="side-panel-logo sc-jAaTju jZwXjI">
+                          <div class="sc-jDwBTQ dKmtDD"><svg class="side-panel-logo__logo" width="22px" height="15px"
+                              viewBox="0 0 22 15">
+                              <g transform="translate(11, -3) rotate(45.000000)">
+                                <rect fill="#535C6C" x="0" y="5" width="10" height="10"></rect>
+                                <rect fill="#1FBAD6" x="5" y="0" width="10" height="10"></rect>
+                              </g>
+                            </svg></div>
+                          <div class="logo__title sc-jWBwVP dBeuyz">
+                            <div class="logo__name sc-brqgnP ijxCJd"><a class="logo__link" target="_blank"
+                                rel="noopener noreferrer" href="http://kepler.gl/">kepler.gl</a></div>
+                            <div class="logo__version sc-cMljjf htilAB">v1.0</div>
+                          </div>
+                        </div>
+                        <div class="sc-jlyJG side-panel__header__actions hZYYwk">
+                          <div class="side-panel__panel-header__right" style="position: relative;">
+                            <div class="side-panel__panel-header__action sc-gipzik side-panel__header__actions cYISrO"
+                              data-tip="true" data-for="save-action">
+                              <p>Share</p><a target=""><svg viewBox="0 0 64 64" width="20px" height="20px"
+                                  class="data-ex-icons-save " style="fill: currentcolor;">
+                                  <path
+                                    d="M49.26,56.17H14.74a6.91,6.91,0,0,1-6.91-6.91V32a3.45,3.45,0,1,1,6.91,0V49.26H49.26V32a3.45,3.45,0,1,1,6.91,0V49.26A6.91,6.91,0,0,1,49.26,56.17Z">
+                                  </path>
+                                  <path
+                                    d="M44.81,24.08a3.5,3.5,0,0,1-4.9,0l-4.45-4.45V35.44a3.45,3.45,0,0,1-6.91,0V19.62l-4.45,4.45a3.5,3.5,0,0,1-4.9,0,3.44,3.44,0,0,1,0-4.87L29.55,8.85a6,6,0,0,1,.52-.45,2.61,2.61,0,0,1,.62-.31,3.45,3.45,0,0,1,2.62,0,2.61,2.61,0,0,1,.62.31,6,6,0,0,1,.52.45L44.81,19.21A3.44,3.44,0,0,1,44.81,24.08Z">
+                                  </path>
+                                </svg></a>
+                            </div>
+                            <div class="save-export-dropdown sc-csuQGl byWLxc">
+                              <div class="save-export-dropdown__inner sc-kgoBCf gxZIYQ">
+                                <div class="save-export-dropdown__item"><svg viewBox="0 0 64 64" width="16px"
+                                    height="16px" class="data-ex-icons-minus " style="fill: currentcolor;">
+                                    <path
+                                      d="M55 8H9a1 1 0 0 0-1 1v46a1 1 0 0 0 1 1h46a1 1 0 0 0 1-1V9a1 1 0 0 0-1-1zm-3 36H12V12h40v32zM40.508 25.75l8.217 11.05c.98 1.319.047 3.2-1.587 3.2H16.987c-1.863 0-2.698-2.356-1.257-3.547l6.012-4.966a1.97 1.97 0 0 1 2.513 0l3.859 3.187a1.973 1.973 0 0 0 2.843-.347l6.378-8.578a1.973 1.973 0 0 1 3.173 0zM26 21a4 4 0 1 1-8 0 4 4 0 0 1 8 0z">
+                                    </path>
+                                  </svg>
+                                  <div class="save-export-dropdown__title">Export Image</div>
+                                </div>
+                                <div class="save-export-dropdown__item"><svg viewBox="0 0 64 64" width="16px"
+                                    height="16px" class="data-ex-icons-minus " style="fill: currentcolor;">
+                                    <path
+                                      d="M48.015 58h-32a8 8 0 0 1-8-8V26h48v24a8 8 0 0 1-8 8zm-2-44h-28a6 6 0 0 0-6 6v2h40v-2a6 6 0 0 0-6-6zm-2 26v-6h-4v4h-16v-4h-4v6a2 2 0 0 0 2 2h20a2 2 0 0 0 2-2zm-4-34h-16a4 4 0 0 0-4 4h24a4 4 0 0 0-4-4z">
+                                    </path>
+                                  </svg>
+                                  <div class="save-export-dropdown__title">Export Data</div>
+                                </div>
+                                <div class="save-export-dropdown__item"><svg viewBox="0 0 64 64" width="16px"
+                                    height="16px" class="data-ex-icons-crosshairs " style="fill: currentcolor;">
+                                    <path
+                                      d="M27.768 13.97v4.803a1.2 1.2 0 0 1-1.201 1.2H22.964v8.407a3.603 3.603 0 0 1-3.602 3.603 3.603 3.603 0 0 1 3.602 3.603v8.406H26.567a1.2 1.2 0 0 1 1.2 1.201v4.804a1.2 1.2 0 0 1-1.2 1.2h-6.005a4.804 4.804 0 0 1-4.803-4.803v-7.206a3.603 3.603 0 0 0-3.603-3.602H9.754a1.196 1.196 0 0 1-1.19-1.176h-.01v-4.829c0-.663.537-1.2 1.2-1.2h2.402a3.603 3.603 0 0 0 3.603-3.604v-7.205a4.804 4.804 0 0 1 4.803-4.804h6.005a1.2 1.2 0 0 1 1.2 1.201v.002zm27.584 21.616h-2.401a3.603 3.603 0 0 0-3.603 3.602v7.206a4.804 4.804 0 0 1-4.804 4.804H38.54a1.2 1.2 0 0 1-1.201-1.201V45.193c0-.663.537-1.2 1.2-1.2H42.143v-8.407a3.603 3.603 0 0 1 3.603-3.603 3.603 3.603 0 0 1-3.603-3.603v-8.406H38.54a1.2 1.2 0 0 1-1.201-1.201v-4.804c0-.663.537-1.2 1.2-1.2h6.005a4.804 4.804 0 0 1 4.804 4.803v7.205a3.603 3.603 0 0 0 3.603 3.603h2.401c.654 0 1.175.526 1.19 1.176h.011v4.829a1.2 1.2 0 0 1-1.2 1.2z">
+                                    </path>
+                                  </svg>
+                                  <div class="save-export-dropdown__title">Export Config</div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="sc-cbkKFq side-side-panel__header__bottom ckCetH">
+                      <div class="sc-krvtoX side-panel__tab iICOfk" data-tip="true" data-for="layer-nav"
+                        currentitem="false"><svg viewBox="0 0 64 64" width="20px" height="20px"
+                          class="data-ex-icons-layers " style="fill: currentcolor;">
+                          <path
+                            d="M50.88,43.52a3.2,3.2,0,0,1,0,5.86L34.56,56.52a6.42,6.42,0,0,1-5.13,0L13.12,49.37a3.2,3.2,0,0,1,0-5.86l4.62-2a6,6,0,0,0,1.48,1l2.16.95-7,3.05,16.32,7.14a3.19,3.19,0,0,0,2.56,0L49.6,46.44l-7-3.05,2.16-.95a6,6,0,0,0,1.48-.95Zm0-14.39a3.2,3.2,0,0,1,0,5.86L34.56,42.13a6.42,6.42,0,0,1-5.13,0L13.12,35a3.2,3.2,0,0,1,0-5.86l4.62-2a6,6,0,0,0,1.48,1l2.16.95-7,3.05L30.72,39.2a3.19,3.19,0,0,0,2.56,0L49.6,32.06l-7-3.05,2.16-.95a6,6,0,0,0,1.48-.95ZM13.12,20.6a3.2,3.2,0,0,1,0-5.86L29.44,7.6a6.39,6.39,0,0,1,5.13,0l16.32,7.14a3.2,3.2,0,0,1,0,5.86L34.56,27.74a6.39,6.39,0,0,1-5.13,0Z">
+                          </path>
+                        </svg>
+                        <div class="__react_component_tooltip place-top type-dark " data-id="tooltip"></div>
+                      </div>
+                      <div class="sc-krvtoX side-panel__tab kMwwCD" data-tip="true" data-for="filter-nav"
+                        currentitem="false"><svg viewBox="0 0 64 64" width="20px" height="20px"
+                          class="data-ex-icons-filterfunnel " style="fill: currentcolor;">
+                          <path
+                            d="M52.5,19.67l-16,20h0a6.24,6.24,0,0,0-1.37,3.9V57L30.6,54.74a3.12,3.12,0,0,1-1.73-2.79V43.58h0a6.24,6.24,0,0,0-1.37-3.9l-16-20a5,5,0,0,1-1.35-3.24c0-5.17,9.78-9.36,21.85-9.36s21.85,4.19,21.85,9.36A5,5,0,0,1,52.5,19.67Zm-20.5,3c8.62,0,15.61-2.79,15.61-6.24s-7-6.24-15.61-6.24S16.39,13,16.39,16.43,23.38,22.67,32,22.67Z">
+                          </path>
+                        </svg>
+                        <div class="__react_component_tooltip place-top type-dark " data-id="tooltip"></div>
+                      </div>
+                      <div class="sc-krvtoX side-panel__tab kMwwCD" data-tip="true" data-for="interaction-nav"
+                        currentitem="false"><svg viewBox="0 0 64 64" width="20px" height="20px"
+                          class="data-ex-icons-cursorclick " style="fill: currentcolor;">
+                          <g transform="scale(1.2, 1.2) translate(0, 2)">
+                            <polygon points="22.5,11.1 27.6,43.9 35.3,37.3 43,49 48.8,45 41,33.2 49,28.3 "></polygon>
+                            <path
+                              d="M21.2,27.8C14.5,26.6,9.8,20.7,9.8,14c0-7.7,6.3-14,14-14s14,6.3,14,14c0,0.8-0.1,1.5-0.2,2.3l-2.5-0.4 c0.1-0.6,0.2-1.3,0.2-1.8c0-6.4-5.2-11.5-11.5-11.5S12.3,7.7,12.3,14c0,5.5,3.9,10.3,9.4,11.4L21.2,27.8z">
+                            </path>
+                          </g>
+                        </svg>
+                        <div class="__react_component_tooltip place-top type-dark " data-id="tooltip"></div>
+                      </div>
+                      <div class="sc-krvtoX side-panel__tab kMwwCD" data-tip="true" data-for="map-nav"
+                        currentitem="false"><svg viewBox="0 0 64 64" width="20px" height="20px"
+                          class="data-ex-icons-settings " style="fill: currentcolor;">
+                          <g transform="translate(3, 4) scale(0.9, 0.9)">
+                            <path
+                              d="M32.2,52.32a6.24,6.24,0,0,0,12.09,0h9.56a1.56,1.56,0,0,0,0-3.12H44.29a6.24,6.24,0,0,0-12.09,0h-22a1.56,1.56,0,0,0,0,3.12ZM16.59,33.59a6.24,6.24,0,0,0,12.09,0H53.85a1.56,1.56,0,0,0,0-3.12H28.68a6.24,6.24,0,0,0-12.09,0H10.15a1.56,1.56,0,1,0,0,3.12ZM35.32,11.74H10.15a1.56,1.56,0,1,0,0,3.12H35.32a6.24,6.24,0,0,0,12.09,0h6.44a1.56,1.56,0,0,0,0-3.12H47.41a6.24,6.24,0,0,0-12.09,0Z">
+                            </path>
+                          </g>
+                        </svg>
+                        <div class="__react_component_tooltip place-top type-dark " data-id="tooltip"></div>
+                      </div>
+                    </div>
+                    <div class="side-panel__content sc-fYiAbW drbizB">
+                      <div>
+                        <div class="side-panel__content__title sc-jdeSqf lnPKht">Layers</div>
+                        <div class="layer-manager sc-hMFtBS bOYiNV">
+                          <div class="source-data-catalog sc-hwwEjo OFXdf"></div>
+                          <div class="sc-fjdhpX button iFbvVG" width="105px"><svg viewBox="0 0 64 64" width="12px"
+                              height="12px" class="data-ex-icons-add " style="fill: currentcolor;">
+                              <path
+                                d="M35.93,28.57V9.89a1,1,0,0,0-1-1h-5.9a1,1,0,0,0-1,1V28.57H9.39a1,1,0,0,0-1,1v5.9a1,1,0,0,0,1,1H28.07V55.11a1,1,0,0,0,1,1h5.9a1,1,0,0,0,1-1V36.43H54.61a1,1,0,0,0,1-1v-5.9a1,1,0,0,0-1-1Z">
+                              </path>
+                            </svg><!-- react-text: 84 -->Add Data
+                            <!-- /react-text -->
+                          </div>
+                          <div class="sc-VigVT side-panel-divider fuCwcf"></div>
+                          <div class="sc-gqjmRU side-panel-section jSHmyP">
+                            <div class="ui-sortable "></div>
+                          </div>
+                          <div class="sc-gqjmRU side-panel-section jSHmyP"></div>
+                          <div class="sc-gqjmRU side-panel-section jSHmyP"><label
+                              class="sc-bZQynM side-panel-panel__label itmuiC">Layer Blending</label>
+                            <div class="item-selector">
+                              <div style="position: relative;">
+                                <div class="item-selector__dropdown sc-fAjcbJ jfakxS"><span class="sc-caSCKo jxcqbQ"
+                                    placeholder="false"><span class="list__item__anchor">normal</span></span></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="side-bar__close sc-jGxEUC grpJq"><svg viewBox="0 0 64 64" width="12px" height="12px"
+                      class="data-ex-icons-arrowright " style="transform: rotate(180deg); fill: currentcolor;">
+                      <path
+                        d="M26.7,54.7l-4.5-4.4c-0.4-0.4-0.4-1,0-1.4L38.6,33L22.2,17c-0.4-0.4-0.4-1,0-1.5l4.5-4.4c0.4-0.4,1.1-0.4,1.5,0 l17.1,16.7l4.5,4.4c0.4,0.4,0.4,1,0,1.4L45.2,38L28.2,54.7C27.8,55.1,27.1,55.1,26.7,54.7">
+                      </path>
+                    </svg></div>
+                </div>
+              </div>
+            </div>
+            <div class="maps" style="display: flex;">
+              <div class="sc-eNQAEJ cKNlcE" style="display: inline-block; position: relative;">
+                <div class="map-control sc-cpmLhU juMUze">
+                  <div class="sc-dymIpo cYHGaX">
+                    <div class="map-control-button split-map sc-bnXvFD dlsKwp" data-tip="true" data-for="action-toggle"
+                      currentitem="false"><svg viewBox="0 0 64 64" width="18px" height="18px"
+                        class="data-ex-icons-split " style="fill: currentcolor;">
+                        <g transform="translate(7.500000, 7.500000)">
+                          <path
+                            d="M19.5,47.4137931 C19.5,48.8421157 20.6192881,50 22,50 C23.3807119,50 24.5,48.8421157 24.5,47.4137931 L24.5,2.5862069 C24.5,1.15788427 23.3807119,0 22,0 C20.6192881,0 19.5,1.15788427 19.5,2.5862069 L19.5,47.4137931 Z">
+                          </path>
+                          <rect x="0" y="4" width="44" height="5" rx="2.5"></rect>
+                          <rect
+                            transform="translate(2.500000, 24.500000) rotate(90.000000) translate(-2.500000, -24.500000) "
+                            x="-18" y="22" width="41" height="5" rx="2.5"></rect>
+                          <rect
+                            transform="translate(41.500000, 25.000000) rotate(90.000000) translate(-41.500000, -25.000000) "
+                            x="20.5" y="22.5" width="42" height="5" rx="2.5"></rect>
+                          <rect x="0" y="41" width="44" height="5" rx="2.5"></rect>
+                        </g>
+                      </svg>
+                      <div class="__react_component_tooltip place-top type-dark " data-id="tooltip"></div>
+                    </div>
+                  </div>
+                  <div class="sc-dymIpo cYHGaX">
+                    <div class="sc-bnXvFD dlsKwp" data-tip="true" data-for="action-3d" currentitem="false"><svg
+                        viewBox="0 0 64 64" width="22px" height="22px" class="data-ex-icons-cube3d "
+                        style="fill: currentcolor;">
+                        <path d="M29.2,29.57,9.52,40.93V20a2.81,2.81,0,0,1,1.4-2.43L29.2,7.06Z"></path>
+                        <path d="M32.08,34.38l21,10.82L33.4,56.56a2.78,2.78,0,0,1-2.8,0L12.12,45.91Z"></path>
+                        <path d="M54.48,20v19.6L34.8,29.49V7.06L53.09,17.61A2.81,2.81,0,0,1,54.48,20Z"></path>
+                      </svg>
+                      <div class="__react_component_tooltip place-top type-dark " data-id="tooltip"></div>
+                    </div>
+                  </div>
+                  <div class="sc-dymIpo cYHGaX">
+                    <div class="map-control-button show-legend sc-bnXvFD dlsKwp" data-tip="true" data-for="show-legend"
+                      currentitem="false"><svg viewBox="0 0 64 64" width="22px" height="22px"
+                        class="data-ex-icons-legend " style="fill: currentcolor;">
+                        <path
+                          d="M29.78,45.89v5.56H46.44V45.89Zm-11.11,0v5.56h5.56V45.89ZM29.78,34.78v5.56H46.44V34.78Zm-11.11,0v5.56h5.56V34.78ZM29.78,23.67v5.56H46.44V23.67Zm-11.11,0v5.56h5.56V23.67ZM29.78,12.56v5.56H46.44V12.56Zm-11.11,0v5.56h5.56V12.56ZM15.89,7H49.22A2.78,2.78,0,0,1,52,9.78V54.22A2.78,2.78,0,0,1,49.22,57H15.89a2.78,2.78,0,0,1-2.78-2.78V9.78A2.78,2.78,0,0,1,15.89,7Z">
+                        </path>
+                      </svg>
+                      <div class="__react_component_tooltip place-top type-dark " data-id="tooltip"></div>
+                    </div>
+                  </div>
+                </div>
+                <div tabindex="1"
+                  style="width: 1920px; height: 928px; position: relative; cursor: pointer; touch-action: none; user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); outline: none;">
+                  <div style="width: 1920px; height: 928px; position: relative;">
+                    <div class="mapboxgl-map" style="width: 1920px; height: 928px; visibility: visible;">
+                      <div class="mapboxgl-canary" style="visibility: hidden;"></div>
+                      <div class="mapboxgl-canvas-container"><canvas class="mapboxgl-canvas" tabindex="0"
+                          aria-label="Map" width="1920" height="928"
+                          style="position: absolute; width: 1920px; height: 928px; outline: none;"></canvas></div>
+                      <div class="mapboxgl-control-container">
+                        <div class="mapboxgl-ctrl-top-left"></div>
+                        <div class="mapboxgl-ctrl-top-right"></div>
+                        <div class="mapboxgl-ctrl-bottom-left">
+                          <div class="mapboxgl-ctrl" style="display: block;"><a class="mapboxgl-ctrl-logo"
+                              target="_blank" href="https://www.mapbox.com/" aria-label="Mapbox logo"
+                              rel="noopener"></a></div>
+                        </div>
+                        <div class="mapboxgl-ctrl-bottom-right">
+                          <div class="mapboxgl-ctrl mapboxgl-ctrl-attrib"><a href="https://www.mapbox.com/about/maps/"
+                              target="_blank">© Mapbox</a> <a href="http://www.openstreetmap.org/about/"
+                              target="_blank">© OpenStreetMap</a> <a class="mapbox-improve-map"
+                              href="https://www.mapbox.com/feedback/?owner=uberdata&amp;id=cjoqbbf6l9k302sl96tyvka09&amp;access_token=pk.eyJ1IjoidWJlcmRhdGEiLCJhIjoiY2pmc3hhd21uMzE3azJxczJhOWc4czBpYyJ9.HiDptGv2C0Bkcv_TGr_kJw"
+                              target="_blank">Improve this map</a></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="overlays"
+                      style="position: absolute; left: 0px; top: 0px; width: 1920px; height: 928px; overflow: hidden;">
+                      <div id="deckgl-wrapper"><canvas id="default-deckgl-overlay" width="1920" height="928"
+                          tabindex="1"
+                          style="position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; touch-action: none; user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); outline: none; cursor: grab;"></canvas>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div><!-- react-empty: 101 -->
+            <!-- react-empty: 103 -->
+            <div class="ReactModalPortal">
+              <!-- react-empty: 64 -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="mapboxgl-map" style="display: none;"></div>
+  <div id="fatkun-drop-panel">
+    <a id="fatkun-drop-panel-close-btn">×</a>
+    <div id="fatkun-drop-panel-inner">
+      <div class="fatkun-content">
+        <svg class="fatkun-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5892">
+          <path
+            d="M494.933333 782.933333c2.133333 2.133333 4.266667 4.266667 8.533334 6.4h8.533333c6.4 0 10.666667-2.133333 14.933333-6.4l2.133334-2.133333 275.2-275.2c8.533333-8.533333 8.533333-21.333333 0-29.866667-8.533333-8.533333-21.333333-8.533333-29.866667 0L533.333333 716.8V128c0-12.8-8.533333-21.333333-21.333333-21.333333s-21.333333 8.533333-21.333333 21.333333v588.8L249.6 475.733333c-8.533333-8.533333-21.333333-8.533333-29.866667 0-8.533333 8.533333-8.533333 21.333333 0 29.866667l275.2 277.333333zM853.333333 874.666667H172.8c-12.8 0-21.333333 8.533333-21.333333 21.333333s8.533333 21.333333 21.333333 21.333333H853.333333c12.8 0 21.333333-8.533333 21.333334-21.333333s-10.666667-21.333333-21.333334-21.333333z"
+            p-id="5893"></path>
+        </svg>
+        <div class="fatkun-title">Drag and Drop</div>
+        <div class="fatkun-desc">The image will be downloaded by Fatkun</div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
