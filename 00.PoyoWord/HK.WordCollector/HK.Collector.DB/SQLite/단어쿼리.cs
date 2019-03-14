@@ -27,6 +27,12 @@ namespace HK.Collector.DB.SQLite
 
                 cmd.ExecuteNonQuery();
 
+
+
+                query = Query.매핑_단어장_단어.Insert;
+                SQLiteCommand cmdMapping = new SQLiteCommand(query, conn);
+                cmdMapping.ExecuteNonQuery();
+
                 return true;
             }
             catch (Exception ex)

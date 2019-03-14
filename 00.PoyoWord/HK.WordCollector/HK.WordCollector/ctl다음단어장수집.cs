@@ -43,6 +43,8 @@ namespace HK.WordCollector
                 return;
             }
 
+            temp = string.Format("다음 단어장 수집 시작 : {0}", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+
             다음단어장수집기.GetInstance().단어수집시작(txt폴더주소.Text);
 
             //list완료여부.DataSource = finishList;
@@ -51,7 +53,7 @@ namespace HK.WordCollector
         private void Finish(string name, bool result)
         {
             index ++;
-            temp = string.Format("{0}. 단어장 - {1} : {2}", index, name, result ? "완료" : "실패");
+            temp = string.Format("{0}. 단어장 - {1} : {2} : {3}", index, name, result ? "완료" : "실패", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
             ShowListBox();
         }
 

@@ -67,6 +67,7 @@ namespace HK.Collector.Excel
                         if (exam == null)
                             continue;
 
+                        item.WORD_WORD = item.단어;
                         item.WORD_EXAM = exam.WORD_EXAM;
                         item.WORD_EXAM_MEAN = exam.WORD_EXAM_MEAN;
 
@@ -75,12 +76,15 @@ namespace HK.Collector.Excel
                         item.WORD_SPELLING = spelling;
 
                         단어쿼리.단어등록(item);
-                        매핑_단어장_단어쿼리.매핑_단어장_단어등록();
+                        //매핑_단어장_단어쿼리.매핑_단어장_단어등록();
                     }
 
                     Finished?.Invoke(name, result);
                 });
-            }catch(Exception ex)
+
+                Finished?.Invoke("다음단어장 수집", true);
+            }
+            catch(Exception ex)
             {
 
             }
