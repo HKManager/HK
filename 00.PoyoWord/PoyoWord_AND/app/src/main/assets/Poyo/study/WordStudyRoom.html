@@ -147,18 +147,32 @@
     pageIndex--;
   }
 
-    function PlayStudy() {
-      try {
-        var obj = { handle: "06", view: "WordBook", data: "WORDBOOKDETAIL" };
+  function PlayStudy() {
+    try {
+      var obj = { handle: "06", view: "WordBook", data: "WORDBOOKDETAIL" };
 
-        var data = JSON.stringify(obj);
+      var data = JSON.stringify(obj);
 
-        window.android.setData(data);
+      window.android.setData(data);
 
-      } catch (excetion) {
-        alert(excetion);
-      }
+    } catch (excetion) {
+      alert(excetion);
     }
+  }
+
+  function showData(str) {
+
+    var jsonObj = JSON.parse(str);
+
+    switch (jsonObj.handle) {
+      case "NEXT":
+      Reveal.next();
+        break;
+    }
+
+
+    viewModel.list(jsonObj.value);
+  }
 
 </script>
 
@@ -208,60 +222,6 @@
         </div>
 
       </section>
-
-
-
-      <!-- <section>
-        <h2>Controlling Playback</h2>
-        <pre>
-            <code>
-              source.start(0);
-              source.stop();
-            </code>
-          </pre>
-
-        <p>what about pause/replay?</p>
-
-        <pre>
-            <code>
-              var trackTime = 0;
-              function pause () {
-                trackTime = audioContext.currentTime;
-                source.stop();
-              }
-              function play() {
-                source.start(audioContext.currentTime + trackTime);
-              }
-            </code>
-          </pre>
-      </section>
-
-
-
-      <section>
-        <h2>Controlling Playback</h2>
-        <pre>
-            <code>
-              source.start(0);
-              source.stop();
-            </code>
-          </pre>
-
-        <p>what about pause/replay?</p>
-
-        <pre>
-            <code>
-              var trackTime = 0;
-              function pause () {
-                trackTime = audioContext.currentTime;
-                source.stop();
-              }
-              function play() {
-                source.start(audioContext.currentTime + trackTime);
-              }
-            </code>
-          </pre>
-      </section> -->
     </div>
   </div>
 
@@ -271,7 +231,8 @@
   <div class="cd-overlay-content">
     <span></span>
   </div> <!-- cd-overlay-content -->
-  <a href="#0" class="cd-nav-trigger" style="margin-right:5px;margin-top: 18px;" onclick="PlayStudy()">Menu<span class="cd-icon"></span></a>
+  <a href="#0" class="cd-nav-trigger" style="margin-right:5px;margin-top: 18px;" onclick="PlayStudy()">Menu<span
+      class="cd-icon"></span></a>
 </body>
 
 </html>

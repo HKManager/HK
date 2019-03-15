@@ -22,16 +22,16 @@ public class TextToSpeech_Locale implements TextToSpeech.OnUtteranceCompletedLis
             public void onInit(int status) {
                 if(status == TextToSpeech.SUCCESS) {
                     // 언어를 선택한다.
-                    tts.setLanguage(Locale.KOREAN);
+                    tts.setLanguage(Locale.ENGLISH);
                 }
             }
         });
         tts.setOnUtteranceCompletedListener(this);
     }
 
-    public void TextToSpeech(String text) {
+    public void TextToSpeech(String text, float speed) {
         tts.setPitch(1.0f);         // 음성 톤을 2.0배 올려준다.
-        tts.setSpeechRate(0.7f);    // 읽는 속도는 기본 설정
+        tts.setSpeechRate(speed);    // 읽는 속도는 기본 설정
         // editText에 있는 문장을 읽는다.
 
         HashMap<String, String> ttsAlarm = new HashMap<String, String >();

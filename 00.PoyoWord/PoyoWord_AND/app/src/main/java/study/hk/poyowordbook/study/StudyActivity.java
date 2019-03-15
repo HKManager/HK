@@ -25,12 +25,18 @@ import android.webkit.JsResult;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
+import com.fasterxml.jackson.core.JsonGenerationException;
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.Gson;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
 import Event.EventData;
+import Query.Manager_TodayWord;
 import Query.Manager_WordAudLoc;
 import Query.Manager_WordBook;
 import Query.Manager_WordStudyBook;
@@ -69,6 +75,11 @@ public class StudyActivity extends AppCompatActivity{
     private static TextToSpeech_Locale tts_local;
     private static TextToSpeech_Korean tts_korean;
 
+    private static ObjectMapper mapper = null;
+
+    private static int wordIndex = 0;
+    private static int wordAudioIndex = -1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -76,6 +87,8 @@ public class StudyActivity extends AppCompatActivity{
 
         context = getApplicationContext();
         wordStudyBook = new Manager_WordStudyBook(context);
+
+        mapper = new ObjectMapper();
 
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
 
@@ -101,7 +114,7 @@ public class StudyActivity extends AppCompatActivity{
             @Override
             public void onCall(String s) {
                 // 여기에서 콜백으로 넘어온 데이터 핸들링을 하게 됩니다. interface에서는 String을 넘겨주니깐 이 친구가 넘어오겠지요.
-                int abc = 0;
+                TextToSpeech();
             }
         });
 
@@ -110,7 +123,7 @@ public class StudyActivity extends AppCompatActivity{
             @Override
             public void onCall(String s) {
                 // 여기에서 콜백으로 넘어온 데이터 핸들링을 하게 됩니다. interface에서는 String을 넘겨주니깐 이 친구가 넘어오겠지요.
-                int abc = 0;
+                TextToSpeech();
             }
         });
 
@@ -139,14 +152,85 @@ public class StudyActivity extends AppCompatActivity{
         stt.Release();
     }
 
-    private static void SpeechToText() {
-        stt_local.SpeechToText();
-    }
-
+    @SuppressLint({ "SetJavaScriptEnabled", "JavascriptInterface" })
     private static void TextToSpeech() {
-        /*tts_local.TextToSpeech("a,p,p,l,e");*/
 
-        tts_korean.TextToSpeech("a,p,p,l,e");
+        List<Map> list = Manager_TodayWord.GetInstance().wordList;
+
+        if(wordIndex == list.size()) {
+            // END
+        } else {
+            Map data = list.get(wordIndex);
+
+            List<Map> locs = null;
+            String locsString =  data.get("WAL_LOCS").toString();
+            String text = "";
+
+            try {
+                locs = mapper.readValue(locsString, new TypeReference<List<Map>>(){});
+
+                if(wordAudioIndex < 0) {
+
+                    if(wordIndex > 0) {
+                        EventData eventData = new EventData();
+                        eventData.SetHandle(HARDCODE.다음);
+                        eventData.SetView(HARDCODE.단어학습카드);
+                        eventData.SetValue("");
+
+                        String JsonEventData = gson.toJson(eventData);
+
+                        webViewWordBook.post(new Runnable()
+                        {
+                            @Override
+                            public void run()
+                            {
+                                //동작
+                                webViewWordBook.loadUrl("javascript:showData('" + JsonEventData + "')");
+                            }
+                        });
+                    }
+
+                    tts_local.TextToSpeech((wordIndex + 1) + ".", 0.5f);
+                } else {
+                    switch (locs.get(wordAudioIndex).get("CODE").toString()) {
+                        case HARDCODE.단어 :
+                            text = data.get("WORD_WORD").toString();
+                            tts_local.TextToSpeech(text, 0.5f);
+                            break;
+                        case HARDCODE.단어스펠링:
+                            text = data.get("WORD_SPELLING").toString();
+                            tts_local.TextToSpeech(text, 0.6f);
+                            break;
+                        case HARDCODE.단어뜻:
+                            text = data.get("WORD_MEAN").toString();
+                            tts_korean.TextToSpeech(text, 0.8f);
+                            break;
+                        case HARDCODE.단어예문:
+                            text = data.get("WORD_EXAM").toString();
+                            tts_local.TextToSpeech(text, 0.8f);
+                            break;
+                        case HARDCODE.단어예문뜻:
+                            text = data.get("WORD_EXAM_MEAN").toString();
+                            tts_korean.TextToSpeech(text, 1.0f);
+                            break;
+                    }
+                }
+
+            }catch (JsonGenerationException e) {
+                e.printStackTrace();
+            } catch (JsonMappingException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            if(wordAudioIndex >= locs.size()-1 ) {
+                wordIndex++;
+                wordAudioIndex = -1;
+            } else {
+                wordAudioIndex++;
+            }
+        }
     }
 
     public static class StudyFragment extends Fragment {
@@ -343,8 +427,7 @@ public class StudyActivity extends AppCompatActivity{
                                     intent.putExtra("WB_SN",""); *//*송신*//*
                                     context.startActivity(intent);*/
 
-                                    //SpeechToText();
-                                    SpeechToText();
+                                    TextToSpeech();
                                     break;
                                 case HARDCODE.단어장배치상세 :
                                     intent = new Intent(context,WordAudLocDetailActivity.class);

@@ -27,11 +27,11 @@ public class TextToSpeech_Korean implements TextToSpeechListener{
 
     }
 
-    public void TextToSpeech(String strText) {
+    public void TextToSpeech(String strText, float speed) {
 
         ttsClient = new TextToSpeechClient.Builder()
                 .setSpeechMode(TextToSpeechClient.NEWTONE_TALK_2)
-                .setSpeechSpeed(1.0D)
+                .setSpeechSpeed(speed)
                 .setSpeechVoice(TextToSpeechClient.VOICE_WOMAN_READ_CALM)
                 .setListener(this)
                 .build();

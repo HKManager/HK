@@ -27,6 +27,7 @@ import java.io.InputStream;
 
 import Event.EventData;
 import Query.Manager_Code;
+import Query.Manager_TodayWord;
 import io.github.controlwear.virtual.joystick.android.JoystickView;
 import study.hk.data.Data.*;
 import study.hk.poyowordbook.manager.WordManagerActivity;
@@ -109,6 +110,9 @@ public class MainActivity extends AppCompatActivity {
         // - for JoyStick
         eventData.SetHandle("move");
         eventData.SetView("main");
+
+        Manager_TodayWord todayWord = new Manager_TodayWord(context);
+        Manager_TodayWord.GetInstance().Load();
 
         joystick = (JoystickView) findViewById(R.id.joystickView_right);
         joystick.setOnMoveListener(new JoystickView.OnMoveListener() {
@@ -248,7 +252,7 @@ public class MainActivity extends AppCompatActivity {
                                     Intent intent=new Intent(MainActivity.this,WordManagerActivity.class);
                                     startActivity(intent);
                                     break;
-                                case HARDCODE.단어공부방 :
+                                case HARDCODE.단어학습카드 :
                                     intent=new Intent(MainActivity.this,StudyActivity.class);
                                     startActivity(intent);
                                     break;

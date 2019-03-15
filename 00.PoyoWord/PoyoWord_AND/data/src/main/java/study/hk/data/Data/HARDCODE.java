@@ -21,5 +21,14 @@ public class HARDCODE {
     public static final String 단어장배치관리 = "WORDAUDLOC";
     public static final String 단어장배치상세 = "WORDAUDDETAIL";
 
-    public static final String 단어공부방 = "WORDSTUDY";
+    public static final String 단어학습카드 = "WORDSTUDYCARD";
+
+    public static final String 단어 = "001";
+    public static final String 단어스펠링 = "002";
+    public static final String 단어뜻 = "003";
+    public static final String 단어예문 = "004";
+    public static final String 단어예문뜻 = "005";
+
+    public static final String 다음 = "NEXT";
+    public static final String 이전 = "PREV";
 }
