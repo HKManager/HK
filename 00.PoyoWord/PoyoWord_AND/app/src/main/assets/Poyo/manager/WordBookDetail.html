@@ -531,9 +531,12 @@
             switch (jsonObj.handle) {
                 case "CODES":
                     vm.WB_LEVEL_CDS(jsonObj.value);
+                    vm.WB_LEVEL_CD(jsonObj.value[0].CODE);
+                    
                     break;
                 case "WB_TYPE":
                     vm.WB_TYPE_CDS(jsonObj.value);
+                    vm.WB_TYPE_CD(jsonObj.value[0].CODE);
                     break;
                 case "DETAIL":
                     vm.WB_SN(jsonObj.value.WB_SN);

@@ -217,7 +217,7 @@ public class WordStudyBookDetailActivity extends AppCompatActivity {
                                 });
 
                                 WordList.forEach(t -> {
-                                    if(!t.get("MWSW_SN").toString().equals("")) {
+                                    if(t.get("MWSW_SN") != null) {
                                         manager.UpdateMapping(WSB_SN, t);
                                     } else {
                                         manager.InsertMapping(WSB_SN, t);
