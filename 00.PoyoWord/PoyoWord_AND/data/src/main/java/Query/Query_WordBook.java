@@ -7,6 +7,7 @@ public class Query_WordBook {
      SELECT
      WB_SN
      , WB_NAME
+     , WB_TYPE_CD
      , WB_LEVEL_CD
      , WB_CNT_UNIT
      , WB_CNT_WORD_UNIT
@@ -26,6 +27,7 @@ public class Query_WordBook {
      SELECT
      wb.WB_SN
      , wb.WB_NAME
+     , wb.WB_TYPE_CD
      , wb.WB_LEVEL_CD
      , wb.WB_CNT_UNIT
      , wb.WB_CNT_WORD_UNIT
@@ -52,10 +54,8 @@ public class Query_WordBook {
      , w.WORD_IMAGE
      , w.WORD_LIKE
      , w.WORD_USEYN
-     , mwbw.MWW_SN
-     FROM wordbook wb, mapping_wb_w mwbw, word w
-     WHERE wb.wb_sn = mwbw.wb_sn
-     AND w.word_sn = mwbw.word_sn
+     FROM wordbook wb, word w
+     WHERE wb.wb_sn = w.wb_sn
      AND wb.wb_sn = %s
      */
     @Multiline
@@ -65,6 +65,7 @@ public class Query_WordBook {
      SELECT
      wb.WB_SN
      , wb.WB_NAME
+     , wb.WB_TYPE_CD
      , wb.WB_LEVEL_CD
      , wb.WB_CNT_UNIT
      , wb.WB_CNT_WORD_UNIT
@@ -91,11 +92,9 @@ public class Query_WordBook {
      , w.WORD_IMAGE
      , w.WORD_LIKE
      , w.WORD_USEYN
-     , mwbw.MWW_SN
-     , '' AS MWSW_SN
-     FROM wordbook wb, mapping_wb_w mwbw, word w
-     WHERE wb.wb_sn = mwbw.wb_sn
-     AND w.word_sn = mwbw.word_sn
+     FROM wordbook wb, word w
+     WHERE wb.wb_sn = w.wb_sn
+     AND wb.wb_sn = 1
      */
     @Multiline
     public static String GetDataList;
@@ -105,6 +104,7 @@ public class Query_WordBook {
      wordbook
      (
      WB_NAME
+     , WB_TYPE_CD
      , WB_LEVEL_CD
      , WB_CNT_UNIT
      , WB_CNT_WORD_UNIT
@@ -129,6 +129,7 @@ public class Query_WordBook {
      , '%s'
      , '%s'
      , '%s'
+     , '%s'
      )
      */
     @Multiline
@@ -138,6 +139,7 @@ public class Query_WordBook {
      UPDATE wordbook
      SET   
      WB_NAME = '%s'
+     , WB_TYPE_CD = '%s'
      , WB_LEVEL_CD = '%s'
      , WB_CNT_UNIT = '%s'
      , WB_CNT_WORD_UNIT = '%s'

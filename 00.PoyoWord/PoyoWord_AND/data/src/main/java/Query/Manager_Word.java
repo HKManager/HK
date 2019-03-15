@@ -25,32 +25,46 @@ public class Manager_Word {
 
             String query = "";
 
-            query = String.format(Query_Word.Insert,
-                    data.get("WORD_UNIT_SN").toString(),
-                    data.get("WORD_WORD").toString(),
-                    data.get("WORD_MEAN").toString(),
-                    data.get("WORD_SPELLING").toString(),
-                    data.get("WORD_SOUND").toString(),
-                    data.get("WORD_SOUND_FILE").toString(),
-                    data.get("WORD_EXAM").toString(),
-                    data.get("WORD_EXAM_MEAN").toString(),
-                    data.get("WORD_TYPE_CD").toString(),
-                    data.get("WORD_LEVEL_CD").toString(),
-                    data.get("WORD_IMPORTANT").toString(),
-                    data.get("WORD_LEARNYN").toString(),
-                    data.get("WORD_IMAGE").toString(),
-                    data.get("WORD_LIKE").toString(),
-                    data.get("WORD_USEYN").toString()
-            );
+            if(WB_SN.equals("")) {
+                query = String.format(Query_Word.Insert,
+                        data.get("WORD_UNIT_SN").toString(),
+                        data.get("WORD_WORD").toString(),
+                        data.get("WORD_MEAN").toString(),
+                        data.get("WORD_SPELLING").toString(),
+                        data.get("WORD_SOUND").toString(),
+                        data.get("WORD_SOUND_FILE").toString(),
+                        data.get("WORD_EXAM").toString(),
+                        data.get("WORD_EXAM_MEAN").toString(),
+                        data.get("WORD_TYPE_CD").toString(),
+                        data.get("WORD_LEVEL_CD").toString(),
+                        data.get("WORD_IMPORTANT").toString(),
+                        data.get("WORD_LEARNYN").toString(),
+                        data.get("WORD_IMAGE").toString(),
+                        data.get("WORD_LIKE").toString(),
+                        data.get("WORD_USEYN").toString()
+                );
+            } else {
+                query = String.format(Query_Word.InsertWB_SN,
+                        data.get("WB_SN").toString(),
+                        data.get("WORD_UNIT_SN").toString(),
+                        data.get("WORD_WORD").toString(),
+                        data.get("WORD_MEAN").toString(),
+                        data.get("WORD_SPELLING").toString(),
+                        data.get("WORD_SOUND").toString(),
+                        data.get("WORD_SOUND_FILE").toString(),
+                        data.get("WORD_EXAM").toString(),
+                        data.get("WORD_EXAM_MEAN").toString(),
+                        data.get("WORD_TYPE_CD").toString(),
+                        data.get("WORD_LEVEL_CD").toString(),
+                        data.get("WORD_IMPORTANT").toString(),
+                        data.get("WORD_LEARNYN").toString(),
+                        data.get("WORD_IMAGE").toString(),
+                        data.get("WORD_LIKE").toString(),
+                        data.get("WORD_USEYN").toString()
+                );
+            }
 
             db.execSQL(query);
-
-            if(WB_SN.equals("")) {
-
-                query = Query_Mapping_WB_W.Insert;
-            } else {
-                query = String.format(Query_Mapping_WB_W.InsertWB_SN, WB_SN);
-            }
 
             db.execSQL(query);
 
@@ -63,6 +77,7 @@ public class Manager_Word {
     public boolean Update(Map data) {
         try {
             String query = String.format(Query_Word.Update,
+                    data.get("WB_SN").toString(),
                     data.get("WORD_UNIT_SN").toString(),
                     data.get("WORD_WORD").toString(),
                     data.get("WORD_MEAN").toString(),

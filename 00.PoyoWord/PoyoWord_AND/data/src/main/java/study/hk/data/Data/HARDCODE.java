@@ -9,6 +9,7 @@ public class HARDCODE {
     public static final String 수정 = "04";
     public static final String 삭제 = "05";
     public static final String 화면호출 = "06";
+    public static final String 일반조회 = "07";
     public static final String 상세조회 = "DETAIL";
     public static final String 코드리스트 = "CODES";
 

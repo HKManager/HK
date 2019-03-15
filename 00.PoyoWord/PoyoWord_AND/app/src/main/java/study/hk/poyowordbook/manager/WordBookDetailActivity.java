@@ -107,6 +107,13 @@ public class WordBookDetailActivity extends AppCompatActivity {
                 String JsonEventData = gson.toJson(data);
                 lWebView.loadUrl("javascript:showData('" + JsonEventData + "')");
 
+                List<Map> codeWordTypeList = Manager_Code.GetInstance().GetList_2nd("102", true);
+                data.SetHandle("WB_TYPE");
+                data.SetView(HARDCODE.단어장상세);
+                data.SetValue(codeWordTypeList);
+                JsonEventData = gson.toJson(data);
+                lWebView.loadUrl("javascript:showData('" + JsonEventData + "')");
+
                 if(!WB_SN.equals("")) {
                     Map mapData =  manager.Search(WB_SN);
 
@@ -305,6 +312,7 @@ public class WordBookDetailActivity extends AppCompatActivity {
 
                                 WordList.forEach(t -> {
                                     if(!t.get("WORD_SN").toString().equals("")) {
+                                        t.put("WB_SN", WB_SN);
                                         wordManager.Update(t);
                                     } else {
                                         wordManager.Insert(WB_SN, t);

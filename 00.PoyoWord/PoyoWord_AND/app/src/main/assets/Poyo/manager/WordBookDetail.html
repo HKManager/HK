@@ -279,8 +279,10 @@
             this.WB_SN = ko.observable("");
             this.WB_NAME = ko.observable("");
             this.WB_LEVEL_CDS = ko.observableArray([]);
-            this.WB_LEVEL_CD = ko.observable(this.WB_LEVEL_CDS.find("CODE", _WB_TYPE_CODE));
+            this.WB_LEVEL_CD = ko.observable(this.WB_LEVEL_CDS.find("CODE", _WB_LEVEL_CODE));
 
+            this.WB_TYPE_CDS = ko.observableArray([]);
+            this.WB_TYPE_CD = ko.observable(this.WB_LEVEL_CDS.find("CODE", _WB_TYPE_CODE));
 
             this.WORD_SN = ko.observable("");
             this.WORD_WORD = ko.observable("");
@@ -297,6 +299,7 @@
         //var _AC_PAY = "";
         //var _AC_DESC = "";
         var _WB_TYPE_CODE = "";
+        var _WB_LEVEL_CODE = "";
 
         var vm = null;
 
@@ -385,6 +388,7 @@
                 WB_SN: $("#WB_SN").val(),
                 WB_NAME: $("#WB_NAME").val(),
                 WB_LEVEL_CD: $("#WB_LEVEL").val(),
+                WB_TYPE_CD: $("#WB_TYPE").val(),
 
                 WORD_LIST: gridData,
                 REMOVE_LIST: removeData,
@@ -528,10 +532,14 @@
                 case "CODES":
                     vm.WB_LEVEL_CDS(jsonObj.value);
                     break;
+                case "WB_TYPE":
+                    vm.WB_TYPE_CDS(jsonObj.value);
+                    break;
                 case "DETAIL":
                     vm.WB_SN(jsonObj.value.WB_SN);
                     vm.WB_NAME(jsonObj.value.WB_NAME);
                     vm.WB_LEVEL_CD(jsonObj.value.WB_LEVEL_CD);
+                    vm.WB_TYPE_CD(jsonObj.value.WB_TYPE_CD);
                     gridData = jsonObj.value.WORD_LIST;
 
                     datagrid.refresh(); //데이터 초기화
@@ -603,7 +611,7 @@
                                 placeholder="단어 예문 뜻" data-bind="value: WORD_EXAM_MEAN" />
                         </div>
 
-                        <div class="form-line">
+                        <!-- <div class="form-line">
                             <ul class="nav nav-tabs tab-nav-right" role="tablist">
                                 <li role="presentation" class="active"><a href="#home" data-toggle="tab">이미지찾기</a></li>
                                 <li role="presentation"><a href="#profile" data-toggle="tab">이미지선택하기</a></li>
@@ -611,7 +619,7 @@
 
                             <div class="tab-content">
                                 <div role="tabpanel" class="tab-pane fade in active" id="home">
-                                    <!-- <form action="/" id="frmFileUpload" class="dropzone" method="post" style="height:100px;"
+                                    <form action="/" id="frmFileUpload" class="dropzone" method="post" style="height:100px;"
                                                 enctype="multipart/form-data" onclick="AddImage()">
                                                 <div class="dz-message">
                                                     <div class="drag-icon-cph">
@@ -622,7 +630,7 @@
                                                 <div class="fallback">
                                                     <input name="file" type="file" onclick="AddImage()" />
                                                 </div>
-                                            </form> -->
+                                            </form>
                                 </div>
 
                                 <div role="tabpanel" class="tab-pane fade" id="profile">
@@ -630,7 +638,7 @@
                                 </div>
                             </div>
 
-                        </div>
+                        </div> -->
                     </div>
 
                 </div>
@@ -702,6 +710,16 @@
 
                                 <div class="form-group">
                                     <div class="form-line">
+                                        <select id="WB_TYPE" class="form-control control-detail show-tick" data-bind="options: WB_TYPE_CDS,
+                                                                                       optionsValue: 'CODE',
+                                                                                       value: WB_TYPE_CD,
+                                                                                       optionsText: 'CODE_NAME',
+                                                                                       valueAllowUnset: true"></select>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="form-line">
                                         <select id="WB_LEVEL" class="form-control control-detail show-tick" data-bind="options: WB_LEVEL_CDS,
                                                                                        optionsValue: 'CODE',
                                                                                        value: WB_LEVEL_CD,
@@ -719,13 +737,13 @@
 
                                         <tr>
                                             <td style="width:50%;">
-                                                <button type="button" class="btn btn-primary m-t-15 waves-effect"
+                                                <button type="button" class="btn btn-primary waves-effect"
                                                     style="width:100%;margin-right:10px;"
                                                     onclick="Create();">저장</button>
                                             </td>
 
                                             <td style="width:50%;">
-                                                <button type="button" class="btn btn-primary m-t-15 waves-effect"
+                                                <button type="button" class="btn btn-primary waves-effect"
                                                     style="width:100%;margin-left:10px" onclick="Cancel()">취소</button>
                                             </td>
                                         </tr>

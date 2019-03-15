@@ -59,7 +59,8 @@ public class Query_Word {
      INSERT INTO
      word
      (
-     WORD_UNIT_SN
+     WB_SN
+     , WORD_UNIT_SN
      , WORD_WORD
      , WORD_MEAN
      , WORD_SPELLING
@@ -77,7 +78,8 @@ public class Query_Word {
      )
      VALUES
      (
-     '%s'
+    (SELECT MAX(WB_SN) FROM wordbook)
+     , '%s'
      , '%s'
      , '%s'
      , '%s'
@@ -98,9 +100,54 @@ public class Query_Word {
     public static String Insert;
 
     /**
+     INSERT INTO
+     word
+     (
+     WB_SN
+     , WORD_UNIT_SN
+     , WORD_WORD
+     , WORD_MEAN
+     , WORD_SPELLING
+     , WORD_SOUND
+     , WORD_SOUND_FILE
+     , WORD_EXAM
+     , WORD_EXAM_MEAN
+     , WORD_TYPE_CD
+     , WORD_LEVEL_CD
+     , WORD_IMPORTANT
+     , WORD_LEARNYN
+     , WORD_IMAGE
+     , WORD_LIKE
+     , WORD_USEYN
+     )
+     VALUES
+     (
+     (SELECT MAX(WB_SN) FROM wordbook)
+     , '%s'
+     , '%s'
+     , '%s'
+     , '%s'
+     , '%s'
+     , '%s'
+     , '%s'
+     , '%s'
+     , '%s'
+     , '%s'
+     , '%s'
+     , '%s'
+     , '%s'
+     , '%s'
+     , '%s'
+     )
+     */
+    @Multiline
+    public static String InsertWB_SN;
+
+    /**
      UPDATE word
      SET
-     WORD_UNIT_SN = '%s'
+     WB_SN = '%s'
+     , WORD_UNIT_SN = '%s'
      , WORD_WORD = '%s'
      , WORD_MEAN= '%s'
      , WORD_SPELLING = '%s'

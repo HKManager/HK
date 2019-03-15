@@ -38,6 +38,7 @@ public class Manager_WordBook {
 
             map.put("WB_SN", cursor.getInt(cursor.getColumnIndex("WB_SN")));
             map.put("WB_NAME", cursor.getString(cursor.getColumnIndex("WB_NAME")));
+            map.put("WB_TYPE_CD", cursor.getString(cursor.getColumnIndex("WB_LEVEL_CD")));
             map.put("WB_LEVEL_CD", cursor.getString(cursor.getColumnIndex("WB_LEVEL_CD")));
             map.put("WB_CNT_UNIT", cursor.getInt(cursor.getColumnIndex("WB_CNT_UNIT")));
             map.put("WB_CNT_WORD_UNIT", cursor.getInt(cursor.getColumnIndex("WB_CNT_WORD_UNIT")));
@@ -84,6 +85,7 @@ public class Manager_WordBook {
 
             mapData.put("WB_SN", cursor.getInt(cursor.getColumnIndex("WB_SN")));
             mapData.put("WB_NAME", cursor.getString(cursor.getColumnIndex("WB_NAME")));
+            mapData.put("WB_TYPE_CD", cursor.getString(cursor.getColumnIndex("WB_LEVEL_CD")));
             mapData.put("WB_LEVEL_CD", cursor.getString(cursor.getColumnIndex("WB_LEVEL_CD")));
             mapData.put("WB_CNT_UNIT", cursor.getInt(cursor.getColumnIndex("WB_CNT_UNIT")));
             mapData.put("WB_CNT_WORD_UNIT", cursor.getInt(cursor.getColumnIndex("WB_CNT_WORD_UNIT")));
@@ -94,12 +96,6 @@ public class Manager_WordBook {
             mapData.put("WB_USEYN", cursor.getString(cursor.getColumnIndex("WB_USEYN")));
             mapData.put("WB_REGISTERDT", cursor.getString(cursor.getColumnIndex("WB_REGISTERDT")));
             mapData.put("WB_DESC", cursor.getString(cursor.getColumnIndex("WB_DESC")));
-
-            mapData.put("MWW_SN", cursor.getString(cursor.getColumnIndex("MWW_SN")));
-
-            if(WB_SN.equals("")) {
-                mapData.put("MWSW_SN", cursor.getString(cursor.getColumnIndex("MWSW_SN")));
-            }
 
             mapData.put("WORD_SN", cursor.getString(cursor.getColumnIndex("WORD_SN")));
             mapData.put("WORD_UNIT_SN", cursor.getString(cursor.getColumnIndex("WORD_UNIT_SN")));
@@ -123,6 +119,7 @@ public class Manager_WordBook {
 
         map.put("WB_SN", list.get(0).get("WB_SN"));
         map.put("WB_NAME", list.get(0).get("WB_NAME"));
+        map.put("WB_TYPE_CD", list.get(0).get("WB_TYPE_CD"));
         map.put("WB_LEVEL_CD", list.get(0).get("WB_LEVEL_CD"));
         map.put("WB_CNT_WORD", list.get(0).get("WB_CNT_WORD"));
         map.put("WORD_LIST", list);
@@ -138,6 +135,7 @@ public class Manager_WordBook {
         try {
             String query = String.format(Query_WordBook.Insert,
                     data.get("WB_NAME").toString(),
+                    data.get("WB_TYPE_CD").toString(),
                     data.get("WB_LEVEL_CD").toString(),
                     data.get("WB_CNT_UNIT").toString(),
                     data.get("WB_CNT_WORD_UNIT").toString(),
@@ -164,6 +162,7 @@ public class Manager_WordBook {
         try {
             String query = String.format(Query_WordBook.Update,
                     data.get("WB_NAME").toString(),
+                    data.get("WB_TYPE_CD").toString(),
                     data.get("WB_LEVEL_CD").toString(),
                     data.get("WB_CNT_UNIT").toString(),
                     data.get("WB_CNT_WORD_UNIT").toString(),

@@ -89,14 +89,6 @@ public class WordStudyBookDetailActivity extends AppCompatActivity {
                 JsonEventData = gson.toJson(data);
                 lWebView.loadUrl("javascript:showData('" + JsonEventData + "')");
 
-                // - 3. 단어장 단어 리스트 조회
-                Map wordBook = manager_wordBook.Search("");
-                data.SetHandle("WORDLIST");
-                data.SetView(HARDCODE.단어학습장상세);
-                data.SetValue(wordBook);
-                JsonEventData = gson.toJson(data);
-                lWebView.loadUrl("javascript:showData('" + JsonEventData + "')");
-
                 if(!WSB_SN.equals("")) {
                     Map mapData =  manager.Search(WSB_SN);
 
@@ -148,6 +140,9 @@ public class WordStudyBookDetailActivity extends AppCompatActivity {
 
                     Map<String, Object> map = new HashMap<String, Object>();
 
+                    EventData data = new EventData();
+                    String JsonEventData = "";
+
                     switch (parse.handle) {
                         case HARDCODE.화면호출:
                             switch (parse.data) {
@@ -156,12 +151,21 @@ public class WordStudyBookDetailActivity extends AppCompatActivity {
                                     break;
                             }
                             break;
+                        case HARDCODE.일반조회 :
+                            // - 3. 단어장 단어 리스트 조회
+                            Map wordBook = manager_wordBook.Search(parse.data);
+                            data.SetHandle("WORDLIST");
+                            data.SetView(HARDCODE.단어학습장상세);
+                            data.SetValue(wordBook);
+                            JsonEventData = gson.toJson(data);
+                            lWebView.loadUrl("javascript:showData('" + JsonEventData + "')");
+                            break;
                         case HARDCODE.등록:
                             try {
                                 map = mapper.readValue(parse.data, new TypeReference<Map<String, Object>>(){});
 
                                 String FromDT = map.get("WSB_FROMDT").toString();
-                                String ToDT = map.get("WSB_TODT").toString();
+                                String ToDT = map.get("W7SB_TODT").toString();
 
                                 String[] FromDTArray = FromDT.split(" ");
                                 String[] ToDTArray = ToDT.split(" ");

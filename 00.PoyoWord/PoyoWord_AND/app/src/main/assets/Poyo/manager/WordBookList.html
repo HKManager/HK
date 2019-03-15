@@ -157,7 +157,7 @@
     <script type="text/javascript">
 
         function QueryAll() {
-            var obj = { handle: "01", view: "WordBook", data: "" };
+            var obj = { handle: "01", view: "WORDBOOK", data: "" };
 
             var data = JSON.stringify(obj);
 
@@ -167,7 +167,7 @@
 
         function Create() {
             try {
-                var obj = { handle: "06", view: "WordBook", data: "WORDBOOKDETAIL" };
+                var obj = { handle: "06", view: "WORDBOOK", data: "WORDBOOKDETAIL" };
 
                 var data = JSON.stringify(obj);
 
@@ -255,12 +255,12 @@
 
             Main.style.marginTop = top + "px";
 
-            $('html, body').css({ 'overflow': 'hidden', 'height': '100%' });
-            $('#element').on('scroll touchmove mousewheel', function (event) {
-                event.preventDefault();
-                event.stopPropagation();
-                return false;
-            });
+            // $('html, body').css({ 'overflow': 'hidden', 'height': '100%' });
+            // $('#element').on('scroll touchmove mousewheel', function (event) {
+            //     event.preventDefault();
+            //     event.stopPropagation();
+            //     return false;
+            // });
 
 
             ko.applyBindings(viewModel);

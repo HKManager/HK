@@ -109,7 +109,7 @@
             SBGridProperties_WB_WordList.ellipsis = true;
             //SBGridProperties_WB_WordList.backcoloralternate = '#FFF2FF';
             SBGridProperties_WB_WordList.emptyrecords = "데이터가 존재하지 않습니다.";	//empty 문구 설정
-            SBGridProperties_WB_WordList.showtotalrows = true;											//그리드 하단 전체 행 표시
+            // SBGridProperties_WB_WordList.showtotalrows = true;											//그리드 하단 전체 행 표시
 
             SBGridProperties_WB_WordList.rowheader = 'seq';
             SBGridProperties_WB_WordList.scrollbubbling = true;
@@ -122,7 +122,7 @@
             SBGridProperties_WB_WordList.jsonref = 'gridData';
 
             SBGridProperties_WB_WordList.columns = [
-                { caption: ['단어장명'], ref: 'WB_NAME', width: '150px', style: 'text-align:center', type: 'output' },
+                // { caption: ['단어장명'], ref: 'WB_NAME', width: '150px', style: 'text-align:center', type: 'output' },
                 { caption: ['단어명'], ref: 'WORD_WORD', width: '150px', style: 'text-align:center', type: 'output' },
                 { caption: ['단어뜻'], ref: 'WORD_MEAN', width: '150px', style: 'text-align:center', type: 'output' },
                 { caption: ['예문'], ref: 'WORD_EXAM', width: '120px', style: 'text-align:center', type: 'output' },
@@ -135,7 +135,7 @@
             SBGridProperties_WSB_WordList.ellipsis = true;
             //SBGridProperties_WSB_WordList.backcoloralternate = '#FFF2FF';
             SBGridProperties_WSB_WordList.emptyrecords = "데이터가 존재하지 않습니다.";	//empty 문구 설정
-            SBGridProperties_WSB_WordList.showtotalrows = true;											//그리드 하단 전체 행 표시
+            // SBGridProperties_WSB_WordList.showtotalrows = true;											//그리드 하단 전체 행 표시
 
             SBGridProperties_WSB_WordList.rowheader = 'seq';
             SBGridProperties_WSB_WordList.scrollbubbling = true;
@@ -306,10 +306,17 @@
             ko.applyBindings(vm);
         });
 
+        function SelectWordBook() {
+            var wb = $("#WORD_BOOK").val();
+
+            var obj = { handle: "07", view: "WORDSTUDYBOOKDETAIL", data: wb };
+
+            var data = JSON.stringify(obj);
+
+            window.android.setData(data);
+        }
 
         function Create() {
-
-            swal("저장 되었습니다!", "", "success");
             // var objectData = ko.toJS(vm);
 
             // var jSonData = JSON.stringify(objectData);
@@ -319,12 +326,14 @@
             var jSonData = JSON.stringify(objectData);
 
             //var name = ViewModel.AC_NAME;
-            var obj = { handle: "03", view: "WordStudyBookDETAIL", data: jSonData };
+            var obj = { handle: "03", view: "WORDSTUDYBOOKDETAIL", data: jSonData };
 
             var data = JSON.stringify(obj);
 
             //log("Sending Data:" + data);
             window.android.setData(data);
+
+            swal("저장 되었습니다!", "", "success");
         }
 
         function GetData() {
@@ -346,7 +355,7 @@
         }
 
         function Cancel() {
-            var obj = { handle: "06", view: "WordStudyBookDETAIL", data: "WORDSTUDYBOOK" };
+            var obj = { handle: "06", view: "WORDSTUDYBOOKDETAIL", data: "WORDSTUDYBOOK" };
 
             var data = JSON.stringify(obj);
 
@@ -484,7 +493,7 @@
                                 <div class="form-group" style="margin-top:0px;margin-bottom: 10px;">
 
                                     <div class="form-line" style="margin-bottom: 10px;">
-                                        <select id="WORD_BOOK" class="form-control control-detail show-tick" data-bind="options: WORD_BOOKS,
+                                        <select id="WORD_BOOK" onchange="SelectWordBook()" class="form-control control-detail show-tick" data-bind="options: WORD_BOOKS,
                                                                                        optionsValue: 'WB_SN',
                                                                                        value: WB_SN,
                                                                                        optionsText: 'WB_NAME',
