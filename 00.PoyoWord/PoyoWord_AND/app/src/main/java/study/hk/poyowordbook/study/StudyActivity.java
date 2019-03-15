@@ -5,6 +5,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Handler;
+import android.speech.RecognitionListener;
+import android.speech.RecognizerIntent;
+import android.speech.SpeechRecognizer;
 import android.support.design.widget.TabLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
@@ -35,13 +38,14 @@ import study.hk.data.Data.HARDCODE;
 import study.hk.poyowordbook.CustomCallback;
 import study.hk.poyowordbook.R;
 import study.hk.poyowordbook.SpeechToText;
+import study.hk.poyowordbook.SpeechToText_Locale;
 import study.hk.poyowordbook.TextToSpeech_Korean;
 import study.hk.poyowordbook.TextToSpeech_Locale;
 import study.hk.poyowordbook.manager.WordAudLocDetailActivity;
 import study.hk.poyowordbook.manager.WordBookDetailActivity;
 import study.hk.poyowordbook.manager.WordStudyBookDetailActivity;
 
-public class StudyActivity extends AppCompatActivity {
+public class StudyActivity extends AppCompatActivity{
 
     private final static Handler handler = new Handler();
     private static Context context = null;
@@ -61,6 +65,7 @@ public class StudyActivity extends AppCompatActivity {
     private ViewPager mViewPager;
 
     private static SpeechToText stt;
+    private static SpeechToText_Locale stt_local;
     private static TextToSpeech_Locale tts_local;
     private static TextToSpeech_Korean tts_korean;
 
@@ -109,6 +114,15 @@ public class StudyActivity extends AppCompatActivity {
             }
         });
 
+        stt_local = new SpeechToText_Locale(context, this, new CustomCallback() {
+
+            @Override
+            public void onCall(String s) {
+                // 여기에서 콜백으로 넘어온 데이터 핸들링을 하게 됩니다. interface에서는 String을 넘겨주니깐 이 친구가 넘어오겠지요.
+                int abc = 0;
+            }
+        });
+
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -126,7 +140,7 @@ public class StudyActivity extends AppCompatActivity {
     }
 
     private static void SpeechToText() {
-        stt.SpeechToText();
+        stt_local.SpeechToText();
     }
 
     private static void TextToSpeech() {
@@ -330,7 +344,7 @@ public class StudyActivity extends AppCompatActivity {
                                     context.startActivity(intent);*/
 
                                     //SpeechToText();
-                                    TextToSpeech();
+                                    SpeechToText();
                                     break;
                                 case HARDCODE.단어장배치상세 :
                                     intent = new Intent(context,WordAudLocDetailActivity.class);
