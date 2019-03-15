@@ -32,6 +32,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.Gson;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -266,17 +267,15 @@ public class StudyActivity extends AppCompatActivity{
                 @Override
                 @SuppressLint({ "SetJavaScriptEnabled", "JavascriptInterface" })
                 public void onPageFinished(WebView view, String url) {
-/*                    EventData data = new EventData();
+                    EventData data = new EventData();
 
-                    ArrayList<Map> list = wordBook.Search();
-                    String jsonResult = gson.toJson(list);
                     data.SetHandle(HARDCODE.전체조회);
-                    data.SetView(HARDCODE.단어장관리);
-                    data.SetValue(list);
+                    data.SetView(HARDCODE.단어학습카드);
+                    data.SetValue(Manager_TodayWord.GetInstance().wordList_NoLOCS);
 
                     String JsonEventData = gson.toJson(data);
 
-                    webViewWordBook.loadUrl("javascript:showData('" + JsonEventData + "')");*/
+                    webViewWordBook.loadUrl("javascript:showData('" + JsonEventData + "')");
                 }
 
                 public boolean onJsAlert(final WebView view, final String url, final String message, JsResult result) {

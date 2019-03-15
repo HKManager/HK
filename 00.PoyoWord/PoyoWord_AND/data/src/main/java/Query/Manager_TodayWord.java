@@ -25,12 +25,14 @@ public class Manager_TodayWord {
     }
 
     public List<Map> wordList = null;
+    public List<Map> wordList_NoLOCS = null;
 
     public Manager_TodayWord(Context ctx){
         this.ctx = ctx;
         mHelper = new DBHelper(ctx);
 
         wordList = new ArrayList<>();
+        wordList_NoLOCS = new ArrayList<>();
 
         _instance = this;
     }
@@ -38,6 +40,7 @@ public class Manager_TodayWord {
     public void Load() {
 
         Map mapData = null;
+        Map mapDataNoLocs = null;
 
         db = mHelper.getReadableDatabase();
 
@@ -47,6 +50,31 @@ public class Manager_TodayWord {
         while(cursor.moveToNext()) {
 
             mapData = new HashMap();
+            mapDataNoLocs = new HashMap();
+
+            mapDataNoLocs.put("TW_SN", cursor.getInt(cursor.getColumnIndex("TW_SN")));
+            mapDataNoLocs.put("TW_DATE", cursor.getString(cursor.getColumnIndex("TW_DATE")));
+            mapDataNoLocs.put("TEST_YN", cursor.getInt(cursor.getColumnIndex("TEST_YN")));
+
+            mapDataNoLocs.put("WB_SN", cursor.getInt(cursor.getColumnIndex("WB_SN")));
+            mapDataNoLocs.put("WORD_SN", cursor.getString(cursor.getColumnIndex("WORD_SN")));
+            mapDataNoLocs.put("WORD_WORD", cursor.getString(cursor.getColumnIndex("WORD_WORD")));
+            mapDataNoLocs.put("WORD_MEAN", cursor.getString(cursor.getColumnIndex("WORD_MEAN")));
+            mapDataNoLocs.put("WORD_SPELLING", cursor.getString(cursor.getColumnIndex("WORD_SPELLING")));
+            mapDataNoLocs.put("WORD_SOUND", cursor.getString(cursor.getColumnIndex("WORD_SOUND")));
+            mapDataNoLocs.put("WORD_SOUND_FILE", cursor.getString(cursor.getColumnIndex("WORD_SOUND_FILE")));
+            mapDataNoLocs.put("WORD_EXAM", cursor.getString(cursor.getColumnIndex("WORD_EXAM")));
+            mapDataNoLocs.put("WORD_EXAM_MEAN", cursor.getString(cursor.getColumnIndex("WORD_EXAM_MEAN")));
+            mapDataNoLocs.put("WORD_TYPE_CD", cursor.getString(cursor.getColumnIndex("WORD_TYPE_CD")));
+            mapDataNoLocs.put("WORD_LEVEL_CD", cursor.getString(cursor.getColumnIndex("WORD_LEVEL_CD")));
+            mapDataNoLocs.put("WORD_IMPORTANT", cursor.getString(cursor.getColumnIndex("WORD_IMPORTANT")));
+            mapDataNoLocs.put("WORD_IMAGE", cursor.getString(cursor.getColumnIndex("WORD_IMAGE")));
+
+            mapDataNoLocs.put("WAL_SN", cursor.getInt(cursor.getColumnIndex("WAL_SN")));
+            mapDataNoLocs.put("WAL_NAME", cursor.getString(cursor.getColumnIndex("WAL_NAME")));
+
+            wordList_NoLOCS.add(mapDataNoLocs);
+
 
             mapData.put("TW_SN", cursor.getInt(cursor.getColumnIndex("TW_SN")));
             mapData.put("TW_DATE", cursor.getString(cursor.getColumnIndex("TW_DATE")));
@@ -68,7 +96,9 @@ public class Manager_TodayWord {
 
             mapData.put("WAL_SN", cursor.getInt(cursor.getColumnIndex("WAL_SN")));
             mapData.put("WAL_NAME", cursor.getString(cursor.getColumnIndex("WAL_NAME")));
+
             mapData.put("WAL_LOCS", cursor.getString(cursor.getColumnIndex("WAL_LOCS")));
+
 
             wordList.add(mapData);
         }

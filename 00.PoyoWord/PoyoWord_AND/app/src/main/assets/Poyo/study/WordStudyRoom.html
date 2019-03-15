@@ -90,23 +90,19 @@
   $(document).ready(function () {
     ko.applyBindings(viewModel);
 
-    var record = {
-      WORD_WORD: 'mountain',
-      WORD_SPELLING: 'm-o-u-n-t-a-i-n',
-      WORD_MEAN: '산',
+    // var record = {
+    //   WORD_WORD: 'mountain',
+    //   WORD_SPELLING: 'm-o-u-n-t-a-i-n',
+    //   WORD_MEAN: '산',
 
-      WORD_EXAM: 'I add apple.',
-      WORD_EXAM_MEAN: '나는 사과를 추가 하였습니다.'
-    };
+    //   WORD_EXAM: 'I add apple.',
+    //   WORD_EXAM_MEAN: '나는 사과를 추가 하였습니다.'
+    // };
 
-    wordList.push(record);
-    wordList.push(record);
-    wordList.push(record);
-    wordList.push(record);
-
-    viewModel.words(wordList);
-
-    InitReveal();
+    // wordList.push(record);
+    // wordList.push(record);
+    // wordList.push(record);
+    // wordList.push(record);
   });
 
   function InitReveal() {
@@ -166,12 +162,14 @@
 
     switch (jsonObj.handle) {
       case "NEXT":
-      Reveal.next();
+        Reveal.next();
+        break;
+      case "01":
+        wordList = jsonObj.value
+        viewModel.words(wordList);
+        InitReveal();
         break;
     }
-
-
-    viewModel.list(jsonObj.value);
   }
 
 </script>
@@ -231,7 +229,7 @@
   <div class="cd-overlay-content">
     <span></span>
   </div> <!-- cd-overlay-content -->
-  <a href="#0" class="cd-nav-trigger" style="margin-right:5px;margin-top: 18px;" onclick="PlayStudy()">Menu<span
+  <a class="cd-nav-trigger" style="margin-right:5px;margin-top: 18px;" onclick="PlayStudy()">Menu<span
       class="cd-icon"></span></a>
 </body>
 
