@@ -35,6 +35,7 @@ import study.hk.data.Data.HARDCODE;
 import study.hk.poyowordbook.CustomCallback;
 import study.hk.poyowordbook.R;
 import study.hk.poyowordbook.SpeechToText;
+import study.hk.poyowordbook.TextToSpeech_Korean;
 import study.hk.poyowordbook.TextToSpeech_Locale;
 import study.hk.poyowordbook.manager.WordAudLocDetailActivity;
 import study.hk.poyowordbook.manager.WordBookDetailActivity;
@@ -60,7 +61,8 @@ public class StudyActivity extends AppCompatActivity {
     private ViewPager mViewPager;
 
     private static SpeechToText stt;
-    private static TextToSpeech_Locale tts;
+    private static TextToSpeech_Locale tts_local;
+    private static TextToSpeech_Korean tts_korean;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -89,7 +91,16 @@ public class StudyActivity extends AppCompatActivity {
             }
         });
 
-        tts = new TextToSpeech_Locale(context, this, new CustomCallback() {
+        tts_local = new TextToSpeech_Locale(context, this, new CustomCallback() {
+
+            @Override
+            public void onCall(String s) {
+                // 여기에서 콜백으로 넘어온 데이터 핸들링을 하게 됩니다. interface에서는 String을 넘겨주니깐 이 친구가 넘어오겠지요.
+                int abc = 0;
+            }
+        });
+
+        tts_korean = new TextToSpeech_Korean(context, this, new CustomCallback() {
 
             @Override
             public void onCall(String s) {
@@ -110,7 +121,7 @@ public class StudyActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        tts.Close();
+        tts_local.Close();
         stt.Release();
     }
 
@@ -119,7 +130,9 @@ public class StudyActivity extends AppCompatActivity {
     }
 
     private static void TextToSpeech() {
-        tts.TextToSpeech("a,p,p,l,e");
+        /*tts_local.TextToSpeech("a,p,p,l,e");*/
+
+        tts_korean.TextToSpeech("a,p,p,l,e");
     }
 
     public static class StudyFragment extends Fragment {
@@ -316,8 +329,8 @@ public class StudyActivity extends AppCompatActivity {
                                     intent.putExtra("WB_SN",""); *//*송신*//*
                                     context.startActivity(intent);*/
 
-                                    SpeechToText();
-                                    //TextToSpeech();
+                                    //SpeechToText();
+                                    TextToSpeech();
                                     break;
                                 case HARDCODE.단어장배치상세 :
                                     intent = new Intent(context,WordAudLocDetailActivity.class);
