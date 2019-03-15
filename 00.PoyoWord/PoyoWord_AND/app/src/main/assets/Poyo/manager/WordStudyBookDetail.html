@@ -309,6 +309,10 @@
         function SelectWordBook() {
             var wb = $("#WORD_BOOK").val();
 
+            ShowSelectWordBook(wb);
+        }
+
+        function ShowSelectWordBook(wb) {
             var obj = { handle: "07", view: "WORDSTUDYBOOKDETAIL", data: wb };
 
             var data = JSON.stringify(obj);
@@ -378,6 +382,7 @@
                 case "WordAudioLoc" :
                     vm.WORD_AUD_LOCS(jsonObj.value);
                     vm.WAL_SN(jsonObj.value[0].WAL_SN);
+                    ShowSelectWordBook(jsonObj.value[0].WAL_SN);
                     break;    
                 case "DETAIL":
                      vm.WSB_SN(jsonObj.value.WSB_SN);

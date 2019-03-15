@@ -165,7 +165,7 @@ public class WordStudyBookDetailActivity extends AppCompatActivity {
                                 map = mapper.readValue(parse.data, new TypeReference<Map<String, Object>>(){});
 
                                 String FromDT = map.get("WSB_FROMDT").toString();
-                                String ToDT = map.get("W7SB_TODT").toString();
+                                String ToDT = map.get("WSB_TODT").toString();
 
                                 String[] FromDTArray = FromDT.split(" ");
                                 String[] ToDTArray = ToDT.split(" ");
