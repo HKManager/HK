@@ -142,6 +142,7 @@ public class StudyActivity extends AppCompatActivity{
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                AudioManager.GetInstance().PlayBGM("Poyo/main/bgm/bgm_1.mp3");
                 finish();
             }
         });
@@ -208,7 +209,7 @@ public class StudyActivity extends AppCompatActivity{
                         case HARDCODE.단어뜻:
                             text = data.get("WORD_MEAN").toString();
                             ShowRedText("WORD_MEAN");
-                            tts_local.TextToSpeech_Korean(text, 0.8f);
+                            tts_local.TextToSpeech_Korean(text, 0.9f);
                             break;
                         case HARDCODE.단어예문:
                             text = data.get("WORD_EXAM").toString();
@@ -451,9 +452,6 @@ public class StudyActivity extends AppCompatActivity{
 /*                                    intent = new Intent(context,WordBookDetailActivity.class);
                                     intent.putExtra("WB_SN",""); *//*송신*//*
                                     context.startActivity(intent);*/
-
-                                    AudioManager.GetInstance().StopBGM();
-
                                     TextToSpeech();
                                     break;
                                 case HARDCODE.단어장배치상세 :

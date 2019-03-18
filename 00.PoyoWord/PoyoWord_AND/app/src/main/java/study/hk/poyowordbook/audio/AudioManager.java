@@ -10,8 +10,8 @@ public class AudioManager {
 
     private MediaPlayer bgmMp3 = new MediaPlayer();
 
-    private Context context;
-    private Activity activity;
+    private Context _context;
+    private Activity _activity;
 
     private static AudioManager _instance = null;
 
@@ -21,25 +21,30 @@ public class AudioManager {
     }
 
     public AudioManager (Context context, Activity activity) {
-        context = context;
-        activity = activity;
+        _context = context;
+        _activity = activity;
+
+        _instance = this;
     }
 
     public void StopBGM() {
-        bgmMp3.stop();
+        if (bgmMp3.isPlaying()) {
+            bgmMp3.stop();
+            bgmMp3.stop();
+            bgmMp3.release();
+            bgmMp3 = null;
+        }
     }
 
     // - 신인환 주석 : BGM 플레이
     // - for MediaPlay
     public void PlayBGM(String address) {
         try {
-            if (bgmMp3.isPlaying()) {
-                bgmMp3.stop();
-                bgmMp3.release();
+            if (bgmMp3 == null) {
                 bgmMp3 = new MediaPlayer();
             }
 
-            AssetFileDescriptor descriptor = activity.getAssets().openFd(address);
+            AssetFileDescriptor descriptor = _activity.getAssets().openFd(address);
             bgmMp3.setDataSource(descriptor.getFileDescriptor(), descriptor.getStartOffset(), descriptor.getLength());
             descriptor.close();
 

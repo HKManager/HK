@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.content.res.AssetFileDescriptor;
 import android.content.res.AssetManager;
 import android.graphics.Bitmap;
-import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -30,6 +29,7 @@ import Query.Manager_Code;
 import Query.Manager_TodayWord;
 import io.github.controlwear.virtual.joystick.android.JoystickView;
 import study.hk.data.Data.*;
+import study.hk.poyowordbook.audio.AudioManager;
 import study.hk.poyowordbook.manager.WordManagerActivity;
 import study.hk.poyowordbook.study.StudyActivity;
 
@@ -43,7 +43,9 @@ public class MainActivity extends AppCompatActivity {
    private EventData eventData = new EventData();
     private Gson gson = new Gson();
     private String move = "";
-    private MediaPlayer bgmMp3 = new MediaPlayer();
+
+    private AudioManager audioManager = null;
+
     private JoystickView joystick = null;
 
     @SuppressLint({ "SetJavaScriptEnabled", "JavascriptInterface" })
@@ -54,7 +56,8 @@ public class MainActivity extends AppCompatActivity {
 
         context = getApplicationContext();
 
-        this.PlayBGM();
+        audioManager = new AudioManager(context, this);
+        AudioManager.GetInstance().PlayBGM("Poyo/main/bgm/bgm_1.mp3");
 
         lWebView = (WebView)findViewById(R.id.mainView);
         lWebView.setWebViewClient(new WebViewClient() {
@@ -253,6 +256,7 @@ public class MainActivity extends AppCompatActivity {
                                     startActivity(intent);
                                     break;
                                 case HARDCODE.단어학습카드 :
+                                    AudioManager.GetInstance().StopBGM();
                                     intent=new Intent(MainActivity.this,StudyActivity.class);
                                     startActivity(intent);
                                     break;
@@ -265,29 +269,4 @@ public class MainActivity extends AppCompatActivity {
     }
     // - for JavaScript Receive Message from JavaScript
     // - 신인환 주석 : 자바스크립트 연동 파트
-
-    // - 신인환 주석 : BGM 플레이
-    // - for MediaPlay
-    public void PlayBGM() {
-        try {
-            if (bgmMp3.isPlaying()) {
-                bgmMp3.stop();
-                bgmMp3.release();
-                bgmMp3 = new MediaPlayer();
-            }
-
-            AssetFileDescriptor descriptor = getAssets().openFd("Poyo/main/bgm/bgm_1.mp3");
-            bgmMp3.setDataSource(descriptor.getFileDescriptor(), descriptor.getStartOffset(), descriptor.getLength());
-            descriptor.close();
-
-            bgmMp3.prepare();
-            bgmMp3.setVolume(1f, 1f);
-            bgmMp3.setLooping(true);
-            bgmMp3.start();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-    // - for MediaPlay
-    // - 신인환 주석 : BGM 플레이
 }
