@@ -40,6 +40,15 @@
 
   <!-- For syntax highlighting -->
   <link rel="stylesheet" href="../ASlide/lib/css/zenburn.css">
+
+  <style  type="text/css">
+
+    .REDTEXT {
+      color: red;
+    }
+
+  </style>
+
 </head>
 
 <script src="../ASlide/lib/js/head.min.js"></script>
@@ -136,7 +145,7 @@
   }
 
   function nextPage() {
-    pageIndex++;
+    // pageIndex++;
   }
 
   function prevPage() {
@@ -162,7 +171,39 @@
 
     switch (jsonObj.handle) {
       case "NEXT":
+        pageIndex++;
         Reveal.next();
+        break;
+      case "REDTEXT":
+
+        switch(jsonObj.data) {
+          case "WORD_WORD" :
+          $('.REDTEXT').removeClass('REDTEXT');
+          $('#word_word_' + pageIndex).addClass('REDTEXT');
+
+          break;
+          case "WORD_MEAN" :
+          $('.REDTEXT').removeClass('REDTEXT');
+          $('#word_mean_' + pageIndex).addClass('REDTEXT');
+
+          break;
+          case "WORD_SPELLING" :
+          $('.REDTEXT').removeClass('REDTEXT');
+          $('#word_spelling_' + pageIndex).addClass('REDTEXT');
+
+          break;
+          case "WORD_EXAM" :
+          $('.REDTEXT').removeClass('REDTEXT');
+          $('#word_exam_' + pageIndex).addClass('REDTEXT');
+
+          break;
+          case"WORD_EXAM_MEAN" :
+          $('.REDTEXT').removeClass('REDTEXT');
+          $('#word_exam_mean_' + pageIndex).addClass('REDTEXT');
+
+          break;
+        }
+
         break;
       case "01":
         wordList = jsonObj.value
@@ -187,7 +228,7 @@
 
             <div>
               <div>
-                <h2 style="font-size: 40px;" data-bind="text: WORD_WORD">
+                <h2 style="font-size: 40px;" data-bind="attr: { id: 'word_word_' + $index() }, text: WORD_WORD" >
                 </h2>
               </div>
             </div>
@@ -195,10 +236,10 @@
           <div class="body">
 
             <div class="row">
-              <h1 style="font-size: 200%;" data-bind="text: WORD_SPELLING">
+              <h1 style="font-size: 200%;" data-bind="attr: { id: 'word_spelling_' + $index() }, text: WORD_SPELLING" >
               </h1>
 
-              <h2 data-bind="text: WORD_MEAN">
+              <h2 data-bind="attr: { id: 'word_mean_' + $index() }, text: WORD_MEAN" >
               </h2>
             </div>
 
@@ -209,10 +250,10 @@
           <div class="body">
 
             <div class="row">
-              <h3 data-bind="text: WORD_EXAM">
+              <h3 data-bind="attr: { id: 'word_exam_' + $index() }, text: WORD_EXAM" >
               </h3>
 
-              <h3 data-bind="text: WORD_EXAM_MEAN">
+              <h3 data-bind="attr: { id: 'word_exam_mean_' + $index() }, text: WORD_EXAM_MEAN" >
               </h3>
             </div>
 

@@ -48,6 +48,7 @@ import study.hk.poyowordbook.SpeechToText;
 import study.hk.poyowordbook.SpeechToText_Locale;
 import study.hk.poyowordbook.TextToSpeech_Korean;
 import study.hk.poyowordbook.TextToSpeech_Locale;
+import study.hk.poyowordbook.audio.AudioManager;
 import study.hk.poyowordbook.manager.WordAudLocDetailActivity;
 import study.hk.poyowordbook.manager.WordBookDetailActivity;
 import study.hk.poyowordbook.manager.WordStudyBookDetailActivity;
@@ -196,22 +197,27 @@ public class StudyActivity extends AppCompatActivity{
                     switch (locs.get(wordAudioIndex).get("CODE").toString()) {
                         case HARDCODE.단어 :
                             text = data.get("WORD_WORD").toString();
+                            ShowRedText("WORD_WORD");
                             tts_local.TextToSpeech(text, 0.5f);
                             break;
                         case HARDCODE.단어스펠링:
                             text = data.get("WORD_SPELLING").toString();
+                            ShowRedText("WORD_SPELLING");
                             tts_local.TextToSpeech(text, 0.6f);
                             break;
                         case HARDCODE.단어뜻:
                             text = data.get("WORD_MEAN").toString();
-                            tts_korean.TextToSpeech(text, 0.8f);
+                            ShowRedText("WORD_MEAN");
+                            tts_local.TextToSpeech_Korean(text, 0.8f);
                             break;
                         case HARDCODE.단어예문:
                             text = data.get("WORD_EXAM").toString();
+                            ShowRedText("WORD_EXAM");
                             tts_local.TextToSpeech(text, 0.8f);
                             break;
                         case HARDCODE.단어예문뜻:
                             text = data.get("WORD_EXAM_MEAN").toString();
+                            ShowRedText("WORD_EXAM_MEAN");
                             tts_korean.TextToSpeech(text, 1.0f);
                             break;
                     }
@@ -232,6 +238,26 @@ public class StudyActivity extends AppCompatActivity{
                 wordAudioIndex++;
             }
         }
+    }
+
+    private static void ShowRedText(String wordType) {
+        EventData eventData = new EventData();
+        eventData.SetHandle("REDTEXT");
+        eventData.SetView(HARDCODE.단어학습카드);
+        eventData.SetData(wordType);
+        eventData.SetValue("");
+
+        String JsonEventData = gson.toJson(eventData);
+
+        webViewWordBook.post(new Runnable()
+        {
+            @Override
+            public void run()
+            {
+                //동작
+                webViewWordBook.loadUrl("javascript:showData('" + JsonEventData + "')");
+            }
+        });
     }
 
     public static class StudyFragment extends Fragment {
@@ -425,6 +451,8 @@ public class StudyActivity extends AppCompatActivity{
 /*                                    intent = new Intent(context,WordBookDetailActivity.class);
                                     intent.putExtra("WB_SN",""); *//*송신*//*
                                     context.startActivity(intent);*/
+
+                                    AudioManager.GetInstance().StopBGM();
 
                                     TextToSpeech();
                                     break;

@@ -30,6 +30,19 @@ public class TextToSpeech_Locale implements TextToSpeech.OnUtteranceCompletedLis
     }
 
     public void TextToSpeech(String text, float speed) {
+        tts.setLanguage(Locale.ENGLISH);
+        tts.setPitch(1.0f);         // 음성 톤을 2.0배 올려준다.
+        tts.setSpeechRate(speed);    // 읽는 속도는 기본 설정
+        // editText에 있는 문장을 읽는다.
+
+        HashMap<String, String> ttsAlarm = new HashMap<String, String >();
+        ttsAlarm.put(TextToSpeech.Engine.KEY_PARAM_STREAM, String.valueOf(AudioManager.STREAM_MUSIC));
+        ttsAlarm.put(TextToSpeech.Engine.KEY_PARAM_UTTERANCE_ID, "TTSEND");
+        tts.speak(text,TextToSpeech.QUEUE_FLUSH, ttsAlarm);
+    }
+
+    public void TextToSpeech_Korean(String text, float speed) {
+        tts.setLanguage(Locale.KOREA);
         tts.setPitch(1.0f);         // 음성 톤을 2.0배 올려준다.
         tts.setSpeechRate(speed);    // 읽는 속도는 기본 설정
         // editText에 있는 문장을 읽는다.
