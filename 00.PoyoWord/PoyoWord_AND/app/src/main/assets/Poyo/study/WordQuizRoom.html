@@ -99,54 +99,48 @@
   $(document).ready(function () {
     ko.applyBindings(viewModel);
 
-    var record = {
-      id: '0',
-      WORD_WORD: 'mountain',
-      WORD_SPELLING: 'm-o-u-n-t-a-i-n',
-      WORD_MEAN: '산',
+    // var record = {
+    //   WORD_WORD: 'mountain',
+    //   WORD_SPELLING: 'm-o-u-n-t-a-i-n',
+    //   WORD_MEAN: '산',
 
-      WORD_QUIZ: 'abc',
-      WORD_QUIZ1: 'apple',
-      WORD_QUIZ2: 'mountain',
-      WORD_QUIZ3: 'file',
+    //   WORD_QUIZ1: 'apple',
+    //   WORD_QUIZ2: 'mountain',
+    //   WORD_QUIZ3: 'file',
 
-      WORD_EXAM: 'I add apple',
-      WORD_EXAM_MEAN: '나는 사과를 추가 하였습니다.',
+    //   WORD_EXAM: 'I add apple',
+    //   WORD_EXAM_MEAN: '나는 사과를 추가 하였습니다.',
 
-      EXAM_QUIZ: '',
-      EXAM_QUIZ1: 'I',
-      EXAM_QUIZ2: 'apple',
-      EXAM_QUIZ3: 'add'
-    };
+    //   EXAM_QUIZ1: 'I',
+    //   EXAM_QUIZ2: 'apple',
+    //   EXAM_QUIZ3: 'add'
+    // };
 
-    var record1 = {
-      id: '1',
-      WORD_WORD: 'apple',
-      WORD_SPELLING: 'm-o-u-n-t-a-i-n',
-      WORD_MEAN: '산',
+    // var record1 = {
+    //   WORD_WORD: 'apple',
+    //   WORD_SPELLING: 'm-o-u-n-t-a-i-n',
+    //   WORD_MEAN: '산',
 
-      WORD_QUIZ: 'eeee',
-      WORD_QUIZ1: 'apple',
-      WORD_QUIZ2: 'mountain',
-      WORD_QUIZ3: 'file',
+    //   WORD_QUIZ1: 'apple',
+    //   WORD_QUIZ2: 'mountain',
+    //   WORD_QUIZ3: 'file',
 
-      WORD_EXAM: 'I add apple',
-      WORD_EXAM_MEAN: '나는 사과를 추가 하였습니다.',
+    //   WORD_EXAM: 'I add apple',
+    //   WORD_EXAM_MEAN: '나는 사과를 추가 하였습니다.',
 
-      EXAM_QUIZ: '',
-      EXAM_QUIZ1: 'add',
-      EXAM_QUIZ2: 'I',
-      EXAM_QUIZ3: 'apple'
-    };
+    //   EXAM_QUIZ1: 'add',
+    //   EXAM_QUIZ2: 'I',
+    //   EXAM_QUIZ3: 'apple'
+    // };
 
-    QuizList.push(record);
-    QuizList.push(record1);
-    QuizList.push(record);
-    QuizList.push(record);
+    // QuizList.push(record);
+    // QuizList.push(record1);
+    // QuizList.push(record);
+    // QuizList.push(record);
 
-    viewModel.words(QuizList);
+    // viewModel.words(QuizList);
 
-    InitReavel();
+    // InitReavel();
   });
 
   var selectItem;
@@ -310,7 +304,20 @@
     Reveal.next();
   }
 
-  function InitReavel() {
+  function showData(str) {
+
+    var jsonObj = JSON.parse(str);
+
+    switch (jsonObj.handle) {
+      case "01":
+        QuizList = jsonObj.value;
+        viewModel.words(QuizList);
+        InitReveal();
+        break;
+    }
+  }
+
+  function InitReveal() {
 
     // Full list of configuration options available here:
     // https://github.com/hakimel/reveal.js#configuration

@@ -42,6 +42,7 @@ import Query.Manager_WordAudLoc;
 import Query.Manager_WordBook;
 import Query.Manager_WordStudyBook;
 import study.hk.data.Data.HARDCODE;
+import study.hk.lib.StringExt;
 import study.hk.poyowordbook.CustomCallback;
 import study.hk.poyowordbook.R;
 import study.hk.poyowordbook.SpeechToText;
@@ -349,6 +350,33 @@ public class StudyActivity extends AppCompatActivity{
                 @Override
                 @SuppressLint({ "SetJavaScriptEnabled", "JavascriptInterface" })
                 public void onPageFinished(WebView view, String url) {
+
+
+                    Manager_TodayWord.GetInstance().wordList_NoLOCS.forEach(t -> {
+                        String exam = t.get("WORD_EXAM").toString();
+                        //exam = exam.replaceAll(".", "");
+
+                        List<String> examList = StringExt.GetInstance().GetDivide(exam);
+
+                        t.put("EXAM_QUIZ1", examList.get(2));
+                        t.put("EXAM_QUIZ2", examList.get(0));
+                        t.put("EXAM_QUIZ3", examList.get(1));
+
+                        t.put("WORD_QUIZ1", t.get("WORD_WORD"));
+                        t.put("WORD_QUIZ2", "abc");
+                        t.put("WORD_QUIZ3", "def");
+                    });
+
+                    EventData data = new EventData();
+
+                    data.SetHandle(HARDCODE.전체조회);
+                    data.SetView(HARDCODE.단어학습카드);
+                    data.SetValue(Manager_TodayWord.GetInstance().wordList_NoLOCS);
+
+                    String JsonEventData = gson.toJson(data);
+
+                    webViewWordStudyBook.loadUrl("javascript:showData('" + JsonEventData + "')");
+
 
                     /*List<Map> list = wordStudyBook.Search();
 
