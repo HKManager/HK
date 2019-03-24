@@ -16,4 +16,5 @@
     <string name="kakao_app_key">63e41604d206eea8c6286b8c77781ee1</string>
     <string name="title_activity_study">StudyActivity</string>
     <string name="title_activity_intro">IntroActivity</string>
+    <string name="title_activity_fruit_knight">FruitKnightActivity</string>
 </resources>

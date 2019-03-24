@@ -102,6 +102,8 @@
         var gridData = []; // 그리드를 그리기 위한 데이터를 담기위한 객체를 선언합니다.
         var removeData = []; // 그리드를 그리기 위한 데이터를 담기위한 객체를 선언합니다.
 
+        var dayIndex = [];
+
         function createGrid() {
             // // 그리드의 여러 속성들을 입력합니다.
             SBGridProperties_WB_WordList.extendlastcol = 'scroll';
@@ -366,6 +368,59 @@
             window.android.setData(data);
         }
 
+        function ChangeFromDT() {
+            var d = new Date().toISOString().slice(0,10);
+
+            var fromDT = $("#From_DT").val();
+            var toDT = $("#To_DT").val();
+
+            fromDT = fromDT.replaceAll(' ', "");
+            fromDT = fromDT.replaceAll('년', "");
+            fromDT = fromDT.replaceAll('월', "");
+            fromDT = fromDT.replaceAll('일', ""); 
+
+            
+            toDT = toDT.replaceAll(' ', "");
+            toDT = toDT.replaceAll('년', "");
+            toDT = toDT.replaceAll('월', "");
+            toDT = toDT.replaceAll('일', "");
+
+            dayIndex = [];
+
+            for(var i = 0; i <= toDT - fromDT; i++) {
+
+                var day = new Date(fromDT / 10000, (fromDT % 10000 / 100) - 1, fromDT % 100);
+
+
+                day = day.addDays(i);
+
+                var temp = {
+                    idx : i,
+                    date : day
+                };
+
+                dayIndex.push(temp);
+            }
+
+            for(var i = 0; i < newData.length; i++) {
+                    newData[i].UNIT_SN = dayIndex[i / 16].date.toISOString().slice(0,10);
+            }
+        }
+
+        Date.prototype.addDays = function(days) {
+        this.setDate(this.getDate() + parseInt(days));
+        return this;
+        };
+
+        function ChangeToDT() {
+            var fromDT = $("#From_DT").val();
+            var toDT = $("#To_DT").val();
+        }
+
+        String.prototype.replaceAll = function(org, dest) {
+            return this.split(org).join(dest);
+        }
+
         function showData(str) {
 
             var jsonObj = JSON.parse(str);
@@ -476,11 +531,13 @@
 
                                     <div class="input-daterange input-group" id="bs_datepicker_range_container">
                                         <div class="form-line">
-                                            <input id="From_DT" style="text-align: center;" type="text" class="form-control" placeholder="Date start...">
+                                            <input id="From_DT" style="text-align: center;" type="text" class="form-control" placeholder="Date start..."
+                                            onchange="ChangeFromDT()" >
                                         </div>
                                         <span class="input-group-addon">~ </span>
                                         <div class="form-line">
-                                            <input id="To_DT" style="text-align: center;" type="text" class="form-control" placeholder="Date end...">
+                                            <input id="To_DT" style="text-align: center;" type="text" class="form-control" placeholder="Date end..."
+                                            onchange="ChangeToDT()">
                                         </div>
                                     </div>
                                 </div>

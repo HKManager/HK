@@ -30,6 +30,7 @@ import Query.Manager_TodayWord;
 import io.github.controlwear.virtual.joystick.android.JoystickView;
 import study.hk.data.Data.*;
 import study.hk.poyowordbook.audio.AudioManager;
+import study.hk.poyowordbook.game.FruitKnightActivity;
 import study.hk.poyowordbook.manager.WordManagerActivity;
 import study.hk.poyowordbook.study.StudyActivity;
 
@@ -258,6 +259,11 @@ public class MainActivity extends AppCompatActivity {
                                 case HARDCODE.단어학습카드 :
                                     AudioManager.GetInstance().StopBGM();
                                     intent=new Intent(MainActivity.this,StudyActivity.class);
+                                    startActivity(intent);
+                                    break;
+                                case "INFO" :
+                                    AudioManager.GetInstance().StopBGM();
+                                    intent=new Intent(MainActivity.this, FruitKnightActivity.class);
                                     startActivity(intent);
                                     break;
                             }
