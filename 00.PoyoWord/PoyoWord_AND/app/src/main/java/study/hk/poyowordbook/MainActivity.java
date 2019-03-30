@@ -123,7 +123,12 @@ public class MainActivity extends AppCompatActivity {
         Manager_TodayWord.GetInstance().Load();
 
         if(Manager_TodayWord.GetInstance().wordList.size() <= 0) {
-            Manager_TodayWord.GetInstance().Insert();
+            Manager_TodayWord.GetInstance().Insert(HARDCODE.단어학습장관리);
+            Manager_TodayWord.GetInstance().Load();
+        }
+
+        if(Manager_TodayWord.GetInstance().wordList.size() <= 0) {
+            Manager_TodayWord.GetInstance().Insert("RANDOMTODAY");
             Manager_TodayWord.GetInstance().Load();
         }
 

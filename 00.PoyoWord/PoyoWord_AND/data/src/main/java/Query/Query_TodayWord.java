@@ -64,7 +64,28 @@ public class Query_TodayWord {
      LIMIT 16
      */
     @Multiline
-    public static String InsertData;
+    public static String InsertRandomData;
+
+    /**
+     INSERT INTO todayword
+     (
+     TW_DATE
+     , WAL_SN
+     , WORD_SN
+     , TEST_YN
+     )
+     SELECT
+     strftime("%Y%m%d",'now','localtime') AS TW_DATE
+     , wsb.WAL_SN
+     , w.WORD_SN
+     , 0 AS TEST_YN
+     FROM wordstudybook wsb, mapping_wsb_w mwsb, word w
+     WHERE mwsb.WSB_SN = mwsb.WSB_SN
+     AND mwsb.WORD_SN = w.WORD_SN
+     AND strftime("%Y%m%d",'now','localtime') BETWEEN wsb.WSB_FROMDT AND wsb.WSB_TODT
+     */
+    @Multiline
+    public static String InsertStudyWordData;
 
     /**
      DELETE

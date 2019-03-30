@@ -10,6 +10,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import study.hk.data.Data.HARDCODE;
+
 public class Manager_TodayWord {
 
     private SQLiteDatabase db;
@@ -128,7 +130,7 @@ public class Manager_TodayWord {
         db = null;
     }
 
-    public boolean Insert() {
+    public boolean Insert(String key) {
         try {
 
             String query = Query_TodayWord.DeleteData;
@@ -136,7 +138,18 @@ public class Manager_TodayWord {
             db = mHelper.getReadableDatabase();
             //db.execSQL(query);
 
-            query = Query_TodayWord.InsertData;
+            query = Query_TodayWord.InsertRandomData;
+
+            switch (key) {
+                case HARDCODE.단어학습장관리:
+                    query = Query_TodayWord.InsertStudyWordData;
+                    break;
+                case "RANDOMTODAY":
+                    query = Query_TodayWord.InsertRandomData;
+                    break;
+            }
+
+
             db.execSQL(query);
 
             db.close();
