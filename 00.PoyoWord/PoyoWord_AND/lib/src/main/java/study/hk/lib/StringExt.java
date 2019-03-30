@@ -20,64 +20,73 @@ public class StringExt {
     public List<String> GetDivide(String text) {
 
         List<String> resultList = new ArrayList<String>();
-        /*String temp = "Are you from an affluent background?";*/
 
-        String[] abc = text.split(" ");
+        try {
 
-        Random rand;
+            /*String temp = "Are you from an affluent background?";*/
 
-        rand = new Random();
+            String[] abc = text.split(" ");
 
-        int min, max;
+            Random rand;
 
-        String node1 = abc[0];
-        String node2 = "";
-        String node3 = "";
+            rand = new Random();
 
-        min = 1;
-        max = abc.length / 3;
+            int min, max;
 
-        int randomNum = rand.nextInt(max - min + 1) + min;
+            String node1 = abc[0];
+            String node2 = "";
+            String node3 = "";
 
-        if (min == randomNum) {
-            randomNum++;
+            min = 1;
+            max = abc.length / 3;
+
+            int randomNum = rand.nextInt(max - min + 1) + min;
+
+            if (min == randomNum) {
+                randomNum++;
+            }
+
+            for (int i = min; i < randomNum; i++) {
+                node1 += " " + abc[i];
+            }
+
+            min = randomNum;
+            max = abc.length - 1;
+
+            randomNum = rand.nextInt(max - min + 1) + min;
+
+            if (min == randomNum) {
+                randomNum++;
+            }
+
+            for (int i = min; i < randomNum; i++) {
+                node2 += " " + abc[i];
+            }
+
+            min = randomNum;
+            max = abc.length;
+
+            for (int i = min; i < abc.length; i++) {
+                node3 += " " + abc[i];
+            }
+
+            resultList.add(node1);
+            resultList.add(node2);
+            resultList.add(node3);
+
+            System.out.println(node1);
+            System.out.println(node2);
+            System.out.println(node3);
+
+            String result = node1 + node2 + node3;
+            System.out.println(result);
+            return resultList;
+
+        }catch (Exception ex) {
+
+            return resultList;
+
         }
-
-        for (int i = min; i < randomNum; i++) {
-            node1 += " " + abc[i];
-        }
-
-        min = randomNum;
-        max = abc.length - 1;
-
-        randomNum = rand.nextInt(max - min + 1) + min;
-
-        if (min == randomNum) {
-            randomNum++;
-        }
-
-        for (int i = min; i < randomNum; i++) {
-            node2 += " " + abc[i];
-        }
-
-        min = randomNum;
-        max = abc.length;
-
-        for (int i = min; i < abc.length; i++) {
-            node3 += " " + abc[i];
-        }
-
-        resultList.add(node1);
-        resultList.add(node2);
-        resultList.add(node3);
-
-        System.out.println(node1);
-        System.out.println(node2);
-        System.out.println(node3);
-
-        String result = node1 + node2 + node3;
-        System.out.println(result);
-        return resultList;
     }
 
 }

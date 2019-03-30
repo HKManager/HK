@@ -23,6 +23,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Map;
 
 import Event.EventData;
 import Query.Manager_Code;
@@ -117,6 +118,8 @@ public class MainActivity extends AppCompatActivity {
 
 
         Manager_TodayWord todayWord = new Manager_TodayWord(context);
+        /*Map<String, Object> mapCount =  Manager_TodayWord.GetInstance().GetTodayCount();*/
+
         Manager_TodayWord.GetInstance().Load();
 
         if(Manager_TodayWord.GetInstance().wordList.size() <= 0) {

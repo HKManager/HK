@@ -37,6 +37,27 @@ public class Manager_TodayWord {
         _instance = this;
     }
 
+    public Map<String, Object> GetTodayCount() {
+
+        Map<String, Object> mapData = null;
+
+        db = mHelper.getReadableDatabase();
+
+        Cursor cursor;
+        cursor = db.rawQuery(Query_TodayWord.GetTodayCount, null);
+
+        while(cursor.moveToNext()) {
+
+            mapData = new HashMap();
+            mapData.put("COUNT", cursor.getInt(cursor.getColumnIndex("COUNT")));
+        }
+
+        db.close();
+        db = null;
+
+        return mapData;
+    }
+
     public void Load() {
 
         Map mapData = null;
@@ -104,6 +125,7 @@ public class Manager_TodayWord {
         }
 
         db.close();
+        db = null;
     }
 
     public boolean Insert() {
@@ -112,12 +134,13 @@ public class Manager_TodayWord {
             String query = Query_TodayWord.DeleteData;
 
             db = mHelper.getReadableDatabase();
-            db.execSQL(query);
+            //db.execSQL(query);
 
             query = Query_TodayWord.InsertData;
             db.execSQL(query);
 
             db.close();
+            db = null;
 
             return true;
         }catch (Exception ex) {

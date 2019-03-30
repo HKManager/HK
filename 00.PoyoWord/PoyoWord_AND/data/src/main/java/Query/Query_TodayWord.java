@@ -36,6 +36,14 @@ public class Query_TodayWord {
     public static String GetList;
 
     /**
+     SELECT COUNT(*) AS COUNT
+     FROM todayword
+     WHERE TW_DATE = strftime("%Y%m%d",'now','localtime')
+     */
+    @Multiline
+    public static String GetTodayCount;
+
+    /**
      INSERT INTO todayword
      (
      TW_DATE
@@ -53,7 +61,7 @@ public class Query_TodayWord {
      AND WB_LEVEL_CD = '001'
      AND WORD_SN = WORD_SN
      ORDER BY random()
-     LIMIT 16;
+     LIMIT 16
      */
     @Multiline
     public static String InsertData;
