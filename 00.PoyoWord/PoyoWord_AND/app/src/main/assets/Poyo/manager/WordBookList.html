@@ -49,7 +49,7 @@
     </style>
 </head>
 
-<body id="MainBody" class="theme-red" style="margin:0;height:100%;overflow-x:scroll ; overflow-y: hidden;">
+<body id="MainBody" class="theme-red" style="margin:0;height:100%;">
     <!-- <script src="http://code.jquery.com/jquery-2.1.4.min.js"> -->
     </script>
 
@@ -73,7 +73,7 @@
         </div>
     </div>
 
-    <div style="position:relative;overflow-x:scroll ; overflow-y: hidden;">
+    <div style="position:relative;">
 
         <nav>
             <ul class="cd-primary-nav">
@@ -231,14 +231,14 @@
 
             viewModel.list(jsonObj.value);
 
-            var tr = $('#example-table').find('tr');
-            tr.bind('mouseover', function (event) {
-                tr.removeClass('row-highlight');
-            });
-            tr.bind('click', function (e) {
-                tr.removeClass('row-click');
-                var tds = $(this).addClass('row-click').find('td');
-            });
+            // var tr = $('#example-table').find('tr');
+            // tr.bind('mouseover', function (event) {
+            //     tr.removeClass('row-highlight');
+            // });
+            // tr.bind('click', function (e) {
+            //     tr.removeClass('row-click');
+            //     var tds = $(this).addClass('row-click').find('td');
+            // });
         }
 
         var viewModel = {

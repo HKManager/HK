@@ -38,6 +38,7 @@ import Query.Manager_WordAudLoc;
 import Query.Manager_WordBook;
 import Query.Manager_WordStudyBook;
 import study.hk.data.Data.HARDCODE;
+import study.hk.poyowordbook.CustomViewPager;
 import study.hk.poyowordbook.MainActivity;
 import study.hk.poyowordbook.R;
 
@@ -58,7 +59,7 @@ public class WordManagerActivity extends AppCompatActivity {
 
     private SectionsPagerAdapter mSectionsPagerAdapter;
 
-    private ViewPager mViewPager;
+    private CustomViewPager mViewPager;
 
     @SuppressLint({ "SetJavaScriptEnabled", "JavascriptInterface" })
     @Override
@@ -74,8 +75,9 @@ public class WordManagerActivity extends AppCompatActivity {
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
 
         // Set up the ViewPager with the sections adapter.
-        mViewPager = (ViewPager) findViewById(R.id.container);
+        mViewPager = (CustomViewPager) findViewById(R.id.container);
         mViewPager.setAdapter(mSectionsPagerAdapter);
+        mViewPager.setPagingEnabled(false);
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
 
