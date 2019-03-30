@@ -102,5 +102,26 @@ public class Manager_TodayWord {
 
             wordList.add(mapData);
         }
+
+        db.close();
+    }
+
+    public boolean Insert() {
+        try {
+
+            String query = Query_TodayWord.DeleteData;
+
+            db = mHelper.getReadableDatabase();
+            db.execSQL(query);
+
+            query = Query_TodayWord.InsertData;
+            db.execSQL(query);
+
+            db.close();
+
+            return true;
+        }catch (Exception ex) {
+            return false;
+        }
     }
 }

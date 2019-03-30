@@ -80,42 +80,9 @@ public class FruitKnightActivity extends AppCompatActivity {
     }
 
     @Override public void onBackPressed() {
+
+        int abc = 0;
+
         //super.onBackPressed();
-    }
-
-    @Override
-    public boolean onKeyPreIme(int keyCode, KeyEvent event) {
-
-        /*if (event.getKeyCode() == KeyEvent.KEYCODE_BACK) {
-
-            if (handler != null) {
-
-                if (event.getAction() == KeyEvent.ACTION_DOWN) {
-                    handler.sendEmptyMessage(InputMethodManager.RESULT_HIDDEN);
-                }
-            }
-
-            if (isHiddenKeyboard == false) {
-                return true;
-            }
-        }*/
-
-        return super.dispatchKeyEvent(event);
-    }
-
-
-
-    public void setHiddenKeyboardOnBackPressed(boolean isHiddenKeyboard) {
-        this.isHiddenKeyboard = isHiddenKeyboard;
-    }
-
-
-
-    /**
-     * back 버튼 후 실행될 핸들러 지정
-     * @param handler back 버튼 후 실행될 핸들러
-     */
-    public void setOnBackPressedHandler(Handler handler) {
-        this.handler = handler;
     }
 }

@@ -115,8 +115,14 @@ public class MainActivity extends AppCompatActivity {
         eventData.SetHandle("move");
         eventData.SetView("main");
 
+
         Manager_TodayWord todayWord = new Manager_TodayWord(context);
         Manager_TodayWord.GetInstance().Load();
+
+        if(Manager_TodayWord.GetInstance().wordList.size() <= 0) {
+            Manager_TodayWord.GetInstance().Insert();
+            Manager_TodayWord.GetInstance().Load();
+        }
 
         joystick = (JoystickView) findViewById(R.id.joystickView_right);
         joystick.setOnMoveListener(new JoystickView.OnMoveListener() {
