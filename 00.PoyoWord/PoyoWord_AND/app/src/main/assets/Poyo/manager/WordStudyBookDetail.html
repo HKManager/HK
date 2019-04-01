@@ -261,6 +261,9 @@
 
     <script src="./js/WordStudyBook.js"></script>
 
+    <script src="../js/tools/DateTool.js"></script>
+    <script src="../js/module/angular.min.js"></script>
+
     <!-- 처리 관련 -->
     <script type="text/javascript">
 
@@ -373,6 +376,16 @@
         }
 
         function ChangeFromDT() {
+            SetDateWord();
+        }
+
+        
+
+        function ChangeToDT() {
+            SetDateWord();
+        }
+
+        function SetDateWord() {
             var d = new Date().toISOString().slice(0,10);
 
             var fromDT = $("#From_DT").val();
@@ -414,18 +427,21 @@
                         dayKey = Math.floor(i / 16);
                     }
 
-                    newData[i].UNIT_SN = dayIndex[dayKey].date.toISOString().slice(0,10);
+
+                    var dayDate = dayIndex[dayKey].date;
+
+                    var year = dayDate.getFullYear();
+                    var month = dayDate.getMonth();
+                    var day = dayDate.getDate();
+
+                    var dateIndexItem = new Date(year, month, day);
+
+                    // dateIndexItem = _.cloneDeep();
+
+                    var dateString = dateIndexItem.addDays(1).toISOString().slice(0,10);
+
+                    newData[i].UNIT_SN = dateString;
             }
-        }
-
-        Date.prototype.addDays = function(days) {
-        this.setDate(this.getDate() + parseInt(days));
-        return this;
-        };
-
-        function ChangeToDT() {
-            var fromDT = $("#From_DT").val();
-            var toDT = $("#To_DT").val();
         }
 
         String.prototype.replaceAll = function(org, dest) {
