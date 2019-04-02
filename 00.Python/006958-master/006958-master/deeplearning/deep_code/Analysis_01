@@ -1,0 +1,32 @@
+import tensorflow as tf
+
+# 프린트를 찍어보면 최초에는 오차율(cost)가 크나, 학습이 진행 될 수록 가중치(w) 의 값은 1에 가까워지고, b는 0에 가까운 작은 값으로 수렴이 된다.
+
+# X and Y data
+# 패턴이 x_train:1 = y_train:1 / x_train:2=y_train:2 / x_train:3=y_train:3 에 매핑 되어야 할 때
+x_train = [1, 2, 3]
+y_train = [1, 2, 3]
+
+# 가중치(w) / 바이어스(b)
+w = tf.Variable(tf.random_normal([1]), name='weight')
+b = tf.Variable(tf.random_normal([1]), name='bias')
+
+# 예측값 구해보기
+hypothesis = x_train * w + b
+
+# 오차 확인
+cost = tf.reduce_mean(tf.square(hypothesis - y_train))
+
+# 최소화 하기 학습 ?
+optimizer = tf.train.GradientDescentOptimizer(learning_rate=0.01)
+train = optimizer.minimize(cost)
+
+# 그래프
+sess = tf.Session()
+
+sess.run(tf.global_variables_initializer())
+
+for step in range(2001):
+    sess.run(train)
+    if step % 20 == 0:
+        print(step, sess.run(cost), sess.run(w), sess.run(b))
